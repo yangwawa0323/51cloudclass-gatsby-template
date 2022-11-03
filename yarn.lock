@@ -7361,7 +7361,7 @@
     "resolve-url-loader" "^3.1.4"
     "sass-loader" "^10.1.1"
 
-"gatsby-plugin-sharp@^4.0.0-next":
+"gatsby-plugin-sharp@^4.0.0-next", "gatsby-plugin-sharp@^4.24.0":
   "integrity" "sha512-wVs8F9zLeiLf02yLi8vjse1vqSrZsx2u3RsMhoSv1bEinyaI5bcoLZ7mMJCsEeZe2G9mvNrPi4Ymhh/YzgxYCg=="
   "resolved" "https://registry.npmmirror.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-4.24.0.tgz"
   "version" "4.24.0"
