@@ -1,5 +1,5 @@
 import * as React from "react";
-import logo from '../assets/img/CloudClass-8.png'
+import { Link } from "gatsby";
 
 const Navbar = () => {
 	return (
@@ -25,7 +25,11 @@ const Navbar = () => {
 									</p>
 								</div>
 								<div>
-									<p>Style Guide</p>
+									<p>
+										<Link to="/styleguide">
+										Style Guide
+										</Link>
+									</p>
 								</div>
 								<div>
 									<div>
