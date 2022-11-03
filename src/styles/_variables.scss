@@ -1,0 +1,19 @@
+@import url('https://fonts.font.im/css?family=Manrope:100,200,300,400,500,600,700|Open+Sans:300,400,600,700|Roboto:100,300,400,500,700,900');
+
+
+$desktop: 'min-width: 800px';
+$mobile-only: 'max-width: 35rem';
+
+:root {
+  --light-background-color: #eeeeee;
+  --navbar-height: 3.75rem;
+  --navbar-desktop-width: 240px;
+  --font-family: 'Manrope', 'Roboto',  'Open Sans', serif;
+  // --font-family: 'Roboto', 'Open Sans', 'Manrope', serif;
+  --text-color: var(--primary-background-color, #19154e);
+  --primary: #8800ff;
+}
+
+.primary {
+  color: var(--primary);
+}

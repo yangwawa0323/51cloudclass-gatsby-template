@@ -1,0 +1,51 @@
+ @import '../styles/mixins';
+
+ .style-guide {
+
+ 	place-content: center;
+ 	align-items: center;
+ 	background: linear-gradient(0deg, var(--token-0cdf47b3-ce1f-4341-98ec-f094608541cb, #f6f4ff) 0%, hsl(0, 0%, 100%) 100%);
+ 	display: flex;
+ 	flex: 0 0 auto;
+ 	flex-flow: column nowrap;
+ 	gap: 30px;
+ 	// height: min-content;
+ 	overflow: hidden;
+ 	padding: 120px 50px 80px;
+ 	position: relative;
+ 	width: 100%;
+ 	z-index: 1;
+ 	height: min-content;
+
+ 	div p {
+ 		color: #404040;
+ 	}
+ }
+
+ .color-list-block-wrapper {
+	display: grid;
+	gap: 10px;
+	grid-auto-rows: min-content;
+	grid-template-columns: repeat(3, minmax(100px, 1fr));
+	grid-template-rows: repeat(2 , min-content);
+	height: min-content;
+	position: relative;
+	width: 100%;
+ 	.color-block {
+ 		display: flex;
+ 		flex-flow: column nowrap;
+		place-content: flex-start flex-end;
+		padding: 15px;
+ 		height: 131px;
+ 		width: 100%;
+ 		border-radius: 15px;
+ 		background-color: var(--text-light, #5b5e76);
+ 		overflow: hidden;
+
+ 		h3 {
+ 			@apply text-xs;
+			filter: invert(90%);
+ 		}
+
+ 	}
+ }

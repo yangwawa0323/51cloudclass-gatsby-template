@@ -1,0 +1,40 @@
+.is-error {
+  border-color: var(--hiq-color-danger);
+}
+
+.is-success {
+  border-color: var(--hiq-color-success);
+}
+
+.is-alert-message {
+  display: none;
+}
+
+input[type='text']:required:invalid,
+input[type='email']:required:invalid,
+input[type='number']:required:invalid,
+input[type='tel']:required:invalid,
+input[type='password']:required:invalid {
+  border: var(--hiq-input-border-width, 1px) solid var(--hiq-input-border-color, var(--hiq-gray-lighter, #e3e5e8));
+}
+
+input[type='text']:required:invalid,
+input[type='email']:required:invalid,
+input[type='number']:required:invalid,
+input[type='tel']:required:invalid,
+input[type='password']:required:invalid {
+  &.is-error {
+    border-color: var(--hiq-color-danger);
+
+    ~ .is-alert-message {
+      color: var(--hiq-color-danger);
+      display: block;
+      position: absolute;
+    }
+  }
+}
+
+.input-container {
+  padding-bottom: 1.3rem;
+  position: relative;
+}

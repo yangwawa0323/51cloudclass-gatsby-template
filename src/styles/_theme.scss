@@ -1,0 +1,29 @@
+@import 'colors';
+
+// :root {
+//   @each $name, $color in $colors {
+//     #{--color}-#{$name}: #{$color};
+//   }
+// }
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+.note {
+  @apply border-slate-300 shadow-md border rounded-[20px] bg-yellow-50 p-8 w-[600px] text-xs text-gray-500;
+  & > p, h3 {
+    @apply font-bold text-[14px];
+    margin-bottom: 20px;
+  
+  }
+}
+
+
+.color-list {
+  & h3 {
+    @apply font-bold text-sm;
+  }
+}

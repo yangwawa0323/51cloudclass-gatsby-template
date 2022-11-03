@@ -1,11 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
+import logo from '../assets/img/logo.svg';
+import Footer from '../components/footer';
+import Navbar from '../components/navbar';
+import '../styles/index.scss';
 
-function App() {
+function Index() {
   return (
     <div className="App">
+      <Navbar/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <h1>Heading 1</h1>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -18,8 +23,9 @@ function App() {
           Learn React
         </a>
       </header>
+      <Footer />
     </div>
   );
 }
 
-export default App;
+export default Index;

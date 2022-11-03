@@ -1,0 +1,58 @@
+body * {
+	font-family: var(--font-family);
+	margin: 0;
+	padding: 0;
+}
+
+@for $index from 1 through 6 {
+	h#{$index} {
+		// font-family: var(--font-family);
+		color: var(--text-color);
+		font-style: normal;
+		// letter-spacing: -1px;
+		font-weight: 800;
+    }
+}
+
+h1 {
+    font-size: 60px;
+    line-height: 1.1em;
+}
+
+h2 {
+    font-size: 48px;
+    line-height: 1.3em;
+}
+
+h3 {
+    font-size: 45px;
+    line-height: 1.3em;
+}
+
+h4 {
+    font-size: 24px;
+    line-height: 1.3em;
+}
+
+h5 {
+    font-size: 18px;
+    line-height: 1.3em;
+}
+
+h6 {
+    font-size: 14px;
+    line-height: 1.3em;
+}
+
+
+p.small, .psmall {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0px;
+    line-height: 1.5em;
+    color: var(--primary-background-color, #5b5e76);
+    text-decoration: none;
+    text-transform: none;
+}
+
+

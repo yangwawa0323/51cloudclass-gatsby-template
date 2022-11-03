@@ -1,0 +1,26 @@
+.hiq-well {
+  &.hiq-login-well {
+    @media ($desktop) {
+      margin-left: auto;
+      margin-right: auto;
+      width: 60%;
+    }
+
+    .hiq-account-links {
+      @include horizontal-list-li;
+      text-align: center;
+    }
+  }
+
+  p {
+    &.is-form-error {
+      color: var(--hiq-color-danger);
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.is-full-width {
+  margin-top: 1rem;
+  width: 100%;
+}

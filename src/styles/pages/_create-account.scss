@@ -1,0 +1,30 @@
+.hiq-create-account-well {
+  form {
+    > div {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .input-container {
+      flex-basis: 0;
+      flex-grow: 1;
+      padding-left: 1rem;
+      padding-right: 1rem;
+
+      @media ($mobile-only) {
+        flex-basis: auto;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+}

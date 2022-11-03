@@ -1,0 +1,12 @@
+.main-content {
+  overflow-x: hidden;
+
+  @media ($desktop) {
+    display: flex;
+    margin-top: var(--navbar-height);
+  }
+}
+
+.main-content-wrapper {
+  display: flex;
+}
