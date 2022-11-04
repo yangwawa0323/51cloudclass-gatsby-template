@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+import Footer from "../components/footer";
+import Navbar from "../components/navbar";
 import "../styles/index.scss";
 
 import gsap from "gsap";
