@@ -10,6 +10,13 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-remark-images',
     `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `components`,
+        path: `./src/components`,
+      },
+    },
     // {
     //   resolve: 'gatsby-source-filesystem',
     //   options: {
