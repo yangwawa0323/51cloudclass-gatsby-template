@@ -7,7 +7,7 @@ body * {
 @for $index from 1 through 6 {
 	h#{$index} {
 		// font-family: var(--font-family);
-		color: var(--text-color);
+		color: var(--text);
 		font-style: normal;
 		// letter-spacing: -1px;
 		font-weight: 800;

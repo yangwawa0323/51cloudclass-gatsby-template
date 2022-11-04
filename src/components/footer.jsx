@@ -1,5 +1,4 @@
 import * as React from "react";
-import "../styles/index.scss";
 
 const Footer = (props) => {
 	const { extraStyles } = props;
@@ -112,7 +111,7 @@ const Footer = (props) => {
 									<a href="https://www.framer.com/"
 										target="_blank"
 									>
-										© Copyright by <strong class="framer-text">51cloudclass</strong>
+										© Copyright by <strong>51cloudclass</strong>
 									</a>
 								</p>
 							</div>

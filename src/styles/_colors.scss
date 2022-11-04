@@ -1,7 +1,15 @@
-// $colors: (
-//   primary: #1e237e,
-//   secondary: #003ea9,
-//   background: #fff,
-//   tertiary: #565656,
-//   neutral: #6f7083
-// );
+@use 'sass:map';
+
+$colors: (
+	"purple": #8800FF,
+	"purple-dark": #1300FF,
+	"purple-light": #8800aa,
+	"green": #7DEDAA,
+	"red": #F56687,
+	"yellow": #FDD963,
+	"white": #FFFFFF,
+	"black": #000000,
+	"text": #19154E,
+	"text-light": #5B5E76
+);
+@debug "Purple " map.get($colors, "text-light");

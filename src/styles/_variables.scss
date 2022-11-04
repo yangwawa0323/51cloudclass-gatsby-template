@@ -1,8 +1,12 @@
+@use 'sass:map';
 @import url('https://fonts.font.im/css?family=Manrope:100,200,300,400,500,600,700|Open+Sans:300,400,600,700|Roboto:100,300,400,500,700,900');
 
 
+@import './colors';
+
 $desktop: 'min-width: 800px';
 $mobile-only: 'max-width: 35rem';
+
 
 :root {
   --light-background-color: #eeeeee;
@@ -10,10 +14,20 @@ $mobile-only: 'max-width: 35rem';
   --navbar-desktop-width: 240px;
   --font-family: 'Manrope', 'Roboto',  'Open Sans', serif;
   // --font-family: 'Roboto', 'Open Sans', 'Manrope', serif;
-  --text-color: var(--primary-background-color, #19154e);
-  --primary: #8800ff;
+  --text: #{map.get($colors,"text")};
+  --text-light: #{map.get($colors, "text-light")};
+  --purple: #{map.get($colors,"purple")};
+  --primary: #{map.get($colors, "purple")};
+  --purple-dark: #{map.get($colors, "purple-dark")};
+  --purple-light: #{map.get($colors, "purple-light")};
+  --green: #{map.get($colors, "green")};
+  --red: #{map.get($colors, "red")};
+  --yellow: #{map.get($colors, "yellow")};
+  --black: #{map.get($colors, "black")};
+  
 }
 
+@debug "text light" var(--text-light);
 .primary {
   color: var(--primary);
 }
