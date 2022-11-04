@@ -5,7 +5,7 @@ import "../styles/index.scss";
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import ColorBlock from "../components/ColorBlock";
+import ColorBlock from "../components/colorblock";
 
 // get other plugins:
 const colors = [   {
