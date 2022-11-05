@@ -1,28 +1,23 @@
 import * as React from 'react';
-import logo from '../assets/img/logo.svg';
 import Footer from '../components/footer';
 import Navbar from '../components/navbar';
 import '../styles/index.scss';
 
+import ThreeCards from '../components/threecards';
+import CompleteToolkit from '../components/completetoolkit';
+
 function Index() {
   return (
-    <div className="App">
-      <Navbar/>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Heading 1</h1>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      <main>
+        <div className='bg-white flex flex-col gap-[80px] h-min relative w-full items-center py-24 px-12 '>
+          {/* Complete toolkit  */}
+         <CompleteToolkit />
+          {/* Three cards */}
+          <ThreeCards />
+        </div>
+      </main>
       <Footer />
     </div>
   );
