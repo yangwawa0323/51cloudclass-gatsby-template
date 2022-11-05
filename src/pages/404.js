@@ -1,6 +1,6 @@
 import { Link } from 'gatsby';
 import * as React from 'react'
-import Footer from '../components/Footer';
+import Footer from '../components/footer';
 import Navbar from '../components/navbar';
 import '../styles/index.scss';
 import gsap from 'gsap'
