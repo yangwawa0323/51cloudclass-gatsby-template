@@ -5,14 +5,29 @@ import ViewInArIcon from '@mui/icons-material/ViewInAr';
 import PaletteIcon from '@mui/icons-material/Palette';
 
 import gsap from 'gsap';
-
+import ScrollTrigger from 'gsap/ScrollTrigger';
 
 const ThreeCards = () => {
 
-  React.useEffect( 
+  ScrollTrigger.defaults({
+
+  })
+  gsap.registerPlugin(ScrollTrigger);
+
+
+  React.useEffect(
     () => {
 
-      const timeline = gsap.timeline({})
+
+      const timeline = gsap.timeline({
+         scrollTrigger: {
+            trigger: ".building-block",
+            scrub: 1,
+            start: "bottom 75%",
+            end: "bottom 45%",
+            // markers: true
+          },
+      })
 
       const cards = gsap.utils.toArray('.card')
 
@@ -22,11 +37,11 @@ const ThreeCards = () => {
           opacity: 0,
           // duration: 1.3,
         })
-      } )
+      })
 
     }, []
   )
- 
+
   return (
     <div className='grid auto-rows-min justify-center gap-5 overflow-visible '
       style={{

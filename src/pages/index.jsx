@@ -6,6 +6,7 @@ import '../styles/index.scss';
 import ThreeCards from '../components/threecards';
 import CompleteToolkit from '../components/completetoolkit';
 import CompletedPages from '../components/completedpages';
+import BoostSection from '../components/boost';
 
 function Index() {
   return (
@@ -13,6 +14,10 @@ function Index() {
       <Navbar />
       <main>
         <div className='bg-white flex flex-col gap-[80px] h-min relative w-full items-center'>
+          <div className='w-full flex flex-col justify-center items-center gap-20 boost-section'>
+            {/* Boost Section */}
+            <BoostSection />
+          </div>
 
           <div className='px-12 py-24 flex flex-col justify-center items-center gap-20 completed-toolkit'>
 

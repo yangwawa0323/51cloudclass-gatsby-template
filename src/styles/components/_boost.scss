@@ -1,0 +1,45 @@
+.wrapper {
+	height: 800px; // should be times of the box height
+	width: 320px;
+	position: relative;
+	margin: auto;
+	overflow: hidden;
+	pointer-events: none;
+
+
+	&::after {
+		height: 798px;
+		width: 320px;
+		content: "";
+		position: absolute;
+		pointer-events: none;
+	}
+
+	.boxes {
+		position: relative;
+		top: -320px;
+
+		.box {
+			// Change the box height
+			// overflow: hidden;
+			overflow: hidden;
+			border-radius: 10px;
+			// box-shadow: ;
+			height: 380px;
+			opacity: 0.8;
+			width: 300px;
+			aspect-ratio: calc(3.4 / 4);
+			position: absolute;
+			pointer-events: none;
+			a {
+				width: 100%;
+				height: 100%;
+				cursor: pointer;
+				pointer-events:  auto;
+				img {
+					object-fit: convert;
+				}
+			}
+		}
+	}
+}

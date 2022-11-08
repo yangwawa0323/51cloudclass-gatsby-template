@@ -17,7 +17,7 @@ const animation = () => {
 			scrub: 1,
 			start: "bottom 75%",
 			end: "bottom 45%",
-			markers: true
+			// markers: true
 		},
 		//   x: 0,
 		y: 100,
