@@ -16,12 +16,12 @@ const Navbar = () => {
 							<div className="flex flex-row gap-5 pr-10 items-center text-xs font-semibold">
 								<div>
 									<p>
-										<a href="./">Overview</a>
+										<Link to="/">Overview</Link>
 									</p>
 								</div>
 								<div>
 									<p>
-										<a href="./#pages">Pages</a>
+										<Link href="/#pages">Pages</Link>
 									</p>
 								</div>
 								<div>
