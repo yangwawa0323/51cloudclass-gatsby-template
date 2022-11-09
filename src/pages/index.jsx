@@ -8,6 +8,7 @@ import CompleteToolkit from '../components/completetoolkit';
 import CompletedPages from '../components/completedpages';
 import BoostSection from '../components/boost';
 import EssentialSection from '../components/essential';
+import { Link } from 'gatsby';
 
 function Index() {
   return (
@@ -28,8 +29,7 @@ function Index() {
             {/* Three cards */}
             <ThreeCards />
           </div>
-          <div className='px-12 pb-24 w-full justify-center flex' >
-
+          <div id="pages" className='px-12 pb-24 w-full justify-center flex' >
             {/* Completed pages */}
             <CompletedPages />
           </div>
