@@ -42,7 +42,7 @@ const CompletedPages = () => {
 					</p>
 				</div>
 				<div >
-					<h2 className='font-extrabold'>Complete pages for your project.</h2>
+					<h2 className='font-extrabold gradient-text'>Complete pages for your project.</h2>
 				</div>
 				<div >
 					<p >Create beautiful pages within minutes directly in Framer.

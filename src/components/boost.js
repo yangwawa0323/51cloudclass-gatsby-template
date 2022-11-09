@@ -129,15 +129,19 @@ const BoostSection = () => {
 				<div className='boost-section-wrapper  flex flex-col gap-4 overflow-visible h-min max-w-[451px]'>
 					<div>
 						<p
-							className='text-purple-500 text-sm font-extrabold uppercase'
+							className='text-purple-500 text-sm font-extrabold uppercase hover:underline'
 						>Free Framer Template</p>
 					</div>
 					<div >
-						<h2 className='inline-block' >Boost &nbsp;
-							<span >
-								<span > your </span>
+						<h2 className='inline-block'>
+							<span
+								className='gradient-text'
+								style={{
+									backgroundImage: 'linear-gradient(15deg, rgb(102, 0, 255) 0%, rgb(255, 0, 102) 100%)',
+									
+								}}>Boost your website.
 							</span>
-							&nbsp; website.</h2>
+						</h2>
 					</div>
 					<div>
 						<p className=' boost-pbtn text-xl font-medium text-gray-600'>Quickly assemble pages from various
@@ -160,22 +164,22 @@ const BoostSection = () => {
 				{/* vertical scrolling pages  */}
 				<div className="wrapper" onMouseLeave={resumeAnimation} onMouseEnter={pauseAnimation}>
 					<div className="boxes">
-						<div className="box hover:opacity-100 ">
-							<Link className='pointer-events-auto' to="/404" >
+						<div className="box">
+							<Link className='pointer-events-auto ' to="/404" >
 								<img src={page404} alt="page 404" />
 							</Link>
 						</div>
-						<div className="box hover:opacity-100">
+						<div className="box">
 							<Link className='pointer-events-auto' to="/">
 								<img src={booststart} alt="Website preview" />
 							</Link>
 						</div>
-						<div className="box hover:opacity-100">
+						<div className="box">
 							<Link className='pointer-events-auto' to="/styleguide">
 								<img src={styleguide} alt="style guide Website preview" />
 							</Link>
 						</div>
-						<div className="box hover:opacity-100 ">
+						<div className="box">
 							<Link className='pointer-events-auto' to="/changelog">
 								<img src={changelog} alt="change log Website preview" />
 							</Link>

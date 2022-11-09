@@ -7,6 +7,7 @@ import ThreeCards from '../components/threecards';
 import CompleteToolkit from '../components/completetoolkit';
 import CompletedPages from '../components/completedpages';
 import BoostSection from '../components/boost';
+import EssentialSection from '../components/essential';
 
 function Index() {
   return (
@@ -31,6 +32,10 @@ function Index() {
 
             {/* Completed pages */}
             <CompletedPages />
+          </div>
+          <div className='w-full' style={{backgroundColor: '#f6f4ff' }}>
+            {/* Essential section */}
+            <EssentialSection />
           </div>
         </div>
       </main>

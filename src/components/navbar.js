@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 const Navbar = () => {
 	return (
 		<div className="items-center place-content-center flex-col flex-nowrap overflow-visible relative">
-			<div className="fixed w-full bg-white flex z-50 flex-grow-0 flex-shrink-0 gap-0 px-3 -translate-x-1/2 left-1/2">
+			<div className="fixed w-full bg-white flex z-50 flex-grow-0 flex-shrink-0 gap-0 -translate-x-1/2 left-1/2">
 				<div className="w-full">
 					<nav className="items-center flex overflow-hidden p-6 relative h-16">
 						<div className="w-full flex flex-row items-center justify-between">
@@ -27,7 +27,7 @@ const Navbar = () => {
 								<div>
 									<p>
 										<Link to="/styleguide">
-										Style Guide
+											Style Guide
 										</Link>
 									</p>
 								</div>

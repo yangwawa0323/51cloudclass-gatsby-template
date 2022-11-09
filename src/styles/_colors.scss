@@ -13,3 +13,24 @@ $colors: (
 	"text-light": #5B5E76
 );
 @debug "Purple " map.get($colors, "text-light");
+
+// @mixin rtl($property, $ltr-value, $rtl-value) {
+//   #{$property}: $ltr-value;
+
+//   [dir=rtl] & {
+//     #{$property}: $rtl-value;
+//   }
+// }
+
+// .sidebar {
+//   @include rtl(float, left, right);
+// }
+
+
+.gradient-text  {
+	@include linear-gradient-text();
+}
+
+.gradient-purple-text {
+	@include linear-gradient-text(rgb(102, 0, 255), rgb(255, 0, 102) );
+}
