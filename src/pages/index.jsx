@@ -9,6 +9,7 @@ import CompletedPages from '../components/completedpages';
 import BoostSection from '../components/boost';
 import EssentialSection from '../components/essential';
 import { Link } from 'gatsby';
+import FractionSection from '../components/fraction';
 
 function Index() {
   return (
@@ -36,6 +37,12 @@ function Index() {
           <div className='w-full' style={{backgroundColor: '#f6f4ff' }}>
             {/* Essential section */}
             <EssentialSection />
+          </div>
+          <div className='w-full' style={{
+            backgroundColor: '#7421fc',
+          }}>
+            {/* Fraction section */}
+            <FractionSection />
           </div>
         </div>
       </main>
