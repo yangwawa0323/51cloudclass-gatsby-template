@@ -6,6 +6,7 @@ import PageView from './pageview';
 import page404 from '../../assets/img/page-thumbnail/page_404.webp';
 import styleguide from '../../assets/img/page-thumbnail/styleguide.webp';
 import changelog from '../../assets/img/page-thumbnail/changelog.webp';
+import landing4 from '../../assets/img/page-thumbnail/landing4.webp';
 
 
 gsap.registerPlugin(ScrollTrigger)
@@ -62,6 +63,9 @@ const CompletedPages = () => {
 				</div>
 				<div >
 					<PageView route="/styleguide" image={styleguide} title="Style Guide" />
+				</div>
+				<div >
+					<PageView route="/landing4" image={landing4} title="Landing 4 page" />
 				</div>
 			</div>
 		</div>
