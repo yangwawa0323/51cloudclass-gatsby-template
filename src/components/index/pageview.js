@@ -34,7 +34,7 @@ const PageView = (props) => {
 									boxShadow: 'rgba(0, 0, 0, 0.18) 0px 0.60323px 0.60323px -1.25px, rgba(0, 0, 0, 0.16) 0px 2.29021px 2.29021px -2.5px, rgba(0, 0, 0, 0.063) 0px 10px 10px -3.75px',
 								}}
 							>
-								<Link to={route}>
+								<Link to={route || '/'}>
 									<div className='flex py-2 px-5 items-center justify-center'>
 										<p>
 											View page

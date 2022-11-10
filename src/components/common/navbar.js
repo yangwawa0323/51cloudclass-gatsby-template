@@ -21,7 +21,7 @@ const Navbar = () => {
 								</div>
 								<div>
 									<p>
-										<Link href="/#pages">Pages</Link>
+										<Link to="/#pages">Pages</Link>
 									</p>
 								</div>
 								<div>

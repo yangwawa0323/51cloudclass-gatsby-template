@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import Footer from "../components/footer";
-import Navbar from "../components/navbar";
+import Footer from "../components/common/footer";
+import Navbar from "../components/common/navbar";
 import "../styles/index.scss";
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import ColorBlock from "../components/colorblock";
+import ColorBlock from "../components/styleguide/colorblock";
 
 // get other plugins:
 const colors = [   {

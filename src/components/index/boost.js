@@ -1,10 +1,10 @@
 import * as React from 'react';
 import gsap from 'gsap';
 import { Link } from 'gatsby';
-import changelog from '../assets/img/page-thumbnail/changelog.webp';
-import page404 from '../assets/img/page-thumbnail/page_404.webp';
-import styleguide from '../assets/img/page-thumbnail/styleguide.webp';
-import booststart from '../assets/img/page-thumbnail/boost_start.webp';
+import changelog from '../../assets/img/page-thumbnail/changelog.webp';
+import page404 from '../../assets/img/page-thumbnail/page_404.webp';
+import styleguide from '../../assets/img/page-thumbnail/styleguide.webp';
+import booststart from '../../assets/img/page-thumbnail/boost_start.webp';
 
 const boostSectionAnimation = (timeline) => {
 	const wrapper = document.querySelector('.boost-section-wrapper')

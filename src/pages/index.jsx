@@ -1,15 +1,15 @@
 import * as React from 'react';
-import Footer from '../components/footer';
-import Navbar from '../components/navbar';
+import Footer from '../components/common/footer';
+import Navbar from '../components/common/navbar';
 import '../styles/index.scss';
 
-import ThreeCards from '../components/threecards';
-import CompleteToolkit from '../components/completetoolkit';
-import CompletedPages from '../components/completedpages';
-import BoostSection from '../components/boost';
-import EssentialSection from '../components/essential';
+import ThreeCards from '../components/index/threecards';
+import CompleteToolkit from '../components/index/completetoolkit';
+import CompletedPages from '../components/index/completedpages';
+import BoostSection from '../components/index/boost';
+import EssentialSection from '../components/index/essential';
 import { Link } from 'gatsby';
-import FractionSection from '../components/fraction';
+import FractionSection from '../components/index/fraction';
 
 function Index() {
   return (

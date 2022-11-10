@@ -3,9 +3,9 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import PageView from './pageview';
 
-import page404 from '../assets/img/page-thumbnail/page_404.webp';
-import styleguide from '../assets/img/page-thumbnail/styleguide.webp';
-import changelog from '../assets/img/page-thumbnail/changelog.webp';
+import page404 from '../../assets/img/page-thumbnail/page_404.webp';
+import styleguide from '../../assets/img/page-thumbnail/styleguide.webp';
+import changelog from '../../assets/img/page-thumbnail/changelog.webp';
 
 
 gsap.registerPlugin(ScrollTrigger)
