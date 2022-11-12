@@ -13,7 +13,6 @@ const pillsAnimation = () => {
 
 const FractionSection = () => {
 	React.useEffect(() => {
-		console.log("[DEBUG]:" , )
 		pillsAnimation();
 	},[])
 

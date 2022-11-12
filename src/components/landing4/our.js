@@ -1,7 +1,33 @@
 import * as React from 'react'
 import { ArrowBack, ArrowForward } from '@mui/icons-material';
+
 import gsap from 'gsap';
-import { fabClasses } from '@mui/material';
+import ScrollTrigger from 'gsap/ScrollTrigger'
+
+
+
+const sliderWrapperAnimation = () => {
+	
+	const slider = document.querySelector('.slider-wrapper');
+	
+	console.log("[DEBUG]: slider element: ", slider)
+	
+	const timeline = gsap.timeline({
+		scrollTrigger: {
+			trigger: '.landing4-boost-section',
+			start: 'bottom center',
+			end: 'bottom center',
+			// scrub: 1,
+			toggleActions: 'play none none reverse',
+			markers: true,
+			duration: 1.5,
+		},
+	});
+	timeline.from(slider, {
+		y: '+=500px',
+		opacity: 0.5,
+	})
+};	
 
 
 
@@ -9,16 +35,29 @@ const OurSuccess = () => {
 	const [index, setIndex] = React.useState(0);
 	const [size, setSize] = React.useState(0);
 	const [aniCompleted, setAniCompleted] = React.useState(true);
-
+	const [images, setImages] = React.useState([]);
+	
+	gsap.registerPlugin(ScrollTrigger);
+	
 	React.useEffect(() => {
+		
 		const images = document.querySelectorAll('.scrolling-slider img');
-		setSize(images.length)
+
+		/**
+		 * Initailize
+		 */
+		setImages(images);
+		setSize(images.length);
 		setIndex(0);
+
+		/**
+		 * Page animation
+		 *  */
+		sliderWrapperAnimation();
 	}, [])
 
 
 	const sliderAnimation = (direction = 'left') => {
-		const images = document.querySelectorAll('.scrolling-slider img');
 		let x;
 		setAniCompleted(false);
 
@@ -29,7 +68,6 @@ const OurSuccess = () => {
 		}
 		gsap.to(images, {
 			x,
-			duration: 2.5,
 			onComplete: () => setAniCompleted(true)
 		})
 	}
@@ -46,19 +84,19 @@ const OurSuccess = () => {
 	}
 
 	return (
-		<div className='p-24 flex flex-row gap-24 overflow-hidden'>
+		<div className='slider-wrapper w-full p-24 flex flex-row gap-24 overflow-hidden'>
 			{/* slider images  */}
 
-			<div className='scrolling-slider h-[558px] bg-red-200 rounded-lg shadow-sm relative border-[1px] flex-1 flex flex-row overflow-hidden max-w-[1200px] will-change-transform gap-0' >
+			<div className='scrolling-slider h-[558px] bg-red-100 rounded-lg shadow-sm relative border-[1px] flex-1 flex flex-row overflow-hidden max-w-[1200px] will-change-transform gap-0' >
 				{/* <div className='h-full w-full -translate-x-[50%] rounded-lg overflow-hidden'> */}
 				<img
-					className='h-full w-full object-cover rounded-lg'
+					className='h-full w-[720px] flex-1 object-cover rounded-lg'
 					src="https://framerusercontent.com/images/x8MsMLzPw4oCKSmMNOuZy76n2Is.jpg?scale-down-to=2048" alt="People in the office" />
 				<img
-					className='h-full w-full object-cover'
+					className='h-full w-[720px] flex-1 object-cover'
 					src="https://framerusercontent.com/images/2pg0fQYYej7N8XeGM88yj3SlQ.jpg?scale-down-to=2048" alt="People in the office" />
 				<img
-					className='h-full w-full object-cover'
+					className='h-full w-[720px] flex-1 object-cover'
 					src="https://framerusercontent.com/images/Pz5ekF4c6XYu5aMYYpM3nenmv4.jpg?scale-down-to=2048" alt="People in the office" />
 
 				{index < (size - 1) &&

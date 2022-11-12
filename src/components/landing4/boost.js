@@ -10,7 +10,7 @@ import SinaLogo from '../../assets/img/sina-logo-svgrepo-com.svg';
 const BoostSection = () => {
 	return (
 		<div
-			className='pt-48 px-24 pb-24 justify-center items-center flex flex-col gap-24 h-min overflow-hidden relative'
+			className='landing4-boost-section pt-48 px-24 pb-24 justify-center items-center flex flex-col gap-24 h-min overflow-hidden relative'
 			style={{
 				background: 'radial-gradient(72.6% 84% at 100% 100%, #b09eff 0%, rgb(255, 255, 255)  100%)'
 			}}>

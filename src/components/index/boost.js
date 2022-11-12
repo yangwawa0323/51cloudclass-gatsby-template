@@ -5,6 +5,8 @@ import changelog from '../../assets/img/page-thumbnail/changelog.webp';
 import page404 from '../../assets/img/page-thumbnail/page_404.webp';
 import styleguide from '../../assets/img/page-thumbnail/styleguide.webp';
 import booststart from '../../assets/img/page-thumbnail/boost_start.webp';
+import legal from '../../assets/img/page-thumbnail/legal.webp';
+import price2 from '../../assets/img/page-thumbnail/price.webp';
 
 const boostSectionAnimation = (timeline) => {
 	const wrapper = document.querySelector('.boost-section-wrapper')
@@ -138,7 +140,7 @@ const BoostSection = () => {
 								className='gradient-text'
 								style={{
 									backgroundImage: 'linear-gradient(15deg, rgb(102, 0, 255) 0%, rgb(255, 0, 102) 100%)',
-									
+
 								}}>Boost your website.
 							</span>
 						</h2>
@@ -182,6 +184,17 @@ const BoostSection = () => {
 						<div className="box">
 							<Link className='pointer-events-auto' to="/changelog">
 								<img src={changelog} alt="change log Website preview" />
+							</Link>
+						</div>
+						<div className="box">
+							<Link className='pointer-events-auto' to="/price2">
+								<img src={price2} alt="price2 Website preview" />
+							</Link>
+						</div>F
+
+						<div className="box">
+							<Link className='pointer-events-auto' to="/legal">
+								<img src={legal} alt="legal Website preview" />
 							</Link>
 						</div>
 					</div>

@@ -1,0 +1,80 @@
+.free-icons-wrap1 {
+	background-color: rgb(246, 244, 255);
+
+	div.gradient-background {
+		padding: 40px;
+
+		h5 {
+			color: rgb(126 34 206 / var(--tw-text-opacity));
+		}
+	}
+}
+
+.free-icons-wrap2 {
+	background-color: rgb(116, 33, 252);
+
+	div.gradient-background {
+		padding: 40px;
+		background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
+
+		h3 {
+			color: white;
+		}
+
+		h5 {
+			white-space: pre;
+			color: white;
+		}
+	}
+}
+
+.free-icons-wrap3 {
+	background-color: rgb(25, 21, 78);
+	color: white;
+
+	div.gradient-background {
+		padding: 40px;
+		background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
+
+		p,h3,h5 {
+			color: white;
+		}
+
+		h5 {
+			white-space: pre;
+		}
+	}
+}
+
+.free-icons-wrap1,
+.free-icons-wrap2,
+.free-icons-wrap3 {
+
+	div.free-icons {
+
+		&>div {
+			display: flex;
+			flex-direction: row;
+			gap: 10px;
+			justify-content: center;
+			align-items: center;
+
+		
+			div {
+				height: min-content;
+				width: min-content;
+				flex-wrap: nowrap;
+
+				h5 {
+					white-space: pre;
+				}
+			}
+
+			&:hover {
+				opacity: 0.7;
+			}
+
+		}
+	}
+
+}
