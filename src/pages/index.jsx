@@ -1,7 +1,11 @@
 import * as React from 'react';
 import Footer from '../components/common/footer';
 import Navbar from '../components/common/navbar';
-import '../styles/index.scss';
+
+// move the index.scss to navbar.js, otherwise by input the page URI 
+// has not style defined.
+
+// import '../styles/index.scss';
 
 import ThreeCards from '../components/index/threecards';
 import CompleteToolkit from '../components/index/completetoolkit';
