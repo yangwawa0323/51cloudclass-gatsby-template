@@ -97,7 +97,7 @@ const CustomBlog = ({ pageContext }) => {
 						<div >
 							<form className='flex flex-row gap-10 items-center relative'>
 								<div className='absolute hidden'>
-									<input type="text" tabindex="-1" />
+									<input type="text" tabIndex="-1" />
 								</div>
 								<input className='text-gray-600 p-[15px] text-sm rounded-lg font-medium outline-none' type="email" name="email" vaule="" placeholder="email@framer.com" />
 								<div >

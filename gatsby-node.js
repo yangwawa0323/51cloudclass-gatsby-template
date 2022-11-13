@@ -22,6 +22,17 @@ exports.createPages = ({ actions }) => {
 		}
 	})
 
+	// blog2 list page
+	createPage({
+		path: `/blog2`,
+		component: require.resolve('./src/components/blog2/main.js'),
+		context: {
+			title: 'blog2 list',
+			// simpleBlogLists,
+			blogs
+		}
+	})
+
 
 
 	// individual blog page

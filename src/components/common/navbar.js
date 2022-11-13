@@ -15,7 +15,7 @@ const Navbar = (props) => {
 	
 
 	return (
-		<div className="items-center place-content-center flex-col flex-nowrap overflow-visible relative">
+		<div className="navbar-container items-center place-content-center flex-col flex-nowrap overflow-visible relative">
 			<div
 				
 				style={{ backgroundColor: bgColor, color : txtColor, }}

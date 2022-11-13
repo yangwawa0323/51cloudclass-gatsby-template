@@ -19,7 +19,7 @@ const sliderWrapperAnimation = () => {
 			end: 'bottom center',
 			// scrub: 1,
 			toggleActions: 'play none none reverse',
-			markers: true,
+			// markers: true,
 			duration: 1.5,
 		},
 	});
