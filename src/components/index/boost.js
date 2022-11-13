@@ -8,6 +8,7 @@ import booststart from '../../assets/img/page-thumbnail/boost_start.webp';
 import legal from '../../assets/img/page-thumbnail/legal.webp';
 import price2 from '../../assets/img/page-thumbnail/price.webp';
 import mapPicture from '../../assets/img/page-thumbnail/map.webp';
+import blog1 from '../../assets/img/page-thumbnail/blog.webp';
 
 const boostSectionAnimation = (timeline) => {
 	const wrapper = document.querySelector('.boost-section-wrapper')
@@ -190,6 +191,11 @@ const BoostSection = () => {
 						<div className="box">
 							<Link className='pointer-events-auto' to="/contact1">
 								<img src={mapPicture} alt="contact 1 Website preview" />
+							</Link>
+						</div>
+						<div className="box">
+							<Link className='pointer-events-auto' to="/blog1">
+								<img src={blog1} alt="Blog1 Website preview" />
 							</Link>
 						</div>
 						<div className="box">
