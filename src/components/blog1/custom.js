@@ -1,6 +1,8 @@
-import React from 'react'
-import Footer from '../common/footer'
-import Navbar from '../common/navbar'
+import * as React from 'react';
+import Footer from '../common/footer';
+import Navbar from '../common/navbar';
+import { Link } from 'gatsby';
+
 
 const CustomBlog = ({ pageContext }) => {
 	const { blog, title, relatives } = pageContext
@@ -62,13 +64,14 @@ const CustomBlog = ({ pageContext }) => {
 									if (index >= 2) return
 									return (
 										<div key={rel.title} className="flex-1 ">
-											<a className='flex-row flex gap-2  overflow-hidden  rounded-2xl border-gray-300 shadow-lg w-[503px] h-min'>
+											<Link to={`/blog/${rel.title.toLowerCase().replace(/ /g, '-')}`} 
+											className='flex-row flex gap-2  overflow-hidden  rounded-2xl border-gray-300 shadow-lg w-[503px] h-min'>
 												<img className='h-[100px] w-[150px] ' src={rel.image} alt={rel.title} />
 												<div className='flex flex-col gap-2 p-2'>
 													<h5 className='text-xs text-purple-700 uppercase font-extrabold'> {rel.type}</h5>
 													<p className='text-xs font-medium text-gray-700'>{rel.title}</p>
 												</div>
-											</a>
+											</Link>
 										</div>);
 								})
 							}

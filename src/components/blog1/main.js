@@ -1,6 +1,7 @@
-import React from 'react'
-import Footer from '../common/footer'
-import Navbar from '../common/navbar'
+import { Link } from 'gatsby';
+import * as React from 'react'
+import Footer from '../common/footer';
+import Navbar from '../common/navbar';
 
 const Blog1 = ({ pageContext }) => {
   return (
@@ -39,7 +40,7 @@ const Blog1 = ({ pageContext }) => {
           <div className='grid grid-cols-[repeat(2,minmax(200px,1fr))] grid-rows-[repeat(2,min-content)] gap-4 auto-rows-min h-min justify-center max-w-[1200px] w-full'>
             {pageContext.blogs.map(blog => (
               <div className='rounded-2xl overflow-hidden border-[2px] shadow-md hover:shadow-lg hover:scale-105 duration-500  h-full w-full place-self-start'>
-                  <a  >
+                  <Link to={`/blog/${blog.title.toLowerCase().replace(/ /g,'-')}`}>
                     <div className='h-[334px] overflow-hidden'>
                           <img
                             className='w-full h-full object-cover'
@@ -56,7 +57,7 @@ const Blog1 = ({ pageContext }) => {
                         <p >{blog.description}</p>
                       </div>
                     </div>
-                  </a>
+                  </Link>
               </div>)
             )
             }
