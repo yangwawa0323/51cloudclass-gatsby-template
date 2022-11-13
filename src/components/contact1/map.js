@@ -24,7 +24,7 @@ const MapContainer = () => {
 					</div>
 				</div>
 				<div className='flex flex-row gap-10'>
-					<div className='max-w-[500px] max-h-[500px] flex-1  rounded-3xl bg-gray-300 shadow-xl overflow-hidden'>
+					<div className='max-w-[600px] max-h-[600px] flex-1  rounded-3xl bg-gray-300 shadow-xl overflow-hidden'>
 						<img src={mapPicture} className='object-cover object-top'/>
 					</div>
 					<div className='flex-1 flex flex-col text-white gap-12'>

@@ -1,0 +1,29 @@
+{
+	"blogs" : [
+		{
+			"type" : "inspiration",
+			"title": "10 ways to Improve Your Launch Campaign",
+			"description": "How to improve your web design process in a few easy steps." ,
+			"image": "https://framerusercontent.com/images/d1xv23lohWIezwkwQogANBdUFa0.jpg?scale-down-to=4096"
+		},
+		{
+			"type": "resouces",
+			"title" : "Improving Your Site's SEO",
+			"description" : "Build a unique experience by mixing and matching components.",
+			"image" : "https://framerusercontent.com/images/rulxZFrzlWk0GHEshowdQqOkg.jpg?scale-down-to=4096"
+		},
+		{
+			"type": "guide",
+			"title" :"How to Improve Web Design Process",
+			"description" : "How to improve your web design process in a few easy steps.",
+			"image": "https://framerusercontent.com/images/If6f4z2m0ojiXICHkazlj1VWmqo.jpg?scale-down-to=4096"
+
+		},
+		{
+			"type": "resouces",
+			"title": "Building Blocks for Your Website",
+			"description": "Build a unique experience by mixing and matching components.",
+			"image": "https://framerusercontent.com/images/M9b3lBkUcFHaEA96OIyY7iLj9Q.jpg"
+		}
+	]
+}
