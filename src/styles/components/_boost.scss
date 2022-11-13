@@ -1,6 +1,6 @@
 .wrapper {
 	height: 800px; // should be times of the box height
-	width: 320px;
+	width: 660px;
 	position: relative;
 	margin: auto;
 	overflow: hidden;
@@ -26,7 +26,7 @@
 			border-radius: 10px;
 			// box-shadow: ;
 			height: 380px;
-			width: 300px;
+			width: 640px;
 			aspect-ratio: calc(3.4 / 4);
 			position: absolute;
 			pointer-events: none;

@@ -170,54 +170,48 @@ const BoostSection = () => {
 				{/* vertical scrolling pages  */}
 				<div className="wrapper" onMouseLeave={resumeAnimation} onMouseEnter={pauseAnimation}>
 					<div className="boxes">
-						<div className="box">
+						<div className="box grid grid-cols-2 gap-4">
 							<Link className='pointer-events-auto ' to="/404" >
 								<img src={page404} alt="page 404" />
 							</Link>
-						</div>
-						<div className="box">
 							<Link className='pointer-events-auto' to="/">
 								<img src={booststart} alt="Website preview" />
 							</Link>
 						</div>
-						<div className="box">
+						<div className="box grid grid-cols-2 gap-4">
+
 							<Link className='pointer-events-auto' to="/about1">
 								<img src={about1} alt="About 1 preview" />
 							</Link>
-						</div>
-						<div className="box">
+
 							<Link className='pointer-events-auto' to="/styleguide">
 								<img src={styleguide} alt="style guide Website preview" />
 							</Link>
 						</div>
-						<div className="box">
+						<div className="box grid grid-cols-2 gap-4">
 							<Link className='pointer-events-auto' to="/changelog">
 								<img src={changelog} alt="change log Website preview" />
 							</Link>
-						</div>
-						<div className="box">
+
 							<Link className='pointer-events-auto' to="/contact1">
 								<img src={mapPicture} alt="contact 1 Website preview" />
 							</Link>
 						</div>
-						<div className="box">
+						<div className="box grid grid-cols-2 gap-4">
 							<Link className='pointer-events-auto' to="/blog1">
 								<img src={blog1} alt="Blog1 Website preview" />
 							</Link>
-						</div>
-						<div className="box">
+
 							<Link className='pointer-events-auto' to="/price2">
 								<img src={price2} alt="price2 Website preview" />
 							</Link>
 						</div>F
 
-						<div className="box">
+						<div className="box grid grid-cols-2 gap-4">
 							<Link className='pointer-events-auto' to="/legal">
 								<img src={legal} alt="legal Website preview" />
 							</Link>
-						</div>
 
-						<div className="box">
 							<Link className='pointer-events-auto' to="/blog2">
 								<img src={blog2} alt="Blog2 Website preview" />
 							</Link>
