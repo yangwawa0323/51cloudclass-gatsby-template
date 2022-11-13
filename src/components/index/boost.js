@@ -8,7 +8,8 @@ import booststart from '../../assets/img/page-thumbnail/boost_start.webp';
 import legal from '../../assets/img/page-thumbnail/legal.webp';
 import price2 from '../../assets/img/page-thumbnail/price.webp';
 import mapPicture from '../../assets/img/page-thumbnail/map.webp';
-import blog1 from '../../assets/img/page-thumbnail/blog.webp';
+import blog1 from '../../assets/img/page-thumbnail/blog1.webp';
+import blog2 from '../../assets/img/page-thumbnail/blog2.webp';
 
 const boostSectionAnimation = (timeline) => {
 	const wrapper = document.querySelector('.boost-section-wrapper')
@@ -207,6 +208,12 @@ const BoostSection = () => {
 						<div className="box">
 							<Link className='pointer-events-auto' to="/legal">
 								<img src={legal} alt="legal Website preview" />
+							</Link>
+						</div>
+
+						<div className="box">
+							<Link className='pointer-events-auto' to="/blog2">
+								<img src={blog2} alt="Blog2 Website preview" />
 							</Link>
 						</div>
 					</div>

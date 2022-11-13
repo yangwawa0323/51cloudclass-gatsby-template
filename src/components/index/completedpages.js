@@ -10,7 +10,8 @@ import landing4 from '../../assets/img/page-thumbnail/landing4.webp';
 import legal from '../../assets/img/page-thumbnail/legal.webp';
 import price2 from '../../assets/img/page-thumbnail/price.webp';
 import mapPicture from '../../assets/img/page-thumbnail/map.webp';
-import blog1 from '../../assets/img/page-thumbnail/blog.webp';
+import blog1 from '../../assets/img/page-thumbnail/blog1.webp';
+import blog2 from '../../assets/img/page-thumbnail/blog2.webp';
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -63,6 +64,9 @@ const CompletedPages = () => {
 				</div>
 				<div >
 					<PageView route="/404" image={page404} title="404 Error page"/>
+				</div>
+				<div >
+					<PageView route="/blog2" image={blog2} title="Blog2 page" />
 				</div>
 				<div >
 					<PageView route="/styleguide" image={styleguide} title="Style Guide" />
