@@ -12,6 +12,7 @@ import price2 from '../../assets/img/page-thumbnail/price.webp';
 import mapPicture from '../../assets/img/page-thumbnail/map.webp';
 import blog1 from '../../assets/img/page-thumbnail/blog1.webp';
 import blog2 from '../../assets/img/page-thumbnail/blog2.webp';
+import about1 from '../../assets/img/page-thumbnail/about1.webp';
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -79,6 +80,9 @@ const CompletedPages = () => {
 				</div>
 				<div >
 					<PageView route="/contact1" image={mapPicture} title="Contact 1 page" />
+				</div>
+					<div >
+					<PageView route="/about1" image={about1} title="About 1 page" />
 				</div>
 				<div >
 					<PageView route="/price2" image={price2} title="Price2 page" />

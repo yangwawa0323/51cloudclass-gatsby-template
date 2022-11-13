@@ -5,9 +5,13 @@ const Footer = (props) => {
 	return (
 		<div className="w-full h-auto relative flex flex-auto pointer-events-none">
 			<div className="contents">
-				<footer className="items-center gap-[100px] h-min p-8 place-content-center flex-col w-full text-gray-300 text-xs"
+				<footer className=" items-center gap-[100px] h-min px-24 py-8 place-content-center flex-col w-full text-gray-300 text-xs"
 					style={{ backgroundColor: 'rgb(79, 25, 166)' }}>
-					<div className={`gap-10 flex flex-col ${extraStyles}`}>
+					<div className='gap-10 flex flex-col max-w-[1200px]'
+						style={{
+							extraStyles,
+						}}
+					>
 						<div>
 							<a href="#footer">
 								<div>

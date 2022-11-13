@@ -10,8 +10,6 @@ const sliderWrapperAnimation = () => {
 	
 	const slider = document.querySelector('.slider-wrapper');
 	
-	console.log("[DEBUG]: slider element: ", slider)
-	
 	const timeline = gsap.timeline({
 		scrollTrigger: {
 			trigger: '.landing4-boost-section',

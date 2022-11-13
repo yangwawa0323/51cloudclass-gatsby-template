@@ -58,7 +58,7 @@ const Navbar = (props) => {
 									<div>
 										<div
 											className="text-white rounded-md px-4 py-2 hover:opacity-75 duration-700"
-											style={backgroundColor === 'white' ? { background: 'var(--primary)', filter: "brightness(1)" }
+											style={bgColor === 'white' ? { background: 'var(--primary)', filter: "brightness(1)" }
 												: { background: 'white', filter: 'darkness(1)' }}
 										>
 											<p className="text-xs leading-5"

@@ -12,7 +12,8 @@ $colors: (
 	"text": #19154E,
 	"text-light": #5B5E76
 );
-@debug "Purple " map.get($colors, "text-light");
+
+// @debug "Purple " map.get($colors, "text-light");
 
 // @mixin rtl($property, $ltr-value, $rtl-value) {
 //   #{$property}: $ltr-value;
