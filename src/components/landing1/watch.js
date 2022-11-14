@@ -8,11 +8,14 @@ const videoJsOptions = {
   autoplay: true,
   controls: true,
   responsive: true,
-  fluid: true,
-  preferFullWindow: true,
+  // fluid: true,
+  width: 1080,
+  // preferFullWindow: true,
   loop: true,
   sources: [{
-    src: 'https://vjs.zencdn.net/v/oceans.mp4',
+    // src: 'https://vjs.zencdn.net/v/oceans.mp4',
+    // src: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
+    src: 'https://media.w3.org/2010/05/sintel/trailer.mp4',
     type: 'video/mp4'
   }]
 };
@@ -110,15 +113,27 @@ const WatchVideo = () => {
             <div>
               <Backdrop
                 className='relative'
-                sx={{
-                  pointerEvents: 'none',
-                }}
-                open={backdropOpen} onClick={handleBackdropClick}>
+                // sx={{
+                //   pointerEvents: 'none',
+                // }}
+                // open={backdropOpen} onClick={handleBackdropClick}>
+                open={backdropOpen} >
                 <VideoJS
-                  options={videoJsOptions} onReady={handlePlayerReady} />
-                <HighlightOff htmlColor='white' fontSize='medium'
+                  className='rounded-lg overflow-hidden'
+
+                  options={videoJsOptions} onReady={handlePlayerReady} >
+                <div
+                  className='text-gray-300 font-medium text-sm absolute -bottom-9 right-1/3 z-[9999]'
+                  >[
+                    <span className='text-white font-extrabold text-sm'>
+                    51cloudclass
+                    </span>]
+                    Press 'ESC' or click the X to close the video </div>
+                  
+                </VideoJS>
+                {/* <HighlightOff htmlColor='white' fontSize='medium'
                   onClick={handleCloseIconClick}
-                  className='z-20 absolute top-[160px] right-10 pointer-events-auto' />
+                  className='z-20 absolute top-[160px] right-10 pointer-events-auto' /> */}
                 <HighlightOff htmlColor='white' fontSize='large'
                   onClick={handleCloseIconClick}
                   className='z-20 absolute bottom-[60px] right-1/2 pointer-events-auto' />

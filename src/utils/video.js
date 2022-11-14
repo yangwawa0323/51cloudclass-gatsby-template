@@ -7,7 +7,7 @@ import 'video.js/dist/video-js.css';
 export const VideoJS = (props) => {
   const videoRef = React.useRef(null);
   const playerRef = React.useRef(null);
-  const {options, onReady} = props;
+  const {options, onReady ,children} = props;
 
   React.useEffect(() => {
 
@@ -46,8 +46,9 @@ export const VideoJS = (props) => {
   }, [playerRef]);
 
   return (
-    <div data-vjs-player>
+    <div data-vjs-player className='relative'>
       <video ref={videoRef} className='video-js vjs-big-play-centered' />
+      {children}
     </div>
   );
 }

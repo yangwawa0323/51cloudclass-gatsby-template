@@ -9,6 +9,7 @@ import gsap from 'gsap';
 import BoostSection from '../components/landing1/boost';
 import BuildingBlock from '../components/landing1/building';
 import WatchVideo from '../components/landing1/watch';
+import NextWebsite from '../components/landing1/next';
 
 
 
@@ -83,10 +84,7 @@ const Landing1 = () => {
     scrollAnimation();
   }, [])
 
-  
 
-
-  
 
   return (
     <div>
@@ -111,7 +109,9 @@ const Landing1 = () => {
       {/*  */}
       <BuildingBlock />
       {/*  */}
-        <WatchVideo />
+      <WatchVideo />
+      {/*  */}
+      {/* <NextWebsite /> */}
       {/*  */}
       <Footer />
     </div>
