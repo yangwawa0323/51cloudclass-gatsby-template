@@ -1,8 +1,122 @@
-import React from 'react'
+import * as  React from 'react'
+import Footer from '../components/common/footer'
+import Navbar from '../components/common/navbar';
+import { AccessAlarm, ArrowForward, AutoAwesome, CheckCircle, Extension, PlayCircle, Search, Smartphone } from '@mui/icons-material'
+
+
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import gsap from 'gsap';
+import BoostSection from '../components/landing1/boost';
+import BuildingBlock from '../components/landing1/building';
+import WatchVideo from '../components/landing1/watch';
+
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+const scrollAnimation = () => {
+  ScrollTrigger.defaults({
+    start: 'top 70%',
+    end: 'top 45%',
+    toggleActions: 'play none none reset',
+    // markers: true,
+  })
+
+  gsap.from('.boost-your-website .explore-pages', {
+    scrollTrigger: {
+      trigger: '.boost-your-website'
+    },
+    y: '+=50%',
+    opacity: 0.7,
+  })
+
+  gsap.from('.building-block > div', {
+    scrollTrigger: {
+      trigger: '.building-block'
+    },
+    y: '+=30%',
+    opacity: 0.5,
+  });
+
+  gsap.from('.watch-the-video  .video-content', {
+    scrollTrigger: {
+      trigger: '.watch-the-video'
+    },
+    y: '+=30%',
+    opacity: 0.5,
+  });
+
+  // gsap.from('.our-office > div', {
+  //   scrollTrigger: {
+  //     trigger: '.our-office'
+  //   },
+  //   y: '+=30%',
+  //   opacity: 0.5,
+  // });
+
+
+  // gsap.from('.our-mission > div', {
+  //   scrollTrigger: {
+  //     trigger: '.our-mission'
+  //   },
+  //   y: '+=30%',
+  //   opacity: 0.5,
+  // });
+
+
+  //  gsap.from('.try-it-now > div', {
+  //   scrollTrigger: {
+  //     trigger: '.try-it-now'
+  //   },
+  //   y: '+=30%',
+  //   opacity: 0.5,
+  // });
+}
+
+
 
 const Landing1 = () => {
+
+
+
+  React.useEffect(() => {
+    scrollAnimation();
+  }, [])
+
+  
+
+
+  
+
   return (
-	 <div>Landing1</div>
+    <div>
+      {/*  */}
+      <div
+        style={{
+          background: 'rgb(116, 33, 252)',
+        }}
+        className='flex justify-center items-center p-4 z-10 sticky top-0'>
+        <div className='flex flex-row gap-2 '>
+          <p className='text-xs text-white font-medium'>Explore brand new Boost template.</p>
+          <a className='flex flex-row gap-2 cursor-pointer'>
+            <h5 className='text-xs text-white font-medium'>Learn more</h5>
+            <ArrowForward className='hover:translate-x-1 transition-all duration-700' fontSize='10px' htmlColor='white' />
+          </a>
+        </div>
+      </div>
+      {/*  */}
+      <Navbar backgroundColor="black" textColor="white" />
+      {/*  */}
+      <BoostSection />
+      {/*  */}
+      <BuildingBlock />
+      {/*  */}
+        <WatchVideo />
+      {/*  */}
+      <Footer />
+    </div>
+
+
   )
 }
 

@@ -17,7 +17,6 @@ const Navbar = (props) => {
 	return (
 		<div className="navbar-container items-center place-content-center flex-col flex-nowrap overflow-visible relative">
 			<div
-				
 				style={{ backgroundColor: bgColor, color : txtColor, }}
 				className="fixed w-full flex z-50 flex-grow-0 flex-shrink-0 gap-0 -translate-x-1/2 left-1/2">
 				<div className="w-full">
@@ -59,11 +58,11 @@ const Navbar = (props) => {
 										<div
 											className="text-white rounded-md px-4 py-2 hover:opacity-75 duration-700"
 											style={bgColor === 'white' ? { background: 'var(--primary)', filter: "brightness(1)" }
-												: { background: 'white', filter: 'darkness(1)' }}
+												: { background: 'rgb(116, 33, 252)', filter: 'darkness(1)' }}
 										>
 											<p className="text-xs leading-5"
 												style={{
-													color: backgroundColor,
+													color: bgColor !== 'white' && 'white',
 												}}
 											>Use Template</p>
 										</div>
