@@ -10,6 +10,7 @@ import BoostSection from '../components/landing1/boost';
 import BuildingBlock from '../components/landing1/building';
 import WatchVideo from '../components/landing1/watch';
 import NextWebsite from '../components/landing1/next';
+import FractionSection from '../components/landing1/fraction';
 
 
 
@@ -47,22 +48,22 @@ const scrollAnimation = () => {
     opacity: 0.5,
   });
 
-  // gsap.from('.our-office > div', {
-  //   scrollTrigger: {
-  //     trigger: '.our-office'
-  //   },
-  //   y: '+=30%',
-  //   opacity: 0.5,
-  // });
+  gsap.from('.next-website > div', {
+    scrollTrigger: {
+      trigger: '.next-website'
+    },
+    y: '+=30%',
+    opacity: 0.5,
+  });
 
 
-  // gsap.from('.our-mission > div', {
-  //   scrollTrigger: {
-  //     trigger: '.our-mission'
-  //   },
-  //   y: '+=30%',
-  //   opacity: 0.5,
-  // });
+  gsap.from('.fraction-section > div', {
+    scrollTrigger: {
+      trigger: '.fraction-section',
+    },
+    y: '+=30%',
+    opacity: 0.5,
+  });
 
 
   //  gsap.from('.try-it-now > div', {
@@ -111,7 +112,9 @@ const Landing1 = () => {
       {/*  */}
       <WatchVideo />
       {/*  */}
-      {/* <NextWebsite /> */}
+      <NextWebsite />
+      {/*  */}
+      <FractionSection />
       {/*  */}
       <Footer />
     </div>

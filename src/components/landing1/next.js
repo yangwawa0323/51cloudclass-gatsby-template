@@ -1,88 +1,94 @@
-import React from 'react'
+import * as React from 'react'
+import changelog from '../../assets/img/page-thumbnail/changelog.webp';
+import page404 from '../../assets/img/page-thumbnail/page_404.webp';
+import styleguide from '../../assets/img/page-thumbnail/styleguide.webp';
+import booststart from '../../assets/img/page-thumbnail/boost_start.webp';
+import legal from '../../assets/img/page-thumbnail/legal.webp';
+import price2 from '../../assets/img/page-thumbnail/price.webp';
+import mapPicture from '../../assets/img/page-thumbnail/map.webp';
+import blog1 from '../../assets/img/page-thumbnail/blog1.webp';
+import blog2 from '../../assets/img/page-thumbnail/blog2.webp';
+import about1 from '../../assets/img/page-thumbnail/about1.webp';
+
+
+import gsap from 'gsap';
+import { parse } from 'postcss';
+
+const animation = () => {
+	// const wrapper = document.querySelector('.next-website  div > ul');
+	const boxes = document.querySelectorAll('.next-website div >  ul > li');
+	// console.log("[DEBUG]:", wrapper, boxes);
+	const size = boxes.length;
+	const gap = 32;
+	const unit = 400 + gap;
+
+	gsap.set(boxes, {
+		x: index => `${ (size + index)  * unit }`  // move to right most side
+	});
+
+
+	gsap.to(boxes, {
+		duration: 45,
+		ease: "none",
+		x: `-=${size * unit } `, //move each box to left
+		modifiers: {
+			x: gsap.utils.unitize(x => parseFloat(x) % parseInt(`${size  * unit }`) - unit) //force x value to be between 0 and 500 using modulus
+		},
+		repeat: -1
+	});
+}
 
 const NextWebsite = () => {
+
+	React.useEffect(() => {
+		animation();
+	}, [])
+
 	return (
-		<div >
-			<div >
-				<div >
-					<p >complete toolkit</p>
-				</div>
-				<div >
-					<h2 >Building blocks for your next website.</h2>
-				</div>
-				<div >
-					<p >Build a unique experience by mixing and matching components. Make your brand shine.</p>
-				</div>
+		<div className='next-website overflow-hidden flex flex-col gap-8 py-16  justify-center items-center'>
+			<div className='flex flex-col justify-center items-center max-w-[500px] gap-3'>
+				<p className='text-sm font-extrabold text-purple-700 uppercase'>complete toolkit</p>
+				<h2 className='text-center'>Building blocks for your next website.</h2>
+				<p className='text-gray-600 font-bold text-sm'>Build a unique experience by mixing and matching components. Make your brand shine.</p>
 			</div>
-			<div >
-				<section >
-					<ul className='flex flex-row gap-4' >
-						<li >
-							<div >
-								<div >
-									<div data-framer-background-image-wrapper="true" data-projection-id="1944" >
-										<div >
-											<img src="https://framerusercontent.com/images/9b6RR8taFg9vAsG9W9YpMqSrSD8.png?scale-down-to=1024" alt="" srcset="https://framerusercontent.com/images/9b6RR8taFg9vAsG9W9YpMqSrSD8.png?scale-down-to=512 512w, https://framerusercontent.com/images/9b6RR8taFg9vAsG9W9YpMqSrSD8.png?scale-down-to=1024 1024w, https://framerusercontent.com/images/9b6RR8taFg9vAsG9W9YpMqSrSD8.png 1510w" />
-										</div>
-									</div>
-								</div>
-							</div>
-						</li>
-						<li >
-							<div >
-								<div >
-									<div data-framer-background-image-wrapper="true" data-projection-id="1947" >
-										<div >
-											<img src="https://framerusercontent.com/images/hGydrQktrZaYRys3vhv04NVJk8.jpg" alt="" />
-										</div>
-									</div>
-								</div>
-							</div>
-						</li>
-						<li >
-							<div >
-								<div >
-									<div >
-										<div data-framer-background-image-wrapper="true" data-projection-id="1951" >
-											<div >
-												<img src="https://framerusercontent.com/images/SlfTTjWWeTs0Mudlg4KgJlBLbI.jpg" alt="" />
-											</div>
-										</div>
-									</div>
-									<div >
-										<div data-framer-background-image-wrapper="true" data-projection-id="1953" >
-											<div >
-												<img src="https://framerusercontent.com/images/5THsbEC4GKqTO1JAZArCseQE0I.webp" alt="" />
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</li>
-						<li >
-							<div >
-								<div >
-									<div data-framer-background-image-wrapper="true" data-projection-id="2160" >
-										<div >
-											<img src="https://framerusercontent.com/images/9b6RR8taFg9vAsG9W9YpMqSrSD8.png?scale-down-to=1024" alt="" srcset="https://framerusercontent.com/images/9b6RR8taFg9vAsG9W9YpMqSrSD8.png?scale-down-to=512 512w, https://framerusercontent.com/images/9b6RR8taFg9vAsG9W9YpMqSrSD8.png?scale-down-to=1024 1024w, https://framerusercontent.com/images/9b6RR8taFg9vAsG9W9YpMqSrSD8.png 1510w" />
-										</div>
-									</div>
-								</div>
-							</div>
-						</li>
-						<li >
-							<div >
-								<div >
-									<div data-framer-background-image-wrapper="true" data-projection-id="2163" >
-										<div >
-											<img src="https://framerusercontent.com/images/hGydrQktrZaYRys3vhv04NVJk8.jpg" alt="" />
-										</div>
-									</div>
-								</div>
-							</div>
-						</li>
-					</ul>
-				</section>
+			<div className='h-[300px] overflow-hidden w-full'
+				style={{
+					WebkitMaskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 25%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0) 100%)',
+				}}
+			>
+				<ul className='flex flex-row gap-8 flex-nowrap relative' >
+					<li className='absolute'>
+						<img className='w-[400px] h-auto rounded-t-lg shadow-lg border-[1px] border-gray-300' src={changelog} />
+					</li>
+					<li className='absolute'>
+						<img className='w-[400px] h-auto rounded-t-lg shadow-lg border-[1px] border-gray-300' src={page404} />
+					</li>
+					<li className='absolute'>
+						<img className='w-[400px] h-auto rounded-t-lg shadow-lg border-[1px] border-gray-300' src={styleguide} />
+					</li>
+					 <li className='absolute'>
+						<img className='w-[400px] h-auto rounded-t-lg shadow-lg border-[1px] border-gray-300' src={booststart} />
+					</li>
+					<li className='absolute'>
+						<img className='w-[400px] h-auto rounded-t-lg shadow-lg border-[1px] border-gray-300' src={legal} />
+					</li>
+					<li className='absolute'>
+						<img className='w-[400px] h-auto rounded-t-lg shadow-lg border-[1px] border-gray-300' src={price2} />
+					</li>
+					<li className='absolute'>
+						<img className='w-[400px] h-auto rounded-t-lg shadow-lg border-[1px] border-gray-300' src={mapPicture} />
+					</li>
+					<li className='absolute'>
+						<img className='w-[400px] h-auto rounded-t-lg shadow-lg border-[1px] border-gray-300' src={blog1} />
+					</li>
+					<li className='absolute'>
+						<img className='w-[400px] h-auto rounded-t-lg shadow-lg border-[1px] border-gray-300' src={blog2} />
+					</li>
+					<li className='absolute'>
+						<img className='w-[400px] h-auto rounded-t-lg shadow-lg border-[1px] border-gray-300' src={about1} /> 
+					</li>
+
+				</ul>
 			</div>
 		</div>
 	)
