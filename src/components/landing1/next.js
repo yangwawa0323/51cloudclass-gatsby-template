@@ -17,7 +17,6 @@ import { parse } from 'postcss';
 const animation = () => {
 	// const wrapper = document.querySelector('.next-website  div > ul');
 	const boxes = document.querySelectorAll('.next-website div >  ul > li');
-	// console.log("[DEBUG]:", wrapper, boxes);
 	const size = boxes.length;
 	const gap = 32;
 	const unit = 400 + gap;

@@ -17,7 +17,7 @@ const FractionSection = () => {
 	},[])
 
 	return (
-		<div className='flex flex-col items-center justify-center gap-6 py-24'>
+		<div className='flex flex-col items-center justify-center gap-6 py-24 overflow-hidden'>
 			<div className='flex flex-col gap-4 items-center justify-center h-min max-w-[560px] text-white'>
 				<div >
 					<p className='uppercase font-extrabold text-gray-300'>Fraction template</p>

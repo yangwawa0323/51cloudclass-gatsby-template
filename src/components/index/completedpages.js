@@ -3,16 +3,11 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import PageView from './pageview';
 
-import page404 from '../../assets/img/page-thumbnail/page_404.webp';
-import styleguide from '../../assets/img/page-thumbnail/styleguide.webp';
-import changelog from '../../assets/img/page-thumbnail/changelog.webp';
-import landing4 from '../../assets/img/page-thumbnail/landing4.webp';
-import legal from '../../assets/img/page-thumbnail/legal.webp';
-import price2 from '../../assets/img/page-thumbnail/price.webp';
-import mapPicture from '../../assets/img/page-thumbnail/map.webp';
-import blog1 from '../../assets/img/page-thumbnail/blog1.webp';
-import blog2 from '../../assets/img/page-thumbnail/blog2.webp';
-import about1 from '../../assets/img/page-thumbnail/about1.webp';
+import pictures from '../../utils/image';
+
+
+
+import pageJsonData from '../../data/completed-page.json';
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -36,7 +31,11 @@ const animation = () => {
 
 
 const CompletedPages = () => {
+	const [pages, setPages] = React.useState([])
+
 	React.useEffect(() => {
+		let { pages } = pageJsonData
+		setPages(pages);
 		animation();
 	}, [])
 	return (
@@ -60,36 +59,18 @@ const CompletedPages = () => {
 				gridTemplateRows: 'repeat(2, minmax(0px, 1fr))',
 				gridAutoRows: 'minmax(0px, 1fr)',
 			}}>
-				<div >
-					<PageView route="/changelog" image={changelog} title="Change Log" />
-				</div>
-				<div >
-					<PageView route="/404" image={page404} title="404 Error page"/>
-				</div>
-				<div >
-					<PageView route="/blog2" image={blog2} title="Blog2 page" />
-				</div>
-				<div >
-					<PageView route="/styleguide" image={styleguide} title="Style Guide" />
-				</div>
-				<div >
-					<PageView route="/landing4" image={landing4} title="Landing 4 page" />
-				</div>
-				<div >
-					<PageView route="/blog1" image={blog1} title="Blog1 page" />
-				</div>
-				<div >
-					<PageView route="/contact1" image={mapPicture} title="Contact 1 page" />
-				</div>
-					<div >
-					<PageView route="/about1" image={about1} title="About 1 page" />
-				</div>
-				<div >
-					<PageView route="/price2" image={price2} title="Price2 page" />
-				</div>
-				<div >
-					<PageView route="/legal" image={legal} title="Legal page" />
-				</div>
+				{/*  */}
+				{
+					pages.map((page, index) => {
+						return (
+							<div key={index}>
+								<PageView route={page.route}
+									image={pictures[page.route.replace(/\//, '').replace(/404/, 'page404')]} title={page.title} />
+							</div>
+						)
+					})
+				}
+				{/*  */}
 			</div>
 		</div>
 	)

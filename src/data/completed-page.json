@@ -1,0 +1,44 @@
+{
+	"pages": [
+		{
+			"route" : "/changelog",
+			"title" : "Change Log"
+		},
+		{
+			"route": "/404",
+			"title" : "404 Error page"
+		},
+		{
+			"route": "/blog2",
+			"title": "Blog2 page"
+		},
+		{
+			"route": "/styleguide",
+			"title" : "Style guide page"
+		},
+		{
+			"route": "/landing4",
+			"title": "Landing 4 page"
+		},
+		{
+			"route": "/blog1",
+			"title": "Blog 1 page"
+		},
+		{
+			"route": "/contact1",
+			"title" : "Contact 1 page"
+		},
+		{
+			"route" : "/about1",
+			"title": "About 1 page"
+		},
+		{
+			"route": "/price2",
+			"title": "Price2 page"
+		},
+		{
+			"route": "/legal",
+			"title": "Legal page"
+		}
+	]
+}

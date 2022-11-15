@@ -12,12 +12,11 @@ import CompleteToolkit from '../components/index/completetoolkit';
 import CompletedPages from '../components/index/completedpages';
 import BoostSection from '../components/index/boost';
 import EssentialSection from '../components/index/essential';
-import { Link } from 'gatsby';
 import FractionSection from '../components/index/fraction';
 
 function Index() {
   return (
-    <div>
+    <div className="w-full self-center"> 
       <Navbar />
       <main>
         <div className='bg-white flex flex-col gap-[80px] h-min relative w-full items-center'>
