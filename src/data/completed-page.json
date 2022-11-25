@@ -17,6 +17,10 @@
 			"title" : "Style guide page"
 		},
 		{
+			"route": "/landing1",
+			"title": "Landing 1 page"
+		},
+		{
 			"route": "/landing4",
 			"title": "Landing 4 page"
 		},
