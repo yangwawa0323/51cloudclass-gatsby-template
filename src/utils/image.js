@@ -11,6 +11,7 @@ import blog2 from '../assets/img/page-thumbnail/blog2.webp';
 import about1 from '../assets/img/page-thumbnail/about1.webp';
 import contact1 from '../assets/img/page-thumbnail/contact1.webp';
 import booststart from '../assets/img/page-thumbnail/boost_start.webp';
+import asciinema from '../assets/img/page-thumbnail/contact1.webp';
 
 export default {
 	page404,
@@ -26,4 +27,5 @@ export default {
 	about1,
 	contact1,
 	booststart,
+	asciinema,
 }

@@ -1,17 +1,22 @@
 const { resolve } = require('path');
 const path = require('path');
 const { blogs } = require('./src/data/blog.json');
+const fakeData =  require('./src/data/allReactPages.json');
 
 const fetch = require('isomorphic-fetch')
 
 const getAllAsciinemaPages = async ({ graphql, actions }) => {
-	const asciinemaPages = await fetch(`${process.env.API_SERVER}/api/page/all`)
-		.then(response => {
-			if (response.status >= 400) {
-				throw new Error('Bad response from server');
-			}
-			return response.json();
-		});
+	let asciinemaPages, succeed;
+	const response = await fetch(`${process.env.API_SERVER}/api/page/all`)
+		.catch(e => {
+			succeed = false;
+			console.log("[DEBUG]: cannot connect to server, use local fake data")
+			asciinemaPages = fakeData;
+		})
+
+	if (succeed) {
+		asciinemaPages = await response.json();
+	}
 
 	asciinemaPages.forEach(page => {
 		actions.createPage({
@@ -45,7 +50,7 @@ const getAllBlogs = async ({ graphql, actions }) => {
 }
 
 exports.createPages = async (params) => {
-	const {actions, graphql } = params
+	const { actions, graphql } = params
 
 	// blog1 list page
 	actions.createPage({

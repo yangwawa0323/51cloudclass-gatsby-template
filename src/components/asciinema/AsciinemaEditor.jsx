@@ -2,6 +2,7 @@ import Editor from "@react-page/editor";
 
 import React from "react";
 import { baseCellPlugins } from "../../plugins/cellPlugins";
+import PropTypes from 'prop-types'
 
 /**
  * IMPORTANT! IMPORTANT! IMPORTANT!
@@ -19,18 +20,25 @@ import { baseCellPlugins } from "../../plugins/cellPlugins";
  * )
  * 
 */ 
-const AsciinemaEditor = ({mode}) => {
-  const [value, setValue] = React.useState(null);
+const AsciinemaEditor = ({mode, initialValue , onChange}) => {
+  const [value, setValue] = React.useState(initialValue || null);
   return (
       <div className="react-page-editor-container">
         <Editor
           cellPlugins={baseCellPlugins}
-          value={value}
-          onChange={setValue}
+          value={initialValue||value}
+          onChange={onChange||setValue}
           readOnly={mode}
         />
       </div>
   );
 };
 
+AsciinemaEditor.prototype = {
+  mode : PropTypes.string,
+  initialValue: PropTypes.object,
+  onChange: PropTypes.func,
+}
+
 export default AsciinemaEditor;
+

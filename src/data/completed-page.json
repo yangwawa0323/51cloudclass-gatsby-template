@@ -21,6 +21,10 @@
 			"title": "Landing 1 page"
 		},
 		{
+			"route": "/asciinema",
+			"title": "asciinema editor (local only) page"
+		},
+		{
 			"route": "/landing4",
 			"title": "Landing 4 page"
 		},

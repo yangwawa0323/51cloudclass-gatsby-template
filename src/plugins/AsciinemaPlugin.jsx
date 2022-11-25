@@ -87,10 +87,10 @@ const asciinemaPlugin = {
   id: "asiinema-player/plugin",
   title: "asciinema-player",
   Renderer: ({ nodeId, data }) => {
-    console.log('[DEBUG]: nodeId: ', nodeId);
+    // console.log('[DEBUG]: nodeId: ', nodeId);
     return (
-      <div>
-        <p>Asciinema-player plugin version: 1.0</p>
+      <div className="px-12 py-4 flex gap-2 flex-col">
+        {/* <p className="text-gray-400 text-sm ">Asciinema-player plugin version: 1.0</p> */}
         <div id="asciinema-player-container">
           <AsciinemaWrapper url={data?.url} id={nodeId} zoomable/>
         </div>
