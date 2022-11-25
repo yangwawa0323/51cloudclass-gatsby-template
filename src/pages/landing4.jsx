@@ -1,9 +1,9 @@
 import * as React from 'react'
 import gsap from 'gsap';
-import Navbar from '../components/common/navbar';
-import Footer from '../components/common/footer';
-import BoostSection from '../components/landing4/boost';
-import OurSuccess from '../components/landing4/our';
+import Navbar from '../components/common/Navbar';
+import Footer from '../components/common/Footer';
+import BoostSection from '../components/landing4/Boost';
+import OurSuccess from '../components/landing4/Our';
 
 const LandingPage4 = () => {
 	return (

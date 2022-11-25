@@ -1,16 +1,16 @@
 import * as  React from 'react'
-import Footer from '../components/common/footer'
-import Navbar from '../components/common/navbar';
+import Footer from '../components/common/Footer'
+import Navbar from '../components/common/Navbar';
 import { AccessAlarm, ArrowForward, AutoAwesome, CheckCircle, Extension, PlayCircle, Search, Smartphone } from '@mui/icons-material'
 
 
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
-import BoostSection from '../components/landing1/boost';
-import BuildingBlock from '../components/landing1/building';
-import WatchVideo from '../components/landing1/watch';
-import NextWebsite from '../components/landing1/next';
-import FractionSection from '../components/landing1/fraction';
+import BoostSection from '../components/landing1/Boost';
+import BuildingBlock from '../components/landing1/Building';
+import WatchVideo from '../components/landing1/Watch';
+import NextWebsite from '../components/landing1/Next';
+import FractionSection from '../components/landing1/Fraction';
 
 
 

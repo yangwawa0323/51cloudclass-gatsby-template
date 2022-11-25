@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Footer from '../components/common/footer';
-import Navbar from '../components/common/navbar';
+import Footer from '../components/common/Footer';
+import Navbar from '../components/common/Navbar';
 import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import EastIcon from '@mui/icons-material/East';
 import gsap from 'gsap';

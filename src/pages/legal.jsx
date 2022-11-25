@@ -1,6 +1,6 @@
 import React from 'react'
-import Footer from '../components/common/footer'
-import Navbar from '../components/common/navbar'
+import Footer from '../components/common/Footer'
+import Navbar from '../components/common/Navbar'
 
 const Legal = () => {
 	return (

@@ -1,6 +1,6 @@
 import React from 'react'
-import Footer from '../components/common/footer'
-import Navbar from '../components/common/navbar';
+import Footer from '../components/common/Footer'
+import Navbar from '../components/common/Navbar';
 import VPN from '../assets/img/VPNaNlpAPRXTqrOXAT44QsmNMxE.webp';
 
 const ChangeLog = () => {

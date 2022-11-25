@@ -68,3 +68,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## New page
+> NOTE: Add new page data to `completed-page.json` and also you need add the image url to `utils/images` as an imported asset.  
+
+> `blog1` and `blog2` is generate by gatsby-node.js

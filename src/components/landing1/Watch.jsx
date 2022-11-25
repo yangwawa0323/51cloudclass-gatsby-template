@@ -1,11 +1,11 @@
 import * as React from 'react'
 import { Backdrop } from '@mui/material';
-import VideoJS from '../../utils/video';
+import VideoJS from '../../utils/Video';
 import { CheckCircle, HighlightOff, PlayCircle } from '@mui/icons-material';
 import { useKeypress } from '../../utils/key';
 
 const videoJsOptions = {
-  autoplay: true,
+  autoplay: false,
   controls: true,
   responsive: true,
   // fluid: true,

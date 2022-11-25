@@ -1,18 +1,18 @@
 import * as React from 'react';
-import Footer from '../components/common/footer';
-import Navbar from '../components/common/navbar';
+import Footer from '../components/common/Footer';
+import Navbar from '../components/common/Navbar';
 
 // move the index.scss to navbar.js, otherwise by input the page URI 
 // has not style defined.
 
 // import '../styles/index.scss';
 
-import ThreeCards from '../components/index/threecards';
-import CompleteToolkit from '../components/index/completetoolkit';
-import CompletedPages from '../components/index/completedpages';
-import BoostSection from '../components/index/boost';
-import EssentialSection from '../components/index/essential';
-import FractionSection from '../components/index/fraction';
+import ThreeCards from '../components/index/ThreeCards';
+import CompleteToolkit from '../components/index/CompleteToolkit';
+import CompletedPages from '../components/index/CompletedPages';
+import BoostSection from '../components/index/Boost';
+import EssentialSection from '../components/index/Essential';
+import FractionSection from '../components/index/Fraction';
 
 function Index() {
   return (

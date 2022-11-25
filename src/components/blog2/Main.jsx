@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import * as React from 'react'
-import Footer from '../common/footer';
-import Navbar from '../common/navbar';
+import Footer from '../common/Footer';
+import Navbar from '../common/Navbar';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 

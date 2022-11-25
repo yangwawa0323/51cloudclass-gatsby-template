@@ -1,7 +1,7 @@
 import React from 'react'
-import Footer from '../components/common/footer'
-import Navbar from '../components/common/navbar'
-import PlanSection from '../components/price2/plan'
+import Footer from '../components/common/Footer'
+import Navbar from '../components/common/Navbar'
+import PlanSection from '../components/price2/Plan'
 
 const Price2 = () => {
   return (

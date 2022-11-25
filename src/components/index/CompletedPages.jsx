@@ -62,6 +62,7 @@ const CompletedPages = () => {
 				{/*  */}
 				{
 					pages.map((page, index) => {
+						console.log("[DEBUG]: ", page)
 						return (
 							<div key={index}>
 								<PageView route={page.route}

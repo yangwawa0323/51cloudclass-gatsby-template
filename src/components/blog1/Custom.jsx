@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Footer from '../common/footer';
-import Navbar from '../common/navbar';
+import Footer from '../common/Footer';
+import Navbar from '../common/Navbar';
 import { Link } from 'gatsby';
 
 

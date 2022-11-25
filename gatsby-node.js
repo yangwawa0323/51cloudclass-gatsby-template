@@ -14,7 +14,7 @@ exports.createPages = ({ actions }) => {
 	// blog1 list page
 	createPage({
 		path: `/blog1`,
-		component: require.resolve('./src/components/blog1/main.js'),
+		component: require.resolve('./src/components/blog1/Main.jsx'),
 		context: {
 			title: 'blog1 list',
 			// simpleBlogLists,
@@ -25,7 +25,7 @@ exports.createPages = ({ actions }) => {
 	// blog2 list page
 	createPage({
 		path: `/blog2`,
-		component: require.resolve('./src/components/blog2/main.js'),
+		component: require.resolve('./src/components/blog2/Main.jsx'),
 		context: {
 			title: 'blog2 list',
 			// simpleBlogLists,
@@ -43,7 +43,7 @@ exports.createPages = ({ actions }) => {
 		})
 		createPage({
 			path: `/blog/${blog.title.toLowerCase().replace(/ /g, '-')}`,
-			component: require.resolve('./src/components/blog1/custom'),
+			component: require.resolve('./src/components/blog1/Custom.jsx'),
 			context: {
 				title: blog.title,
 				blog,
