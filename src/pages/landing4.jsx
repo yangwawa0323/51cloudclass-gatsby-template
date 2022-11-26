@@ -1,5 +1,4 @@
 import * as React from 'react'
-import gsap from 'gsap';
 import Navbar from '../components/common/Navbar';
 import Footer from '../components/common/Footer';
 import BoostSection from '../components/landing4/Boost';

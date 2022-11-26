@@ -3,6 +3,17 @@ const path = require('path');
 const { blogs } = require('./src/data/blog.json');
 const fakeData =  require('./src/data/allReactPages.json');
 
+
+// exports.onCreateWebpackConfig = ({ getConfig, actions }) => {
+// 	const config = getConfig()
+//   if (config.mode === 'production') {
+//     actions.setWebpackConfig({
+// 	  ...copyWebpackConfig,	
+//       devtool: false
+//     });
+//   }
+// };
+
 const fetch = require('isomorphic-fetch')
 
 const getAllAsciinemaPages = async ({ graphql, actions }) => {

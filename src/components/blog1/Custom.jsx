@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 
 
 const CustomBlog = ({ pageContext }) => {
-	const { blog, title, relatives } = pageContext
+	const { blog,  relatives } = pageContext
 	return (
 		<div className='flex flex-col justify-center items-center'>
 			<Navbar />
@@ -61,7 +61,7 @@ const CustomBlog = ({ pageContext }) => {
 						<div className='flex flex-row gap-4  justify-center items-center'>
 							{
 								relatives?.length > 1 && relatives.map((rel, index) => {
-									if (index >= 2) return
+									if (index >= 2) return (<></>)
 									return (
 										<div key={rel.title} className="flex-1 ">
 											<Link to={`/blog/${rel.title.toLowerCase().replace(/ /g, '-')}`} 

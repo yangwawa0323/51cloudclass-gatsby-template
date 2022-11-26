@@ -1,7 +1,7 @@
 import * as  React from 'react'
 import Footer from '../components/common/Footer'
 import Navbar from '../components/common/Navbar';
-import { AccessAlarm, ArrowForward, AutoAwesome, CheckCircle, Extension, PlayCircle, Search, Smartphone } from '@mui/icons-material'
+import ArrowForward  from '@mui/icons-material/ArrowForward'
 
 
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -97,7 +97,7 @@ const Landing1 = () => {
         className='flex justify-center items-center p-4 z-10 sticky top-0'>
         <div className='flex flex-row gap-2 '>
           <p className='text-xs text-white font-medium'>Explore brand new Boost template.</p>
-          <a className='flex flex-row gap-2 cursor-pointer'>
+          <a href="/" className='flex flex-row gap-2 cursor-pointer'>
             <h5 className='text-xs text-white font-medium'>Learn more</h5>
             <ArrowForward className='hover:translate-x-1 transition-all duration-700' fontSize='10px' htmlColor='white' />
           </a>

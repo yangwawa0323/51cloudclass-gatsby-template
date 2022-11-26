@@ -91,7 +91,7 @@ const About1 = () => {
         <div className='max-w-[1200px] h-[600px] overflow-hidden rounded-2xl shadow-md' >
           <div >
             <div >
-              <img src="https://framerusercontent.com/images/x8MsMLzPw4oCKSmMNOuZy76n2Is.jpg" />
+              <img alt="" src="https://framerusercontent.com/images/x8MsMLzPw4oCKSmMNOuZy76n2Is.jpg" />
             </div>
           </div>
         </div>
@@ -327,7 +327,7 @@ const About1 = () => {
           </div>
           <div >
             <div >
-              <a className='flex flex-row gap-3 justify-start items-center cursor-pointer'>
+              <a href="/" className='flex flex-row gap-3 justify-start items-center cursor-pointer'>
                 <p className='text-sm text-purple-700 font-extrabold uppercase'>Join our team</p>
                 <EastIcon fontSize="14px" htmlColor='rgb(136,0,255)' />
               </a>
@@ -337,14 +337,15 @@ const About1 = () => {
         <div className='flex-1 grid grid-cols-[repeat(2,minmax(200px,1fr))]  max-w-[570px] grid-rows-[repeat(2,min-content)] gap-4 h-min justify-center'>
           <div className='col-span-2 rounded-[10px] overflow-hidden opacity-80 hover:opacity-100 shadow-lg hover:shadow-xl  h-auto'>
             <img
+              alt=""
               className=' object-cover'
               src="https://framerusercontent.com/images/p9hyHOsGihvVoRCOz9af0C8Q.jpg" />
           </div>
           <div className='rounded-[10px] overflow-hidden opacity-80 hover:opacity-100 duration-700 shadow-lg hover:shadow-xl' >
-            <img className='object-cover  h-[275px] w-[299px]' src="https://framerusercontent.com/images/xTJots53J1tNU5byXL7DoqNrQJc.jpg" />
+            <img alt="" className='object-cover  h-[275px] w-[299px]' src="https://framerusercontent.com/images/xTJots53J1tNU5byXL7DoqNrQJc.jpg" />
           </div>
           <div className='rounded-[10px] overflow-hidden opacity-80 hover:opacity-100 shadow-lg hover:shadow-xl'>
-            <img className=' object-cover h-[275px] w-[299px]' src="https://framerusercontent.com/images/9wXcOZ9Y104tkWF0G0qyPSENWys.jpg" />
+            <img alt="" className=' object-cover h-[275px] w-[299px]' src="https://framerusercontent.com/images/9wXcOZ9Y104tkWF0G0qyPSENWys.jpg" />
           </div>
         </div>
       </div>

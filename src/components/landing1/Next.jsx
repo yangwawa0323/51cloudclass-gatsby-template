@@ -12,7 +12,6 @@ import about1 from '../../assets/img/page-thumbnail/about1.webp';
 
 
 import gsap from 'gsap';
-import { parse } from 'postcss';
 
 const animation = () => {
 	// const wrapper = document.querySelector('.next-website  div > ul');
@@ -57,34 +56,34 @@ const NextWebsite = () => {
 			>
 				<ul className='flex flex-row gap-8 flex-nowrap relative' >
 					<li className='absolute'>
-						<img className='w-[400px] h-auto rounded-t-lg shadow-lg border-[1px] border-gray-300' src={changelog} />
+						<img alt="" className='w-[400px] h-auto rounded-t-lg shadow-lg border-[1px] border-gray-300' src={changelog} />
 					</li>
 					<li className='absolute'>
-						<img className='w-[400px] h-auto rounded-t-lg shadow-lg border-[1px] border-gray-300' src={page404} />
+						<img alt="" className='w-[400px] h-auto rounded-t-lg shadow-lg border-[1px] border-gray-300' src={page404} />
 					</li>
 					<li className='absolute'>
-						<img className='w-[400px] h-auto rounded-t-lg shadow-lg border-[1px] border-gray-300' src={styleguide} />
+						<img alt="" className='w-[400px] h-auto rounded-t-lg shadow-lg border-[1px] border-gray-300' src={styleguide} />
 					</li>
 					 <li className='absolute'>
-						<img className='w-[400px] h-auto rounded-t-lg shadow-lg border-[1px] border-gray-300' src={booststart} />
+						<img  alt="" className='w-[400px] h-auto rounded-t-lg shadow-lg border-[1px] border-gray-300' src={booststart} />
 					</li>
 					<li className='absolute'>
-						<img className='w-[400px] h-auto rounded-t-lg shadow-lg border-[1px] border-gray-300' src={legal} />
+						<img alt="" className='w-[400px] h-auto rounded-t-lg shadow-lg border-[1px] border-gray-300' src={legal} />
 					</li>
 					<li className='absolute'>
-						<img className='w-[400px] h-auto rounded-t-lg shadow-lg border-[1px] border-gray-300' src={price2} />
+						<img alt="" className='w-[400px] h-auto rounded-t-lg shadow-lg border-[1px] border-gray-300' src={price2} />
 					</li>
 					<li className='absolute'>
-						<img className='w-[400px] h-auto rounded-t-lg shadow-lg border-[1px] border-gray-300' src={mapPicture} />
+						<img alt="" className='w-[400px] h-auto rounded-t-lg shadow-lg border-[1px] border-gray-300' src={mapPicture} />
 					</li>
 					<li className='absolute'>
-						<img className='w-[400px] h-auto rounded-t-lg shadow-lg border-[1px] border-gray-300' src={blog1} />
+						<img alt="" className='w-[400px] h-auto rounded-t-lg shadow-lg border-[1px] border-gray-300' src={blog1} />
 					</li>
 					<li className='absolute'>
-						<img className='w-[400px] h-auto rounded-t-lg shadow-lg border-[1px] border-gray-300' src={blog2} />
+						<img alt="" className='w-[400px] h-auto rounded-t-lg shadow-lg border-[1px] border-gray-300' src={blog2} />
 					</li>
 					<li className='absolute'>
-						<img className='w-[400px] h-auto rounded-t-lg shadow-lg border-[1px] border-gray-300' src={about1} /> 
+						<img alt="" className='w-[400px] h-auto rounded-t-lg shadow-lg border-[1px] border-gray-300' src={about1} /> 
 					</li>
 
 				</ul>

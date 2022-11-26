@@ -2,7 +2,7 @@
 import * as React from 'react';
 
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { shadesOfPurple  , coldarkCold , darcula , duotoneForest, vs as style} from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { vs as style} from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
 const CodeSnippet = ({ code, language }) => (
   <SyntaxHighlighter className='font-medium leading-9 rounded-md shadow-lg' wrapLongLines language={language} style={style} showLineNumbers wrapLines>

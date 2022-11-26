@@ -1,13 +1,23 @@
 {
-  "name": "51cloudclass",
-  "version": "0.1.0",
+  "name": "my-gatsby-site",
+  "version": "1.0.0",
   "private": true,
+  "description": "my-gatsby-site",
+  "author": "yangwawa0323",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
   "dependencies": {
-    "@emotion/cache": "^11.10.5",
-    "@emotion/core": "^11.0.0",
-    "@emotion/css": "^11.10.5",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@mdx-js/react": "^2.1.5",
     "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.12",
     "@react-page/editor": "^5.2.0",
@@ -15,59 +25,24 @@
     "@react-page/plugins-html5-video": "^5.2.0",
     "@react-page/plugins-slate": "^5.2.0",
     "@react-page/plugins-spacer": "^5.2.0",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
     "asciinema-player": "^3.0.1",
     "dotenv": "^16.0.3",
-    "gatsby": "^4.24.6",
-    "gatsby-plugin-image": "^2.24.0",
-    "gatsby-plugin-react-helmet": "^5.24.0",
-    "gatsby-plugin-sass": "^5.24.0",
-    "gatsby-plugin-sharp": "^4.24.0",
-    "gatsby-remark-images": "^6.24.0",
-    "gatsby-source-filesystem": "^4.24.0",
-    "gatsby-transformer-sharp": "^4.24.0",
+    "gatsby": "^5.2.0",
+    "gatsby-plugin-mdx": "^5.2.0",
+    "gatsby-plugin-sass": "^6.2.0",
+    "gatsby-source-filesystem": "^5.2.0",
     "gsap": "^3.11.3",
-    "isomorphic-fetch": "^3.0.0",
-    "path": "^0.12.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-helmet": "^6.1.0",
-    "react-scripts": "5.0.1",
     "react-syntax-highlighter": "^15.5.0",
-    "video.js": "^7.20.3",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "sass": "^1.56.1",
+    "video.js": "^7.20.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
-    "node-sass": "^8.0.0",
-    "postcss": "^8.4.18",
-    "sass": "^1.55.0",
-    "tailwindcss": "^3.2.1"
+    "gatsby-plugin-postcss": "^6.2.0",
+    "isomorphic-fetch": "^3.0.0",
+    "postcss": "^8.4.19",
+    "tailwindcss": "^3.2.4"
   }
 }

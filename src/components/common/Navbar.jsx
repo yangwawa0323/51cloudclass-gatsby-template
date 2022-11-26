@@ -11,7 +11,7 @@ const Navbar = (props) => {
 	React.useEffect(() => {
 		setBgColor(backgroundColor ? backgroundColor : 'white');
 		setTxtColor(textColor ? textColor : '')
-	},[])
+	},[backgroundColor, textColor])
 	
 
 	return (

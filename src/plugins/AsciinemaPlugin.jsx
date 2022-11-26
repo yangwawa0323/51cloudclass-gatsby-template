@@ -4,15 +4,18 @@
 
 import React, { useCallback, useEffect, useState } from "react";
 import "asciinema-player/dist/bundle/asciinema-player.css";
-import { css } from "@emotion/css";
+import Skeleton  from "@mui/material/Skeleton";
+import { debug, removeAllChildNodes } from "../utils/tools";
 
 const demoUrl = "https://asciinema.org/a/335480.cast";
 
 var AsciinemaPlayer = null;
 
 const AsciinemaWrapper = (props) => {
+  let playerInstance;
   const [player, setPlayer] = useState(null);
-  const { url, id , zoomable} = props;
+  const { url, id } = props;
+  const [loading, setLoading] = useState(true);
 
   // the `id` is different between each asciinema player cell unit.
   const getContainerId = () => `#asciinema-player-${id}`;
@@ -22,10 +25,9 @@ const AsciinemaWrapper = (props) => {
   const cleanPlayerContainerContent = () => {
     let container = getContainer();
     if (container) {
-      container.innerHTML = "";
+      removeAllChildNodes(container);
     }
   };
-  
 
   // optimize the load module.
   const loadedmodule = useCallback(
@@ -34,50 +36,88 @@ const AsciinemaWrapper = (props) => {
     [url, id]
   );
 
+
+  
+  // const fetchAndInitial = () => {
+  //   cleanPlayerContainerContent();
+  //   debug("clean player container");
+  //   fetch(url)
+  //     .then((response) => {
+  //       /*
+  //        * eachtime the url changed, clean the content of player container
+  //        */
+  //       playerInstance = AsciinemaPlayer?.create(url, getContainer(), {
+  //         autoplay: true,
+  //         loop: true,
+  //         fit: "height",
+  //       });
+  //       debug("set player");
+  //       setPlayer(playerInstance);
+  //       setTimeout(() => setLoading(false), 1500);
+  //       debug("loaded.");
+  //     })
+  //     .catch((e) => {
+  //       cleanPlayerContainerContent();
+  //     });
+  // };
+
+  const initial = () => {
+    cleanPlayerContainerContent();
+    debug("clean player container");
+    /*
+     * eachtime the url changed, clean the content of player container
+     */
+    playerInstance = AsciinemaPlayer?.create(url, getContainer(), {
+      autoplay: true,
+      loop: true,
+      fit: "height",
+    });
+    debug("set player");
+    setPlayer(playerInstance);
+    setTimeout(() => setLoading(false), 1500);
+    debug("loaded.");
+  };
+
   useEffect(() => {
     AsciinemaPlayer = player ? player : loadedmodule();
 
+    debug(url);
     if (url?.endsWith(".cast")) {
-      setTimeout(() => {
-        // use fetch to determine the url is valid resource
-        fetch(url)
-          .then(() => {
-            /*
-             * eachtime the url changed, clean the content of player container
-             */
-            cleanPlayerContainerContent();
-            let playerInstance = AsciinemaPlayer?.create(
-              url !== undefined ? url : demoUrl,
-              getContainer(),
-              {
-                autoplay: true,
-                loop: true,
-              }
-            );
-            setPlayer(playerInstance);
-          })
-          .catch((e) => {
-            cleanPlayerContainerContent();
-          });
-        }, 1500);
-      }
+      // use fetch to determine the url is valid resource
+      // TODO: slow network has problem
+      // fetchAndInitial();
+
+      // no testing just initial
+      initial();
+    }
     // eslint-disable-next-line camelcase, react-hooks/exhaustive-deps
-  }, [props.url]);
-  
+  }, [props.url, props.id]);
+
   return (
     <div>
       {url !== demoUrl && (
         <div
           id={"asciinema-player-" + id}
-          className={css`
-            border-radius: 10px;
-            transition: all 1.2s;
-            overflow: hidden;
-            &:hover{
-              transform: scale(${!!zoomable ?  1.2 : 1.0});
-            }
-          `}
+          style={{
+            borderRadius: "10px",
+            transition: "transform 1.2s",
+            overflow: "hidden",
+            width: loading ? "0px" : "400px",
+            height: loading ? "0px" : "400px",
+          }}
         ></div>
+      )}
+      {loading && (
+        <div>
+          <Skeleton
+            sx={{
+              borderRadius: "10px",
+            }}
+            variant="rectangular"
+            width={400}
+            height={400}
+          />
+        </div>
       )}
     </div>
   );
@@ -90,9 +130,8 @@ const asciinemaPlugin = {
     // console.log('[DEBUG]: nodeId: ', nodeId);
     return (
       <div className="px-12 py-4 flex gap-2 flex-col">
-        {/* <p className="text-gray-400 text-sm ">Asciinema-player plugin version: 1.0</p> */}
         <div id="asciinema-player-container">
-          <AsciinemaWrapper url={data?.url} id={nodeId} zoomable/>
+          <AsciinemaWrapper url={data?.url} id={nodeId} zoomable />
         </div>
       </div>
     );

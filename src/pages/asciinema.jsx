@@ -3,12 +3,13 @@ import AsciinemaEditor from "../components/asciinema/AsciinemaEditor";
 import Footer from "../components/common/Footer";
 import Navbar from "../components/common/Navbar";
 import "../styles/components/_asciinema.scss";
-import { Button, Snackbar, Alert } from "@mui/material";
-import { ArrowForward } from "@mui/icons-material";
+import Button from "@mui/material/Button";
+import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert";
+import ArrowForward from "@mui/icons-material/ArrowForward";
 
-import { debug } from "../utils/tools";
+// import { debug } from "../utils/tools";
 import { navigate } from "gatsby";
-import { css } from "@emotion/css";
 
 const Asciinema = () => {
   const [value, setValue] = React.useState(null);
@@ -16,7 +17,7 @@ const Asciinema = () => {
   const [errorMessage, setErrorMessage] = React.useState(null);
 
   const postData = async () => {
-    debug({ content: JSON.stringify(value) });
+    // debug({ content: JSON.stringify(value) });
 
     const response = await fetch(`${process.env.API_SERVER}/api/page/new`, {
       method: "POST",
@@ -36,7 +37,7 @@ const Asciinema = () => {
 
     if (!response.ok) {
       let respObj = await response.json();
-      debug(respObj);
+      // debug(respObj);
       setSnackbarOpen(true);
       setErrorMessage(respObj?.error || "Failed to save.");
       return;

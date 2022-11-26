@@ -13,7 +13,7 @@ import contact1 from '../assets/img/page-thumbnail/contact1.webp';
 import booststart from '../assets/img/page-thumbnail/boost_start.webp';
 import asciinema from '../assets/img/page-thumbnail/contact1.webp';
 
-export default {
+const allImages = {
 	page404,
 	styleguide,
 	changelog,
@@ -29,3 +29,5 @@ export default {
 	booststart,
 	asciinema,
 }
+
+export default allImages;

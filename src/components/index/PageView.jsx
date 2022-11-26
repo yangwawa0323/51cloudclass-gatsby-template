@@ -14,7 +14,10 @@ const PageView = (props) => {
 				<div className='relative border shadow-lg rounded-md overflow-hidden h-[420px] aspect-[4/5] object-cover pointer-events-none'>
 					<div className='pointer-events-auto' onPointerEnter={()=> setActive(true)}  >
 						<div >
-							<img src={image} />
+						{/* eslint-disable-next-line camelcase jsx-a11y/alt-text */}
+						<img 
+						alt={title} 
+						src={image} />
 						</div>
 					</div>
 					{/* hover show the following content up  */}

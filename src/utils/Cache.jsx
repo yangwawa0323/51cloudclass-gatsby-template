@@ -1,7 +1,7 @@
 import * as React from "react";
 import createCache from "@emotion/cache";
 import { CacheProvider } from "@emotion/react";
-import { CssBaseline } from "@mui/material";
+import CssBaseline  from "@mui/material/CssBaseline";
 
 const createEmotionCache = () => {
   return createCache({

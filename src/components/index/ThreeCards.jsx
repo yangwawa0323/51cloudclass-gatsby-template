@@ -70,7 +70,7 @@ const ThreeCards = () => {
             </div>
             <div >
               <div className='cursor-pointer text-purple-500 text-sm font-bold'>
-                <a className='flex flex-row gap-1'>
+                <div className='flex flex-row gap-1'>
                   <div >
                     <p>Explore pages</p>
                   </div>
@@ -79,7 +79,7 @@ const ThreeCards = () => {
                       <ArrowForwardIcon fontSize='1rem' />
                     </div>
                   </div>
-                </a>
+                </div>
               </div>
             </div>
           </div>
@@ -124,14 +124,14 @@ const ThreeCards = () => {
             </div>
             <div >
               <div className='cursor-pointer text-purple-500 font-bold text-sm' >
-                <a className='flex flex-row gap-1'>
+                <div className='flex flex-row gap-1'>
                   <div >
                     <p>See Style Guide</p>
                   </div>
                   <div >
                     <ArrowForwardIcon fontSize='1rem' />
                   </div>
-                </a>
+                </div>
               </div>
             </div>
           </div>

@@ -26,12 +26,12 @@ const Footer = (props) => {
 								</div>
 								<div>
 									<p>
-										<a>Overview</a>
+										<a href="/">Overview</a>
 									</p>
 								</div>
 								<div>
 									<p>
-										<a>Pages</a>
+										<a href="/">Pages</a>
 									</p>
 								</div>
 								<div>
@@ -53,7 +53,7 @@ const Footer = (props) => {
 								</div>
 								<div>
 									<p>
-										<a>
+										<a href="./landing1">
 											Landing Page
 										</a>
 									</p>
@@ -112,8 +112,7 @@ const Footer = (props) => {
 						<div>
 							<div>
 								<p className="text-[11px]">
-									<a href="https://www.framer.com/"
-										target="_blank"
+									<a href="https://www.51cloudclass.com/"
 									>
 										© Copyright by <strong>51cloudclass</strong>
 									</a>

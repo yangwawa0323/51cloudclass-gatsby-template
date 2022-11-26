@@ -98,18 +98,16 @@ const OurSuccess = () => {
 					src="https://framerusercontent.com/images/Pz5ekF4c6XYu5aMYYpM3nenmv4.jpg?scale-down-to=2048" alt="People in the office" />
 
 				{index < (size - 1) &&
-					<div
+					<div 
 						style={{ visibility: aniCompleted ? 'visible' : 'hidden' }}
-						onClick={toLeft}
 						className='cursor-pointer absolute top-1/2 left-4 z-50 h-8 w-8 shadow-md bg-white hover:bg-gray-100 rounded-full flex justify-center items-center' >
-						<ArrowBack fontSize='10px' />
+						<ArrowBack onClick={toLeft} fontSize='10px' />
 					</div>}
 				{index !== 0 &&
 					<div
 						style={{ visibility: aniCompleted ? 'visible' : 'hidden' }}
-						onClick={toRight}
 						className='absolute top-1/2 right-4 z-50 h-8 w-8 shadow-md bg-white hover:bg-gray-100 rounded-full flex justify-center items-center' >
-						<ArrowForward fontSize='10px' />
+						<ArrowForward onClick={toRight} fontSize='10px' />
 					</div>}
 			</div>
 

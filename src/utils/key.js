@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+// import * as React from "react";
 export function useKeypress(key, action, deps) {
   // useEffect(() => {
     function onKeyup(e) {
