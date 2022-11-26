@@ -4,7 +4,7 @@
 
 import React, { useCallback, useEffect, useState } from "react";
 import "asciinema-player/dist/bundle/asciinema-player.css";
-// import Skeleton  from "@mui/material/Skeleton";
+import Skeleton from "@mui/material/Skeleton";
 import { debug, removeAllChildNodes } from "../utils/tools";
 
 const demoUrl = "https://asciinema.org/a/335480.cast";
@@ -15,7 +15,7 @@ const AsciinemaWrapper = (props) => {
   let playerInstance;
   const [player, setPlayer] = useState(null);
   const { url, id } = props;
-  // const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   // the `id` is different between each asciinema player cell unit.
   const getContainerId = () => `#asciinema-player-${id}`;
@@ -33,33 +33,8 @@ const AsciinemaWrapper = (props) => {
   const loadedmodule = useCallback(
     () => require("asciinema-player"),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [url, id]
+    []
   );
-
-
-  
-  // const fetchAndInitial = () => {
-  //   cleanPlayerContainerContent();
-  //   debug("clean player container");
-  //   fetch(url)
-  //     .then((response) => {
-  //       /*
-  //        * eachtime the url changed, clean the content of player container
-  //        */
-  //       playerInstance = AsciinemaPlayer?.create(url, getContainer(), {
-  //         autoplay: true,
-  //         loop: true,
-  //         fit: "height",
-  //       });
-  //       debug("set player");
-  //       setPlayer(playerInstance);
-  //       setTimeout(() => setLoading(false), 1500);
-  //       debug("loaded.");
-  //     })
-  //     .catch((e) => {
-  //       cleanPlayerContainerContent();
-  //     });
-  // };
 
   const initial = () => {
     cleanPlayerContainerContent();
@@ -74,7 +49,7 @@ const AsciinemaWrapper = (props) => {
     });
     debug("set player");
     setPlayer(playerInstance);
-    // setTimeout(() => setLoading(false), 1500);
+    setTimeout(() => setLoading(false), 1500);
     debug("loaded.");
   };
 
@@ -83,14 +58,11 @@ const AsciinemaWrapper = (props) => {
 
     debug(url);
     if (url?.endsWith(".cast")) {
-      // use fetch to determine the url is valid resource
-      // TODO: slow network has problem
-      // fetchAndInitial();
-
+      
       // no testing just initial
       initial();
     }
-    // eslint-disable-next-line camelcase, react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.url, props.id]);
 
   return (
@@ -100,14 +72,13 @@ const AsciinemaWrapper = (props) => {
           id={"asciinema-player-" + id}
           style={{
             borderRadius: "10px",
-            transition: "transform 1.2s",
             overflow: "hidden",
-            width: "400px",
-            height:  "400px",
+            width: loading ? "0px" : "400px",
+            height: loading ? "0px" : "400px",
           }}
         ></div>
       )}
-      {/* {loading && (
+      {loading && (
         <div>
           <Skeleton
             sx={{
@@ -118,7 +89,7 @@ const AsciinemaWrapper = (props) => {
             height={400}
           />
         </div>
-      )} */}
+      )}
     </div>
   );
 };
