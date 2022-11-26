@@ -4,7 +4,7 @@
 
 import React, { useCallback, useEffect, useState } from "react";
 import "asciinema-player/dist/bundle/asciinema-player.css";
-import Skeleton  from "@mui/material/Skeleton";
+// import Skeleton  from "@mui/material/Skeleton";
 import { debug, removeAllChildNodes } from "../utils/tools";
 
 const demoUrl = "https://asciinema.org/a/335480.cast";
@@ -15,7 +15,7 @@ const AsciinemaWrapper = (props) => {
   let playerInstance;
   const [player, setPlayer] = useState(null);
   const { url, id } = props;
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
   // the `id` is different between each asciinema player cell unit.
   const getContainerId = () => `#asciinema-player-${id}`;
@@ -74,7 +74,7 @@ const AsciinemaWrapper = (props) => {
     });
     debug("set player");
     setPlayer(playerInstance);
-    setTimeout(() => setLoading(false), 1500);
+    // setTimeout(() => setLoading(false), 1500);
     debug("loaded.");
   };
 
@@ -102,12 +102,12 @@ const AsciinemaWrapper = (props) => {
             borderRadius: "10px",
             transition: "transform 1.2s",
             overflow: "hidden",
-            width: loading ? "0px" : "400px",
-            height: loading ? "0px" : "400px",
+            width: "400px",
+            height:  "400px",
           }}
         ></div>
       )}
-      {loading && (
+      {/* {loading && (
         <div>
           <Skeleton
             sx={{
@@ -118,7 +118,7 @@ const AsciinemaWrapper = (props) => {
             height={400}
           />
         </div>
-      )}
+      )} */}
     </div>
   );
 };

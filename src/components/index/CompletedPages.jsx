@@ -1,7 +1,7 @@
 import React from 'react'
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import PageView from './pageview';
+import PageView from './PageView';
 
 import pictures from '../../utils/image';
 
