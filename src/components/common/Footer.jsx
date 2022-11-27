@@ -3,7 +3,7 @@ import * as React from "react";
 const Footer = (props) => {
 	const { extraStyles } = props;
 	return (
-		<div className="w-full h-auto relative flex flex-auto pointer-events-none">
+		<div className="w-full min-w-[768px] h-auto relative flex flex-auto pointer-events-none">
 			<div className="contents">
 				<footer className=" items-center gap-[100px] h-min px-24 py-8 place-content-center flex-col w-full text-gray-300 text-xs"
 					style={{ backgroundColor: 'rgb(79, 25, 166)' }}>

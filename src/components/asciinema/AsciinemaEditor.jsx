@@ -19,7 +19,9 @@ import PropTypes from 'prop-types'
  * </EmotionCacheWrapper />
  * )
  * 
-*/ 
+ */ 
+ import '../../styles/_react_page_plugin.scss';
+
 const AsciinemaEditor = ({mode, initialValue , onChange}) => {
   const [value, setValue] = React.useState(initialValue || null);
   return (

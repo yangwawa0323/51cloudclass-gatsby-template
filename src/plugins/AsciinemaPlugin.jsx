@@ -65,9 +65,9 @@ const AsciinemaWrapper = (props) => {
           id={"asciinema-player-" + id}
           style={{
             borderRadius: "10px",
-            transition: "transform 1.2s",
+            // transition: "transform 1.2s",
             overflow: "hidden",
-            width: loading ? "0px" : "400px",
+            // width: loading ? "0px" : "400px",
             height: loading ? "0px" : "400px",
           }}
         ></div>
@@ -95,7 +95,7 @@ const asciinemaPlugin = {
   title: "asciinema-player",
   Renderer: ({ nodeId, data }) => {
     return (
-      <div className="px-12 py-4 flex gap-2 flex-col">
+      <div className="flex gap-2 flex-col">
         <div id="asciinema-player-container">
           <AsciinemaWrapper url={data?.url} id={nodeId} />
         </div>

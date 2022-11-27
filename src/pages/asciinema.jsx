@@ -17,7 +17,6 @@ const Asciinema = () => {
   const [errorMessage, setErrorMessage] = React.useState(null);
 
   const postData = async () => {
-    // debug({ content: JSON.stringify(value) });
 
     const response = await fetch(`${process.env.API_SERVER}/api/page/new`, {
       method: "POST",
@@ -37,7 +36,6 @@ const Asciinema = () => {
 
     if (!response.ok) {
       let respObj = await response.json();
-      // debug(respObj);
       setSnackbarOpen(true);
       setErrorMessage(respObj?.error || "Failed to save.");
       return;

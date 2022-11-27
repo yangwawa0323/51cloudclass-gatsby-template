@@ -42,6 +42,7 @@ export const VideoJS = (props) => {
 
   return (
     <div data-vjs-player className="relative">
+      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
       <video ref={videoRef} className="video-js vjs-big-play-centered">
       </video>
       {children}
