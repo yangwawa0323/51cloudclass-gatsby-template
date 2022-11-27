@@ -18,7 +18,7 @@ function Index() {
   return (
     <div className="w-full self-center"> 
       <Navbar />
-      <main>
+      <main className="min-w-[768px]">
         <div className='bg-white flex flex-col gap-[80px] h-min relative w-full items-center'>
           <div className='w-full flex flex-col justify-center items-center gap-20 boost-section'>
             {/* Boost Section */}
@@ -33,11 +33,11 @@ function Index() {
             {/* Three cards */}
             <ThreeCards />
           </div>
-          <div id="pages" className='px-12 pb-24 w-full justify-center flex' >
+          <div id="pages" className=' px-12 pb-24 w-full justify-center flex' >
             {/* Completed pages */}
             <CompletedPages />
           </div>
-          <div className='w-full' style={{backgroundColor: '#f6f4ff' }}>
+          <div className='w-full  ' style={{backgroundColor: '#f6f4ff' }}>
             {/* Essential section */}
             <EssentialSection />
           </div>
