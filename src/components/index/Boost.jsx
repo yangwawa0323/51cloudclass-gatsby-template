@@ -1,3 +1,7 @@
+/**
+ * Index media query fitness completed.
+ */
+
 import * as React from "react";
 import gsap from "gsap";
 import { Link } from "gatsby";
@@ -91,7 +95,7 @@ const BoostSection = () => {
         <Link key={index} className="pointer-events-auto " to={page.route}>
           <img
             src={
-              pictures[page.route.replace("/", "").replace("404", "page404")]
+              pictures[page.route.replace("/", "").replace("404", "page404").replace(/asciinema-list/,"asciinema")]
             }
             alt={page.title}
           />
@@ -176,7 +180,7 @@ const BoostSection = () => {
         {/* vertical scrolling pages  */}
 		{/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
 		<div
-          className="wrapper"
+          className="wrapper hidden xl:block"
 		  // eslint-disable-next-line jsx-a11y/no-static-element-interactions
           onMouseLeave={resumeAnimation}
           onMouseEnter={pauseAnimation}

@@ -9,6 +9,10 @@
 			"title" : "404 Error page"
 		},
 		{
+			"route": "/asciinema-list",
+			"title" : "Asciinema list page"
+		},
+		{
 			"route": "/blog2",
 			"title": "Blog2 page"
 		},

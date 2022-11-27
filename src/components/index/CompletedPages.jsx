@@ -39,8 +39,8 @@ const CompletedPages = () => {
 		animation();
 	}, [])
 	return (
-		<div className='flex flex-row gap-24 relative completed-pages'>
-			<div className='z-10 flex flex-grow flex-col gap-5 max-w-[400px] sticky top-32 overflow-visible h-min'>
+		<div className='flex flex-col md:flex-row gap-24 relative completed-pages'>
+			<div className='z-10 flex flex-grow flex-col gap-5 max-w-[400px] md:sticky top-32 overflow-visible h-min'>
 				<div >
 					<p className='text-purple-500 font-extrabold uppercase text-sm'>
 						Versatile pages
@@ -54,10 +54,10 @@ const CompletedPages = () => {
 						Easily customize images, content, and style to make it your own.</p>
 				</div>
 			</div>
-			<div className='grid gap-5 max-w-[1000px] justify-center relative' style={{
-				gridTemplateColumns: 'repeat(2, minmax(100px, 1fr))',
-				gridTemplateRows: 'repeat(2, minmax(0px, 1fr))',
-				gridAutoRows: 'minmax(0px, 1fr)',
+			<div className='grid grid-cols-1 lg:grid-cols-2 gap-5 max-w-[1000px] justify-center relative' style={{
+				// gridTemplateColumns: 'repeat(2, minmax(100px, 1fr))',
+				// gridTemplateRows: 'repeat(2, minmax(0px, 1fr))',
+				// gridAutoRows: 'minmax(0px, 1fr)',
 			}}>
 				{/*  */}
 				{
@@ -65,7 +65,7 @@ const CompletedPages = () => {
 						return (
 							<div key={index}>
 								<PageView route={page.route}
-									image={pictures[page.route.replace(/\//, '').replace(/404/, 'page404')]} title={page.title} />
+									image={pictures[page.route.replace(/\//, '').replace(/404/, 'page404').replace(/asciinema-list/,'asciinema')]} title={page.title} />
 							</div>
 						)
 					})

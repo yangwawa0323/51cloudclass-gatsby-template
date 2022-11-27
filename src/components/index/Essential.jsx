@@ -11,11 +11,11 @@ const EssentialSection = () => {
 					<h2 className='gradient-text'>Essential features for your next website.</h2>
 				</div>
 			</div>
-			<div className='grid gap-4 h-min justify-center max-w-[1200px] relative'
+			<div className='grid gap-4  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 h-min justify-center max-w-[1200px] relative'
 				style={{
-					gridAutoRows: 'min-content',
-					gridTemplateColumns: 'repeat(3, minmax(200px, 1fr))',
-					gridTemplateRows: 'repeat(2, min-content)',
+					// gridAutoRows: 'min-content',
+					// gridTemplateColumns: 'repeat(3, minmax(200px, 1fr))',
+					// gridTemplateRows: 'repeat(2, min-content)',
 
 				}}
 			>
@@ -74,6 +74,7 @@ const EssentialSection = () => {
 						</div>
 					</div>
 				</div>
+
 				<div className='bg-white rounded-2xl flex flex-col items-center justify-center shadow-lg hover:shadow-2xl cursor-pointer'>
 					<div className='flex flex-col items-center justify-center gap-4 p-10'>
 						<div className='rounded-md hover:bg-gray-100 bg-gray-200 w-12 h-12 flex justify-center items-center'>
@@ -103,6 +104,7 @@ const EssentialSection = () => {
 						</div>
 					</div>
 				</div>
+
 				<div className='bg-white rounded-2xl flex flex-col items-center justify-center shadow-lg hover:shadow-2xl cursor-pointer'>
 					<div className='flex flex-col items-center justify-center gap-4 p-10'>
 						<div className='rounded-md hover:bg-gray-100 bg-gray-200 w-12 h-12 flex justify-center items-center'>
@@ -129,6 +131,7 @@ const EssentialSection = () => {
 						</div>
 					</div>
 				</div>
+
 				<div className='bg-white rounded-2xl flex flex-col items-center justify-center shadow-lg hover:shadow-2xl cursor-pointer'>
 					<div className='flex flex-col items-center justify-center gap-4 p-10' >
 						<div className='rounded-md hover:bg-gray-100 bg-gray-200 w-12 h-12 flex justify-center items-center'>
@@ -158,6 +161,7 @@ const EssentialSection = () => {
 						</div>
 					</div>
 				</div>
+
 				<div className='bg-white rounded-2xl flex flex-col items-center justify-center shadow-lg hover:shadow-2xl cursor-pointer'>
 					<div className='flex flex-col items-center justify-center gap-4 p-10'>
 						<div className='rounded-md cursor-pointer hover:bg-gray-100 bg-gray-200 w-12 h-12 flex justify-center items-center'>
