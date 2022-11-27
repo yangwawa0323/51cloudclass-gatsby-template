@@ -1,28 +1,59 @@
-import React, { useEffect } from 'react'
-import Editor from '@react-page/editor'
+import React, { useEffect } from "react";
+import Editor from "@react-page/editor";
 
-import { baseCellPlugins } from '../../plugins/cellPlugins';
-import Navbar from '../common/Navbar'
-import Footer from '../common/Footer'
-import { getTitle,debug } from '../../utils/tools';
-
+import { baseCellPlugins } from "../../plugins/cellPlugins";
+import Navbar from "../common/Navbar";
+import Footer from "../common/Footer";
+import { Link } from "gatsby";
+import { getTitle, formatDate } from "../../utils/tools";
 
 const AsciinemaPage = ({ pageContext }) => {
-  const { content } = pageContext
-  useEffect(()=>{
-    debug(getTitle(content))
-  })
+  const { content, relatives } = pageContext;
+
+  useEffect(() => {
+    console.log(relatives, pageContext);
+  });
+
   return (
     <div>
       <Navbar />
-      <div className='p-24'>
+      <div className="min-w-[768px] py-24 px-8 flex flex-col gap-2 relative lg:flex-row" style={{
+        background: 'radial-gradient(106.9% 91.8% at 100% 100%, #b09eff 0%, var(--token-8c47652b-dea5-4767-a9f2-5d952dcce49a, rgb(255, 255, 255))  100%)',
+      }}>
+        <div className="md:flex-2 lg:flex-[6] p-8">
         <Editor
+         
           cellPlugins={baseCellPlugins}
-          value={content} readOnly />
+          value={content}
+          readOnly
+          />
+        </div>
+        <div className="bg-[#f6f4ff] flex-1 ml-4 mt-10 right-4 top-1/2 py-12 px-6 h-full rounded-lg shadow-md  bg-slate-10 flex flex-col gap-2 ">
+          <h6 className="text-purple-600 font-semibold uppercase">Latest 10.</h6>
+          <div className="latest flex flex-col gap-2">
+            {relatives.map((ascii, index) => {
+              let content = JSON.parse(ascii.content);
+              return (
+                <div key={ascii.ID}>
+                  <span className="text-gray-600 font-semibold text-sm">
+                    {index + 1}:
+                  </span>
+                  <Link to={`/asciinema/${ascii.ID}`}>
+                    {" "}
+                    {getTitle(content)}
+                  </Link>
+                  <p className="pl-2 text-xs text-gray-500">
+                    {formatDate(new Date(ascii.CreatedAt), "yyyy-mm-dd HH:MM")}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
-      <Footer />
+      <Footer/>
     </div>
-  )
-}
+  );
+};
 
-export default AsciinemaPage
+export default AsciinemaPage;
