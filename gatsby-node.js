@@ -14,7 +14,8 @@ const fakeData =  require('./src/data/allReactPages.json');
 //   }
 // };
 
-const fetch = require('isomorphic-fetch')
+const fetch = require('isomorphic-fetch');
+const { request } = require('http');
 
 const getAllAsciinemaPages = async ({ graphql, actions }) => {
 	let asciinemaPages, succeed;
@@ -37,6 +38,17 @@ const getAllAsciinemaPages = async ({ graphql, actions }) => {
 				content: JSON.parse(page.content),
 			}
 		})
+	})
+}
+
+const getAsciinemaListPage = async ( { graphql , actions}) =>{
+	actions.createPage({
+		path: `/asciis`,
+		component: require.resolve('./src/components/asciinema/AsciinemaList.jsx'),
+		context: {
+			asciinemas: fakeData,
+		}
+
 	})
 }
 
@@ -89,6 +101,7 @@ exports.createPages = async (params) => {
 	await Promise.all([
 		getAllAsciinemaPages(params),
 		getAllBlogs(params),
+		getAsciinemaListPage(params),
 	])
 
 }
