@@ -73,9 +73,8 @@ const StyleGuide = () => {
   return (
     <div>
       <Navbar />
-      <main className="items-center">
+      <main className="min-w-[768px] items-center">
         {/* style-guide  */}
-        <div>
           <div className="scrollable style-guide relative">
             <div>
               <h1>Styleguide</h1>
@@ -86,7 +85,6 @@ const StyleGuide = () => {
               </p>
             </div>
           </div>
-        </div>
         {/* font-list  */}
         <div className="py-10 flex items-center  justify-center flex-col gap-3">
           <div className="w-[600px] font-list scrollable flex flex-col items-start gap-5">

@@ -1,3 +1,6 @@
+/**
+ * Media query is OK.
+ */
 import * as React from "react";
 
 import BorderColorIcon from "@mui/icons-material/BorderColor";
@@ -10,7 +13,7 @@ import Smartphone from "@mui/icons-material/Smartphone";
 
 const BuildingBlock = () => {
   return (
-    <div className="building-block flex flex-col gap-20 p-24 justify-center items-center ">
+    <div className="min-w-[768px] building-block flex flex-col gap-20 pb-12 justify-center items-center ">
       <div className="max-w-[600px] flex flex-col justify-center items-center">
         <p className="uppercase text-sm text-purple-700 font-extrabold">
           complete toolkit
@@ -18,7 +21,7 @@ const BuildingBlock = () => {
         <h2 className="text-center">Building blocks for your next website.</h2>
       </div>
       <div className="flex flex-col gap-10">
-        <div className="grid grid-cols-3 grid-rows-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <div className="bg-white rounded-lg shadow-lg hover:shadow-2xl duration-700 border-[1px] p-10 flex flex-col gap-10 justify-center items-center">
             <div
               style={{

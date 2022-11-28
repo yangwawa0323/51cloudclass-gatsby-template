@@ -1,9 +1,12 @@
+/**
+ * Media query is OK.
+ */
 import * as React from 'react'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 const PlanSection = () => {
 	return (
-		<div className="bg-white flex flex-col justify-center items-center
+		<div className="min-w-[768px] bg-white flex flex-col justify-center items-center
 		 gap-20 pt-50 px-24 pb-0 z-10">
 			<div className='flex flex-col gap-4 h-min max-w-[460px] overflow-hidden '>
 				<div >

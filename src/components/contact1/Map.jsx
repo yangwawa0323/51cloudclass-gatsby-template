@@ -1,3 +1,7 @@
+/**
+ * Media query is OK.
+ */
+
 import * as React from "react";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -9,7 +13,7 @@ import mapPicture from "../../assets/img/page-thumbnail/map.webp";
 const MapContainer = () => {
   return (
     <div
-      className="gap-32 flex flex-col justify-center items-center py-24 px-12"
+      className="min-w-[768px] gap-32 flex flex-col justify-center items-center py-24 px-12"
       style={{
         backgroundColor: "#8800ff",
       }}

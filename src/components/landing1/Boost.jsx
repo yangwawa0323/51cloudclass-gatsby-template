@@ -1,8 +1,11 @@
+/**
+ * Media query is OK.
+ */
 import React from "react";
 
 const BoostSection = () => {
   return (
-    <div className="boost-your-website relative h-[880px] flex flex-col justify-center items-center z-[1] px-24 gap-24 overflow-hidden">
+    <div className="min-w-[768px]  boost-your-website relative h-[100vh] min-h-[620px] lg:items-center flex flex-col lg:pt-[240px] pt-[120px] items-center z-[1] px-24 gap-20 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none select-none">
         <img
           className="object-center"

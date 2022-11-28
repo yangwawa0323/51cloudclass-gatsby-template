@@ -70,7 +70,7 @@ const WatchVideo = () => {
   };
 
   return (
-    <div className="watch-the-video bg-[#f6f4ff] flex flex-col overflow-hidden p-24 justify-center items-center">
+    <div className="min-w-[768px] watch-the-video bg-[#f6f4ff] flex flex-col overflow-hidden p-24 justify-center items-center">
       <div className="flex flex-row gap-24 max-w-[1200px] w-full justify-center items-center">
         <div className="video-content flex-[1.3] flex flex-col gap-10">
           <div className="flex flex-col gap-6 justify-start items-start  max-w-[530px]">

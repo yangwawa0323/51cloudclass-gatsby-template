@@ -1,3 +1,6 @@
+/**
+ * Media query is OK.
+ */
 import * as React from 'react'
 import changelog from '../../assets/img/page-thumbnail/changelog.webp';
 import page404 from '../../assets/img/page-thumbnail/page_404.webp';
@@ -43,7 +46,7 @@ const NextWebsite = () => {
 	}, [])
 
 	return (
-		<div className='next-website overflow-hidden flex flex-col gap-8 py-16  justify-center items-center'>
+		<div className='min-w-[768px] next-website overflow-hidden flex flex-col gap-8 py-16  justify-center items-center'>
 			<div className='flex flex-col justify-center items-center max-w-[500px] gap-3'>
 				<p className='text-sm font-extrabold text-purple-700 uppercase'>complete toolkit</p>
 				<h2 className='text-center'>Building blocks for your next website.</h2>

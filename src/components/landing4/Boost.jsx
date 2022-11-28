@@ -1,3 +1,7 @@
+/**
+ * Media query is OK.
+ */
+
 import * as React from "react";
 import FourKLogo from "../../assets/img/4k-logo-svgrepo-com.svg";
 import Css3Logo from "../../assets/img/css3-logo-svgrepo-com.svg";
@@ -9,14 +13,14 @@ import SinaLogo from "../../assets/img/sina-logo-svgrepo-com.svg";
 const BoostSection = () => {
   return (
     <div
-      className="landing4-boost-section pt-48 px-24 pb-24 justify-center items-center flex flex-col gap-24 h-min overflow-hidden relative"
+      className="min-w-[768px] landing4-boost-section pt-48 px-24 pb-24 justify-center items-center flex flex-col gap-24 h-min overflow-hidden relative"
       style={{
         background:
           "radial-gradient(72.6% 84% at 100% 100%, #b09eff 0%, rgb(255, 255, 255)  100%)",
       }}
     >
       <div
-        className="flex flex-row gap-20 max-w-[1200px]
+        className="flex flex-col md:flex-row gap-20 max-w-[1200px]
 			 h-min items-center justify-center "
       >
         <div className="flex-1 max-w-[600px] gap-4 flex flex-col justify-start">
@@ -37,7 +41,7 @@ const BoostSection = () => {
             </p>
           </div>
         </div>
-        <div className="flex-1 justify-start p-8 bg-white flex flex-col gap-6 h-min rounded-xl shadow-2xl">
+        <div className="flex-1 justify-start w-4/5 p-8 bg-white flex flex-col gap-6 h-min rounded-xl shadow-2xl">
           <div>
             <h4>Start free trial</h4>
           </div>

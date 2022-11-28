@@ -7,7 +7,7 @@ import { Link } from 'gatsby';
 const CustomBlog = ({ pageContext }) => {
 	const { blog,  relatives } = pageContext
 	return (
-		<div className='flex flex-col justify-center items-center'>
+		<div className='min-w-[768px] flex flex-col justify-center items-center'>
 			<Navbar />
 			<main>
 				<div className='flex flex-col gap-6 p-24 min-h-full w-auto justify-center items-center max-w-[1200px]'>
