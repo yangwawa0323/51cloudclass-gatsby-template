@@ -27,7 +27,7 @@ const AsciinemaList = ({ pageContext }) => {
                 <span className="text-gray-600 font-semibold text-sm">
                   {index + 1}:
                 </span>
-                <Link to={`/asciinema/${ascii.ID}`}> {getTitle(content)}</Link>
+                <Link to={`/asciinema/${ascii.ID}`}> {title}</Link>
                 <span className="pl-2 text-xs text-gray-500">
                   {formatDate(new Date(ascii.CreatedAt), "yyyy-mm-dd HH:MM")}
                 </span>

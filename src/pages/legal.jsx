@@ -1,12 +1,16 @@
+/**
+ * Media query is OK. Be attention to use `self-center`
+ */
+
 import React from 'react'
 import Footer from '../components/common/Footer'
 import Navbar from '../components/common/Navbar'
 
 const Legal = () => {
 	return (
-		<div className='flex flex-col justify-center items-center'>
+		<div className='flex flex-col justify-center'>
 			<Navbar />
-			<div className='max-w-[1000px] gap-5 justify-center self-center items-center flex flex-col h-min pt-[180px] px-24 pb-24'>
+			<div className='min-w-[768px]  gap-5 justify-center items-center flex flex-col h-min pt-[180px] px-24 pb-24'>
 				<div  >
 					<h1 >Terms &amp; Conditions</h1>
 				</div>

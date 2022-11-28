@@ -1,3 +1,6 @@
+/**
+ * Media query is OK.
+ */
 import React from 'react'
 import Footer from '../components/common/Footer'
 import Navbar from '../components/common/Navbar';
@@ -7,7 +10,7 @@ const ChangeLog = () => {
 	return (
 		<div>
 			<Navbar />
-			<main className='items-center bg-white'>
+			<main className='min-w-[768px] items-center bg-white'>
 				<div className='flex flex-col  justify-center items-center w-full min-h-full'
 					style={{
 						background: 'linear-gradient(0deg, #f6f4ff 0%, hsl(0, 0%, 100%) 100%)',

@@ -1,3 +1,6 @@
+/**
+ * Media query is OK.
+ */
 import * as React from 'react'
 import Navbar from '../components/common/Navbar';
 import Footer from '../components/common/Footer';
@@ -11,7 +14,7 @@ const LandingPage4 = () => {
 				<Navbar />
 			
 			{/* boost section */}
-			<main>
+			<main className='min-w-[768px]'>
 				<BoostSection />
 				<OurSuccess />
 			</main>

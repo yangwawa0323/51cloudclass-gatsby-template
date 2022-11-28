@@ -1,3 +1,6 @@
+/**
+ * Media query is OK.
+ */
 import React from "react";
 import AsciinemaEditor from "../components/asciinema/AsciinemaEditor";
 import Footer from "../components/common/Footer";
@@ -54,6 +57,7 @@ const Asciinema = () => {
       <Navbar />
       <div
         style={{
+          minWidth: '768px',
           height: "min-content",
           width: "auto",
           padding: "150px 160px 100px 160px",

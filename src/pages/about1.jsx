@@ -1,3 +1,6 @@
+/**
+ * Media query is OK.
+ */
 import * as React from 'react';
 import Footer from '../components/common/Footer';
 import Navbar from '../components/common/Navbar';
@@ -74,7 +77,7 @@ const About1 = () => {
     <div>
       <Navbar />
       {/* BEGIN main content */}
-      <div className='about-us pt-[180px] px-[100px] pb-[100px] flex flex-col gap-20 justify-center items-center'>
+      <div className='min-w-[768px] about-us pt-[180px] px-[100px] pb-[100px] flex flex-col gap-20 justify-center items-center'>
 
         <div className='flex flex-col gap-4 justify-center items-center max-w-[720px]'>
           <div >
@@ -88,7 +91,7 @@ const About1 = () => {
           </div>
         </div>
 
-        <div className='max-w-[1200px] h-[600px] overflow-hidden rounded-2xl shadow-md' >
+        <div className='max-w-[1200px]  overflow-hidden rounded-2xl shadow-md' >
           <div >
             <div >
               <img alt="" src="https://framerusercontent.com/images/x8MsMLzPw4oCKSmMNOuZy76n2Is.jpg" />
@@ -99,8 +102,8 @@ const About1 = () => {
 
       </div>
       {/* END main content */}
-      <div className='our-success w-full bg-[#f6f4ff] p-24'>
-        <div className='flex flex-row gap-24 max-[1200px] h-min'>
+      <div className='min-w-[768px] our-success w-full bg-[#f6f4ff] p-24'>
+        <div className='flex flex-col lg:flex-row gap-24 max-[1200px] h-min'>
           <div className='flex-1 flex flex-col gap-4 justify-start'>
             <div >
               <p className='text-purple-700 font-extrabold uppercase text-sm'>Our success</p>
@@ -154,13 +157,13 @@ const About1 = () => {
       </div>
 
       {/*  */}
-      <div className='our-term w-full flex flex-col gap-24 p-24 justify-center items-center'>
+      <div className='min-w-[768px] our-term w-full flex flex-col gap-24 p-24 justify-center items-center'>
         <div className='flex flex-col gap-4 justify-center items-center max-w-[650px]'>
           <p className='text-purple-700 text-sm uppercase font-extrabold'>Our team</p>
           <h2 >Empowering creators.</h2>
           <p className='text-center text-gray-700 font-medium'>Combine sections from a range of categories to easily assemble pages that meet the needs of your growing business.</p>
         </div>
-        <div className='grid grid-cols-3 grid-rows-2 max-[1200px] gap-4 w-full'>
+        <div className='grid grid-cols-2 md:grid-cols-3  max-w-[1200px] gap-4 w-full'>
           <div className='rounded-2xl shadow-md bg-gray-100 p-10 items-center justify-center flex flex-col'>
             <div className='hover:rotate-12 duration-500 aspect-[1/1] w-[128px]'>
               <img src="https://framerusercontent.com/images/nQxgk5Jrc6Hi2ef7svCdHo76FE.png" alt="Memoji" />
@@ -263,12 +266,12 @@ const About1 = () => {
       </div>
       {/*  */}
 
-      <div className='our-office bg-gray-100 w-full p-24 flex flex-col justify-center items-center gap-20'>
+      <div className='min-w-[768px] our-office bg-gray-100 w-full p-24 flex flex-col justify-center items-center gap-20'>
         <div className='flex flex-col gap-4 justify-center items-center max-w-[560px]'>
           <p className='text-purple-700 font-extrabold uppercase text-sm'>Our offices</p>
           <h2 className='text-center break-words'>Our offices around the world.</h2>
         </div>
-        <div className='grid auto-rows-auto grid-cols-3 gap-6 max-w-[1200px]'>
+        <div className='grid auto-rows-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1200px]'>
           <div className='rounded-[20px] shadow-lg hover:shadow-xl  bg-white p-8'>
             <div className='flex flex-col gap-8'>
               <div className='rounded-lg p-2 bg-gray-100 w-10 h-10 flex flex-col justify-center items-center'>
@@ -314,7 +317,7 @@ const About1 = () => {
       {/*  */}
 
 
-      <div className='our-mission flex flex-row gap-24 p-24'>
+      <div className='min-w-[768px] our-mission flex flex-col lg:flex-row  gap-24 p-24'>
         <div className='flex-1 flex flex-col gap-4 max-w-[530px]'>
           <div >
             <p className='text-sm text-purple-700 font-extrabold uppercase'>Our mission</p>
@@ -350,12 +353,12 @@ const About1 = () => {
         </div>
       </div>
       {/* */}
-      <div className='out-partner flex flex-col gap-24 p-[100px] justify-center items-center bg-[#f6f4ff]'>
+      <div className='min-w-[768px] out-partner flex flex-col gap-24 p-[100px] justify-center items-center bg-[#f6f4ff]'>
         <h2 >Meet our partners and investors.</h2>
 
       </div>
       {/*  */}
-      <div className='scrolling-up try-it-now flex flex-col gap-12 p-[100px] justify-center items-center bg-[#7421fc]'>
+      <div className='min-w-[768px] scrolling-up try-it-now flex flex-col gap-12 p-[100px] justify-center items-center bg-[#7421fc]'>
         <div className='max-w-[600px] flex flex-col justify-center items-center' >
           <p className='text-gray-300 font-extrabold uppercase text-sm'>Try it now</p>
           <h2 className='text-center text-white break-words'>Build a website that performs better.</h2>

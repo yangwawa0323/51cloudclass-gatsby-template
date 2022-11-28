@@ -1,3 +1,6 @@
+/**
+ * Media query is OK.
+ */
 import React from 'react'
 import Footer from '../components/common/Footer'
 import Navbar from '../components/common/Navbar'
@@ -7,7 +10,7 @@ const Contact1 = () => {
   return (
     <div>
       <Navbar backgroundColor={'#8800ff'} textColor={'white'} />
-      <main>
+      <main className='min-w-[768px]'>
         <MapContainer />
       </main>
       <Footer />

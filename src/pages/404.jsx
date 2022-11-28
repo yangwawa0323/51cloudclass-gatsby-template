@@ -1,3 +1,6 @@
+/**
+ * Media query is OK.
+ */
 import { Link } from "gatsby";
 import * as React from "react";
 import Footer from "../components/common/Footer";
@@ -18,12 +21,12 @@ const Page404 = () => {
   return (
     <div>
       <Navbar />
-      <main className="items-center">
+      <main className="min-w-[768px] items-center">
         {/* Error 404 content  */}
         <div
           className="error-content-wrapper justify-center
 				 items-center flex flex-col gap-24 
-				 relative p-24 w-full z-20 h-[100vh]
+				 relative p-24 w-full z-20 h-[100vh] min-h-[680px]
 				 "
           style={{
             background:
