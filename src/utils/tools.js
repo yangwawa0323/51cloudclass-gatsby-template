@@ -64,3 +64,8 @@ export const formatDate = (date , format="yyyy-mm-dd")=>{
     return [year,month,hour].join('-') + ' ' 
     + [hour, minute, second].join(':')
 }
+
+export const randomColor = ()=>{
+    const colors =  [ '#7421fc', 'black']
+    return colors[Math.floor( Math.random() * colors.length)]
+}
