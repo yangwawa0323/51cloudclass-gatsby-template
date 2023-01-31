@@ -10,11 +10,12 @@
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
-    "build": "gatsby build",
+    "build": "gatsby build --prefix-paths",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.0.1",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mdx-js/react": "^2.1.5",
@@ -25,7 +26,10 @@
     "@react-page/plugins-html5-video": "^5.2.0",
     "@react-page/plugins-slate": "^5.2.0",
     "@react-page/plugins-spacer": "^5.2.0",
+    "@reduxjs/toolkit": "^1.9.2",
+    "@tanstack/react-query": "^4.23.0",
     "asciinema-player": "^3.0.1",
+    "axios": "^1.2.6",
     "dotenv": "^16.0.3",
     "gatsby": "^5.2.0",
     "gatsby-plugin-mdx": "^5.2.0",
@@ -35,6 +39,7 @@
     "gsap": "^3.11.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5",
     "react-syntax-highlighter": "^15.5.0",
     "sass": "^1.56.1",
     "video.js": "^7.20.3"
