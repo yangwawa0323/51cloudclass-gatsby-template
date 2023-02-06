@@ -31,7 +31,7 @@ const BoostSection = () => {
 
 	const postFormData = async () => {
 		const response = await axios.get(
-			`${process.env.API_SERVER}/users?username=${formData.account}&password=${formData.password}`
+			`${process.env.GATSBY_API_SERVER}/users?username=${formData.account}&password=${formData.password}`
 		);
 		const data = await response.data;
 		if (data.length) {

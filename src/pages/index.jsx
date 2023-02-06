@@ -17,6 +17,7 @@ import EssentialSection from '../components/index/Essential';
 import FractionSection from '../components/index/Fraction';
 
 import { useSelector } from 'react-redux';
+import Courses from '../components/index/course';
 
 function Index() {
 	const account = useSelector((state) => state.account);
@@ -29,6 +30,11 @@ function Index() {
 					<div className='w-full flex flex-col justify-center items-center gap-20 boost-section'>
 						{/* Boost Section */}
 						<BoostSection />
+					</div>
+
+					<div>
+						{/* course list */}
+						<Courses />
 					</div>
 
 					<div className='px-12 py-24 flex flex-col justify-center items-center gap-20 completed-toolkit'>
