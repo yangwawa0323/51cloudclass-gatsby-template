@@ -166,12 +166,12 @@ const Profile = () => {
 								<ClickAwayListener onClickAway={handleClose}>
 									<Box>
 										<CardContent sx={{ px: 2.5, pt: 3 }}>
-											<Grid
+											<div
 												container
 												justifyContent='space-between'
 												alignItems='center'
 											>
-												<Grid item>
+												<div>
 													<Stack
 														direction='row'
 														spacing={1.25}
@@ -194,8 +194,8 @@ const Profile = () => {
 															</Typography>
 														</Stack>
 													</Stack>
-												</Grid>
-												<Grid item>
+												</div>
+												<div>
 													<IconButton
 														size='large'
 														color='secondary'
@@ -203,8 +203,8 @@ const Profile = () => {
 													>
 														<LogoutOutlined />
 													</IconButton>
-												</Grid>
-											</Grid>
+												</div>
+											</div>
 										</CardContent>
 										{open && (
 											<>

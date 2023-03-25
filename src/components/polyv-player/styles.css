@@ -1,0 +1,13 @@
+/** @format */
+
+.wrap.polyv-wrap {
+	min-width: 420px;
+	min-height: 420px;
+}
+
+.player.polyv-player {
+	min-width: 400px;
+	width: 100%;
+	height: 100%;
+	min-height: 440px;
+}

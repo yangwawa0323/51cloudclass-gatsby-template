@@ -12,10 +12,8 @@ import LinuxLogo from '../../assets/img/logo-tux-svgrepo-com.svg';
 import GoLangLogo from '../../assets/img/go-logo-svgrepo-com.svg';
 import SinaLogo from '../../assets/img/sina-logo-svgrepo-com.svg';
 
-// import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
 import { navigate } from 'gatsby';
-import { keepUserInfo } from '../../utils/tools';
+import { getAxios, keepUserInfo } from '../../utils/tools';
 import { useDispatch } from 'react-redux';
 import { setAccount } from '../../store/account/accountSlice';
 
@@ -30,8 +28,10 @@ const BoostSection = () => {
 	const dispatch = useDispatch();
 
 	const postFormData = async () => {
-		const response = await axios.get(
-			`${process.env.GATSBY_API_SERVER}/users?username=${formData.account}&password=${formData.password}`
+		const axiosInstance = getAxios();
+		const response = await axiosInstance.post(
+			`${process.env.GATSBY_API_SERVER}/users/`,
+			formData
 		);
 		const data = await response.data;
 		if (data.length) {
@@ -55,7 +55,7 @@ const BoostSection = () => {
 	};
 	return (
 		<div
-			className='min-w-[768px] landing4-boost-section pt-48 px-24 pb-24 justify-center items-center flex flex-col gap-24 h-min overflow-hidden relative'
+			className='min-w-[425px] landing4-boost-section pt-48 px-24 pb-24 justify-center items-center flex flex-col gap-24 h-min overflow-hidden relative'
 			style={{
 				background:
 					'radial-gradient(72.6% 84% at 100% 100%, #b09eff 0%, rgb(255, 255, 255)  100%)',

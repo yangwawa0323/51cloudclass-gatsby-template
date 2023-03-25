@@ -21,7 +21,7 @@ const LandingPage4 = () => {
 				<Navbar />
 
 				{/* boost section */}
-				<main className='min-w-[768px]'>
+				<main className='min-w-[425px]'>
 					<BoostSection />
 					{/* <OurSuccess /> */}
 				</main>

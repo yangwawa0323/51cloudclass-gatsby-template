@@ -1,18 +1,18 @@
 /**
  * Media query is OK.
+ *
+ * @format
  */
-import * as React from 'react'
+
+import * as React from 'react';
 import { ArrowBack, ArrowForward } from '@mui/icons-material';
 
 import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger'
-
-
+import ScrollTrigger from 'gsap/ScrollTrigger';
 
 const sliderWrapperAnimation = () => {
-	
 	const slider = document.querySelector('.slider-wrapper');
-	
+
 	const timeline = gsap.timeline({
 		scrollTrigger: {
 			trigger: '.landing4-boost-section',
@@ -27,21 +27,18 @@ const sliderWrapperAnimation = () => {
 	timeline.from(slider, {
 		y: '+=500px',
 		opacity: 0.5,
-	})
-};	
-
-
+	});
+};
 
 const OurSuccess = () => {
 	const [index, setIndex] = React.useState(0);
 	const [size, setSize] = React.useState(0);
 	const [aniCompleted, setAniCompleted] = React.useState(true);
 	const [images, setImages] = React.useState([]);
-	
+
 	gsap.registerPlugin(ScrollTrigger);
-	
+
 	React.useEffect(() => {
-		
 		const images = document.querySelectorAll('.scrolling-slider img');
 
 		/**
@@ -55,86 +52,106 @@ const OurSuccess = () => {
 		 * Page animation
 		 *  */
 		sliderWrapperAnimation();
-	}, [])
-
+	}, []);
 
 	const sliderAnimation = (direction = 'left') => {
 		let x;
 		setAniCompleted(false);
 
 		if (direction === 'left') {
-			x = "-=100%";
+			x = '-=100%';
 		} else if (direction === 'right') {
-			x = "+=100%";
+			x = '+=100%';
 		}
 		gsap.to(images, {
 			x,
-			onComplete: () => setAniCompleted(true)
-		})
-	}
-
+			onComplete: () => setAniCompleted(true),
+		});
+	};
 
 	const toLeft = () => {
 		sliderAnimation('left');
 		setIndex(index + 1);
-	}
+	};
 
 	const toRight = () => {
 		sliderAnimation('right');
 		setIndex(index - 1);
-	}
+	};
 
 	return (
-		<div className='min-w-[768px] slider-wrapper w-full p-24 flex  flex-col lg:flex-row gap-24 overflow-hidden'>
+		<div className='min-w-[425px] slider-wrapper w-full p-24 flex  flex-col lg:flex-row gap-24 overflow-hidden'>
 			{/* slider images  */}
 
-			<div className='scrolling-slider h-[558px] bg-red-100 rounded-lg shadow-sm relative border-[1px] flex-1 flex flex-row overflow-hidden max-w-[1200px] will-change-transform gap-0' >
+			<div className='scrolling-slider h-[558px] bg-red-100 rounded-lg shadow-sm relative border-[1px] flex-1 flex flex-row overflow-hidden max-w-[1200px] will-change-transform gap-0'>
 				{/* <div className='h-full w-full -translate-x-[50%] rounded-lg overflow-hidden'> */}
 				<img
 					className='h-full w-[720px] flex-1 object-cover rounded-lg'
-					src="https://framerusercontent.com/images/x8MsMLzPw4oCKSmMNOuZy76n2Is.jpg?scale-down-to=2048" alt="People in the office" />
+					src='https://framerusercontent.com/images/x8MsMLzPw4oCKSmMNOuZy76n2Is.jpg?scale-down-to=2048'
+					alt='People in the office'
+				/>
 				<img
 					className='h-full w-[720px] flex-1 object-cover'
-					src="https://framerusercontent.com/images/2pg0fQYYej7N8XeGM88yj3SlQ.jpg?scale-down-to=2048" alt="People in the office" />
+					src='https://framerusercontent.com/images/2pg0fQYYej7N8XeGM88yj3SlQ.jpg?scale-down-to=2048'
+					alt='People in the office'
+				/>
 				<img
 					className='h-full w-[720px] flex-1 object-cover'
-					src="https://framerusercontent.com/images/Pz5ekF4c6XYu5aMYYpM3nenmv4.jpg?scale-down-to=2048" alt="People in the office" />
+					src='https://framerusercontent.com/images/Pz5ekF4c6XYu5aMYYpM3nenmv4.jpg?scale-down-to=2048'
+					alt='People in the office'
+				/>
 
-				{index < (size - 1) &&
-					<div 
-						style={{ visibility: aniCompleted ? 'visible' : 'hidden' }}
-						className='cursor-pointer absolute top-1/2 left-4 z-50 h-8 w-8 shadow-md bg-white hover:bg-gray-100 rounded-full flex justify-center items-center' >
-						<ArrowBack onClick={toLeft} fontSize='10px' />
-					</div>}
-				{index !== 0 &&
+				{index < size - 1 && (
 					<div
 						style={{ visibility: aniCompleted ? 'visible' : 'hidden' }}
-						className='absolute top-1/2 right-4 z-50 h-8 w-8 shadow-md bg-white hover:bg-gray-100 rounded-full flex justify-center items-center' >
-						<ArrowForward onClick={toRight} fontSize='10px' />
-					</div>}
+						className='cursor-pointer absolute top-1/2 left-4 z-50 h-8 w-8 shadow-md bg-white hover:bg-gray-100 rounded-full flex justify-center items-center'
+					>
+						<ArrowBack
+							onClick={toLeft}
+							fontSize='10px'
+						/>
+					</div>
+				)}
+				{index !== 0 && (
+					<div
+						style={{ visibility: aniCompleted ? 'visible' : 'hidden' }}
+						className='absolute top-1/2 right-4 z-50 h-8 w-8 shadow-md bg-white hover:bg-gray-100 rounded-full flex justify-center items-center'
+					>
+						<ArrowForward
+							onClick={toRight}
+							fontSize='10px'
+						/>
+					</div>
+				)}
 			</div>
 
-
 			{/*  */}
-			<div className='flex-1 flex flex-col gap-10' >
+			<div className='flex-1 flex flex-col gap-10'>
 				<div className='flex flex-col gap-4'>
-					<div >
-						<p className='uppercase text-purple-800 font-extrabold'>Our success</p>
+					<div>
+						<p className='uppercase text-purple-800 font-extrabold'>
+							Our success
+						</p>
 					</div>
-					<div >
-						<h2 className='break-words'>Leading development for modern teams.</h2>
+					<div>
+						<h2 className='break-words'>
+							Leading development for modern teams.
+						</h2>
 					</div>
-					<div >
-						<p className='text-gray-600 break-words'>Create beautiful pages within minutes directly in Framer. Easily customize images, content, and style to make it your own.</p>
+					<div>
+						<p className='text-gray-600 break-words'>
+							Create beautiful pages within minutes directly in Framer. Easily
+							customize images, content, and style to make it your own.
+						</p>
 					</div>
 				</div>
 				<div className='grid grid-rows-2 grid-cols-2 gap-2 h-min justify-center'>
-					<div className="flex flex-col  justify-center items-center ">
+					<div className='flex flex-col  justify-center items-center '>
 						<div className='bg-purple-700 rounded-xl p-6 lg:min-w-[200px]'>
-							<div >
+							<div>
 								<h2 className='text-white text-[30px] lg:text-[60px]'>25+</h2>
 							</div>
-							<div >
+							<div>
 								<p className='text-gray-300'>Prebuilt Pages</p>
 							</div>
 						</div>
@@ -142,10 +159,10 @@ const OurSuccess = () => {
 
 					<div className='flex flex-col justify-center items-center '>
 						<div className='bg-purple-700 rounded-xl p-6 min-w-[100px]'>
-							<div >
+							<div>
 								<h2 className='text-white'>60+</h2>
 							</div>
-							<div >
+							<div>
 								<p className='text-gray-300'>Sections</p>
 							</div>
 						</div>
@@ -153,7 +170,7 @@ const OurSuccess = () => {
 				</div>
 			</div>
 		</div>
-	)
-}
+	);
+};
 
-export default OurSuccess
+export default OurSuccess;

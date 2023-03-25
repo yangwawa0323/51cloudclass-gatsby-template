@@ -16,61 +16,58 @@ import BoostSection from '../components/index/Boost';
 import EssentialSection from '../components/index/Essential';
 import FractionSection from '../components/index/Fraction';
 
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import Courses from '../components/index/course';
+import Frame from '../components/frame';
 
 function Index() {
-	const account = useSelector((state) => state.account);
+	// const account = useSelector((state) => state.account);
 
 	return (
-		<div className='w-full self-center'>
-			<Navbar />
-			<main className='min-w-[768px]'>
-				<div className='bg-white flex flex-col gap-3 h-min relative w-full items-center'>
-					<div className='w-full flex flex-col justify-center items-center gap-20 boost-section'>
-						{/* Boost Section */}
-						<BoostSection />
-					</div>
-
-					<div>
-						{/* course list */}
-						<Courses />
-					</div>
-
-					<div className='px-12 py-24 flex flex-col justify-center items-center gap-20 completed-toolkit'>
-						{/* Complete toolkit  */}
-						<CompleteToolkit />
-
-						{/* Three cards */}
-						<ThreeCards />
-					</div>
-					<div
-						id='pages'
-						className='px-12 pb-24 w-full justify-center flex'
-					>
-						{/* Completed pages */}
-						<CompletedPages />
-					</div>
-					<div
-						className='w-full'
-						style={{ backgroundColor: '#f6f4ff' }}
-					>
-						{/* Essential section */}
-						<EssentialSection />
-					</div>
-					<div
-						className='w-full'
-						style={{
-							backgroundColor: '#7421fc',
-						}}
-					>
-						{/* Fraction section */}
-						<FractionSection />
-					</div>
+		<Frame>
+			<div className='bg-white flex flex-col gap-3 h-min relative w-full items-center'>
+				<div className='w-full flex flex-col justify-center items-center gap-20 boost-section'>
+					{/* Boost Section */}
+					<BoostSection />
 				</div>
-			</main>
-			<Footer />
-		</div>
+
+				<div>
+					{/* course list */}
+					<Courses />
+				</div>
+
+				<div className='px-12 py-24 flex flex-col justify-center items-center gap-20 completed-toolkit'>
+					{/* Complete toolkit  */}
+					<CompleteToolkit />
+
+					{/* Three cards */}
+					<ThreeCards />
+				</div>
+				<div
+					id='pages'
+					className='px-12 pb-24 w-full justify-center flex'
+				>
+					{/* Completed pages */}
+					<CompletedPages />
+				</div>
+				<div
+					className='w-full'
+					style={{ backgroundColor: '#f6f4ff' }}
+				>
+					{/* Essential section */}
+					<EssentialSection />
+				</div>
+				<div
+					className='w-full'
+					style={{
+						backgroundColor: '#7421fc',
+					}}
+				>
+					{/* Fraction section */}
+					<FractionSection />
+				</div>
+			</div>
+		</Frame>
 	);
 }
 

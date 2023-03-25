@@ -6,8 +6,6 @@
 
 import React from 'react';
 import AsciinemaEditor from '../components/asciinema/AsciinemaEditor';
-import Footer from '../components/common/Footer';
-import Navbar from '../components/common/Navbar';
 import '../styles/components/_asciinema.scss';
 import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
@@ -16,6 +14,7 @@ import ArrowForward from '@mui/icons-material/ArrowForward';
 
 // import { debug } from "../utils/tools";
 import { navigate } from 'gatsby';
+import Frame from '../components/frame';
 
 const Asciinema = () => {
 	const [value, setValue] = React.useState(null);
@@ -58,11 +57,10 @@ const Asciinema = () => {
 	};
 
 	return (
-		<div>
-			<Navbar />
+		<Frame>
 			<div
 				style={{
-					minWidth: '768px',
+					// minWidth: '768px',
 					height: 'min-content',
 					width: 'auto',
 					padding: '150px 160px 100px 160px',
@@ -116,8 +114,7 @@ const Asciinema = () => {
 					</Snackbar>
 				</div>
 			</div>
-			<Footer />
-		</div>
+		</Frame>
 	);
 };
 

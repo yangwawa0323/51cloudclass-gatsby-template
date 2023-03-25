@@ -1,3 +1,11 @@
 node_modules/
 .cache/
+.yarn/
 public
+.env.development
+.gitignore
+.yarnrc.yml
+yarn.lock
+.env.production
+.env.production
+.env.development

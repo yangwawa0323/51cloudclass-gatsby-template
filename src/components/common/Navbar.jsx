@@ -50,9 +50,8 @@ const RegisterContainer = ({ textColor }) => (
 const Navbar = (props) => {
 	const [menuItems] = useState([
 		{ title: '首页', link: '/' },
-		{ title: '样式指南', link: '/' },
-		{ title: '页面', link: '/' },
-		{ title: '成长历史', link: '/changelog' },
+		{ title: '课程', link: '/courses' },
+		{ title: '历史', link: '/changelog' },
 	]);
 	const { backgroundColor, textColor } = props;
 
@@ -61,55 +60,53 @@ const Navbar = (props) => {
 	const isLogin = useCallback(() => userInfo !== null, [userInfo]);
 
 	return (
-		<div className='min-w-[768px] navbar-container items-center place-content-center flex-col flex-nowrap overflow-visible relative'>
+		<div className='min-w-[425px] w-full navbar-container items-center place-content-center flex-col flex-nowrap overflow-visible relative'>
 			<div
 				style={{ backgroundColor: backgroundColor, color: textColor }}
-				className={`fixed w-full ${
+				className={`w-full fixed ${
 					!backgroundColor ? 'bg-white' : ''
-				}  flex z-50 flex-grow-0 flex-shrink-0 gap-0 -translate-x-1/2 left-1/2`}
+				}  flex z-50 justify-end md:justify-between flex-grow-0 flex-shrink-0 gap-0 `}
 			>
-				<div className='w-full'>
-					<nav className='items-center flex overflow-hidden p-6 relative h-16'>
-						<div className='w-full flex flex-row items-center justify-between'>
-							<div className='logo'>
-								<div className='flex flex-row gap-3 items-center'>
-									<h1
-										style={{ color: textColor }}
-										className='text-sm'
-									>
-										51cloudclass 云课堂科技
-									</h1>
-								</div>
-							</div>
-							<div className='flex flex-row gap-5 pr-10 items-center text-xs font-semibold'>
-								{menuItems.map((menu, index) => (
-									<div key={index}>
-										<p
-											style={{
-												color: textColor,
-											}}
-										>
-											<Link to={menu.link}>{menu.title}</Link>
-										</p>
-									</div>
-								))}
-								{isLogin() ? (
-									<Profile />
-								) : (
-									<Box
-										display='flex'
-										alignItems='center'
-										flexDirection='row'
-										gap='12px'
-									>
-										<RegisterContainer textColor={textColor} />
-										<LoginContainer textColor={textColor} />
-									</Box>
-								)}
+				<nav className='w-full items-center flex overflow-hidden p-6 relative h-16'>
+					<div className='w-full flex flex-row items-center max-[425px]:justify-end justify-between'>
+						<div className='logo max-[425px]:hidden'>
+							<div className='flex flex-row gap-3 items-center'>
+								<h1
+									style={{ color: textColor }}
+									className='text-sm'
+								>
+									云课堂科技
+								</h1>
 							</div>
 						</div>
-					</nav>
-				</div>
+						<div className='flex flex-row gap-5 md:pr-10 items-center font-semibold'>
+							{menuItems.map((menu, index) => (
+								<div key={index}>
+									<p
+										style={{
+											color: textColor,
+										}}
+									>
+										<Link to={menu.link}>{menu.title}</Link>
+									</p>
+								</div>
+							))}
+							{isLogin() ? (
+								<Profile />
+							) : (
+								<Box
+									display='flex'
+									alignItems='center'
+									flexDirection='row'
+									gap='12px'
+								>
+									<RegisterContainer textColor={textColor} />
+									<LoginContainer textColor={textColor} />
+								</Box>
+							)}
+						</div>
+					</div>
+				</nav>
 			</div>
 		</div>
 	);

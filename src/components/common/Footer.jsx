@@ -10,14 +10,14 @@ import { Link } from 'gatsby';
 const Footer = (props) => {
 	const { extraStyles } = props;
 	return (
-		<div className='w-full min-w-[768px] h-auto relative flex flex-auto pointer-events-none'>
+		<div className='w-full min-w-[425px] h-auto relative flex flex-auto pointer-events-none'>
 			<div className='contents'>
 				<footer
-					className='pointer-events-auto items-center gap-[100px] h-min px-24 py-8 place-content-center flex-col w-full text-gray-300 text-xs'
+					className='pointer-events-auto items-center gap-2 lg:gap-[100px] h-min px-24 py-8 place-content-center flex-col w-full text-gray-300'
 					style={{ backgroundColor: 'rgb(79, 25, 166)' }}
 				>
 					<div
-						className='gap-10 flex flex-col max-w-[1200px]'
+						className='gap-10 flex flex-col lg:max-w-[1200px]'
 						style={{
 							extraStyles,
 						}}
@@ -29,7 +29,7 @@ const Footer = (props) => {
 								</div>
 							</a>
 						</div>
-						<div className='w-full flex justify-around gap-10'>
+						<div className='w-full flex flex-wrap lg:justify-around gap-10'>
 							<div className='flex flex-col gap-1.5 flex-1 h-min overflow-hidden min-w-[200px]'>
 								<div>
 									<p className='font-bold text-white'>首页</p>

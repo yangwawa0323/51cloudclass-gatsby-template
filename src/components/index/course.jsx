@@ -3,14 +3,16 @@
 import React from 'react';
 
 import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
-import { Link } from 'gatsby';
+
 import { useCallback } from 'react';
+import { getAxios } from '../../utils/tools';
+import { Link } from 'gatsby';
 
 const Courses = () => {
+	const axiosInstance = getAxios();
 	const fetchCourses = async () => {
-		const response = await axios.get(
-			`${process.env.GATSBY_API_SERVER}/courses`
+		const response = await axiosInstance.get(
+			`${process.env.GATSBY_API_SERVER}/courses/`
 		);
 		return response.data;
 	};
@@ -19,12 +21,12 @@ const Courses = () => {
 		return !course.is_shop;
 	}, []);
 
-	const { data, isLoading } = useQuery(['fetch-courses'], fetchCourses);
-	console.log('[DEBUG]:', data);
+	const { data, isLoading, error } = useQuery(['fetch-courses'], fetchCourses);
 
 	if (isLoading) {
 		return <div>加载中...</div>;
 	}
+	if (error) return '出错了，无法获得后台请求回应';
 
 	return (
 		<div
@@ -32,7 +34,7 @@ const Courses = () => {
 				background:
 					'linear-gradient(0deg,var(--token-0cdf47b3-ce1f-4341-98ec-f094608541cb, #f6f4ff) 0%,#fff 100%)',
 			}}
-			className='min-w-[768px]  entire-blog pt-24 px-12 pb-24 flex flex-col gap-16 justify-center items-center'
+			className='min-w-[425px]  entire-blog pt-24 px-12 pb-24 flex flex-col gap-16 justify-center items-center'
 		>
 			<div className=' max-w-[680px] flex flex-col gap-4 justify-center items-center'>
 				<div>
@@ -71,38 +73,37 @@ const Courses = () => {
 				</div> */}
 			</div>
 			<div className='blogs-grid grid  xs:grid-cols-[repeat(1,minmax(200px,1fr))] md:grid-cols-[repeat(2,minmax(200px,1fr))] lg:grid-cols-3  gap-8 auto-rows-min h-min justify-center max-w-[1200px] w-full'>
-				{data.map((course) => {
+				{data.result.courses.map((course) => {
 					return (
 						<div
-							key={course.id}
-							className='rounded-2xl overflow-hidden border-[2px] shadow-md hover:shadow-lg hover:scale-105 duration-500  h-full w-full place-self-start'
+							key={course.ID}
+							className='cursor-pointer rounded-2xl overflow-hidden border-[2px] shadow-md hover:shadow-lg hover:scale-105 duration-500  h-full w-full place-self-start'
 						>
-							{/* <Link to={`/blog/${blog.title.toLowerCase().replace(/ /g, '-')}`}> */}
-							<div className='h-[334px] overflow-hidden'>
-								<img
-									style={{
-										filter: offlined(course) ? 'grayscale(100%)' : 'unset',
-									}}
-									className='w-full h-full object-cover'
-									src={course.image}
-									alt={course.name}
-								/>
-							</div>
-							<div className='flex flex-col p-8 gap-2'>
-								<div>
-									<p className='uppercase font-extrabold text-purple-700 text-sm'>
-										{course.name} {offlined(course) ? '-- 即将上线' : ''}
-									</p>
+							<Link to={`/courses/`}>
+								<div className='h-[334px] overflow-hidden'>
+									<img
+										style={{
+											filter: offlined(course) ? 'grayscale(100%)' : 'unset',
+										}}
+										className='w-full h-full object-cover'
+										src={course.image}
+										alt={course.name}
+									/>
 								</div>
-								<div>
-									<p>{course.description}</p>
+								<div className='flex flex-col p-8 gap-2'>
+									<div>
+										<p className='uppercase font-extrabold text-purple-700 text-sm'>
+											{course.name} {offlined(course) ? '-- 即将上线' : ''}
+										</p>
+									</div>
+									<div>
+										<p className='text-gray-600'>{course.description}</p>
+									</div>
 								</div>
-							</div>
-							{/* </Link> */}
+							</Link>
 						</div>
 					);
 				})}
-				;
 			</div>
 		</div>
 	);

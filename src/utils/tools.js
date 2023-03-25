@@ -1,6 +1,27 @@
 /** @format */
 
+import React from 'react';
 import traverse from 'traverse';
+import axios from 'axios';
+import Moment from 'react-moment';
+// eslint-disable-next-line
+import moment from 'moment/min/moment-with-locales';
+
+Moment.globalMoment = moment;
+Moment.globalLocale = 'zh-cn';
+
+export const MomentUtil = (props) => {
+	const { value } = props;
+
+	return (
+		<Moment
+			date={new Date(value)}
+			fromNow
+		/>
+	);
+};
+
+var axiosInstance;
 
 export const debug = (message) => {
 	console.log(
@@ -85,3 +106,62 @@ export const keepUserInfo = (user) => {
 };
 
 export const getUserInfo = () => localStorage.getItem('account');
+
+export function debounce(fn, threshold) {
+	var timeout;
+	threshold = threshold || 100;
+	return function debounced() {
+		clearTimeout(timeout);
+		var args = arguments;
+		var _this = this;
+		function delayed() {
+			fn.apply(_this, args);
+		}
+		timeout = setTimeout(delayed, threshold);
+	};
+}
+
+const styles = [
+	`background : rebeccapurple`,
+	`border-radius: 0.5em`,
+	`color : white`,
+	`font-weight : bold`,
+	`padding: 2px 0.5em`,
+].join(';');
+
+export function debugLog(...args) {
+	console.debug(`%c51cloudclass`, styles, ...args);
+}
+
+// Axios instance singleton.
+export const getAxios = () => {
+	if (axiosInstance === undefined) {
+		axiosInstance = axios.create();
+	}
+	return axiosInstance;
+};
+
+export const cors = () => {
+	axiosInstance.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+	axiosInstance.defaults.headers.common['Content-Type'] = 'application/json';
+};
+
+export const corsConfig = (method) => ({
+	method: method || 'GET',
+	mode: 'no-cors',
+	headers: {
+		'Access-Control-Allow-Origin': '*',
+		'Content-Type': 'application/json',
+	},
+	withCredentials: true,
+	credentials: 'same-origin',
+});
+
+export const getTokenEtag = () => {
+	return [localStorage.getItem('token'), localStorage.getItem('etag')];
+};
+
+export const cleanTokenEtag = () => {
+	localStorage.removeItem('token');
+	localStorage.removeItem('etag');
+};

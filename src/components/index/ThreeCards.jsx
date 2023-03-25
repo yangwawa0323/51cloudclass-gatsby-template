@@ -63,7 +63,7 @@ const ThreeCards = () => {
 							</h3>
 						</div>
 						<div>
-							<p className='text-sm text-gray-500 leading-7'>
+							<p className='text-gray-600 leading-7'>
 								由职业教育十几载的杨老师针对目前大数据，云平台运维特别录制了
 								<span className='text-purple-600 text-2xl'>25+</span>
 								门以上的Linux运维和全栈开发课程。每一门课程都是针对互联网企业招聘所需而大学未普及授课的黑科技。它是一个有基础入门到高端的系统化的课程体系。
@@ -107,7 +107,7 @@ const ThreeCards = () => {
 							</h3>
 						</div>
 						<div>
-							<p className='text-sm text-gray-500 leading-7'>
+							<p className='text-gray-600 leading-7'>
 								51元包月任你学，打破高额付费课程格局，每月只需51元即可同时学习多门课程，最大化学习进度以及最小的学习成本。我们助力您的职场生涯，课程沉淀式更新，你可以按照规划的线路全程学习，也可以针对个别课程充电式学习，而这一切都不用单独高额购买课程。
 							</p>
 						</div>
@@ -142,7 +142,7 @@ const ThreeCards = () => {
 							</h3>
 						</div>
 						<div>
-							<p className='text-sm text-gray-500 leading-7'>
+							<p className=' text-gray-700 leading-7'>
 								多达1020+以上的课程视频，分成入门，进阶，高端三类，覆盖课程知识讲解，学习相关问题解答。贯穿在您的学习过程中，视频时长7-15分钟，你可以利用碎片时间掌握行业内的诸多新科技。
 							</p>
 						</div>

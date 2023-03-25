@@ -1,0 +1,17 @@
+.react-page-editor-container {
+
+    .react-page-row {
+        margin-top: 20px;
+        p  {
+            font-size: 16px;
+            color: rgb(31, 31, 31);
+        }
+        video {
+            border: 20px solid purple;
+            border-radius: 12px;
+            -webkit-box-shadow: 10px 10px 35px -1px rgba(0,0,0,0.75);
+            -moz-box-shadow: 10px 10px 35px -1px rgba(0,0,0,0.75);
+            box-shadow: 10px 10px 35px -1px rgba(0,0,0,0.75);
+        }
+    }
+}

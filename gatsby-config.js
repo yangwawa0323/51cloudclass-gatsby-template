@@ -8,10 +8,10 @@ require('dotenv').config({
 });
 
 module.exports = {
-	assetPrefix: `http://asset.51cloudclass.com/assets`,
+	// assetPrefix: `https://asset.51cloudclass.com/assets`,
 	siteMetadata: {
 		title: `My Gatsby Site`,
-		siteUrl: `https://www.51cloudclass.com:8081`,
+		siteUrl: `https://www.51cloudclass.com`,
 	},
 	plugins: [
 		'gatsby-plugin-sass',
