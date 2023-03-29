@@ -1,22 +1,19 @@
-/** 
+/**
  * Media query is OK.
+ *
+ * @format
  */
 
-import React from 'react'
-import Footer from '../components/common/Footer'
-import Navbar from '../components/common/Navbar'
-import PlanSection from '../components/price2/Plan'
+import React from 'react';
+import Frame from '../components/frame';
+import PlanSection from '../components/price2/Plan';
 
 const Price2 = () => {
-  return (
-    <div className='flex flex-col gap-24'>
-      <Navbar />
-      <main>
-        <PlanSection />
-      </main>
-      <Footer />
-    </div>
-  )
-}
+	return (
+		<Frame>
+			<PlanSection />
+		</Frame>
+	);
+};
 
-export default Price2
+export default Price2;

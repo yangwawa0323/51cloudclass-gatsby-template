@@ -1,7 +1,6 @@
 /** @format */
 
 import React, { useContext } from 'react';
-import { debugLog } from '../../utils/tools';
 import AsciinemaEditor from '../asciinema/AsciinemaEditor';
 import { ChapterContext } from './ChapterContextProvider';
 
@@ -14,17 +13,8 @@ const Video = () => {
 	const { chapter } = useContext(ChapterContext);
 
 	return (
-		<div
-			style={{
-				height: 'min-content',
-				width: 'calc(100% - 60px)',
-				minWidth: '500px',
-				display: 'flex',
-				flexDirection: 'column',
-			}}
-		>
+		<div className='px-8 min-h-fit w-[calc(100% - 60px)] flex flex-col '>
 			<AsciinemaEditor
-				style={{ minWidth: 400 }}
 				initialValue={JSON.parse(chapter.content)}
 				{...options}
 			/>

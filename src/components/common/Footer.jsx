@@ -64,26 +64,6 @@ const Footer = (props) => {
 										<Link to='/landing1'>登录页面</Link>
 									</p>
 								</div>
-								<div>
-									<p>
-										<Link to='/about-1'>关于我们</Link>
-									</p>
-								</div>
-								<div>
-									<p>
-										<Link to='/contact-1'>联系人</Link>
-									</p>
-								</div>
-								<div>
-									<p>
-										<Link to='/blog-1'>Blog</Link>
-									</p>
-								</div>
-								<div>
-									<p>
-										<Link to='/features-1'>特性</Link>
-									</p>
-								</div>
 							</div>
 							<div className='flex flex-col gap-1.5 flex-1 h-min overflow-hidden min-w-[200px]'>
 								<div>

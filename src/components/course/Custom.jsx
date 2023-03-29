@@ -1,144 +1,140 @@
 /** @format */
 
 import * as React from 'react';
-import Footer from '../common/Footer';
-import Navbar from '../common/Navbar';
+
 import { Link } from 'gatsby';
+import Frame from '../frame';
 
 const CustomBlog = ({ pageContext }) => {
 	const { blog, relatives } = pageContext;
 	return (
-		<div className='min-w-[425px] flex flex-col justify-center items-center'>
-			<Navbar />
-			<main>
-				<div className='flex flex-col gap-6 p-24 min-h-full w-auto justify-center items-center max-w-[1200px]'>
-					<div>
-						<p className='uppercase font-extrabold'>{blog.type}</p>
-					</div>
-					<div>
-						<h1>{blog.title}</h1>
-					</div>
-					<div>
-						<p className='text-gray-600 font-medium'>{blog.description}</p>
-					</div>
-					<div>
-						<p className='text-gray-400 '>Sep 1, 2022</p>
-					</div>
-					<div>
-						<div className='rounded-2xl overflow-hidden'>
-							<img
-								src={blog.image}
-								alt=''
-							/>
-						</div>
-					</div>
-					<div className='max-w-[700px] text-gray-600'>
-						<p>
-							Aenean dolor sed non euismod ut erat id. Posuere metus, lorem mi,
-							consequat et elementum. Ut in tristique justo, purus, facilisis
-							proin neque. Pulvinar pharetra lacus placerat lorem id. In felis
-							imperdiet gravida pellentesque eget. Nunc vitae ornare ut eget
-							blandit. Ridiculus varius nibh purus suspendisse amet elit a id
-							eget. At euismod faucibus mollis ipsum eget amet feugiat viverra.
-							Tempus libero consectetur tempor amet dolor nulla varius.
-							Adipiscing consequat habitasse urna id in nec egestas.
-						</p>
-						<p>
-							Urna interdum sit consequat convallis risus a. Vitae, viverra nisl
-							sapien mattis quis condimentum dictum. Molestie pulvinar tellus
-							pharetra.
-						</p>
-						<p>
-							<br />
-						</p>
-						<h2>Improve Your Launch Campaign</h2>
-						<p>
-							Diam et sagittis varius vitae ac. Mi suscipit dignissim volutpat
-							neque. Sed hendrerit nunc, arcu lacus, pellentesque mus egestas
-							dignissim. Lectus a donec nunc enim duis lobortis in sit ornare.
-						</p>
-						<ul>
-							<li>
-								<p>
-									Est bibendum tempor enim mauris. Adipiscing congue porta vitae
-									amet.
-								</p>
-							</li>
-							<li>
-								<p>Montes, nullam est in id. Amet suscipit maecenas quisque.</p>
-							</li>
-							<li>
-								<p>Et dictum dis ut mi erat magnis amet. Lobortis phasellus.</p>
-							</li>
-						</ul>
-						<p>
-							Metus, sit lobortis risus non ipsum, a volutpat mi. Laoreet
-							hendrerit massa neque, mauris odio aliquam aliquam. Libero, ut
-							duis ac vitae viverra eleifend commodo pellentesque nunc. Eu id
-							molestie odio dolor. Duis lectus velit dignissim tellus tempor
-							elit aliquet mattis.
-						</p>
-
-						<h4>Boost your website</h4>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-							dignissim aliquam enim. Nulla laoreet finibus nunc nec dictum.
-							Duis leo nisi, ornare a justo vitae, facilisis molestie ex.
-							Maecenas gravida euismod orci ac laoreet.
-						</p>
-						<p>
-							Morbi nec dictum nisi. Aliquam erat volutpat. Ut porttitor turpis
-							in pharetra tempor. Fusce at odio et quam facilisis blandit sit
-							amet sit amet dolor. Proin vestibulum finibus erat quis rhoncus.
-							Suspendisse placerat consectetur metus dictum accumsan.
-						</p>
-						<p>
-							Nam varius iaculis ligula, quis faucibus ex ultrices eget. Nullam
-							rutrum augue a risus ullamcorper bibendum. Aliquam sagittis porta
-							interdum.
-						</p>
-					</div>
-					<div className='flex flex-col flex-start gap-10'>
-						<div>
-							<h3>Latest articles</h3>
-						</div>
-						<div className='flex flex-row gap-4  justify-center items-center'>
-							{relatives?.length > 1 &&
-								relatives.map((rel, index) => {
-									if (index >= 2) return <></>;
-									return (
-										<div
-											key={rel.title}
-											className='flex-1 '
-										>
-											<Link
-												to={`/blog/${rel.title
-													.toLowerCase()
-													.replace(/ /g, '-')}`}
-												className='flex-row flex gap-2  overflow-hidden  rounded-2xl border-gray-300 shadow-lg w-[503px] h-min'
-											>
-												<img
-													className='h-[100px] w-[150px] '
-													src={rel.image}
-													alt={rel.title}
-												/>
-												<div className='flex flex-col gap-2 p-2'>
-													<h5 className='text-xs text-purple-700 uppercase font-extrabold'>
-														{' '}
-														{rel.type}
-													</h5>
-													<p className='text-xs font-medium text-gray-700'>
-														{rel.title}
-													</p>
-												</div>
-											</Link>
-										</div>
-									);
-								})}
-						</div>
+		<Frame>
+			<div className='flex flex-col gap-6 p-24 min-h-full w-auto justify-center items-center max-w-[1200px]'>
+				<div>
+					<p className='uppercase font-extrabold'>{blog.type}</p>
+				</div>
+				<div>
+					<h1>{blog.title}</h1>
+				</div>
+				<div>
+					<p className='text-gray-600 font-medium'>{blog.description}</p>
+				</div>
+				<div>
+					<p className='text-gray-400 '>Sep 1, 2022</p>
+				</div>
+				<div>
+					<div className='rounded-2xl overflow-hidden'>
+						<img
+							src={blog.image}
+							alt=''
+						/>
 					</div>
 				</div>
-			</main>
+				<div className='max-w-[700px] text-gray-600'>
+					<p>
+						Aenean dolor sed non euismod ut erat id. Posuere metus, lorem mi,
+						consequat et elementum. Ut in tristique justo, purus, facilisis
+						proin neque. Pulvinar pharetra lacus placerat lorem id. In felis
+						imperdiet gravida pellentesque eget. Nunc vitae ornare ut eget
+						blandit. Ridiculus varius nibh purus suspendisse amet elit a id
+						eget. At euismod faucibus mollis ipsum eget amet feugiat viverra.
+						Tempus libero consectetur tempor amet dolor nulla varius. Adipiscing
+						consequat habitasse urna id in nec egestas.
+					</p>
+					<p>
+						Urna interdum sit consequat convallis risus a. Vitae, viverra nisl
+						sapien mattis quis condimentum dictum. Molestie pulvinar tellus
+						pharetra.
+					</p>
+					<p>
+						<br />
+					</p>
+					<h2>Improve Your Launch Campaign</h2>
+					<p>
+						Diam et sagittis varius vitae ac. Mi suscipit dignissim volutpat
+						neque. Sed hendrerit nunc, arcu lacus, pellentesque mus egestas
+						dignissim. Lectus a donec nunc enim duis lobortis in sit ornare.
+					</p>
+					<ul>
+						<li>
+							<p>
+								Est bibendum tempor enim mauris. Adipiscing congue porta vitae
+								amet.
+							</p>
+						</li>
+						<li>
+							<p>Montes, nullam est in id. Amet suscipit maecenas quisque.</p>
+						</li>
+						<li>
+							<p>Et dictum dis ut mi erat magnis amet. Lobortis phasellus.</p>
+						</li>
+					</ul>
+					<p>
+						Metus, sit lobortis risus non ipsum, a volutpat mi. Laoreet
+						hendrerit massa neque, mauris odio aliquam aliquam. Libero, ut duis
+						ac vitae viverra eleifend commodo pellentesque nunc. Eu id molestie
+						odio dolor. Duis lectus velit dignissim tellus tempor elit aliquet
+						mattis.
+					</p>
+
+					<h4>Boost your website</h4>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+						dignissim aliquam enim. Nulla laoreet finibus nunc nec dictum. Duis
+						leo nisi, ornare a justo vitae, facilisis molestie ex. Maecenas
+						gravida euismod orci ac laoreet.
+					</p>
+					<p>
+						Morbi nec dictum nisi. Aliquam erat volutpat. Ut porttitor turpis in
+						pharetra tempor. Fusce at odio et quam facilisis blandit sit amet
+						sit amet dolor. Proin vestibulum finibus erat quis rhoncus.
+						Suspendisse placerat consectetur metus dictum accumsan.
+					</p>
+					<p>
+						Nam varius iaculis ligula, quis faucibus ex ultrices eget. Nullam
+						rutrum augue a risus ullamcorper bibendum. Aliquam sagittis porta
+						interdum.
+					</p>
+				</div>
+				<div className='flex flex-col flex-start gap-10'>
+					<div>
+						<h3>Latest articles</h3>
+					</div>
+					<div className='flex flex-row gap-4  justify-center items-center'>
+						{relatives?.length > 1 &&
+							relatives.map((rel, index) => {
+								if (index >= 2) return <></>;
+								return (
+									<div
+										key={rel.title}
+										className='flex-1 '
+									>
+										<Link
+											to={`/blog/${rel.title.toLowerCase().replace(/ /g, '-')}`}
+											className='flex-row flex gap-2  overflow-hidden  rounded-2xl border-gray-300 shadow-lg w-[503px] h-min'
+										>
+											<img
+												className='h-[100px] w-[150px] '
+												src={rel.image}
+												alt={rel.title}
+											/>
+											<div className='flex flex-col gap-2 p-2'>
+												<h5 className='text-xs text-purple-700 uppercase font-extrabold'>
+													{' '}
+													{rel.type}
+												</h5>
+												<p className='text-xs font-medium text-gray-700'>
+													{rel.title}
+												</p>
+											</div>
+										</Link>
+									</div>
+								);
+							})}
+					</div>
+				</div>
+			</div>
+
 			<div
 				className='w-full justify-center items-center flex flex-col gap-10 p-16'
 				style={{
@@ -184,8 +180,7 @@ const CustomBlog = ({ pageContext }) => {
 					</div>
 				</div>
 			</div>
-			<Footer />
-		</div>
+		</Frame>
 	);
 };
 

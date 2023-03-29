@@ -17,7 +17,7 @@ import { Link } from 'gatsby';
 const BoostSection = ({ course }) => {
 	return (
 		<div
-			className='min-w-[425px] w-full landing4-boost-section pt-48 px-24 pb-24 justify-center items-center flex flex-col gap-24 h-min overflow-hidden relative'
+			className='min-w-[425px] w-full landing4-boost-section pt-48 xs:px-4 px-24 pb-24 justify-center items-center flex flex-col gap-24 h-min overflow-hidden relative'
 			style={{
 				background:
 					'radial-gradient(72.6% 84% at 100% 100%, #b09eff 0%, rgb(255, 255, 255)  100%)',

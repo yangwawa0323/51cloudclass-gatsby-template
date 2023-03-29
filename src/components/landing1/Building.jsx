@@ -21,7 +21,9 @@ const BuildingBlock = () => {
 				<p className='uppercase text-sm text-purple-700 font-extrabold'>
 					complete toolkit
 				</p>
-				<h2 className='text-center'>Building blocks for your next website.</h2>
+				<h2 className='text-center xs:text-3xl'>
+					Building blocks for your next website.
+				</h2>
 			</div>
 			<div className='flex flex-col gap-10'>
 				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>

@@ -8,7 +8,7 @@ require('dotenv').config({
 });
 
 module.exports = {
-	// assetPrefix: `https://asset.51cloudclass.com/assets`,
+	assetPrefix: `https://assets.51cloudclass.com/assets`,
 	siteMetadata: {
 		title: `My Gatsby Site`,
 		siteUrl: `https://www.51cloudclass.com`,

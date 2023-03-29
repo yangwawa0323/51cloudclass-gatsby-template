@@ -1,8 +1,6 @@
 /** @format */
 
 import * as React from 'react';
-import Footer from '../components/common/Footer';
-import Navbar from '../components/common/Navbar';
 
 // move the index.scss to navbar.js, otherwise by input the page URI
 // has not style defined.

@@ -9,13 +9,13 @@ import * as React from 'react';
 const FractionSection = () => {
 	return (
 		<div className='min-w-[425px] fraction-section bg-[#7421fc] justify-center items-center flex flex-col py-20'>
-			<div className=' flex flex-row gap-16 h-min max-w-[1200px] w-full justify-center items-center'>
+			<div className=' flex flex-row gap-16 h-min max-w-[1200px] px-8 justify-center items-center'>
 				<div className='flex-1 flex  flex-col gap-[20px] max-w-[530px] min-w-[200px]'>
 					<div>
 						<p className='text-gray-400 uppercase font-extrabold'>
 							Fraction template
 						</p>
-						<h2 className='text-white'>
+						<h2 className='text-white xs:text-3xl'>
 							Build a website that performs better.
 						</h2>
 					</div>

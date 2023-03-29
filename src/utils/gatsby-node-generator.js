@@ -131,7 +131,7 @@ const generateCoursesDetailPage = async ({ graphql, actions }) => {
 
 	return new Promise((resolve, reject) => {
 		courses.forEach((course) => {
-			console.log('course: ', course);
+			// console.log('course: ', course);
 			actions.createPage({
 				path: `/courses/${course.ID}`,
 				component: require.resolve('../components/course/Detail.jsx'),

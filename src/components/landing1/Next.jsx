@@ -49,11 +49,13 @@ const NextWebsite = () => {
 
 	return (
 		<div className='min-w-[425px] next-website overflow-hidden flex flex-col gap-8 py-16  justify-center items-center'>
-			<div className='flex flex-col justify-center items-center max-w-[500px] gap-3'>
+			<div className='flex flex-col justify-center xs:px-4	 items-center max-w-[500px] gap-3'>
 				<p className='text-sm font-extrabold text-purple-700 uppercase'>
 					complete toolkit
 				</p>
-				<h2 className='text-center'>Building blocks for your next website.</h2>
+				<h2 className='text-center xs:text-3xl'>
+					Building blocks for your next website.
+				</h2>
 				<p className='text-gray-600 font-bold text-sm'>
 					Build a unique experience by mixing and matching components. Make your
 					brand shine.

@@ -1,7 +1,6 @@
 /** @format */
 
 import React from 'react';
-import { Grid } from '@mui/material';
 import Video from './Video';
 import Detail from './Detail';
 

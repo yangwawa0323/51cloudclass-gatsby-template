@@ -6,8 +6,6 @@
 
 import { Link } from 'gatsby';
 import * as React from 'react';
-import Footer from '../common/Footer';
-import Navbar from '../common/Navbar';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { debugLog, getAxios } from '../../utils/tools';
@@ -164,14 +162,14 @@ const CourseMain = ({ pageContext }) => {
 
 				{/*  */}
 				<div>
-					<div className='blogs-grid grid grid-cols-[repeat(2,minmax(200px,1fr))] grid-rows-[repeat(2,min-content)] gap-8 auto-rows-min h-min justify-center max-w-[1200px] w-full'>
+					<div className='blogs-grid grid xs:grid-cols-1 md:grid-cols-[repeat(2,minmax(200px,1fr))] grid-rows-[repeat(2,min-content)] gap-8 auto-rows-min h-min justify-center max-w-[1200px] w-full'>
 						{courses.map((course) => (
 							<div
 								key={course.ID}
 								className='rounded-2xl overflow-hidden border-[2px] shadow-md hover:shadow-lg hover:scale-105 duration-500  h-full w-full place-self-start'
 							>
 								<Link to={`/courses/${course.ID}`}>
-									<div className='h-[334px] overflow-hidden'>
+									<div className='xs:h-[224px] h-[334px] overflow-hidden'>
 										<img
 											className='w-full h-full object-cover'
 											src={course.image}

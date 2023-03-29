@@ -10,6 +10,7 @@ import { Link } from 'gatsby';
 
 import pictures from '../../utils/image';
 import pageJsonData from '../../data/completed-page.json';
+import { debugLog } from '../../utils/tools';
 
 const boostSectionAnimation = (timeline) => {
 	const wrapper = document.querySelector('.boost-section-wrapper');
@@ -90,7 +91,6 @@ const BoostSection = () => {
 
 	const getScrollPageGrid = (pages) => {
 		let pageList = [];
-		// debugger
 		for (let index in pages) {
 			const page = pages[index];
 			pageList.push(
@@ -129,6 +129,7 @@ const BoostSection = () => {
 				</div>
 			);
 		}
+		debugLog(content);
 		return content;
 	};
 
@@ -193,7 +194,7 @@ const BoostSection = () => {
 				{/* vertical scrolling pages  */}
 				{/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
 				<div
-					className='wrapper hidden xl:block'
+					className='wrapper hidden lg:block'
 					// eslint-disable-next-line jsx-a11y/no-static-element-interactions
 					onMouseLeave={resumeAnimation}
 					onMouseEnter={pauseAnimation}

@@ -8,8 +8,6 @@ import { ChapterContext } from './ChapterContextProvider';
 import { debugLog, getAxios } from '../../utils/tools';
 import { useQuery } from '@tanstack/react-query';
 
-import { sortBy } from 'lodash';
-
 import { Link } from 'gatsby';
 
 // import SimpleBar from 'simplebar-react';

@@ -2,7 +2,6 @@
 
 import { Box, Typography } from '@mui/material';
 import React, { useContext } from 'react';
-import { debugLog } from '../../utils/tools';
 import { ChapterContext } from './ChapterContextProvider';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import CloudDownloadIcon from '@mui/icons-material/CloudDownload';

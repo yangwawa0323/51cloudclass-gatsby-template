@@ -63,8 +63,8 @@ class PolyvPlayer extends React.Component {
 
 	render() {
 		return (
-			<div className='wrap polyv-wrap'>
-				<div className='player polyv-player'></div>
+			<div className='wrap polyv-wrap xs:w-[360px]'>
+				<div className='player polyv-player xs:w-[320px]'></div>
 			</div>
 		);
 	}

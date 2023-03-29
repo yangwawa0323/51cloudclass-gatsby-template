@@ -11,7 +11,6 @@ import {
 	ButtonBase,
 	CardContent,
 	ClickAwayListener,
-	Grid,
 	IconButton,
 	Paper,
 	Popper,
