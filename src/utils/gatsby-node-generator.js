@@ -127,7 +127,7 @@ const generateCoursesDetailPage = async ({ graphql, actions }) => {
 	const data = await response.json();
 	const { courses } = data.result;
 
-	console.log('generateCoursesDetailPage:', courses);
+	// console.log('generateCoursesDetailPage:', courses);
 
 	return new Promise((resolve, reject) => {
 		courses.forEach((course) => {
