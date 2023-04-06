@@ -11,6 +11,14 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 import { debugLog, getAxios } from '../../utils/tools';
 import { useQuery } from '@tanstack/react-query';
 import Frame from '../frame';
+import '../../styles/pages/_course-main.scss';
+import { Divider } from '@mui/material';
+
+import good from "../../assets/img/courses/good.png"
+import business from '../../assets/img/courses/business-revenue.png'
+import formation from '../../assets/img/courses/formaṭion-status.png'
+import esstimated from '../../assets/img/courses/esstimated-processing.png'
+import level01 from '../../assets/img/courses/level-01.svg'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -70,17 +78,16 @@ const CourseMain = ({ pageContext }) => {
 				className='min-w-[425px]  entire-blog pt-24 px-12 pb-24 flex flex-col gap-16 justify-center items-center'
 			>
 				{/*  */}
-
-				<div className=' flex flex-col gap-4 justify-center items-center'>
-					<div>
-						<h1>课程</h1>
-					</div>
-					<div>
-						<p className='text-center font-medium text-[24px] text-gray-600 break-words'>
-							了解最新更新课程，请订阅和关注我们
-						</p>
-					</div>
-					<div>
+				<div className='course-main flex gap-20 justify-between items-center'>
+					<div className="course-text-block gap-4 flex flex-col flex-1">
+						<div>
+							<h1>课程</h1>
+						</div>
+						<div>
+							<p className='text-center font-medium text-[24px] text-gray-600 break-words'>
+								了解最新更新课程，请订阅和关注我们
+							</p>
+						</div>
 						<div>
 							<form className='grid grid-cols-[1fr_max-content] grid-rows-1 relative gap-0'>
 								<div className='hidden absolute'>
@@ -108,7 +115,34 @@ const CourseMain = ({ pageContext }) => {
 							</form>
 						</div>
 					</div>
+					<div className="course-image-block flex-1">
+						<div
+							className="consulting-hero-image-one border-radius-eighty overflow">
+							<img
+								src={good}
+								loading="lazy" width="322" height="426" data-w-id="ad912aa4-3553-4162-58d5-b718585ad288"
+								alt="Software Solutions" className="auto-fit" />
+						</div>
+						<div className="consulting-hero-image-two">
+							<img
+								src={business}
+								loading="lazy" width="280" height="284" alt="Business Revenue" className="auto-fit" />
+						</div>
+						<div className="consulting-hero-image-three">
+							<img
+								src={formation}
+								loading="lazy" width="280" height="189" alt="Formation Status" className="auto-fit" />
+						</div>
+						<div className="consulting-hero-image-four margin-top">
+							<img
+								src={esstimated}
+								loading="lazy" width="280" height="310"
+								sizes="(max-width: 479px) 90vw, (max-width: 767px) 45vw, (max-width: 991px) 280px, (max-width: 1279px) 22vw, 280px"
+								alt="Estimated Processing " className="auto-fit" />
+						</div>
+					</div>
 				</div>
+
 
 				{/*  */}
 				{/* <div className='flex flex-row gap-10 h-min w-full overflow-visible'>
@@ -162,21 +196,21 @@ const CourseMain = ({ pageContext }) => {
 
 				{/*  */}
 				<div>
-					<div className='blogs-grid grid xs:grid-cols-1 md:grid-cols-[repeat(2,minmax(200px,1fr))] grid-rows-[repeat(2,min-content)] gap-8 auto-rows-min h-min justify-center max-w-[1200px] w-full'>
+					<div className='blogs-grid grid min-w-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-8 auto-rows-min h-min justify-center max-w-[1200px] w-full'>
 						{courses.map((course) => (
 							<div
 								key={course.ID}
 								className='rounded-2xl overflow-hidden border-[2px] shadow-md hover:shadow-lg hover:scale-105 duration-500  h-full w-full place-self-start'
 							>
 								<Link to={`/courses/${course.ID}`}>
-									<div className='xs:h-[224px] h-[334px] overflow-hidden'>
+									<div className='xs:h-[224px] h-[334px] overflow-hidden pt-4'>
 										<img
-											className='w-full h-full object-cover'
+											className='w-full h-full object-contain rounded-lg overflow-hidden'
 											src={course.image}
 											alt={course.title}
 										/>
 									</div>
-									<div className='flex flex-col p-8 gap-2'>
+									<div className='flex flex-col px-8 pb-4 gap-2 relative'>
 										<div>
 											<p className='uppercase font-extrabold text-purple-700 text-sm'>
 												{course.type}
@@ -186,17 +220,46 @@ const CourseMain = ({ pageContext }) => {
 											<h4>{course.title}</h4>
 										</div>
 										<div>
-											<p>{course.description}</p>
+											<p dangerouslySetInnerHTML={{ __html: course.description.replace("\\n", "<br/>") }}></p>
 										</div>
+
+									</div>
+									<div className="w-full flex flex-col">
+
+										<Divider className='w-10/12 self-center' />
+									</div>
+									<div className="p-4 ">
+										<div class="course-card-details-wrapper pb-8">
+											<div className="level-wrapper">
+												<img
+													src={level01}
+													alt="" class="level-icon w-condition-invisible" />
+												{/* <img
+													src="https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee358b750b2d85_icon-level-02-academy-template.svg"
+													alt="" class="level-icon" />
+												<img
+													src="https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee35be900b2d7a_icon-level-03-academy-template.svg"
+													alt="" class="level-icon w-condition-invisible" /> */}
+												<div className="w-dyn-list">
+													<div role="list" className="levels-list w-dyn-items">
+														<div role="listitem" className="level-text-wrapper w-dyn-item"><a href="/category/intermediate"
+															className="level-text">初学者</a></div>
+													</div>
+												</div>
+											</div>
+											<div
+												class="course-card-price">$&nbsp;399.00&nbsp;USD</div>
+										</div>
+
 									</div>
 								</Link>
 							</div>
 						))}
 					</div>
 				</div>
-			</div>
+			</div >
 			{/*  */}
-			<div className='stay-in-the-loop-form flex flex-col p-16 justify-center items-center bg-white'>
+			< div className='stay-in-the-loop-form flex flex-col p-16 justify-center items-center bg-white' >
 				<div className='flex flex-col justify-center items-center max-w-[500px] gap-4'>
 					<div>
 						<p className='uppercase text-purple-700 font-extrabold'>
@@ -234,8 +297,8 @@ const CourseMain = ({ pageContext }) => {
 						</div>
 					</div>
 				</div>
-			</div>
-		</Frame>
+			</div >
+		</Frame >
 	);
 };
 

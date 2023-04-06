@@ -12,20 +12,154 @@ import LinuxLogo from '../../assets/img/logo-tux-svgrepo-com.svg';
 import GoLangLogo from '../../assets/img/go-logo-svgrepo-com.svg';
 import SinaLogo from '../../assets/img/sina-logo-svgrepo-com.svg';
 
+import sophie from '../../assets/img/courses/sophie-moore.jpg'
+import marketers from '../../assets/img/courses/marketers.png'
+
 import { Link } from 'gatsby';
+import { Box } from '@mui/material';
+import "../../styles/pages/_course-boost.scss";
 
 const BoostSection = ({ course }) => {
 	return (
 		<div
-			className='min-w-[425px] w-full landing4-boost-section pt-48 xs:px-4 px-24 pb-24 justify-center items-center flex flex-col gap-24 h-min overflow-hidden relative'
+			className='min-w-[425px] w-full landing4-boost-section  xs:px-4 p-12 justify-center items-center flex flex-col gap-24 h-min relative'
 			style={{
 				background:
 					'radial-gradient(72.6% 84% at 100% 100%, #b09eff 0%, rgb(255, 255, 255)  100%)',
 			}}
 		>
-			<div
-				className='flex flex-col md:flex-row gap-20 max-w-[1200px]
-			 h-min items-center justify-center '
+			{/*  */}
+			<div className="section course wf-section">
+				<div className="container-default-1209px w-container">
+					<div className="course-wrapper">
+						<div className="about-course">
+							<div className="top-content course">
+								<h1 className="title course-page">{course.name}</h1>
+								<p className="paragraph course-description">{course.description}</p>
+								<div className="w-layout-grid advantage-course-grid">
+									<div className="advantage-course-wrapper">
+										<img
+											src="https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee3544500b2dbf_icon-advantage-course-01-academy-template.svg"
+											alt="" className="advantage-course-icon" />
+										<div className="advantage-course-text">在线视频</div>
+									</div>
+									<div className="advantage-course-wrapper">
+										<img
+											src="https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee3582430b2dc9_icon-advantage-course-02-academy-template.svg"
+											alt="" className="advantage-course-icon" />
+										<div className="advantage-course-text">练习资源</div>
+									</div>
+									<div className="advantage-course-wrapper">
+										<img
+											src="https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee3531700b2dc0_icon-advantage-course-03-academy-template.svg"
+											alt="" className="advantage-course-icon" />
+										<div className="advantage-course-text">电子文档</div>
+									</div>
+									<div className="advantage-course-wrapper">
+										<img
+											src="https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee3538530b2db7_icon-advantage-course-04-academy-template.svg"
+											alt="" className="advantage-course-icon" />
+										<div className="advantage-course-text">学习团队</div>
+									</div>
+								</div>
+								<a href="/teacher/sophie-moore"
+									className="course-teacher-wrapper w-inline-block">
+									<img
+										src={sophie}
+										alt="" className="image course-teacher" />
+									<div>
+										<div className="course-teacher-name">Sophie Moore</div>
+										<div className="teacher-work _2">UI/UX Designer</div>
+									</div>
+								</a>
+								<div className="spacer about-course"></div>
+								<div className='flex-1 justify-start w-4/5 p-8 bg-white flex flex-col gap-6 h-min rounded-xl shadow-2xl'>
+									<h5>课程章节</h5>
+									{course.chapters?.map((chpt, idx) => {
+										return (
+											<div key={chpt.ID}>
+												第{idx + 1}章：
+												<Link to={`/chapters/${chpt.ID}`}>{chpt.name}</Link>
+											</div>
+										);
+									})}
+								</div>
+							</div>
+							<div className="spacer about-course"></div>
+						</div>
+						<div className="spacer course"></div>
+						<Box className="card-sticky-wrapper" >
+							<div className="card course">
+								<div className="course-preview">
+									<img src={marketers}
+										alt=""
+										className="image course-page" />
+									<div className="course-preview-wrapper">
+										<a href="#" className="course-preview-button w-inline-block w-lightbox"
+										>
+											<div className="button-play-wrapper">
+												<img src="https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee35cf400b2dcf_icon-play-academy-template.svg"
+													alt="" className="button-play course" />
+											</div>
+										</a></div>
+								</div>
+								<div>
+									<button
+										className="button-primary large w-full" >
+										加入学习计划
+									</button>
+								</div>
+								<div className="course-details mt-8">
+									<div className="course-detail-wrapper">
+										<img
+											src="https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee3569bf0b2d7f_icon-level-01-academy-template.svg"
+											alt="" className="course-detail-icon standard-size" />
+
+										<div className="course-detail-text">难度:&nbsp;</div>
+										<div className="level-wrapper">
+											<div className="w-dyn-list">
+												<div role="list" className="levels-list w-dyn-items">
+													<div role="listitem" className="level-text-wrapper w-dyn-item"><a
+														href="/category/beginner" className="course-detail-text level">初级</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div className="spacer course-details"></div>
+									<div className="course-detail-wrapper">
+										<img
+											src="https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee3501350b2d88_icon-event-02-academy-template.svg"
+											alt="" className="course-detail-icon standard-size" />
+										<div className="course-detail-text">时长:&nbsp;</div>
+										<div className="course-detail-text strong">5小时 42分钟</div>
+									</div>
+									<div className="spacer course-details"></div>
+									<div className="course-detail-wrapper"><img
+										src="https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee3573f40b2d79_icon-course-detail-01-academy-template.svg"
+										alt="" className="course-detail-icon" />
+										<div className="course-detail-text">视频:&nbsp;</div>
+										<div className="course-detail-text strong">67</div>
+									</div>
+									<div className="spacer course-details"></div>
+									<div className="course-detail-wrapper">
+										<img
+											src="https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee35e7fa0b2dbe_icon-course-detail-02-academy-template.svg"
+											alt="" className="course-detail-icon" />
+										<div className="course-detail-text">实验资源:&nbsp;</div>
+										<div className="course-detail-text strong">8</div>
+									</div>
+
+								</div>
+							</div>
+						</Box>
+					</div>
+				</div>
+				<div className="bg-course"></div>
+			</div>
+			{/*  */}
+			{/* <div
+				className='flex flex-col md:flex-row gap-20 max-w-[1200px] h-min items-center justify-center'
 			>
 				<div className='flex-1 max-w-[600px] gap-4 flex flex-col justify-start'>
 					<div>
@@ -55,7 +189,7 @@ const BoostSection = ({ course }) => {
 						);
 					})}
 				</div>
-			</div>
+			</div> */}
 			{/*  */}
 			<div className='flex flex-col gap-12 w-4/5'>
 				<div>
@@ -136,7 +270,7 @@ const BoostSection = ({ course }) => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</div >
 	);
 };
 

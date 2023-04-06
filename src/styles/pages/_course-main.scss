@@ -1,0 +1,133 @@
+div.course-main {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	padding-bottom: 120px;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	grid-column-gap: 50px;
+
+	div.course-image-block {
+		display: -ms-grid;
+		display: grid;
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: row;
+		-ms-flex-direction: row;
+		flex-direction: row;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		-webkit-box-align: start;
+		-webkit-align-items: start;
+		-ms-flex-align: start;
+		align-items: start;
+		-webkit-box-flex: 1;
+		-webkit-flex: 1;
+		-ms-flex: 1;
+		flex: 1;
+		grid-auto-columns: 1fr;
+		grid-column-gap: 30px;
+		grid-row-gap: 30px;
+		-ms-grid-columns: 1fr 1fr;
+		grid-template-columns: 1fr 1fr;
+		-ms-grid-rows: auto auto auto;
+		grid-template-rows: auto auto auto;
+
+		.consulting-hero-image-one {
+			-ms-grid-column-span: 1;
+			grid-column-end: 2;
+			-ms-grid-column: 1;
+			grid-column-start: 1;
+			-ms-grid-row-span: 2;
+			grid-row-end: 3;
+			-ms-grid-row: 1;
+			grid-row-start: 1;
+			background-color: #ddb0ff;
+
+			&.border-radius-eighty {
+				-webkit-box-flex: 0;
+				-webkit-flex: 0 50%;
+				-ms-flex: 0 50%;
+				flex: 0 50%;
+				border-top-left-radius: 80px;
+				border-bottom-right-radius: 80px;
+			}
+		}
+
+		.consulting-hero-image-four {
+			-ms-grid-column-span: 1;
+			grid-column-end: 3;
+			-ms-grid-column: 2;
+			grid-column-start: 2;
+			-ms-grid-row-span: 2;
+			grid-row-end: 4;
+			-ms-grid-row: 2;
+			grid-row-start: 2;
+		}
+	}
+}
+
+.course-card-details-wrapper {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+
+	.why-us-content {
+		max-width: 375px;
+	}
+
+	.level-wrapper {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		gap: 24px;
+	}
+
+	a {
+		-webkit-transition: color 350ms ease;
+		transition: color 350ms ease;
+		color: #3434ff;
+		font-weight: 400;
+		text-decoration: none;
+
+		&:hover {
+			color: #2c23d2;
+		}
+	}
+}
+
+.why-study-icon {
+	width: 110px;
+	margin-bottom: 17px;
+}
+
+.level-text {
+	color: #0b0b2c;
+	line-height: 1.111em;
+	font-weight: 600 !important;
+}
+
+.level-text:hover {
+	color: #3434ff;
+}
+
+.course-card-price {
+	color: #0b0b2c;
+	font-size: 20px;
+	line-height: 1.1em;
+	font-weight: 500;
+}

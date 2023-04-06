@@ -1,14 +1,17 @@
 /** @format */
 
 import React from 'react';
-import Frame from '../frame';
+import Footer from '../common/Footer';
+import Navbar from '../common/Navbar';
 import BoostSection from './Boost';
 
 const Detail = ({ pageContext }) => {
 	return (
-		<Frame>
+		<>
+			<Navbar />
 			<BoostSection course={pageContext.course} />
-		</Frame>
+			<Footer />
+		</>
 	);
 };
 

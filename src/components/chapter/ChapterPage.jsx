@@ -10,7 +10,7 @@ import Frame from '../frame';
 const ChapterPage = (props) => {
 	const { pageContext } = props;
 	const extra = { chapter: pageContext.chapter };
-	debugLog('In chapter page pageContext is:', pageContext);
+	// debugLog('In chapter page pageContext is:', pageContext);
 
 	return (
 		<Frame>

@@ -1,11 +1,9 @@
-
 @import 'mixins';
 @import 'variables';
 @import 'font';
 
 // finally use the theme
 @import 'theme';
-
 
 // @import 'hiq/dist/hiq.min.css';
 @import './components/header';
@@ -21,7 +19,6 @@
 @import './components/plan';
 // @import './components/asciinema';
 
-
 @import './pages/login';
 @import './pages/create-account';
 @import './pages/app';
@@ -29,5 +26,5 @@
 @import './pages/footer';
 @import './pages/fraction';
 @import './pages/reactpage';
-
-
+// @import './pages/course-main';
+// @import './pages/course-boost';
