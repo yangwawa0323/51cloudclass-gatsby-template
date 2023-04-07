@@ -30,8 +30,8 @@ const BoostSection = ({ course }) => {
 		>
 			{/*  */}
 			<div className="section course wf-section">
-				<div className="container-default-1209px w-container">
-					<div className="course-wrapper">
+				<div className="container-default-1209px  w-container">
+					<div className="flex flex-col md:flex-row">
 						<div className="about-course">
 							<div className="top-content course">
 								<h1 className="title course-page">{course.name}</h1>
@@ -95,7 +95,7 @@ const BoostSection = ({ course }) => {
 										alt=""
 										className="image course-page" />
 									<div className="course-preview-wrapper">
-										<a href="#" className="course-preview-button w-inline-block w-lightbox"
+										<a href="/courses" className="course-preview-button w-inline-block w-lightbox"
 										>
 											<div className="button-play-wrapper">
 												<img src="https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee35cf400b2dcf_icon-play-academy-template.svg"
@@ -155,7 +155,6 @@ const BoostSection = ({ course }) => {
 						</Box>
 					</div>
 				</div>
-				<div className="bg-course"></div>
 			</div>
 			{/*  */}
 			{/* <div

@@ -23,11 +23,11 @@ import level01 from '../../assets/img/courses/level-01.svg'
 gsap.registerPlugin(ScrollTrigger);
 
 const animation = () => {
-	gsap.from('.entire-blog', {
-		opacity: 0.6,
-		y: '+10%',
-		duration: 1.5,
-	});
+	// gsap.from('.entire-blog', {
+	// 	opacity: 0.6,
+	// 	y: '+10%',
+	// 	duration: 1.5,
+	// });
 
 	gsap.from('.stay-in-the-loop-form', {
 		scrollTrigger: {

@@ -1,0 +1,186 @@
+.dropdown-list {
+	background-color: transparent;
+	position: absolute;
+	opacity: 0;
+	// transform: translateY(-200%);
+	transition: all 0.5s ease-in-out;
+	pointer-events: none;
+
+	&.w--open {
+		margin-left: -74px;
+	}
+
+	&.active {
+		opacity: 1;
+		pointer-events: all;
+		// transform: translateY(0px);
+	}
+
+	.menu-grid-wrapper {
+		display: flex;
+		padding: 40px 38px;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
+		border-radius: 24px;
+
+		width: fit-content;
+		background-color: #fff;
+		box-shadow: 0 -4px 20px 0 rgba(11, 11, 44, 0.04),
+			0 40px 44px 0 rgba(0, 0, 0, 0.06);
+
+		.menu-grid {
+			display: -ms-grid;
+			display: grid;
+			width: 820px;
+			-webkit-box-pack: center;
+			-webkit-justify-content: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			justify-items: stretch;
+			-webkit-box-align: start;
+			-webkit-align-items: start;
+			-ms-flex-align: start;
+			align-items: start;
+			grid-auto-columns: 1fr;
+			grid-column-gap: 0px;
+			grid-row-gap: 0px;
+			-ms-grid-columns: auto auto;
+			grid-template-columns: auto auto;
+			-ms-grid-rows: auto;
+			grid-template-rows: auto;
+
+			.mega-menu-title {
+				margin-top: 0px;
+				margin-bottom: 0px;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				padding-left: 20px;
+				font-size: 20px;
+			}
+
+			.menu-2-columns {
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: -ms-flexbox;
+				display: flex;
+
+				.mega-menu-column-1 {
+					display: -webkit-box;
+					display: -webkit-flex;
+					display: -ms-flexbox;
+					display: flex;
+					-webkit-box-orient: vertical;
+					-webkit-box-direction: normal;
+					-webkit-flex-direction: column;
+					-ms-flex-direction: column;
+					flex-direction: column;
+					-webkit-box-align: stretch;
+					-webkit-align-items: stretch;
+					-ms-flex-align: stretch;
+					align-items: stretch;
+				}
+
+				.mega-menu-column-3 {
+					display: -webkit-box;
+					display: -webkit-flex;
+					display: -ms-flexbox;
+					display: flex;
+					-webkit-box-orient: vertical;
+					-webkit-box-direction: normal;
+					-webkit-flex-direction: column;
+					-ms-flex-direction: column;
+					flex-direction: column;
+				}
+			}
+
+			.mega-menu-column-4 {
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-orient: vertical;
+				-webkit-box-direction: normal;
+				-webkit-flex-direction: column;
+				-ms-flex-direction: column;
+				flex-direction: column;
+				-webkit-box-align: start;
+				-webkit-align-items: flex-start;
+				-ms-flex-align: start;
+				align-items: flex-start;
+			}
+		}
+	}
+}
+
+.mega-menu-link {
+	padding: 10px 20px;
+	border-radius: 10px;
+	background-color: #fff;
+	-webkit-transition: background-color 350ms ease, color 350ms ease;
+	transition: background-color 350ms ease, color 350ms ease;
+	color: #69697b;
+	font-size: 18px;
+	line-height: 20px;
+	text-decoration: none;
+	white-space: nowrap;
+	font-weight: 600;
+
+	&:hover {
+		background-color: #f5f7ff;
+		color: #3434ff;
+	}
+	&.w--current {
+		color: #3434ff;
+		font-weight: 500;
+	}
+
+	a {
+		-webkit-transition: color 350ms ease;
+		transition: color 350ms ease;
+		color: #3434ff;
+		font-weight: 400;
+		text-decoration: none;
+	}
+}
+
+.mega-menu-link-2 {
+	padding: 10px 20px;
+	border-radius: 10px;
+	background-color: #fff;
+	-webkit-transition: background-color 350ms ease, color 350ms ease;
+	transition: background-color 350ms ease, color 350ms ease;
+	color: #69697b;
+	font-size: 18px;
+	line-height: 20px;
+	text-decoration: none;
+	white-space: nowrap;
+
+	&:hover {
+		background-color: #f5f7ff;
+		color: #3434ff;
+	}
+
+	&.w--current {
+		color: #3434ff;
+		font-weight: 500;
+	}
+
+	&.special {
+		padding-top: 14px;
+		padding-bottom: 14px;
+		background-color: rgba(52, 52, 255, 0.08);
+		color: #3434ff;
+		font-weight: 700;
+
+		&:hover {
+			background-color: #3434ff;
+			color: #fff;
+		}
+	}
+}
