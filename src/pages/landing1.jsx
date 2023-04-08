@@ -16,6 +16,7 @@ import BuildingBlock from '../components/landing1/Building';
 import WatchVideo from '../components/landing1/Watch';
 import NextWebsite from '../components/landing1/Next';
 import FractionSection from '../components/landing1/Fraction';
+import { Link } from 'gatsby';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -94,8 +95,8 @@ const Landing1 = () => {
 					<p className='text-xs text-white font-medium'>
 						Explore brand new Boost template.
 					</p>
-					<a
-						href='/'
+					<Link
+						to='/'
 						className='flex flex-row gap-2 cursor-pointer'
 					>
 						<h5 className='text-xs text-white font-medium'>Learn more</h5>
@@ -104,7 +105,7 @@ const Landing1 = () => {
 							fontSize='10px'
 							htmlColor='white'
 						/>
-					</a>
+					</Link>
 				</div>
 			</div>
 			{/*  */}

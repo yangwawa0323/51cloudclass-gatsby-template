@@ -62,7 +62,7 @@ const BoostSection = ({ course }) => {
 										<div className="advantage-course-text">学习团队</div>
 									</div>
 								</div>
-								<a href="/teacher/sophie-moore"
+								<Link to="/teacher/sophie-moore"
 									className="course-teacher-wrapper w-inline-block">
 									<img
 										src={sophie}
@@ -71,7 +71,7 @@ const BoostSection = ({ course }) => {
 										<div className="course-teacher-name">Sophie Moore</div>
 										<div className="teacher-work _2">UI/UX Designer</div>
 									</div>
-								</a>
+								</Link>
 								<div className="spacer about-course"></div>
 								<div className='flex-1 justify-start w-4/5 p-8 bg-white flex flex-col gap-6 h-min rounded-xl shadow-2xl'>
 									<h5>课程章节</h5>
@@ -95,13 +95,14 @@ const BoostSection = ({ course }) => {
 										alt=""
 										className="image course-page" />
 									<div className="course-preview-wrapper">
-										<a href="/courses" className="course-preview-button w-inline-block w-lightbox"
+										<Link to="/courses" className="course-preview-button w-inline-block w-lightbox"
 										>
 											<div className="button-play-wrapper">
 												<img src="https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee35cf400b2dcf_icon-play-academy-template.svg"
 													alt="" className="button-play course" />
 											</div>
-										</a></div>
+										</Link>
+									</div>
 								</div>
 								<div>
 									<button
@@ -119,8 +120,9 @@ const BoostSection = ({ course }) => {
 										<div className="level-wrapper">
 											<div className="w-dyn-list">
 												<div role="list" className="levels-list w-dyn-items">
-													<div role="listitem" className="level-text-wrapper w-dyn-item"><a
-														href="/category/beginner" className="course-detail-text level">初级</a>
+													<div role="listitem" className="level-text-wrapper w-dyn-item">
+														<Link
+															to="/category/beginner" className="course-detail-text level">初级</Link>
 													</div>
 												</div>
 											</div>

@@ -617,7 +617,7 @@ const Legal = () => {
 					<p>
 						<strong>7.4 Legally Required Disclosure​. </strong>Notwithstanding
 						the foregoing, each Party may disclose Confidential Information to
-						​the limited extent required in order to comply with the order of a
+						the limited extent required in order to comply with the order of a
 						court or other governmental body, or as otherwise necessary to
 						comply with applicable law or legal requirement, provided that the
 						receiving Party shall first have given notice to the disclosing
@@ -745,7 +745,7 @@ const Legal = () => {
 						third-party providers shall have any liability for ​customer’s use
 						of ​content, Packages, Components, Templates, or other materials or
 						information made available through or developed using the Services.
-						​Framer shall have no responsibility for determining that customer’s
+						Framer shall have no responsibility for determining that customer’s
 						proposed use of the ​Services ​complies with applicable laws in
 						customer’s jurisdiction(s).
 					</p>

@@ -23,11 +23,11 @@ const Footer = (props) => {
 						}}
 					>
 						<div>
-							<a href='#footer'>
+							<Link to='#footer'>
 								<div>
 									<h1 className='text-white text-base'>51cloudclass 云课堂</h1>
 								</div>
-							</a>
+							</Link>
 						</div>
 						<div className='w-full flex flex-wrap lg:justify-around gap-10'>
 							<div className='flex flex-col gap-1.5 flex-1 h-min overflow-hidden min-w-[200px]'>

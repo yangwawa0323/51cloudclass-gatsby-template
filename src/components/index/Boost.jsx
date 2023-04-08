@@ -102,10 +102,10 @@ const BoostSection = () => {
 					<img
 						src={
 							pictures[
-								page.route
-									.replace('/', '')
-									.replace('404', 'page404')
-									.replace(/asciinema-list/, 'asciinema')
+							page.route
+								.replace('/', '')
+								.replace('404', 'page404')
+								.replace(/asciinema-list/, 'asciinema')
 							]
 						}
 						alt={page.title}
@@ -143,10 +143,9 @@ const BoostSection = () => {
 
 	return (
 		<div
-			className='w-full overflow-hidden items-center justify-center flex flex-col'
+			className='w-full h-[80vh] overflow-hidden items-center justify-center flex flex-col'
 			style={{
 				// gap: '141px',
-				height: '100vh',
 				background:
 					'radial-gradient(106.9% 91.8% at 100% 100%, #b09eff 0%, var(--token-8c47652b-dea5-4767-a9f2-5d952dcce49a, rgb(255, 255, 255))  100%)',
 			}}

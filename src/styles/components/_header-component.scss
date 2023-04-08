@@ -1,10 +1,14 @@
 .header {
 	padding-top: 10px;
 	padding-left: 28px;
-	background-color: transparent;
-	font-weight: 500;
+	background-color: #fff;
+	width: 100%;
+	font-weight: 600;
 	font-size: 18px;
 	font-family: var(--font-family);
+	// position: sticky;
+	// top: 80px;
+	// z-index: 1000;
 
 	.header-wrapper {
 		display: flex;
@@ -12,6 +16,43 @@
 		-webkit-justify-content: space-between;
 		-ms-flex-pack: justify;
 		justify-content: space-between;
+		align-items: center;
+
+		.button-primary {
+			padding: 18px 24px;
+			border-radius: 4px;
+
+			height: fit-content;
+			background-color: #3434ff;
+			-webkit-transition: box-shadow 300ms ease, background-color 300ms ease,
+				-webkit-transform 300ms ease;
+			transition: box-shadow 300ms ease, background-color 300ms ease,
+				-webkit-transform 300ms ease;
+			transition: transform 300ms ease, box-shadow 300ms ease,
+				background-color 300ms ease;
+			transition: transform 300ms ease, box-shadow 300ms ease,
+				background-color 300ms ease, -webkit-transform 300ms ease;
+			color: #fff;
+			font-size: 16px;
+			line-height: 18px;
+			font-weight: 500;
+			text-align: center;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			-webkit-transform-style: preserve-3d;
+			transform-style: preserve-3d;
+
+			&:hover {
+				background-color: #2c23d2;
+				box-shadow: 0 4px 10px 0 rgba(74, 58, 255, 0.15);
+				-webkit-transform: translate3d(0px, -2px, 0.01px);
+				transform: translate3d(0px, -2px, 0.01px);
+				color: #fff;
+			}
+			&.header-button {
+				margin-right: 60px;
+			}
+		}
 
 		.split-content.header-left {
 			display: -webkit-box;
@@ -22,6 +63,7 @@
 			-webkit-align-items: center;
 			-ms-flex-align: center;
 			align-items: center;
+			justify-content: space-around;
 		}
 
 		.brand {
@@ -33,19 +75,19 @@
 				-webkit-transform 350ms ease;
 			-webkit-transform-style: preserve-3d;
 			transform-style: preserve-3d;
+			height: auto;
+			width: 48px;
+			margin: 10px;
 		}
 
 		.brand:hover {
-			-webkit-transform: scale3d(1.1, 1.1, 1.01);
-			transform: scale3d(1.1, 1.1, 1.01);
+			-webkit-transform: scale3d(1.5, 1.5, 3.1);
+			transform: scale3d(1.5, 1.5, 3.1);
 		}
 
 		.nav-menu {
-			display: -webkit-box;
-			display: -webkit-flex;
-			display: -ms-flexbox;
 			display: flex;
-			margin-left: 40px;
+
 			-webkit-box-ordinal-group: 2;
 			-webkit-order: 1;
 			-ms-flex-order: 1;
@@ -94,7 +136,7 @@
 
 				&.w--current {
 					color: #3434ff;
-					font-weight: 500;
+					font-weight: 600;
 				}
 			}
 		}

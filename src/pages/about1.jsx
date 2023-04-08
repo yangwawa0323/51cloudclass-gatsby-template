@@ -10,6 +10,7 @@ import EastIcon from '@mui/icons-material/East';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import Frame from '../components/frame';
+import { Link } from 'gatsby';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -364,8 +365,8 @@ const About1 = () => {
 					</div>
 					<div>
 						<div>
-							<a
-								href='/'
+							<Link
+								to='/'
 								className='flex flex-row gap-3 justify-start items-center cursor-pointer'
 							>
 								<p className='text-sm text-purple-700 font-extrabold uppercase'>
@@ -375,7 +376,7 @@ const About1 = () => {
 									fontSize='14px'
 									htmlColor='rgb(136,0,255)'
 								/>
-							</a>
+							</Link>
 						</div>
 					</div>
 				</div>

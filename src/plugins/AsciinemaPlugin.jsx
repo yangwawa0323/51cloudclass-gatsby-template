@@ -40,15 +40,14 @@ const AsciinemaWrapper = (props) => {
         loop: true,
         fit: "height",
       });
-      
+
     }, 1000);
 
     setTimeout(() => setLoading(false), 2500);
-    debug("loaded.");
   };
 
   useEffect(() => {
-    AsciinemaPlayer =  loadedmodule();
+    AsciinemaPlayer = loadedmodule();
 
     debug(url);
     if (url?.endsWith(".cast")) {

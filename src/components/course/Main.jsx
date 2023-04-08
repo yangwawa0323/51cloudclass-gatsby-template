@@ -29,26 +29,26 @@ const animation = () => {
 	// 	duration: 1.5,
 	// });
 
-	gsap.from('.stay-in-the-loop-form', {
-		scrollTrigger: {
-			trigger: '.blogs-grid',
-			// scrub: 1,
-			start: 'bottom 90%',
-			end: 'bottom 60%',
-			toggleActions: 'play none none reverse',
-			// markers: true,
-		},
-		ease: 'power4.inOut',
-		duration: 1.5,
-		y: '+60%',
-		opacity: 0,
-	});
+	// gsap.from('.stay-in-the-loop-form', {
+	// scrollTrigger: {
+	// 	trigger: '.blogs-grid',
+	// 		// scrub: 1,
+	// 		start: 'bottom 90%',
+	// 		end: 'bottom 60%',
+	// 		toggleActions: 'play none none reverse',
+	// 		// markers: true,
+	// 	},
+	// 	ease: 'power4.inOut',
+	// 	duration: 1.5,
+	// 	y: '+60%',
+	// 	opacity: 0,
+	// });
 };
 
 const fetchCourses = async () => {
-	const axiosInstance = getAxios();
+	const axoisInstance = getAxios();
 	let url = `${process.env.GATSBY_API_SERVER}/courses/`;
-	const response = await axiosInstance.get(url);
+	const response = await axoisInstance.get(url);
 	return response.data;
 };
 
@@ -61,7 +61,6 @@ const CourseMain = ({ pageContext }) => {
 
 	if (isLoading) return '加载中Oo.';
 	if (error) return '出错了，无法获得后台请求回应';
-	debugLog(data);
 	const { courses } = data.result;
 
 	// const [firstCourse, ...remainings] = courses;
@@ -229,26 +228,26 @@ const CourseMain = ({ pageContext }) => {
 										<Divider className='w-10/12 self-center' />
 									</div>
 									<div className="p-4 ">
-										<div class="course-card-details-wrapper pb-8">
+										<div className="course-card-details-wrapper pb-8">
 											<div className="level-wrapper">
 												<img
 													src={level01}
-													alt="" class="level-icon w-condition-invisible" />
+													alt="" className="level-icon w-condition-invisible" />
 												{/* <img
 													src="https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee358b750b2d85_icon-level-02-academy-template.svg"
-													alt="" class="level-icon" />
+													alt="" className="level-icon" />
 												<img
 													src="https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee35be900b2d7a_icon-level-03-academy-template.svg"
-													alt="" class="level-icon w-condition-invisible" /> */}
+													alt="" clasName="level-icon w-condition-invisible" /> */}
 												<div className="w-dyn-list">
 													<div role="list" className="levels-list w-dyn-items">
-														<div role="listitem" className="level-text-wrapper w-dyn-item"><a href="/category/intermediate"
-															className="level-text">初学者</a></div>
+														<div role="listitem" className="level-text-wrapper w-dyn-item">
+															初学者</div>
 													</div>
 												</div>
 											</div>
 											<div
-												class="course-card-price">$&nbsp;399.00&nbsp;USD</div>
+												className="course-card-price">$&nbsp;399.00&nbsp;USD</div>
 										</div>
 
 									</div>

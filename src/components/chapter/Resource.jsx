@@ -6,6 +6,7 @@ import { ChapterContext } from './ChapterContextProvider';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
+import { Link } from 'gatsby';
 
 const Resource = () => {
 	const { chapter } = useContext(ChapterContext);
@@ -18,13 +19,12 @@ const Resource = () => {
 				<Box className='p-6 flex flex-col items-end gap-2  cursor-pointer'>
 					<Box className='flex flex-row gap-2 items-center justify-center'>
 						<GitHubIcon fontSize='large' />
-						<a
-							href={chapter.github_resource}
+						<Link to={chapter.github_resource}
 							target='_blank'
 							rel='noreferrer'
 						>
 							<Typography>【{chapter.name}】 Github实验资源</Typography>
-						</a>
+						</Link>
 					</Box>
 					<Typography variant='caption'>
 						如何使用资源？点击查看云课堂资源下载视频

@@ -52,11 +52,11 @@ const getAsciinemaListPage = async ({ graphql, actions }) => {
 
 const getAllBlogs = async ({ graphql, actions }) => {
 	return new Promise((resolve, reject) => {
-		blogs.forEach(async (blog) => {
+		blogs.forEach((blog) => {
 			const relatives = blogs.filter((b) => {
 				return blog.title !== b.title;
 			});
-			await actions.createPage({
+			actions.createPage({
 				path: `/blog/${blog.title.toLowerCase().replace(/ /g, '-')}`,
 				component: require.resolve('../components/blog1/Custom.jsx'),
 				context: {
