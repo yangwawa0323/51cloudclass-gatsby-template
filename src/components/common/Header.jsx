@@ -8,12 +8,15 @@ import Nav from './Nav';
 import { Link } from 'gatsby';
 
 import Logo from '../../assets/img/CloudClass-8_adobe_express.svg'
+import { EmailOutlined, MessageOutlined, Person2Outlined } from '@mui/icons-material';
+import { Badge } from '@mui/material';
 
 const Header = () => {
 
     const initMenuState = {
         submenu1: false,
         submenu2: false,
+        loginform: false,
     }
 
     const [showMenu, setShowMenu] = useState(initMenuState);
@@ -74,13 +77,24 @@ const Header = () => {
                                 </div>
                                 <Nav id="submenu2" showUp={showMenu.submenu2} submenu="submenu2" />
                             </div>
-                            <Link to="/login"
-                                className="nav-link">登录</Link>
+
 
                         </nav>
 
                     </div>
-                    <a href="#Courses" className="button-primary header-button w-button">Courses</a>
+                    <div className='header-right flex gap-4 items-center relative'>
+                        <Badge badgeContent={9} color="warning">
+                            <EmailOutlined className="text-[32px]" />
+                        </Badge>
+                        <Badge badgeContent={32} color="primary">
+                            <MessageOutlined className="text-[32px]" />
+                        </Badge>
+                        <Badge badgeContent={99} color="warning">
+                            <Person2Outlined data-trigger-target="loginform" color={showMenu.loginform ? 'primary' : 'inherit'} className="text-[32px] " onClick={toggleMenu} />
+                        </Badge>
+                        <Nav id="loginform" showUp={showMenu.loginform} submenu="loginform" />
+                    </div>
+
                 </div >
             </div>
         </ClickAwayListener>

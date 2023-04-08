@@ -2,8 +2,12 @@ import { Link } from 'gatsby';
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import '../../styles/components/_nav-component.scss';
-import { debugLog, getAxios } from '../../utils/tools';
+import { getAxios } from '../../utils/tools';
+import { Avatar } from '@mui/material';
 
+import sophie from '../../assets/img/courses/sophie-moore.jpg'
+import { AssignmentOutlined, EventAvailableOutlined, HouseOutlined, LockOpenOutlined, LockPersonOutlined, LogoutOutlined, NotificationsOutlined, Person2Outlined } from '@mui/icons-material';
+import { SettingOutlined } from '@ant-design/icons';
 const axoisInstance = getAxios();
 
 const SubMenu1 = () => {
@@ -78,6 +82,109 @@ const SubMenu2 = () => {
 }
 
 
+const LoginForm = () => {
+
+    return (
+        <div className="z-[1000] absolute top-16 -right-36 h-fit rounded-xl shadow-xl flex items-center justify-center bg-gray-100 py-6">
+            <div className="flex gap-2 flex-col whitespace-nowrap max-w-xs p-4 items-center bg-white">
+                <Avatar src={sophie} className="outline-2 w-16 h-16" />
+                <ul className="flex flex-col w-full">
+                    <li className="my-px">
+                        <div
+                            className="flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 bg-gray-100">
+                            <span className="flex items-center justify-center text-lg text-gray-400">
+                                <HouseOutlined />
+                            </span>
+                            <span className="ml-3">面板</span>
+                            <span className="flex items-center justify-center text-sm text-gray-500 font-semibold bg-gray-200 h-6 px-2 rounded-full ml-auto">3</span>
+                        </div>
+                    </li>
+                    <li className="my-px">
+                        <span className="flex font-medium text-sm text-gray-400 px-4 my-4 uppercase">学习计划</span>
+                    </li>
+
+                    <li className="my-px">
+                        <div
+                            className="flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 hover:bg-gray-100">
+                            <span className="flex items-center justify-center text-lg text-gray-400">
+                                <EventAvailableOutlined />
+                            </span>
+                            <span className="ml-3">学习进度</span>
+                        </div>
+                    </li>
+                    <li className="my-px">
+                        <div
+                            className="flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 hover:bg-gray-100">
+                            <span className="flex items-center justify-center text-lg text-gray-400">
+                                <AssignmentOutlined />
+                            </span>
+                            <span className="ml-3">历史记录</span>
+                            <span className="flex items-center justify-center text-sm text-gray-500 font-semibold bg-gray-200 h-6 px-2 rounded-full ml-auto">1k</span>
+                        </div>
+                    </li>
+                    {/* <li className="my-px">
+                        <a href="#"
+                            className="flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 hover:bg-gray-100">
+                            <span className="flex items-center justify-center text-lg text-green-400">
+                                <svg fill="none"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    className="h-6 w-6">
+                                    <path d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </span>
+                            <span className="ml-3">Add new</span>
+                        </a>
+                    </li> */}
+                    <li className="my-px">
+                        <span className="flex font-medium text-sm text-gray-400 px-4 my-4 uppercase">账户管理</span>
+                    </li>
+                    <li className="my-px">
+                        <div
+                            className="flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 hover:bg-gray-100">
+                            <span className="flex items-center justify-center text-lg text-gray-400">
+                                <Person2Outlined />
+                            </span>
+                            <span className="ml-3">个人信息</span>
+                        </div>
+                    </li>
+                    <li className="my-px">
+                        <div
+                            className="flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 hover:bg-gray-100">
+                            <span className="flex items-center justify-center text-lg text-gray-400">
+                                <NotificationsOutlined />
+                            </span>
+                            <span className="ml-3">站内信息</span>
+                            <span className="flex items-center justify-center text-sm text-gray-500 font-semibold bg-gray-200 h-6 px-2 rounded-full ml-auto">10</span>
+                        </div>
+                    </li>
+                    <li className="my-px">
+                        <div
+                            className="flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 hover:bg-gray-100">
+                            <span className="flex items-center justify-center text-lg text-gray-400">
+                                <SettingOutlined />
+                            </span>
+                            <span className="ml-3">设置</span>
+                        </div>
+                    </li>
+                    <li className="my-px">
+                        <div
+                            className="flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 hover:bg-gray-100">
+                            <span className="flex items-center justify-center text-lg text-red-400">
+                                <LockPersonOutlined color="error" />
+                            </span>
+                            <span className="ml-3">退出账户</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    );
+}
+
 const Nav = ({ showUp, submenu, children }) => {
 
 
@@ -87,7 +194,8 @@ const Nav = ({ showUp, submenu, children }) => {
                 <div className="w-layout-grid menu-grid">
                     {
                         submenu === 'submenu1' ? <SubMenu1 /> :
-                            submenu === 'submenu2' ? <SubMenu2 /> : children
+                            submenu === 'submenu2' ? <SubMenu2 /> :
+                                submenu === 'loginform' ? <LoginForm /> : children
                     }
                 </div>
             </div>
