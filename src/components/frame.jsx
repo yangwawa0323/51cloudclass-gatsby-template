@@ -1,11 +1,11 @@
 /** @format */
 
-import React from 'react';
+import React, { memo } from 'react';
 import Footer from './common/Footer';
 import Header from './common/Header';
 // import Navbar from './common/Navbar';
 
-const Frame = ({ children }) => {
+const Frame = memo(({ children }) => {
 	return (
 		<div>
 			<Header />
@@ -13,6 +13,6 @@ const Frame = ({ children }) => {
 			<Footer />
 		</div>
 	);
-};
+});
 
 export default Frame;
