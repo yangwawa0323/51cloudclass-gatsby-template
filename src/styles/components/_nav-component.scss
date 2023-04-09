@@ -142,3 +142,117 @@
 		}
 	}
 }
+
+@media screen and (max-width: 897px) {
+	.nav-menu {
+		min-height: 100vh;
+		min-width: 100%;
+		margin-left: 0px;
+		padding: 22px 28px;
+		background-color: #0b0b2c;
+		box-shadow: 0 4px 10px 0 rgba(74, 58, 255, 0.18);
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		justify-self: flex-start;
+		align-items: flex-start;
+	}
+
+	.mega-menu-title {
+		margin-top: 0px;
+		margin-bottom: 0px;
+		padding: 0px 0px 20px;
+		color: #fff;
+	}
+
+	.dropdown-list.w--open {
+		position: static;
+		margin-left: 0px !important;
+		padding: 0px;
+		background-color: transparent;
+
+		.menu-grid-wrapper {
+			padding-top: 16px;
+			padding-right: 0px;
+			padding-left: 0px;
+			background-color: transparent;
+
+			.menu-grid {
+				width: 100%;
+				padding-right: 18px;
+				padding-left: 18px;
+				-webkit-box-orient: vertical;
+				-webkit-box-direction: normal;
+				-webkit-flex-direction: column;
+				-ms-flex-direction: column;
+				flex-direction: column;
+				-webkit-box-align: stretch;
+				-webkit-align-items: stretch;
+				-ms-flex-align: stretch;
+				align-items: stretch;
+				-ms-grid-columns: 1fr;
+				grid-template-columns: 1fr;
+
+				.menu-2-columns {
+					-webkit-box-orient: vertical;
+					-webkit-box-direction: normal;
+					-webkit-flex-direction: column;
+					-ms-flex-direction: column;
+					flex-direction: column;
+				}
+			}
+		}
+
+		.mega-menu-link {
+			margin-bottom: 0px;
+			padding: 16px;
+			border-bottom: 0px solid #fff;
+			background-color: #0b0b2c;
+			color: hsla(0, 0%, 100%, 0.65);
+			font-size: 22px;
+			line-height: 24px;
+
+			&:hover {
+				background-color: #1b1b55;
+				color: #fff;
+			}
+
+			&.w--current {
+				color: #fff;
+				font-weight: 700;
+			}
+		}
+	}
+
+	.mega-menu-link-2 {
+		margin-bottom: 0px;
+		padding: 16px;
+		border-bottom: 0px solid #fff;
+		background-color: #0b0b2c;
+		color: hsla(0, 0%, 100%, 0.65);
+		font-size: 22px;
+		line-height: 24px;
+
+		&:hover {
+			background-color: #1b1b55;
+			color: #fff;
+		}
+
+		&.w--current {
+			color: #fff;
+			font-weight: 700;
+		}
+
+		&.special {
+			padding-top: 22px;
+			padding-bottom: 22px;
+			background-color: #3434ff;
+			color: #fff;
+
+			&:hover {
+				background-color: #fff;
+				color: #3434ff;
+			}
+		}
+	}
+}

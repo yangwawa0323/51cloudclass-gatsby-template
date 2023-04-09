@@ -32,8 +32,8 @@ const SubMenu1 = () => {
                         <Link to="/changelog"
                             className="mega-menu-link" >历史版本</Link></div>
                     <div className="mega-menu-column-3">
-                        <Link to="版权申明"
-                            className="mega-menu-link" >Individual Teacher</Link>
+                        <Link to="/copyright"
+                            className="mega-menu-link" >版权申明</Link>
                         <Link to="/contact1"
                             className="mega-menu-link" >联系我们</Link></div>
                 </div>
@@ -202,5 +202,7 @@ const Nav = ({ showUp, submenu, children }) => {
         </nav>
     )
 }
+
+
 
 export default Nav

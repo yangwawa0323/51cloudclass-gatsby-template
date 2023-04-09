@@ -17,7 +17,7 @@ module.exports = {
 			// 	// lg: { min: '1200px', max: '1979px' }, // Desktop smallest.
 			// 	// xl: { min: '1980px', max: '2879px' }, // Desktop wide.
 			// 	// '2xl': { min: '2880px', max: '3880px' }, // Desktop widescreen.
-			xs: { max: '425px' }, // Mobile (iPhone 3 - iPhone XS Max).
+			xs: { max: '424px' }, // Mobile (iPhone 3 - iPhone XS Max).
 			sm: '425px', // Mobile (matches max: iPhone 11 Pro Max landscape @ 896px).
 			md: '898px', // Tablet (matches max: iPad Pro @ 1112px).
 			lg: '1200px', // Desktop smallest.
