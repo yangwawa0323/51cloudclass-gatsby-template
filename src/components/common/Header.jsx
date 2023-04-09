@@ -72,13 +72,15 @@ const Navigation = () => {
 
 
 
-const styles = {
+const navOverlayStyles = {
     expanded: {
         height: '10903px',
         display: 'block',
+        zIndex: 1000,
     },
     collapsed: {
         display: 'none',
+        zIndex: -1,
     }
 }
 
@@ -166,7 +168,7 @@ const Header = () => {
                             </div >
                         </div>
                         <div className="w-nav-overlay"
-                        // style={{ ...styles[!collapsed ? 'collapsed' : 'expanded'] }}
+                            style={{ ...navOverlayStyles[collapsed ? 'collapsed' : 'expanded'] }}
 
                         >
                             {ltMedium && <Navigation resolution="small" />}
