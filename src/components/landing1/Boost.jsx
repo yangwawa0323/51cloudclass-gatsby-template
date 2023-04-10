@@ -8,7 +8,7 @@ import React from 'react';
 
 const BoostSection = () => {
 	return (
-		<div className='min-w-[425px]  boost-your-website relative xs:h-[30vh] h-[100vh] lg:items-center flex flex-col lg:pt-[240px] pt-[120px] items-center z-[1] px-24 xs:gap-8 gap-20 overflow-hidden'>
+		<div className='boost-your-website relative xs:h-[30vh] h-[100vh] lg:items-center flex flex-col lg:pt-[240px] pt-[120px] items-center z-[1] px-24 xs:gap-8 gap-20 overflow-hidden'>
 			<div className='absolute inset-0 pointer-events-none select-none'>
 				<img
 					className='object-cover'

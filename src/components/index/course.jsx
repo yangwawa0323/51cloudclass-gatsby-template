@@ -34,7 +34,7 @@ const Courses = () => {
 				background:
 					'linear-gradient(0deg,var(--token-0cdf47b3-ce1f-4341-98ec-f094608541cb, #f6f4ff) 0%,#fff 100%)',
 			}}
-			className='min-w-[425px]  entire-blog pt-24 px-12 pb-24 flex flex-col gap-16 justify-center items-center'
+			className='entire-blog pt-24 px-12 pb-24 flex flex-col gap-16 justify-center items-center'
 		>
 			<div className='course-main max-w-[680px] flex flex-col gap-4 justify-center items-center'>
 				<div className='course-text-block'>

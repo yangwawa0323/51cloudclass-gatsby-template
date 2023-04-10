@@ -22,7 +22,7 @@ import "../../styles/pages/_course-boost.scss";
 const BoostSection = ({ course }) => {
 	return (
 		<div
-			className='min-w-[425px] w-full landing4-boost-section  xs:px-4 p-12 justify-center items-center flex flex-col gap-24 h-min relative'
+			className='w-full landing4-boost-section  xs:px-4 p-12 justify-center items-center flex flex-col gap-24 h-min relative'
 			style={{
 				background:
 					'radial-gradient(72.6% 84% at 100% 100%, #b09eff 0%, rgb(255, 255, 255)  100%)',
@@ -34,7 +34,7 @@ const BoostSection = ({ course }) => {
 					<div className="flex flex-col md:flex-row">
 						<div className="about-course">
 							<div className="top-content course">
-								<h1 className="title course-page">{course.name}</h1>
+								<h2 className="title course-page xs:text-5xl">{course.name}</h2>
 								<p className="paragraph course-description">{course.description}</p>
 								<div className="w-layout-grid advantage-course-grid">
 									<div className="advantage-course-wrapper">
@@ -62,7 +62,7 @@ const BoostSection = ({ course }) => {
 										<div className="advantage-course-text">学习团队</div>
 									</div>
 								</div>
-								<Link to="/teacher/sophie-moore"
+								<a href="/teacher/sophie-moore"
 									className="course-teacher-wrapper w-inline-block">
 									<img
 										src={sophie}
@@ -71,7 +71,7 @@ const BoostSection = ({ course }) => {
 										<div className="course-teacher-name">Sophie Moore</div>
 										<div className="teacher-work _2">UI/UX Designer</div>
 									</div>
-								</Link>
+								</a>
 								<div className="spacer about-course"></div>
 								<div className='flex-1 justify-start w-4/5 p-8 bg-white flex flex-col gap-6 h-min rounded-xl shadow-2xl'>
 									<h5>课程章节</h5>
@@ -88,7 +88,7 @@ const BoostSection = ({ course }) => {
 							<div className="spacer about-course"></div>
 						</div>
 						<div className="spacer course"></div>
-						<Box className="card-sticky-wrapper" >
+						<div className="card-sticky-wrapper" >
 							<div className="card course">
 								<div className="course-preview">
 									<img src={marketers}
@@ -121,8 +121,8 @@ const BoostSection = ({ course }) => {
 											<div className="w-dyn-list">
 												<div role="list" className="levels-list w-dyn-items">
 													<div role="listitem" className="level-text-wrapper w-dyn-item">
-														<Link
-															to="/category/beginner" className="course-detail-text level">初级</Link>
+														<a
+															href="/category/beginner" className="course-detail-text level">初级</a>
 													</div>
 												</div>
 											</div>
@@ -154,7 +154,7 @@ const BoostSection = ({ course }) => {
 
 								</div>
 							</div>
-						</Box>
+						</div>
 					</div>
 				</div>
 			</div>

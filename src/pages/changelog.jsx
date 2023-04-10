@@ -19,7 +19,7 @@ const ChangeLog = () => {
 				}}
 			>
 				{/*  Change log  */}
-				<div className='max-w-[500px] flex flex-col gap-5 justify-center items-center h-min pt-48 pb-24'>
+				<div className='max-w-[500px] flex flex-col gap-5 justify-center items-center h-min xs:pt-8 pt-48 pb-24'>
 					<div>
 						<h1 className='font-extrabold tracking-tighter xs:text-[48px] text-[68px]'>
 							网站开发之旅

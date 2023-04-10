@@ -80,7 +80,7 @@ const OurSuccess = () => {
 	};
 
 	return (
-		<div className='min-w-[425px] slider-wrapper w-full p-24 flex  flex-col lg:flex-row gap-24 overflow-hidden'>
+		<div className='slider-wrapper w-full p-24 flex  flex-col lg:flex-row gap-24 overflow-hidden'>
 			{/* slider images  */}
 
 			<div className='scrolling-slider h-[558px] bg-red-100 rounded-lg shadow-sm relative border-[1px] flex-1 flex flex-row overflow-hidden max-w-[1200px] will-change-transform gap-0'>

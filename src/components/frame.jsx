@@ -9,7 +9,7 @@ const Frame = memo(({ children }) => {
 	return (
 		<div>
 			<Header />
-			<main className='min-w-[425px] w-full'>{children}</main>
+			<main className='w-full'>{children}</main>
 			<Footer />
 		</div>
 	);

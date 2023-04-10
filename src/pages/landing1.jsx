@@ -89,7 +89,7 @@ const Landing1 = () => {
 				style={{
 					background: 'rgb(116, 33, 252)',
 				}}
-				className='min-w-[425px] flex justify-center items-center p-4 z-10 sticky top-0'
+				className='flex justify-center items-center p-4 z-10 sticky top-0'
 			>
 				<div className='flex flex-row gap-2 '>
 					<p className='text-xs text-white font-medium'>

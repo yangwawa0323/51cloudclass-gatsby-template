@@ -19,9 +19,9 @@ const LoginContainer = ({ textColor }) => (
 			textColor === 'white'
 				? { background: textColor, filter: 'brightness(1)' }
 				: {
-						background: 'rgb(116, 33, 252)',
-						filter: 'darkness(1)',
-				  }
+					background: 'rgb(116, 33, 252)',
+					filter: 'darkness(1)',
+				}
 		}
 	>
 		<Box
@@ -60,12 +60,11 @@ const Navbar = (props) => {
 	const isLogin = useCallback(() => userInfo !== null, [userInfo]);
 
 	return (
-		<div className='min-w-[425px] w-full navbar-container items-center place-content-center flex-col flex-nowrap overflow-visible relative'>
+		<div className='w-full navbar-container items-center place-content-center flex-col flex-nowrap overflow-visible relative'>
 			<div
 				style={{ backgroundColor: backgroundColor, color: textColor }}
-				className={`w-full fixed ${
-					!backgroundColor ? 'bg-white' : ''
-				}  flex z-50 justify-end md:justify-between flex-grow-0 flex-shrink-0 gap-0 `}
+				className={`w-full fixed ${!backgroundColor ? 'bg-white' : ''
+					}  flex z-50 justify-end md:justify-between flex-grow-0 flex-shrink-0 gap-0 `}
 			>
 				<nav className='w-full items-center flex overflow-hidden p-6 relative h-16'>
 					<div className='w-full flex flex-row items-center max-[425px]:justify-end justify-between'>

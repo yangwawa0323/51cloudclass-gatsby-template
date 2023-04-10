@@ -75,7 +75,7 @@ const About1 = () => {
 	return (
 		<Frame>
 			{/* BEGIN main content */}
-			<div className='min-w-[425px] about-us pt-[180px] px-[100px] pb-[100px] flex flex-col gap-20 justify-center items-center'>
+			<div className='about-us xs:p-8 sm:p-8 p-24 flex flex-col gap-20 justify-center items-center'>
 				<div className='flex flex-col gap-4 justify-center items-center max-w-[720px]'>
 					<div>
 						<p className='uppercase text-purple-700 font-extrabold text-sm'>
@@ -105,7 +105,7 @@ const About1 = () => {
 				</div>
 			</div>
 			{/* END main content */}
-			<div className='min-w-[425px] our-success w-full bg-[#f6f4ff] p-24'>
+			<div className='our-success w-full bg-[#f6f4ff] p-24'>
 				<div className='flex flex-col lg:flex-row gap-24 max-[1200px] h-min'>
 					<div className='flex-1 flex flex-col gap-4 justify-start'>
 						<div>
@@ -155,7 +155,7 @@ const About1 = () => {
 			</div>
 
 			{/*  */}
-			<div className='min-w-[425px] our-term w-full flex flex-col gap-24 p-24 justify-center items-center'>
+			<div className='our-term w-full flex flex-col xs:gap-8 xs:p-6 gap-24 p-24 justify-center items-center'>
 				<div className='flex flex-col gap-4 justify-center items-center max-w-[650px]'>
 					<p className='text-purple-700 text-sm uppercase font-extrabold'>
 						Our team
@@ -166,7 +166,7 @@ const About1 = () => {
 						that meet the needs of your growing business.
 					</p>
 				</div>
-				<div className='grid grid-cols-2 md:grid-cols-3  max-w-[1200px] gap-4 w-full'>
+				<div className='grid xs:grid-cols-1 md:grid-cols-3  max-w-[1200px] gap-4 w-full'>
 					<div className='rounded-2xl shadow-md bg-gray-100 p-10 items-center justify-center flex flex-col'>
 						<div className='hover:rotate-12 duration-500 aspect-[1/1] w-[128px]'>
 							<img
@@ -293,7 +293,7 @@ const About1 = () => {
 			</div>
 			{/*  */}
 
-			<div className='min-w-[425px] our-office bg-gray-100 w-full p-24 flex flex-col justify-center items-center gap-20'>
+			<div className='our-office bg-gray-100 w-full xs:gap-8 xs:p-6 p-24 flex flex-col justify-center items-center gap-20'>
 				<div className='flex flex-col gap-4 justify-center items-center max-w-[560px]'>
 					<p className='text-purple-700 font-extrabold uppercase text-sm'>
 						Our offices
@@ -347,7 +347,7 @@ const About1 = () => {
 
 			{/*  */}
 
-			<div className='min-w-[425px] our-mission flex flex-col lg:flex-row  gap-24 p-24'>
+			<div className='our-mission flex flex-col lg:flex-row  gap-24 p-24'>
 				<div className='flex-1 flex flex-col gap-4 max-w-[530px]'>
 					<div>
 						<p className='text-sm text-purple-700 font-extrabold uppercase'>
@@ -405,11 +405,11 @@ const About1 = () => {
 				</div>
 			</div>
 			{/* */}
-			<div className='min-w-[425px] out-partner flex flex-col gap-24 p-[100px] justify-center items-center bg-[#f6f4ff]'>
+			<div className='out-partner flex flex-col gap-24 p-[100px] justify-center items-center bg-[#f6f4ff]'>
 				<h2>Meet our partners and investors.</h2>
 			</div>
 			{/*  */}
-			<div className='min-w-[425px] scrolling-up try-it-now flex flex-col gap-12 p-[100px] justify-center items-center bg-[#7421fc]'>
+			<div className='scrolling-up try-it-now flex flex-col gap-12 p-[100px] justify-center items-center bg-[#7421fc]'>
 				<div className='max-w-[600px] flex flex-col justify-center items-center'>
 					<p className='text-gray-300 font-extrabold uppercase text-sm'>
 						Try it now

@@ -12,7 +12,7 @@ const Legal = () => {
 	return (
 		<div className='flex flex-col justify-center'>
 			<Navbar />
-			<div className='min-w-[425px]  gap-5 justify-center items-center flex flex-col h-min pt-[180px] px-24 pb-24'>
+			<div className='gap-5 justify-center items-center flex flex-col h-min pt-[180px] px-24 pb-24'>
 				<div>
 					<h1>Terms &amp; Conditions</h1>
 				</div>

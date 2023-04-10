@@ -15,7 +15,7 @@ import mapPicture from '../../assets/img/page-thumbnail/map.webp';
 const MapContainer = () => {
 	return (
 		<div
-			className='min-w-[425px] gap-32 flex flex-col justify-center items-center py-24 px-12'
+			className='gap-32 flex flex-col justify-center items-center py-24 px-12'
 			style={{
 				backgroundColor: '#8800ff',
 			}}

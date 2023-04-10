@@ -15,7 +15,7 @@ const ChapterPage = (props) => {
 	return (
 		<Frame>
 			<ChapterContextProvider extraContext={extra}>
-				<div className='flex flex-row flex-wrap px-12 lg:px-0 lg:gap-6 xs:gap-2 justify-center items-center'>
+				<div className='flex flex-row flex-wrap  lg:gap-6 xs:gap-2 justify-center items-center'>
 					<div className='xs:max-md:basis-full basis-7/12  w-11/12 xs:max-w-[425px] md:min-w-[600px]'>
 						<LeftPane />
 					</div>

@@ -16,7 +16,7 @@ import Smartphone from '@mui/icons-material/Smartphone';
 
 const BuildingBlock = () => {
 	return (
-		<div className='min-w-[425px] building-block flex flex-col xs:gap-8 gap-20 xs:pb-4 pb-12 justify-center items-center '>
+		<div className='building-block flex flex-col xs:gap-8 gap-20 xs:pb-4 pb-12 justify-center items-center '>
 			<div className='max-w-[600px] flex flex-col justify-center items-center'>
 				<p className='uppercase text-sm text-purple-700 font-extrabold'>
 					complete toolkit

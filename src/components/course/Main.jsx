@@ -74,13 +74,13 @@ const CourseMain = ({ pageContext }) => {
 					background:
 						'linear-gradient(0deg,var(--token-0cdf47b3-ce1f-4341-98ec-f094608541cb, #f6f4ff) 0%,#fff 100%)',
 				}}
-				className='min-w-[425px]  entire-blog pt-24 px-12 pb-24 flex flex-col gap-16 justify-center items-center'
+				className='entire-blog pt-24 px-12 pb-24 flex flex-col gap-16 justify-center items-center'
 			>
 				{/*  */}
-				<div className='course-main flex gap-20 justify-between items-center'>
-					<div className="course-text-block gap-4 flex flex-col flex-1">
+				<div className='course-main flex gap-20 w-full justify-between items-center'>
+					<div className="course-text-block xs:gap-2 gap-4  flex flex-col flex-1">
 						<div>
-							<h1>课程</h1>
+							<h2 className="xs:text-4xl text-5xl">课程</h2>
 						</div>
 						<div>
 							<p className='text-center font-medium text-[24px] text-gray-600 break-words'>

@@ -74,12 +74,12 @@ const Navigation = () => {
 
 const navOverlayStyles = {
     expanded: {
-        height: '10903px',
-        display: 'block',
+        // height: '10903px',
+        // display: 'block',
         zIndex: 1000,
     },
     collapsed: {
-        display: 'none',
+        // display: 'none',
         zIndex: -1,
     }
 }
@@ -138,8 +138,8 @@ const Header = () => {
 
                 <div>
 
-                    <div className='header w-nav shadow-md min-w-[425px] w-full'>
-                        <div className="container-default-1209px w-container">
+                    <div className='header w-nav shadow-md w-full'>
+                        <div className="container-default-1209px w-container xs:p-0 xs:mx-auto">
                             <div className="header-wrapper">
                                 <div className="split-content header-left" >
                                     <Link to="/" className="brand w-nav-brand" >

@@ -32,8 +32,8 @@ const SubMenu1 = () => {
                         <Link to="/changelog"
                             className="mega-menu-link" >历史版本</Link></div>
                     <div className="mega-menu-column-3">
-                        <Link to="/copyright"
-                            className="mega-menu-link" >版权申明</Link>
+                        <a href="/copyright"
+                            className="mega-menu-link" >版权申明</a>
                         <Link to="/contact1"
                             className="mega-menu-link" >联系我们</Link></div>
                 </div>

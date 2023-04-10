@@ -18,7 +18,7 @@ const AsciinemaList = ({ pageContext }) => {
 				backgroundColor='#7421fc'
 				textColor='white'
 			/>
-			<main className='p-24 min-w-[425px] min-h-[500px] '>
+			<main className='p-24 min-h-[500px] '>
 				<div className='flex flex-col md:flex-row gap-10'>
 					<div className='flex-1'>
 						<div className='sticky top-[120px]'>
