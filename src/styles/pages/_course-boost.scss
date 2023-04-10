@@ -33,8 +33,8 @@
 	max-width: 1209px;
 	margin-right: auto;
 	margin-left: auto;
-	padding-right: 24px;
-	padding-left: 24px;
+	// padding-right: 24px;
+	// padding-left: 40px;
 }
 
 .course-wrapper {
@@ -116,7 +116,7 @@ img {
 
 .about-course {
 	max-width: 690px;
-	min-width: 425px;
+	// min-width: 425px;
 }
 
 .top-content.course {
@@ -206,8 +206,8 @@ img {
 	}
 
 	&.course {
-		max-width: 402px;
-		min-width: 360px;
+		max-width: 360px;
+		min-width: 320px;
 		padding: 24px 26px 51px;
 		position: sticky;
 		top: 60px;
