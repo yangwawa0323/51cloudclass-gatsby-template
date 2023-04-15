@@ -1,0 +1,29 @@
+---
+title: Hello, world!
+slug: /hello-world
+now: 2023-04-11
+---
+
+export const Today = () => {
+    const arr = Array.from([1,2,3,4])
+    const date = new Date()
+    return arr.map( (e, idx) => <p key={idx}>{idx}. {e} { date.toString() }</p>  )
+}
+
+<div style={{ padding: '24px' }}>
+<h5> <font color="red">Hello, world!</font> </h5>
+
+<details>
+<summary>today is  <Today/></summary>
+
+```javascript
+const  clickme() => {
+    console.log("click me")
+}
+```
+</details>
+
+
+With **markdown** bold tag 
+
+</div>

@@ -19,6 +19,7 @@ import business from '../../assets/img/courses/business-revenue.png'
 import formation from '../../assets/img/courses/formaṭion-status.png'
 import esstimated from '../../assets/img/courses/esstimated-processing.png'
 import level01 from '../../assets/img/courses/level-01.svg'
+import { easeIn } from '../../utils/animate';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,18 +47,52 @@ const animation = () => {
 };
 
 const fetchCourses = async () => {
-	const axoisInstance = getAxios();
+	const axiosInstance = getAxios();
 	let url = `${process.env.GATSBY_API_SERVER}/courses/`;
-	const response = await axoisInstance.get(url);
+	const response = await axiosInstance.get(url);
 	return response.data;
 };
 
 const CourseMain = ({ pageContext }) => {
-	React.useEffect(() => {
-		animation();
-	}, []);
+	ScrollTrigger.defaults({});
 
 	const { data, isLoading, error } = useQuery(['fetch-courses'], fetchCourses);
+
+
+
+	React.useEffect(() => {
+		// animation();
+		// gsap.config({ nullTargetWarn: false })
+		const tl = gsap.timeline()
+		easeIn('.gsap-main-left, .gsap-main-right', {}, tl);
+
+		var images = document.querySelectorAll('.gsap-main-right img');
+		for (var j = 0; j < images.length; j++) {
+			easeIn(images[j], {}, tl)
+		}
+
+
+		if (!isLoading) {
+			// 	setTimeout(() => {
+			const timeline = gsap.timeline();
+			if (data.result.courses) {
+				var len = data.result.courses.length;
+				for (var i = 0; i < len; i++) {
+					var element = document.querySelector(`.courses-grid .course-${i}`)
+					timeline.fromTo(element, {
+						opacity: 0,
+						scale: 0.6,
+					}, {
+						delay: 0.5,
+						duration: 0.4,
+						opacity: 1,
+						scale: 1,
+					});
+				}
+			}
+			// 	}, 1000);
+		}
+	}, [data, isLoading]);
 
 	if (isLoading) return '加载中Oo.';
 	if (error) return '出错了，无法获得后台请求回应';
@@ -65,7 +100,6 @@ const CourseMain = ({ pageContext }) => {
 
 	// const [firstCourse, ...remainings] = courses;
 
-	ScrollTrigger.defaults({});
 
 	return (
 		<Frame>
@@ -78,7 +112,7 @@ const CourseMain = ({ pageContext }) => {
 			>
 				{/*  */}
 				<div className='course-main flex gap-20 w-full justify-between items-center'>
-					<div className="course-text-block xs:gap-2 gap-4  flex flex-col flex-1">
+					<div className="gsap-main-left course-text-block xs:gap-2 gap-4  flex flex-col flex-1">
 						<div>
 							<h2 className="xs:text-4xl text-5xl">课程</h2>
 						</div>
@@ -114,7 +148,7 @@ const CourseMain = ({ pageContext }) => {
 							</form>
 						</div>
 					</div>
-					<div className="course-image-block flex-1">
+					<div className="gsap-main-right course-image-block flex-1">
 						<div
 							className="consulting-hero-image-one border-radius-eighty overflow">
 							<img
@@ -195,65 +229,67 @@ const CourseMain = ({ pageContext }) => {
 
 				{/*  */}
 				<div>
-					<div className='blogs-grid grid min-w-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-8 auto-rows-min h-min justify-center max-w-[1200px] w-full'>
-						{courses.map((course) => (
-							<div
-								key={course.ID}
-								className='rounded-2xl overflow-hidden border-[2px] shadow-md hover:shadow-lg hover:scale-105 duration-500  h-full w-full place-self-start'
-							>
-								<Link to={`/courses/${course.ID}`}>
-									<div className='xs:h-[224px] h-[334px] overflow-hidden pt-4'>
-										<img
-											className='w-full h-full object-contain rounded-lg overflow-hidden'
-											src={course.image}
-											alt={course.title}
-										/>
-									</div>
-									<div className='flex flex-col px-8 pb-4 gap-2 relative'>
-										<div>
-											<p className='uppercase font-extrabold text-purple-700 text-sm'>
-												{course.type}
-											</p>
+					<div className='courses-grid grid min-w-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-8 auto-rows-min h-min justify-center max-w-[1200px] w-full'>
+						{courses.map((course, index) => {
+							return (
+								<div
+									key={course.ID}
+									className={`course-${index} rounded-2xl overflow-hidden border-[2px] shadow-md hover:shadow-lg hover:scale-105 duration-500  h-full w-full place-self-start`}
+								>
+									<Link to={`/courses/${course.ID}`}>
+										<div className='xs:h-[224px] h-[334px] overflow-hidden pt-4'>
+											<img
+												className='w-full h-full object-contain rounded-lg overflow-hidden'
+												src={course.image}
+												alt={course.title}
+											/>
 										</div>
-										<div>
-											<h4>{course.title}</h4>
-										</div>
-										<div>
-											<p dangerouslySetInnerHTML={{ __html: course.description.replace("\\n", "<br/>") }}></p>
-										</div>
+										<div className='flex flex-col px-8 pb-4 gap-2 relative'>
+											<div>
+												<p className='uppercase font-extrabold text-purple-700 text-sm'>
+													{course.type}
+												</p>
+											</div>
+											<div>
+												<h4>{course.title}</h4>
+											</div>
+											<div>
+												<p dangerouslySetInnerHTML={{ __html: course.description.replace("\\n", "<br/>") }}></p>
+											</div>
 
-									</div>
-									<div className="w-full flex flex-col">
+										</div>
+										<div className="w-full flex flex-col">
 
-										<Divider className='w-10/12 self-center' />
-									</div>
-									<div className="p-4 ">
-										<div className="course-card-details-wrapper pb-8">
-											<div className="level-wrapper">
-												<img
-													src={level01}
-													alt="" className="level-icon w-condition-invisible" />
-												{/* <img
+											<Divider className='w-10/12 self-center' />
+										</div>
+										<div className="p-4 ">
+											<div className="course-card-details-wrapper pb-8">
+												<div className="level-wrapper">
+													<img
+														src={level01}
+														alt="" className="level-icon w-condition-invisible" />
+													{/* <img
 													src="https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee358b750b2d85_icon-level-02-academy-template.svg"
 													alt="" className="level-icon" />
 												<img
 													src="https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee35be900b2d7a_icon-level-03-academy-template.svg"
 													alt="" clasName="level-icon w-condition-invisible" /> */}
-												<div className="w-dyn-list">
-													<div role="list" className="levels-list w-dyn-items">
-														<div role="listitem" className="level-text-wrapper w-dyn-item">
-															初学者</div>
+													<div className="w-dyn-list">
+														<div role="list" className="levels-list w-dyn-items">
+															<div role="listitem" className="level-text-wrapper w-dyn-item">
+																初学者</div>
+														</div>
 													</div>
 												</div>
+												<div
+													className="course-card-price">$&nbsp;399.00&nbsp;USD</div>
 											</div>
-											<div
-												className="course-card-price">$&nbsp;399.00&nbsp;USD</div>
-										</div>
 
-									</div>
-								</Link>
-							</div>
-						))}
+										</div>
+									</Link>
+								</div>);
+						}
+						)}
 					</div>
 				</div>
 			</div >

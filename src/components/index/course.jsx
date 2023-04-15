@@ -7,8 +7,19 @@ import { useQuery } from '@tanstack/react-query';
 import { useCallback } from 'react';
 import { getAxios } from '../../utils/tools';
 import { Link } from 'gatsby';
+import { easeIn } from '../../utils/animate';
+import gsap from 'gsap';
+
+
 
 const Courses = () => {
+
+	React.useEffect(() => {
+		const tl = gsap.timeline();
+		easeIn('.gsap-course-main-title', {}, tl);
+		easeIn('.course-grid', {}, tl)
+	}, []);
+
 	const axiosInstance = getAxios();
 	const fetchCourses = async () => {
 		const response = await axiosInstance.get(
@@ -37,7 +48,7 @@ const Courses = () => {
 			className='entire-blog pt-24 px-12 pb-24 flex flex-col gap-16 justify-center items-center'
 		>
 			<div className='course-main max-w-[680px] flex flex-col gap-4 justify-center items-center'>
-				<div className='course-text-block'>
+				<div className='gsap-course-main-title course-text-block'>
 					<div>
 						<h2>精品课程</h2>
 					</div>
@@ -49,7 +60,7 @@ const Courses = () => {
 				</div>
 
 			</div>
-			<div className='blogs-grid grid xs:grid-cols-1 md:grid-cols-[repeat(2,minmax(200px,1fr))] lg:grid-cols-3 xs:gap-2  gap-8 auto-rows-min h-min justify-center  w-full'>
+			<div className='course-grid grid xs:grid-cols-1 md:grid-cols-[repeat(2,minmax(200px,1fr))] lg:grid-cols-3 xs:gap-2  gap-8 auto-rows-min h-min justify-center  w-full'>
 				{data.result.courses.map((course) => {
 					return (
 						<div

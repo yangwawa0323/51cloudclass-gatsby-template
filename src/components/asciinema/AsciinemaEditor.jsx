@@ -22,7 +22,6 @@ import PropTypes from 'prop-types';
  * )
  *
  */
-import '../../styles/_react_page_plugin.scss';
 
 const AsciinemaEditor = ({ readOnly, initialValue, onChange, ...options }) => {
 	const [value, setValue] = React.useState(initialValue || null);

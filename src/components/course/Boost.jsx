@@ -16,10 +16,22 @@ import sophie from '../../assets/img/courses/sophie-moore.jpg'
 import marketers from '../../assets/img/courses/marketers.png'
 
 import { Link } from 'gatsby';
-import { Box } from '@mui/material';
 import "../../styles/pages/_course-boost.scss";
 
+import gsap from 'gsap';
+import { easeIn } from '../../utils/animate';
+
+
 const BoostSection = ({ course }) => {
+
+
+
+	React.useEffect(() => {
+		const tl = gsap.timeline()
+		easeIn('.gsap-about-course', {}, tl)
+		easeIn('.gsap-course-preview', {}, tl)
+	}, [])
+
 	return (
 		<div
 			className='w-full landing4-boost-section  xs:px-4 p-12 justify-center items-center flex flex-col gap-24 h-min relative'
@@ -32,7 +44,7 @@ const BoostSection = ({ course }) => {
 			<div className="section course wf-section">
 				<div className="container-default-1209px  w-container">
 					<div className="flex flex-col md:flex-row">
-						<div className="about-course">
+						<div className="gsap-about-course about-course">
 							<div className="top-content course">
 								<h2 className="title course-page xs:text-5xl">{course.name}</h2>
 								<p className="paragraph course-description">{course.description}</p>
@@ -88,7 +100,7 @@ const BoostSection = ({ course }) => {
 							<div className="spacer about-course"></div>
 						</div>
 						<div className="spacer course"></div>
-						<div className="card-sticky-wrapper" >
+						<div className="gsap-course-preview card-sticky-wrapper" >
 							<div className="card course">
 								<div className="course-preview">
 									<img src={marketers}

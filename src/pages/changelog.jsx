@@ -4,11 +4,18 @@
  * @format
  */
 
+import gsap from 'gsap';
 import React from 'react';
 import VPN from '../assets/img/VPNaNlpAPRXTqrOXAT44QsmNMxE.webp';
 import Frame from '../components/frame';
+import { easeIn } from '../utils/animate';
 
 const ChangeLog = () => {
+	React.useEffect(() => {
+		var tl = gsap.timeline()
+		easeIn('.gsap-title', {}, tl)
+		easeIn('.gsap-history', { duration: 0.5, delay: 0.5 }, tl)
+	}, [])
 	return (
 		<Frame>
 			<div
@@ -19,7 +26,7 @@ const ChangeLog = () => {
 				}}
 			>
 				{/*  Change log  */}
-				<div className='max-w-[500px] flex flex-col gap-5 justify-center items-center h-min xs:pt-8 pt-48 pb-24'>
+				<div className='gsap-title max-w-[500px] flex flex-col gap-5 justify-center items-center h-min xs:pt-8 pt-48 pb-24'>
 					<div>
 						<h1 className='font-extrabold tracking-tighter xs:text-[48px] text-[68px]'>
 							网站开发之旅
@@ -33,7 +40,7 @@ const ChangeLog = () => {
 				</div>
 			</div>
 
-			<div className='justify-evenly flex flex-row flex-nowrap relative h-min overflow-hidden xs:p-8 p-24 w-full content-center items-center'>
+			<div className='gsap-history justify-evenly flex flex-row flex-nowrap relative h-min overflow-hidden xs:p-8 p-24 w-full content-center items-center'>
 				<div className='flex flex-1 flex-row justify-between items-start h-min max-w-[1200px] relative w-[1px]'>
 					<div className='flex flex-col justify-start w-auto'>
 						<h3 className='text-xl font-extrabold text-gray-500'>2023-01-29</h3>
@@ -66,7 +73,7 @@ const ChangeLog = () => {
 					</div>
 				</div>
 			</div>
-			<div className='justify-evenly flex flex-row flex-nowrap relative h-min overflow-hidden p-8 w-full content-center items-center'>
+			<div className='gsap-history justify-evenly flex flex-row flex-nowrap relative h-min overflow-hidden p-8 w-full content-center items-center'>
 				<div className='flex flex-1 flex-row justify-between items-start h-min max-w-[1200px] relative w-[1px]'>
 					<div className='flex flex-col justify-start w-auto'>
 						<h3 className='text-xl font-extrabold text-gray-500'>2023-01-31</h3>
@@ -85,7 +92,7 @@ const ChangeLog = () => {
 					</div>
 				</div>
 			</div>
-			<div className='justify-evenly flex flex-row flex-nowrap relative h-min overflow-hidden p-8 w-full content-center items-center'>
+			<div className='gsap-history justify-evenly flex flex-row flex-nowrap relative h-min overflow-hidden p-8 w-full content-center items-center'>
 				<div className='flex flex-1 flex-row justify-between items-start h-min max-w-[1200px] relative w-[1px]'>
 					<div className='flex flex-col justify-start w-auto'>
 						<h3 className='text-xl font-extrabold text-gray-500'>2023-03-18</h3>

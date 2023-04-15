@@ -13,12 +13,7 @@ Moment.globalLocale = 'zh-cn';
 export const MomentUtil = (props) => {
 	const { value } = props;
 
-	return (
-		<Moment
-			date={new Date(value)}
-			fromNow
-		/>
-	);
+	return <Moment date={new Date(value)} fromNow />;
 };
 
 var axiosInstance;
@@ -35,6 +30,14 @@ export const removeAllChildNodes = (parent) => {
 	while (parent.firstChild) {
 		parent.removeChild(parent.firstChild);
 	}
+};
+
+export const isLogin = () => {
+	// TODO: get token string from local storage and verified. return true/false
+};
+
+export const redirect = (url) => {
+	// TODO: redirect to new url
 };
 
 export const getTitle = (nodeContent) => {
@@ -56,7 +59,6 @@ export const getTitle = (nodeContent) => {
 							if (wlk.type.startsWith('HEADINGS')) {
 								found = true;
 								title = wlk.children[0].text;
-								console.log('DEBUG:', title);
 								return; // eslint-disable-line  array-callback-return
 							}
 						});

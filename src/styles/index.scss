@@ -10,10 +10,12 @@
 // @import './components/navbar';
 @import './components/doc-content';
 // @import './components/code';
+@import './components/header-component';
+@import './components/navbar';
 @import './components/well';
 @import './components/input';
 @import './components/password-validator';
-@import './components/sidebar';
+// @import './components/sidebar';
 @import './components/main-content';
 @import './components/boost';
 @import './components/plan';
@@ -23,8 +25,11 @@
 @import './pages/create-account';
 @import './pages/app';
 @import './pages/styleguide';
-@import './pages/footer';
+
+// @import './pages/footer';
+
 @import './pages/fraction';
 @import './pages/reactpage';
 // @import './pages/course-main';
 // @import './pages/course-boost';
+@import './components/footer';

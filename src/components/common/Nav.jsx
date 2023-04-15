@@ -1,14 +1,13 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
-import '../../styles/components/_nav-component.scss';
 import { getAxios } from '../../utils/tools';
 import { Avatar } from '@mui/material';
 
 import sophie from '../../assets/img/courses/sophie-moore.jpg'
 import { AssignmentOutlined, EventAvailableOutlined, HouseOutlined, LockOpenOutlined, LockPersonOutlined, LogoutOutlined, NotificationsOutlined, Person2Outlined } from '@mui/icons-material';
 import { SettingOutlined } from '@ant-design/icons';
-const axoisInstance = getAxios();
+const axiosInstance = getAxios();
 
 const SubMenu1 = () => {
     return (
@@ -21,6 +20,8 @@ const SubMenu1 = () => {
                         <Link to="/login" className="mega-menu-link" >登录</Link>
                         <Link to="/courses"
                             aria-current="page" className="mega-menu-link w--current" >课程</Link>
+                        <Link to="/asciinema-list"
+                            aria-current="page" className="mega-menu-link w--current" >字节流视频</Link>
                         <Link to="/about1"
                             className="mega-menu-link" >关于我们</Link>
                         <Link to="/styleguide"
@@ -32,8 +33,8 @@ const SubMenu1 = () => {
                         <Link to="/changelog"
                             className="mega-menu-link" >历史版本</Link></div>
                     <div className="mega-menu-column-3">
-                        <a href="/copyright"
-                            className="mega-menu-link" >版权申明</a>
+                        <Link to="/copyright"
+                            className="mega-menu-link" >版权申明</Link>
                         <Link to="/contact1"
                             className="mega-menu-link" >联系我们</Link></div>
                 </div>
@@ -47,7 +48,7 @@ const SubMenu2 = () => {
 
     const fetchTop8Courses = async () => {
         let url = `${process.env.GATSBY_API_SERVER}/courses/?limit=8`;
-        const response = await axoisInstance.get(url);
+        const response = await axiosInstance.get(url);
         return response.data;
     }
 

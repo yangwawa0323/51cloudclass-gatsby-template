@@ -84,7 +84,6 @@ const Profile = () => {
 	};
 
 	const handleClose = (event) => {
-		console.log('[DEBUG] click away....');
 		if (anchorRef.current && anchorRef.current.contains(event.target)) {
 			return;
 		}

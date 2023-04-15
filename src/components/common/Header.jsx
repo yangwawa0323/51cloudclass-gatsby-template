@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import '../../styles/components/_header-component.scss';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import { debugLog } from '../../utils/tools';
@@ -31,7 +30,7 @@ const navMenuStyles = {
 
 const Navigation = () => {
 
-    const { toggleMenu, showMenu, hideMenu, resolution, collapsed, geMedium, ltMedium } = useContext(HeaderContext);
+    const { toggleMenu, showMenu, resolution, collapsed, ltMedium } = useContext(HeaderContext);
 
 
 
@@ -43,8 +42,8 @@ const Navigation = () => {
             <div className="header-dropdown w-dropdown " >
                 <div className="header-dropdown-toggle w-dropdown-toggle" id="w-dropdown-toggle-0"
                     role="button"
-                    data-trigger-target="submenu1" onClick={toggleMenu}
-                    tabIndex="0">
+                    data-trigger-target="submenu1" onClick={toggleMenu} onKeyDown={toggleMenu}
+                    tabIndex="-1">
                     <div className="nav-link flex items-center">页面&nbsp;&nbsp;
                         <span className="dropdown-icon"                                >
                             {showMenu.submenu1 ? <ExpandLessIcon /> : <ExpandMoreIcon />}
@@ -56,8 +55,8 @@ const Navigation = () => {
             <div className="header-dropdown w-dropdown " >
                 <div className="header-dropdown-toggle w-dropdown-toggle" id="w-dropdown-toggle-1"
                     role="button"
-                    data-trigger-target="submenu2" onClick={toggleMenu}
-                    tabIndex="1">
+                    data-trigger-target="submenu2" onClick={toggleMenu} onKeyDown={toggleMenu}
+                    tabIndex="-2">
                     <div className="nav-link flex items-center" >课程&nbsp;&nbsp;
                         <span className="dropdown-icon"                                >
                             {showMenu.submenu2 ? <ExpandLessIcon /> : <ExpandMoreIcon />}
@@ -126,7 +125,7 @@ const Header = () => {
 
     }
 
-    const toggleCollapse = (e) => {
+    const toggleCollapse = () => {
         debugLog("toggle collapsed")
         setCollapsed(!collapsed)
     }
@@ -138,7 +137,7 @@ const Header = () => {
 
                 <div>
 
-                    <div className='header w-nav shadow-md w-full'>
+                    <div className='header w-nav w-full'>
                         <div className="container-default-1209px w-container xs:p-0 xs:mx-auto">
                             <div className="header-wrapper">
                                 <div className="split-content header-left" >

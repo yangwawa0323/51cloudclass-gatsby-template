@@ -14,8 +14,28 @@ module.exports = {
 		siteUrl: `https://www.51cloudclass.com`,
 	},
 	plugins: [
-		'gatsby-plugin-sass',
+		{
+			resolve: 'gatsby-plugin-sass',
+			options: {
+				cssLoaderOptions: {
+					camelCase: false,
+				},
+			},
+		},
 		'gatsby-plugin-mdx',
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				name: `docs`,
+				path: `${__dirname}/src/docs`,
+			},
+		},
+		{
+			resolve: `gatsby-plugin-page-creator`,
+			options: {
+				path: `${__dirname}/src/docs`,
+			},
+		},
 		'gatsby-plugin-postcss',
 		{
 			resolve: 'gatsby-plugin-no-sourcemaps',

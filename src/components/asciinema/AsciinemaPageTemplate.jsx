@@ -4,8 +4,7 @@ import React, { useEffect } from 'react';
 import Editor from '@react-page/editor';
 
 import { baseCellPlugins } from '../../plugins/cellPlugins';
-import Navbar from '../common/Navbar';
-import Footer from '../common/Footer';
+import Frame from '../frame';
 import { Link } from 'gatsby';
 import { getTitle, formatDate, randomColor } from '../../utils/tools';
 import ContentPasteGo from '@mui/icons-material/ContentPasteGo';
@@ -18,11 +17,7 @@ const AsciinemaPage = ({ pageContext }) => {
 	});
 
 	return (
-		<div>
-			<Navbar
-				backgroundColor={randomColor()}
-				textColor='white'
-			/>
+		<Frame>
 			<div
 				className='min-w-[425x] py-24 px-8 flex flex-col gap-2 relative lg:flex-row'
 				style={{
@@ -54,7 +49,7 @@ const AsciinemaPage = ({ pageContext }) => {
 									<span className='text-gray-600 font-semibold text-sm'>
 										{index + 1}:
 									</span>
-									<Link to={`/asciinema/${ascii.ID}`}>
+									<Link to={`/asciinemas/${ascii.ID}`}>
 										{' '}
 										{getTitle(content)}
 									</Link>
@@ -67,8 +62,7 @@ const AsciinemaPage = ({ pageContext }) => {
 					</div>
 				</div>
 			</div>
-			<Footer />
-		</div>
+		</Frame>
 	);
 };
 

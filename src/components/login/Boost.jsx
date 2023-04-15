@@ -13,24 +13,35 @@ import GoLangLogo from '../../assets/img/go-logo-svgrepo-com.svg';
 import SinaLogo from '../../assets/img/sina-logo-svgrepo-com.svg';
 
 import { navigate } from 'gatsby';
-import { getAxios, keepUserInfo } from '../../utils/tools';
+import { debugLog, getAxios, keepUserInfo } from '../../utils/tools';
 import { useDispatch } from 'react-redux';
 import { setAccount } from '../../store/account/accountSlice';
+import { easeIn } from '../../utils/animate';
+import gsap from 'gsap';
+
+
 
 const BoostSection = () => {
 	const initialForm = {
-		account: '',
+		email: '',
 		password: '',
 	};
 
 	const [formData, setFormData] = React.useState(initialForm);
+
+
+	React.useEffect(() => {
+		const tl = gsap.timeline();
+		easeIn('.gsap-boot-right', {}, tl);
+		easeIn('.gsap-boot-left', {}, tl);
+	}, [])
 
 	const dispatch = useDispatch();
 
 	const postFormData = async () => {
 		const axiosInstance = getAxios();
 		const response = await axiosInstance.post(
-			`${process.env.GATSBY_API_SERVER}/users/`,
+			`${process.env.GATSBY_API_SERVER.replace('/api', '')}/login`,
 			formData
 		);
 		const data = await response.data;
@@ -43,8 +54,10 @@ const BoostSection = () => {
 
 	const handleFormSubmit = (e) => {
 		e.preventDefault();
+
 		postFormData();
-		setFormData(initialForm);
+		debugLog("Post data: ", formData);
+		setTimeout(() => setFormData(initialForm), 1000);
 	};
 
 	const handleInputChange = (e) => {
@@ -65,7 +78,7 @@ const BoostSection = () => {
 				className='flex flex-col md:flex-row gap-20 max-w-[1200px]
 			 h-min items-center justify-center '
 			>
-				<div className='flex-1 max-w-[600px] gap-4 flex flex-col justify-start'>
+				<div className='gsap-boot-left flex-1 max-w-[600px] gap-4 flex flex-col justify-start'>
 					<div>
 						<p className='text-purple-700 font-extrabold uppercase'>
 							云课堂视频教学
@@ -82,7 +95,7 @@ const BoostSection = () => {
 						</p>
 					</div>
 				</div>
-				<div className='flex-1 justify-start w-4/5 p-8 bg-white flex flex-col gap-6 h-min rounded-xl shadow-2xl'>
+				<div className='gsap-boot-right flex-1 justify-start w-4/5 p-8 bg-white flex flex-col gap-6 h-min rounded-xl shadow-2xl'>
 					<div>
 						<h4>51元包月学习</h4>
 					</div>
@@ -97,8 +110,8 @@ const BoostSection = () => {
 								<div className='w-full grid gap-4'>
 									<input
 										onChange={handleInputChange}
-										value={formData.account}
-										name='account'
+										value={formData.email}
+										name='email'
 										placeholder='邮箱/用户名/手机号'
 										style={{
 											boxShadow: 'transparent 0px 0px 0px 1px inset',
