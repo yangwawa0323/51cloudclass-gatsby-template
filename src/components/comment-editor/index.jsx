@@ -1,6 +1,5 @@
 import MarkdownEditor from '@uiw/react-markdown-editor'
 import React, { useState } from 'react'
-import { debugLog } from '../../utils/tools'
 
 const CommentEditor = () => {
   const [markdown, setMarkdown] = useState('')

@@ -5,7 +5,7 @@ import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 
 import { useCallback } from 'react';
-import { getAxios } from '../../utils/tools';
+import { getAxios } from '51cloudclass-utilities/utils';
 import { Link } from 'gatsby';
 import { easeIn } from '../../utils/animate';
 import gsap from 'gsap';

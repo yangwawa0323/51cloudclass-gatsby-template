@@ -1,19 +1,22 @@
 import React, { useState } from 'react'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
-import { debugLog } from '../../utils/tools';
 import { ClickAwayListener } from '@mui/base';
 import Nav from './Nav';
-import { Link } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 
 import Logo from '../../assets/img/CloudClass-8_adobe_express.svg'
 import { EmailOutlined, MenuOpenOutlined, MenuOutlined, MessageOutlined, Person2Outlined } from '@mui/icons-material';
-import { Badge, IconButton, useMediaQuery } from '@mui/material';
-import { createContext } from 'react';
+import { Badge, Button, IconButton, useMediaQuery } from '@mui/material';
 import { useContext } from 'react';
 import { useTheme } from '@mui/material/styles';
+import HeaderContextProvider, { HeaderContext } from './HeaderContentProvider';
+import { useMemo } from 'react';
+import { useCallback } from 'react';
+import VideoLibraryOutlinedIcon from '@mui/icons-material/VideoLibraryOutlined';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const HeaderContext = createContext(null);
 
 
 const navMenuStyles = {
@@ -115,6 +118,44 @@ const Header = () => {
         setShowMenu(false);
     }
 
+    // TODO
+    const hasBeenLogin = useCallback(() => false, []);
+
+    const loginIconsWrapper = useMemo(() => {
+
+        const gotoLoginPage = () => {
+            navigate("/login")
+        }
+
+        if (hasBeenLogin()) {
+            return (
+                <div className='flex header-right  gap-4 items-center relative'>
+                    <Badge badgeContent={9} color="warning">
+                        <EmailOutlined className="text-[32px]" />
+                    </Badge>
+                    <Badge badgeContent={32} color="primary">
+                        <MessageOutlined className="text-[32px]" />
+                    </Badge>
+                    <Badge badgeContent={99} color="warning">
+                        <Person2Outlined data-trigger-target="loginform" color={showMenu.loginform ? 'primary' : 'inherit'} className="text-[32px] " onClick={toggleMenu} />
+                    </Badge>
+                    {geMedium && <Nav id="loginform" showUp={showMenu.loginform} submenu="loginform" />}
+                </div>
+            )
+        } else {
+            return (
+                <div className='flex header-right  gap-4 items-center relative'>
+                    <Button className="bg-purple-600" size="large" variant="contained"
+                        onClick={gotoLoginPage}
+                        endIcon={<VideoLibraryOutlinedIcon />}
+                    >登录</Button>
+                </div>
+            )
+        }
+
+
+    }, [hasBeenLogin])
+
     const context = {
         toggleMenu,
         showMenu,
@@ -122,16 +163,16 @@ const Header = () => {
         geMedium,
         ltMedium,
         collapsed,
-
+        hasBeenLogin,
     }
 
+
     const toggleCollapse = () => {
-        debugLog("toggle collapsed")
         setCollapsed(!collapsed)
     }
 
     return (
-        <HeaderContext.Provider value={context}>
+        <HeaderContextProvider extraContext={context}>
 
             <ClickAwayListener onClickAway={hideMenu}>
 
@@ -147,19 +188,10 @@ const Header = () => {
                                     {geMedium && <Navigation resolution="medium" className="hidden md:block" />}
 
                                 </div>
+
+
                                 <div className='flex justify-end items-end'>
-                                    <div className='flex header-right  gap-4 items-center relative'>
-                                        <Badge badgeContent={9} color="warning">
-                                            <EmailOutlined className="text-[32px]" />
-                                        </Badge>
-                                        <Badge badgeContent={32} color="primary">
-                                            <MessageOutlined className="text-[32px]" />
-                                        </Badge>
-                                        <Badge badgeContent={99} color="warning">
-                                            <Person2Outlined data-trigger-target="loginform" color={showMenu.loginform ? 'primary' : 'inherit'} className="text-[32px] " onClick={toggleMenu} />
-                                        </Badge>
-                                        {geMedium && <Nav id="loginform" showUp={showMenu.loginform} submenu="loginform" />}
-                                    </div>
+                                    {loginIconsWrapper}
                                     {ltMedium && <IconButton className='hamburger flex' onClick={toggleCollapse}>
                                         {collapsed ? <MenuOutlined /> : <MenuOpenOutlined />}
                                     </IconButton>}
@@ -173,11 +205,11 @@ const Header = () => {
                             {ltMedium && <Navigation resolution="small" />}
                         </div>
                     </div>
-
+                    <ToastContainer />
                 </div>
             </ClickAwayListener>
 
-        </HeaderContext.Provider >
+        </HeaderContextProvider >
     )
 }
 

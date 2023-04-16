@@ -5,7 +5,7 @@ import React, { useContext } from 'react';
 import SimpleBarScroll from '../common/SimpleBar';
 import 'simplebar-react/dist/simplebar.min.css';
 import { ChapterContext } from './ChapterContextProvider';
-import { debugLog, getAxios } from '../../utils/tools';
+import { debugLog, getAxios } from '51cloudclass-utilities/utils';
 import { useQuery } from '@tanstack/react-query';
 
 import { Link } from 'gatsby';

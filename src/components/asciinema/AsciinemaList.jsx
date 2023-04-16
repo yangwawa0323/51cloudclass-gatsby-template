@@ -69,7 +69,7 @@ const AsciinemaList = ({ pageContext }) => {
 											</div>
 										</div>
 										<div className='flex flex-col gap-4'>
-											<Link to={`/ asciinemas / ${ascii.ID}`}>
+											<Link to={`/asciinemas/${ascii.ID}`}>
 												<div>
 													<h5>
 														{title}

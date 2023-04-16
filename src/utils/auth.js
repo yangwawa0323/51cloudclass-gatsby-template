@@ -4,7 +4,12 @@ import { Box, Typography, Button } from '@mui/material';
 import { decodeToken } from 'react-jwt';
 import { useNavigate, useLocation } from 'react-router';
 import { useAuthenticate } from '../hooks';
-import { cleanTokenEtag, debugLog, getAxios, getTokenEtag } from './tools';
+import {
+	cleanTokenEtag,
+	debugLog,
+	getAxios,
+	getTokenEtag,
+} from '51cloudclass-utilities/utils';
 import NoEntryImage from '../assets/images/auth/no_entry.jpg';
 import { grey } from '@mui/material/colors';
 import { toast } from 'react-toastify';

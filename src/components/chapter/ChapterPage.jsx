@@ -4,7 +4,6 @@ import React from 'react';
 import ChapterContextProvider from './ChapterContextProvider';
 import LeftPane from './LeftPane';
 import RightPane from './RightPane';
-import { debugLog } from '../../utils/tools';
 import Frame from '../frame';
 
 const ChapterPage = (props) => {
@@ -15,7 +14,7 @@ const ChapterPage = (props) => {
 	return (
 		<Frame>
 			<ChapterContextProvider extraContext={extra}>
-				<div className='flex flex-row flex-wrap  lg:gap-6 xs:gap-2 justify-center items-center'>
+				<div className='flex flex-row flex-wrap  lg:gap-6 xs:gap-2 justify-center pt-12'>
 					<div className='xs:max-md:basis-full basis-7/12  w-11/12 xs:max-w-[425px] md:min-w-[600px]'>
 						<LeftPane />
 					</div>

@@ -1,7 +1,7 @@
 /** @format */
 
 import React from 'react';
-import { debugLog } from '../../utils/tools';
+import { debugLog } from '51cloudclass-utilities/utils';
 import './styles.css';
 
 class PolyvPlayer extends React.Component {

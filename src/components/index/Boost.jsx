@@ -10,7 +10,7 @@ import { Link } from 'gatsby';
 
 import pictures from '../../utils/image';
 import pageJsonData from '../../data/completed-page.json';
-import { debugLog } from '../../utils/tools';
+import { debugLog } from '51cloudclass-utilities/utils';
 
 const boostSectionAnimation = (timeline) => {
 	const wrapper = document.querySelector('.boost-section-wrapper');

@@ -3,7 +3,7 @@ import React from 'react'
 
 import MarkdownEditor from '@uiw/react-markdown-editor';
 import '@uiw/react-markdown-editor/markdown-editor.css';
-import { debugLog } from '../utils/tools';
+import { debugLog } from '51cloudclass-utilities/utils';
 import { useState } from 'react';
 
 const MyMarkdown = (props) => {

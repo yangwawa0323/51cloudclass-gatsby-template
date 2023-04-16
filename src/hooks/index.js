@@ -1,6 +1,8 @@
+/** @format */
+
 import { useEffect, useState } from 'react';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { debugLog, getAxios } from '../utils/tools';
+import { debugLog, getAxios } from '51cloudclass-utilities/utils';
 
 const axiosInstance = getAxios();
 

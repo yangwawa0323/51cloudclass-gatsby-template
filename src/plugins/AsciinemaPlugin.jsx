@@ -6,12 +6,18 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import "asciinema-player/dist/bundle/asciinema-player.css";
 import Skeleton from "@mui/material/Skeleton";
 import { debug, removeAllChildNodes } from "../utils/tools";
+import { easeIn } from "../utils/animate";
 
 const demoUrl = "https://asciinema.org/a/335480.cast";
 
 var AsciinemaPlayer = null;
 
 const AsciinemaWrapper = (props) => {
+
+  useEffect(() => {
+    easeIn('div#asciinema-player-container')
+  }, [])
+
   let containerRef = useRef(null);
   const { url, id } = props;
   const [loading, setLoading] = useState(true);

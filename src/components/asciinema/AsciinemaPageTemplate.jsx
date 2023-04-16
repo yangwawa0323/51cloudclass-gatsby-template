@@ -19,7 +19,7 @@ const AsciinemaPage = ({ pageContext }) => {
 	return (
 		<Frame>
 			<div
-				className='min-w-[425x] py-24 px-8 flex flex-col gap-2 relative lg:flex-row'
+				className='min-w-[425x] p-8 flex flex-col gap-2 relative lg:flex-row'
 				style={{
 					background:
 						'radial-gradient(106.9% 91.8% at 100% 100%, #b09eff 0%, var(--token-8c47652b-dea5-4767-a9f2-5d952dcce49a, rgb(255, 255, 255))  100%)',

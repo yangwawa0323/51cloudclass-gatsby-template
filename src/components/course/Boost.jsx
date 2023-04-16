@@ -34,7 +34,7 @@ const BoostSection = ({ course }) => {
 
 	return (
 		<div
-			className='w-full landing4-boost-section  xs:px-4 p-12 justify-center items-center flex flex-col gap-24 h-min relative'
+			className='w-full landing4-boost-section  xs:px-4  p-4 justify-center items-center flex flex-col gap-24 h-min relative'
 			style={{
 				background:
 					'radial-gradient(72.6% 84% at 100% 100%, #b09eff 0%, rgb(255, 255, 255)  100%)',
@@ -47,7 +47,7 @@ const BoostSection = ({ course }) => {
 						<div className="gsap-about-course about-course">
 							<div className="top-content course">
 								<h2 className="title course-page xs:text-5xl">{course.name}</h2>
-								<p className="paragraph course-description">{course.description}</p>
+								<p className="paragraph course-description text-xl leading-10">{course.description}</p>
 								<div className="w-layout-grid advantage-course-grid">
 									<div className="advantage-course-wrapper">
 										<img
@@ -86,10 +86,10 @@ const BoostSection = ({ course }) => {
 								</a>
 								<div className="spacer about-course"></div>
 								<div className='flex-1 justify-start w-4/5 p-8 bg-white flex flex-col gap-6 h-min rounded-xl shadow-2xl'>
-									<h5>课程章节</h5>
+									<h4>课程章节</h4>
 									{course.chapters?.map((chpt, idx) => {
 										return (
-											<div key={chpt.ID}>
+											<div key={chpt.ID} className="text-xl">
 												第{idx + 1}章：
 												<Link to={`/chapters/${chpt.ID}`}>{chpt.name}</Link>
 											</div>

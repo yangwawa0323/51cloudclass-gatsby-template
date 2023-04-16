@@ -8,7 +8,7 @@ import { Link } from 'gatsby';
 import * as React from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { debugLog, getAxios } from '../../utils/tools';
+import { getAxios } from '51cloudclass-utilities/utils';
 import { useQuery } from '@tanstack/react-query';
 import Frame from '../frame';
 import '../../styles/pages/_course-main.scss';
@@ -20,31 +20,32 @@ import formation from '../../assets/img/courses/formaṭion-status.png'
 import esstimated from '../../assets/img/courses/esstimated-processing.png'
 import level01 from '../../assets/img/courses/level-01.svg'
 import { easeIn } from '../../utils/animate';
+import shuffle from 'lodash/shuffle';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const animation = () => {
-	// gsap.from('.entire-blog', {
-	// 	opacity: 0.6,
-	// 	y: '+10%',
-	// 	duration: 1.5,
-	// });
+// const animation = () => {
+// gsap.from('.entire-blog', {
+// 	opacity: 0.6,
+// 	y: '+10%',
+// 	duration: 1.5,
+// });
 
-	// gsap.from('.stay-in-the-loop-form', {
-	// scrollTrigger: {
-	// 	trigger: '.blogs-grid',
-	// 		// scrub: 1,
-	// 		start: 'bottom 90%',
-	// 		end: 'bottom 60%',
-	// 		toggleActions: 'play none none reverse',
-	// 		// markers: true,
-	// 	},
-	// 	ease: 'power4.inOut',
-	// 	duration: 1.5,
-	// 	y: '+60%',
-	// 	opacity: 0,
-	// });
-};
+// gsap.from('.stay-in-the-loop-form', {
+// scrollTrigger: {
+// 	trigger: '.blogs-grid',
+// 		// scrub: 1,
+// 		start: 'bottom 90%',
+// 		end: 'bottom 60%',
+// 		toggleActions: 'play none none reverse',
+// 		// markers: true,
+// 	},
+// 	ease: 'power4.inOut',
+// 	duration: 1.5,
+// 	y: '+60%',
+// 	opacity: 0,
+// });
+// };
 
 const fetchCourses = async () => {
 	const axiosInstance = getAxios();
@@ -53,7 +54,7 @@ const fetchCourses = async () => {
 	return response.data;
 };
 
-const CourseMain = ({ pageContext }) => {
+const CourseMain = () => {
 	ScrollTrigger.defaults({});
 
 	const { data, isLoading, error } = useQuery(['fetch-courses'], fetchCourses);
@@ -76,19 +77,19 @@ const CourseMain = ({ pageContext }) => {
 			// 	setTimeout(() => {
 			const timeline = gsap.timeline();
 			if (data.result.courses) {
-				var len = data.result.courses.length;
-				for (var i = 0; i < len; i++) {
-					var element = document.querySelector(`.courses-grid .course-${i}`)
+				var elements = shuffle(document.querySelectorAll(`.courses-grid .gsap-shuffle`))
+				elements.forEach((element) => (
+
 					timeline.fromTo(element, {
 						opacity: 0,
-						scale: 0.6,
+						scale: 0,
 					}, {
-						delay: 0.5,
-						duration: 0.4,
+						delay: 0.1,
+						duration: 0.1,
 						opacity: 1,
 						scale: 1,
-					});
-				}
+					})
+				))
 			}
 			// 	}, 1000);
 		}
@@ -108,10 +109,10 @@ const CourseMain = ({ pageContext }) => {
 					background:
 						'linear-gradient(0deg,var(--token-0cdf47b3-ce1f-4341-98ec-f094608541cb, #f6f4ff) 0%,#fff 100%)',
 				}}
-				className='entire-blog pt-24 px-12 pb-24 flex flex-col gap-16 justify-center items-center'
+				className='entire-blog pt-12 px-12 pb-24 flex flex-col gap-16 justify-center items-center'
 			>
 				{/*  */}
-				<div className='course-main flex gap-20 w-full justify-between items-center'>
+				<div className='course-main flex gap-20 max-w-4xl justify-between items-center'>
 					<div className="gsap-main-left course-text-block xs:gap-2 gap-4  flex flex-col flex-1">
 						<div>
 							<h2 className="xs:text-4xl text-5xl">课程</h2>
@@ -178,63 +179,13 @@ const CourseMain = ({ pageContext }) => {
 
 
 				{/*  */}
-				{/* <div className='flex flex-row gap-10 h-min w-full overflow-visible'>
-					<div className='flex-grow flex justify-center items-center h-min '>
-						<Link
-							to={`/courses/`}
-							className='rounded-xl shadow-lg overflow-hidden relative'
-						>
-							<div className='w-full'>
-								<div>
-									<img
-										className='object-cover object-right-top  min-h-[480px] min-w-[800px]  w-full h-full rounded-[inherit]'
-										src={firstCourse.image}
-										alt={firstCourse.title}
-									/>
-								</div>
-								<div className='absolute p-8 bottom-7 text-gray-300 hover:text-gray-400 duration-500'>
-									<p>{firstCourse.type}</p>
-									<h4 className='text-gray-300'>{firstCourse.name}</h4>
-									<p>{firstCourse.description}</p>
-								</div>
-							</div>
-						</Link>
-					</div>
-					<div className='flex flex-col  justify-start gap-4 h-full'>
-						<div>
-							<h4>最新课程</h4>
-						</div>
-						<div className='flex flex-col gap-4 justify-start w-full'>
-							{remainings.map((course) => (
-								<div className='rounded-lg hover:shadow-xl duration-500 shadow-md overflow-hidden flex flex-row gap'>
-									<Link
-										to={`/courses/`}
-										className='flex flex-row max-w-[400px] h-14 justify-center items-center'
-									>
-										<div className='flex-[0.8]'>
-											<img
-												src={course.image}
-												alt={course.name}
-											/>
-										</div>
-										<div className='flex-1 p-4'>
-											<h6>{course.name}</h6>
-										</div>
-									</Link>
-								</div>
-							))}
-						</div>
-					</div>
-				</div> */}
-
-				{/*  */}
 				<div>
 					<div className='courses-grid grid min-w-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-8 auto-rows-min h-min justify-center max-w-[1200px] w-full'>
 						{courses.map((course, index) => {
 							return (
 								<div
 									key={course.ID}
-									className={`course-${index} rounded-2xl overflow-hidden border-[2px] shadow-md hover:shadow-lg hover:scale-105 duration-500  h-full w-full place-self-start`}
+									className={`course-${index} gsap-shuffle rounded-2xl overflow-hidden border-[2px] shadow-md hover:shadow-lg hover:scale-105 duration-500  h-full w-full place-self-start`}
 								>
 									<Link to={`/courses/${course.ID}`}>
 										<div className='xs:h-[224px] h-[334px] overflow-hidden pt-4'>

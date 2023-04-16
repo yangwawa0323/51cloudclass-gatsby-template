@@ -13,11 +13,13 @@ import GoLangLogo from '../../assets/img/go-logo-svgrepo-com.svg';
 import SinaLogo from '../../assets/img/sina-logo-svgrepo-com.svg';
 
 import { navigate } from 'gatsby';
-import { debugLog, getAxios, keepUserInfo } from '../../utils/tools';
+import { keepUserInfo } from '../../utils/tools';
+import { debugLog, getAxios } from '51cloudclass-utilities/utils';
 import { useDispatch } from 'react-redux';
 import { setAccount } from '../../store/account/accountSlice';
 import { easeIn } from '../../utils/animate';
 import gsap from 'gsap';
+import { toast } from 'react-toastify';
 
 
 
@@ -40,15 +42,21 @@ const BoostSection = () => {
 
 	const postFormData = async () => {
 		const axiosInstance = getAxios();
-		const response = await axiosInstance.post(
-			`${process.env.GATSBY_API_SERVER.replace('/api', '')}/login`,
-			formData
-		);
-		const data = await response.data;
-		if (data.length) {
-			dispatch(setAccount(data[0]));
-			keepUserInfo(data[0]);
-			navigate('/');
+		try {
+			const response = await axiosInstance.post(
+				`${process.env.GATSBY_API_SERVER.replace('/api', '')}/login`,
+				formData
+			);
+			const data = await response.data;
+			if (data.length) {
+				dispatch(setAccount(data[0]));
+				keepUserInfo(data[0]);
+				navigate('/');
+			}
+		} catch (e) {
+			debugLog("Login Error: ", e);
+			toast(`登录失败:
+			 ${e.response?.data?.message}`)
 		}
 	};
 
@@ -68,7 +76,7 @@ const BoostSection = () => {
 	};
 	return (
 		<div
-			className='landing4-boost-section xs:px-8 md:px-8 pt-48 px-24 pb-24 justify-center items-center flex flex-col gap-24 h-min overflow-hidden relative'
+			className='landing4-boost-section xs:px-8 md:px-8 p-24 justify-center items-center flex flex-col gap-24 h-min overflow-hidden relative'
 			style={{
 				background:
 					'radial-gradient(72.6% 84% at 100% 100%, #b09eff 0%, rgb(255, 255, 255)  100%)',
@@ -80,7 +88,7 @@ const BoostSection = () => {
 			>
 				<div className='gsap-boot-left flex-1 max-w-[600px] gap-4 flex flex-col justify-start'>
 					<div>
-						<p className='text-purple-700 font-extrabold uppercase'>
+						<p className='text-purple-700 text-2xl font-extrabold uppercase'>
 							云课堂视频教学
 						</p>
 					</div>
@@ -90,7 +98,7 @@ const BoostSection = () => {
 						</h2>
 					</div>
 					<div>
-						<p className='break-words text-6 font-medium text-gray-700'>
+						<p className='break-words font-medium text-xl text-gray-700'>
 							系统的学习互联网运维知识，掌握职场就业新风向，充电学习，知识积累和沉淀，快快登录开启线上学习之旅吧！
 						</p>
 					</div>
