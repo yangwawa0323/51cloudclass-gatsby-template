@@ -5,6 +5,7 @@ import traverse from 'traverse';
 import Moment from 'react-moment';
 // eslint-disable-next-line
 import moment from 'moment/min/moment-with-locales';
+import { isBrowser } from 'react-device-detect';
 
 Moment.globalMoment = moment;
 Moment.globalLocale = 'zh-cn';
@@ -24,14 +25,6 @@ export const removeAllChildNodes = (parent) => {
 	while (parent.firstChild) {
 		parent.removeChild(parent.firstChild);
 	}
-};
-
-export const isLogin = () => {
-	// TODO: get token string from local storage and verified. return true/false
-};
-
-export const redirect = (url) => {
-	// TODO: redirect to new url
 };
 
 export const getTitle = (nodeContent) => {
@@ -98,7 +91,13 @@ export const gradientColor = {
 };
 
 export const keepUserInfo = (user) => {
-	localStorage.setItem('account', JSON.stringify(user, null, 2));
+	if (isBrowser) {
+		window.localStorage.setItem('account', JSON.stringify(user, null, 2));
+	}
 };
 
-export const getUserInfo = () => localStorage.getItem('account');
+export const getUserInfo = () => {
+	if (isBrowser) {
+		return window.localStorage.getItem('account');
+	}
+};

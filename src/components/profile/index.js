@@ -32,7 +32,8 @@ import {
 } from '@ant-design/icons';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { logout } from '../../store/account/accountSlice';
+import { logout } from '51cloudclass-utilities/dist';
+import { cleanTokenEtag } from '51cloudclass-utilities/src/account';
 
 // tab panel wrapper
 function TabPanel({ children, value, index, ...other }) {
@@ -72,7 +73,8 @@ const Profile = () => {
 	const userInfo = useSelector((state) => state.account.userInfo);
 
 	const handleLogout = async () => {
-		console.log('Log out now');
+		debugLog('Log out now');
+		cleanTokenEtag();
 		dispatch(logout());
 	};
 

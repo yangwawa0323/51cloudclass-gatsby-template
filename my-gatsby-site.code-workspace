@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../npm-package-template"
+		}
+	],
+	"settings": {}
+}

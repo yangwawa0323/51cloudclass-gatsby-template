@@ -6,17 +6,19 @@ import Nav from './Nav';
 import { Link, navigate } from 'gatsby';
 
 import Logo from '../../assets/img/CloudClass-8_adobe_express.svg'
-import { EmailOutlined, MenuOpenOutlined, MenuOutlined, MessageOutlined, Person2Outlined } from '@mui/icons-material';
-import { Badge, Button, IconButton, useMediaQuery } from '@mui/material';
+import { EmailOutlined, MenuOpenOutlined, MenuOutlined, MessageOutlined } from '@mui/icons-material';
+import { Avatar, Badge, Button, IconButton, useMediaQuery } from '@mui/material';
 import { useContext } from 'react';
 import { useTheme } from '@mui/material/styles';
 import HeaderContextProvider, { HeaderContext } from './HeaderContentProvider';
-import { useMemo } from 'react';
 import { useCallback } from 'react';
 import VideoLibraryOutlinedIcon from '@mui/icons-material/VideoLibraryOutlined';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { useSelector } from 'react-redux';
+import { getAccount } from '51cloudclass-utilities/src/account';
+import { isBrowser } from '51cloudclass-utilities/src/net';
+import { globalContext } from '../../../wrap-with-provider';
 
 
 const navMenuStyles = {
@@ -34,8 +36,6 @@ const navMenuStyles = {
 const Navigation = () => {
 
     const { toggleMenu, showMenu, resolution, collapsed, ltMedium } = useContext(HeaderContext);
-
-
 
     return (
         <nav role="navigation" data-collapse={resolution}
@@ -73,7 +73,6 @@ const Navigation = () => {
 };
 
 
-
 const navOverlayStyles = {
     expanded: {
         // height: '10903px',
@@ -86,86 +85,110 @@ const navOverlayStyles = {
     }
 }
 
+const LoginIconsWrapper = () => {
+
+    const reduxAvatar = useSelector((state) => state.auth.account?.avatar)
+
+
+    const {
+        toggleMenu,
+        showMenu,
+        geMedium,
+        badgeNumber,
+    } = useContext(HeaderContext);
+
+
+    const { isExpired, isLogin } = useContext(globalContext)
+
+
+    const gotoLoginPage = () => {
+        navigate("/login")
+    }
+
+    if (isLogin && !isExpired) {
+        return (
+            <div className='flex header-right  gap-4 items-baseline relative'>
+                <Badge badgeContent={9} color="warning">
+                    <EmailOutlined className="text-[32px] cursor-pointer" />
+                </Badge>
+                <Badge badgeContent={badgeNumber} color="primary">
+                    <MessageOutlined className="text-[32px] cursor-pointer" />
+                </Badge>
+                {/* <Badge badgeContent={badgeNumber} color="warning"> */}
+                <Avatar src={reduxAvatar || getAccount()?.avatar} data-trigger-target="loginform" className="cursor-pointer" onClick={toggleMenu} />
+                {/* </Badge> */}
+
+                <Nav id="loginform" showUp={showMenu.loginform && geMedium} submenu="loginform" />
+            </div>
+        )
+    } else {
+        return (
+            <div className='flex login-button header-right  gap-4 items-center relative'>
+                <Button className="bg-purple-600" size="large" variant="contained"
+                    onClick={gotoLoginPage}
+                    endIcon={<VideoLibraryOutlinedIcon />}
+                >登录</Button>
+            </div>
+        )
+    }
+
+}
+
+
+const initMenuState = {
+    submenu1: false,
+    submenu2: false,
+    loginform: false,
+}
 
 const Header = () => {
+
+
+    const [showMenu, setShowMenu] = useState(initMenuState);
+    const [collapsed, setCollapsed] = useState(true);
+    const [badgeNumber, setBadgeNumber] = useState(1);
+
+    const { isTourOpen } = useContext(globalContext);
 
     const theme = useTheme()
     const geMedium = useMediaQuery(theme.breakpoints.up('md'));
     const ltMedium = useMediaQuery(theme.breakpoints.down('md'))
 
-    const initMenuState = {
-        submenu1: false,
-        submenu2: false,
-        loginform: false,
-    }
-
-    const [showMenu, setShowMenu] = useState(initMenuState);
-    const [collapsed, setCollapsed] = useState(true);
+    const isLoginPage = useCallback(() => {
+        return isBrowser ? window.location.pathname === '/login/' : false;
+    }, [])
 
     const toggleMenu = (e) => {
         const triggerDom = e.currentTarget;
+
         const target = triggerDom.dataset.triggerTarget;
 
-        const changedState = {
+        let changedState = {
             ...initMenuState,
             [target]: !showMenu[target]
         }
 
-        setShowMenu(changedState);
+        setShowMenu((nextState) => nextState = changedState);
+        setBadgeNumber(nextState => nextState + 1);
     }
 
     const hideMenu = () => {
-        setShowMenu(false);
+        setShowMenu(initMenuState);
     }
 
-    // TODO
-    const hasBeenLogin = useCallback(() => false, []);
-
-    const loginIconsWrapper = useMemo(() => {
-
-        const gotoLoginPage = () => {
-            navigate("/login")
-        }
-
-        if (hasBeenLogin()) {
-            return (
-                <div className='flex header-right  gap-4 items-center relative'>
-                    <Badge badgeContent={9} color="warning">
-                        <EmailOutlined className="text-[32px]" />
-                    </Badge>
-                    <Badge badgeContent={32} color="primary">
-                        <MessageOutlined className="text-[32px]" />
-                    </Badge>
-                    <Badge badgeContent={99} color="warning">
-                        <Person2Outlined data-trigger-target="loginform" color={showMenu.loginform ? 'primary' : 'inherit'} className="text-[32px] " onClick={toggleMenu} />
-                    </Badge>
-                    {geMedium && <Nav id="loginform" showUp={showMenu.loginform} submenu="loginform" />}
-                </div>
-            )
-        } else {
-            return (
-                <div className='flex header-right  gap-4 items-center relative'>
-                    <Button className="bg-purple-600" size="large" variant="contained"
-                        onClick={gotoLoginPage}
-                        endIcon={<VideoLibraryOutlinedIcon />}
-                    >登录</Button>
-                </div>
-            )
-        }
-
-
-    }, [hasBeenLogin])
 
     const context = {
         toggleMenu,
         showMenu,
+        setShowMenu,
         hideMenu,
         geMedium,
         ltMedium,
         collapsed,
-        hasBeenLogin,
+        badgeNumber,
+        setBadgeNumber,
+        isLoginPage,
     }
-
 
     const toggleCollapse = () => {
         setCollapsed(!collapsed)
@@ -173,11 +196,8 @@ const Header = () => {
 
     return (
         <HeaderContextProvider extraContext={context}>
-
             <ClickAwayListener onClickAway={hideMenu}>
-
                 <div>
-
                     <div className='header w-nav w-full'>
                         <div className="container-default-1209px w-container xs:p-0 xs:mx-auto">
                             <div className="header-wrapper">
@@ -189,9 +209,9 @@ const Header = () => {
 
                                 </div>
 
-
                                 <div className='flex justify-end items-end'>
-                                    {loginIconsWrapper}
+                                    <LoginIconsWrapper />
+
                                     {ltMedium && <IconButton className='hamburger flex' onClick={toggleCollapse}>
                                         {collapsed ? <MenuOutlined /> : <MenuOpenOutlined />}
                                     </IconButton>}
@@ -200,7 +220,6 @@ const Header = () => {
                         </div>
                         <div className="w-nav-overlay"
                             style={{ ...navOverlayStyles[collapsed ? 'collapsed' : 'expanded'] }}
-
                         >
                             {ltMedium && <Navigation resolution="small" />}
                         </div>
@@ -208,7 +227,6 @@ const Header = () => {
                     <ToastContainer />
                 </div>
             </ClickAwayListener>
-
         </HeaderContextProvider >
     )
 }

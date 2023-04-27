@@ -4,7 +4,6 @@ import slate from '@react-page/plugins-slate';
 import divider from '@react-page/plugins-divider';
 import React from 'react';
 import '@react-page/plugins-slate/lib/index.css';
-import { debugLog } from '51cloudclass-utilities/utils';
 import polyvplayer from 'components/plugins/polyv-player-plugin';
 import './styles.css';
 

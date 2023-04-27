@@ -19,7 +19,6 @@ const getAllAsciinemaPages = async ({ graphql, actions }) => {
 	const relatives = fakeData.slice(0, 10);
 
 	asciinemaPages.forEach(async (page) => {
-		console.debug('generate: ', page.ID);
 		await actions.createPage({
 			path: `/asciinemas/${page.ID}`,
 			component: require.resolve(

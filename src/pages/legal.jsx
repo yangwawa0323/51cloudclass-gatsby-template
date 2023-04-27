@@ -5,13 +5,11 @@
  */
 
 import React from 'react';
-import Footer from '../components/common/Footer';
-import Navbar from '../components/common/Navbar';
+import Frame from '../components/frame';
 
 const Legal = () => {
 	return (
-		<div className='flex flex-col justify-center'>
-			<Navbar />
+		<Frame>
 			<div className='gap-5 justify-center items-center flex flex-col h-min pt-[180px] px-24 pb-24'>
 				<div>
 					<h1>Terms &amp; Conditions</h1>
@@ -1023,8 +1021,7 @@ const Legal = () => {
 					</p>
 				</div>
 			</div>
-			<Footer />
-		</div>
+		</Frame>
 	);
 };
 

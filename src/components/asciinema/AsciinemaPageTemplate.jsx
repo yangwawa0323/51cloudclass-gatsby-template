@@ -6,7 +6,7 @@ import Editor from '@react-page/editor';
 import { baseCellPlugins } from '../../plugins/cellPlugins';
 import Frame from '../frame';
 import { Link } from 'gatsby';
-import { getTitle, formatDate, randomColor } from '../../utils/tools';
+import { getTitle, formatDate } from '../../utils/tools';
 import ContentPasteGo from '@mui/icons-material/ContentPasteGo';
 
 const AsciinemaPage = ({ pageContext }) => {

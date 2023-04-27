@@ -1,22 +1,44 @@
-import { Link } from 'gatsby';
-import React from 'react';
+import { Link, navigate } from 'gatsby';
+import React, { memo } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { getAxios } from '51cloudclass-utilities/utils';
+import { utils, logout } from '51cloudclass-utilities/dist';
 import { Avatar } from '@mui/material';
 
 import sophie from '../../assets/img/courses/sophie-moore.jpg'
 import { AssignmentOutlined, EventAvailableOutlined, HouseOutlined, LockPersonOutlined, NotificationsOutlined, Person2Outlined } from '@mui/icons-material';
+import VideoLibraryOutlinedIcon from '@mui/icons-material/VideoLibraryOutlined';
 import { SettingOutlined } from '@ant-design/icons';
+import { useContext } from 'react';
+import { HeaderContext } from './HeaderContentProvider';
+import { cleanTokenEtag, getAccount } from '51cloudclass-utilities/src/account';
+import { useDispatch, useSelector } from 'react-redux';
+import { globalContext } from '../../../wrap-with-provider';
+
+
+
+const { getAxios } = utils;
 const axiosInstance = getAxios();
 
+/** BEGIN SubMenu1 */
 const SubMenu1 = () => {
+    const { isLogin, isExpired } = useContext(globalContext);
+
+    const dispatch = useDispatch()
+
+    const handleLoginOut = () => {
+        cleanTokenEtag()
+        dispatch(logout())
+        navigate("/login")
+    }
+
     return (
         <div>
             <h4 className="mega-menu-title hidden-mobile">页面</h4>
             <div className="menu-2-columns">
                 <div className="mega-menu-column-1">
                     <Link to="/" className="mega-menu-link" >首页</Link>
-                    <Link to="/login" className="mega-menu-link" >登录</Link>
+                    {/* <Link to="/login" className="mega-menu-link" >登录</Link> */}
+
                     <Link to="/courses"
                         aria-current="page" className="mega-menu-link w--current" >课程</Link>
                     <Link to="/asciinema-list"
@@ -26,6 +48,19 @@ const SubMenu1 = () => {
                     <Link to="/styleguide"
                         className='mega-menu-link'
                     >样式</Link>
+
+                    <span className="mega-menu-link" role="botton" tabIndex={-1}
+                        onClick={handleLoginOut} onKeyDown={handleLoginOut}
+                    > {isLogin && !isExpired ?
+                        <span className='flex flex-row gap-2 text-red-600'>
+                            <LockPersonOutlined color="error" />
+                            退出
+                        </span>
+                        : <span className='flex flex-row gap-2'>
+                            <VideoLibraryOutlinedIcon color="primary" />
+                            登录
+                        </span>
+                        }</span>
                 </div>
                 <div className="mega-menu-column-3">
                     <Link to="/price2" className="mega-menu-link" >收费</Link>
@@ -41,7 +76,9 @@ const SubMenu1 = () => {
     )
 
 }
+/** END SubMenu1 */
 
+/** BEGIN SubMenu2 */
 const SubMenu2 = () => {
 
     const fetchTop8Courses = async () => {
@@ -79,14 +116,34 @@ const SubMenu2 = () => {
         </>
     )
 }
+/** END SubMenu2 */
 
-
+/** BEGIN LoginForm */
 const LoginForm = () => {
+
+    const { hideMenu } = useContext(HeaderContext)
+    const dispatch = useDispatch()
+
+    const { setIsLogin } = useContext(globalContext)
+
+    const accountLogout = () => {
+        dispatch(logout())
+        cleanTokenEtag()
+        hideMenu()
+        setIsLogin(false)
+        navigate('/')
+    }
+
+    let userAvatar = useSelector(state => state.auth.account?.avatar);
+
+    const navgateTo = (url) => {
+        navigate(url)
+    }
 
     return (
         <div className="z-[1000] absolute top-16 -right-36 h-fit rounded-xl shadow-xl flex items-center justify-center bg-gray-100 py-6">
             <div className="flex gap-2 flex-col whitespace-nowrap max-w-xs p-4 items-center bg-white">
-                <Avatar src={sophie} className="outline-2 w-16 h-16" />
+                <Avatar src={userAvatar} className="outline-2 w-24 h-24" />
                 <ul className="flex flex-col w-full">
                     <li className="my-px">
                         <div
@@ -125,9 +182,10 @@ const LoginForm = () => {
                     <li className="my-px">
                         <span className="flex font-medium text-sm text-gray-400 px-4 my-4 uppercase">账户管理</span>
                     </li>
-                    <li className="my-px">
+                    <li className="my-px" >
                         <div
-                            className="flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 hover:bg-gray-100">
+                            onClick={() => navgateTo('/profile')}
+                            className="flex flex-row items-center h-12 px-4 rounded-lg text-gray-600  hover:bg-gray-100" >
                             <span className="flex items-center justify-center text-lg text-gray-400">
                                 <Person2Outlined />
                             </span>
@@ -159,17 +217,17 @@ const LoginForm = () => {
                             <span className="flex items-center justify-center text-lg text-red-400">
                                 <LockPersonOutlined color="error" />
                             </span>
-                            <span className="ml-3">退出账户</span>
+                            <span className="ml-3 cursor-pointer" role="button" tabIndex={-1} onKeyDown={accountLogout} onClick={accountLogout}>退出</span>
                         </div>
                     </li>
                 </ul>
-            </div>
-        </div>
+            </div >
+        </div >
     );
 }
 
 
-const Nav = ({ showUp, submenu, children }) => {
+const Nav = memo(({ showUp, submenu, children }) => {
 
     return (
         <nav className={`dropdown-list w-dropdown-list w--open ${showUp ? 'active' : ''} `} >
@@ -184,7 +242,7 @@ const Nav = ({ showUp, submenu, children }) => {
             </div>
         </nav>
     )
-}
+});
 
 
 

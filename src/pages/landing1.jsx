@@ -5,8 +5,6 @@
  */
 
 import * as React from 'react';
-import Footer from '../components/common/Footer';
-import Navbar from '../components/common/Navbar';
 import ArrowForward from '@mui/icons-material/ArrowForward';
 
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -17,6 +15,7 @@ import WatchVideo from '../components/landing1/Watch';
 import NextWebsite from '../components/landing1/Next';
 import FractionSection from '../components/landing1/Fraction';
 import { Link } from 'gatsby';
+import Frame from '../components/frame';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -109,22 +108,19 @@ const Landing1 = () => {
 				</div>
 			</div>
 			{/*  */}
-			<Navbar
-				backgroundColor='black'
-				textColor='white'
-			/>
-			{/*  */}
-			<BoostSection />
-			{/*  */}
-			<BuildingBlock />
-			{/*  */}
-			<WatchVideo />
-			{/*  */}
-			<NextWebsite />
-			{/*  */}
-			<FractionSection />
-			{/*  */}
-			<Footer />
+			<Frame >
+				{/*  */}
+				<BoostSection />
+				{/*  */}
+				<BuildingBlock />
+				{/*  */}
+				<WatchVideo />
+				{/*  */}
+				<NextWebsite />
+				{/*  */}
+				<FractionSection />
+				{/*  */}
+			</Frame >
 		</div>
 	);
 };

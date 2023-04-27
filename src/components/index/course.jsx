@@ -5,11 +5,12 @@ import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 
 import { useCallback } from 'react';
-import { getAxios } from '51cloudclass-utilities/utils';
+import { utils } from '51cloudclass-utilities/dist';
 import { Link } from 'gatsby';
 import { easeIn } from '../../utils/animate';
 import gsap from 'gsap';
 
+const { getAxios } = utils
 
 
 const Courses = () => {

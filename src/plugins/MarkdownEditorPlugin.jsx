@@ -3,7 +3,6 @@ import React from 'react'
 
 import MarkdownEditor from '@uiw/react-markdown-editor';
 import '@uiw/react-markdown-editor/markdown-editor.css';
-import { debugLog } from '51cloudclass-utilities/utils';
 import { useState } from 'react';
 
 const MyMarkdown = (props) => {
@@ -17,8 +16,8 @@ const MyMarkdown = (props) => {
     }
     return (
         // <OutlinedInput value={value} onChange={handleChange} />
+        // eslint-disable-next-line jsx-a11y/no-autofocus
         <MarkdownEditor minHeight='100px' value={value} onChange={handleChange} autoFocus inputMode='text' aria-disabled onClickCapture={(e) => {
-            debugLog("click capture");
             e.preventDefault();
             e.stopPropagation()
             return false;

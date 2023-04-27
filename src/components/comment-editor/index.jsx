@@ -9,8 +9,8 @@ const CommentEditor = () => {
   return (
     <div className="m-12 flex flex-col gap-4">
       <MarkdownEditor
+        className="min-w-[320px] min-h-[400px]"
         toolbarBottom
-        minHeight="100px"
         value={markdown}
         toolbars={[
           'bold', 'italic', 'header'

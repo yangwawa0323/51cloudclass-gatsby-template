@@ -1,11 +1,46 @@
 /** @format */
 
-import React from 'react';
-import { Provider } from 'react-redux';
+import React, { useState } from 'react';
 
-import { store } from './src/store';
+import { store } from '51cloudclass-utilities/src/store';
+
 import RootElement from './src/components/root-element';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { Provider } from 'react-redux';
+import { createContext } from 'react';
+import { getTokenEtagAccount } from '51cloudclass-utilities/src/account';
+import { useJwt } from 'react-jwt';
+// import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { useTour } from '@reactour/tour';
+
+export const globalContext = createContext(null);
+
+const GlobalContextProvider = ({ children }) => {
+	/* eslint-disable no-unused-vars */
+	const { setIsOpen: setIsTourOpen, isOpen: isTourOpen } = useTour();
+
+	let [storageToken, _U, storageAccountJSON] = getTokenEtagAccount();
+	/* eslint-enable no-unused-vars */
+
+	// TODO: need verify the token from the server.
+	const { decodedToken, isExpired } = useJwt(storageToken);
+
+	const [isLogin, setIsLogin] = useState(false);
+
+	const context = {
+		isExpired,
+		decodedToken,
+
+		isLogin,
+		setIsLogin,
+
+		setIsTourOpen,
+		isTourOpen,
+	};
+
+	return (
+		<globalContext.Provider value={context}>{children}</globalContext.Provider>
+	);
+};
 
 // eslint-disable-next-line react/display-name,react/prop-types,import/no-anonymous-default-export
 export default ({ element }) => {
@@ -14,10 +49,9 @@ export default ({ element }) => {
 	//  - it will be called only once in browser, when React mounts
 	return (
 		<Provider store={store}>
-			<RootElement>
-				{element}
-				<ReactQueryDevtools initialIsOpen={false} />
-			</RootElement>
+			<GlobalContextProvider>
+				<RootElement>{element}</RootElement>
+			</GlobalContextProvider>
 		</Provider>
 	);
 };

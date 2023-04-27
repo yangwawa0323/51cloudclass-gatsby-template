@@ -8,7 +8,7 @@ import { Link } from 'gatsby';
 import * as React from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { getAxios } from '51cloudclass-utilities/utils';
+import { utils } from '51cloudclass-utilities/dist';
 import { useQuery } from '@tanstack/react-query';
 import Frame from '../frame';
 import '../../styles/pages/_course-main.scss';
@@ -21,6 +21,8 @@ import esstimated from '../../assets/img/courses/esstimated-processing.png'
 import level01 from '../../assets/img/courses/level-01.svg'
 import { easeIn } from '../../utils/animate';
 import shuffle from 'lodash/shuffle';
+
+const { getAxios } = utils;
 
 gsap.registerPlugin(ScrollTrigger);
 

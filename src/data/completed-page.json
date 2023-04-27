@@ -1,16 +1,16 @@
 {
 	"pages": [
 		{
-			"route" : "/changelog",
-			"title" : "Change Log"
+			"route": "/changelog",
+			"title": "Change Log"
 		},
 		{
 			"route": "/404",
-			"title" : "404 Error page"
+			"title": "404 Error page"
 		},
 		{
 			"route": "/asciinema-list",
-			"title" : "Asciinema list page"
+			"title": "Asciinema list page"
 		},
 		{
 			"route": "/blog2",
@@ -18,7 +18,7 @@
 		},
 		{
 			"route": "/styleguide",
-			"title" : "Style guide page"
+			"title": "Style guide page"
 		},
 		{
 			"route": "/landing1",
@@ -29,19 +29,15 @@
 			"title": "asciinema editor (local only) page"
 		},
 		{
-			"route": "/landing4",
-			"title": "Landing 4 page"
-		},
-		{
 			"route": "/blog1",
 			"title": "Blog 1 page"
 		},
 		{
 			"route": "/contact1",
-			"title" : "Contact 1 page"
+			"title": "Contact 1 page"
 		},
 		{
-			"route" : "/about1",
+			"route": "/about1",
 			"title": "About 1 page"
 		},
 		{

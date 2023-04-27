@@ -13,15 +13,19 @@ import GoLangLogo from '../../assets/img/go-logo-svgrepo-com.svg';
 import SinaLogo from '../../assets/img/sina-logo-svgrepo-com.svg';
 
 import { navigate } from 'gatsby';
-import { keepUserInfo } from '../../utils/tools';
-import { debugLog, getAxios } from '51cloudclass-utilities/utils';
+import { utils, login } from '51cloudclass-utilities/dist';
 import { useDispatch } from 'react-redux';
-import { setAccount } from '../../store/account/accountSlice';
+// import { setAccount } from '../../store/account/accountSlice';
 import { easeIn } from '../../utils/animate';
 import gsap from 'gsap';
 import { toast } from 'react-toastify';
+import { saveToLocalStorage } from '51cloudclass-utilities/src/account';
+import { useContext } from 'react';
+import { globalContext } from '../../../wrap-with-provider';
 
 
+
+const { getAxios, debugLog } = utils;
 
 const BoostSection = () => {
 	const initialForm = {
@@ -30,6 +34,13 @@ const BoostSection = () => {
 	};
 
 	const [formData, setFormData] = React.useState(initialForm);
+
+	const { isLogin, setIsLogin } = useContext(globalContext);
+
+	const isPartialData = React.useCallback(() => {
+		return formData.email.trim() === '' || formData.password.trim() === ''
+	}, [formData])
+
 
 
 	React.useEffect(() => {
@@ -42,19 +53,18 @@ const BoostSection = () => {
 
 	const postFormData = async () => {
 		const axiosInstance = getAxios();
+
 		try {
 			const response = await axiosInstance.post(
-				`${process.env.GATSBY_API_SERVER.replace('/api', '')}/login`,
+				`${process.env.GATSBY_API_SERVER.replace('/api', '')}/auth/login`,
 				formData
 			);
 			const data = await response.data;
-			if (data.length) {
-				dispatch(setAccount(data[0]));
-				keepUserInfo(data[0]);
-				navigate('/');
-			}
+			dispatch(login(data))
+			saveToLocalStorage(data)
+			setIsLogin(true);
+			setTimeout(() => navigate(-1), 500)
 		} catch (e) {
-			debugLog("Login Error: ", e);
 			toast(`登录失败:
 			 ${e.response?.data?.message}`)
 		}
@@ -64,7 +74,6 @@ const BoostSection = () => {
 		e.preventDefault();
 
 		postFormData();
-		debugLog("Post data: ", formData);
 		setTimeout(() => setFormData(initialForm), 1000);
 	};
 
@@ -142,7 +151,8 @@ const BoostSection = () => {
 								<div>
 									<input
 										type='submit'
-										className='bg-purple-700 hover:bg-purple-600 transition-all duration-1000 rounded-lg w-full p-4 text-white font-medium'
+										disabled={isPartialData()}
+										className='bg-purple-700  disabled:bg-gray-300 hover:bg-purple-600 transition-all duration-1000 rounded-lg w-full p-4 text-white font-medium'
 										value='芝麻开门'
 									/>
 								</div>

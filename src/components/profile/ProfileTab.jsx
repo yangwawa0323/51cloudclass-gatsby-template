@@ -80,6 +80,7 @@ const ProfileTab = ({ handleLogout }) => {
 				<ListItemText primary='付费查询' />
 			</ListItemButton>
 			<ListItemButton
+				className="cursor-pointer"
 				selected={selectedIndex === 2}
 				onClick={handleLogout}
 			>

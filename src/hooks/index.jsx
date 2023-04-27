@@ -1,10 +1,17 @@
 /** @format */
+import React from 'react'
 
 import { useEffect, useState } from 'react';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { debugLog, getAxios } from '51cloudclass-utilities/utils';
+import { utils } from '51cloudclass-utilities/dist';
+import PropTypes from 'prop-types';
+import { useContext } from 'react';
+import { navigate } from 'gatsby';
+import { globalContext } from '../../wrap-with-provider';
+import NeedLogin from '../pages/need-login';
 
-const axiosInstance = getAxios();
+const { getAxios } = utils;
+const axiosInstance = getAxios()
 
 export const patchDataByType = async (type, data) => {
 	const response = await axiosInstance.patch(
@@ -103,9 +110,8 @@ export const useTypeMutation = (
 	const queryClient = useQueryClient();
 	return useMutation({
 		mutationFn: (data) => {
-			const url = `${process.env.REACT_APP_API_SERVER}/api/${type}/${
-				data.ID ? data.ID : ''
-			}`;
+			const url = `${process.env.REACT_APP_API_SERVER}/api/${type}/${data.ID ? data.ID : ''
+				}`;
 			const request =
 				method === 'add' ? axiosInstance.post : axiosInstance.patch;
 			return request(url, data);
@@ -113,9 +119,24 @@ export const useTypeMutation = (
 		onMutate: () => {
 			onMutateCallback !== undefined && onMutateCallback();
 		},
-		onSuccess: (data, variables) => {
+		onSuccess: () => {
 			queryClient.invalidateQueries({ queryKey: [`fetch-${type}`] });
 			onSuccessCallback !== undefined && onSuccessCallback();
 		},
 	});
 };
+
+export const needLoginWrapper = () => (WrappedComponent) => {
+	return (props) => {
+		const { isExpired, isLogin, setIsTourOpen } = useContext(globalContext);
+		if (!isExpired && isLogin) {
+			return <div><WrappedComponent  {...props} /></div>
+		} else {
+			// navigate('/');
+			setIsTourOpen(true);
+			return <NeedLogin />;
+		}
+	}
+};
+
+

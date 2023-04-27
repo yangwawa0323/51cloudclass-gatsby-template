@@ -1,12 +1,11 @@
 /** @format */
 
 import React from 'react';
-import { debugLog } from '51cloudclass-utilities/utils';
 import './styles.css';
 
 class PolyvPlayer extends React.Component {
+	// eslint-disable-next-line no-useless-constructor
 	constructor(props) {
-		debugLog('player props:', props);
 		super(props);
 	}
 

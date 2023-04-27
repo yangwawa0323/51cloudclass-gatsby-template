@@ -5,8 +5,13 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import "asciinema-player/dist/bundle/asciinema-player.css";
 import Skeleton from "@mui/material/Skeleton";
-import { debug, removeAllChildNodes } from "../utils/tools";
+import { removeAllChildNodes } from "../utils/tools";
 import { easeIn } from "../utils/animate";
+
+import { utils } from '51cloudclass-utilities/dist';
+
+const { debugLog } = utils
+
 
 const demoUrl = "https://asciinema.org/a/335480.cast";
 
@@ -54,8 +59,6 @@ const AsciinemaWrapper = (props) => {
 
   useEffect(() => {
     AsciinemaPlayer = loadedmodule();
-
-    debug(url);
     if (url?.endsWith(".cast")) {
       initial();
     }

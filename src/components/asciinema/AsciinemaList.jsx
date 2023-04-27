@@ -24,7 +24,7 @@ const AsciinemaList = ({ pageContext }) => {
 		for (var i = 0; i < len; i++) {
 			easeIn(`.gsap-asciinema.gsap-asciinema-${i}`, { delay: 0.3 }, tl)
 		}
-	}, [])
+	}, [pageContext.asciinemas?.length])
 
 	return (
 		<Frame>

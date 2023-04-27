@@ -5,10 +5,12 @@ import React, { useContext } from 'react';
 import SimpleBarScroll from '../common/SimpleBar';
 import 'simplebar-react/dist/simplebar.min.css';
 import { ChapterContext } from './ChapterContextProvider';
-import { debugLog, getAxios } from '51cloudclass-utilities/utils';
+import { utils } from '51cloudclass-utilities/dist';
 import { useQuery } from '@tanstack/react-query';
 
 import { Link } from 'gatsby';
+
+const { debugLog, getAxios } = utils;
 
 // import SimpleBar from 'simplebar-react';
 const ChapterContainer = ({ chapter }) => {
@@ -53,7 +55,6 @@ const ChapterList = () => {
 
 	// let chapters = sortBy(data?.result?.courses?.chapters, ['order_index']);
 	const chapters = data.result.courses.chapters;
-	debugLog('chapters : ', chapters);
 
 	return (
 		<Grid
