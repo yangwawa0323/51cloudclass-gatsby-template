@@ -10,7 +10,7 @@ import { useQuery } from '@tanstack/react-query';
 
 import { Link } from 'gatsby';
 
-const { debugLog, getAxios } = utils;
+const { getAxios } = utils;
 
 // import SimpleBar from 'simplebar-react';
 const ChapterContainer = ({ chapter }) => {

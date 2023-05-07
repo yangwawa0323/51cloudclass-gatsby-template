@@ -63,4 +63,4 @@ const Profile = () => {
     )
 }
 
-export default needLoginWrapper()(Profile)
+export default needLoginWrapper(Profile)

@@ -46,4 +46,4 @@ Avatar.childContextTypes = {
     searchParamString: PropTypes.string
 }
 
-export default needLoginWrapper()(Avatar);
+export default needLoginWrapper(Avatar);

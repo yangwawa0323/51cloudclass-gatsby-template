@@ -5,14 +5,33 @@ import ChapterContextProvider from './ChapterContextProvider';
 import LeftPane from './LeftPane';
 import RightPane from './RightPane';
 import Frame from '../frame';
+import Relative from './Relative';
+import BootSection from './BootSection';
+import gsap from 'gsap';
+import { easeIn } from '../../utils/animate';
 
 const ChapterPage = (props) => {
+
+
+	React.useEffect(() => {
+		// animation();
+		// gsap.config({ nullTargetWarn: false })
+		const tl = gsap.timeline()
+		// easeIn('.gsap-boot-section', {}, tl);
+		easeIn('.gsap-home-hero-left', {}, tl)
+		easeIn('.gsap-home-hero-right', { delay: 0.5 }, tl)
+		easeIn('.gsap-course-name-div', { delay: 0.5 }, tl)
+	}, []);
+
 	const { pageContext } = props;
 	const extra = { chapter: pageContext.chapter };
 
 	return (
 		<Frame>
 			<ChapterContextProvider extraContext={extra}>
+				<div className='w-full'>
+					<BootSection />
+				</div>
 				<div className='flex flex-row flex-wrap  lg:gap-6 xs:gap-2 justify-center pt-12'>
 					<div className='xs:max-md:basis-full basis-7/12  w-11/12 xs:max-w-[425px] md:min-w-[600px]'>
 						<LeftPane />
@@ -20,6 +39,9 @@ const ChapterPage = (props) => {
 					<div className='xs:max-md:basis-full basis-3/12 w-11/12 min-w-[300px]'>
 						<RightPane />
 					</div>
+				</div>
+				<div className="py-[120px] gsap-relative">
+					<Relative />
 				</div>
 				<div className='stay-in-the-loop-form flex flex-col p-16 justify-center items-center bg-white'>
 					<div className='flex flex-col justify-center items-center max-w-[500px] gap-4'>

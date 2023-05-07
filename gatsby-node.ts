@@ -1,8 +1,9 @@
-/** @format */
+import { CreatePageArgs } from 'gatsby';
+import type { CreateWebpackConfigArgs } from 'gatsby'
 
 const { promiseGenerateAll } = require('./src/utils/gatsby-node-generator');
 
-exports.createPages = async (params) => {
+exports.createPages = async (params: CreatePageArgs) => {
 	promiseGenerateAll(params);
 };
 
@@ -12,10 +13,10 @@ exports.onCreateWebpackConfig = ({
 	getConfig,
 	loaders,
 	plugins,
-}) => {
+}: CreateWebpackConfigArgs) => {
 	const config = getConfig();
 	const miniCssExtractPluginIndex = config.plugins.findIndex(
-		(plugin) => plugin.constructor.name === 'MiniCssExtractPlugin'
+		(plugin: object) => plugin.constructor.name === 'MiniCssExtractPlugin'
 	);
 
 	if (miniCssExtractPluginIndex > -1) {

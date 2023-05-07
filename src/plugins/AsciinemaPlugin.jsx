@@ -10,9 +10,6 @@ import { easeIn } from "../utils/animate";
 
 import { utils } from '51cloudclass-utilities/dist';
 
-const { debugLog } = utils
-
-
 const demoUrl = "https://asciinema.org/a/335480.cast";
 
 var AsciinemaPlayer = null;

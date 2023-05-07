@@ -1,6 +1,5 @@
 /** @format */
 
-import { debugLog } from '51cloudclass-utilities/src/utils';
 import React, { useContext } from 'react';
 import { useEffect } from 'react';
 import { globalContext } from '../../../wrap-with-provider';

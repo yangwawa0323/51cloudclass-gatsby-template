@@ -7,7 +7,10 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 
-const Footer = (props) => {
+type FooterProps = {
+	extraStyles?: React.CSSProperties | {};
+};
+const Footer = (props: FooterProps) => {
 	const { extraStyles } = props;
 	return (
 		<div className='w-full h-auto relative flex flex-auto pointer-events-none'>
@@ -19,7 +22,7 @@ const Footer = (props) => {
 					<div
 						className='gap-10 flex flex-col lg:max-w-[1200px]'
 						style={{
-							extraStyles,
+							...extraStyles,
 						}}
 					>
 						<div>

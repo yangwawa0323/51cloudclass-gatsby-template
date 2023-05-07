@@ -14,7 +14,7 @@ import {
 import { fromPairs, sample } from 'lodash'
 import AvatarForm from './AvatarForm'
 import { filteredOptions } from './Common'
-import { debugLog, getAxios } from '51cloudclass-utilities/src/utils'
+import { getAxios } from '51cloudclass-utilities/src/utils'
 import { toast } from 'react-toastify'
 import queryString from 'query-string'
 import { updateAvatar } from '51cloudclass-utilities/src/store/reducers/authSlice'

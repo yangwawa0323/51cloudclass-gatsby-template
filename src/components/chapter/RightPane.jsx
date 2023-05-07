@@ -27,6 +27,7 @@ const RightPane = () => {
 			<div className="gsap-right">
 				<Resource />
 			</div>
+
 		</div>
 	);
 };

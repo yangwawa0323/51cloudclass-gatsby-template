@@ -1,0 +1,9 @@
+div.choose-wrapper {
+	ul > li {
+		&.active {
+			background-color: red;
+			color: white;
+			font-weight: 600;
+		}
+	}
+}

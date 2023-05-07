@@ -5,7 +5,11 @@ import Footer from './common/Footer';
 import Header from './common/Header';
 // import Navbar from './common/Navbar';
 
-const Frame = memo(({ children }) => {
+type FrameProps = {
+	children: React.ReactNode;
+};
+
+const Frame = memo(({ children }: FrameProps) => {
 	return (
 		<div>
 			<Header />

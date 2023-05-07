@@ -7,7 +7,11 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 const queryClient = new QueryClient();
 
-const RootElement = ({ children }) => {
+type RootElementProps = {
+	children: React.ReactNode;
+};
+
+const RootElement = ({ children }: RootElementProps) => {
 	return (
 		<QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
 	);

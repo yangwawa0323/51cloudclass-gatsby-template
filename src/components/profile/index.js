@@ -73,7 +73,6 @@ const Profile = () => {
 	const userInfo = useSelector((state) => state.account.userInfo);
 
 	const handleLogout = async () => {
-		debugLog('Log out now');
 		cleanTokenEtag();
 		dispatch(logout());
 	};

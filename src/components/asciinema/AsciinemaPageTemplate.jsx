@@ -13,7 +13,7 @@ const AsciinemaPage = ({ pageContext }) => {
 	const { content, relatives } = pageContext;
 
 	useEffect(() => {
-		console.log(relatives, pageContext);
+		// console.log(relatives, pageContext);
 	});
 
 	return (

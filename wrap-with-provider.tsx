@@ -5,16 +5,20 @@ import React, { useState } from 'react';
 import { store } from '51cloudclass-utilities/src/store';
 
 import RootElement from './src/components/root-element';
-import { Provider } from 'react-redux';
 import { createContext } from 'react';
 import { getTokenEtagAccount } from '51cloudclass-utilities/src/account';
 import { useJwt } from 'react-jwt';
 // import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { useTour } from '@reactour/tour';
+import { Provider } from 'react-redux';
 
-export const globalContext = createContext(null);
+export const globalContext = createContext<any>(null);
 
-const GlobalContextProvider = ({ children }) => {
+type GlobalContextProps = {
+	children: React.ReactNode;
+};
+
+const GlobalContextProvider = ({ children }: GlobalContextProps) => {
 	/* eslint-disable no-unused-vars */
 	const { setIsOpen: setIsTourOpen, isOpen: isTourOpen } = useTour();
 
@@ -38,19 +42,19 @@ const GlobalContextProvider = ({ children }) => {
 	};
 
 	return (
-		<globalContext.Provider value={context}>{children}</globalContext.Provider>
+		<globalContext.Provider value={context}>{children} </globalContext.Provider>
 	);
 };
 
 // eslint-disable-next-line react/display-name,react/prop-types,import/no-anonymous-default-export
-export default ({ element }) => {
+export default ({ element }: { element: React.ReactNode }) => {
 	// Instantiating store in `wrapRootElement` handler ensures:
 	//  - there is fresh store for each SSR page
 	//  - it will be called only once in browser, when React mounts
 	return (
 		<Provider store={store}>
 			<GlobalContextProvider>
-				<RootElement>{element}</RootElement>
+				<RootElement>{element} </RootElement>
 			</GlobalContextProvider>
 		</Provider>
 	);

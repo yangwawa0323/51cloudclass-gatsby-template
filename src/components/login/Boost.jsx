@@ -25,7 +25,7 @@ import { globalContext } from '../../../wrap-with-provider';
 
 
 
-const { getAxios, debugLog } = utils;
+const { getAxios } = utils;
 
 const BoostSection = () => {
 	const initialForm = {

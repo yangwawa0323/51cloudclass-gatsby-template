@@ -126,17 +126,38 @@ export const useTypeMutation = (
 	});
 };
 
-export const needLoginWrapper = () => (WrappedComponent) => {
+export const needLoginWrapper = (WrappedComponent) => {
 	return (props) => {
-		const { isExpired, isLogin, setIsTourOpen } = useContext(globalContext);
+		const { isExpired, isLogin } = useContext(globalContext);
 		if (!isExpired && isLogin) {
 			return <div><WrappedComponent  {...props} /></div>
 		} else {
 			// navigate('/');
-			setIsTourOpen(true);
 			return <NeedLogin />;
 		}
 	}
 };
 
 
+// TODO:
+export const subscibeWrapper = () => (WrappedComponent) => {
+	return (props) => {
+		const { isVip } = useContext(globalContext);
+		if (isVip) {
+			return <div><WrappedComponent {...props} /></div>
+		} else {
+			return <div>扫码支付仅需51元包月学习</div>
+		}
+	}
+}
+
+
+export const Warning = ({ component }) => {
+	return (
+		{ component }
+	)
+}
+
+Warning.propTypes = {
+	component: PropTypes.objectOf(React.Component),
+}
