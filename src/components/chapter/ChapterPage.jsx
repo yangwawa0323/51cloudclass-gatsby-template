@@ -18,9 +18,9 @@ const ChapterPage = (props) => {
 		// gsap.config({ nullTargetWarn: false })
 		const tl = gsap.timeline()
 		// easeIn('.gsap-boot-section', {}, tl);
+		easeIn('.gsap-course-name-div', {}, tl)
 		easeIn('.gsap-home-hero-left', {}, tl)
 		easeIn('.gsap-home-hero-right', { delay: 0.5 }, tl)
-		easeIn('.gsap-course-name-div', { delay: 0.5 }, tl)
 	}, []);
 
 	const { pageContext } = props;

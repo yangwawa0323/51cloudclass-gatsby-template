@@ -2,7 +2,7 @@
 
 import gsap from 'gsap';
 
-export const easeIn = (target, options = {}, timeline) => {
+export const easeIn = (target: gsap.TweenTarget, options = {}, timeline: gsap.core.Timeline | null) => {
 	timeline = timeline ? timeline : gsap.timeline();
 	const defaultOptions = {
 		opacity: 0,

@@ -12,10 +12,10 @@ import { easeIn } from '../utils/animate';
 
 const ChangeLog = () => {
 	React.useEffect(() => {
-		var tl = gsap.timeline()
-		easeIn('.gsap-title', {}, tl)
-		easeIn('.gsap-history', { duration: 0.5, delay: 0.5 }, tl)
-	}, [])
+		var tl = gsap.timeline();
+		easeIn('.gsap-title', {}, tl);
+		easeIn('.gsap-history', { duration: 0.5, delay: 0.5 }, tl);
+	}, []);
 	return (
 		<Frame>
 			<div
@@ -105,6 +105,54 @@ const ChangeLog = () => {
 							<div>
 								<p className='text-lg font-medium text-gray-600'>
 									通过服务端渲染页面，提前生成静态化页面，方便通过技术手段缓存用户浏览过的页面，以及便于搜索引擎爬虫工具收录。
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div className='gsap-history justify-evenly flex flex-row flex-nowrap relative h-min overflow-hidden p-8 w-full content-center items-center'>
+				<div className='flex flex-1 flex-row justify-between items-center h-min max-w-[1200px] relative w-[1px]'>
+					<div className='flex flex-col justify-start w-auto'>
+						<h3 className='text-xl font-extrabold text-gray-500'>2023-04-11</h3>
+					</div>
+					<div className='flex flex-grow flex-col gap-10 	max-w-2xl relative w-[1px] items-start justify-start'>
+						<div className='flex flex-col gap-5'>
+							<div className='flex gap-2 items-center flex-row-reverse justify-end'>
+								<h3 className='text-xl font-extrabold'>用户头像定制</h3>
+								<p>
+									<img
+										className='w-48 h-48'
+										alt='default'
+										src='https://avataaars.io/?accessoriesType=Blank&avatarStyle=Circle&clotheColor=Black&clotheType=BlazerSweater&eyeType=Dizzy&eyebrowType=AngryNatural&hairColor=Auburn&mouthType=Eating&skinColor=Brown&topType=ShortHairDreads02'
+									/>
+								</p>
+							</div>
+							<div>
+								<p className='text-lg font-medium text-gray-600'>
+									为了防止涉黄涉广告涉非的用户头像图片上传，污染了学习平台，我们决定使用用户卡通SVG自定义头像
+									，并提交和编写该功能。
+									目前该功能存在一个与React18兼容的小Bug。就是在每次刷新页面的第一次更换头像时控制台会有React18的警告提示信息。
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div className='gsap-history justify-evenly flex flex-row flex-nowrap relative h-min overflow-hidden p-8 w-full content-center items-center'>
+				<div className='flex flex-1 flex-row justify-between items-start h-min max-w-[1200px] relative w-[1px]'>
+					<div className='flex flex-col justify-start w-auto'>
+						<h3 className='text-xl font-extrabold text-gray-500'>2023-04-28</h3>
+					</div>
+					<div className='flex flex-grow flex-col gap-10 	max-w-2xl relative w-[1px] items-start justify-start'>
+						<div className='flex flex-col gap-5'>
+							<div>
+								<h3 className='text-xl font-extrabold'>全面转为Typescript</h3>
+							</div>
+							<div>
+								<p className='text-lg font-medium text-gray-600'>
+									为了更好的结合课程的需求以及开发的Vscode编程的便捷，全面将React
+									JSX 转为 TSX，切换到 Typescript, 省去Proptypes的定义编写。
 								</p>
 							</div>
 						</div>

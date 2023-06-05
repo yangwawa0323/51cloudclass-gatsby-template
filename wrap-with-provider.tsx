@@ -11,6 +11,9 @@ import { useJwt } from 'react-jwt';
 // import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { useTour } from '@reactour/tour';
 import { Provider } from 'react-redux';
+import { tokenExample } from './src/components';
+import type { IUseJwt } from 'react-jwt/dist/hooks';
+import { debugLog } from '51cloudclass-utilities/src/utils';
 
 export const globalContext = createContext<any>(null);
 
@@ -22,13 +25,21 @@ const GlobalContextProvider = ({ children }: GlobalContextProps) => {
 	/* eslint-disable no-unused-vars */
 	const { setIsOpen: setIsTourOpen, isOpen: isTourOpen } = useTour();
 
-	let [storageToken, _U, storageAccountJSON] = getTokenEtagAccount();
+	let { token } = getTokenEtagAccount();
 	/* eslint-enable no-unused-vars */
 
 	// TODO: need verify the token from the server.
-	const { decodedToken, isExpired } = useJwt(storageToken);
+	const { decodedToken, isExpired } = useJwt(token!) as IUseJwt<{
+		decodedToken: typeof tokenExample;
+	}>;
 
-	const [isLogin, setIsLogin] = useState(false);
+	// debugLog('provide decodedToken ', decodedToken);
+
+	const [isLogin, setIsLogin] = useState<boolean>(false);
+
+	React.useEffect(() => {
+		setIsLogin(decodedToken != null && !isExpired);
+	}, [decodedToken, isExpired]);
 
 	const context = {
 		isExpired,

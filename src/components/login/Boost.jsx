@@ -15,7 +15,6 @@ import SinaLogo from '../../assets/img/sina-logo-svgrepo-com.svg';
 import { navigate } from 'gatsby';
 import { utils, login } from '51cloudclass-utilities/dist';
 import { useDispatch } from 'react-redux';
-// import { setAccount } from '../../store/account/accountSlice';
 import { easeIn } from '../../utils/animate';
 import gsap from 'gsap';
 import { toast } from 'react-toastify';

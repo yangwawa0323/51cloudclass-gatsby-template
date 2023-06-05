@@ -82,6 +82,11 @@ const Footer = (props: FooterProps) => {
 										<Link to='/styleguide'>样式指南</Link>
 									</p>
 								</div>
+								<div>
+									<p>
+										<Link to='/test-visitor'>测试浏览历史记录功能</Link>
+									</p>
+								</div>
 							</div>
 						</div>
 						<div>

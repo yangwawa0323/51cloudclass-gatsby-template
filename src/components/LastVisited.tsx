@@ -1,8 +1,11 @@
 /** @format */
 
-import React, { useEffect } from 'react';
-import { getAxios } from '51cloudclass-utilities/src/utils';
+import React, { useContext, useEffect, useState } from 'react';
+import { getAxios, debugLog } from '51cloudclass-utilities/src/utils';
 import { AxiosInstance, AxiosResponse } from 'axios';
+import type { PageProps } from 'gatsby';
+import { globalContext } from '../../wrap-with-provider';
+import type { tokenExample, User } from '.';
 
 const axiosInstance: AxiosInstance = getAxios();
 
@@ -31,12 +34,52 @@ const logVisitedPageInfo = (): Promise<unknown> => {
 	return saveToDb;
 };
 
-const LastVisited = ({ children }: LastVisitedProps) => {
-	useEffect(() => {
-		logVisitedPageInfo().then((response) => {});
-	}, []);
+interface LogStatus {
+	name: string;
+	isLogin: boolean;
+}
 
-	return <div>LastVisited</div>;
+const fakeLogVisitedPageInfo = (
+	status: LogStatus,
+	path: string
+): Promise<boolean> => {
+	return new Promise((resolve, _) => {
+		setTimeout(() => {
+			if (status.isLogin) {
+				debugLog(`${status.name} you are visited page`, path);
+			} else {
+				debugLog("you haven't login, so you have no history records");
+			}
+		}, 1000);
+		resolve(true);
+	});
 };
 
-export default LastVisited;
+const LastVisitedWrapper = ({
+	children,
+	path,
+}: Omit<PageProps, 'children'> & { children: React.ReactNode }) => {
+	const { isLogin, decodedToken } = useContext(globalContext) as {
+		isLogin: boolean;
+		decodedToken: typeof tokenExample;
+	};
+
+	useEffect(() => {
+		debugLog('decodedToken :', decodedToken, 'isLogin :', isLogin);
+		if (decodedToken != null && isLogin) {
+			let status = {
+				isLogin,
+				name: decodedToken?.username as string | 'guest',
+			};
+			fakeLogVisitedPageInfo(status, path).then((succeed) => {
+				if (succeed) {
+					debugLog('has been log');
+				}
+			});
+		}
+	}, [decodedToken, isLogin]);
+
+	return <div>{children}</div>;
+};
+
+export default LastVisitedWrapper;

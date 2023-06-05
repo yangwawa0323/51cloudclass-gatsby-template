@@ -38,7 +38,7 @@ const BootSection = () => {
 					right: '0px',
 					top: '0px',
 				}}
-				className={'section home-hero-section wf-section'}
+				className={'flex justify-center section home-hero-section wf-section'}
 			>
 				<div
 					style={{
@@ -51,7 +51,9 @@ const BootSection = () => {
 						maxWidth: '1244px',
 						outlineColor: 'rgb(95, 104, 122)',
 					}}
-					className={'p-4 container-default w-container'}
+					className={
+						'w-full flex justify-center p-4 container-default w-container'
+					}
 				>
 					<div
 						style={{
@@ -62,26 +64,20 @@ const BootSection = () => {
 							color: 'rgb(95, 104, 122)',
 							columnGap: '64px',
 							columnRuleColor: 'rgb(95, 104, 122)',
-							display: 'grid',
 							fontFamily: 'Onest, sans-serif',
 							fontSize: '16px',
-							gridAutoColumns: '1fr',
-							gridTemplateColumns: '424.5px 707.5px',
-							gridTemplateRows: '543.734px',
+							// gridTemplateColumns: '424.5px 707.5px',
+							// gridTemplateRows: '543.734px',
 							inlineSize: '1196px',
 							lineHeight: '26px',
 							marginLeft: 0,
 							marginRight: 0,
 							outlineColor: 'rgb(95, 104, 122)',
 							rowGap: '28px',
-							textDecoration: 'none solid rgb(95, 104, 122)',
-							textDecorationColor: 'rgb(95, 104, 122)',
-							textEmphasisColor: 'rgb(95, 104, 122)',
-							textSizeAdjust: '100%',
-							WebkitTextFillColor: 'rgb(95, 104, 122)',
-							WebkitTextStrokeColor: 'rgb(95, 104, 122)',
 						}}
-						className={'grid-2-columns home-hero-grid'}
+						className={
+							'flex md:grid justify-center md:grid-cols-[424.5px 707.5px]  md:grid-cols-2 auto-cols-auto home-hero-grid'
+						}
 					>
 						<div
 							className='gsap-course-name-div'
@@ -371,16 +367,15 @@ const BootSection = () => {
 							</div>
 						</div>
 						<div
+							className='hidden md:flex'
 							style={{
 								alignItems: 'center',
 								blockSize: '543.734px',
-
 								bottom: '0px',
 								boxSizing: 'border-box',
 								caretColor: 'rgb(95, 104, 122)',
 								color: 'rgb(95, 104, 122)',
 								columnRuleColor: 'rgb(95, 104, 122)',
-								display: 'flex',
 								fontFamily: 'Onest, sans-serif',
 								fontSize: '16px',
 								gridColumnEnd: 'span 1',
@@ -406,13 +401,9 @@ const BootSection = () => {
 								outlineColor: 'rgb(95, 104, 122)',
 								position: 'relative',
 								right: '0px',
-								textDecoration: 'none solid rgb(95, 104, 122)',
-								textDecorationColor: 'rgb(95, 104, 122)',
-								textEmphasisColor: 'rgb(95, 104, 122)',
-								textSizeAdjust: '100%',
+
 								top: '0px',
-								WebkitTextFillColor: 'rgb(95, 104, 122)',
-								WebkitTextStrokeColor: 'rgb(95, 104, 122)',
+
 								width: '749.938px',
 								height: '543.734px',
 							}}
@@ -482,7 +473,7 @@ const BootSection = () => {
 										WebkitTextStrokeColor: 'rgb(95, 104, 122)',
 									}}
 									className={
-										'image-wrapper gsap-home-hero-right border-radius-12px shadow-02'
+										'rounded-xl image-wrapper gsap-home-hero-right border-radius-12px shadow-02'
 									}
 								>
 									<img
@@ -519,17 +510,7 @@ const BootSection = () => {
 										blockSize: '60px',
 
 										bottom: '132.781px',
-										boxSizing: 'border-box',
-										caretColor: 'rgb(95, 104, 122)',
-										color: 'rgb(95, 104, 122)',
-										columnRuleColor: 'rgb(95, 104, 122)',
-										fontFamily: 'Onest, sans-serif',
-										fontSize: '16px',
-										inlineSize: '60px',
-										insetBlockEnd: '132.781px',
-										insetBlockStart: '-28px',
-										insetInlineEnd: '-29.9062px',
-										insetInlineStart: '241.906px',
+
 										left: '241.906px',
 										lineHeight: '26px',
 										marginLeft: 0,
@@ -541,12 +522,11 @@ const BootSection = () => {
 										overflowY: 'hidden',
 										position: 'absolute',
 										right: '-29.9062px',
-
 										top: '-28px',
 										transform: 'matrix(1, 0, 0, 1, 0, 0)',
 										transformOrigin: '30px 30px',
 									}}
-									className={'image-wrapper home-hero-top-right'}
+									className={'rounded-full image-wrapper home-hero-top-right'}
 								>
 									<img
 										style={{
@@ -680,7 +660,7 @@ const BootSection = () => {
 									transform: 'matrix(1, 0, 0, 1, 0, 0)',
 									transformOrigin: '137px 158.102px',
 								}}
-								className='image-wrapper gsap-home-hero-left'
+								className='rounded-xl image-wrapper gsap-home-hero-left'
 							>
 								<img
 									style={{

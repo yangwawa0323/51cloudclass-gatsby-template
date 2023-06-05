@@ -22,13 +22,10 @@ import { cleanTokenEtag } from '51cloudclass-utilities/src/account';
 import { useDispatch, useSelector } from 'react-redux';
 import { globalContext } from '../../../wrap-with-provider';
 
+import type { Course } from '..';
+
 const { getAxios } = utils;
 const axiosInstance = getAxios();
-
-interface Course {
-	ID: string;
-	name: string;
-}
 
 /** BEGIN SubMenu1 */
 const SubMenu1 = () => {

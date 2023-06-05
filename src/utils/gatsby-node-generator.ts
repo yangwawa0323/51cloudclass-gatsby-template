@@ -1,30 +1,18 @@
-import { CreatePageArgs } from 'gatsby';
+import type { Course, Page, Chapter } from './../components/index.d';
 /** @format */
-import path from 'path';
-import type { GatsbyNode, CreatePageArgs } from "gatsby";
+import type { CreatePageArgs } from "gatsby";
 import type { Body } from 'node-fetch';
 
+import path from 'path';
 const fetch = require('node-fetch');
 
 const fakeData = require('../data/allReactPages.json');
 
 // const { getTitle } = require('./tools');
 
-interface Page {
-	ID: number
-	content: string
-}
-
-interface Chapter {
-	ID: number
-}
-
-interface Course {
-	ID: number
-}
 
 const getAllAsciinemaPages = async ({ actions }: CreatePageArgs) => {
-	let asciinemaPages: Promise<Array<Page>> | [] = [];
+	let asciinemaPages: Promise<Array<Page>> | null = null;
 	let succeed: boolean;
 	const response = await fetch(`${process.env.GATSBY_API_SERVER}/api/page/all`)
 		.then((response: Body) => (asciinemaPages = response.json()))
@@ -35,7 +23,7 @@ const getAllAsciinemaPages = async ({ actions }: CreatePageArgs) => {
 
 	const relatives = fakeData.slice(0, 10);
 
-	(await asciinemaPages).forEach((page: Page) => {
+	(await asciinemaPages!).forEach((page: Page) => {
 		actions.createPage({
 			path: `/asciinemas/${page.ID}`,
 			component: path.resolve(__dirname,
@@ -51,7 +39,7 @@ const getAllAsciinemaPages = async ({ actions }: CreatePageArgs) => {
 };
 
 const getAsciinemaListPage = async ({ actions }: CreatePageArgs) => {
-	await actions.createPage({
+	actions.createPage({
 		path: `/asciinema-list`,
 		component: path.resolve(__dirname, '../components/asciinema/AsciinemaList.jsx'),
 		context: {
