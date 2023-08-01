@@ -1,5 +1,3 @@
-/** @format */
-
 import React from 'react';
 import ChapterContextProvider from './ChapterContextProvider';
 import LeftPane from './LeftPane';
@@ -13,8 +11,8 @@ import { graphql } from 'gatsby';
 import { debugLog } from '51cloudclass-utilities/src/utils';
 
 export const query = graphql`
-	query ($id: String) {
-		chapter(id: { eq: $id }) {
+	query ($uuid: String) {
+		chapter(id: { eq: $uuid }) {
 			id
 			mark
 			name

@@ -1,7 +1,7 @@
 import { CreatePageArgs } from 'gatsby';
 import type { CreateWebpackConfigArgs } from 'gatsby'
 
-export { sourceNodes } from './src/utils/gatsby-node-generator';
+export { sourceNodes, createSchemaCustomization } from './src/utils/gatsby-node-generator';
 
 const { promiseGenerateAll } = require('./src/utils/gatsby-node-generator');
 

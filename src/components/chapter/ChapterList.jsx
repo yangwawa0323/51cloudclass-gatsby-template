@@ -8,25 +8,14 @@ import { ChapterContext } from './ChapterContextProvider';
 import { utils } from '51cloudclass-utilities/dist';
 import { useQuery } from '@tanstack/react-query';
 
-import { Link, graphql } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 
 const { getAxios } = utils;
-
-export const query = graphql`
-	query {
-		allChapter {
-			nodes {
-				id
-				name
-			}
-		}
-	}
-`;
 
 // import SimpleBar from 'simplebar-react';
 const ChapterContainer = ({ chapter }) => {
 	return (
-		<Link to={`/chapters/${chapter.ID}/`}>
+		<Link to={`/chapters/${chapter.id}/`}>
 			<div className='flex flex-col px-8 pt-2'>
 				<div>
 					<p className='uppercase font-extrabold text-purple-700 text-sm'>
@@ -49,23 +38,40 @@ const ChapterContainer = ({ chapter }) => {
 const ChapterList = () => {
 	const { chapter } = useContext(ChapterContext);
 
-	const fetchChaptersByCourseId = async () => {
-		const axiosInstance = getAxios();
-		let url = `${process.env.GATSBY_API_SERVER}/courses/${chapter.course_id}?preload=Chapters`;
-		const response = await axiosInstance.get(url);
-		return response.data;
-	};
+	const data = useStaticQuery(graphql`
+		query ($uuid: String) {
+			chapter(id: { eq: $uuid }) {
+				name
+				id
+				course {
+					chapters {
+						order_index
+						name
+						id
+					}
+				}
+			}
+		}
+	`);
 
-	const { data, isLoading, error } = useQuery(
-		['fetch-chapters-by-course-id', chapter.course_id],
-		fetchChaptersByCourseId
-	);
-	if (isLoading) return '加载Oo.';
+	// const fetchChaptersByCourseId = async () => {
+	// 	const axiosInstance = getAxios();
+	// 	let url = `${process.env.GATSBY_API_SERVER}/courses/${chapter.course_id}?preload=Chapters`;
+	// 	const response = await axiosInstance.get(url);
+	// 	return response.data;
+	// };
 
-	if (error) return `出错了! ${JSON.stringify(error)}`;
+	// const { data, isLoading, error } = useQuery(
+	// 	['fetch-chapters-by-course-id', chapter.course_id],
+	// 	fetchChaptersByCourseId
+	// );
+	// if (isLoading) return '加载Oo.';
+
+	// if (error) return `出错了! ${JSON.stringify(error)}`;
 
 	// let chapters = sortBy(data?.result?.courses?.chapters, ['order_index']);
-	const chapters = data.result.courses.chapters;
+	// const chapters = data.result.courses.chapters;
+	const { chapters } = data.chapter.course;
 
 	return (
 		<Grid

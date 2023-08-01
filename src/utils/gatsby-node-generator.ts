@@ -8,47 +8,97 @@ const fetch = require('node-fetch');
 
 const fakeData = require('../data/allReactPages.json');
 
-import type { IAsciinemaPageInput, IChapterInput } from './types'
+import type { IAsciinemaPageInput, IChapterInput, ICourseInput } from './types'
+import { CiOutlined } from '@ant-design/icons';
 
 interface IApiResponse {
 	asciinemaPages: Array<IAsciinemaPageInput>,
 	chapters: Array<IChapterInput>,
+	courses: Array<ICourseInput>,
 }
 
 
 const fetchAllData: () => Promise<IApiResponse> = async () => {
 
-	let url = `${process.env.GATSBY_API_SERVER}/chapters`;
+	let chapterUrl = `${process.env.GATSBY_API_SERVER}/chapters`;
 
-	const chaptersResponse = await fetch(url)
+	const chaptersResponse = await fetch(chapterUrl)
+		.then((response: Body) => response.json())
+
+
+	let courseUrl = `${process.env.GATSBY_API_SERVER}/courses`;
+
+	const coursesResponse = await fetch(courseUrl)
 		.then((response: Body) => response.json())
 
 	return {
 		asciinemaPages: [],
-		chapters: chaptersResponse.result.chapters
+		chapters: chaptersResponse.result.chapters,
+		courses: coursesResponse.result.courses,
 	}
 }
 
+
+export const createSchemaCustomization: GatsbyNode[`createSchemaCustomization`] = (gatsbyApi) => {
+	const { createTypes } = gatsbyApi.actions;
+
+
+	// 1st try: Chapter from `course_id`, by : "_id" 
+	createTypes(`
+		type Chapter implements Node {
+			id: ID!
+			_id: Int!
+			course_id: Int!
+			course: Course @link(by: "_id", from:"course_id")
+		}
+		type Course implements Node {
+			id: ID!
+			_id: Int!
+			chapters: [Chapter] @link(by : "course_id", from: "_id")
+		}
+	`)
+}
 
 export const sourceNodes: GatsbyNode[`sourceNodes`] = async (gastbyApi) => {
 	const { reporter, createNodeId, createContentDigest } = gastbyApi;
 	// Add node here
 	// 1. defined the node of asciinema page.
 
-	const { chapters, asciinemaPages } = await fetchAllData();
+	const { chapters, asciinemaPages, courses } = await fetchAllData();
 
 	chapters.forEach(chapter => {
 
 		// using `createNodeId` helper function generate uuid format ID to
 		// replace the chapter.ID.
 		const { ID, ...chapterData } = chapter
-		reporter.info(`[DEBUG]: create node for chapter ${ID}`);
+		reporter.info(`[DEBUG]: create node for **chapter** ${ID}`);
 		const node = {
 			...chapterData,
 			id: createNodeId(`chapter-${ID}`),
+			_id: ID,
 			internal: {
 				type: `Chapter`,
 				contentDigest: createContentDigest(chapter)
+			}
+		} satisfies NodeInput
+		// 2. use `createNode` function to create the node.
+		gastbyApi.actions.createNode(node);
+		// 3. in graphQL to query the node.
+	})
+
+	courses.forEach(course => {
+
+		// using `createNodeId` helper function generate uuid format ID to
+		// replace the chapter.ID.
+		const { ID, ...courseData } = course
+		reporter.info(`[DEBUG]: create node for **course** ${ID}`);
+		const node = {
+			...courseData,
+			id: createNodeId(`course-${ID}`),
+			_id: ID,
+			internal: {
+				type: `Course`,
+				contentDigest: createContentDigest(course)
 			}
 		} satisfies NodeInput
 		// 2. use `createNode` function to create the node.
@@ -110,38 +160,38 @@ const generateChapters = async ({ actions, reporter, createNodeId }: CreatePageA
 	const { chapters, asciinemaPages } = await fetchAllData();
 
 	chapters.forEach((chpt) => {
-		const chapterId = createNodeId(`chapter-${chpt.ID}`)
+		const chapterUuid = createNodeId(`chapter-${chpt.ID}`)
 		actions.createPage({
-			path: `/chapters/${chapterId}`,
+			path: `/chapters/${chapterUuid}`,
 			component: path.resolve(__dirname, '../components/chapter/ChapterPage.jsx'),
 			context: {
-				chapter: chpt,
+				uuid: chapterUuid,
 			},
 		}); // end of createPage
 	});
 };
 
 /** IMPORTANT: must preload Chapters for provides the course detail page context */
-const generateCoursesDetailPage = async ({ actions, reporter }: CreatePageArgs) => {
-	let url = `${process.env.GATSBY_API_SERVER}/courses/?preload=Chapters`;
+const generateCoursesDetailPage = async ({ actions, reporter, createNodeId }: CreatePageArgs) => {
+	// let url = `${process.env.GATSBY_API_SERVER}/courses/?preload=Chapters`;
 
 	reporter.info(`[DEBUG]: create course detail pages...`);
 
-	const response = await fetch(url)
-		.then((response: Body) => response.json())
-		.then((data: { result: { courses: Array<Course> } }) => {
-			const { courses } = data.result;
-			courses.forEach((course) => {
-				actions.createPage({
-					path: `/courses/${course.ID}`,
-					component: path.resolve(__dirname, '../components/course/Detail.jsx'),
-					context: {
-						course: course,
-					},
-				}); // end of createPage
-			});
-		});
-	return response;
+	const { courses } = await fetchAllData();
+
+	courses.forEach((course) => {
+
+		const { ID, ...courseData } = course;
+
+		const courseUuid = createNodeId(`course-${ID}`)
+		actions.createPage({
+			path: `/courses/${courseUuid}`,
+			component: path.resolve(__dirname, '../components/course/Detail.jsx'),
+			context: {
+				uuid: courseUuid,
+			},
+		}); // end of createPage
+	});
 };
 
 type Action = Promise<any> | void

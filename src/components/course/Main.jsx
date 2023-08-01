@@ -4,7 +4,7 @@
  * @format
  */
 
-import { Link } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -14,13 +14,14 @@ import Frame from '../frame';
 import '../../styles/pages/_course-main.scss';
 import { Divider } from '@mui/material';
 
-import good from "../../assets/img/courses/good.png"
-import business from '../../assets/img/courses/business-revenue.png'
-import formation from '../../assets/img/courses/formaṭion-status.png'
-import esstimated from '../../assets/img/courses/esstimated-processing.png'
-import level01 from '../../assets/img/courses/level-01.svg'
+import good from '../../assets/img/courses/good.png';
+import business from '../../assets/img/courses/business-revenue.png';
+import formation from '../../assets/img/courses/formaṭion-status.png';
+import esstimated from '../../assets/img/courses/esstimated-processing.png';
+import level01 from '../../assets/img/courses/level-01.svg';
 import { easeIn } from '../../utils/animate';
 import shuffle from 'lodash/shuffle';
+import { debugLog } from '51cloudclass-utilities/src/utils';
 
 const { getAxios } = utils;
 
@@ -59,50 +60,68 @@ const fetchCourses = async () => {
 const CourseMain = () => {
 	ScrollTrigger.defaults({});
 
-	const { data, isLoading, error } = useQuery(['fetch-courses'], fetchCourses);
+	// const { data, isLoading, error } = useQuery(['fetch-courses'], fetchCourses);
 
+	const data = useStaticQuery(graphql`
+		query {
+			allCourse {
+				nodes {
+					name
+					id
+					description
+					image
+					title
+				}
+			}
+		}
+	`);
 
+	debugLog('all courses', data);
+	// return <div>{JSON.stringify(data, null, 2)}</div>;
 
 	React.useEffect(() => {
 		// animation();
 		// gsap.config({ nullTargetWarn: false })
-		const tl = gsap.timeline()
+		const tl = gsap.timeline();
 		easeIn('.gsap-main-left, .gsap-main-right', {}, tl);
 
 		var images = document.querySelectorAll('.gsap-main-right img');
 		for (var j = 0; j < images.length; j++) {
-			easeIn(images[j], {}, tl)
+			easeIn(images[j], {}, tl);
 		}
 
-
-		if (!isLoading) {
-			// 	setTimeout(() => {
-			const timeline = gsap.timeline();
-			if (data.result.courses) {
-				var elements = shuffle(document.querySelectorAll(`.courses-grid .gsap-shuffle`))
-				elements.forEach((element) => (
-
-					timeline.fromTo(element, {
+		// if (!isLoading) {
+		// 	setTimeout(() => {
+		const timeline = gsap.timeline();
+		if (data.allCourse.nodes) {
+			var elements = shuffle(
+				document.querySelectorAll(`.courses-grid .gsap-shuffle`)
+			);
+			elements.forEach((element) =>
+				timeline.fromTo(
+					element,
+					{
 						opacity: 0,
 						scale: 0,
-					}, {
+					},
+					{
 						delay: 0.1,
 						duration: 0.1,
 						opacity: 1,
 						scale: 1,
-					})
-				))
-			}
-			// 	}, 1000);
+					}
+				)
+			);
 		}
-	}, [data, isLoading]);
+		// 	}, 1000);
+		// }
+	}, [data /*isLoading*/]);
 
-	if (isLoading) return '加载中Oo.';
-	if (error) return '出错了，无法获得后台请求回应';
-	const { courses } = data.result;
+	// if (isLoading) return '加载中Oo.';
+	// if (error) return '出错了，无法获得后台请求回应';
+	const courses = data.allCourse.nodes;
 
 	// const [firstCourse, ...remainings] = courses;
-
 
 	return (
 		<Frame>
@@ -115,9 +134,9 @@ const CourseMain = () => {
 			>
 				{/*  */}
 				<div className='course-main flex gap-20 max-w-4xl justify-between items-center'>
-					<div className="gsap-main-left course-text-block xs:gap-2 gap-4  flex flex-col flex-1">
+					<div className='gsap-main-left course-text-block xs:gap-2 gap-4  flex flex-col flex-1'>
 						<div>
-							<h2 className="xs:text-4xl text-5xl">课程</h2>
+							<h2 className='xs:text-4xl text-5xl'>课程</h2>
 						</div>
 						<div>
 							<p className='text-center font-medium text-[24px] text-gray-600 break-words'>
@@ -151,34 +170,51 @@ const CourseMain = () => {
 							</form>
 						</div>
 					</div>
-					<div className="gsap-main-right course-image-block flex-1">
-						<div
-							className="consulting-hero-image-one border-radius-eighty overflow">
+					<div className='gsap-main-right course-image-block flex-1'>
+						<div className='consulting-hero-image-one border-radius-eighty overflow'>
 							<img
 								src={good}
-								loading="lazy" width="322" height="426" data-w-id="ad912aa4-3553-4162-58d5-b718585ad288"
-								alt="Software Solutions" className="auto-fit" />
+								loading='lazy'
+								width='322'
+								height='426'
+								data-w-id='ad912aa4-3553-4162-58d5-b718585ad288'
+								alt='Software Solutions'
+								className='auto-fit'
+							/>
 						</div>
-						<div className="consulting-hero-image-two">
+						<div className='consulting-hero-image-two'>
 							<img
 								src={business}
-								loading="lazy" width="280" height="284" alt="Business Revenue" className="auto-fit" />
+								loading='lazy'
+								width='280'
+								height='284'
+								alt='Business Revenue'
+								className='auto-fit'
+							/>
 						</div>
-						<div className="consulting-hero-image-three">
+						<div className='consulting-hero-image-three'>
 							<img
 								src={formation}
-								loading="lazy" width="280" height="189" alt="Formation Status" className="auto-fit" />
+								loading='lazy'
+								width='280'
+								height='189'
+								alt='Formation Status'
+								className='auto-fit'
+							/>
 						</div>
-						<div className="consulting-hero-image-four margin-top">
+						<div className='consulting-hero-image-four margin-top'>
 							<img
 								src={esstimated}
-								loading="lazy" width="280" height="310"
-								sizes="(max-width: 479px) 90vw, (max-width: 767px) 45vw, (max-width: 991px) 280px, (max-width: 1279px) 22vw, 280px"
-								alt="Estimated Processing " className="auto-fit" />
+								loading='lazy'
+								width='280'
+								height='310'
+								sizes='(max-width: 479px) 90vw, (max-width: 767px) 45vw, (max-width: 991px) 280px, (max-width: 1279px) 22vw, 280px'
+								alt='Estimated Processing '
+								className='auto-fit'
+							/>
 						</div>
 					</div>
 				</div>
-
 
 				{/*  */}
 				<div>
@@ -186,10 +222,10 @@ const CourseMain = () => {
 						{courses.map((course, index) => {
 							return (
 								<div
-									key={course.ID}
+									key={course.id}
 									className={`course-${index} gsap-shuffle rounded-2xl overflow-hidden border-[2px] shadow-md hover:shadow-lg hover:scale-105 duration-500  h-full w-full place-self-start`}
 								>
-									<Link to={`/courses/${course.ID}`}>
+									<Link to={`/courses/${course.id}`}>
 										<div className='xs:h-[224px] h-[334px] overflow-hidden pt-4'>
 											<img
 												className='w-full h-full object-contain rounded-lg overflow-hidden'
@@ -207,47 +243,58 @@ const CourseMain = () => {
 												<h4>{course.title}</h4>
 											</div>
 											<div>
-												<p dangerouslySetInnerHTML={{ __html: course.description.replace("\\n", "<br/>") }}></p>
+												<p
+													dangerouslySetInnerHTML={{
+														__html: course.description.replace('\\n', '<br/>'),
+													}}
+												></p>
 											</div>
-
 										</div>
-										<div className="w-full flex flex-col">
-
+										<div className='w-full flex flex-col'>
 											<Divider className='w-10/12 self-center' />
 										</div>
-										<div className="p-4 ">
-											<div className="course-card-details-wrapper pb-8">
-												<div className="level-wrapper">
+										<div className='p-4 '>
+											<div className='course-card-details-wrapper pb-8'>
+												<div className='level-wrapper'>
 													<img
 														src={level01}
-														alt="" className="level-icon w-condition-invisible" />
+														alt=''
+														className='level-icon w-condition-invisible'
+													/>
 													{/* <img
 													src="https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee358b750b2d85_icon-level-02-academy-template.svg"
 													alt="" className="level-icon" />
 												<img
 													src="https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee35be900b2d7a_icon-level-03-academy-template.svg"
 													alt="" clasName="level-icon w-condition-invisible" /> */}
-													<div className="w-dyn-list">
-														<div role="list" className="levels-list w-dyn-items">
-															<div role="listitem" className="level-text-wrapper w-dyn-item">
-																初学者</div>
+													<div className='w-dyn-list'>
+														<div
+															role='list'
+															className='levels-list w-dyn-items'
+														>
+															<div
+																role='listitem'
+																className='level-text-wrapper w-dyn-item'
+															>
+																初学者
+															</div>
 														</div>
 													</div>
 												</div>
-												<div
-													className="course-card-price">$&nbsp;399.00&nbsp;USD</div>
+												<div className='course-card-price'>
+													$&nbsp;399.00&nbsp;USD
+												</div>
 											</div>
-
 										</div>
 									</Link>
-								</div>);
-						}
-						)}
+								</div>
+							);
+						})}
 					</div>
 				</div>
-			</div >
+			</div>
 			{/*  */}
-			< div className='stay-in-the-loop-form flex flex-col p-16 justify-center items-center bg-white' >
+			<div className='stay-in-the-loop-form flex flex-col p-16 justify-center items-center bg-white'>
 				<div className='flex flex-col justify-center items-center max-w-[500px] gap-4'>
 					<div>
 						<p className='uppercase text-purple-700 font-extrabold'>
@@ -285,8 +332,8 @@ const CourseMain = () => {
 						</div>
 					</div>
 				</div>
-			</div >
-		</Frame >
+			</div>
+		</Frame>
 	);
 };
 
