@@ -4,10 +4,14 @@
 	"private": true,
 	"description": "my-gatsby-site",
 	"author": "yangwawa0323",
+	"workspaces": [
+		"packages/**"
+	],
 	"keywords": [
 		"gatsby"
 	],
 	"scripts": {
+		"build:utils": "yarn workspace 51cloudclass-utilities run start",
 		"develop": "gatsby develop --host 0.0.0.0",
 		"start": "gatsby develop --host 0.0.0.0 ",
 		"build": "gatsby build --prefix-paths --verbose",
@@ -72,9 +76,7 @@
 		"postcss": "^8.4.19",
 		"tailwindcss": "^3.3.1",
 		"traverse": "^0.6.7",
-		"typescript": "^5.0.4"
-	},
-	"resolutions": {
-		"51cloudclass-utilities": "portal:/D:/Projects/npm-package-template"
+		"typescript": "^5.0.4",
+		"51cloudclass-utilities": "*"
 	}
 }
