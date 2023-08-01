@@ -1,44 +1,56 @@
-/** @format */
-
 import React from 'react';
 
 import { useQuery } from '@tanstack/react-query';
 
 import { useCallback } from 'react';
 import { utils } from '51cloudclass-utilities/dist';
-import { Link } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 import { easeIn } from '../../utils/animate';
 import gsap from 'gsap';
 
-const { getAxios } = utils
-
+const { getAxios } = utils;
 
 const Courses = () => {
-
 	React.useEffect(() => {
 		const tl = gsap.timeline();
 		easeIn('.gsap-course-main-title', {}, tl);
-		easeIn('.course-grid', {}, tl)
+		easeIn('.course-grid', {}, tl);
 	}, []);
 
-	const axiosInstance = getAxios();
-	const fetchCourses = async () => {
-		const response = await axiosInstance.get(
-			`${process.env.GATSBY_API_SERVER}/courses/`
-		);
-		return response.data;
-	};
+	// const axiosInstance = getAxios();
+	// const fetchCourses = async () => {
+	// 	const response = await axiosInstance.get(
+	// 		`${process.env.GATSBY_API_SERVER}/courses/`
+	// 	);
+	// 	return response.data;
+	// };
+
+	const data = useStaticQuery(graphql`
+		query {
+			allCourse(limit: 12, sort: { total_view: DESC }) {
+				nodes {
+					id
+					name
+					image
+					description
+					is_shop
+				}
+			}
+		}
+	`);
+
+	const courses = data.allCourse.nodes;
 
 	const offlined = useCallback((course) => {
 		return !course.is_shop;
 	}, []);
 
-	const { data, isLoading, error } = useQuery(['fetch-courses'], fetchCourses);
+	// const { data, isLoading, error } = useQuery(['fetch-courses'], fetchCourses);
 
-	if (isLoading) {
-		return <div>加载中...</div>;
-	}
-	if (error) return '出错了，无法获得后台请求回应';
+	// if (isLoading) {
+	// 	return <div>加载中...</div>;
+	// }
+	// if (error) return '出错了，无法获得后台请求回应';
 
 	return (
 		<div
@@ -59,10 +71,9 @@ const Courses = () => {
 						</p>
 					</div>
 				</div>
-
 			</div>
 			<div className='course-grid grid xs:grid-cols-1 md:grid-cols-[repeat(2,minmax(200px,1fr))] lg:grid-cols-3 xs:gap-2  gap-8 auto-rows-min h-min justify-center  w-full'>
-				{data.result.courses.map((course) => {
+				{courses.map((course) => {
 					return (
 						<div
 							key={course.ID}

@@ -1,6 +1,6 @@
 /** @format */
 
-import { Link, navigate } from 'gatsby';
+import { Link, graphql, navigate, useStaticQuery } from 'gatsby';
 import React, { memo } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { utils, logout } from '51cloudclass-utilities/dist';
@@ -23,6 +23,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { globalContext } from '../../../wrap-with-provider';
 
 import type { Course } from '..';
+import { ICourseInput } from '../../utils/types';
 
 const { getAxios } = utils;
 const axiosInstance = getAxios();
@@ -136,28 +137,39 @@ const SubMenu1 = () => {
 
 /** BEGIN SubMenu2 */
 const SubMenu2 = () => {
-	const fetchTop8Courses = async () => {
-		let url = `${process.env.GATSBY_API_SERVER}/courses/?limit=8`;
-		const response = await axiosInstance.get(url);
-		return response.data;
-	};
+	// const fetchTop8Courses = async () => {
+	// 	let url = `${process.env.GATSBY_API_SERVER}/courses/?limit=8`;
+	// 	const response = await axiosInstance.get(url);
+	// 	return response.data;
+	// };
 
-	const { data, isLoading, error } = useQuery({
-		queryKey: ['fetch-top-courses', 8],
-		queryFn: fetchTop8Courses,
-	});
+	// const { data, isLoading, error } = useQuery({
+	// 	queryKey: ['fetch-top-courses', 8],
+	// 	queryFn: fetchTop8Courses,
+	// });
 
-	if (isLoading || error) return <div>加载中Oo.</div>;
+	// if (isLoading || error) return <div>加载中Oo.</div>;
 
-	const { courses } = data.result;
+	const data = useStaticQuery(graphql`
+		query {
+			allCourse(limit: 8, sort: { total_view: DESC }) {
+				nodes {
+					id
+					name
+				}
+			}
+		}
+	`);
+
+	const courses = data.allCourse.nodes;
 	return (
 		<>
 			<div className='mega-menu-column-4'>
 				<h4 className='mega-menu-title'>课程分类</h4>
-				{courses.map((course: Course, index: number) => (
+				{courses.map((course: ICourseInput, index: number) => (
 					<Link
 						key={index}
-						to={`/courses/${course.ID}`}
+						to={`/courses/${course.id}`}
 						className='mega-menu-link'
 					>
 						{course.name}
