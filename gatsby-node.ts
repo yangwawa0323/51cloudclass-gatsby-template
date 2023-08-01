@@ -1,11 +1,15 @@
 import { CreatePageArgs } from 'gatsby';
 import type { CreateWebpackConfigArgs } from 'gatsby'
 
+export { sourceNodes } from './src/utils/gatsby-node-generator';
+
 const { promiseGenerateAll } = require('./src/utils/gatsby-node-generator');
 
 exports.createPages = async (params: CreatePageArgs) => {
-	promiseGenerateAll(params);
+	await promiseGenerateAll(params);
 };
+
+
 
 exports.onCreateWebpackConfig = ({
 	stage,

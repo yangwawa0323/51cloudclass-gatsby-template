@@ -9,22 +9,44 @@ import Relative from './Relative';
 import BootSection from './BootSection';
 import gsap from 'gsap';
 import { easeIn } from '../../utils/animate';
+import { graphql } from 'gatsby';
+import { debugLog } from '51cloudclass-utilities/src/utils';
+
+export const query = graphql`
+	query ($id: String) {
+		chapter(id: { eq: $id }) {
+			id
+			mark
+			name
+			online_running_code
+			order_index
+			row_count
+			course_id
+			content
+			download_resource
+			github_resource
+		}
+	}
+`;
 
 const ChapterPage = (props) => {
-
-
 	React.useEffect(() => {
 		// animation();
 		// gsap.config({ nullTargetWarn: false })
-		const tl = gsap.timeline()
+		const tl = gsap.timeline();
 		// easeIn('.gsap-boot-section', {}, tl);
-		easeIn('.gsap-course-name-div', {}, tl)
-		easeIn('.gsap-home-hero-left', {}, tl)
-		easeIn('.gsap-home-hero-right', { delay: 0.5 }, tl)
+		easeIn('.gsap-course-name-div', {}, tl);
+		easeIn('.gsap-home-hero-left', {}, tl);
+		easeIn('.gsap-home-hero-right', { delay: 0.5 }, tl);
 	}, []);
 
-	const { pageContext } = props;
-	const extra = { chapter: pageContext.chapter };
+	const { pageContext, data } = props;
+
+	debugLog('Chapter page props: ', props);
+
+	// change to graphQL query data
+	// const extra = { chapter: pageContext.chapter };
+	const extra = { chapter: data.chapter };
 
 	return (
 		<Frame>
@@ -40,7 +62,7 @@ const ChapterPage = (props) => {
 						<RightPane />
 					</div>
 				</div>
-				<div className="py-[120px] gsap-relative">
+				<div className='py-[120px] gsap-relative'>
 					<Relative />
 				</div>
 				<div className='stay-in-the-loop-form flex flex-col p-16 justify-center items-center bg-white'>

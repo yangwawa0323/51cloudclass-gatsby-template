@@ -8,9 +8,20 @@ import { ChapterContext } from './ChapterContextProvider';
 import { utils } from '51cloudclass-utilities/dist';
 import { useQuery } from '@tanstack/react-query';
 
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 
 const { getAxios } = utils;
+
+export const query = graphql`
+	query {
+		allChapter {
+			nodes {
+				id
+				name
+			}
+		}
+	}
+`;
 
 // import SimpleBar from 'simplebar-react';
 const ChapterContainer = ({ chapter }) => {

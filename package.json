@@ -12,7 +12,7 @@
 	],
 	"scripts": {
 		"build:utils": "yarn workspace 51cloudclass-utilities run start",
-		"develop": "gatsby develop --host 0.0.0.0",
+		"develop": "yarn eslint --fix && gatsby develop --host 0.0.0.0",
 		"start": "gatsby develop --host 0.0.0.0 ",
 		"build": "gatsby build --prefix-paths --verbose",
 		"serve": "gatsby serve --host 0.0.0.0",
