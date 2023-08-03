@@ -1,4 +1,4 @@
-// eslint-disable no-tabs
+// eslint-disable 
 
 import axios, { AxiosInstance } from 'axios';
 import { cors, withTokenHeader } from '../net';

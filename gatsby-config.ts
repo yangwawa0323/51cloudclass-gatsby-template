@@ -49,5 +49,6 @@ module.exports = {
 
 			__key: 'pages',
 		},
+		"gatsby-plugin-use-query-params",
 	],
 };

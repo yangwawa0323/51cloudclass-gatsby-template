@@ -1,5 +1,3 @@
-/** @format */
-
 import { getAccount } from '51cloudclass-utilities/src/account';
 import { Button } from '@mui/material';
 import React from 'react';
@@ -7,13 +5,14 @@ import { useContext } from 'react';
 import { profileContext } from './ProfileContextProvider';
 import { useSelector } from 'react-redux';
 import { Link } from 'gatsby';
-import { IState } from '51cloudclass-utilities/src/store/reducers/authSlice';
 
 const Sidebar = () => {
 	const { openDialog } = useContext(profileContext);
 	const account = getAccount();
 
-	const avatar = useSelector((state) => state.auth.account?.avatar as string);
+	const avatar = useSelector(
+		(state: any) => state.auth.account?.avatar as string
+	);
 
 	if (
 		!account ||
