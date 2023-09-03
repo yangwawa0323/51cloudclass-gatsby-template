@@ -11,7 +11,7 @@ import { graphql } from 'gatsby';
 import { debugLog } from '51cloudclass-utilities/src/utils';
 
 export const query = graphql`
-	query ($uuid: String) {
+	query MyQuery($uuid: String) {
 		chapter(id: { eq: $uuid }) {
 			id
 			mark
@@ -23,6 +23,13 @@ export const query = graphql`
 			content
 			download_resource
 			github_resource
+			course {
+				chapters {
+					order_index
+					name
+					id
+				}
+			}
 		}
 	}
 `;
@@ -38,13 +45,23 @@ const ChapterPage = (props) => {
 		easeIn('.gsap-home-hero-right', { delay: 0.5 }, tl);
 	}, []);
 
-	const { pageContext, data } = props;
-
-	debugLog('Chapter page props: ', props);
+	const { data } = props;
 
 	// change to graphQL query data
 	// const extra = { chapter: pageContext.chapter };
-	const extra = { chapter: data.chapter };
+	if (!data.chapter.course) {
+		return (
+			<div>
+				{' '}
+				<h2>Some thing wrong</h2>
+				<pre>{JSON.stringify(data.chapter)}</pre>
+			</div>
+		);
+	}
+	const extra = {
+		chapters: data.chapter.course.chapters,
+		chapter: data.chapter,
+	};
 
 	return (
 		<Frame>

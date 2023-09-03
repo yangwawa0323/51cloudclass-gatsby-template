@@ -76,7 +76,6 @@ const CourseMain = () => {
 		}
 	`);
 
-	debugLog('all courses', data);
 	// return <div>{JSON.stringify(data, null, 2)}</div>;
 
 	React.useEffect(() => {

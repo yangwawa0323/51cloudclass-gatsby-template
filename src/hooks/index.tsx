@@ -1,6 +1,7 @@
 /** @format */
 import React, { ReactElement, ReactNode } from 'react';
 
+import { useLocation } from '@reach/router';
 import { useEffect, useState } from 'react';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { utils } from '51cloudclass-utilities/src/';
@@ -212,3 +213,24 @@ export const subscibeWrapper =
 			}
 		};
 	};
+
+export const useAvatar = () => {
+	const location = useLocation();
+
+	// avatar in URL query parameter
+	const query = new URLSearchParams(location.search);
+
+	// avatar in redux
+	const reduxAvatar = useSelector(
+		(state: IState) => state.auth.account?.avatar
+	);
+	// avatar in localstorage
+	const localStorageAvatar = JSON.parse(
+		localStorage.getItem('account') as string
+	)?.avatar;
+
+	const [avatar, setAvatar] = useState<string>(
+		localStorageAvatar ? localStorageAvatar : reduxAvatar ? reduxAvatar : query
+	);
+	return avatar;
+};

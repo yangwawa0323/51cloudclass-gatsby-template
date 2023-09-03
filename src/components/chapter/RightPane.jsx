@@ -1,6 +1,6 @@
 /** @format */
 
-import React from 'react';
+import * as React from 'react';
 import { useEffect } from 'react';
 import { easeIn } from '../../utils/animate';
 import ChapterList from './ChapterList';
@@ -11,23 +11,23 @@ import gsap from 'gsap';
 const RightPane = () => {
 	useEffect(() => {
 		const tl = gsap.timeline();
-		var elements = document.querySelectorAll(".gsap-right")
+		var elements = document.querySelectorAll('.gsap-right');
 		elements.forEach((element) => {
-			easeIn(element, {}, tl)
-		})
-	})
+			easeIn(element, {}, tl);
+		});
+	});
+
 	return (
 		<div className='w-full'>
-			<div className="gsap-right">
+			<div className='gsap-right'>
 				<ChapterList />
 			</div>
-			<div className="gsap-right">
+			<div className='gsap-right'>
 				<More />
 			</div>
-			<div className="gsap-right">
+			<div className='gsap-right'>
 				<Resource />
 			</div>
-
 		</div>
 	);
 };

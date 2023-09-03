@@ -1,19 +1,20 @@
 /** @format */
 
 import { Grid } from '@mui/material';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import SimpleBarScroll from '../common/SimpleBar';
 import 'simplebar-react/dist/simplebar.min.css';
-import { ChapterContext } from './ChapterContextProvider';
 import { utils } from '51cloudclass-utilities/dist';
-import { useQuery } from '@tanstack/react-query';
 
 import { Link, graphql, useStaticQuery } from 'gatsby';
+import { debugLog } from '51cloudclass-utilities/src/utils';
+import { IChapterInput } from '../../utils/types';
+import { ChapterContext } from './ChapterContextProvider';
 
 const { getAxios } = utils;
 
 // import SimpleBar from 'simplebar-react';
-const ChapterContainer = ({ chapter }) => {
+const ChapterContainer = ({ chapter }: { chapter: IChapterInput }) => {
 	return (
 		<Link to={`/chapters/${chapter.id}/`}>
 			<div className='flex flex-col px-8 pt-2'>
@@ -35,43 +36,15 @@ const ChapterContainer = ({ chapter }) => {
 	);
 };
 
+type TCourseChapters = {
+	course_chapters: Array<IChapterInput>;
+};
+
 const ChapterList = () => {
-	const { chapter } = useContext(ChapterContext);
-
-	const data = useStaticQuery(graphql`
-		query ($uuid: String) {
-			chapter(id: { eq: $uuid }) {
-				name
-				id
-				course {
-					chapters {
-						order_index
-						name
-						id
-					}
-				}
-			}
-		}
-	`);
-
-	// const fetchChaptersByCourseId = async () => {
-	// 	const axiosInstance = getAxios();
-	// 	let url = `${process.env.GATSBY_API_SERVER}/courses/${chapter.course_id}?preload=Chapters`;
-	// 	const response = await axiosInstance.get(url);
-	// 	return response.data;
-	// };
-
-	// const { data, isLoading, error } = useQuery(
-	// 	['fetch-chapters-by-course-id', chapter.course_id],
-	// 	fetchChaptersByCourseId
-	// );
-	// if (isLoading) return '加载Oo.';
-
-	// if (error) return `出错了! ${JSON.stringify(error)}`;
-
-	// let chapters = sortBy(data?.result?.courses?.chapters, ['order_index']);
-	// const chapters = data.result.courses.chapters;
-	const { chapters } = data.chapter.course;
+	const { chapters } = useContext(ChapterContext);
+	useEffect(() => {
+		debugLog('ChapterList context :', chapters);
+	}, []);
 
 	return (
 		<Grid
@@ -88,7 +61,7 @@ const ChapterList = () => {
 			</Grid>
 			<SimpleBarScroll sx={{ maxHeight: 520 }}>
 				{/* TODO: */}
-				{chapters?.map((chpt, i) => (
+				{chapters?.map((chpt: IChapterInput, i: number) => (
 					<Grid
 						key={i}
 						item

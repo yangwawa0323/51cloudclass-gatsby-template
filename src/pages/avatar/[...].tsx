@@ -18,5 +18,5 @@ const AvatarStyle = () => {
 	);
 };
 
-// export default needLoginWrapper(AvatarStyle);
-export default AvatarStyle;
+export default needLoginWrapper(AvatarStyle);
+// export default AvatarStyle;

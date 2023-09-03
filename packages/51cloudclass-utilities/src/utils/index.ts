@@ -1,4 +1,4 @@
-// eslint-disable 
+/* eslint-disable */
 
 import axios, { AxiosInstance } from 'axios';
 import { cors, withTokenHeader } from '../net';
@@ -73,9 +73,11 @@ export const gradientColor = {
 	WebkitTextFillColor: 'transparent', // capitalized the 1st char
 };
 
-export const getRidOfDomain = (url: string) => url?.replace(/[^:]+:\/\/[^/]+\//, '');
+export const getRidOfDomain = (url: string) =>
+	url?.replace(/[^:]+:\/\/[^/]+\//, '');
 
-export const getUrlParameter = (search: string) => search?.replace(/[^?]+\?/, '?');
+export const getUrlParameter = (search: string) =>
+	search?.replace(/[^?]+\?/, '?');
 
 const defaults = {
 	getAxios,

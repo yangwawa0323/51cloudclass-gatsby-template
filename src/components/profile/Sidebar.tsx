@@ -10,9 +10,9 @@ const Sidebar = () => {
 	const { openDialog } = useContext(profileContext);
 	const account = getAccount();
 
-	const avatar = useSelector(
-		(state: any) => state.auth.account?.avatar as string
-	);
+	const avatar = localStorage.getItem('account')
+		? JSON.parse(localStorage.getItem('account') as string).avatar
+		: useSelector((state: any) => state.auth.account?.avatar as string);
 
 	if (
 		!account ||

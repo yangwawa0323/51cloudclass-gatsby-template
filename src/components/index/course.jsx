@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { useQuery } from '@tanstack/react-query';
-
 import { useCallback } from 'react';
 import { utils } from '51cloudclass-utilities/dist';
 import { Link, graphql, useStaticQuery } from 'gatsby';
@@ -76,7 +74,7 @@ const Courses = () => {
 				{courses.map((course) => {
 					return (
 						<div
-							key={course.ID}
+							key={course.id}
 							className='cursor-pointer rounded-2xl overflow-hidden border-[2px] shadow-md hover:shadow-lg hover:scale-105 duration-500  h-full w-full place-self-start'
 						>
 							<Link to={`/courses/`}>

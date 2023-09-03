@@ -17,6 +17,9 @@ interface IApiResponse {
 	courses: Array<ICourseInput>,
 }
 
+interface IChapterInternalContent {
+	chapter: IChapterInput,
+}
 
 const fetchAllData: () => Promise<IApiResponse> = async () => {
 
@@ -77,8 +80,10 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async (gastbyApi) => {
 			id: createNodeId(`chapter-${ID}`),
 			_id: ID,
 			internal: {
+				content: JSON.stringify(chapter),
 				type: `Chapter`,
 				contentDigest: createContentDigest(chapter)
+
 			}
 		} satisfies NodeInput
 		// 2. use `createNode` function to create the node.

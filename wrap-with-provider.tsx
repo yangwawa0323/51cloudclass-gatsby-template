@@ -33,8 +33,6 @@ const GlobalContextProvider = ({ children }: GlobalContextProps) => {
 		decodedToken: typeof tokenExample;
 	}>;
 
-	// debugLog('provide decodedToken ', decodedToken);
-
 	const [isLogin, setIsLogin] = useState<boolean>(false);
 
 	React.useEffect(() => {

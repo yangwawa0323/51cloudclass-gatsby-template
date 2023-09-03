@@ -19,7 +19,6 @@ export const query = graphql`
 const Detail = (props) => {
 	const { data } = props;
 
-	debugLog(`course detail: `, data);
 	return (
 		<Frame>
 			<BoostSection course={data.course} />
