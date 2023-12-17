@@ -12,14 +12,15 @@ const BootSection = () => {
 	useEffect(() => {
 		const pContent = document.querySelectorAll(
 			'.react-page-row .react-page-cell p'
-		)[0].innerHTML;
+		)[0]?.innerHTML;
 		// debugLog('p element', p.innerHTML);
-		setDescription({
-			__html:
-				pContent.length >= 60
-					? [...pContent].slice(0, 60).join('') + '...'
-					: pContent,
-		});
+		pContent &&
+			setDescription({
+				__html:
+					pContent.length >= 60
+						? [...pContent].slice(0, 60).join('') + '...'
+						: pContent,
+			});
 	}, []);
 
 	return (
