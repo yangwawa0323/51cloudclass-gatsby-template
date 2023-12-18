@@ -25,7 +25,11 @@ const Courses = () => {
 
 	const data = useStaticQuery(graphql`
 		query {
-			allCourse(limit: 12, sort: { total_view: DESC }) {
+			allCourse(
+				limit: 12
+				sort: { id: DESC }
+				filter: { is_shop: { eq: true } }
+			) {
 				nodes {
 					id
 					name

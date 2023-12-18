@@ -15,6 +15,7 @@
 		"develop": "yarn eslint --fix && gatsby develop --host 0.0.0.0",
 		"start": "gatsby develop --host 0.0.0.0 ",
 		"build": "gatsby build --prefix-paths --verbose",
+		"build:local": "gatsby build --verbose",
 		"serve": "gatsby serve --host 0.0.0.0",
 		"clean": "gatsby clean"
 	},

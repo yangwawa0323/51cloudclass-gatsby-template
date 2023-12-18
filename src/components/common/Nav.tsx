@@ -152,10 +152,17 @@ const SubMenu2 = () => {
 
 	const data = useStaticQuery(graphql`
 		query {
-			allCourse(limit: 8, sort: { total_view: DESC }) {
+			allCourse(
+				limit: 8
+				sort: { id: DESC }
+				filter: { is_shop: { eq: true } }
+			) {
 				nodes {
 					id
 					name
+					image
+					description
+					is_shop
 				}
 			}
 		}

@@ -64,13 +64,13 @@ const CourseMain = () => {
 
 	const data = useStaticQuery(graphql`
 		query {
-			allCourse {
+			allCourse(sort: { id: DESC }, filter: { is_shop: { eq: true } }) {
 				nodes {
-					name
 					id
-					description
+					name
 					image
-					title
+					description
+					is_shop
 				}
 			}
 		}
