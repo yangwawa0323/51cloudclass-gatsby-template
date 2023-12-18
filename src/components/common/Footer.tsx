@@ -82,14 +82,9 @@ const Footer = (props: FooterProps) => {
 										<Link to='/styleguide'>样式指南</Link>
 									</p>
 								</div>
-								<div>
-									<p>
-										<Link to='/test-visitor'>测试浏览历史记录功能</Link>
-									</p>
-								</div>
 							</div>
 						</div>
-						<div>
+						<div className='flex gap-10 justify-center'>
 							<div>
 								<p className='text-[11px]'>
 									<a href='https://www.51cloudclass.com/'>
