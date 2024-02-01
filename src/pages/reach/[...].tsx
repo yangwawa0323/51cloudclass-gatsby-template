@@ -9,7 +9,7 @@ const Reach = () => {
 		const query = new URLSearchParams();
 		query.append('randomStr', `random-${Math.random()}`);
 		const path = `${location.pathname}?${query.toString()}`;
-		console.log(query, path);
+		// console.log(query, path);
 		navigate(path);
 	};
 

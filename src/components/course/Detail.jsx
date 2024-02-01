@@ -2,7 +2,6 @@ import React from 'react';
 import Frame from '../frame';
 import BoostSection from './Boost';
 import { graphql } from 'gatsby';
-import { debugLog } from '51cloudclass-utilities/src/utils';
 
 export const query = graphql`
 	query ($uuid: String) {

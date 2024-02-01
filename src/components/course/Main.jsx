@@ -9,7 +9,6 @@ import * as React from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { utils } from '51cloudclass-utilities/dist';
-import { useQuery } from '@tanstack/react-query';
 import Frame from '../frame';
 import '../../styles/pages/_course-main.scss';
 import { Divider } from '@mui/material';
@@ -21,7 +20,6 @@ import esstimated from '../../assets/img/courses/esstimated-processing.png';
 import level01 from '../../assets/img/courses/level-01.svg';
 import { easeIn } from '../../utils/animate';
 import shuffle from 'lodash/shuffle';
-import { debugLog } from '51cloudclass-utilities/src/utils';
 
 const { getAxios } = utils;
 

@@ -2,14 +2,12 @@
 
 import { getAccount } from '51cloudclass-utilities/src/account';
 import {
-	debugLog,
 	getRidOfDomain,
 	getUrlParameter,
 } from '51cloudclass-utilities/src/utils';
 import { navigate } from 'gatsby';
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
 import Frame from '../components/frame';
 import ProfileContextProvider from '../components/profile/ProfileContextProvider';
 import Sidebar from '../components/profile/Sidebar';
@@ -26,7 +24,7 @@ const Profile = () => {
 	// const avatar =  useSelector((state) => state.auth.account?.avatar);
 	const avatar = useAvatar();
 	const avatarParam = getUrlParameter(getRidOfDomain(avatar));
-	debugLog(avatarParam);
+	// debugLog(avatarParam);
 
 	const closeDialog = (event, reason) => {
 		if (reason === 'escapeKeyDown' || reason === 'backdropClick') return;

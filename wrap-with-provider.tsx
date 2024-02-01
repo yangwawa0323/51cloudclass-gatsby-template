@@ -13,7 +13,6 @@ import { useTour } from '@reactour/tour';
 import { Provider } from 'react-redux';
 import { tokenExample } from './src/components';
 import type { IUseJwt } from 'react-jwt/dist/hooks';
-import { debugLog } from '51cloudclass-utilities/src/utils';
 
 export const globalContext = createContext<any>(null);
 

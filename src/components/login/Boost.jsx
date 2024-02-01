@@ -22,8 +22,6 @@ import { saveToLocalStorage } from '51cloudclass-utilities/src/account';
 import { useContext } from 'react';
 import { globalContext } from '../../../wrap-with-provider';
 
-
-
 const { getAxios } = utils;
 
 const BoostSection = () => {
@@ -37,16 +35,14 @@ const BoostSection = () => {
 	const { isLogin, setIsLogin } = useContext(globalContext);
 
 	const isPartialData = React.useCallback(() => {
-		return formData.email.trim() === '' || formData.password.trim() === ''
-	}, [formData])
-
-
+		return formData.email.trim() === '' || formData.password.trim() === '';
+	}, [formData.email, formData.password]);
 
 	React.useEffect(() => {
 		const tl = gsap.timeline();
 		easeIn('.gsap-boot-right', {}, tl);
 		easeIn('.gsap-boot-left', {}, tl);
-	}, [])
+	}, []);
 
 	const dispatch = useDispatch();
 
@@ -59,13 +55,13 @@ const BoostSection = () => {
 				formData
 			);
 			const data = await response.data;
-			dispatch(login(data))
-			saveToLocalStorage(data)
+			dispatch(login(data));
+			saveToLocalStorage(data);
 			setIsLogin(true);
-			setTimeout(() => navigate(-1), 500)
+			setTimeout(() => navigate(-1), 500);
 		} catch (e) {
 			toast(`登录失败:
-			 ${e.response?.data?.message}`)
+			 ${e.response?.data?.message}`);
 		}
 	};
 

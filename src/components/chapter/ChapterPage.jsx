@@ -3,16 +3,16 @@ import ChapterContextProvider from './ChapterContextProvider';
 import LeftPane from './LeftPane';
 import RightPane from './RightPane';
 import Frame from '../frame';
-import Relative from './Relative';
 import BootSection from './BootSection';
 import gsap from 'gsap';
 import { easeIn } from '../../utils/animate';
 import { graphql } from 'gatsby';
-import { debugLog } from '51cloudclass-utilities/src/utils';
 
 export const query = graphql`
 	query MyQuery($uuid: String) {
 		chapter(id: { eq: $uuid }) {
+			CreatedAt
+			UpdatedAt
 			id
 			mark
 			name
@@ -66,20 +66,20 @@ const ChapterPage = (props) => {
 	return (
 		<Frame>
 			<ChapterContextProvider extraContext={extra}>
-				<div className='w-full'>
+				<div className='w-full mb-10'>
 					<BootSection />
 				</div>
-				<div className='flex flex-row flex-wrap  lg:gap-6 xs:gap-2 justify-center pt-12'>
-					<div className='xs:max-md:basis-full basis-7/12  w-11/12 xs:max-w-[425px] md:min-w-[600px]'>
+				<div className='w-11/12 mx-6 gap-0 md:gap-2 flex flex-col md:flex-row justify-center items-center'>
+					<div className='w-full mr-6 md:w-2/3 min-w-[320px]'>
 						<LeftPane />
 					</div>
-					<div className='xs:max-md:basis-full basis-3/12 w-11/12 min-w-[300px]'>
+					<div className='min-w-[280px] mx-20 md:w-1/3'>
 						<RightPane />
 					</div>
 				</div>
-				<div className='py-[120px] gsap-relative'>
+				{/* <div className='py-[120px] gsap-relative'>
 					<Relative />
-				</div>
+				</div> */}
 				<div className='stay-in-the-loop-form flex flex-col p-16 justify-center items-center bg-white'>
 					<div className='flex flex-col justify-center items-center max-w-[500px] gap-4'>
 						<div>

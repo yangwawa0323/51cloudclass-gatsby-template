@@ -39,8 +39,8 @@ const BoostSection = ({ course }) => {
 			{/*  */}
 			<div className='section course wf-section'>
 				<div className='container-default-1209px  w-container'>
-					<div className='flex flex-col md:flex-row'>
-						<div className='gsap-about-course about-course'>
+					<div className='flex flex-col md:flex-row justify-center items-center'>
+						<div className='gsap-about-course about-course '>
 							<div className='top-content course'>
 								<h2 className='title course-page xs:text-5xl'>{course.name}</h2>
 								<p className='paragraph course-description text-xl leading-10'>
@@ -95,7 +95,7 @@ const BoostSection = ({ course }) => {
 									</div>
 								</a>
 								<div className='spacer about-course'></div>
-								<div className='flex-1 justify-start w-4/5 p-8 bg-white flex flex-col gap-6 h-min rounded-xl shadow-2xl'>
+								<div className='flex-1 ml-[2rem] justify-start w-4/5 p-8 bg-white flex flex-col gap-6 h-min rounded-xl shadow-2xl'>
 									<h4>课程章节</h4>
 									{course.chapters?.map((chpt, idx) => {
 										return (
@@ -209,40 +209,6 @@ const BoostSection = ({ course }) => {
 					</div>
 				</div>
 			</div>
-			{/*  */}
-			{/* <div
-				className='flex flex-col md:flex-row gap-20 max-w-[1200px] h-min items-center justify-center'
-			>
-				<div className='flex-1 max-w-[600px] gap-4 flex flex-col justify-start'>
-					<div>
-						<p className='text-purple-700 font-extrabold uppercase'>
-							云课堂视频教学
-						</p>
-					</div>
-					<div>
-						<h2 className='max-w-[400px] whitespace-pre-wrap break-words'>
-							{course.name}
-						</h2>
-					</div>
-					<div>
-						<p className='break-words text-6 font-medium text-gray-700'>
-							{course.description}
-						</p>
-					</div>
-				</div>
-				<div className='flex-1 justify-start w-4/5 p-8 bg-white flex flex-col gap-6 h-min rounded-xl shadow-2xl'>
-					<h5>课程章节</h5>
-					{course.chapters?.map((chpt, idx) => {
-						return (
-							<div key={chpt.ID}>
-								第{idx + 1}章：
-								<Link to={`/chapters/${chpt.ID}`}>{chpt.name}</Link>
-							</div>
-						);
-					})}
-				</div>
-			</div> */}
-			{/*  */}
 			<div className='flex flex-col gap-12 w-4/5'>
 				<div>
 					<p className='text-[14px] text-gray-400'>采用先进的字节流视频技术</p>

@@ -2,156 +2,2250 @@ import React from 'react';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 const Relative = () => {
-    return (
-        <div style={{ margin: 0, blockSize: '549.938px', borderBlockEndColor: 'rgb(70, 82, 106)', borderBlockStartColor: 'rgb(70, 82, 106)', borderBottomColor: 'rgb(70, 82, 106)', borderInlineEndColor: 'rgb(70, 82, 106)', borderInlineStartColor: 'rgb(70, 82, 106)', borderLeftColor: 'rgb(70, 82, 106)', borderRightColor: 'rgb(70, 82, 106)', borderTopColor: 'rgb(70, 82, 106)', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnRuleColor: 'rgb(70, 82, 106)', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 500, inlineSize: '832px', lineHeight: '28px', outlineColor: 'rgb(70, 82, 106)', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}
-            className={"products-wrapper"}>
-            <div style={{ blockSize: '39.9844px', borderBlockEndColor: 'rgb(70, 82, 106)', borderBlockStartColor: 'rgb(70, 82, 106)', borderBottomColor: 'rgb(70, 82, 106)', borderInlineEndColor: 'rgb(70, 82, 106)', borderInlineStartColor: 'rgb(70, 82, 106)', borderLeftColor: 'rgb(70, 82, 106)', borderRightColor: 'rgb(70, 82, 106)', borderTopColor: 'rgb(70, 82, 106)', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnRuleColor: 'rgb(70, 82, 106)', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 500, inlineSize: '832px', lineHeight: '28px', marginBlockEnd: '32px', marginBottom: '32px', marginLeft: 0, marginRight: 0, outlineColor: 'rgb(70, 82, 106)', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}
-                className={"mg-bottom-32px"}>
-                <div style={{ alignItems: 'center', blockSize: '39.9844px', borderBlockEndColor: 'rgb(70, 82, 106)', borderBlockStartColor: 'rgb(70, 82, 106)', borderBottomColor: 'rgb(70, 82, 106)', borderInlineEndColor: 'rgb(70, 82, 106)', borderInlineStartColor: 'rgb(70, 82, 106)', borderLeftColor: 'rgb(70, 82, 106)', borderRightColor: 'rgb(70, 82, 106)', borderTopColor: 'rgb(70, 82, 106)', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnGap: '20px', columnRuleColor: 'rgb(70, 82, 106)', display: 'flex', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 500, inlineSize: '832px', justifyContent: 'space-between', lineHeight: '28px', marginLeft: 0, marginRight: 0, outlineColor: 'rgb(70, 82, 106)', rowGap: '20px', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}
-                    className={"flex-title"}>
-                    <div
-                        className="flex items-baseline gap-2">
-                        <div style={{ color: 'rgb(12, 24, 48)', fontSize: '30px', fontWeight: 700, }}
-                            className={"display-3"}>推荐</div>
-                        <h3
-                            className={"display-3 mg-bottom-0"}>知识点</h3>
-                        <div style={{ borderBlockEndColor: 'rgb(12, 24, 48)', borderBlockStartColor: 'rgb(12, 24, 48)', borderBottomColor: 'rgb(12, 24, 48)', borderInlineEndColor: 'rgb(12, 24, 48)', borderInlineStartColor: 'rgb(12, 24, 48)', borderLeftColor: 'rgb(12, 24, 48)', borderRightColor: 'rgb(12, 24, 48)', borderTopColor: 'rgb(12, 24, 48)', boxSizing: 'border-box', caretColor: 'rgb(12, 24, 48)', color: 'rgb(12, 24, 48)', columnRuleColor: 'rgb(12, 24, 48)', fontFamily: 'Claritycity, sans-serif', fontSize: '30px', fontWeight: 700, inlineSize: '133.594px', lineHeight: '39.99px', marginLeft: 0, marginRight: 0, minBlockSize: 'auto', minHeight: 'auto', minInlineSize: 'auto', minWidth: 'auto', outlineColor: 'rgb(12, 24, 48)', textDecoration: 'none solid rgb(12, 24, 48)', textDecorationColor: 'rgb(12, 24, 48)', textEmphasisColor: 'rgb(12, 24, 48)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(12, 24, 48)', WebkitTextStrokeColor: 'rgb(12, 24, 48)' }}
-                            className={"display-3"}>视频</div>
-                    </div>
-                </div>
-            </div>
-            <div style={{ blockSize: '477.953px', borderBlockEndColor: 'rgb(70, 82, 106)', borderBlockStartColor: 'rgb(70, 82, 106)', borderBottomColor: 'rgb(70, 82, 106)', borderInlineEndColor: 'rgb(70, 82, 106)', borderInlineStartColor: 'rgb(70, 82, 106)', borderLeftColor: 'rgb(70, 82, 106)', borderRightColor: 'rgb(70, 82, 106)', borderTopColor: 'rgb(70, 82, 106)', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnRuleColor: 'rgb(70, 82, 106)', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 500, inlineSize: '832px', lineHeight: '28px', marginLeft: 0, marginRight: 0, outlineColor: 'rgb(70, 82, 106)', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}
-                className={"w-dyn-list"}>
-                <div style={{ blockSize: '477.953px', borderBlockEndColor: 'rgb(70, 82, 106)', borderBlockStartColor: 'rgb(70, 82, 106)', borderBottomColor: 'rgb(70, 82, 106)', borderInlineEndColor: 'rgb(70, 82, 106)', borderInlineStartColor: 'rgb(70, 82, 106)', borderLeftColor: 'rgb(70, 82, 106)', borderRightColor: 'rgb(70, 82, 106)', borderTopColor: 'rgb(70, 82, 106)', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnGap: '0px', columnRuleColor: 'rgb(70, 82, 106)', display: 'grid', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 500, gridAutoColumns: '1fr', gridTemplateColumns: '832px', gridTemplateRows: '145.984px 145.984px 145.984px', inlineSize: '832px', lineHeight: '28px', marginLeft: 0, marginRight: 0, outlineColor: 'rgb(70, 82, 106)', rowGap: '20px', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}
-                    role={"list"} className={"grid-1-column product-grid-v1 w-dyn-items"}>
-                    <div style={{ blockSize: '145.984px', borderBlockEndColor: 'rgb(70, 82, 106)', borderBlockStartColor: 'rgb(70, 82, 106)', borderBottomColor: 'rgb(70, 82, 106)', borderInlineEndColor: 'rgb(70, 82, 106)', borderInlineStartColor: 'rgb(70, 82, 106)', borderLeftColor: 'rgb(70, 82, 106)', borderRightColor: 'rgb(70, 82, 106)', borderTopColor: 'rgb(70, 82, 106)', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnRuleColor: 'rgb(70, 82, 106)', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 500, inlineSize: '832px', lineHeight: '28px', marginLeft: 0, marginRight: 0, minBlockSize: 'auto', minHeight: 'auto', minInlineSize: 'auto', minWidth: 'auto', outlineColor: 'rgb(70, 82, 106)', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}
-                        role={"listitem"} className={"w-dyn-item"}>
-                        <div style={{ alignItems: 'center', backgroundColor: 'rgb(255, 255, 255)', blockSize: '145.984px', borderBlockEndColor: 'rgb(236, 242, 255)', borderBlockEndStyle: 'solid', borderBlockEndWidth: '1px', borderBlockStartColor: 'rgb(236, 242, 255)', borderBlockStartStyle: 'solid', borderBlockStartWidth: '1px', borderBottomColor: 'rgb(236, 242, 255)', borderBottomLeftRadius: '18px', borderBottomRightRadius: '18px', borderBottomStyle: 'solid', borderBottomWidth: '1px', borderEndEndRadius: '18px', borderEndStartRadius: '18px', borderInlineEndColor: 'rgb(236, 242, 255)', borderInlineEndStyle: 'solid', borderInlineEndWidth: '1px', borderInlineStartColor: 'rgb(236, 242, 255)', borderInlineStartStyle: 'solid', borderInlineStartWidth: '1px', borderLeftColor: 'rgb(236, 242, 255)', borderLeftStyle: 'solid', borderLeftWidth: '1px', borderRightColor: 'rgb(236, 242, 255)', borderRightStyle: 'solid', borderRightWidth: '1px', borderStartEndRadius: '18px', borderStartStartRadius: '18px', borderTopColor: 'rgb(236, 242, 255)', borderTopLeftRadius: '18px', borderTopRightRadius: '18px', borderTopStyle: 'solid', borderTopWidth: '1px', boxShadow: 'rgba(36, 65, 122, 0.08) 0px 0px 2px 0px, rgba(36, 65, 122, 0.08) 0px 2px 6px 0px', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnGap: '24px', columnRuleColor: 'rgb(70, 82, 106)', display: 'grid', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 500, gridAutoColumns: '1fr', gridTemplateColumns: '555.156px 170.844px', gridTemplateRows: '87.9844px', inlineSize: '832px', justifyContent: 'space-between', lineHeight: '28px', marginLeft: 0, marginRight: 0, outlineColor: 'rgb(70, 82, 106)', overflowX: 'hidden', overflowY: 'hidden', paddingBlockEnd: '28px', paddingBlockStart: '28px', paddingBottom: '28px', paddingInlineEnd: '40px', paddingInlineStart: '40px', paddingLeft: '40px', paddingRight: '40px', paddingTop: '28px', rowGap: '20px', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', transitionDelay: '0s, 0s', transitionDuration: '0.3s, 0.3s', transitionProperty: 'transform, color', transitionTimingFunction: 'ease, ease', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}
-                            className={"card product-card-v1"}>
-                            <div style={{ alignItems: 'center', blockSize: '87.9844px', borderBlockEndColor: 'rgb(70, 82, 106)', borderBlockStartColor: 'rgb(70, 82, 106)', borderBottomColor: 'rgb(70, 82, 106)', borderInlineEndColor: 'rgb(70, 82, 106)', borderInlineStartColor: 'rgb(70, 82, 106)', borderLeftColor: 'rgb(70, 82, 106)', borderRightColor: 'rgb(70, 82, 106)', borderTopColor: 'rgb(70, 82, 106)', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnGap: '16px', columnRuleColor: 'rgb(70, 82, 106)', display: 'flex', flexWrap: 'wrap', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 500, inlineSize: '555.156px', lineHeight: '28px', marginLeft: 0, marginRight: 0, minBlockSize: 'auto', minHeight: 'auto', minInlineSize: 'auto', minWidth: 'auto', outlineColor: 'rgb(70, 82, 106)', rowGap: '16px', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}
-                                className={"product---description"}>
-                                <div
-                                    style={{ blockSize: '80px', borderBlockEndColor: 'rgb(70, 82, 106)', borderBlockStartColor: 'rgb(70, 82, 106)', borderBottomColor: 'rgb(70, 82, 106)', borderInlineEndColor: 'rgb(70, 82, 106)', borderInlineStartColor: 'rgb(70, 82, 106)', borderLeftColor: 'rgb(70, 82, 106)', borderRightColor: 'rgb(70, 82, 106)', borderTopColor: 'rgb(70, 82, 106)', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnRuleColor: 'rgb(70, 82, 106)', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 500, inlineSize: '80px', lineHeight: '28px', marginLeft: 0, marginRight: 0, minBlockSize: 'auto', minHeight: 'auto', minInlineSize: 'auto', minWidth: 'auto', outlineColor: 'rgb(70, 82, 106)', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}>
-                                    <img style={{ blockSize: '80px', borderBlockEndColor: 'rgb(255, 255, 255)', borderBlockEndStyle: 'solid', borderBlockEndWidth: '3px', borderBlockStartColor: 'rgb(255, 255, 255)', borderBlockStartStyle: 'solid', borderBlockStartWidth: '3px', borderBottomColor: 'rgb(255, 255, 255)', borderBottomLeftRadius: '100%', borderBottomRightRadius: '100%', borderBottomStyle: 'solid', borderBottomWidth: '3px', borderEndEndRadius: '100%', borderEndStartRadius: '100%', borderInlineEndColor: 'rgb(255, 255, 255)', borderInlineEndStyle: 'solid', borderInlineEndWidth: '3px', borderInlineStartColor: 'rgb(255, 255, 255)', borderInlineStartStyle: 'solid', borderInlineStartWidth: '3px', borderLeftColor: 'rgb(255, 255, 255)', borderLeftStyle: 'solid', borderLeftWidth: '3px', borderRightColor: 'rgb(255, 255, 255)', borderRightStyle: 'solid', borderRightWidth: '3px', borderStartEndRadius: '100%', borderStartStartRadius: '100%', borderTopColor: 'rgb(255, 255, 255)', borderTopLeftRadius: '100%', borderTopRightRadius: '100%', borderTopStyle: 'solid', borderTopWidth: '3px', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnRuleColor: 'rgb(70, 82, 106)', display: 'inline-block', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 500, inlineSize: '80px', lineHeight: '28px', marginLeft: 0, marginRight: 0, maxBlockSize: '80px', maxHeight: '80px', maxInlineSize: '80px', maxWidth: '80px', outlineColor: 'rgb(70, 82, 106)', overflowX: 'hidden', overflowY: 'hidden', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', transform: 'matrix(1, 0, 0, 1, 0, 0)', transformOrigin: '40px 40px', verticalAlign: 'middle', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)', width: '80px', height: '80px' }}
-                                        src={"https://assets.website-files.com/63bed0273cfe5e611e742359/63c8302dbcdbf22c146c7e56_corporate-featured-image-aggregator-x-webflow-template.svg"}
-                                        alt={"Corporate"} className={"avatar-circle _04"}></img></div>
-                                <div
-                                    style={{ blockSize: '87.9844px', borderBlockEndColor: 'rgb(70, 82, 106)', borderBlockStartColor: 'rgb(70, 82, 106)', borderBottomColor: 'rgb(70, 82, 106)', borderInlineEndColor: 'rgb(70, 82, 106)', borderInlineStartColor: 'rgb(70, 82, 106)', borderLeftColor: 'rgb(70, 82, 106)', borderRightColor: 'rgb(70, 82, 106)', borderTopColor: 'rgb(70, 82, 106)', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnRuleColor: 'rgb(70, 82, 106)', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 500, inlineSize: '299.109px', lineHeight: '28px', marginLeft: 0, marginRight: 0, minBlockSize: 'auto', minHeight: 'auto', minInlineSize: 'auto', minWidth: 'auto', outlineColor: 'rgb(70, 82, 106)', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}>
-                                    <div style={{ blockSize: '22px', borderBlockEndColor: 'rgb(12, 24, 48)', borderBlockStartColor: 'rgb(12, 24, 48)', borderBottomColor: 'rgb(12, 24, 48)', borderInlineEndColor: 'rgb(12, 24, 48)', borderInlineStartColor: 'rgb(12, 24, 48)', borderLeftColor: 'rgb(12, 24, 48)', borderRightColor: 'rgb(12, 24, 48)', borderTopColor: 'rgb(12, 24, 48)', boxSizing: 'border-box', caretColor: 'rgb(12, 24, 48)', color: 'rgb(12, 24, 48)', columnRuleColor: 'rgb(12, 24, 48)', display: 'inline-block', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 700, inlineSize: '80.9219px', lineHeight: '22px', marginLeft: 0, marginRight: 0, outlineColor: 'rgb(12, 24, 48)', textDecoration: 'none solid rgb(12, 24, 48)', textDecorationColor: 'rgb(12, 24, 48)', textEmphasisColor: 'rgb(12, 24, 48)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(12, 24, 48)', WebkitTextStrokeColor: 'rgb(12, 24, 48)' }}
-                                        className={"product---name"}>Corporate</div>
-                                    <div
-                                        style={{ blockSize: '23.9844px', borderBlockEndColor: 'rgb(70, 82, 106)', borderBlockStartColor: 'rgb(70, 82, 106)', borderBottomColor: 'rgb(70, 82, 106)', borderInlineEndColor: 'rgb(70, 82, 106)', borderInlineStartColor: 'rgb(70, 82, 106)', borderLeftColor: 'rgb(70, 82, 106)', borderRightColor: 'rgb(70, 82, 106)', borderTopColor: 'rgb(70, 82, 106)', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnRuleColor: 'rgb(70, 82, 106)', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 500, inlineSize: '299.109px', lineHeight: '28px', marginLeft: 0, marginRight: 0, outlineColor: 'rgb(70, 82, 106)', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}>
-                                        <p style={{ blockSize: '23.9844px', borderBlockEndColor: 'rgb(70, 82, 106)', borderBlockStartColor: 'rgb(70, 82, 106)', borderBottomColor: 'rgb(70, 82, 106)', borderInlineEndColor: 'rgb(70, 82, 106)', borderInlineStartColor: 'rgb(70, 82, 106)', borderLeftColor: 'rgb(70, 82, 106)', borderRightColor: 'rgb(70, 82, 106)', borderTopColor: 'rgb(70, 82, 106)', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnRuleColor: 'rgb(70, 82, 106)', fontFamily: 'Claritycity, sans-serif', fontSize: '14px', fontWeight: 500, inlineSize: '299.109px', lineHeight: '23.996px', marginBlockEnd: '10px', marginBlockStart: '0px', marginBottom: '10px', marginLeft: 0, marginRight: 0, marginTop: '0px', outlineColor: 'rgb(70, 82, 106)', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}
-                                            className={"paragraph-small medium mg-bottom-10px"}>At ultricies lectus viverra
-                                            euismod phasellus.</p>
-                                    </div>
-                                    <div style={{ alignItems: 'center', blockSize: '26px', borderBlockEndColor: 'rgb(70, 82, 106)', borderBlockStartColor: 'rgb(70, 82, 106)', borderBottomColor: 'rgb(70, 82, 106)', borderInlineEndColor: 'rgb(70, 82, 106)', borderInlineStartColor: 'rgb(70, 82, 106)', borderLeftColor: 'rgb(70, 82, 106)', borderRightColor: 'rgb(70, 82, 106)', borderTopColor: 'rgb(70, 82, 106)', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnGap: '8px', columnRuleColor: 'rgb(70, 82, 106)', display: 'flex', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 500, inlineSize: '299.109px', justifyContent: 'flex-start', lineHeight: '28px', marginLeft: 0, marginRight: 0, outlineColor: 'rgb(70, 82, 106)', rowGap: '8px', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}
-                                        className={"product---tag-wrapper"}>
-                                        <div style={{ backgroundColor: 'rgb(236, 242, 255)', blockSize: '26px', borderBlockEndColor: 'rgb(255, 255, 255)', borderBlockEndStyle: 'solid', borderBlockEndWidth: '1px', borderBlockStartColor: 'rgb(255, 255, 255)', borderBlockStartStyle: 'solid', borderBlockStartWidth: '1px', borderBottomColor: 'rgb(255, 255, 255)', borderBottomLeftRadius: '40px', borderBottomRightRadius: '40px', borderBottomStyle: 'solid', borderBottomWidth: '1px', borderEndEndRadius: '40px', borderEndStartRadius: '40px', borderInlineEndColor: 'rgb(255, 255, 255)', borderInlineEndStyle: 'solid', borderInlineEndWidth: '1px', borderInlineStartColor: 'rgb(255, 255, 255)', borderInlineStartStyle: 'solid', borderInlineStartWidth: '1px', borderLeftColor: 'rgb(255, 255, 255)', borderLeftStyle: 'solid', borderLeftWidth: '1px', borderRightColor: 'rgb(255, 255, 255)', borderRightStyle: 'solid', borderRightWidth: '1px', borderStartEndRadius: '40px', borderStartStartRadius: '40px', borderTopColor: 'rgb(255, 255, 255)', borderTopLeftRadius: '40px', borderTopRightRadius: '40px', borderTopStyle: 'solid', borderTopWidth: '1px', boxSizing: 'border-box', caretColor: 'rgb(81, 120, 255)', color: 'rgb(81, 120, 255)', columnRuleColor: 'rgb(81, 120, 255)', fontFamily: 'Claritycity, sans-serif', fontSize: '12px', fontWeight: 600, inlineSize: '73.5312px', lineHeight: '12px', marginLeft: 0, marginRight: 0, minBlockSize: 'auto', minHeight: 'auto', minInlineSize: 'auto', minWidth: 'auto', outlineColor: 'rgb(81, 120, 255)', paddingBlockEnd: '6px', paddingBlockStart: '6px', paddingBottom: '6px', paddingInlineEnd: '10px', paddingInlineStart: '10px', paddingLeft: '10px', paddingRight: '10px', paddingTop: '6px', textAlign: 'center', textDecoration: 'none solid rgb(81, 120, 255)', textDecorationColor: 'rgb(81, 120, 255)', textEmphasisColor: 'rgb(81, 120, 255)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(81, 120, 255)', WebkitTextStrokeColor: 'rgb(81, 120, 255)' }}
-                                            className={"badge-primary small"}>Business</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div style={{ alignItems: 'center', blockSize: '38.0469px', borderBlockEndColor: 'rgb(70, 82, 106)', borderBlockStartColor: 'rgb(70, 82, 106)', borderBottomColor: 'rgb(70, 82, 106)', borderInlineEndColor: 'rgb(70, 82, 106)', borderInlineStartColor: 'rgb(70, 82, 106)', borderLeftColor: 'rgb(70, 82, 106)', borderRightColor: 'rgb(70, 82, 106)', borderTopColor: 'rgb(70, 82, 106)', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnGap: '16px', columnRuleColor: 'rgb(70, 82, 106)', display: 'flex', flexWrap: 'wrap', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 500, inlineSize: '170.844px', justifyContent: 'flex-end', lineHeight: '28px', marginLeft: 0, marginRight: 0, minBlockSize: 'auto', minHeight: 'auto', minInlineSize: 'auto', minWidth: 'auto', outlineColor: 'rgb(70, 82, 106)', rowGap: '16px', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}
-                                className={"product-card---links-wrapper"}><a
-                                    style={{ blockSize: '16px', borderBlockEndColor: 'rgb(12, 24, 48)', borderBlockStartColor: 'rgb(12, 24, 48)', borderBottomColor: 'rgb(12, 24, 48)', borderInlineEndColor: 'rgb(12, 24, 48)', borderInlineStartColor: 'rgb(12, 24, 48)', borderLeftColor: 'rgb(12, 24, 48)', borderRightColor: 'rgb(12, 24, 48)', borderTopColor: 'rgb(12, 24, 48)', boxSizing: 'border-box', caretColor: 'rgb(12, 24, 48)', color: 'rgb(12, 24, 48)', columnRuleColor: 'rgb(12, 24, 48)', cursor: 'pointer', display: 'block', fontFamily: 'Claritycity, sans-serif', fontSize: '14px', fontWeight: 600, inlineSize: '78.8125px', lineHeight: '16.002px', marginLeft: 0, marginRight: 0, minBlockSize: 'auto', minHeight: 'auto', minInlineSize: 'auto', minWidth: 'auto', outlineColor: 'rgb(12, 24, 48)', textDecoration: 'none', textDecorationColor: 'rgb(12, 24, 48)', textEmphasisColor: 'rgb(12, 24, 48)', textSizeAdjust: '100%', transitionDuration: '0.3s', transitionProperty: 'color', WebkitTextFillColor: 'rgb(12, 24, 48)', WebkitTextStrokeColor: 'rgb(12, 24, 48)' }}
-                                    href={"https://aggregatortemplate.webflow.io/products/corporate"}
-                                    className={"product---learn-more-link"}>Learn more</a><a
-                                        style={{ alignItems: 'center', backgroundColor: 'rgb(81, 120, 255)', blockSize: '38.0469px', borderBlockEndColor: 'rgb(81, 120, 255)', borderBlockEndStyle: 'solid', borderBlockEndWidth: '1px', borderBlockStartColor: 'rgb(81, 120, 255)', borderBlockStartStyle: 'solid', borderBlockStartWidth: '1px', borderBottomColor: 'rgb(81, 120, 255)', borderBottomLeftRadius: '96px', borderBottomRightRadius: '96px', borderBottomStyle: 'solid', borderBottomWidth: '1px', borderEndEndRadius: '96px', borderEndStartRadius: '96px', borderInlineEndColor: 'rgb(81, 120, 255)', borderInlineEndStyle: 'solid', borderInlineEndWidth: '1px', borderInlineStartColor: 'rgb(81, 120, 255)', borderInlineStartStyle: 'solid', borderInlineStartWidth: '1px', borderLeftColor: 'rgb(81, 120, 255)', borderLeftStyle: 'solid', borderLeftWidth: '1px', borderRightColor: 'rgb(81, 120, 255)', borderRightStyle: 'solid', borderRightWidth: '1px', borderStartEndRadius: '96px', borderStartStartRadius: '96px', borderTopColor: 'rgb(81, 120, 255)', borderTopLeftRadius: '96px', borderTopRightRadius: '96px', borderTopStyle: 'solid', borderTopWidth: '1px', boxSizing: 'border-box', caretColor: 'rgb(255, 255, 255)', color: 'rgb(255, 255, 255)', columnGap: '0px', columnRuleColor: 'rgb(255, 255, 255)', cursor: 'pointer', display: 'flex', fontFamily: 'Claritycity, sans-serif', fontSize: '14px', fontWeight: 600, inlineSize: '76.0312px', justifyContent: 'center', lineHeight: '16.058px', marginLeft: 0, marginRight: 0, minBlockSize: 'auto', minHeight: 'auto', minInlineSize: 'auto', minWidth: 'auto', outlineColor: 'rgb(255, 255, 255)', paddingBlockEnd: '10px', paddingBlockStart: '10px', paddingBottom: '10px', paddingInlineEnd: '12px', paddingInlineStart: '12px', paddingLeft: '12px', paddingRight: '12px', paddingTop: '10px', rowGap: '6px', textAlign: 'center', textDecoration: 'none', textDecorationColor: 'rgb(255, 255, 255)', textEmphasisColor: 'rgb(255, 255, 255)', textSizeAdjust: '100%', transitionDelay: '0s, 0s, 0s, 0s', transitionDuration: '0.3s, 0.3s, 0.3s, 0.3s', transitionProperty: 'border-color, background-color, transform, color', transitionTimingFunction: 'ease, ease, ease, ease', WebkitTextFillColor: 'rgb(255, 255, 255)', WebkitTextStrokeColor: 'rgb(255, 255, 255)' }}
-                                        data-w-id={"7e6fe7eb-520f-397f-08d0-a9d5878644c4"}
-                                        href={"https://corporatetemplates.webflow.io/"} target={"_blank"} className="btn-primary btn-visit w-button">查看<span
-                                            style={{ blockSize: '16.0469px', color: 'rgb(255, 255, 255)', cursor: 'pointer', display: 'block', fontSize: '14px', fontWeight: 600, inlineSize: '13.4531px', lineHeight: '16.058px', marginInlineStart: '6px', marginLeft: 0, marginRight: 0, minBlockSize: 'auto', minHeight: 'auto', minInlineSize: 'auto', minWidth: 'auto', outlineColor: 'rgb(255, 255, 255)', textAlign: 'center', textDecoration: 'none solid rgb(255, 255, 255)', textDecorationColor: 'rgb(255, 255, 255)', textEmphasisColor: 'rgb(255, 255, 255)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(255, 255, 255)', WebkitTextStrokeColor: 'rgb(255, 255, 255)' }}
-                                            className={"line-rounded-icon link-icon-right"}><ArrowForwardIcon /> </span></a></div>
-                        </div>
-                    </div>
-                    <div style={{ blockSize: '145.984px', color: 'rgb(70, 82, 106)', fontSize: '16px', fontWeight: 500, inlineSize: '832px', lineHeight: '28px', marginLeft: 0, marginRight: 0, minBlockSize: 'auto', minHeight: 'auto', minInlineSize: 'auto', minWidth: 'auto', outlineColor: 'rgb(70, 82, 106)', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}
-                        role={"listitem"} className={"w-dyn-item"}>
-                        <div style={{ alignItems: 'center', backgroundColor: 'rgb(255, 255, 255)', blockSize: '145.984px', borderBlockEndColor: 'rgb(236, 242, 255)', borderBlockEndStyle: 'solid', borderBlockEndWidth: '1px', borderBlockStartColor: 'rgb(236, 242, 255)', borderBlockStartStyle: 'solid', borderBlockStartWidth: '1px', borderBottomColor: 'rgb(236, 242, 255)', borderBottomLeftRadius: '18px', borderBottomRightRadius: '18px', borderBottomStyle: 'solid', borderBottomWidth: '1px', borderEndEndRadius: '18px', borderEndStartRadius: '18px', borderInlineEndColor: 'rgb(236, 242, 255)', borderInlineEndStyle: 'solid', borderInlineEndWidth: '1px', borderInlineStartColor: 'rgb(236, 242, 255)', borderInlineStartStyle: 'solid', borderInlineStartWidth: '1px', borderLeftColor: 'rgb(236, 242, 255)', borderLeftStyle: 'solid', borderLeftWidth: '1px', borderRightColor: 'rgb(236, 242, 255)', borderRightStyle: 'solid', borderRightWidth: '1px', borderStartEndRadius: '18px', borderStartStartRadius: '18px', borderTopColor: 'rgb(236, 242, 255)', borderTopLeftRadius: '18px', borderTopRightRadius: '18px', borderTopStyle: 'solid', borderTopWidth: '1px', boxShadow: 'rgba(36, 65, 122, 0.08) 0px 0px 2px 0px, rgba(36, 65, 122, 0.08) 0px 2px 6px 0px', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnGap: '24px', columnRuleColor: 'rgb(70, 82, 106)', display: 'grid', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 500, gridAutoColumns: '1fr', gridTemplateColumns: '555.156px 170.844px', gridTemplateRows: '87.9844px', inlineSize: '832px', justifyContent: 'space-between', lineHeight: '28px', marginLeft: 0, marginRight: 0, outlineColor: 'rgb(70, 82, 106)', overflowX: 'hidden', overflowY: 'hidden', paddingBlockEnd: '28px', paddingBlockStart: '28px', paddingBottom: '28px', paddingInlineEnd: '40px', paddingInlineStart: '40px', paddingLeft: '40px', paddingRight: '40px', paddingTop: '28px', rowGap: '20px', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', transitionDelay: '0s, 0s', transitionDuration: '0.3s, 0.3s', transitionProperty: 'transform, color', transitionTimingFunction: 'ease, ease', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}
-                            className={"card product-card-v1"}>
-                            <div style={{ alignItems: 'center', blockSize: '87.9844px', borderBlockEndColor: 'rgb(70, 82, 106)', borderBlockStartColor: 'rgb(70, 82, 106)', borderBottomColor: 'rgb(70, 82, 106)', borderInlineEndColor: 'rgb(70, 82, 106)', borderInlineStartColor: 'rgb(70, 82, 106)', borderLeftColor: 'rgb(70, 82, 106)', borderRightColor: 'rgb(70, 82, 106)', borderTopColor: 'rgb(70, 82, 106)', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnGap: '16px', columnRuleColor: 'rgb(70, 82, 106)', display: 'flex', flexWrap: 'wrap', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 500, inlineSize: '555.156px', lineHeight: '28px', marginLeft: 0, marginRight: 0, minBlockSize: 'auto', minHeight: 'auto', minInlineSize: 'auto', minWidth: 'auto', outlineColor: 'rgb(70, 82, 106)', rowGap: '16px', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}
-                                className={"product---description"}>
-                                <div
-                                    style={{ blockSize: '80px', borderBlockEndColor: 'rgb(70, 82, 106)', borderBlockStartColor: 'rgb(70, 82, 106)', borderBottomColor: 'rgb(70, 82, 106)', borderInlineEndColor: 'rgb(70, 82, 106)', borderInlineStartColor: 'rgb(70, 82, 106)', borderLeftColor: 'rgb(70, 82, 106)', borderRightColor: 'rgb(70, 82, 106)', borderTopColor: 'rgb(70, 82, 106)', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnRuleColor: 'rgb(70, 82, 106)', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 500, inlineSize: '80px', lineHeight: '28px', marginLeft: 0, marginRight: 0, minBlockSize: 'auto', minHeight: 'auto', minInlineSize: 'auto', minWidth: 'auto', outlineColor: 'rgb(70, 82, 106)', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}>
-                                    <img style={{ blockSize: '80px', borderBlockEndColor: 'rgb(255, 255, 255)', borderBlockEndStyle: 'solid', borderBlockEndWidth: '3px', borderBlockStartColor: 'rgb(255, 255, 255)', borderBlockStartStyle: 'solid', borderBlockStartWidth: '3px', borderBottomColor: 'rgb(255, 255, 255)', borderBottomLeftRadius: '100%', borderBottomRightRadius: '100%', borderBottomStyle: 'solid', borderBottomWidth: '3px', borderEndEndRadius: '100%', borderEndStartRadius: '100%', borderInlineEndColor: 'rgb(255, 255, 255)', borderInlineEndStyle: 'solid', borderInlineEndWidth: '3px', borderInlineStartColor: 'rgb(255, 255, 255)', borderInlineStartStyle: 'solid', borderInlineStartWidth: '3px', borderLeftColor: 'rgb(255, 255, 255)', borderLeftStyle: 'solid', borderLeftWidth: '3px', borderRightColor: 'rgb(255, 255, 255)', borderRightStyle: 'solid', borderRightWidth: '3px', borderStartEndRadius: '100%', borderStartStartRadius: '100%', borderTopColor: 'rgb(255, 255, 255)', borderTopLeftRadius: '100%', borderTopRightRadius: '100%', borderTopStyle: 'solid', borderTopWidth: '3px', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnRuleColor: 'rgb(70, 82, 106)', display: 'inline-block', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 500, inlineSize: '80px', lineHeight: '28px', marginLeft: 0, marginRight: 0, maxBlockSize: '80px', maxHeight: '80px', maxInlineSize: '80px', maxWidth: '80px', outlineColor: 'rgb(70, 82, 106)', overflowX: 'hidden', overflowY: 'hidden', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', transform: 'matrix(1, 0, 0, 1, 0, 0)', transformOrigin: '40px 40px', verticalAlign: 'middle', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)', width: '80px', height: '80px' }}
-                                        src={"https://assets.website-files.com/63bed0273cfe5e611e742359/63c83037e8af0e57d0f6776b_starup-featured-image-aggregator-x-webflow-template.svg"}
-                                        alt={"Starup"} className={"avatar-circle _04"}></img></div>
-                                <div
-                                    style={{ blockSize: '87.9844px', borderBlockEndColor: 'rgb(70, 82, 106)', borderBlockStartColor: 'rgb(70, 82, 106)', borderBottomColor: 'rgb(70, 82, 106)', borderInlineEndColor: 'rgb(70, 82, 106)', borderInlineStartColor: 'rgb(70, 82, 106)', borderLeftColor: 'rgb(70, 82, 106)', borderRightColor: 'rgb(70, 82, 106)', borderTopColor: 'rgb(70, 82, 106)', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnRuleColor: 'rgb(70, 82, 106)', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 500, inlineSize: '395.078px', lineHeight: '28px', marginLeft: 0, marginRight: 0, minBlockSize: 'auto', minHeight: 'auto', minInlineSize: 'auto', minWidth: 'auto', outlineColor: 'rgb(70, 82, 106)', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}>
-                                    <div style={{ blockSize: '22px', borderBlockEndColor: 'rgb(12, 24, 48)', borderBlockStartColor: 'rgb(12, 24, 48)', borderBottomColor: 'rgb(12, 24, 48)', borderInlineEndColor: 'rgb(12, 24, 48)', borderInlineStartColor: 'rgb(12, 24, 48)', borderLeftColor: 'rgb(12, 24, 48)', borderRightColor: 'rgb(12, 24, 48)', borderTopColor: 'rgb(12, 24, 48)', boxSizing: 'border-box', caretColor: 'rgb(12, 24, 48)', color: 'rgb(12, 24, 48)', columnRuleColor: 'rgb(12, 24, 48)', display: 'inline-block', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 700, inlineSize: '53.4062px', lineHeight: '22px', marginLeft: 0, marginRight: 0, outlineColor: 'rgb(12, 24, 48)', textDecoration: 'none solid rgb(12, 24, 48)', textDecorationColor: 'rgb(12, 24, 48)', textEmphasisColor: 'rgb(12, 24, 48)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(12, 24, 48)', WebkitTextStrokeColor: 'rgb(12, 24, 48)' }}
-                                        className={"product---name"}>Starup</div>
-                                    <div
-                                        style={{ blockSize: '23.9844px', borderBlockEndColor: 'rgb(70, 82, 106)', borderBlockStartColor: 'rgb(70, 82, 106)', borderBottomColor: 'rgb(70, 82, 106)', borderInlineEndColor: 'rgb(70, 82, 106)', borderInlineStartColor: 'rgb(70, 82, 106)', borderLeftColor: 'rgb(70, 82, 106)', borderRightColor: 'rgb(70, 82, 106)', borderTopColor: 'rgb(70, 82, 106)', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnRuleColor: 'rgb(70, 82, 106)', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 500, inlineSize: '395.078px', lineHeight: '28px', marginLeft: 0, marginRight: 0, outlineColor: 'rgb(70, 82, 106)', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}>
-                                        <p style={{ blockSize: '23.9844px', borderBlockEndColor: 'rgb(70, 82, 106)', borderBlockStartColor: 'rgb(70, 82, 106)', borderBottomColor: 'rgb(70, 82, 106)', borderInlineEndColor: 'rgb(70, 82, 106)', borderInlineStartColor: 'rgb(70, 82, 106)', borderLeftColor: 'rgb(70, 82, 106)', borderRightColor: 'rgb(70, 82, 106)', borderTopColor: 'rgb(70, 82, 106)', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnRuleColor: 'rgb(70, 82, 106)', fontFamily: 'Claritycity, sans-serif', fontSize: '14px', fontWeight: 500, inlineSize: '395.078px', lineHeight: '23.996px', marginBlockEnd: '10px', marginBlockStart: '0px', marginBottom: '10px', marginLeft: 0, marginRight: 0, marginTop: '0px', outlineColor: 'rgb(70, 82, 106)', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}
-                                            className={"paragraph-small medium mg-bottom-10px"}>Nisl eget elementum semper
-                                            tristique in nisl nunc quisque.</p>
-                                    </div>
-                                    <div style={{ alignItems: 'center', blockSize: '26px', borderBlockEndColor: 'rgb(70, 82, 106)', borderBlockStartColor: 'rgb(70, 82, 106)', borderBottomColor: 'rgb(70, 82, 106)', borderInlineEndColor: 'rgb(70, 82, 106)', borderInlineStartColor: 'rgb(70, 82, 106)', borderLeftColor: 'rgb(70, 82, 106)', borderRightColor: 'rgb(70, 82, 106)', borderTopColor: 'rgb(70, 82, 106)', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnGap: '8px', columnRuleColor: 'rgb(70, 82, 106)', display: 'flex', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 500, inlineSize: '395.078px', justifyContent: 'flex-start', lineHeight: '28px', marginLeft: 0, marginRight: 0, outlineColor: 'rgb(70, 82, 106)', rowGap: '8px', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}
-                                        className={"product---tag-wrapper"}>
-                                        <div style={{ backgroundColor: 'rgb(236, 242, 255)', blockSize: '26px', borderBlockEndColor: 'rgb(255, 255, 255)', borderBlockEndStyle: 'solid', borderBlockEndWidth: '1px', borderBlockStartColor: 'rgb(255, 255, 255)', borderBlockStartStyle: 'solid', borderBlockStartWidth: '1px', borderBottomColor: 'rgb(255, 255, 255)', borderBottomLeftRadius: '40px', borderBottomRightRadius: '40px', borderBottomStyle: 'solid', borderBottomWidth: '1px', borderEndEndRadius: '40px', borderEndStartRadius: '40px', borderInlineEndColor: 'rgb(255, 255, 255)', borderInlineEndStyle: 'solid', borderInlineEndWidth: '1px', borderInlineStartColor: 'rgb(255, 255, 255)', borderInlineStartStyle: 'solid', borderInlineStartWidth: '1px', borderLeftColor: 'rgb(255, 255, 255)', borderLeftStyle: 'solid', borderLeftWidth: '1px', borderRightColor: 'rgb(255, 255, 255)', borderRightStyle: 'solid', borderRightWidth: '1px', borderStartEndRadius: '40px', borderStartStartRadius: '40px', borderTopColor: 'rgb(255, 255, 255)', borderTopLeftRadius: '40px', borderTopRightRadius: '40px', borderTopStyle: 'solid', borderTopWidth: '1px', boxSizing: 'border-box', caretColor: 'rgb(81, 120, 255)', color: 'rgb(81, 120, 255)', columnRuleColor: 'rgb(81, 120, 255)', fontFamily: 'Claritycity, sans-serif', fontSize: '12px', fontWeight: 600, inlineSize: '73.5312px', lineHeight: '12px', marginLeft: 0, marginRight: 0, minBlockSize: 'auto', minHeight: 'auto', minInlineSize: 'auto', minWidth: 'auto', outlineColor: 'rgb(81, 120, 255)', paddingBlockEnd: '6px', paddingBlockStart: '6px', paddingBottom: '6px', paddingInlineEnd: '10px', paddingInlineStart: '10px', paddingLeft: '10px', paddingRight: '10px', paddingTop: '6px', textAlign: 'center', textDecoration: 'none solid rgb(81, 120, 255)', textDecorationColor: 'rgb(81, 120, 255)', textEmphasisColor: 'rgb(81, 120, 255)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(81, 120, 255)', WebkitTextStrokeColor: 'rgb(81, 120, 255)' }}
-                                            className={"badge-primary small"}>Business</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div style={{ alignItems: 'center', blockSize: '38.0469px', borderBlockEndColor: 'rgb(70, 82, 106)', borderBlockStartColor: 'rgb(70, 82, 106)', borderBottomColor: 'rgb(70, 82, 106)', borderInlineEndColor: 'rgb(70, 82, 106)', borderInlineStartColor: 'rgb(70, 82, 106)', borderLeftColor: 'rgb(70, 82, 106)', borderRightColor: 'rgb(70, 82, 106)', borderTopColor: 'rgb(70, 82, 106)', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnGap: '16px', columnRuleColor: 'rgb(70, 82, 106)', display: 'flex', flexWrap: 'wrap', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 500, inlineSize: '170.844px', justifyContent: 'flex-end', lineHeight: '28px', marginLeft: 0, marginRight: 0, minBlockSize: 'auto', minHeight: 'auto', minInlineSize: 'auto', minWidth: 'auto', outlineColor: 'rgb(70, 82, 106)', rowGap: '16px', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}
-                                className={"product-card---links-wrapper"}><a
-                                    style={{ blockSize: '16px', borderBlockEndColor: 'rgb(12, 24, 48)', borderBlockStartColor: 'rgb(12, 24, 48)', borderBottomColor: 'rgb(12, 24, 48)', borderInlineEndColor: 'rgb(12, 24, 48)', borderInlineStartColor: 'rgb(12, 24, 48)', borderLeftColor: 'rgb(12, 24, 48)', borderRightColor: 'rgb(12, 24, 48)', borderTopColor: 'rgb(12, 24, 48)', boxSizing: 'border-box', caretColor: 'rgb(12, 24, 48)', color: 'rgb(12, 24, 48)', columnRuleColor: 'rgb(12, 24, 48)', cursor: 'pointer', display: 'block', fontFamily: 'Claritycity, sans-serif', fontSize: '14px', fontWeight: 600, inlineSize: '78.8125px', lineHeight: '16.002px', marginLeft: 0, marginRight: 0, minBlockSize: 'auto', minHeight: 'auto', minInlineSize: 'auto', minWidth: 'auto', outlineColor: 'rgb(12, 24, 48)', textDecoration: 'none', textDecorationColor: 'rgb(12, 24, 48)', textEmphasisColor: 'rgb(12, 24, 48)', textSizeAdjust: '100%', transitionDuration: '0.3s', transitionProperty: 'color', WebkitTextFillColor: 'rgb(12, 24, 48)', WebkitTextStrokeColor: 'rgb(12, 24, 48)' }}
-                                    href={"https://aggregatortemplate.webflow.io/products/starup"}
-                                    className={"product---learn-more-link"}>Learn more</a><a
-                                        style={{ alignItems: 'center', backgroundColor: 'rgb(81, 120, 255)', blockSize: '38.0469px', borderBlockEndColor: 'rgb(81, 120, 255)', borderBlockEndStyle: 'solid', borderBlockEndWidth: '1px', borderBlockStartColor: 'rgb(81, 120, 255)', borderBlockStartStyle: 'solid', borderBlockStartWidth: '1px', borderBottomColor: 'rgb(81, 120, 255)', borderBottomLeftRadius: '96px', borderBottomRightRadius: '96px', borderBottomStyle: 'solid', borderBottomWidth: '1px', borderEndEndRadius: '96px', borderEndStartRadius: '96px', borderInlineEndColor: 'rgb(81, 120, 255)', borderInlineEndStyle: 'solid', borderInlineEndWidth: '1px', borderInlineStartColor: 'rgb(81, 120, 255)', borderInlineStartStyle: 'solid', borderInlineStartWidth: '1px', borderLeftColor: 'rgb(81, 120, 255)', borderLeftStyle: 'solid', borderLeftWidth: '1px', borderRightColor: 'rgb(81, 120, 255)', borderRightStyle: 'solid', borderRightWidth: '1px', borderStartEndRadius: '96px', borderStartStartRadius: '96px', borderTopColor: 'rgb(81, 120, 255)', borderTopLeftRadius: '96px', borderTopRightRadius: '96px', borderTopStyle: 'solid', borderTopWidth: '1px', boxSizing: 'border-box', caretColor: 'rgb(255, 255, 255)', color: 'rgb(255, 255, 255)', columnGap: '0px', columnRuleColor: 'rgb(255, 255, 255)', cursor: 'pointer', display: 'flex', fontFamily: 'Claritycity, sans-serif', fontSize: '14px', fontWeight: 600, inlineSize: '76.0312px', justifyContent: 'center', lineHeight: '16.058px', marginLeft: 0, marginRight: 0, minBlockSize: 'auto', minHeight: 'auto', minInlineSize: 'auto', minWidth: 'auto', outlineColor: 'rgb(255, 255, 255)', paddingBlockEnd: '10px', paddingBlockStart: '10px', paddingBottom: '10px', paddingInlineEnd: '12px', paddingInlineStart: '12px', paddingLeft: '12px', paddingRight: '12px', paddingTop: '10px', rowGap: '6px', textAlign: 'center', textDecoration: 'none', textDecorationColor: 'rgb(255, 255, 255)', textEmphasisColor: 'rgb(255, 255, 255)', textSizeAdjust: '100%', transitionDelay: '0s, 0s, 0s, 0s', transitionDuration: '0.3s, 0.3s, 0.3s, 0.3s', transitionProperty: 'border-color, background-color, transform, color', transitionTimingFunction: 'ease, ease, ease, ease', WebkitTextFillColor: 'rgb(255, 255, 255)', WebkitTextStrokeColor: 'rgb(255, 255, 255)' }}
-                                        data-w-id={"7e6fe7eb-520f-397f-08d0-a9d5878644c4"}
-                                        href={"https://staruptemplate.webflow.io/"} target={"_blank"} className="btn-primar btn-visit w-button">
-                                    查看
-                                    <span
-                                        style={{ blockSize: '16.0469px', borderBlockEndColor: 'rgb(255, 255, 255)', borderBlockStartColor: 'rgb(255, 255, 255)', borderBottomColor: 'rgb(255, 255, 255)', borderInlineEndColor: 'rgb(255, 255, 255)', borderInlineStartColor: 'rgb(255, 255, 255)', borderLeftColor: 'rgb(255, 255, 255)', borderRightColor: 'rgb(255, 255, 255)', borderTopColor: 'rgb(255, 255, 255)', boxSizing: 'border-box', caretColor: 'rgb(255, 255, 255)', color: 'rgb(255, 255, 255)', columnRuleColor: 'rgb(255, 255, 255)', cursor: 'pointer', display: 'block', fontFamily: 'Line Rounded Icons, sans-serif', fontSize: '14px', fontWeight: 600, inlineSize: '13.4531px', lineHeight: '16.058px', marginInlineStart: '6px', marginLeft: 0, marginRight: 0, minBlockSize: 'auto', minHeight: 'auto', minInlineSize: 'auto', minWidth: 'auto', outlineColor: 'rgb(255, 255, 255)', textAlign: 'center', textDecoration: 'none solid rgb(255, 255, 255)', textDecorationColor: 'rgb(255, 255, 255)', textEmphasisColor: 'rgb(255, 255, 255)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(255, 255, 255)', WebkitTextStrokeColor: 'rgb(255, 255, 255)' }}
-                                        className={"line-rounded-icon link-icon-right"}><ArrowForwardIcon /></span></a></div>
-                        </div>
-                    </div>
-                    <div style={{ blockSize: '145.984px', borderBlockEndColor: 'rgb(70, 82, 106)', borderBlockStartColor: 'rgb(70, 82, 106)', borderBottomColor: 'rgb(70, 82, 106)', borderInlineEndColor: 'rgb(70, 82, 106)', borderInlineStartColor: 'rgb(70, 82, 106)', borderLeftColor: 'rgb(70, 82, 106)', borderRightColor: 'rgb(70, 82, 106)', borderTopColor: 'rgb(70, 82, 106)', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnRuleColor: 'rgb(70, 82, 106)', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 500, inlineSize: '832px', lineHeight: '28px', marginLeft: 0, marginRight: 0, minBlockSize: 'auto', minHeight: 'auto', minInlineSize: 'auto', minWidth: 'auto', outlineColor: 'rgb(70, 82, 106)', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}
-                        role={"listitem"} className={"w-dyn-item"}>
-                        <div style={{ alignItems: 'center', backgroundColor: 'rgb(255, 255, 255)', blockSize: '145.984px', borderBlockEndColor: 'rgb(236, 242, 255)', borderBlockEndStyle: 'solid', borderBlockEndWidth: '1px', borderBlockStartColor: 'rgb(236, 242, 255)', borderBlockStartStyle: 'solid', borderBlockStartWidth: '1px', borderBottomColor: 'rgb(236, 242, 255)', borderBottomLeftRadius: '18px', borderBottomRightRadius: '18px', borderBottomStyle: 'solid', borderBottomWidth: '1px', borderEndEndRadius: '18px', borderEndStartRadius: '18px', borderInlineEndColor: 'rgb(236, 242, 255)', borderInlineEndStyle: 'solid', borderInlineEndWidth: '1px', borderInlineStartColor: 'rgb(236, 242, 255)', borderInlineStartStyle: 'solid', borderInlineStartWidth: '1px', borderLeftColor: 'rgb(236, 242, 255)', borderLeftStyle: 'solid', borderLeftWidth: '1px', borderRightColor: 'rgb(236, 242, 255)', borderRightStyle: 'solid', borderRightWidth: '1px', borderStartEndRadius: '18px', borderStartStartRadius: '18px', borderTopColor: 'rgb(236, 242, 255)', borderTopLeftRadius: '18px', borderTopRightRadius: '18px', borderTopStyle: 'solid', borderTopWidth: '1px', boxShadow: 'rgba(36, 65, 122, 0.08) 0px 0px 2px 0px, rgba(36, 65, 122, 0.08) 0px 2px 6px 0px', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnGap: '24px', columnRuleColor: 'rgb(70, 82, 106)', display: 'grid', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 500, gridAutoColumns: '1fr', gridTemplateColumns: '555.156px 170.844px', gridTemplateRows: '87.9844px', inlineSize: '832px', justifyContent: 'space-between', lineHeight: '28px', marginLeft: 0, marginRight: 0, outlineColor: 'rgb(70, 82, 106)', overflowX: 'hidden', overflowY: 'hidden', paddingBlockEnd: '28px', paddingBlockStart: '28px', paddingBottom: '28px', paddingInlineEnd: '40px', paddingInlineStart: '40px', paddingLeft: '40px', paddingRight: '40px', paddingTop: '28px', rowGap: '20px', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', transitionDelay: '0s, 0s', transitionDuration: '0.3s, 0.3s', transitionProperty: 'transform, color', transitionTimingFunction: 'ease, ease', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}
-                            className={"card product-card-v1"}>
-                            <div style={{ alignItems: 'center', blockSize: '87.9844px', borderBlockEndColor: 'rgb(70, 82, 106)', borderBlockStartColor: 'rgb(70, 82, 106)', borderBottomColor: 'rgb(70, 82, 106)', borderInlineEndColor: 'rgb(70, 82, 106)', borderInlineStartColor: 'rgb(70, 82, 106)', borderLeftColor: 'rgb(70, 82, 106)', borderRightColor: 'rgb(70, 82, 106)', borderTopColor: 'rgb(70, 82, 106)', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnGap: '16px', columnRuleColor: 'rgb(70, 82, 106)', display: 'flex', flexWrap: 'wrap', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 500, inlineSize: '555.156px', lineHeight: '28px', marginLeft: 0, marginRight: 0, minBlockSize: 'auto', minHeight: 'auto', minInlineSize: 'auto', minWidth: 'auto', outlineColor: 'rgb(70, 82, 106)', rowGap: '16px', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}
-                                className={"product---description"}>
-                                <div
-                                    style={{ blockSize: '80px', borderBlockEndColor: 'rgb(70, 82, 106)', borderBlockStartColor: 'rgb(70, 82, 106)', borderBottomColor: 'rgb(70, 82, 106)', borderInlineEndColor: 'rgb(70, 82, 106)', borderInlineStartColor: 'rgb(70, 82, 106)', borderLeftColor: 'rgb(70, 82, 106)', borderRightColor: 'rgb(70, 82, 106)', borderTopColor: 'rgb(70, 82, 106)', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnRuleColor: 'rgb(70, 82, 106)', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 500, inlineSize: '80px', lineHeight: '28px', marginLeft: 0, marginRight: 0, minBlockSize: 'auto', minHeight: 'auto', minInlineSize: 'auto', minWidth: 'auto', outlineColor: 'rgb(70, 82, 106)', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}>
-                                    <img style={{ blockSize: '80px', borderBlockEndColor: 'rgb(255, 255, 255)', borderBlockEndStyle: 'solid', borderBlockEndWidth: '3px', borderBlockStartColor: 'rgb(255, 255, 255)', borderBlockStartStyle: 'solid', borderBlockStartWidth: '3px', borderBottomColor: 'rgb(255, 255, 255)', borderBottomLeftRadius: '100%', borderBottomRightRadius: '100%', borderBottomStyle: 'solid', borderBottomWidth: '3px', borderEndEndRadius: '100%', borderEndStartRadius: '100%', borderInlineEndColor: 'rgb(255, 255, 255)', borderInlineEndStyle: 'solid', borderInlineEndWidth: '3px', borderInlineStartColor: 'rgb(255, 255, 255)', borderInlineStartStyle: 'solid', borderInlineStartWidth: '3px', borderLeftColor: 'rgb(255, 255, 255)', borderLeftStyle: 'solid', borderLeftWidth: '3px', borderRightColor: 'rgb(255, 255, 255)', borderRightStyle: 'solid', borderRightWidth: '3px', borderStartEndRadius: '100%', borderStartStartRadius: '100%', borderTopColor: 'rgb(255, 255, 255)', borderTopLeftRadius: '100%', borderTopRightRadius: '100%', borderTopStyle: 'solid', borderTopWidth: '3px', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnRuleColor: 'rgb(70, 82, 106)', display: 'inline-block', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 500, inlineSize: '80px', lineHeight: '28px', marginLeft: 0, marginRight: 0, maxBlockSize: '80px', maxHeight: '80px', maxInlineSize: '80px', maxWidth: '80px', outlineColor: 'rgb(70, 82, 106)', overflowX: 'hidden', overflowY: 'hidden', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', transform: 'matrix(1, 0, 0, 1, 0, 0)', transformOrigin: '40px 40px', verticalAlign: 'middle', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)', width: '80px', height: '80px' }}
-                                        src={"https://assets.website-files.com/63bed0273cfe5e611e742359/63c8303eae4413d041265475_inbound-featured-image-aggregator-x-webflow-template.svg"}
-                                        alt={"Inbound"} className={"avatar-circle _04"}></img></div>
-                                <div
-                                    style={{ blockSize: '87.9844px', borderBlockEndColor: 'rgb(70, 82, 106)', borderBlockStartColor: 'rgb(70, 82, 106)', borderBottomColor: 'rgb(70, 82, 106)', borderInlineEndColor: 'rgb(70, 82, 106)', borderInlineStartColor: 'rgb(70, 82, 106)', borderLeftColor: 'rgb(70, 82, 106)', borderRightColor: 'rgb(70, 82, 106)', borderTopColor: 'rgb(70, 82, 106)', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnRuleColor: 'rgb(70, 82, 106)', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 500, inlineSize: '395.078px', lineHeight: '28px', marginLeft: 0, marginRight: 0, minBlockSize: 'auto', minHeight: 'auto', minInlineSize: 'auto', minWidth: 'auto', outlineColor: 'rgb(70, 82, 106)', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}>
-                                    <div style={{ blockSize: '22px', borderBlockEndColor: 'rgb(12, 24, 48)', borderBlockStartColor: 'rgb(12, 24, 48)', borderBottomColor: 'rgb(12, 24, 48)', borderInlineEndColor: 'rgb(12, 24, 48)', borderInlineStartColor: 'rgb(12, 24, 48)', borderLeftColor: 'rgb(12, 24, 48)', borderRightColor: 'rgb(12, 24, 48)', borderTopColor: 'rgb(12, 24, 48)', boxSizing: 'border-box', caretColor: 'rgb(12, 24, 48)', color: 'rgb(12, 24, 48)', columnRuleColor: 'rgb(12, 24, 48)', display: 'inline-block', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 700, inlineSize: '66.5625px', lineHeight: '22px', marginLeft: 0, marginRight: 0, outlineColor: 'rgb(12, 24, 48)', textDecoration: 'none solid rgb(12, 24, 48)', textDecorationColor: 'rgb(12, 24, 48)', textEmphasisColor: 'rgb(12, 24, 48)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(12, 24, 48)', WebkitTextStrokeColor: 'rgb(12, 24, 48)' }}
-                                        className={"product---name"}>Inbound</div>
-                                    <div
-                                        style={{ blockSize: '23.9844px', borderBlockEndColor: 'rgb(70, 82, 106)', borderBlockStartColor: 'rgb(70, 82, 106)', borderBottomColor: 'rgb(70, 82, 106)', borderInlineEndColor: 'rgb(70, 82, 106)', borderInlineStartColor: 'rgb(70, 82, 106)', borderLeftColor: 'rgb(70, 82, 106)', borderRightColor: 'rgb(70, 82, 106)', borderTopColor: 'rgb(70, 82, 106)', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnRuleColor: 'rgb(70, 82, 106)', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 500, inlineSize: '395.078px', lineHeight: '28px', marginLeft: 0, marginRight: 0, outlineColor: 'rgb(70, 82, 106)', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}>
-                                        <p style={{ blockSize: '23.9844px', borderBlockEndColor: 'rgb(70, 82, 106)', borderBlockStartColor: 'rgb(70, 82, 106)', borderBottomColor: 'rgb(70, 82, 106)', borderInlineEndColor: 'rgb(70, 82, 106)', borderInlineStartColor: 'rgb(70, 82, 106)', borderLeftColor: 'rgb(70, 82, 106)', borderRightColor: 'rgb(70, 82, 106)', borderTopColor: 'rgb(70, 82, 106)', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnRuleColor: 'rgb(70, 82, 106)', fontFamily: 'Claritycity, sans-serif', fontSize: '14px', fontWeight: 500, inlineSize: '395.078px', lineHeight: '23.996px', marginBlockEnd: '10px', marginBlockStart: '0px', marginBottom: '10px', marginLeft: 0, marginRight: 0, marginTop: '0px', outlineColor: 'rgb(70, 82, 106)', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}
-                                            className={"paragraph-small medium mg-bottom-10px"}>Nisl eget elementum semper
-                                            tristique in nisl nunc quisque.</p>
-                                    </div>
-                                    <div style={{ alignItems: 'center', blockSize: '26px', borderBlockEndColor: 'rgb(70, 82, 106)', borderBlockStartColor: 'rgb(70, 82, 106)', borderBottomColor: 'rgb(70, 82, 106)', borderInlineEndColor: 'rgb(70, 82, 106)', borderInlineStartColor: 'rgb(70, 82, 106)', borderLeftColor: 'rgb(70, 82, 106)', borderRightColor: 'rgb(70, 82, 106)', borderTopColor: 'rgb(70, 82, 106)', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnGap: '8px', columnRuleColor: 'rgb(70, 82, 106)', display: 'flex', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 500, inlineSize: '395.078px', justifyContent: 'flex-start', lineHeight: '28px', marginLeft: 0, marginRight: 0, outlineColor: 'rgb(70, 82, 106)', rowGap: '8px', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}
-                                        className={"product---tag-wrapper"}>
-                                        <div style={{ backgroundColor: 'rgb(236, 242, 255)', blockSize: '26px', borderBlockEndColor: 'rgb(255, 255, 255)', borderBlockEndStyle: 'solid', borderBlockEndWidth: '1px', borderBlockStartColor: 'rgb(255, 255, 255)', borderBlockStartStyle: 'solid', borderBlockStartWidth: '1px', borderBottomColor: 'rgb(255, 255, 255)', borderBottomLeftRadius: '40px', borderBottomRightRadius: '40px', borderBottomStyle: 'solid', borderBottomWidth: '1px', borderEndEndRadius: '40px', borderEndStartRadius: '40px', borderInlineEndColor: 'rgb(255, 255, 255)', borderInlineEndStyle: 'solid', borderInlineEndWidth: '1px', borderInlineStartColor: 'rgb(255, 255, 255)', borderInlineStartStyle: 'solid', borderInlineStartWidth: '1px', borderLeftColor: 'rgb(255, 255, 255)', borderLeftStyle: 'solid', borderLeftWidth: '1px', borderRightColor: 'rgb(255, 255, 255)', borderRightStyle: 'solid', borderRightWidth: '1px', borderStartEndRadius: '40px', borderStartStartRadius: '40px', borderTopColor: 'rgb(255, 255, 255)', borderTopLeftRadius: '40px', borderTopRightRadius: '40px', borderTopStyle: 'solid', borderTopWidth: '1px', boxSizing: 'border-box', caretColor: 'rgb(81, 120, 255)', color: 'rgb(81, 120, 255)', columnRuleColor: 'rgb(81, 120, 255)', fontFamily: 'Claritycity, sans-serif', fontSize: '12px', fontWeight: 600, inlineSize: '73.5312px', lineHeight: '12px', marginLeft: 0, marginRight: 0, minBlockSize: 'auto', minHeight: 'auto', minInlineSize: 'auto', minWidth: 'auto', outlineColor: 'rgb(81, 120, 255)', paddingBlockEnd: '6px', paddingBlockStart: '6px', paddingBottom: '6px', paddingInlineEnd: '10px', paddingInlineStart: '10px', paddingLeft: '10px', paddingRight: '10px', paddingTop: '6px', textAlign: 'center', textDecoration: 'none solid rgb(81, 120, 255)', textDecorationColor: 'rgb(81, 120, 255)', textEmphasisColor: 'rgb(81, 120, 255)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(81, 120, 255)', WebkitTextStrokeColor: 'rgb(81, 120, 255)' }}
-                                            className={"badge-primary small"}>Business</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div style={{ alignItems: 'center', blockSize: '38.0469px', borderBlockEndColor: 'rgb(70, 82, 106)', borderBlockStartColor: 'rgb(70, 82, 106)', borderBottomColor: 'rgb(70, 82, 106)', borderInlineEndColor: 'rgb(70, 82, 106)', borderInlineStartColor: 'rgb(70, 82, 106)', borderLeftColor: 'rgb(70, 82, 106)', borderRightColor: 'rgb(70, 82, 106)', borderTopColor: 'rgb(70, 82, 106)', boxSizing: 'border-box', caretColor: 'rgb(70, 82, 106)', color: 'rgb(70, 82, 106)', columnGap: '16px', columnRuleColor: 'rgb(70, 82, 106)', display: 'flex', flexWrap: 'wrap', fontFamily: 'Claritycity, sans-serif', fontSize: '16px', fontWeight: 500, inlineSize: '170.844px', justifyContent: 'flex-end', lineHeight: '28px', marginLeft: 0, marginRight: 0, minBlockSize: 'auto', minHeight: 'auto', minInlineSize: 'auto', minWidth: 'auto', outlineColor: 'rgb(70, 82, 106)', rowGap: '16px', textDecoration: 'none solid rgb(70, 82, 106)', textDecorationColor: 'rgb(70, 82, 106)', textEmphasisColor: 'rgb(70, 82, 106)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(70, 82, 106)', WebkitTextStrokeColor: 'rgb(70, 82, 106)' }}
-                                className={"product-card---links-wrapper"}><a
-                                    style={{ blockSize: '16px', borderBlockEndColor: 'rgb(12, 24, 48)', borderBlockStartColor: 'rgb(12, 24, 48)', borderBottomColor: 'rgb(12, 24, 48)', borderInlineEndColor: 'rgb(12, 24, 48)', borderInlineStartColor: 'rgb(12, 24, 48)', borderLeftColor: 'rgb(12, 24, 48)', borderRightColor: 'rgb(12, 24, 48)', borderTopColor: 'rgb(12, 24, 48)', boxSizing: 'border-box', caretColor: 'rgb(12, 24, 48)', color: 'rgb(12, 24, 48)', columnRuleColor: 'rgb(12, 24, 48)', cursor: 'pointer', display: 'block', fontFamily: 'Claritycity, sans-serif', fontSize: '14px', fontWeight: 600, inlineSize: '78.8125px', lineHeight: '16.002px', marginLeft: 0, marginRight: 0, minBlockSize: 'auto', minHeight: 'auto', minInlineSize: 'auto', minWidth: 'auto', outlineColor: 'rgb(12, 24, 48)', textDecoration: 'none', textDecorationColor: 'rgb(12, 24, 48)', textEmphasisColor: 'rgb(12, 24, 48)', textSizeAdjust: '100%', transitionDuration: '0.3s', transitionProperty: 'color', WebkitTextFillColor: 'rgb(12, 24, 48)', WebkitTextStrokeColor: 'rgb(12, 24, 48)' }}
-                                    href={"https://aggregatortemplate.webflow.io/products/inbound"}
-                                    className={"product---learn-more-link"}>Learn more</a><a
-                                        style={{ alignItems: 'center', backgroundColor: 'rgb(81, 120, 255)', blockSize: '38.0469px', borderBlockEndColor: 'rgb(81, 120, 255)', borderBlockEndStyle: 'solid', borderBlockEndWidth: '1px', borderBlockStartColor: 'rgb(81, 120, 255)', borderBlockStartStyle: 'solid', borderBlockStartWidth: '1px', borderBottomColor: 'rgb(81, 120, 255)', borderBottomLeftRadius: '96px', borderBottomRightRadius: '96px', borderBottomStyle: 'solid', borderBottomWidth: '1px', borderEndEndRadius: '96px', borderEndStartRadius: '96px', borderInlineEndColor: 'rgb(81, 120, 255)', borderInlineEndStyle: 'solid', borderInlineEndWidth: '1px', borderInlineStartColor: 'rgb(81, 120, 255)', borderInlineStartStyle: 'solid', borderInlineStartWidth: '1px', borderLeftColor: 'rgb(81, 120, 255)', borderLeftStyle: 'solid', borderLeftWidth: '1px', borderRightColor: 'rgb(81, 120, 255)', borderRightStyle: 'solid', borderRightWidth: '1px', borderStartEndRadius: '96px', borderStartStartRadius: '96px', borderTopColor: 'rgb(81, 120, 255)', borderTopLeftRadius: '96px', borderTopRightRadius: '96px', borderTopStyle: 'solid', borderTopWidth: '1px', boxSizing: 'border-box', caretColor: 'rgb(255, 255, 255)', color: 'rgb(255, 255, 255)', columnGap: '0px', columnRuleColor: 'rgb(255, 255, 255)', cursor: 'pointer', display: 'flex', fontFamily: 'Claritycity, sans-serif', fontSize: '14px', fontWeight: 600, inlineSize: '76.0312px', justifyContent: 'center', lineHeight: '16.058px', marginLeft: 0, marginRight: 0, minBlockSize: 'auto', minHeight: 'auto', minInlineSize: 'auto', minWidth: 'auto', outlineColor: 'rgb(255, 255, 255)', paddingBlockEnd: '10px', paddingBlockStart: '10px', paddingBottom: '10px', paddingInlineEnd: '12px', paddingInlineStart: '12px', paddingLeft: '12px', paddingRight: '12px', paddingTop: '10px', rowGap: '6px', textAlign: 'center', textDecoration: 'none', textDecorationColor: 'rgb(255, 255, 255)', textEmphasisColor: 'rgb(255, 255, 255)', textSizeAdjust: '100%', transitionDelay: '0s, 0s, 0s, 0s', transitionDuration: '0.3s, 0.3s, 0.3s, 0.3s', transitionProperty: 'border-color, background-color, transform, color', transitionTimingFunction: 'ease, ease, ease, ease', WebkitTextFillColor: 'rgb(255, 255, 255)', WebkitTextStrokeColor: 'rgb(255, 255, 255)' }}
-                                        data-w-id={"7e6fe7eb-520f-397f-08d0-a9d5878644c4"}
-                                        href={"https://inboundtemplate.webflow.io/"} target={"_blank"} className="btn-primary btn-visit w-button">查看
-                                    <span
-                                        style={{ color: 'rgb(255, 255, 255)', columnRuleColor: 'rgb(255, 255, 255)', cursor: 'pointer', display: 'block', fontFamily: 'Line Rounded Icons, sans-serif', fontSize: '14px', fontWeight: 600, inlineSize: '13.4531px', lineHeight: '16.058px', marginInlineStart: '6px', marginLeft: 0, marginRight: 0, minBlockSize: 'auto', minHeight: 'auto', minInlineSize: 'auto', minWidth: 'auto', outlineColor: 'rgb(255, 255, 255)', textAlign: 'center', textDecoration: 'none solid rgb(255, 255, 255)', textDecorationColor: 'rgb(255, 255, 255)', textEmphasisColor: 'rgb(255, 255, 255)', textSizeAdjust: '100%', WebkitTextFillColor: 'rgb(255, 255, 255)', WebkitTextStrokeColor: 'rgb(255, 255, 255)' }}
-                                    ><ArrowForwardIcon size="small" /></span></a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+	return (
+		<div className='mx-12 products-wrapper'>
+			<div className='mb-8 mx-4'>
+				<div className='flex-title mb-12'>
+					<div className='flex items-baseline gap-2'>
+						<div
+							style={{
+								color: 'rgb(12, 24, 48)',
+								fontSize: '30px',
+								fontWeight: 700,
+							}}
+							className={'display-3'}
+						>
+							推荐
+						</div>
+						<h3 className={'display-3 mg-bottom-0'}>知识点</h3>
+						<div className={'display-3'}>视频</div>
+					</div>
+				</div>
+			</div>
+			<div
+				style={{
+					blockSize: '477.953px',
+					borderBlockEndColor: 'rgb(70, 82, 106)',
+					borderBlockStartColor: 'rgb(70, 82, 106)',
+					borderBottomColor: 'rgb(70, 82, 106)',
+					borderInlineEndColor: 'rgb(70, 82, 106)',
+					borderInlineStartColor: 'rgb(70, 82, 106)',
+					borderLeftColor: 'rgb(70, 82, 106)',
+					borderRightColor: 'rgb(70, 82, 106)',
+					borderTopColor: 'rgb(70, 82, 106)',
+					boxSizing: 'border-box',
+					caretColor: 'rgb(70, 82, 106)',
+					color: 'rgb(70, 82, 106)',
+					columnRuleColor: 'rgb(70, 82, 106)',
+					fontFamily: 'Claritycity, sans-serif',
+					fontSize: '16px',
+					fontWeight: 500,
+					lineHeight: '28px',
+					marginLeft: 0,
+					marginRight: 0,
+					outlineColor: 'rgb(70, 82, 106)',
+					textDecoration: 'none solid rgb(70, 82, 106)',
+					textDecorationColor: 'rgb(70, 82, 106)',
+					textEmphasisColor: 'rgb(70, 82, 106)',
+					textSizeAdjust: '100%',
+					WebkitTextFillColor: 'rgb(70, 82, 106)',
+					WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+				}}
+				className={'w-dyn-list'}
+			>
+				<div
+					style={{
+						blockSize: '477.953px',
+						borderBlockEndColor: 'rgb(70, 82, 106)',
+						borderBlockStartColor: 'rgb(70, 82, 106)',
+						borderBottomColor: 'rgb(70, 82, 106)',
+						borderInlineEndColor: 'rgb(70, 82, 106)',
+						borderInlineStartColor: 'rgb(70, 82, 106)',
+						borderLeftColor: 'rgb(70, 82, 106)',
+						borderRightColor: 'rgb(70, 82, 106)',
+						borderTopColor: 'rgb(70, 82, 106)',
+						boxSizing: 'border-box',
+						caretColor: 'rgb(70, 82, 106)',
+						color: 'rgb(70, 82, 106)',
+						columnGap: '0px',
+						columnRuleColor: 'rgb(70, 82, 106)',
+						display: 'grid',
+						fontFamily: 'Claritycity, sans-serif',
+						fontSize: '16px',
+						fontWeight: 500,
+						gridAutoColumns: '1fr',
+						gridTemplateRows: '145.984px 145.984px 145.984px',
 
-    )
-}
+						lineHeight: '28px',
+						marginLeft: 0,
+						marginRight: 0,
+						outlineColor: 'rgb(70, 82, 106)',
+						rowGap: '20px',
+						textDecoration: 'none solid rgb(70, 82, 106)',
+						textDecorationColor: 'rgb(70, 82, 106)',
+						textEmphasisColor: 'rgb(70, 82, 106)',
+						textSizeAdjust: '100%',
+						WebkitTextFillColor: 'rgb(70, 82, 106)',
+						WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+					}}
+					role={'list'}
+					className={'grid-1-column product-grid-v1 w-dyn-items'}
+				>
+					<div
+						style={{
+							blockSize: '145.984px',
+							borderBlockEndColor: 'rgb(70, 82, 106)',
+							borderBlockStartColor: 'rgb(70, 82, 106)',
+							borderBottomColor: 'rgb(70, 82, 106)',
+							borderInlineEndColor: 'rgb(70, 82, 106)',
+							borderInlineStartColor: 'rgb(70, 82, 106)',
+							borderLeftColor: 'rgb(70, 82, 106)',
+							borderRightColor: 'rgb(70, 82, 106)',
+							borderTopColor: 'rgb(70, 82, 106)',
+							boxSizing: 'border-box',
+							caretColor: 'rgb(70, 82, 106)',
+							color: 'rgb(70, 82, 106)',
+							columnRuleColor: 'rgb(70, 82, 106)',
+							fontFamily: 'Claritycity, sans-serif',
+							fontSize: '16px',
+							fontWeight: 500,
+							lineHeight: '28px',
+							marginLeft: 0,
+							marginRight: 0,
+							minBlockSize: 'auto',
+							minHeight: 'auto',
+							minInlineSize: 'auto',
+							minWidth: 'auto',
+							outlineColor: 'rgb(70, 82, 106)',
+							textDecoration: 'none solid rgb(70, 82, 106)',
+							textDecorationColor: 'rgb(70, 82, 106)',
+							textEmphasisColor: 'rgb(70, 82, 106)',
+							textSizeAdjust: '100%',
+							WebkitTextFillColor: 'rgb(70, 82, 106)',
+							WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+						}}
+						role={'listitem'}
+						className={'w-dyn-item'}
+					>
+						<div
+							style={{
+								alignItems: 'center',
+								backgroundColor: 'rgb(255, 255, 255)',
+								blockSize: '145.984px',
+								borderBlockEndColor: 'rgb(236, 242, 255)',
+								borderBlockEndStyle: 'solid',
+								borderBlockEndWidth: '1px',
+								borderBlockStartColor: 'rgb(236, 242, 255)',
+								borderBlockStartStyle: 'solid',
+								borderBlockStartWidth: '1px',
+								borderBottomColor: 'rgb(236, 242, 255)',
+								borderBottomLeftRadius: '18px',
+								borderBottomRightRadius: '18px',
+								borderBottomStyle: 'solid',
+								borderBottomWidth: '1px',
+								borderEndEndRadius: '18px',
+								borderEndStartRadius: '18px',
+								borderInlineEndColor: 'rgb(236, 242, 255)',
+								borderInlineEndStyle: 'solid',
+								borderInlineEndWidth: '1px',
+								borderInlineStartColor: 'rgb(236, 242, 255)',
+								borderInlineStartStyle: 'solid',
+								borderInlineStartWidth: '1px',
+								borderLeftColor: 'rgb(236, 242, 255)',
+								borderLeftStyle: 'solid',
+								borderLeftWidth: '1px',
+								borderRightColor: 'rgb(236, 242, 255)',
+								borderRightStyle: 'solid',
+								borderRightWidth: '1px',
+								borderStartEndRadius: '18px',
+								borderStartStartRadius: '18px',
+								borderTopColor: 'rgb(236, 242, 255)',
+								borderTopLeftRadius: '18px',
+								borderTopRightRadius: '18px',
+								borderTopStyle: 'solid',
+								borderTopWidth: '1px',
+								boxShadow:
+									'rgba(36, 65, 122, 0.08) 0px 0px 2px 0px, rgba(36, 65, 122, 0.08) 0px 2px 6px 0px',
+								boxSizing: 'border-box',
+								caretColor: 'rgb(70, 82, 106)',
+								color: 'rgb(70, 82, 106)',
+								columnGap: '24px',
+								columnRuleColor: 'rgb(70, 82, 106)',
+								display: 'grid',
+								fontFamily: 'Claritycity, sans-serif',
+								fontSize: '16px',
+								fontWeight: 500,
+								gridAutoColumns: '1fr',
+								gridTemplateColumns: '555.156px 170.844px',
+								gridTemplateRows: '87.9844px',
+								justifyContent: 'space-between',
+								lineHeight: '28px',
+								marginLeft: 0,
+								marginRight: 0,
+								outlineColor: 'rgb(70, 82, 106)',
+								overflowX: 'hidden',
+								overflowY: 'hidden',
+								paddingBlockEnd: '28px',
+								paddingBlockStart: '28px',
+								paddingBottom: '28px',
+								paddingInlineEnd: '40px',
+								paddingInlineStart: '40px',
+								paddingLeft: '40px',
+								paddingRight: '40px',
+								paddingTop: '28px',
+								rowGap: '20px',
+								textDecoration: 'none solid rgb(70, 82, 106)',
+								textDecorationColor: 'rgb(70, 82, 106)',
+								textEmphasisColor: 'rgb(70, 82, 106)',
+								textSizeAdjust: '100%',
+								transitionDelay: '0s, 0s',
+								transitionDuration: '0.3s, 0.3s',
+								transitionProperty: 'transform, color',
+								transitionTimingFunction: 'ease, ease',
+								WebkitTextFillColor: 'rgb(70, 82, 106)',
+								WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+							}}
+							className={'card product-card-v1'}
+						>
+							<div
+								style={{
+									alignItems: 'center',
+									blockSize: '87.9844px',
+									borderBlockEndColor: 'rgb(70, 82, 106)',
+									borderBlockStartColor: 'rgb(70, 82, 106)',
+									borderBottomColor: 'rgb(70, 82, 106)',
+									borderInlineEndColor: 'rgb(70, 82, 106)',
+									borderInlineStartColor: 'rgb(70, 82, 106)',
+									borderLeftColor: 'rgb(70, 82, 106)',
+									borderRightColor: 'rgb(70, 82, 106)',
+									borderTopColor: 'rgb(70, 82, 106)',
+									boxSizing: 'border-box',
+									caretColor: 'rgb(70, 82, 106)',
+									color: 'rgb(70, 82, 106)',
+									columnGap: '16px',
+									columnRuleColor: 'rgb(70, 82, 106)',
+									display: 'flex',
+									flexWrap: 'wrap',
+									fontFamily: 'Claritycity, sans-serif',
+									fontSize: '16px',
+									fontWeight: 500,
+									lineHeight: '28px',
+									marginLeft: 0,
+									marginRight: 0,
+									minBlockSize: 'auto',
+									minHeight: 'auto',
+									minInlineSize: 'auto',
+									minWidth: 'auto',
+									outlineColor: 'rgb(70, 82, 106)',
+									rowGap: '16px',
+									textDecoration: 'none solid rgb(70, 82, 106)',
+									textDecorationColor: 'rgb(70, 82, 106)',
+									textEmphasisColor: 'rgb(70, 82, 106)',
+									textSizeAdjust: '100%',
+									WebkitTextFillColor: 'rgb(70, 82, 106)',
+									WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+								}}
+								className={'product---description'}
+							>
+								<div
+									style={{
+										blockSize: '80px',
+										borderBlockEndColor: 'rgb(70, 82, 106)',
+										borderBlockStartColor: 'rgb(70, 82, 106)',
+										borderBottomColor: 'rgb(70, 82, 106)',
+										borderInlineEndColor: 'rgb(70, 82, 106)',
+										borderInlineStartColor: 'rgb(70, 82, 106)',
+										borderLeftColor: 'rgb(70, 82, 106)',
+										borderRightColor: 'rgb(70, 82, 106)',
+										borderTopColor: 'rgb(70, 82, 106)',
+										boxSizing: 'border-box',
+										caretColor: 'rgb(70, 82, 106)',
+										color: 'rgb(70, 82, 106)',
+										columnRuleColor: 'rgb(70, 82, 106)',
+										fontFamily: 'Claritycity, sans-serif',
+										fontSize: '16px',
+										fontWeight: 500,
+										inlineSize: '80px',
+										lineHeight: '28px',
+										marginLeft: 0,
+										marginRight: 0,
+										minBlockSize: 'auto',
+										minHeight: 'auto',
+										minInlineSize: 'auto',
+										minWidth: 'auto',
+										outlineColor: 'rgb(70, 82, 106)',
+										textDecoration: 'none solid rgb(70, 82, 106)',
+										textDecorationColor: 'rgb(70, 82, 106)',
+										textEmphasisColor: 'rgb(70, 82, 106)',
+										textSizeAdjust: '100%',
+										WebkitTextFillColor: 'rgb(70, 82, 106)',
+										WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+									}}
+								>
+									<img
+										style={{
+											blockSize: '80px',
+											borderBlockEndColor: 'rgb(255, 255, 255)',
+											borderBlockEndStyle: 'solid',
+											borderBlockEndWidth: '3px',
+											borderBlockStartColor: 'rgb(255, 255, 255)',
+											borderBlockStartStyle: 'solid',
+											borderBlockStartWidth: '3px',
+											borderBottomColor: 'rgb(255, 255, 255)',
+											borderBottomLeftRadius: '100%',
+											borderBottomRightRadius: '100%',
+											borderBottomStyle: 'solid',
+											borderBottomWidth: '3px',
+											borderEndEndRadius: '100%',
+											borderEndStartRadius: '100%',
+											borderInlineEndColor: 'rgb(255, 255, 255)',
+											borderInlineEndStyle: 'solid',
+											borderInlineEndWidth: '3px',
+											borderInlineStartColor: 'rgb(255, 255, 255)',
+											borderInlineStartStyle: 'solid',
+											borderInlineStartWidth: '3px',
+											borderLeftColor: 'rgb(255, 255, 255)',
+											borderLeftStyle: 'solid',
+											borderLeftWidth: '3px',
+											borderRightColor: 'rgb(255, 255, 255)',
+											borderRightStyle: 'solid',
+											borderRightWidth: '3px',
+											borderStartEndRadius: '100%',
+											borderStartStartRadius: '100%',
+											borderTopColor: 'rgb(255, 255, 255)',
+											borderTopLeftRadius: '100%',
+											borderTopRightRadius: '100%',
+											borderTopStyle: 'solid',
+											borderTopWidth: '3px',
+											boxSizing: 'border-box',
+											caretColor: 'rgb(70, 82, 106)',
+											color: 'rgb(70, 82, 106)',
+											columnRuleColor: 'rgb(70, 82, 106)',
+											display: 'inline-block',
+											fontFamily: 'Claritycity, sans-serif',
+											fontSize: '16px',
+											fontWeight: 500,
+											inlineSize: '80px',
+											lineHeight: '28px',
+											marginLeft: 0,
+											marginRight: 0,
+											maxBlockSize: '80px',
+											maxHeight: '80px',
+											maxInlineSize: '80px',
+											maxWidth: '80px',
+											outlineColor: 'rgb(70, 82, 106)',
+											overflowX: 'hidden',
+											overflowY: 'hidden',
+											textDecoration: 'none solid rgb(70, 82, 106)',
+											textDecorationColor: 'rgb(70, 82, 106)',
+											textEmphasisColor: 'rgb(70, 82, 106)',
+											textSizeAdjust: '100%',
+											transform: 'matrix(1, 0, 0, 1, 0, 0)',
+											transformOrigin: '40px 40px',
+											verticalAlign: 'middle',
+											WebkitTextFillColor: 'rgb(70, 82, 106)',
+											WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+											width: '80px',
+											height: '80px',
+										}}
+										src={
+											'https://assets.website-files.com/63bed0273cfe5e611e742359/63c8302dbcdbf22c146c7e56_corporate-featured-image-aggregator-x-webflow-template.svg'
+										}
+										alt={'Corporate'}
+										className={'avatar-circle _04'}
+									></img>
+								</div>
+								<div
+									style={{
+										blockSize: '87.9844px',
+										borderBlockEndColor: 'rgb(70, 82, 106)',
+										borderBlockStartColor: 'rgb(70, 82, 106)',
+										borderBottomColor: 'rgb(70, 82, 106)',
+										borderInlineEndColor: 'rgb(70, 82, 106)',
+										borderInlineStartColor: 'rgb(70, 82, 106)',
+										borderLeftColor: 'rgb(70, 82, 106)',
+										borderRightColor: 'rgb(70, 82, 106)',
+										borderTopColor: 'rgb(70, 82, 106)',
+										boxSizing: 'border-box',
+										caretColor: 'rgb(70, 82, 106)',
+										color: 'rgb(70, 82, 106)',
+										columnRuleColor: 'rgb(70, 82, 106)',
+										fontFamily: 'Claritycity, sans-serif',
+										fontSize: '16px',
+										fontWeight: 500,
+										lineHeight: '28px',
+										marginLeft: 0,
+										marginRight: 0,
+										minBlockSize: 'auto',
+										minHeight: 'auto',
+										minInlineSize: 'auto',
+										minWidth: 'auto',
+										outlineColor: 'rgb(70, 82, 106)',
+										textDecoration: 'none solid rgb(70, 82, 106)',
+										textDecorationColor: 'rgb(70, 82, 106)',
+										textEmphasisColor: 'rgb(70, 82, 106)',
+										textSizeAdjust: '100%',
+										WebkitTextFillColor: 'rgb(70, 82, 106)',
+										WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+									}}
+								>
+									<div
+										style={{
+											blockSize: '22px',
+											borderBlockEndColor: 'rgb(12, 24, 48)',
+											borderBlockStartColor: 'rgb(12, 24, 48)',
+											borderBottomColor: 'rgb(12, 24, 48)',
+											borderInlineEndColor: 'rgb(12, 24, 48)',
+											borderInlineStartColor: 'rgb(12, 24, 48)',
+											borderLeftColor: 'rgb(12, 24, 48)',
+											borderRightColor: 'rgb(12, 24, 48)',
+											borderTopColor: 'rgb(12, 24, 48)',
+											boxSizing: 'border-box',
+											caretColor: 'rgb(12, 24, 48)',
+											color: 'rgb(12, 24, 48)',
+											columnRuleColor: 'rgb(12, 24, 48)',
+											display: 'inline-block',
+											fontFamily: 'Claritycity, sans-serif',
+											fontSize: '16px',
+											fontWeight: 700,
+											inlineSize: '80.9219px',
+											lineHeight: '22px',
+											marginLeft: 0,
+											marginRight: 0,
+											outlineColor: 'rgb(12, 24, 48)',
+											textDecoration: 'none solid rgb(12, 24, 48)',
+											textDecorationColor: 'rgb(12, 24, 48)',
+											textEmphasisColor: 'rgb(12, 24, 48)',
+											textSizeAdjust: '100%',
+											WebkitTextFillColor: 'rgb(12, 24, 48)',
+											WebkitTextStrokeColor: 'rgb(12, 24, 48)',
+										}}
+										className={'product---name'}
+									>
+										Corporate
+									</div>
+									<div
+										style={{
+											blockSize: '23.9844px',
+											borderBlockEndColor: 'rgb(70, 82, 106)',
+											borderBlockStartColor: 'rgb(70, 82, 106)',
+											borderBottomColor: 'rgb(70, 82, 106)',
+											borderInlineEndColor: 'rgb(70, 82, 106)',
+											borderInlineStartColor: 'rgb(70, 82, 106)',
+											borderLeftColor: 'rgb(70, 82, 106)',
+											borderRightColor: 'rgb(70, 82, 106)',
+											borderTopColor: 'rgb(70, 82, 106)',
+											boxSizing: 'border-box',
+											caretColor: 'rgb(70, 82, 106)',
+											color: 'rgb(70, 82, 106)',
+											columnRuleColor: 'rgb(70, 82, 106)',
+											fontFamily: 'Claritycity, sans-serif',
+											fontSize: '16px',
+											fontWeight: 500,
+											lineHeight: '28px',
+											marginLeft: 0,
+											marginRight: 0,
+											outlineColor: 'rgb(70, 82, 106)',
+											textDecoration: 'none solid rgb(70, 82, 106)',
+											textDecorationColor: 'rgb(70, 82, 106)',
+											textEmphasisColor: 'rgb(70, 82, 106)',
+											textSizeAdjust: '100%',
+											WebkitTextFillColor: 'rgb(70, 82, 106)',
+											WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+										}}
+									>
+										<p
+											style={{
+												blockSize: '23.9844px',
+												borderBlockEndColor: 'rgb(70, 82, 106)',
+												borderBlockStartColor: 'rgb(70, 82, 106)',
+												borderBottomColor: 'rgb(70, 82, 106)',
+												borderInlineEndColor: 'rgb(70, 82, 106)',
+												borderInlineStartColor: 'rgb(70, 82, 106)',
+												borderLeftColor: 'rgb(70, 82, 106)',
+												borderRightColor: 'rgb(70, 82, 106)',
+												borderTopColor: 'rgb(70, 82, 106)',
+												boxSizing: 'border-box',
+												caretColor: 'rgb(70, 82, 106)',
+												color: 'rgb(70, 82, 106)',
+												columnRuleColor: 'rgb(70, 82, 106)',
+												fontFamily: 'Claritycity, sans-serif',
+												fontSize: '14px',
+												fontWeight: 500,
+												lineHeight: '23.996px',
+												marginBlockEnd: '10px',
+												marginBlockStart: '0px',
+												marginBottom: '10px',
+												marginLeft: 0,
+												marginRight: 0,
+												marginTop: '0px',
+												outlineColor: 'rgb(70, 82, 106)',
+												textDecoration: 'none solid rgb(70, 82, 106)',
+												textDecorationColor: 'rgb(70, 82, 106)',
+												textEmphasisColor: 'rgb(70, 82, 106)',
+												textSizeAdjust: '100%',
+												WebkitTextFillColor: 'rgb(70, 82, 106)',
+												WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+											}}
+											className={'paragraph-small medium mg-bottom-10px'}
+										>
+											At ultricies lectus viverra euismod phasellus.
+										</p>
+									</div>
+									<div
+										style={{
+											alignItems: 'center',
+											blockSize: '26px',
+											borderBlockEndColor: 'rgb(70, 82, 106)',
+											borderBlockStartColor: 'rgb(70, 82, 106)',
+											borderBottomColor: 'rgb(70, 82, 106)',
+											borderInlineEndColor: 'rgb(70, 82, 106)',
+											borderInlineStartColor: 'rgb(70, 82, 106)',
+											borderLeftColor: 'rgb(70, 82, 106)',
+											borderRightColor: 'rgb(70, 82, 106)',
+											borderTopColor: 'rgb(70, 82, 106)',
+											boxSizing: 'border-box',
+											caretColor: 'rgb(70, 82, 106)',
+											color: 'rgb(70, 82, 106)',
+											columnGap: '8px',
+											columnRuleColor: 'rgb(70, 82, 106)',
+											display: 'flex',
+											fontFamily: 'Claritycity, sans-serif',
+											fontSize: '16px',
+											fontWeight: 500,
+											inlineSize: '299.109px',
+											justifyContent: 'flex-start',
+											lineHeight: '28px',
+											marginLeft: 0,
+											marginRight: 0,
+											outlineColor: 'rgb(70, 82, 106)',
+											rowGap: '8px',
+											textDecoration: 'none solid rgb(70, 82, 106)',
+											textDecorationColor: 'rgb(70, 82, 106)',
+											textEmphasisColor: 'rgb(70, 82, 106)',
+											textSizeAdjust: '100%',
+											WebkitTextFillColor: 'rgb(70, 82, 106)',
+											WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+										}}
+										className={'product---tag-wrapper'}
+									>
+										<div
+											style={{
+												backgroundColor: 'rgb(236, 242, 255)',
+												blockSize: '26px',
+												borderBlockEndColor: 'rgb(255, 255, 255)',
+												borderBlockEndStyle: 'solid',
+												borderBlockEndWidth: '1px',
+												borderBlockStartColor: 'rgb(255, 255, 255)',
+												borderBlockStartStyle: 'solid',
+												borderBlockStartWidth: '1px',
+												borderBottomColor: 'rgb(255, 255, 255)',
+												borderBottomLeftRadius: '40px',
+												borderBottomRightRadius: '40px',
+												borderBottomStyle: 'solid',
+												borderBottomWidth: '1px',
+												borderEndEndRadius: '40px',
+												borderEndStartRadius: '40px',
+												borderInlineEndColor: 'rgb(255, 255, 255)',
+												borderInlineEndStyle: 'solid',
+												borderInlineEndWidth: '1px',
+												borderInlineStartColor: 'rgb(255, 255, 255)',
+												borderInlineStartStyle: 'solid',
+												borderInlineStartWidth: '1px',
+												borderLeftColor: 'rgb(255, 255, 255)',
+												borderLeftStyle: 'solid',
+												borderLeftWidth: '1px',
+												borderRightColor: 'rgb(255, 255, 255)',
+												borderRightStyle: 'solid',
+												borderRightWidth: '1px',
+												borderStartEndRadius: '40px',
+												borderStartStartRadius: '40px',
+												borderTopColor: 'rgb(255, 255, 255)',
+												borderTopLeftRadius: '40px',
+												borderTopRightRadius: '40px',
+												borderTopStyle: 'solid',
+												borderTopWidth: '1px',
+												boxSizing: 'border-box',
+												caretColor: 'rgb(81, 120, 255)',
+												color: 'rgb(81, 120, 255)',
+												columnRuleColor: 'rgb(81, 120, 255)',
+												fontFamily: 'Claritycity, sans-serif',
+												fontSize: '12px',
+												fontWeight: 600,
+												inlineSize: '73.5312px',
+												lineHeight: '12px',
+												marginLeft: 0,
+												marginRight: 0,
+												minBlockSize: 'auto',
+												minHeight: 'auto',
+												minInlineSize: 'auto',
+												minWidth: 'auto',
+												outlineColor: 'rgb(81, 120, 255)',
+												paddingBlockEnd: '6px',
+												paddingBlockStart: '6px',
+												paddingBottom: '6px',
+												paddingInlineEnd: '10px',
+												paddingInlineStart: '10px',
+												paddingLeft: '10px',
+												paddingRight: '10px',
+												paddingTop: '6px',
+												textAlign: 'center',
+												textDecoration: 'none solid rgb(81, 120, 255)',
+												textDecorationColor: 'rgb(81, 120, 255)',
+												textEmphasisColor: 'rgb(81, 120, 255)',
+												textSizeAdjust: '100%',
+												WebkitTextFillColor: 'rgb(81, 120, 255)',
+												WebkitTextStrokeColor: 'rgb(81, 120, 255)',
+											}}
+											className={'badge-primary small'}
+										>
+											Business
+										</div>
+									</div>
+								</div>
+							</div>
+							<div
+								style={{
+									alignItems: 'center',
+									blockSize: '38.0469px',
+									borderBlockEndColor: 'rgb(70, 82, 106)',
+									borderBlockStartColor: 'rgb(70, 82, 106)',
+									borderBottomColor: 'rgb(70, 82, 106)',
+									borderInlineEndColor: 'rgb(70, 82, 106)',
+									borderInlineStartColor: 'rgb(70, 82, 106)',
+									borderLeftColor: 'rgb(70, 82, 106)',
+									borderRightColor: 'rgb(70, 82, 106)',
+									borderTopColor: 'rgb(70, 82, 106)',
+									boxSizing: 'border-box',
+									caretColor: 'rgb(70, 82, 106)',
+									color: 'rgb(70, 82, 106)',
+									columnGap: '16px',
+									columnRuleColor: 'rgb(70, 82, 106)',
+									display: 'flex',
+									flexWrap: 'wrap',
+									fontFamily: 'Claritycity, sans-serif',
+									fontSize: '16px',
+									fontWeight: 500,
+									inlineSize: '170.844px',
+									justifyContent: 'flex-end',
+									lineHeight: '28px',
+									marginLeft: 0,
+									marginRight: 0,
+									minBlockSize: 'auto',
+									minHeight: 'auto',
+									minInlineSize: 'auto',
+									minWidth: 'auto',
+									outlineColor: 'rgb(70, 82, 106)',
+									rowGap: '16px',
+									textDecoration: 'none solid rgb(70, 82, 106)',
+									textDecorationColor: 'rgb(70, 82, 106)',
+									textEmphasisColor: 'rgb(70, 82, 106)',
+									textSizeAdjust: '100%',
+									WebkitTextFillColor: 'rgb(70, 82, 106)',
+									WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+								}}
+								className={'product-card---links-wrapper'}
+							>
+								<a
+									style={{
+										blockSize: '16px',
+										borderBlockEndColor: 'rgb(12, 24, 48)',
+										borderBlockStartColor: 'rgb(12, 24, 48)',
+										borderBottomColor: 'rgb(12, 24, 48)',
+										borderInlineEndColor: 'rgb(12, 24, 48)',
+										borderInlineStartColor: 'rgb(12, 24, 48)',
+										borderLeftColor: 'rgb(12, 24, 48)',
+										borderRightColor: 'rgb(12, 24, 48)',
+										borderTopColor: 'rgb(12, 24, 48)',
+										boxSizing: 'border-box',
+										caretColor: 'rgb(12, 24, 48)',
+										color: 'rgb(12, 24, 48)',
+										columnRuleColor: 'rgb(12, 24, 48)',
+										cursor: 'pointer',
+										display: 'block',
+										fontFamily: 'Claritycity, sans-serif',
+										fontSize: '14px',
+										fontWeight: 600,
+										inlineSize: '78.8125px',
+										lineHeight: '16.002px',
+										marginLeft: 0,
+										marginRight: 0,
+										minBlockSize: 'auto',
+										minHeight: 'auto',
+										minInlineSize: 'auto',
+										minWidth: 'auto',
+										outlineColor: 'rgb(12, 24, 48)',
+										textDecoration: 'none',
+										textDecorationColor: 'rgb(12, 24, 48)',
+										textEmphasisColor: 'rgb(12, 24, 48)',
+										textSizeAdjust: '100%',
+										transitionDuration: '0.3s',
+										transitionProperty: 'color',
+										WebkitTextFillColor: 'rgb(12, 24, 48)',
+										WebkitTextStrokeColor: 'rgb(12, 24, 48)',
+									}}
+									href={
+										'https://aggregatortemplate.webflow.io/products/corporate'
+									}
+									className={'product---learn-more-link'}
+								>
+									Learn more
+								</a>
+								<a
+									style={{
+										alignItems: 'center',
+										backgroundColor: 'rgb(81, 120, 255)',
+										blockSize: '38.0469px',
+										borderBlockEndColor: 'rgb(81, 120, 255)',
+										borderBlockEndStyle: 'solid',
+										borderBlockEndWidth: '1px',
+										borderBlockStartColor: 'rgb(81, 120, 255)',
+										borderBlockStartStyle: 'solid',
+										borderBlockStartWidth: '1px',
+										borderBottomColor: 'rgb(81, 120, 255)',
+										borderBottomLeftRadius: '96px',
+										borderBottomRightRadius: '96px',
+										borderBottomStyle: 'solid',
+										borderBottomWidth: '1px',
+										borderEndEndRadius: '96px',
+										borderEndStartRadius: '96px',
+										borderInlineEndColor: 'rgb(81, 120, 255)',
+										borderInlineEndStyle: 'solid',
+										borderInlineEndWidth: '1px',
+										borderInlineStartColor: 'rgb(81, 120, 255)',
+										borderInlineStartStyle: 'solid',
+										borderInlineStartWidth: '1px',
+										borderLeftColor: 'rgb(81, 120, 255)',
+										borderLeftStyle: 'solid',
+										borderLeftWidth: '1px',
+										borderRightColor: 'rgb(81, 120, 255)',
+										borderRightStyle: 'solid',
+										borderRightWidth: '1px',
+										borderStartEndRadius: '96px',
+										borderStartStartRadius: '96px',
+										borderTopColor: 'rgb(81, 120, 255)',
+										borderTopLeftRadius: '96px',
+										borderTopRightRadius: '96px',
+										borderTopStyle: 'solid',
+										borderTopWidth: '1px',
+										boxSizing: 'border-box',
+										caretColor: 'rgb(255, 255, 255)',
+										color: 'rgb(255, 255, 255)',
+										columnGap: '0px',
+										columnRuleColor: 'rgb(255, 255, 255)',
+										cursor: 'pointer',
+										display: 'flex',
+										fontFamily: 'Claritycity, sans-serif',
+										fontSize: '14px',
+										fontWeight: 600,
+										inlineSize: '76.0312px',
+										justifyContent: 'center',
+										lineHeight: '16.058px',
+										marginLeft: 0,
+										marginRight: 0,
+										minBlockSize: 'auto',
+										minHeight: 'auto',
+										minInlineSize: 'auto',
+										minWidth: 'auto',
+										outlineColor: 'rgb(255, 255, 255)',
+										paddingBlockEnd: '10px',
+										paddingBlockStart: '10px',
+										paddingBottom: '10px',
+										paddingInlineEnd: '12px',
+										paddingInlineStart: '12px',
+										paddingLeft: '12px',
+										paddingRight: '12px',
+										paddingTop: '10px',
+										rowGap: '6px',
+										textAlign: 'center',
+										textDecoration: 'none',
+										textDecorationColor: 'rgb(255, 255, 255)',
+										textEmphasisColor: 'rgb(255, 255, 255)',
+										textSizeAdjust: '100%',
+										transitionDelay: '0s, 0s, 0s, 0s',
+										transitionDuration: '0.3s, 0.3s, 0.3s, 0.3s',
+										transitionProperty:
+											'border-color, background-color, transform, color',
+										transitionTimingFunction: 'ease, ease, ease, ease',
+										WebkitTextFillColor: 'rgb(255, 255, 255)',
+										WebkitTextStrokeColor: 'rgb(255, 255, 255)',
+									}}
+									data-w-id={'7e6fe7eb-520f-397f-08d0-a9d5878644c4'}
+									href={'https://corporatetemplates.webflow.io/'}
+									target={'_blank'}
+									className='btn-primary btn-visit w-button'
+								>
+									查看
+									<span
+										style={{
+											blockSize: '16.0469px',
+											color: 'rgb(255, 255, 255)',
+											cursor: 'pointer',
+											display: 'block',
+											fontSize: '14px',
+											fontWeight: 600,
+											inlineSize: '13.4531px',
+											lineHeight: '16.058px',
+											marginInlineStart: '6px',
+											marginLeft: 0,
+											marginRight: 0,
+											minBlockSize: 'auto',
+											minHeight: 'auto',
+											minInlineSize: 'auto',
+											minWidth: 'auto',
+											outlineColor: 'rgb(255, 255, 255)',
+											textAlign: 'center',
+											textDecoration: 'none solid rgb(255, 255, 255)',
+											textDecorationColor: 'rgb(255, 255, 255)',
+											textEmphasisColor: 'rgb(255, 255, 255)',
+											textSizeAdjust: '100%',
+											WebkitTextFillColor: 'rgb(255, 255, 255)',
+											WebkitTextStrokeColor: 'rgb(255, 255, 255)',
+										}}
+										className={'line-rounded-icon link-icon-right'}
+									>
+										<ArrowForwardIcon />{' '}
+									</span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div
+						style={{
+							blockSize: '145.984px',
+							color: 'rgb(70, 82, 106)',
+							fontSize: '16px',
+							fontWeight: 500,
+							lineHeight: '28px',
+							marginLeft: 0,
+							marginRight: 0,
+							minBlockSize: 'auto',
+							minHeight: 'auto',
+							minInlineSize: 'auto',
+							minWidth: 'auto',
+							outlineColor: 'rgb(70, 82, 106)',
+							textDecoration: 'none solid rgb(70, 82, 106)',
+							textDecorationColor: 'rgb(70, 82, 106)',
+							textEmphasisColor: 'rgb(70, 82, 106)',
+							textSizeAdjust: '100%',
+							WebkitTextFillColor: 'rgb(70, 82, 106)',
+							WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+						}}
+						role={'listitem'}
+						className={'w-dyn-item'}
+					>
+						<div
+							style={{
+								alignItems: 'center',
+								backgroundColor: 'rgb(255, 255, 255)',
+								blockSize: '145.984px',
+								borderBlockEndColor: 'rgb(236, 242, 255)',
+								borderBlockEndStyle: 'solid',
+								borderBlockEndWidth: '1px',
+								borderBlockStartColor: 'rgb(236, 242, 255)',
+								borderBlockStartStyle: 'solid',
+								borderBlockStartWidth: '1px',
+								borderBottomColor: 'rgb(236, 242, 255)',
+								borderBottomLeftRadius: '18px',
+								borderBottomRightRadius: '18px',
+								borderBottomStyle: 'solid',
+								borderBottomWidth: '1px',
+								borderEndEndRadius: '18px',
+								borderEndStartRadius: '18px',
+								borderInlineEndColor: 'rgb(236, 242, 255)',
+								borderInlineEndStyle: 'solid',
+								borderInlineEndWidth: '1px',
+								borderInlineStartColor: 'rgb(236, 242, 255)',
+								borderInlineStartStyle: 'solid',
+								borderInlineStartWidth: '1px',
+								borderLeftColor: 'rgb(236, 242, 255)',
+								borderLeftStyle: 'solid',
+								borderLeftWidth: '1px',
+								borderRightColor: 'rgb(236, 242, 255)',
+								borderRightStyle: 'solid',
+								borderRightWidth: '1px',
+								borderStartEndRadius: '18px',
+								borderStartStartRadius: '18px',
+								borderTopColor: 'rgb(236, 242, 255)',
+								borderTopLeftRadius: '18px',
+								borderTopRightRadius: '18px',
+								borderTopStyle: 'solid',
+								borderTopWidth: '1px',
+								boxShadow:
+									'rgba(36, 65, 122, 0.08) 0px 0px 2px 0px, rgba(36, 65, 122, 0.08) 0px 2px 6px 0px',
+								boxSizing: 'border-box',
+								caretColor: 'rgb(70, 82, 106)',
+								color: 'rgb(70, 82, 106)',
+								columnGap: '24px',
+								columnRuleColor: 'rgb(70, 82, 106)',
+								display: 'grid',
+								fontFamily: 'Claritycity, sans-serif',
+								fontSize: '16px',
+								fontWeight: 500,
+								gridAutoColumns: '1fr',
+								gridTemplateRows: '87.9844px',
+								justifyContent: 'space-between',
+								lineHeight: '28px',
+								marginLeft: 0,
+								marginRight: 0,
+								outlineColor: 'rgb(70, 82, 106)',
+								overflowX: 'hidden',
+								overflowY: 'hidden',
+								paddingBlockEnd: '28px',
+								paddingBlockStart: '28px',
+								paddingBottom: '28px',
+								paddingInlineEnd: '40px',
+								paddingInlineStart: '40px',
+								paddingLeft: '40px',
+								paddingRight: '40px',
+								paddingTop: '28px',
+								rowGap: '20px',
+								textDecoration: 'none solid rgb(70, 82, 106)',
+								textDecorationColor: 'rgb(70, 82, 106)',
+								textEmphasisColor: 'rgb(70, 82, 106)',
+								textSizeAdjust: '100%',
+								transitionDelay: '0s, 0s',
+								transitionDuration: '0.3s, 0.3s',
+								transitionProperty: 'transform, color',
+								transitionTimingFunction: 'ease, ease',
+								WebkitTextFillColor: 'rgb(70, 82, 106)',
+								WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+							}}
+							className={'card product-card-v1'}
+						>
+							<div
+								style={{
+									alignItems: 'center',
+									blockSize: '87.9844px',
+									borderBlockEndColor: 'rgb(70, 82, 106)',
+									borderBlockStartColor: 'rgb(70, 82, 106)',
+									borderBottomColor: 'rgb(70, 82, 106)',
+									borderInlineEndColor: 'rgb(70, 82, 106)',
+									borderInlineStartColor: 'rgb(70, 82, 106)',
+									borderLeftColor: 'rgb(70, 82, 106)',
+									borderRightColor: 'rgb(70, 82, 106)',
+									borderTopColor: 'rgb(70, 82, 106)',
+									boxSizing: 'border-box',
+									caretColor: 'rgb(70, 82, 106)',
+									color: 'rgb(70, 82, 106)',
+									columnGap: '16px',
+									columnRuleColor: 'rgb(70, 82, 106)',
+									display: 'flex',
+									flexWrap: 'wrap',
+									fontFamily: 'Claritycity, sans-serif',
+									fontSize: '16px',
+									fontWeight: 500,
+									lineHeight: '28px',
+									marginLeft: 0,
+									marginRight: 0,
+									minBlockSize: 'auto',
+									minHeight: 'auto',
+									minInlineSize: 'auto',
+									minWidth: 'auto',
+									outlineColor: 'rgb(70, 82, 106)',
+									rowGap: '16px',
+									textDecoration: 'none solid rgb(70, 82, 106)',
+									textDecorationColor: 'rgb(70, 82, 106)',
+									textEmphasisColor: 'rgb(70, 82, 106)',
+									textSizeAdjust: '100%',
+									WebkitTextFillColor: 'rgb(70, 82, 106)',
+									WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+								}}
+								className={'product---description'}
+							>
+								<div
+									style={{
+										blockSize: '80px',
+										borderBlockEndColor: 'rgb(70, 82, 106)',
+										borderBlockStartColor: 'rgb(70, 82, 106)',
+										borderBottomColor: 'rgb(70, 82, 106)',
+										borderInlineEndColor: 'rgb(70, 82, 106)',
+										borderInlineStartColor: 'rgb(70, 82, 106)',
+										borderLeftColor: 'rgb(70, 82, 106)',
+										borderRightColor: 'rgb(70, 82, 106)',
+										borderTopColor: 'rgb(70, 82, 106)',
+										boxSizing: 'border-box',
+										caretColor: 'rgb(70, 82, 106)',
+										color: 'rgb(70, 82, 106)',
+										columnRuleColor: 'rgb(70, 82, 106)',
+										fontFamily: 'Claritycity, sans-serif',
+										fontSize: '16px',
+										fontWeight: 500,
+										inlineSize: '80px',
+										lineHeight: '28px',
+										marginLeft: 0,
+										marginRight: 0,
+										minBlockSize: 'auto',
+										minHeight: 'auto',
+										minInlineSize: 'auto',
+										minWidth: 'auto',
+										outlineColor: 'rgb(70, 82, 106)',
+										textDecoration: 'none solid rgb(70, 82, 106)',
+										textDecorationColor: 'rgb(70, 82, 106)',
+										textEmphasisColor: 'rgb(70, 82, 106)',
+										textSizeAdjust: '100%',
+										WebkitTextFillColor: 'rgb(70, 82, 106)',
+										WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+									}}
+								>
+									<img
+										style={{
+											blockSize: '80px',
+											borderBlockEndColor: 'rgb(255, 255, 255)',
+											borderBlockEndStyle: 'solid',
+											borderBlockEndWidth: '3px',
+											borderBlockStartColor: 'rgb(255, 255, 255)',
+											borderBlockStartStyle: 'solid',
+											borderBlockStartWidth: '3px',
+											borderBottomColor: 'rgb(255, 255, 255)',
+											borderBottomLeftRadius: '100%',
+											borderBottomRightRadius: '100%',
+											borderBottomStyle: 'solid',
+											borderBottomWidth: '3px',
+											borderEndEndRadius: '100%',
+											borderEndStartRadius: '100%',
+											borderInlineEndColor: 'rgb(255, 255, 255)',
+											borderInlineEndStyle: 'solid',
+											borderInlineEndWidth: '3px',
+											borderInlineStartColor: 'rgb(255, 255, 255)',
+											borderInlineStartStyle: 'solid',
+											borderInlineStartWidth: '3px',
+											borderLeftColor: 'rgb(255, 255, 255)',
+											borderLeftStyle: 'solid',
+											borderLeftWidth: '3px',
+											borderRightColor: 'rgb(255, 255, 255)',
+											borderRightStyle: 'solid',
+											borderRightWidth: '3px',
+											borderStartEndRadius: '100%',
+											borderStartStartRadius: '100%',
+											borderTopColor: 'rgb(255, 255, 255)',
+											borderTopLeftRadius: '100%',
+											borderTopRightRadius: '100%',
+											borderTopStyle: 'solid',
+											borderTopWidth: '3px',
+											boxSizing: 'border-box',
+											caretColor: 'rgb(70, 82, 106)',
+											color: 'rgb(70, 82, 106)',
+											columnRuleColor: 'rgb(70, 82, 106)',
+											display: 'inline-block',
+											fontFamily: 'Claritycity, sans-serif',
+											fontSize: '16px',
+											fontWeight: 500,
+											inlineSize: '80px',
+											lineHeight: '28px',
+											marginLeft: 0,
+											marginRight: 0,
+											maxBlockSize: '80px',
+											maxHeight: '80px',
+											maxInlineSize: '80px',
+											maxWidth: '80px',
+											outlineColor: 'rgb(70, 82, 106)',
+											overflowX: 'hidden',
+											overflowY: 'hidden',
+											textDecoration: 'none solid rgb(70, 82, 106)',
+											textDecorationColor: 'rgb(70, 82, 106)',
+											textEmphasisColor: 'rgb(70, 82, 106)',
+											textSizeAdjust: '100%',
+											transform: 'matrix(1, 0, 0, 1, 0, 0)',
+											transformOrigin: '40px 40px',
+											verticalAlign: 'middle',
+											WebkitTextFillColor: 'rgb(70, 82, 106)',
+											WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+											width: '80px',
+											height: '80px',
+										}}
+										src={
+											'https://assets.website-files.com/63bed0273cfe5e611e742359/63c83037e8af0e57d0f6776b_starup-featured-image-aggregator-x-webflow-template.svg'
+										}
+										alt={'Starup'}
+										className={'avatar-circle _04'}
+									></img>
+								</div>
+								<div
+									style={{
+										blockSize: '87.9844px',
+										borderBlockEndColor: 'rgb(70, 82, 106)',
+										borderBlockStartColor: 'rgb(70, 82, 106)',
+										borderBottomColor: 'rgb(70, 82, 106)',
+										borderInlineEndColor: 'rgb(70, 82, 106)',
+										borderInlineStartColor: 'rgb(70, 82, 106)',
+										borderLeftColor: 'rgb(70, 82, 106)',
+										borderRightColor: 'rgb(70, 82, 106)',
+										borderTopColor: 'rgb(70, 82, 106)',
+										boxSizing: 'border-box',
+										caretColor: 'rgb(70, 82, 106)',
+										color: 'rgb(70, 82, 106)',
+										columnRuleColor: 'rgb(70, 82, 106)',
+										fontFamily: 'Claritycity, sans-serif',
+										fontSize: '16px',
+										fontWeight: 500,
+										lineHeight: '28px',
+										marginLeft: 0,
+										marginRight: 0,
+										minBlockSize: 'auto',
+										minHeight: 'auto',
+										minInlineSize: 'auto',
+										minWidth: 'auto',
+										outlineColor: 'rgb(70, 82, 106)',
+										textDecoration: 'none solid rgb(70, 82, 106)',
+										textDecorationColor: 'rgb(70, 82, 106)',
+										textEmphasisColor: 'rgb(70, 82, 106)',
+										textSizeAdjust: '100%',
+										WebkitTextFillColor: 'rgb(70, 82, 106)',
+										WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+									}}
+								>
+									<div
+										style={{
+											blockSize: '22px',
+											borderBlockEndColor: 'rgb(12, 24, 48)',
+											borderBlockStartColor: 'rgb(12, 24, 48)',
+											borderBottomColor: 'rgb(12, 24, 48)',
+											borderInlineEndColor: 'rgb(12, 24, 48)',
+											borderInlineStartColor: 'rgb(12, 24, 48)',
+											borderLeftColor: 'rgb(12, 24, 48)',
+											borderRightColor: 'rgb(12, 24, 48)',
+											borderTopColor: 'rgb(12, 24, 48)',
+											boxSizing: 'border-box',
+											caretColor: 'rgb(12, 24, 48)',
+											color: 'rgb(12, 24, 48)',
+											columnRuleColor: 'rgb(12, 24, 48)',
+											display: 'inline-block',
+											fontFamily: 'Claritycity, sans-serif',
+											fontSize: '16px',
+											fontWeight: 700,
+											inlineSize: '53.4062px',
+											lineHeight: '22px',
+											marginLeft: 0,
+											marginRight: 0,
+											outlineColor: 'rgb(12, 24, 48)',
+											textDecoration: 'none solid rgb(12, 24, 48)',
+											textDecorationColor: 'rgb(12, 24, 48)',
+											textEmphasisColor: 'rgb(12, 24, 48)',
+											textSizeAdjust: '100%',
+											WebkitTextFillColor: 'rgb(12, 24, 48)',
+											WebkitTextStrokeColor: 'rgb(12, 24, 48)',
+										}}
+										className={'product---name'}
+									>
+										Starup
+									</div>
+									<div
+										style={{
+											blockSize: '23.9844px',
+											borderBlockEndColor: 'rgb(70, 82, 106)',
+											borderBlockStartColor: 'rgb(70, 82, 106)',
+											borderBottomColor: 'rgb(70, 82, 106)',
+											borderInlineEndColor: 'rgb(70, 82, 106)',
+											borderInlineStartColor: 'rgb(70, 82, 106)',
+											borderLeftColor: 'rgb(70, 82, 106)',
+											borderRightColor: 'rgb(70, 82, 106)',
+											borderTopColor: 'rgb(70, 82, 106)',
+											boxSizing: 'border-box',
+											caretColor: 'rgb(70, 82, 106)',
+											color: 'rgb(70, 82, 106)',
+											columnRuleColor: 'rgb(70, 82, 106)',
+											fontFamily: 'Claritycity, sans-serif',
+											fontSize: '16px',
+											fontWeight: 500,
+											lineHeight: '28px',
+											marginLeft: 0,
+											marginRight: 0,
+											outlineColor: 'rgb(70, 82, 106)',
+											textDecoration: 'none solid rgb(70, 82, 106)',
+											textDecorationColor: 'rgb(70, 82, 106)',
+											textEmphasisColor: 'rgb(70, 82, 106)',
+											textSizeAdjust: '100%',
+											WebkitTextFillColor: 'rgb(70, 82, 106)',
+											WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+										}}
+									>
+										<p
+											style={{
+												blockSize: '23.9844px',
+												borderBlockEndColor: 'rgb(70, 82, 106)',
+												borderBlockStartColor: 'rgb(70, 82, 106)',
+												borderBottomColor: 'rgb(70, 82, 106)',
+												borderInlineEndColor: 'rgb(70, 82, 106)',
+												borderInlineStartColor: 'rgb(70, 82, 106)',
+												borderLeftColor: 'rgb(70, 82, 106)',
+												borderRightColor: 'rgb(70, 82, 106)',
+												borderTopColor: 'rgb(70, 82, 106)',
+												boxSizing: 'border-box',
+												caretColor: 'rgb(70, 82, 106)',
+												color: 'rgb(70, 82, 106)',
+												columnRuleColor: 'rgb(70, 82, 106)',
+												fontFamily: 'Claritycity, sans-serif',
+												fontSize: '14px',
+												fontWeight: 500,
+												lineHeight: '23.996px',
+												marginBlockEnd: '10px',
+												marginBlockStart: '0px',
+												marginBottom: '10px',
+												marginLeft: 0,
+												marginRight: 0,
+												marginTop: '0px',
+												outlineColor: 'rgb(70, 82, 106)',
+												textDecoration: 'none solid rgb(70, 82, 106)',
+												textDecorationColor: 'rgb(70, 82, 106)',
+												textEmphasisColor: 'rgb(70, 82, 106)',
+												textSizeAdjust: '100%',
+												WebkitTextFillColor: 'rgb(70, 82, 106)',
+												WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+											}}
+											className={'paragraph-small medium mg-bottom-10px'}
+										>
+											Nisl eget elementum semper tristique in nisl nunc quisque.
+										</p>
+									</div>
+									<div
+										style={{
+											alignItems: 'center',
+											blockSize: '26px',
+											borderBlockEndColor: 'rgb(70, 82, 106)',
+											borderBlockStartColor: 'rgb(70, 82, 106)',
+											borderBottomColor: 'rgb(70, 82, 106)',
+											borderInlineEndColor: 'rgb(70, 82, 106)',
+											borderInlineStartColor: 'rgb(70, 82, 106)',
+											borderLeftColor: 'rgb(70, 82, 106)',
+											borderRightColor: 'rgb(70, 82, 106)',
+											borderTopColor: 'rgb(70, 82, 106)',
+											boxSizing: 'border-box',
+											caretColor: 'rgb(70, 82, 106)',
+											color: 'rgb(70, 82, 106)',
+											columnGap: '8px',
+											columnRuleColor: 'rgb(70, 82, 106)',
+											display: 'flex',
+											fontFamily: 'Claritycity, sans-serif',
+											fontSize: '16px',
+											fontWeight: 500,
+											justifyContent: 'flex-start',
+											lineHeight: '28px',
+											marginLeft: 0,
+											marginRight: 0,
+											outlineColor: 'rgb(70, 82, 106)',
+											rowGap: '8px',
+											textDecoration: 'none solid rgb(70, 82, 106)',
+											textDecorationColor: 'rgb(70, 82, 106)',
+											textEmphasisColor: 'rgb(70, 82, 106)',
+											textSizeAdjust: '100%',
+											WebkitTextFillColor: 'rgb(70, 82, 106)',
+											WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+										}}
+										className={'product---tag-wrapper'}
+									>
+										<div
+											style={{
+												backgroundColor: 'rgb(236, 242, 255)',
+												blockSize: '26px',
+												borderBlockEndColor: 'rgb(255, 255, 255)',
+												borderBlockEndStyle: 'solid',
+												borderBlockEndWidth: '1px',
+												borderBlockStartColor: 'rgb(255, 255, 255)',
+												borderBlockStartStyle: 'solid',
+												borderBlockStartWidth: '1px',
+												borderBottomColor: 'rgb(255, 255, 255)',
+												borderBottomLeftRadius: '40px',
+												borderBottomRightRadius: '40px',
+												borderBottomStyle: 'solid',
+												borderBottomWidth: '1px',
+												borderEndEndRadius: '40px',
+												borderEndStartRadius: '40px',
+												borderInlineEndColor: 'rgb(255, 255, 255)',
+												borderInlineEndStyle: 'solid',
+												borderInlineEndWidth: '1px',
+												borderInlineStartColor: 'rgb(255, 255, 255)',
+												borderInlineStartStyle: 'solid',
+												borderInlineStartWidth: '1px',
+												borderLeftColor: 'rgb(255, 255, 255)',
+												borderLeftStyle: 'solid',
+												borderLeftWidth: '1px',
+												borderRightColor: 'rgb(255, 255, 255)',
+												borderRightStyle: 'solid',
+												borderRightWidth: '1px',
+												borderStartEndRadius: '40px',
+												borderStartStartRadius: '40px',
+												borderTopColor: 'rgb(255, 255, 255)',
+												borderTopLeftRadius: '40px',
+												borderTopRightRadius: '40px',
+												borderTopStyle: 'solid',
+												borderTopWidth: '1px',
+												boxSizing: 'border-box',
+												caretColor: 'rgb(81, 120, 255)',
+												color: 'rgb(81, 120, 255)',
+												columnRuleColor: 'rgb(81, 120, 255)',
+												fontFamily: 'Claritycity, sans-serif',
+												fontSize: '12px',
+												fontWeight: 600,
+												inlineSize: '73.5312px',
+												lineHeight: '12px',
+												marginLeft: 0,
+												marginRight: 0,
+												minBlockSize: 'auto',
+												minHeight: 'auto',
+												minInlineSize: 'auto',
+												minWidth: 'auto',
+												outlineColor: 'rgb(81, 120, 255)',
+												paddingBlockEnd: '6px',
+												paddingBlockStart: '6px',
+												paddingBottom: '6px',
+												paddingInlineEnd: '10px',
+												paddingInlineStart: '10px',
+												paddingLeft: '10px',
+												paddingRight: '10px',
+												paddingTop: '6px',
+												textAlign: 'center',
+												textDecoration: 'none solid rgb(81, 120, 255)',
+												textDecorationColor: 'rgb(81, 120, 255)',
+												textEmphasisColor: 'rgb(81, 120, 255)',
+												textSizeAdjust: '100%',
+												WebkitTextFillColor: 'rgb(81, 120, 255)',
+												WebkitTextStrokeColor: 'rgb(81, 120, 255)',
+											}}
+											className={'badge-primary small'}
+										>
+											Business
+										</div>
+									</div>
+								</div>
+							</div>
+							<div
+								style={{
+									alignItems: 'center',
+									blockSize: '38.0469px',
+									borderBlockEndColor: 'rgb(70, 82, 106)',
+									borderBlockStartColor: 'rgb(70, 82, 106)',
+									borderBottomColor: 'rgb(70, 82, 106)',
+									borderInlineEndColor: 'rgb(70, 82, 106)',
+									borderInlineStartColor: 'rgb(70, 82, 106)',
+									borderLeftColor: 'rgb(70, 82, 106)',
+									borderRightColor: 'rgb(70, 82, 106)',
+									borderTopColor: 'rgb(70, 82, 106)',
+									boxSizing: 'border-box',
+									caretColor: 'rgb(70, 82, 106)',
+									color: 'rgb(70, 82, 106)',
+									columnGap: '16px',
+									columnRuleColor: 'rgb(70, 82, 106)',
+									display: 'flex',
+									flexWrap: 'wrap',
+									fontFamily: 'Claritycity, sans-serif',
+									fontSize: '16px',
+									fontWeight: 500,
+									justifyContent: 'flex-end',
+									lineHeight: '28px',
+									marginLeft: 0,
+									marginRight: 0,
+									minBlockSize: 'auto',
+									minHeight: 'auto',
+									minInlineSize: 'auto',
+									minWidth: 'auto',
+									outlineColor: 'rgb(70, 82, 106)',
+									rowGap: '16px',
+									textDecoration: 'none solid rgb(70, 82, 106)',
+									textDecorationColor: 'rgb(70, 82, 106)',
+									textEmphasisColor: 'rgb(70, 82, 106)',
+									textSizeAdjust: '100%',
+									WebkitTextFillColor: 'rgb(70, 82, 106)',
+									WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+								}}
+								className={'product-card---links-wrapper'}
+							>
+								<a
+									style={{
+										blockSize: '16px',
+										borderBlockEndColor: 'rgb(12, 24, 48)',
+										borderBlockStartColor: 'rgb(12, 24, 48)',
+										borderBottomColor: 'rgb(12, 24, 48)',
+										borderInlineEndColor: 'rgb(12, 24, 48)',
+										borderInlineStartColor: 'rgb(12, 24, 48)',
+										borderLeftColor: 'rgb(12, 24, 48)',
+										borderRightColor: 'rgb(12, 24, 48)',
+										borderTopColor: 'rgb(12, 24, 48)',
+										boxSizing: 'border-box',
+										caretColor: 'rgb(12, 24, 48)',
+										color: 'rgb(12, 24, 48)',
+										columnRuleColor: 'rgb(12, 24, 48)',
+										cursor: 'pointer',
+										display: 'block',
+										fontFamily: 'Claritycity, sans-serif',
+										fontSize: '14px',
+										fontWeight: 600,
+										inlineSize: '78.8125px',
+										lineHeight: '16.002px',
+										marginLeft: 0,
+										marginRight: 0,
+										minBlockSize: 'auto',
+										minHeight: 'auto',
+										minInlineSize: 'auto',
+										minWidth: 'auto',
+										outlineColor: 'rgb(12, 24, 48)',
+										textDecoration: 'none',
+										textDecorationColor: 'rgb(12, 24, 48)',
+										textEmphasisColor: 'rgb(12, 24, 48)',
+										textSizeAdjust: '100%',
+										transitionDuration: '0.3s',
+										transitionProperty: 'color',
+										WebkitTextFillColor: 'rgb(12, 24, 48)',
+										WebkitTextStrokeColor: 'rgb(12, 24, 48)',
+									}}
+									href={'https://aggregatortemplate.webflow.io/products/starup'}
+									className={'product---learn-more-link'}
+								>
+									Learn more
+								</a>
+								<a
+									style={{
+										alignItems: 'center',
+										backgroundColor: 'rgb(81, 120, 255)',
+										blockSize: '38.0469px',
+										borderBlockEndColor: 'rgb(81, 120, 255)',
+										borderBlockEndStyle: 'solid',
+										borderBlockEndWidth: '1px',
+										borderBlockStartColor: 'rgb(81, 120, 255)',
+										borderBlockStartStyle: 'solid',
+										borderBlockStartWidth: '1px',
+										borderBottomColor: 'rgb(81, 120, 255)',
+										borderBottomLeftRadius: '96px',
+										borderBottomRightRadius: '96px',
+										borderBottomStyle: 'solid',
+										borderBottomWidth: '1px',
+										borderEndEndRadius: '96px',
+										borderEndStartRadius: '96px',
+										borderInlineEndColor: 'rgb(81, 120, 255)',
+										borderInlineEndStyle: 'solid',
+										borderInlineEndWidth: '1px',
+										borderInlineStartColor: 'rgb(81, 120, 255)',
+										borderInlineStartStyle: 'solid',
+										borderInlineStartWidth: '1px',
+										borderLeftColor: 'rgb(81, 120, 255)',
+										borderLeftStyle: 'solid',
+										borderLeftWidth: '1px',
+										borderRightColor: 'rgb(81, 120, 255)',
+										borderRightStyle: 'solid',
+										borderRightWidth: '1px',
+										borderStartEndRadius: '96px',
+										borderStartStartRadius: '96px',
+										borderTopColor: 'rgb(81, 120, 255)',
+										borderTopLeftRadius: '96px',
+										borderTopRightRadius: '96px',
+										borderTopStyle: 'solid',
+										borderTopWidth: '1px',
+										boxSizing: 'border-box',
+										caretColor: 'rgb(255, 255, 255)',
+										color: 'rgb(255, 255, 255)',
+										columnGap: '0px',
+										columnRuleColor: 'rgb(255, 255, 255)',
+										cursor: 'pointer',
+										display: 'flex',
+										fontFamily: 'Claritycity, sans-serif',
+										fontSize: '14px',
+										fontWeight: 600,
+										inlineSize: '76.0312px',
+										justifyContent: 'center',
+										lineHeight: '16.058px',
+										marginLeft: 0,
+										marginRight: 0,
+										minBlockSize: 'auto',
+										minHeight: 'auto',
+										minInlineSize: 'auto',
+										minWidth: 'auto',
+										outlineColor: 'rgb(255, 255, 255)',
+										paddingBlockEnd: '10px',
+										paddingBlockStart: '10px',
+										paddingBottom: '10px',
+										paddingInlineEnd: '12px',
+										paddingInlineStart: '12px',
+										paddingLeft: '12px',
+										paddingRight: '12px',
+										paddingTop: '10px',
+										rowGap: '6px',
+										textAlign: 'center',
+										textDecoration: 'none',
+										textDecorationColor: 'rgb(255, 255, 255)',
+										textEmphasisColor: 'rgb(255, 255, 255)',
+										textSizeAdjust: '100%',
+										transitionDelay: '0s, 0s, 0s, 0s',
+										transitionDuration: '0.3s, 0.3s, 0.3s, 0.3s',
+										transitionProperty:
+											'border-color, background-color, transform, color',
+										transitionTimingFunction: 'ease, ease, ease, ease',
+										WebkitTextFillColor: 'rgb(255, 255, 255)',
+										WebkitTextStrokeColor: 'rgb(255, 255, 255)',
+									}}
+									data-w-id={'7e6fe7eb-520f-397f-08d0-a9d5878644c4'}
+									href={'https://staruptemplate.webflow.io/'}
+									target={'_blank'}
+									className='btn-primar btn-visit w-button'
+								>
+									查看
+									<span
+										style={{
+											blockSize: '16.0469px',
+											borderBlockEndColor: 'rgb(255, 255, 255)',
+											borderBlockStartColor: 'rgb(255, 255, 255)',
+											borderBottomColor: 'rgb(255, 255, 255)',
+											borderInlineEndColor: 'rgb(255, 255, 255)',
+											borderInlineStartColor: 'rgb(255, 255, 255)',
+											borderLeftColor: 'rgb(255, 255, 255)',
+											borderRightColor: 'rgb(255, 255, 255)',
+											borderTopColor: 'rgb(255, 255, 255)',
+											boxSizing: 'border-box',
+											caretColor: 'rgb(255, 255, 255)',
+											color: 'rgb(255, 255, 255)',
+											columnRuleColor: 'rgb(255, 255, 255)',
+											cursor: 'pointer',
+											display: 'block',
+											fontFamily: 'Line Rounded Icons, sans-serif',
+											fontSize: '14px',
+											fontWeight: 600,
+											inlineSize: '13.4531px',
+											lineHeight: '16.058px',
+											marginInlineStart: '6px',
+											marginLeft: 0,
+											marginRight: 0,
+											minBlockSize: 'auto',
+											minHeight: 'auto',
+											minInlineSize: 'auto',
+											minWidth: 'auto',
+											outlineColor: 'rgb(255, 255, 255)',
+											textAlign: 'center',
+											textDecoration: 'none solid rgb(255, 255, 255)',
+											textDecorationColor: 'rgb(255, 255, 255)',
+											textEmphasisColor: 'rgb(255, 255, 255)',
+											textSizeAdjust: '100%',
+											WebkitTextFillColor: 'rgb(255, 255, 255)',
+											WebkitTextStrokeColor: 'rgb(255, 255, 255)',
+										}}
+										className={'line-rounded-icon link-icon-right'}
+									>
+										<ArrowForwardIcon />
+									</span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div
+						style={{
+							blockSize: '145.984px',
+							borderBlockEndColor: 'rgb(70, 82, 106)',
+							borderBlockStartColor: 'rgb(70, 82, 106)',
+							borderBottomColor: 'rgb(70, 82, 106)',
+							borderInlineEndColor: 'rgb(70, 82, 106)',
+							borderInlineStartColor: 'rgb(70, 82, 106)',
+							borderLeftColor: 'rgb(70, 82, 106)',
+							borderRightColor: 'rgb(70, 82, 106)',
+							borderTopColor: 'rgb(70, 82, 106)',
+							boxSizing: 'border-box',
+							caretColor: 'rgb(70, 82, 106)',
+							color: 'rgb(70, 82, 106)',
+							columnRuleColor: 'rgb(70, 82, 106)',
+							fontFamily: 'Claritycity, sans-serif',
+							fontSize: '16px',
+							fontWeight: 500,
+							lineHeight: '28px',
+							marginLeft: 0,
+							marginRight: 0,
+							minBlockSize: 'auto',
+							minHeight: 'auto',
+							minInlineSize: 'auto',
+							minWidth: 'auto',
+							outlineColor: 'rgb(70, 82, 106)',
+							textDecoration: 'none solid rgb(70, 82, 106)',
+							textDecorationColor: 'rgb(70, 82, 106)',
+							textEmphasisColor: 'rgb(70, 82, 106)',
+							textSizeAdjust: '100%',
+							WebkitTextFillColor: 'rgb(70, 82, 106)',
+							WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+						}}
+						role={'listitem'}
+						className={'w-dyn-item'}
+					>
+						<div
+							style={{
+								alignItems: 'center',
+								backgroundColor: 'rgb(255, 255, 255)',
+								blockSize: '145.984px',
+								borderBlockEndColor: 'rgb(236, 242, 255)',
+								borderBlockEndStyle: 'solid',
+								borderBlockEndWidth: '1px',
+								borderBlockStartColor: 'rgb(236, 242, 255)',
+								borderBlockStartStyle: 'solid',
+								borderBlockStartWidth: '1px',
+								borderBottomColor: 'rgb(236, 242, 255)',
+								borderBottomLeftRadius: '18px',
+								borderBottomRightRadius: '18px',
+								borderBottomStyle: 'solid',
+								borderBottomWidth: '1px',
+								borderEndEndRadius: '18px',
+								borderEndStartRadius: '18px',
+								borderInlineEndColor: 'rgb(236, 242, 255)',
+								borderInlineEndStyle: 'solid',
+								borderInlineEndWidth: '1px',
+								borderInlineStartColor: 'rgb(236, 242, 255)',
+								borderInlineStartStyle: 'solid',
+								borderInlineStartWidth: '1px',
+								borderLeftColor: 'rgb(236, 242, 255)',
+								borderLeftStyle: 'solid',
+								borderLeftWidth: '1px',
+								borderRightColor: 'rgb(236, 242, 255)',
+								borderRightStyle: 'solid',
+								borderRightWidth: '1px',
+								borderStartEndRadius: '18px',
+								borderStartStartRadius: '18px',
+								borderTopColor: 'rgb(236, 242, 255)',
+								borderTopLeftRadius: '18px',
+								borderTopRightRadius: '18px',
+								borderTopStyle: 'solid',
+								borderTopWidth: '1px',
+								boxShadow:
+									'rgba(36, 65, 122, 0.08) 0px 0px 2px 0px, rgba(36, 65, 122, 0.08) 0px 2px 6px 0px',
+								boxSizing: 'border-box',
+								caretColor: 'rgb(70, 82, 106)',
+								color: 'rgb(70, 82, 106)',
+								columnGap: '24px',
+								columnRuleColor: 'rgb(70, 82, 106)',
+								display: 'grid',
+								fontFamily: 'Claritycity, sans-serif',
+								fontSize: '16px',
+								fontWeight: 500,
+								gridAutoColumns: '1fr',
+								gridTemplateColumns: '555.156px 170.844px',
+								gridTemplateRows: '87.9844px',
+								justifyContent: 'space-between',
+								lineHeight: '28px',
+								marginLeft: 0,
+								marginRight: 0,
+								outlineColor: 'rgb(70, 82, 106)',
+								overflowX: 'hidden',
+								overflowY: 'hidden',
+								paddingBlockEnd: '28px',
+								paddingBlockStart: '28px',
+								paddingBottom: '28px',
+								paddingInlineEnd: '40px',
+								paddingInlineStart: '40px',
+								paddingLeft: '40px',
+								paddingRight: '40px',
+								paddingTop: '28px',
+								rowGap: '20px',
+								textDecoration: 'none solid rgb(70, 82, 106)',
+								textDecorationColor: 'rgb(70, 82, 106)',
+								textEmphasisColor: 'rgb(70, 82, 106)',
+								textSizeAdjust: '100%',
+								transitionDelay: '0s, 0s',
+								transitionDuration: '0.3s, 0.3s',
+								transitionProperty: 'transform, color',
+								transitionTimingFunction: 'ease, ease',
+								WebkitTextFillColor: 'rgb(70, 82, 106)',
+								WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+							}}
+							className={'card product-card-v1'}
+						>
+							<div
+								style={{
+									alignItems: 'center',
+									blockSize: '87.9844px',
+									borderBlockEndColor: 'rgb(70, 82, 106)',
+									borderBlockStartColor: 'rgb(70, 82, 106)',
+									borderBottomColor: 'rgb(70, 82, 106)',
+									borderInlineEndColor: 'rgb(70, 82, 106)',
+									borderInlineStartColor: 'rgb(70, 82, 106)',
+									borderLeftColor: 'rgb(70, 82, 106)',
+									borderRightColor: 'rgb(70, 82, 106)',
+									borderTopColor: 'rgb(70, 82, 106)',
+									boxSizing: 'border-box',
+									caretColor: 'rgb(70, 82, 106)',
+									color: 'rgb(70, 82, 106)',
+									columnGap: '16px',
+									columnRuleColor: 'rgb(70, 82, 106)',
+									display: 'flex',
+									flexWrap: 'wrap',
+									fontFamily: 'Claritycity, sans-serif',
+									fontSize: '16px',
+									fontWeight: 500,
+									lineHeight: '28px',
+									marginLeft: 0,
+									marginRight: 0,
+									minBlockSize: 'auto',
+									minHeight: 'auto',
+									minInlineSize: 'auto',
+									minWidth: 'auto',
+									outlineColor: 'rgb(70, 82, 106)',
+									rowGap: '16px',
+									textDecoration: 'none solid rgb(70, 82, 106)',
+									textDecorationColor: 'rgb(70, 82, 106)',
+									textEmphasisColor: 'rgb(70, 82, 106)',
+									textSizeAdjust: '100%',
+									WebkitTextFillColor: 'rgb(70, 82, 106)',
+									WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+								}}
+								className={'product---description'}
+							>
+								<div
+									style={{
+										blockSize: '80px',
+										borderBlockEndColor: 'rgb(70, 82, 106)',
+										borderBlockStartColor: 'rgb(70, 82, 106)',
+										borderBottomColor: 'rgb(70, 82, 106)',
+										borderInlineEndColor: 'rgb(70, 82, 106)',
+										borderInlineStartColor: 'rgb(70, 82, 106)',
+										borderLeftColor: 'rgb(70, 82, 106)',
+										borderRightColor: 'rgb(70, 82, 106)',
+										borderTopColor: 'rgb(70, 82, 106)',
+										boxSizing: 'border-box',
+										caretColor: 'rgb(70, 82, 106)',
+										color: 'rgb(70, 82, 106)',
+										columnRuleColor: 'rgb(70, 82, 106)',
+										fontFamily: 'Claritycity, sans-serif',
+										fontSize: '16px',
+										fontWeight: 500,
+										inlineSize: '80px',
+										lineHeight: '28px',
+										marginLeft: 0,
+										marginRight: 0,
+										minBlockSize: 'auto',
+										minHeight: 'auto',
+										minInlineSize: 'auto',
+										minWidth: 'auto',
+										outlineColor: 'rgb(70, 82, 106)',
+										textDecoration: 'none solid rgb(70, 82, 106)',
+										textDecorationColor: 'rgb(70, 82, 106)',
+										textEmphasisColor: 'rgb(70, 82, 106)',
+										textSizeAdjust: '100%',
+										WebkitTextFillColor: 'rgb(70, 82, 106)',
+										WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+									}}
+								>
+									<img
+										style={{
+											blockSize: '80px',
+											borderBlockEndColor: 'rgb(255, 255, 255)',
+											borderBlockEndStyle: 'solid',
+											borderBlockEndWidth: '3px',
+											borderBlockStartColor: 'rgb(255, 255, 255)',
+											borderBlockStartStyle: 'solid',
+											borderBlockStartWidth: '3px',
+											borderBottomColor: 'rgb(255, 255, 255)',
+											borderBottomLeftRadius: '100%',
+											borderBottomRightRadius: '100%',
+											borderBottomStyle: 'solid',
+											borderBottomWidth: '3px',
+											borderEndEndRadius: '100%',
+											borderEndStartRadius: '100%',
+											borderInlineEndColor: 'rgb(255, 255, 255)',
+											borderInlineEndStyle: 'solid',
+											borderInlineEndWidth: '3px',
+											borderInlineStartColor: 'rgb(255, 255, 255)',
+											borderInlineStartStyle: 'solid',
+											borderInlineStartWidth: '3px',
+											borderLeftColor: 'rgb(255, 255, 255)',
+											borderLeftStyle: 'solid',
+											borderLeftWidth: '3px',
+											borderRightColor: 'rgb(255, 255, 255)',
+											borderRightStyle: 'solid',
+											borderRightWidth: '3px',
+											borderStartEndRadius: '100%',
+											borderStartStartRadius: '100%',
+											borderTopColor: 'rgb(255, 255, 255)',
+											borderTopLeftRadius: '100%',
+											borderTopRightRadius: '100%',
+											borderTopStyle: 'solid',
+											borderTopWidth: '3px',
+											boxSizing: 'border-box',
+											caretColor: 'rgb(70, 82, 106)',
+											color: 'rgb(70, 82, 106)',
+											columnRuleColor: 'rgb(70, 82, 106)',
+											display: 'inline-block',
+											fontFamily: 'Claritycity, sans-serif',
+											fontSize: '16px',
+											fontWeight: 500,
+											inlineSize: '80px',
+											lineHeight: '28px',
+											marginLeft: 0,
+											marginRight: 0,
+											maxBlockSize: '80px',
+											maxHeight: '80px',
+											maxInlineSize: '80px',
+											maxWidth: '80px',
+											outlineColor: 'rgb(70, 82, 106)',
+											overflowX: 'hidden',
+											overflowY: 'hidden',
+											textDecoration: 'none solid rgb(70, 82, 106)',
+											textDecorationColor: 'rgb(70, 82, 106)',
+											textEmphasisColor: 'rgb(70, 82, 106)',
+											textSizeAdjust: '100%',
+											transform: 'matrix(1, 0, 0, 1, 0, 0)',
+											transformOrigin: '40px 40px',
+											verticalAlign: 'middle',
+											WebkitTextFillColor: 'rgb(70, 82, 106)',
+											WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+											width: '80px',
+											height: '80px',
+										}}
+										src={
+											'https://assets.website-files.com/63bed0273cfe5e611e742359/63c8303eae4413d041265475_inbound-featured-image-aggregator-x-webflow-template.svg'
+										}
+										alt={'Inbound'}
+										className={'avatar-circle _04'}
+									></img>
+								</div>
+								<div
+									style={{
+										blockSize: '87.9844px',
+										borderBlockEndColor: 'rgb(70, 82, 106)',
+										borderBlockStartColor: 'rgb(70, 82, 106)',
+										borderBottomColor: 'rgb(70, 82, 106)',
+										borderInlineEndColor: 'rgb(70, 82, 106)',
+										borderInlineStartColor: 'rgb(70, 82, 106)',
+										borderLeftColor: 'rgb(70, 82, 106)',
+										borderRightColor: 'rgb(70, 82, 106)',
+										borderTopColor: 'rgb(70, 82, 106)',
+										boxSizing: 'border-box',
+										caretColor: 'rgb(70, 82, 106)',
+										color: 'rgb(70, 82, 106)',
+										columnRuleColor: 'rgb(70, 82, 106)',
+										fontFamily: 'Claritycity, sans-serif',
+										fontSize: '16px',
+										fontWeight: 500,
+										lineHeight: '28px',
+										marginLeft: 0,
+										marginRight: 0,
+										minBlockSize: 'auto',
+										minHeight: 'auto',
+										minInlineSize: 'auto',
+										minWidth: 'auto',
+										outlineColor: 'rgb(70, 82, 106)',
+										textDecoration: 'none solid rgb(70, 82, 106)',
+										textDecorationColor: 'rgb(70, 82, 106)',
+										textEmphasisColor: 'rgb(70, 82, 106)',
+										textSizeAdjust: '100%',
+										WebkitTextFillColor: 'rgb(70, 82, 106)',
+										WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+									}}
+								>
+									<div
+										style={{
+											blockSize: '22px',
+											borderBlockEndColor: 'rgb(12, 24, 48)',
+											borderBlockStartColor: 'rgb(12, 24, 48)',
+											borderBottomColor: 'rgb(12, 24, 48)',
+											borderInlineEndColor: 'rgb(12, 24, 48)',
+											borderInlineStartColor: 'rgb(12, 24, 48)',
+											borderLeftColor: 'rgb(12, 24, 48)',
+											borderRightColor: 'rgb(12, 24, 48)',
+											borderTopColor: 'rgb(12, 24, 48)',
+											boxSizing: 'border-box',
+											caretColor: 'rgb(12, 24, 48)',
+											color: 'rgb(12, 24, 48)',
+											columnRuleColor: 'rgb(12, 24, 48)',
+											display: 'inline-block',
+											fontFamily: 'Claritycity, sans-serif',
+											fontSize: '16px',
+											fontWeight: 700,
+											inlineSize: '66.5625px',
+											lineHeight: '22px',
+											marginLeft: 0,
+											marginRight: 0,
+											outlineColor: 'rgb(12, 24, 48)',
+											textDecoration: 'none solid rgb(12, 24, 48)',
+											textDecorationColor: 'rgb(12, 24, 48)',
+											textEmphasisColor: 'rgb(12, 24, 48)',
+											textSizeAdjust: '100%',
+											WebkitTextFillColor: 'rgb(12, 24, 48)',
+											WebkitTextStrokeColor: 'rgb(12, 24, 48)',
+										}}
+										className={'product---name'}
+									>
+										Inbound
+									</div>
+									<div
+										style={{
+											blockSize: '23.9844px',
+											borderBlockEndColor: 'rgb(70, 82, 106)',
+											borderBlockStartColor: 'rgb(70, 82, 106)',
+											borderBottomColor: 'rgb(70, 82, 106)',
+											borderInlineEndColor: 'rgb(70, 82, 106)',
+											borderInlineStartColor: 'rgb(70, 82, 106)',
+											borderLeftColor: 'rgb(70, 82, 106)',
+											borderRightColor: 'rgb(70, 82, 106)',
+											borderTopColor: 'rgb(70, 82, 106)',
+											boxSizing: 'border-box',
+											caretColor: 'rgb(70, 82, 106)',
+											color: 'rgb(70, 82, 106)',
+											columnRuleColor: 'rgb(70, 82, 106)',
+											fontFamily: 'Claritycity, sans-serif',
+											fontSize: '16px',
+											fontWeight: 500,
+											lineHeight: '28px',
+											marginLeft: 0,
+											marginRight: 0,
+											outlineColor: 'rgb(70, 82, 106)',
+											textDecoration: 'none solid rgb(70, 82, 106)',
+											textDecorationColor: 'rgb(70, 82, 106)',
+											textEmphasisColor: 'rgb(70, 82, 106)',
+											textSizeAdjust: '100%',
+											WebkitTextFillColor: 'rgb(70, 82, 106)',
+											WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+										}}
+									>
+										<p
+											style={{
+												blockSize: '23.9844px',
+												borderBlockEndColor: 'rgb(70, 82, 106)',
+												borderBlockStartColor: 'rgb(70, 82, 106)',
+												borderBottomColor: 'rgb(70, 82, 106)',
+												borderInlineEndColor: 'rgb(70, 82, 106)',
+												borderInlineStartColor: 'rgb(70, 82, 106)',
+												borderLeftColor: 'rgb(70, 82, 106)',
+												borderRightColor: 'rgb(70, 82, 106)',
+												borderTopColor: 'rgb(70, 82, 106)',
+												boxSizing: 'border-box',
+												caretColor: 'rgb(70, 82, 106)',
+												color: 'rgb(70, 82, 106)',
+												columnRuleColor: 'rgb(70, 82, 106)',
+												fontFamily: 'Claritycity, sans-serif',
+												fontSize: '14px',
+												fontWeight: 500,
+												lineHeight: '23.996px',
+												marginBlockEnd: '10px',
+												marginBlockStart: '0px',
+												marginBottom: '10px',
+												marginLeft: 0,
+												marginRight: 0,
+												marginTop: '0px',
+												outlineColor: 'rgb(70, 82, 106)',
+												textDecoration: 'none solid rgb(70, 82, 106)',
+												textDecorationColor: 'rgb(70, 82, 106)',
+												textEmphasisColor: 'rgb(70, 82, 106)',
+												textSizeAdjust: '100%',
+												WebkitTextFillColor: 'rgb(70, 82, 106)',
+												WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+											}}
+											className={'paragraph-small medium mg-bottom-10px'}
+										>
+											Nisl eget elementum semper tristique in nisl nunc quisque.
+										</p>
+									</div>
+									<div
+										style={{
+											alignItems: 'center',
+											blockSize: '26px',
+											borderBlockEndColor: 'rgb(70, 82, 106)',
+											borderBlockStartColor: 'rgb(70, 82, 106)',
+											borderBottomColor: 'rgb(70, 82, 106)',
+											borderInlineEndColor: 'rgb(70, 82, 106)',
+											borderInlineStartColor: 'rgb(70, 82, 106)',
+											borderLeftColor: 'rgb(70, 82, 106)',
+											borderRightColor: 'rgb(70, 82, 106)',
+											borderTopColor: 'rgb(70, 82, 106)',
+											boxSizing: 'border-box',
+											caretColor: 'rgb(70, 82, 106)',
+											color: 'rgb(70, 82, 106)',
+											columnGap: '8px',
+											columnRuleColor: 'rgb(70, 82, 106)',
+											display: 'flex',
+											fontFamily: 'Claritycity, sans-serif',
+											fontSize: '16px',
+											fontWeight: 500,
+											justifyContent: 'flex-start',
+											lineHeight: '28px',
+											marginLeft: 0,
+											marginRight: 0,
+											outlineColor: 'rgb(70, 82, 106)',
+											rowGap: '8px',
+											textDecoration: 'none solid rgb(70, 82, 106)',
+											textDecorationColor: 'rgb(70, 82, 106)',
+											textEmphasisColor: 'rgb(70, 82, 106)',
+											textSizeAdjust: '100%',
+											WebkitTextFillColor: 'rgb(70, 82, 106)',
+											WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+										}}
+										className={'product---tag-wrapper'}
+									>
+										<div
+											style={{
+												backgroundColor: 'rgb(236, 242, 255)',
+												blockSize: '26px',
+												borderBlockEndColor: 'rgb(255, 255, 255)',
+												borderBlockEndStyle: 'solid',
+												borderBlockEndWidth: '1px',
+												borderBlockStartColor: 'rgb(255, 255, 255)',
+												borderBlockStartStyle: 'solid',
+												borderBlockStartWidth: '1px',
+												borderBottomColor: 'rgb(255, 255, 255)',
+												borderBottomLeftRadius: '40px',
+												borderBottomRightRadius: '40px',
+												borderBottomStyle: 'solid',
+												borderBottomWidth: '1px',
+												borderEndEndRadius: '40px',
+												borderEndStartRadius: '40px',
+												borderInlineEndColor: 'rgb(255, 255, 255)',
+												borderInlineEndStyle: 'solid',
+												borderInlineEndWidth: '1px',
+												borderInlineStartColor: 'rgb(255, 255, 255)',
+												borderInlineStartStyle: 'solid',
+												borderInlineStartWidth: '1px',
+												borderLeftColor: 'rgb(255, 255, 255)',
+												borderLeftStyle: 'solid',
+												borderLeftWidth: '1px',
+												borderRightColor: 'rgb(255, 255, 255)',
+												borderRightStyle: 'solid',
+												borderRightWidth: '1px',
+												borderStartEndRadius: '40px',
+												borderStartStartRadius: '40px',
+												borderTopColor: 'rgb(255, 255, 255)',
+												borderTopLeftRadius: '40px',
+												borderTopRightRadius: '40px',
+												borderTopStyle: 'solid',
+												borderTopWidth: '1px',
+												boxSizing: 'border-box',
+												caretColor: 'rgb(81, 120, 255)',
+												color: 'rgb(81, 120, 255)',
+												columnRuleColor: 'rgb(81, 120, 255)',
+												fontFamily: 'Claritycity, sans-serif',
+												fontSize: '12px',
+												fontWeight: 600,
+												inlineSize: '73.5312px',
+												lineHeight: '12px',
+												marginLeft: 0,
+												marginRight: 0,
+												minBlockSize: 'auto',
+												minHeight: 'auto',
+												minInlineSize: 'auto',
+												minWidth: 'auto',
+												outlineColor: 'rgb(81, 120, 255)',
+												paddingBlockEnd: '6px',
+												paddingBlockStart: '6px',
+												paddingBottom: '6px',
+												paddingInlineEnd: '10px',
+												paddingInlineStart: '10px',
+												paddingLeft: '10px',
+												paddingRight: '10px',
+												paddingTop: '6px',
+												textAlign: 'center',
+												textDecoration: 'none solid rgb(81, 120, 255)',
+												textDecorationColor: 'rgb(81, 120, 255)',
+												textEmphasisColor: 'rgb(81, 120, 255)',
+												textSizeAdjust: '100%',
+												WebkitTextFillColor: 'rgb(81, 120, 255)',
+												WebkitTextStrokeColor: 'rgb(81, 120, 255)',
+											}}
+											className={'badge-primary small'}
+										>
+											Business
+										</div>
+									</div>
+								</div>
+							</div>
+							<div
+								style={{
+									alignItems: 'center',
+									blockSize: '38.0469px',
+									borderBlockEndColor: 'rgb(70, 82, 106)',
+									borderBlockStartColor: 'rgb(70, 82, 106)',
+									borderBottomColor: 'rgb(70, 82, 106)',
+									borderInlineEndColor: 'rgb(70, 82, 106)',
+									borderInlineStartColor: 'rgb(70, 82, 106)',
+									borderLeftColor: 'rgb(70, 82, 106)',
+									borderRightColor: 'rgb(70, 82, 106)',
+									borderTopColor: 'rgb(70, 82, 106)',
+									boxSizing: 'border-box',
+									caretColor: 'rgb(70, 82, 106)',
+									color: 'rgb(70, 82, 106)',
+									columnGap: '16px',
+									columnRuleColor: 'rgb(70, 82, 106)',
+									display: 'flex',
+									flexWrap: 'wrap',
+									fontFamily: 'Claritycity, sans-serif',
+									fontSize: '16px',
+									fontWeight: 500,
+									inlineSize: '170.844px',
+									justifyContent: 'flex-end',
+									lineHeight: '28px',
+									marginLeft: 0,
+									marginRight: 0,
+									minBlockSize: 'auto',
+									minHeight: 'auto',
+									minInlineSize: 'auto',
+									minWidth: 'auto',
+									outlineColor: 'rgb(70, 82, 106)',
+									rowGap: '16px',
+									textDecoration: 'none solid rgb(70, 82, 106)',
+									textDecorationColor: 'rgb(70, 82, 106)',
+									textEmphasisColor: 'rgb(70, 82, 106)',
+									textSizeAdjust: '100%',
+									WebkitTextFillColor: 'rgb(70, 82, 106)',
+									WebkitTextStrokeColor: 'rgb(70, 82, 106)',
+								}}
+								className={'product-card---links-wrapper'}
+							>
+								<a
+									style={{
+										blockSize: '16px',
+										borderBlockEndColor: 'rgb(12, 24, 48)',
+										borderBlockStartColor: 'rgb(12, 24, 48)',
+										borderBottomColor: 'rgb(12, 24, 48)',
+										borderInlineEndColor: 'rgb(12, 24, 48)',
+										borderInlineStartColor: 'rgb(12, 24, 48)',
+										borderLeftColor: 'rgb(12, 24, 48)',
+										borderRightColor: 'rgb(12, 24, 48)',
+										borderTopColor: 'rgb(12, 24, 48)',
+										boxSizing: 'border-box',
+										caretColor: 'rgb(12, 24, 48)',
+										color: 'rgb(12, 24, 48)',
+										columnRuleColor: 'rgb(12, 24, 48)',
+										cursor: 'pointer',
+										display: 'block',
+										fontFamily: 'Claritycity, sans-serif',
+										fontSize: '14px',
+										fontWeight: 600,
+										inlineSize: '78.8125px',
+										lineHeight: '16.002px',
+										marginLeft: 0,
+										marginRight: 0,
+										minBlockSize: 'auto',
+										minHeight: 'auto',
+										minInlineSize: 'auto',
+										minWidth: 'auto',
+										outlineColor: 'rgb(12, 24, 48)',
+										textDecoration: 'none',
+										textDecorationColor: 'rgb(12, 24, 48)',
+										textEmphasisColor: 'rgb(12, 24, 48)',
+										textSizeAdjust: '100%',
+										transitionDuration: '0.3s',
+										transitionProperty: 'color',
+										WebkitTextFillColor: 'rgb(12, 24, 48)',
+										WebkitTextStrokeColor: 'rgb(12, 24, 48)',
+									}}
+									href={
+										'https://aggregatortemplate.webflow.io/products/inbound'
+									}
+									className={'product---learn-more-link'}
+								>
+									Learn more
+								</a>
+								<a
+									style={{
+										alignItems: 'center',
+										backgroundColor: 'rgb(81, 120, 255)',
+										blockSize: '38.0469px',
+										borderBlockEndColor: 'rgb(81, 120, 255)',
+										borderBlockEndStyle: 'solid',
+										borderBlockEndWidth: '1px',
+										borderBlockStartColor: 'rgb(81, 120, 255)',
+										borderBlockStartStyle: 'solid',
+										borderBlockStartWidth: '1px',
+										borderBottomColor: 'rgb(81, 120, 255)',
+										borderBottomLeftRadius: '96px',
+										borderBottomRightRadius: '96px',
+										borderBottomStyle: 'solid',
+										borderBottomWidth: '1px',
+										borderEndEndRadius: '96px',
+										borderEndStartRadius: '96px',
+										borderInlineEndColor: 'rgb(81, 120, 255)',
+										borderInlineEndStyle: 'solid',
+										borderInlineEndWidth: '1px',
+										borderInlineStartColor: 'rgb(81, 120, 255)',
+										borderInlineStartStyle: 'solid',
+										borderInlineStartWidth: '1px',
+										borderLeftColor: 'rgb(81, 120, 255)',
+										borderLeftStyle: 'solid',
+										borderLeftWidth: '1px',
+										borderRightColor: 'rgb(81, 120, 255)',
+										borderRightStyle: 'solid',
+										borderRightWidth: '1px',
+										borderStartEndRadius: '96px',
+										borderStartStartRadius: '96px',
+										borderTopColor: 'rgb(81, 120, 255)',
+										borderTopLeftRadius: '96px',
+										borderTopRightRadius: '96px',
+										borderTopStyle: 'solid',
+										borderTopWidth: '1px',
+										boxSizing: 'border-box',
+										caretColor: 'rgb(255, 255, 255)',
+										color: 'rgb(255, 255, 255)',
+										columnGap: '0px',
+										columnRuleColor: 'rgb(255, 255, 255)',
+										cursor: 'pointer',
+										display: 'flex',
+										fontFamily: 'Claritycity, sans-serif',
+										fontSize: '14px',
+										fontWeight: 600,
+										inlineSize: '76.0312px',
+										justifyContent: 'center',
+										lineHeight: '16.058px',
+										marginLeft: 0,
+										marginRight: 0,
+										minBlockSize: 'auto',
+										minHeight: 'auto',
+										minInlineSize: 'auto',
+										minWidth: 'auto',
+										outlineColor: 'rgb(255, 255, 255)',
+										paddingBlockEnd: '10px',
+										paddingBlockStart: '10px',
+										paddingBottom: '10px',
+										paddingInlineEnd: '12px',
+										paddingInlineStart: '12px',
+										paddingLeft: '12px',
+										paddingRight: '12px',
+										paddingTop: '10px',
+										rowGap: '6px',
+										textAlign: 'center',
+										textDecoration: 'none',
+										textDecorationColor: 'rgb(255, 255, 255)',
+										textEmphasisColor: 'rgb(255, 255, 255)',
+										textSizeAdjust: '100%',
+										transitionDelay: '0s, 0s, 0s, 0s',
+										transitionDuration: '0.3s, 0.3s, 0.3s, 0.3s',
+										transitionProperty:
+											'border-color, background-color, transform, color',
+										transitionTimingFunction: 'ease, ease, ease, ease',
+										WebkitTextFillColor: 'rgb(255, 255, 255)',
+										WebkitTextStrokeColor: 'rgb(255, 255, 255)',
+									}}
+									data-w-id={'7e6fe7eb-520f-397f-08d0-a9d5878644c4'}
+									href={'https://inboundtemplate.webflow.io/'}
+									target={'_blank'}
+									className='btn-primary btn-visit w-button'
+								>
+									查看
+									<span
+										style={{
+											color: 'rgb(255, 255, 255)',
+											columnRuleColor: 'rgb(255, 255, 255)',
+											cursor: 'pointer',
+											display: 'block',
+											fontFamily: 'Line Rounded Icons, sans-serif',
+											fontSize: '14px',
+											fontWeight: 600,
+											inlineSize: '13.4531px',
+											lineHeight: '16.058px',
+											marginInlineStart: '6px',
+											marginLeft: 0,
+											marginRight: 0,
+											minBlockSize: 'auto',
+											minHeight: 'auto',
+											minInlineSize: 'auto',
+											minWidth: 'auto',
+											outlineColor: 'rgb(255, 255, 255)',
+											textAlign: 'center',
+											textDecoration: 'none solid rgb(255, 255, 255)',
+											textDecorationColor: 'rgb(255, 255, 255)',
+											textEmphasisColor: 'rgb(255, 255, 255)',
+											textSizeAdjust: '100%',
+											WebkitTextFillColor: 'rgb(255, 255, 255)',
+											WebkitTextStrokeColor: 'rgb(255, 255, 255)',
+										}}
+									>
+										<ArrowForwardIcon size='small' />
+									</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
+};
 
-export default Relative
+export default Relative;

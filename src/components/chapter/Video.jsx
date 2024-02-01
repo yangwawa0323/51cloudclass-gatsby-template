@@ -17,9 +17,9 @@ const Video = () => {
 	const { isLogin, isExpired } = useContext(globalContext);
 
 	useEffect(() => {
-		easeIn('.gsap-video video');
-		const videoElement = document.querySelector('video');
-		videoElement.addEventListener('contextmenu', (e) => {
+		const videoElement = document.querySelector('.gsap-video video');
+		videoElement && easeIn('.gsap-video video');
+		videoElement?.addEventListener('contextmenu', (e) => {
 			e.preventDefault();
 			return false;
 		});
@@ -32,10 +32,9 @@ const Video = () => {
 	const { chapter } = useContext(ChapterContext);
 
 	return (
-		<div className='gsap-video px-8  min-h-fit w-[calc(100% - 60px)] flex flex-col '>
+		<div className='gsap-video min-h-fit w-full flex flex-col '>
 			{!isLogin && (
-				<div className='min-w-[280px] m-12 border-purple-700 border-[12px] bg-black rounded-lg  w-auto h-[240px] text-white font-bold flex justify-center items-center'>
-					{' '}
+				<div className='w-full mx-4 border-purple-700 border-[12px] bg-black rounded-lg h-[240px] text-white font-bold flex justify-center items-center'>
 					请登录后方能观看视频
 				</div>
 			)}

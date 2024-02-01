@@ -11,7 +11,7 @@ import { Link } from 'gatsby';
 const Resource = () => {
 	const { chapter } = useContext(ChapterContext);
 	return (
-		<Box className='text-gray-600  rounded-xl border-2  p-4 mb-8'>
+		<Box className='text-gray-600  rounded-xl border-2 p-4 mb-8'>
 			<Typography className='text-purple-600 text-center font-semibold'>
 				课件和实验资源
 			</Typography>
@@ -19,7 +19,8 @@ const Resource = () => {
 				<Box className='p-6 flex flex-col items-end gap-2  cursor-pointer'>
 					<Box className='flex flex-row gap-2 items-center justify-center'>
 						<GitHubIcon fontSize='large' />
-						<Link to={chapter.github_resource}
+						<Link
+							to={chapter.github_resource}
 							target='_blank'
 							rel='noreferrer'
 						>

@@ -18,17 +18,17 @@ const RightPane = () => {
 	});
 
 	return (
-		<div className='w-full'>
+		<>
 			<div className='gsap-right'>
 				<ChapterList />
 			</div>
-			<div className='gsap-right'>
+			{/* <div className='gsap-right'>
 				<More />
-			</div>
+			</div>  
 			<div className='gsap-right'>
 				<Resource />
-			</div>
-		</div>
+			</div> */}
+		</>
 	);
 };
 
