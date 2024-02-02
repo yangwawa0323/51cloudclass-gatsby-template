@@ -80,7 +80,7 @@ const BoostSection = () => {
 	};
 	return (
 		<div
-			className='landing4-boost-section xs:px-8 md:px-8 p-24 justify-center items-center flex flex-col gap-24 h-min overflow-hidden relative'
+			className='w-full landing4-boost-section p-4 xs:px-8 md:px-8  justify-center items-center flex flex-col gap-24 h-min overflow-hidden relative'
 			style={{
 				background:
 					'radial-gradient(72.6% 84% at 100% 100%, #b09eff 0%, rgb(255, 255, 255)  100%)',
@@ -107,7 +107,7 @@ const BoostSection = () => {
 						</p>
 					</div>
 				</div>
-				<div className='gsap-boot-right flex-1 justify-start w-4/5 p-8 bg-white flex flex-col gap-6 h-min rounded-xl shadow-2xl'>
+				<div className='gsap-boot-right flex-1 justify-start w-full p-8 bg-white flex flex-col gap-6 h-min rounded-xl shadow-2xl'>
 					<div>
 						<h4>51元包月学习</h4>
 					</div>
@@ -170,18 +170,6 @@ const BoostSection = () => {
 								imageRendering: 'pixelated',
 							}}
 							className='h-12 w-12 object-cover opacity-60 hover:opacity-80'
-							src={FourKLogo}
-						/>
-					</div>
-					<div>
-						<img
-							alt=''
-							style={{
-								fill: 'rgb(163, 161, 184)',
-								stroke: 'rgb(163, 161, 184)',
-								imageRendering: 'pixelated',
-							}}
-							className='h-12 w-12 object-cover opacity-60 hover:opacity-80'
 							src={LinuxLogo}
 						/>
 					</div>
@@ -209,18 +197,7 @@ const BoostSection = () => {
 							src={GoLangLogo}
 						/>
 					</div>
-					<div>
-						<img
-							alt=''
-							style={{
-								fill: 'rgb(163, 161, 184)',
-								stroke: 'rgb(163, 161, 184)',
-								imageRendering: 'pixelated',
-							}}
-							className='h-12 w-12 object-cover opacity-60 hover:opacity-80'
-							src={GitLogo}
-						/>
-					</div>
+
 					<div>
 						<img
 							alt=''

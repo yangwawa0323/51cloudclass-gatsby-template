@@ -7,6 +7,7 @@ import BootSection from './BootSection';
 import gsap from 'gsap';
 import { easeIn } from '../../utils/animate';
 import { graphql } from 'gatsby';
+import { Container } from '@mui/material';
 
 export const query = graphql`
 	query MyQuery($uuid: String) {
@@ -69,56 +70,58 @@ const ChapterPage = (props) => {
 				<div className='w-full mb-10'>
 					<BootSection />
 				</div>
-				<div className='w-11/12 mx-6 gap-0 md:gap-2 flex flex-col md:flex-row justify-center items-center'>
-					<div className='w-full mr-6 md:w-2/3 min-w-[320px]'>
-						<LeftPane />
+				<Container>
+					<div className='mx-0 md:mx-6 grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8'>
+						<div className='col-span-1 sm:col-span-1 md:col-span-2'>
+							<LeftPane />
+						</div>
+						<div className='col-span-1'>
+							<RightPane />
+						</div>
 					</div>
-					<div className='min-w-[280px] mx-20 md:w-1/3'>
-						<RightPane />
-					</div>
-				</div>
-				{/* <div className='py-[120px] gsap-relative'>
+					{/* <div className='py-[120px] gsap-relative'>
 					<Relative />
 				</div> */}
-				<div className='stay-in-the-loop-form flex flex-col p-16 justify-center items-center bg-white'>
-					<div className='flex flex-col justify-center items-center max-w-[500px] gap-4'>
-						<div>
-							<p className='uppercase text-purple-700 font-extrabold'>
-								stay in the loop
-							</p>
-						</div>
-						<div>
-							<h2 className='break-words text-center'>
-								Subscribe for more inspiration.
-							</h2>
-						</div>
-						<div>
+					<div className='stay-in-the-loop-form flex flex-col p-16 justify-center items-center bg-white'>
+						<div className='flex flex-col justify-center items-center max-w-[500px] gap-4'>
 							<div>
-								<form className='relative flex flex-row justify-center items-center h-min'>
-									<div className='hidden absolute'>
+								<p className='uppercase text-purple-700 font-extrabold'>
+									stay in the loop
+								</p>
+							</div>
+							<div>
+								<h2 className='break-words text-center'>
+									Subscribe for more inspiration.
+								</h2>
+							</div>
+							<div>
+								<div>
+									<form className='relative flex flex-row justify-center items-center h-min'>
+										<div className='hidden absolute'>
+											<input
+												type='text'
+												tabIndex='-1'
+											/>
+										</div>
 										<input
-											type='text'
-											tabIndex='-1'
+											className='h-full p-[15px] focus:bg-gray-200   bg-gray-100 text-gray-800 rounded-l-lg border-none outline-none'
+											type='email'
+											name='email'
+											placeholder='email@framer.com'
 										/>
-									</div>
-									<input
-										className='h-full p-[15px] focus:bg-gray-200   bg-gray-100 text-gray-800 rounded-l-lg border-none outline-none'
-										type='email'
-										name='email'
-										placeholder='email@framer.com'
-									/>
-									<div>
-										<input
-											className='h-full p-[15px] border-none rounded-r-lg text-white bg-purple-700 hover:bg-purple-600 text-sm duration-500  hover:text-gray-400'
-											value='subscribe'
-											type='submit'
-										/>
-									</div>
-								</form>
+										<div>
+											<input
+												className='h-full p-[15px] border-none rounded-r-lg text-white bg-purple-700 hover:bg-purple-600 text-sm duration-500  hover:text-gray-400'
+												value='subscribe'
+												type='submit'
+											/>
+										</div>
+									</form>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
+				</Container>
 			</ChapterContextProvider>
 		</Frame>
 	);

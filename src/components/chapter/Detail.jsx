@@ -12,7 +12,7 @@ const Detail = () => {
 		<div className='flex flex-col items-center gap-4 p-4'>
 			<Typography
 				variant='h5'
-				className='text-purple-600 font-semibold'
+				className='text-purple-600'
 			>
 				{chapter.name}
 			</Typography>

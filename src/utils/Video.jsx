@@ -6,6 +6,7 @@ export const VideoJS = (props) => {
 	const videoRef = React.useRef(null);
 	const playerRef = React.useRef(null);
 	const { options, onReady, children } = props;
+	console.log(options);
 
 	React.useEffect(() => {
 		// Make sure Video.js player is only initialized once
@@ -47,6 +48,8 @@ export const VideoJS = (props) => {
 		>
 			{/* eslint-disable-next-line jsx-a11y/media-has-caption */}
 			<video
+				autoPlay={false}
+				muted={false}
 				controls
 				controlsList='nodownload'
 				ref={videoRef}

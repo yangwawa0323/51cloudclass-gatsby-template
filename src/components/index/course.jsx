@@ -60,7 +60,7 @@ const Courses = () => {
 				background:
 					'linear-gradient(0deg,var(--token-0cdf47b3-ce1f-4341-98ec-f094608541cb, #f6f4ff) 0%,#fff 100%)',
 			}}
-			className='entire-blog pt-24 px-12 pb-24 flex flex-col gap-16 justify-center items-center'
+			className='entire-blog min-w-[360px] px-2 py-24 flex flex-col gap-16 justify-center items-center'
 		>
 			<div className='course-main max-w-[680px] flex flex-col gap-4 justify-center items-center'>
 				<div className='gsap-course-main-title course-text-block'>
@@ -74,7 +74,7 @@ const Courses = () => {
 					</div>
 				</div>
 			</div>
-			<div className='course-grid grid xs:grid-cols-1 md:grid-cols-[repeat(2,minmax(200px,1fr))] lg:grid-cols-3 xs:gap-2  gap-8 auto-rows-min h-min justify-center  w-full'>
+			<div className='course-grid grid xs:grid-cols-1 md:grid-cols-[repeat(2,minmax(200px,1fr))] lg:grid-cols-3 xs:gap-2  gap-8 auto-rows-min h-min justify-center w-full'>
 				{courses.map((course) => {
 					return (
 						<div
@@ -82,19 +82,19 @@ const Courses = () => {
 							className='cursor-pointer rounded-2xl overflow-hidden border-[2px] shadow-md hover:shadow-lg hover:scale-105 duration-500  h-full w-full place-self-start'
 						>
 							<Link to={`/courses/`}>
-								<div className='max-[425px]:h-[120px] h-[334px] overflow-hidden'>
+								<div className='max-[425px]:h-[120px] h-[334px]'>
 									<img
 										style={{
 											filter: offlined(course) ? 'grayscale(100%)' : 'unset',
 										}}
-										className='w-full h-full object-cover'
+										className='w-full h-full object-cover object-center opacity-80 shadow-md rounded-br-[80px]'
 										src={course.image}
 										alt={course.name}
 									/>
 								</div>
 								<div className='flex flex-col p-8 gap-2'>
 									<div>
-										<p className='uppercase font-extrabold text-purple-700 text-sm'>
+										<p className='uppercase font-bold text-purple-700'>
 											{course.name} {offlined(course) ? '-- 即将上线' : ''}
 										</p>
 									</div>

@@ -1,4 +1,3 @@
-
 @import url('https://fonts.loli.net/css?family=Manrope:100,200,300,400,500,600,700,800|Open+Sans:100,200,300,400,500,600,700,800|Roboto:100,200,300,400,500,600,700,800,900');
 @import url('https://fonts.loli.net/css?family=Anek+Telugu:wght@300;400;500;600&display=swap');
 @import url('https://fonts.loli.net/css?family=Anek+Telugu:wght@300;400;500;600&family=Noto+Sans+SC:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,300;0,400;1,300;1,400&display=swap');
@@ -9,55 +8,47 @@ body * {
 	padding: 0;
 }
 
-@for $index from 1 through 6 {
-	h#{$index} {
-		// font-family: var(--font-family);
+$headline: (
+	'h1': (
+		'font-size': 60px,
+		'font-weight': 700,
+		'line-height': 1.1em,
+	),
+	'h2': (
+		'font-size': 48px,
+	),
+	'h3': (
+		'font-size': 42px,
+	),
+	'h4': (
+		'font-size': 28px,
+	),
+	'h5': (
+		'font-size': 22px,
+	),
+	'h6': (
+		'font-size': 14px,
+	),
+);
+
+// @for $index from 1 through 6 {
+@each $head, $headMap in $headline {
+	#{$head} {
 		color: var(--text);
 		font-style: normal;
-		// letter-spacing: -1px;
-		font-weight: 800;
-    }
+		@each $property, $val in $headMap {
+			#{$property}: $val;
+		}
+	}
 }
 
-h1 {
-    font-size: 60px;
-    line-height: 1.1em;
+p.small,
+.psmall {
+	font-size: 14px;
+	font-weight: 500;
+	letter-spacing: 0px;
+	line-height: 1.5em;
+	color: var(--primary-background-color, #5b5e76);
+	text-decoration: none;
+	text-transform: none;
 }
-
-h2 {
-    font-size: 48px;
-    line-height: 1.3em;
-}
-
-h3 {
-    font-size: 45px;
-    line-height: 1.3em;
-}
-
-h4 {
-    font-size: 24px;
-    line-height: 1.3em;
-}
-
-h5 {
-    font-size: 18px;
-    line-height: 1.3em;
-}
-
-h6 {
-    font-size: 14px;
-    line-height: 1.3em;
-}
-
-
-p.small, .psmall {
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0px;
-    line-height: 1.5em;
-    color: var(--primary-background-color, #5b5e76);
-    text-decoration: none;
-    text-transform: none;
-}
-
-

@@ -95,16 +95,18 @@ const BoostSection = ({ course }) => {
 									</div>
 								</a>
 								<div className='spacer about-course'></div>
-								<div className='flex-1 ml-[2rem] justify-start w-4/5 p-8 bg-white flex flex-col gap-6 h-min rounded-xl shadow-2xl'>
-									<h4>课程章节</h4>
+								<div className='flex-1 ml-0 md:ml-[2rem] justify-start p-8 bg-white flex flex-col gap-3 h-min rounded-xl shadow-2xl'>
+									<h5 className='text-purple-700'>课程章节</h5>
+									{/* course chapter list */}
 									{course.chapters?.map((chpt, idx) => {
 										return (
 											<div
 												key={chpt.id}
-												className='text-xl'
+												className='text-ellipsis truncate'
 											>
-												第{idx + 1}章：
-												<Link to={`/chapters/${chpt.id}`}>{chpt.name}</Link>
+												<Link to={`/chapters/${chpt.id}`}>
+													<span>第{idx + 1}章：</span> {chpt.name}
+												</Link>
 											</div>
 										);
 									})}

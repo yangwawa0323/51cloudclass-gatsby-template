@@ -12,6 +12,7 @@ const videoJsOptions = {
 	autoplay: false,
 	controls: true,
 	responsive: true,
+	muted: false,
 	// fluid: true,
 	width: 1080,
 	// preferFullWindow: true,

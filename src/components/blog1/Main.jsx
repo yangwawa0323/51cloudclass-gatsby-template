@@ -51,7 +51,7 @@ const Blog1 = ({ pageContext }) => {
 					background:
 						'linear-gradient(0deg,var(--token-0cdf47b3-ce1f-4341-98ec-f094608541cb, #f6f4ff) 0%,#fff 100%)',
 				}}
-				className='min-w-[425px]  entire-blog pt-24 px-12 pb-24 flex flex-col gap-16 justify-center items-center'
+				className='min-w-[425px] entire-blog pt-24 px-12 pb-24 flex flex-col gap-16 justify-center items-center'
 			>
 				<div className=' max-w-[470px] flex flex-col gap-4 justify-center items-center'>
 					<div>
@@ -111,7 +111,7 @@ const Blog1 = ({ pageContext }) => {
 									</div>
 									<div className='flex flex-col p-8 gap-2'>
 										<div>
-											<p className='uppercase font-extrabold text-purple-700 text-sm'>
+											<p className='uppercase font-extrabold text-purple-700'>
 												{blog.type}
 											</p>
 										</div>

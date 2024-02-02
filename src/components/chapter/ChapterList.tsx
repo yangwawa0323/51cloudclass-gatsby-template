@@ -25,12 +25,12 @@ const ChapterContainer = ({
 		<Link to={`/chapters/${chapter.id}/`}>
 			<div className='flex flex-col px-8 pt-2'>
 				<div>
-					<p className='uppercase font-extrabold text-purple-700 text-sm'>
-						第{order + 1}章
+					<p className='text-ellipsis truncate'>
+						<span className='uppercase relative text-purple-700'>
+							第{order + 1}章:{'  '}
+						</span>
+						<span>{chapter.name}</span>
 					</p>
-				</div>
-				<div className='relative'>
-					<h5 className='line-clamp-1'>{chapter.name}</h5>
 					<div
 						className={
 							(showDetail ? 'opacity-100' : 'opacity-0') +
@@ -58,11 +58,9 @@ const ChapterList = () => {
 	}, []);
 
 	return (
-		<div className='grid grid-cols-1 grid-flow-row border-2 shadow-md rounded-xl py-8'>
-			<div className='w-10/12'>
-				<div className='py-2 flex flex-col justify-center items-center'>
-					<p className='font-extrabold'>课程章节</p>
-				</div>
+		<div className='max-w-[440px] w-full mx-0 md:mx-3 grid grid-cols-1 grid-flow-row border-2 shadow-md rounded-xl py-8'>
+			<div className='py-2 flex flex-col justify-center items-center'>
+				<h5>课程章节</h5>
 			</div>
 			<SimpleBarScroll sx={{ maxHeight: 520 }}>
 				{/* TODO: */}

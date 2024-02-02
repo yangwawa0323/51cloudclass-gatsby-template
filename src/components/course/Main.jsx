@@ -215,7 +215,7 @@ const CourseMain = () => {
 
 				{/*  */}
 				<div>
-					<div className='courses-grid grid min-w-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-8 auto-rows-min h-min justify-center max-w-[1200px] w-full'>
+					<div className='courses-grid grid mx-3 min-w-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-8 auto-rows-min h-min justify-center max-w-[1200px] md:w-full'>
 						{courses.map((course, index) => {
 							return (
 								<div
@@ -225,7 +225,7 @@ const CourseMain = () => {
 									<Link to={`/courses/${course.id}`}>
 										<div className='xs:h-[224px] h-[334px] overflow-hidden pt-4'>
 											<img
-												className='w-full h-full object-contain rounded-lg overflow-hidden'
+												className='w-full h-full object-cover object-center opacity-80 shadow-md rounded-br-[80px]'
 												src={course.image}
 												alt={course.title}
 											/>
