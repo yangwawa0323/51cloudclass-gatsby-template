@@ -20,8 +20,13 @@ import '../../styles/pages/_course-boost.scss';
 
 import gsap from 'gsap';
 import { easeIn } from '../../utils/animate';
+import { Chapter, Course } from '..';
 
-const BoostSection = ({ course }) => {
+interface BoostSectionProps {
+	course: Course;
+}
+
+const BoostSection = ({ course }: BoostSectionProps) => {
 	React.useEffect(() => {
 		const tl = gsap.timeline();
 		easeIn('.gsap-about-course', {}, tl);
@@ -96,20 +101,25 @@ const BoostSection = ({ course }) => {
 								</a>
 								<div className='spacer about-course'></div>
 								<div className='flex-1 ml-0 md:ml-[2rem] justify-start p-8 bg-white flex flex-col gap-3 h-min rounded-xl shadow-2xl'>
-									<h5 className='text-purple-700'>课程章节</h5>
+									<h5 className='text-purple-700'>[ 课程章节 ]</h5>
 									{/* course chapter list */}
-									{course.chapters?.map((chpt, idx) => {
-										return (
-											<div
-												key={chpt.id}
-												className='text-ellipsis truncate'
-											>
-												<Link to={`/chapters/${chpt.id}`}>
-													<span>第{idx + 1}章：</span> {chpt.name}
-												</Link>
-											</div>
-										);
-									})}
+									{course.chapters
+										?.sort(
+											(a: Chapter, b: Chapter) => a.order_index - b.order_index
+										)
+										.map((chpt: Chapter, idx: number) => {
+											return (
+												<div
+													key={chpt.order_index}
+													className='text-ellipsis truncate'
+												>
+													<Link to={`/chapters/${chpt.id}`}>
+														<span>第{chpt.order_index + 1}章：</span>
+														{chpt.name}
+													</Link>
+												</div>
+											);
+										})}
 								</div>
 							</div>
 							<div className='spacer about-course'></div>

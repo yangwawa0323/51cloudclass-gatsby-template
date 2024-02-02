@@ -8,6 +8,7 @@ import { utils } from '51cloudclass-utilities/dist';
 import { Link } from 'gatsby';
 import { IChapterInput } from '../../utils/types';
 import { ChapterContext } from './ChapterContextProvider';
+import { Chapter } from '..';
 
 const { getAxios } = utils;
 
@@ -59,18 +60,20 @@ const ChapterList = () => {
 
 	return (
 		<div className='max-w-[440px] w-full mx-0 md:mx-3 grid grid-cols-1 grid-flow-row border-2 shadow-md rounded-xl py-8'>
-			<div className='py-2 flex flex-col justify-center items-center'>
-				<h5>课程章节</h5>
+			<div className='flex flex-col justify-center items-center'>
+				<h5 className='text-purple-700'>[ 课程章节 ]</h5>
 			</div>
 			<SimpleBarScroll sx={{ maxHeight: 520 }}>
 				{/* TODO: */}
-				{chapters?.map((chpt: IChapterInput, i: number) => (
-					<ChapterContainer
-						key={i}
-						order={i}
-						chapter={chpt}
-					/>
-				))}
+				{chapters
+					?.sort((a: Chapter, b: Chapter) => a.order_index - b.order_index)
+					.map((chpt: IChapterInput, i: number) => (
+						<ChapterContainer
+							key={i}
+							order={chpt.order_index}
+							chapter={chpt}
+						/>
+					))}
 			</SimpleBarScroll>
 		</div>
 	);

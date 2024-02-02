@@ -6,7 +6,7 @@ import { globalContext } from '../../../wrap-with-provider';
 import { easeIn } from '../../utils/animate';
 import AsciinemaEditor from '../asciinema/AsciinemaEditor';
 import { ChapterContext } from './ChapterContextProvider';
-import { ReactDOM } from 'react';
+import { ElevatorSharp } from '@mui/icons-material';
 
 const Video = () => {
 	const options = {
@@ -16,19 +16,19 @@ const Video = () => {
 		readOnly: true,
 	};
 
-	const setVideoOptions = React.useCallback(function () {
-		let video = document.querySelector('video');
-		video.muted = false;
-		video.autoplay = false;
-		console.log(video.muted + ',' + video.autoplay);
-	});
+	const setVideoOptions = function (videoEl) {
+		if (videoEl) {
+			videoEl.muted = false;
+			videoEl.autoplay = false;
+		}
+	};
 
-	const { isLogin, isExpired } = useContext(globalContext);
+	const { isLogin } = useContext(globalContext);
 
 	useEffect(() => {
 		const videoElement = document.querySelector('.gsap-video video');
-		setVideoOptions();
 		videoElement && easeIn('.gsap-video video');
+		setVideoOptions(videoElement);
 		videoElement?.addEventListener('contextmenu', (e) => {
 			e.preventDefault();
 			return false;

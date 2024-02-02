@@ -6,7 +6,7 @@ import Detail from './Detail';
 
 const LeftPane = () => {
 	return (
-		<div className='w-full flex flex-col gap-4'>
+		<div className='w-full flex flex-col'>
 			<Detail />
 			<Video />
 		</div>

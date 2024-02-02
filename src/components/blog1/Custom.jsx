@@ -139,6 +139,8 @@ const CustomBlog = ({ pageContext }) => {
 					backgroundColor: '#7421fc',
 				}}
 			>
+				{/* 
+				 
 				<div className='flex flex-col max-w-[500px] items-center justify-center text-white gap-8'>
 					<div>
 						<p className='text-gray-300 uppercase font-extrabold'>
@@ -177,6 +179,8 @@ const CustomBlog = ({ pageContext }) => {
 						</div>
 					</div>
 				</div>
+				
+				*/}
 			</div>
 		</Frame>
 	);

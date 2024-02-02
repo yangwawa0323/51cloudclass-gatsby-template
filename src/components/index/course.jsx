@@ -5,6 +5,7 @@ import { utils } from '51cloudclass-utilities/dist';
 import { Link, graphql, useStaticQuery } from 'gatsby';
 import { easeIn } from '../../utils/animate';
 import gsap from 'gsap';
+import { Container } from '@mui/material';
 
 const { getAxios } = utils;
 
@@ -47,23 +48,16 @@ const Courses = () => {
 		return !course.is_shop;
 	}, []);
 
-	// const { data, isLoading, error } = useQuery(['fetch-courses'], fetchCourses);
-
-	// if (isLoading) {
-	// 	return <div>加载中...</div>;
-	// }
-	// if (error) return '出错了，无法获得后台请求回应';
-
 	return (
 		<div
 			style={{
-				background:
-					'linear-gradient(0deg,var(--token-0cdf47b3-ce1f-4341-98ec-f094608541cb, #f6f4ff) 0%,#fff 100%)',
+				background: 'linear-gradient(0deg,#f6f4ff 0%,#fff 100%)',
 			}}
-			className='entire-blog min-w-[360px] px-2 py-24 flex flex-col gap-16 justify-center items-center'
+			className='entire-blog'
 		>
-			<div className='course-main max-w-[680px] flex flex-col gap-4 justify-center items-center'>
-				<div className='gsap-course-main-title course-text-block'>
+			<div className='min-w-[360px] mx-8 px-2 py-12 flex flex-col items-center'>
+				{/* <div className='course-main max-w-[680px]'> */}
+				<div className='w-3/5 flex flex-col gap-8 mb-12 justify-center items-center'>
 					<div>
 						<h2>精品课程</h2>
 					</div>
@@ -73,39 +67,40 @@ const Courses = () => {
 						</p>
 					</div>
 				</div>
-			</div>
-			<div className='course-grid grid xs:grid-cols-1 md:grid-cols-[repeat(2,minmax(200px,1fr))] lg:grid-cols-3 xs:gap-2  gap-8 auto-rows-min h-min justify-center w-full'>
-				{courses.map((course) => {
-					return (
-						<div
-							key={course.id}
-							className='cursor-pointer rounded-2xl overflow-hidden border-[2px] shadow-md hover:shadow-lg hover:scale-105 duration-500  h-full w-full place-self-start'
-						>
-							<Link to={`/courses/`}>
-								<div className='max-[425px]:h-[120px] h-[334px]'>
-									<img
-										style={{
-											filter: offlined(course) ? 'grayscale(100%)' : 'unset',
-										}}
-										className='w-full h-full object-cover object-center opacity-80 shadow-md rounded-br-[80px]'
-										src={course.image}
-										alt={course.name}
-									/>
-								</div>
-								<div className='flex flex-col p-8 gap-2'>
-									<div>
-										<p className='uppercase font-bold text-purple-700'>
-											{course.name} {offlined(course) ? '-- 即将上线' : ''}
-										</p>
+				{/* </div> */}
+				<div className='course-grid grid xs:grid-cols-1 md:grid-cols-[repeat(2,minmax(200px,1fr))] lg:grid-cols-3 xs:gap-2  gap-8 auto-rows-min h-min justify-center w-full'>
+					{courses.map((course) => {
+						return (
+							<div
+								key={course.id}
+								className='cursor-pointer rounded-2xl overflow-hidden border-[2px] shadow-md hover:shadow-lg hover:scale-105 duration-500  h-full w-full place-self-start'
+							>
+								<Link to={`/courses/`}>
+									<div className='max-[425px]:h-[120px] h-[334px]'>
+										<img
+											style={{
+												filter: offlined(course) ? 'grayscale(100%)' : 'unset',
+											}}
+											className='w-full h-full object-cover object-center opacity-80 shadow-md rounded-br-[80px]'
+											src={course.image}
+											alt={course.name}
+										/>
 									</div>
-									<div>
-										<p className='text-gray-600'>{course.description}</p>
+									<div className='flex flex-col p-8 gap-2'>
+										<div>
+											<p className='uppercase font-bold text-purple-700'>
+												{course.name} {offlined(course) ? '-- 即将上线' : ''}
+											</p>
+										</div>
+										<div>
+											<p className='text-gray-600'>{course.description}</p>
+										</div>
 									</div>
-								</div>
-							</Link>
-						</div>
-					);
-				})}
+								</Link>
+							</div>
+						);
+					})}
+				</div>
 			</div>
 		</div>
 	);

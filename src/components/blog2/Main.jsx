@@ -163,7 +163,7 @@ const Blog2 = ({ pageContext }) => {
 					</div>
 				</div>
 			</div>
-			{/*  */}
+			{/*  
 			<div className='stay-in-the-loop-form flex flex-col p-16 justify-center items-center bg-white'>
 				<div className='flex flex-col justify-center items-center max-w-[500px] gap-4'>
 					<div>
@@ -203,6 +203,7 @@ const Blog2 = ({ pageContext }) => {
 					</div>
 				</div>
 			</div>
+			*/}
 			<Footer />
 		</div>
 	);

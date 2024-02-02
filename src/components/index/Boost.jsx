@@ -11,15 +11,14 @@ import { Link } from 'gatsby';
 import pictures from '../../utils/image';
 import pageJsonData from '../../data/completed-page.json';
 
-
 const boostSectionAnimation = (timeline) => {
 	const wrapper = document.querySelector('.boost-section-wrapper');
 
 	timeline = timeline || gsap.timeline();
 
-	gsap.set(wrapper, { opacity: 0.3 });
+	gsap.set(wrapper, { opacity: 0.3, y: '-50%' });
 	timeline.to(wrapper, {
-		y: `20%`,
+		y: `5%`,
 		duration: 1.5,
 		opacity: 1,
 	});
@@ -102,10 +101,10 @@ const BoostSection = () => {
 					<img
 						src={
 							pictures[
-							page.route
-								.replace('/', '')
-								.replace('404', 'page404')
-								.replace(/asciinema-list/, 'asciinema')
+								page.route
+									.replace('/', '')
+									.replace('404', 'page404')
+									.replace(/asciinema-list/, 'asciinema')
 							]
 						}
 						alt={page.title}
@@ -178,7 +177,7 @@ const BoostSection = () => {
 					<div className='flex gap-3 overflow-visible items-center justify-center'>
 						<div>
 							<p className='boost-pbtn rounded-l-xl shadow-lg py-4 px-6 duration-1000 bg-purple-600 hover:bg-purple-800 text-white text-[18px] font-semibold tracking-tighter'>
-								尝试一下
+								立即加入
 							</p>
 						</div>
 						<div>

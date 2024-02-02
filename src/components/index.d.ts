@@ -17,6 +17,7 @@ export interface Category {
 }
 
 export interface Chapter {
+    id: number
     ID: number
     content: string
     course_id: number

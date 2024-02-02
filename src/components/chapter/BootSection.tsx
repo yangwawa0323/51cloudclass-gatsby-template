@@ -42,9 +42,6 @@ const BootSection = () => {
 			>
 				<div
 					style={{
-						// blockSize: '543.734px',
-						boxSizing: 'border-box',
-
 						fontFamily: 'Onest, sans-serif',
 						fontSize: '16px',
 						lineHeight: '26px',
