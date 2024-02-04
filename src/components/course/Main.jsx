@@ -131,7 +131,7 @@ const CourseMain = () => {
 			>
 				{/*  */}
 				<div className='course-main flex gap-20 max-w-4xl justify-between items-center'>
-					<div className='gsap-main-left course-text-block xs:gap-2 gap-4  flex flex-col flex-1'>
+					<div className='gsap-main-left course-text-block hidden sm:flex xs:gap-2 gap-4  flex-col flex-1'>
 						<div>
 							<h2 className='xs:text-4xl text-5xl'>课程</h2>
 						</div>
@@ -167,7 +167,7 @@ const CourseMain = () => {
 							</form>
 						</div>
 					</div>
-					<div className='gsap-main-right course-image-block flex-1'>
+					<div className='gsap-main-right hidden md:grid course-image-block flex-1 grid-cols-2'>
 						<div className='consulting-hero-image-one border-radius-eighty overflow'>
 							<img
 								src={good}
@@ -199,7 +199,7 @@ const CourseMain = () => {
 								className='auto-fit'
 							/>
 						</div>
-						<div className='consulting-hero-image-four margin-top'>
+						<div className='consulting-hero-image-four -translate-y-16'>
 							<img
 								src={esstimated}
 								loading='lazy'

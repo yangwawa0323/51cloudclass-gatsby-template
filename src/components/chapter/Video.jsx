@@ -20,6 +20,8 @@ const Video = () => {
 		if (videoEl) {
 			videoEl.muted = false;
 			videoEl.autoplay = false;
+			videoEl.controlsList = 'nodownload';
+			console.log(`videoEl.controlsList: { videoEl.controlsList }`);
 		}
 	};
 
