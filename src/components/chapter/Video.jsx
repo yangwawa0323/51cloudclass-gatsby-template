@@ -6,7 +6,6 @@ import { globalContext } from '../../../wrap-with-provider';
 import { easeIn } from '../../utils/animate';
 import AsciinemaEditor from '../asciinema/AsciinemaEditor';
 import { ChapterContext } from './ChapterContextProvider';
-import { ElevatorSharp } from '@mui/icons-material';
 
 const Video = () => {
 	const options = {
@@ -21,7 +20,7 @@ const Video = () => {
 			videoEl.muted = false;
 			videoEl.autoplay = false;
 			videoEl.controlsList = 'nodownload';
-			console.log(`videoEl.controlsList: { videoEl.controlsList }`);
+			console.log(`videoEl.controlsList: ${videoEl.controlsList}`);
 		}
 	};
 

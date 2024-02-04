@@ -44,7 +44,7 @@ const BoostSection = ({ course }: BoostSectionProps) => {
 			{/*  */}
 			<div className='section course wf-section'>
 				<div className='container-default-1209px  w-container'>
-					<div className='flex flex-col md:flex-row justify-center items-center'>
+					<div className='flex flex-col md:flex-row-reverse justify-center '>
 						<div className='gsap-about-course about-course '>
 							<div className='top-content course'>
 								<h2 className='title course-page xs:text-5xl'>{course.name}</h2>
@@ -125,7 +125,7 @@ const BoostSection = ({ course }: BoostSectionProps) => {
 							<div className='spacer about-course'></div>
 						</div>
 						<div className='spacer course'></div>
-						<div className='gsap-course-preview card-sticky-wrapper'>
+						<div className='hidden md:block gsap-course-preview relative'>
 							<div className='card course'>
 								<div className='course-preview'>
 									<img

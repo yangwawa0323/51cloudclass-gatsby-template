@@ -19,7 +19,6 @@ export const query = graphql`
 // In gatsby graphql inject to props.data
 const Detail = (props) => {
 	const { data } = props;
-	console.log('In Detail : ', data);
 	return (
 		<Frame>
 			<BoostSection course={data.course} />

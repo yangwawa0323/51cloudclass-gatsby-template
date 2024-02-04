@@ -66,7 +66,7 @@ const ChapterPage = (props) => {
 	return (
 		<Frame>
 			<ChapterContextProvider extraContext={extra}>
-				<Container className='mb-16'>
+				<div className='mb-16 px-2 md:px-12'>
 					<div className='mx-0 md:mx-6 grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8'>
 						<div className='col-span-1 sm:col-span-1 md:col-span-2'>
 							<LeftPane />
@@ -80,7 +80,7 @@ const ChapterPage = (props) => {
 						<Relative />
 					</div> 
 					*/}
-				</Container>
+				</div>
 			</ChapterContextProvider>
 		</Frame>
 	);

@@ -8,18 +8,21 @@ import { Link, graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { utils } from '51cloudclass-utilities/dist';
 import Frame from '../frame';
 import '../../styles/pages/_course-main.scss';
 import { Divider } from '@mui/material';
 
+/* tslint:disable */
+import { utils } from '51cloudclass-utilities/dist';
 import good from '../../assets/img/courses/good.png';
 import business from '../../assets/img/courses/business-revenue.png';
 import formation from '../../assets/img/courses/formaṭion-status.png';
 import esstimated from '../../assets/img/courses/esstimated-processing.png';
 import level01 from '../../assets/img/courses/level-01.svg';
+/* tslint:enable  */
 import { easeIn } from '../../utils/animate';
 import shuffle from 'lodash/shuffle';
+import { Course } from '..';
 
 const { getAxios } = utils;
 
@@ -69,6 +72,7 @@ const CourseMain = () => {
 					image
 					description
 					is_shop
+					teacher
 				}
 			}
 		}
@@ -127,7 +131,7 @@ const CourseMain = () => {
 					background:
 						'linear-gradient(0deg,var(--token-0cdf47b3-ce1f-4341-98ec-f094608541cb, #f6f4ff) 0%,#fff 100%)',
 				}}
-				className='entire-blog pt-12 px-12 pb-24 flex flex-col gap-16 justify-center items-center'
+				className='entire-blog pt-12 px-2 md:px-12 pb-24 flex flex-col gap-16 justify-center items-center'
 			>
 				{/*  */}
 				<div className='course-main flex gap-20 max-w-4xl justify-between items-center'>
@@ -145,7 +149,7 @@ const CourseMain = () => {
 								<div className='hidden absolute'>
 									<input
 										type='text'
-										tabIndex='-1'
+										tabIndex={-1}
 									/>
 								</div>
 								<input
@@ -216,7 +220,7 @@ const CourseMain = () => {
 				{/*  */}
 				<div>
 					<div className='courses-grid grid mx-3 min-w-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-8 auto-rows-min h-min justify-center max-w-[1200px] md:w-full'>
-						{courses.map((course, index) => {
+						{courses.map((course: Course, index: number) => {
 							return (
 								<div
 									key={course.id}
@@ -227,17 +231,14 @@ const CourseMain = () => {
 											<img
 												className='w-full h-full object-cover object-center opacity-80 shadow-md rounded-br-[80px]'
 												src={course.image}
-												alt={course.title}
+												alt={course.description}
 											/>
 										</div>
 										<div className='flex flex-col px-8 pb-4 gap-2 relative'>
 											<div>
-												<p className='uppercase font-extrabold text-purple-700 text-sm'>
-													{course.type}
+												<p className='text-2xl text-purple-700'>
+													{course.name}
 												</p>
-											</div>
-											<div>
-												<h4>{course.title}</h4>
 											</div>
 											<div>
 												<p

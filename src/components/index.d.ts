@@ -1,10 +1,12 @@
 export interface Course {
+    id: number
     ID: number
     is_shop: boolean
     image: string
     description: string
     name: string
     mark: string
+    teacher: string
     category: Category
     chapters: Array<Chapter> | null
 }

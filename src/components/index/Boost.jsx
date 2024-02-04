@@ -143,7 +143,6 @@ const BoostSection = () => {
 		<div
 			className='w-full h-[80vh] overflow-hidden items-center justify-center flex flex-col'
 			style={{
-				// gap: '141px',
 				background:
 					'radial-gradient(106.9% 91.8% at 100% 100%, #b09eff 0%, var(--token-8c47652b-dea5-4767-a9f2-5d952dcce49a, rgb(255, 255, 255))  100%)',
 			}}
@@ -153,7 +152,7 @@ const BoostSection = () => {
 				<div className='boost-section-wrapper  flex flex-col gap-4 overflow-visible h-min max-w-[451px]'>
 					<div>
 						<p className='text-purple-500  font-extrabold uppercase hover:underline'>
-							2023年开年大戏
+							2024年开年大戏
 						</p>
 					</div>
 					<div>

@@ -3,7 +3,7 @@
 	// padding-left: 28px;
 	background-color: #fff;
 	width: 100%;
-	font-weight: 500;
+	font-weight: 400;
 	font-size: 18px;
 	color: #5b5e76;
 	font-family: var(--font-family);
@@ -22,9 +22,6 @@
 
 		.header-wrapper {
 			display: flex;
-			-webkit-box-pack: justify;
-			-webkit-justify-content: space-between;
-			-ms-flex-pack: justify;
 			justify-content: space-between;
 			align-items: center;
 
@@ -42,8 +39,6 @@
 
 				height: fit-content;
 				background-color: #3434ff;
-				-webkit-transition: box-shadow 300ms ease, background-color 300ms ease,
-					-webkit-transform 300ms ease;
 				transition: box-shadow 300ms ease, background-color 300ms ease,
 					-webkit-transform 300ms ease;
 				transition: transform 300ms ease, box-shadow 300ms ease,
@@ -128,15 +123,12 @@
 				.header-dropdown-toggle {
 					display: flex;
 					padding: 0px;
-					-webkit-transition: color 350ms ease;
 					transition: color 350ms ease;
 
 					.dropdown-icon {
 						// position: relative; // 2023-04-09
 						bottom: -2px;
 						display: flex;
-						-webkit-align-self: center;
-						-ms-flex-item-align: center;
 						align-self: center;
 						font-family: 'Icon Fonts Academy Template', sans-serif;
 						color: #3434ff;
@@ -147,7 +139,6 @@
 				.nav-link {
 					display: flex;
 					margin: 10px;
-					-webkit-transition: color 350ms ease;
 					transition: color 350ms ease;
 					color: #0b0b2c;
 					line-height: 1.111em;
@@ -186,7 +177,7 @@
 	padding-top: 10px;
 	padding-bottom: 10px;
 	padding-left: 20px;
-	font-size: 20px;
+	font-size: 16px;
 }
 
 @media screen and (max-width: 897px) {
@@ -194,7 +185,7 @@
 		padding-top: 8px;
 		padding-bottom: 8px;
 		color: hsla(0, 0%, 100%, 0.52);
-		font-size: 22px;
+		font-size: 18px;
 		text-align: center;
 	}
 }

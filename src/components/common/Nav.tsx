@@ -42,7 +42,7 @@ const SubMenu1 = () => {
 
 	return (
 		<div>
-			<h4 className='mega-menu-title hidden-mobile'>页面</h4>
+			<p className='mega-menu-title hidden-mobile'>页面</p>
 			<div className='menu-2-columns'>
 				<div className='mega-menu-column-1'>
 					<Link
@@ -172,7 +172,7 @@ const SubMenu2 = () => {
 	return (
 		<>
 			<div className='mega-menu-column-4'>
-				<h4 className='mega-menu-title'>课程分类</h4>
+				<h5 className='mega-menu-title'>课程分类</h5>
 				{courses.map((course: ICourseInput, index: number) => (
 					<Link
 						key={index}
@@ -185,7 +185,7 @@ const SubMenu2 = () => {
 
 				<Link
 					to='/courses'
-					className='mega-menu-link-2 special'
+					className='mega-menu-link-2 special '
 				>
 					更多大数据云计算系列
 				</Link>

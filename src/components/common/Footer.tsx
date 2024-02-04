@@ -32,7 +32,7 @@ const Footer = (props: FooterProps) => {
 								</div>
 							</Link>
 						</div>
-						<div className='w-full flex flex-wrap lg:justify-around gap-10'>
+						<div className='hidden w-full md:flex flex-wrap lg:justify-around gap-10'>
 							<div className='flex flex-col gap-1.5 flex-1 h-min overflow-hidden min-w-[200px]'>
 								<div>
 									<p className='font-bold text-white'>首页</p>

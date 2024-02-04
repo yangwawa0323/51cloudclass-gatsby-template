@@ -66,7 +66,7 @@ const Navigation = ({ resolution }: NavProps) => {
 						: 'nothing'
 				],
 			}}
-			className='nav-menu md:ml-60  w-nav-menu items-center justify-center'
+			className='nav-menu md:ml-60 w-nav-menu mt-6 flex md:justify-center md:items-center'
 		>
 			<Link
 				to='/'
@@ -186,11 +186,11 @@ const LoginIconsWrapper = () => {
 		return (
 			<div className='flex login-button header-right  gap-4 items-center relative'>
 				<Button
-					className='bg-purple-600'
-					size='large'
+					className='bg-purple-600 text-sm'
+					size='medium'
 					variant='contained'
 					onClick={gotoLoginPage}
-					endIcon={<VideoLibraryOutlinedIcon />}
+					endIcon={<VideoLibraryOutlinedIcon fontSize='10px' />}
 				>
 					登录
 				</Button>
