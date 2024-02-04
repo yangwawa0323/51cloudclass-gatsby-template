@@ -153,7 +153,7 @@ const LoginIconsWrapper = () => {
 
 	if (isLogin && !isExpired) {
 		return (
-			<div className='flex header-right  gap-4 items-baseline relative'>
+			<div className='flex self-end gap-4 items-center relative'>
 				<Badge
 					badgeContent={9}
 					color='warning'
@@ -166,14 +166,18 @@ const LoginIconsWrapper = () => {
 				>
 					<MessageOutlined className='text-[32px] cursor-pointer' />
 				</Badge>
-				{/* <Badge badgeContent={badgeNumber} color="warning"> */}
+
 				<Avatar
 					src={reduxAvatar || getAccount()?.avatar}
 					data-trigger-target='loginform'
 					className='cursor-pointer'
 					onClick={toggleMenu}
 				/>
-				{/* </Badge> */}
+				<Badge
+					className='-translate-x-4 -translate-y-4'
+					badgeContent={badgeNumber}
+					color='warning'
+				/>
 
 				<Nav
 					id='loginform'
@@ -280,17 +284,17 @@ const Header = () => {
 									)}
 								</div>
 
-								<div className='flex justify-end items-end'>
-									<LoginIconsWrapper />
-
+								<div className='flex justify-between ml-10 gap-4 w-full'>
 									{ltMedium && (
 										<IconButton
-											className='hamburger flex'
+											size='large'
+											className='hamburger flex text-lg'
 											onClick={toggleCollapse}
 										>
 											{collapsed ? <MenuOutlined /> : <MenuOpenOutlined />}
 										</IconButton>
 									)}
+									<LoginIconsWrapper />
 								</div>
 							</div>
 						</div>
