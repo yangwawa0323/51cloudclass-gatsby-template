@@ -94,6 +94,7 @@ const CourseMain = () => {
 		// if (!isLoading) {
 		// 	setTimeout(() => {
 		const timeline = gsap.timeline();
+
 		if (data.allCourse.nodes) {
 			var elements = shuffle(
 				document.querySelectorAll(`.courses-grid .gsap-shuffle`)

@@ -170,33 +170,31 @@ const SubMenu2 = () => {
 
 	const courses = data.allCourse.nodes;
 	return (
-		<>
-			<div className='mega-menu-column-4'>
-				<h5 className='mega-menu-title'>课程分类</h5>
-				{courses.map((course: ICourseInput, index: number) => (
-					<Link
-						key={index}
-						to={`/courses/${course.id}`}
-						className='mega-menu-link'
-					>
-						{course.name}
-					</Link>
-				))}
-
+		<div className='mega-menu-column-4'>
+			<h5 className='mega-menu-title'>课程分类</h5>
+			{courses.map((course: ICourseInput, index: number) => (
 				<Link
-					to='/courses'
-					className='mega-menu-link-2 special '
+					key={index}
+					to={`/courses/${course.id}`}
+					className='mega-menu-link'
 				>
-					更多大数据云计算系列
+					{course.name}
 				</Link>
-			</div>
-		</>
+			))}
+
+			<Link
+				to='/courses'
+				className='mega-menu-link-2 special '
+			>
+				更多大数据云计算系列
+			</Link>
+		</div>
 	);
 };
 /** END SubMenu2 */
 
 /** BEGIN LoginForm */
-const LoginForm = () => {
+export const LoginForm = () => {
 	const { hideMenu } = useContext(HeaderContext);
 	const dispatch = useDispatch();
 
@@ -220,15 +218,18 @@ const LoginForm = () => {
 	};
 
 	return (
-		<div className='z-[1000] absolute top-16 -right-36 h-fit rounded-xl shadow-xl flex items-center justify-center bg-gray-100 py-6'>
+		<div
+			data-menu='login'
+			className='z-[1000] mr-8 h-fit rounded-xl shadow-xl flex items-center justify-center bg-gray-100 py-6'
+		>
 			<div className='flex gap-2 flex-col whitespace-nowrap max-w-xs p-4 items-center bg-white'>
-				<Avatar
+				{/* <Avatar
 					src={userAvatar}
-					className='outline-2 w-24 h-24'
-				/>
-				<ul className='flex flex-col w-full'>
-					<li className='my-px'>
-						<div className='flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 bg-gray-100'>
+					className='outline-2 w-16 h-16'
+				/> */}
+				<ul className='flex gap-4 flex-col w-full'>
+					{/* <li className='my-px'>
+						<div className='flex flex-row items-center px-4 rounded-lg text-gray-600 bg-gray-100'>
 							<span className='flex items-center justify-center text-lg text-gray-400'>
 								<HouseOutlined />
 							</span>
@@ -237,7 +238,7 @@ const LoginForm = () => {
 								3
 							</span>
 						</div>
-					</li>
+					</li> */}
 					<li className='my-px'>
 						<span className='flex font-medium text-sm text-gray-400 px-4 my-4 uppercase'>
 							学习计划
@@ -245,7 +246,7 @@ const LoginForm = () => {
 					</li>
 
 					<li className='my-px'>
-						<div className='flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 hover:bg-gray-100'>
+						<div className='flex flex-row items-center px-4 rounded-lg text-gray-600 hover:bg-gray-100'>
 							<span className='flex items-center justify-center text-lg text-gray-400'>
 								<EventAvailableOutlined />
 							</span>
@@ -253,7 +254,7 @@ const LoginForm = () => {
 						</div>
 					</li>
 					<li className='my-px'>
-						<div className='flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 hover:bg-gray-100'>
+						<div className='flex flex-row items-center px-4 rounded-lg text-gray-600 hover:bg-gray-100'>
 							<span className='flex items-center justify-center text-lg text-gray-400'>
 								<AssignmentOutlined />
 							</span>
@@ -272,7 +273,7 @@ const LoginForm = () => {
 					<li className='my-px'>
 						<div
 							onClick={() => navgateTo('/profile')}
-							className='flex flex-row items-center h-12 px-4 rounded-lg text-gray-600  hover:bg-gray-100'
+							className='flex flex-row items-center px-4 rounded-lg text-gray-600  hover:bg-gray-100'
 						>
 							<span className='flex items-center justify-center text-lg text-gray-400'>
 								<Person2Outlined />
@@ -281,7 +282,7 @@ const LoginForm = () => {
 						</div>
 					</li>
 					<li className='my-px'>
-						<div className='flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 hover:bg-gray-100'>
+						<div className='flex flex-row items-center px-4 rounded-lg text-gray-600 hover:bg-gray-100'>
 							<span className='flex items-center justify-center text-lg text-gray-400'>
 								<NotificationsOutlined />
 							</span>
@@ -292,7 +293,7 @@ const LoginForm = () => {
 						</div>
 					</li>
 					<li className='my-px'>
-						<div className='flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 hover:bg-gray-100'>
+						<div className='flex flex-row items-center px-4 rounded-lg text-gray-600 hover:bg-gray-100'>
 							<span className='flex items-center justify-center text-lg text-gray-400'>
 								<SettingOutlined />
 							</span>
@@ -300,7 +301,7 @@ const LoginForm = () => {
 						</div>
 					</li>
 					<li className='my-px'>
-						<div className='flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 hover:bg-gray-100'>
+						<div className='flex flex-row items-center px-4 rounded-lg text-gray-600 hover:bg-gray-100'>
 							<span className='flex items-center justify-center text-lg text-red-400'>
 								<LockPersonOutlined color='error' />
 							</span>
@@ -341,8 +342,6 @@ const Nav = memo(({ id, showUp, submenu, children }: NavProps) => {
 						<SubMenu1 />
 					) : submenu === 'submenu2' ? (
 						<SubMenu2 />
-					) : submenu === 'loginform' ? (
-						<LoginForm />
 					) : (
 						children
 					)}

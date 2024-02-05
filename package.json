@@ -46,6 +46,7 @@
 		"gatsby-plugin-no-sourcemaps": "^5.2.0",
 		"gatsby-plugin-page-creator": "^5.8.0",
 		"gatsby-plugin-sass": "^6.2.0",
+		"gatsby-plugin-smoothscroll": "^1.2.0",
 		"gatsby-plugin-use-query-params": "latest",
 		"gatsby-source-filesystem": "^5.2.0",
 		"gsap": "^3.11.3",

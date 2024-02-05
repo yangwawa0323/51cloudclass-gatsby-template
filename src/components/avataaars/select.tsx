@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 import { useLocation } from '@reach/router';
 
-import { debugLog } from '51cloudclass-utilities/src/utils';
 import {
 	FormGroup,
 	InputLabel,

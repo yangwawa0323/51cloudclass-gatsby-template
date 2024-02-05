@@ -4,3 +4,7 @@ import './src/styles.css';
 import wrapWithProvider from './wrap-with-provider';
 export const wrapRootElement = wrapWithProvider;
 //
+import gsap from 'gsap'
+import { ScrollTrigger, ScrollToPlugin } from 'gsap/all';
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);

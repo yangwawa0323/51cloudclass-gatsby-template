@@ -12,7 +12,7 @@ const { getAxios } = utils;
 const Courses = () => {
 	React.useEffect(() => {
 		const tl = gsap.timeline();
-		easeIn('.gsap-course-main-title', {}, tl);
+		// easeIn('.gsap-course-main-title', {}, tl);
 		easeIn('.course-grid', {}, tl);
 	}, []);
 

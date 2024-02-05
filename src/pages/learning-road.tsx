@@ -12,6 +12,7 @@ import Typography from '@mui/material/Typography';
 import DoneOutlineIcon from '@mui/icons-material/DoneOutline';
 import { useState } from 'react';
 import Card from '../components/warnings/card';
+import Frame from '../components/frame';
 
 const SystemAdminContainer = () => {
 	return (
@@ -2893,62 +2894,64 @@ export default function VerticalLinearStepper() {
 	};
 
 	return (
-		<Box className='w-full'>
-			<Stepper
-				activeStep={activeStep}
-				orientation='vertical'
-			>
-				{steps.map((step, index) => (
-					<Step key={step.label}>
-						<StepLabel
-							optional={
-								index === 2 ? (
-									<Typography variant='caption'>最后一步</Typography>
-								) : null
-							}
-						>
-							{step.label}
-						</StepLabel>
-						<StepContent>
-							<Typography>{step.description}</Typography>
-							{step.componentContent && step.componentContent}
-							<Box sx={{ mb: 2 }}>
-								<div>
-									<Button
-										variant='contained'
-										onClick={handleNext}
-										sx={{ mt: 1, mr: 1 }}
-									>
-										{index === steps.length - 1 ? '结束' : '继续'}
-									</Button>
-									<Button
-										disabled={index === 0}
-										onClick={handleBack}
-										sx={{ mt: 1, mr: 1 }}
-									>
-										返回上一步
-									</Button>
-								</div>
-							</Box>
-						</StepContent>
-					</Step>
-				))}
-			</Stepper>
-			{activeStep === steps.length && (
-				<Paper
-					square
-					elevation={0}
-					sx={{ p: 3 }}
+		<Frame>
+			<Box className='w-4/5'>
+				<Stepper
+					activeStep={activeStep}
+					orientation='vertical'
 				>
-					<Typography>你已成功设置选课的过程</Typography>
-					<Button
-						onClick={handleReset}
-						sx={{ mt: 1, mr: 1 }}
+					{steps.map((step, index) => (
+						<Step key={step.label}>
+							<StepLabel
+								optional={
+									index === 2 ? (
+										<Typography variant='caption'>最后一步</Typography>
+									) : null
+								}
+							>
+								{step.label}
+							</StepLabel>
+							<StepContent>
+								<Typography>{step.description}</Typography>
+								{step.componentContent && step.componentContent}
+								<Box sx={{ mb: 2 }}>
+									<div>
+										<Button
+											variant='contained'
+											onClick={handleNext}
+											sx={{ mt: 1, mr: 1 }}
+										>
+											{index === steps.length - 1 ? '结束' : '继续'}
+										</Button>
+										<Button
+											disabled={index === 0}
+											onClick={handleBack}
+											sx={{ mt: 1, mr: 1 }}
+										>
+											返回上一步
+										</Button>
+									</div>
+								</Box>
+							</StepContent>
+						</Step>
+					))}
+				</Stepper>
+				{activeStep === steps.length && (
+					<Paper
+						square
+						elevation={0}
+						sx={{ p: 3 }}
 					>
-						重选
-					</Button>
-				</Paper>
-			)}
-		</Box>
+						<Typography>你已成功设置选课的过程</Typography>
+						<Button
+							onClick={handleReset}
+							sx={{ mt: 1, mr: 1 }}
+						>
+							重选
+						</Button>
+					</Paper>
+				)}
+			</Box>
+		</Frame>
 	);
 }

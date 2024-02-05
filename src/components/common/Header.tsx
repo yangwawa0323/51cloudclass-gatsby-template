@@ -32,6 +32,10 @@ import { useSelector } from 'react-redux';
 import { getAccount } from '51cloudclass-utilities/src/account';
 import { isBrowser } from '51cloudclass-utilities/src/net';
 import { globalContext } from '../../../wrap-with-provider';
+import { MenuButton, Dropdown, Menu } from '@mui/base';
+
+import { LoginForm } from '../common/Nav';
+import { debugLog } from '51cloudclass-utilities/src/utils';
 
 const navMenuStyles = {
 	expanded: {
@@ -66,7 +70,7 @@ const Navigation = ({ resolution }: NavProps) => {
 						: 'nothing'
 				],
 			}}
-			className='nav-menu md:ml-60 w-nav-menu mt-6 flex md:justify-center md:items-center'
+			className='nav-menu md:ml-60 w-nav-menu flex md:justify-center md:items-center'
 		>
 			<Link
 				to='/'
@@ -142,8 +146,14 @@ const LoginIconsWrapper = () => {
 			state.auth.account?.avatar
 	);
 
-	const { toggleMenu, showMenu, geMedium, badgeNumber } =
-		useContext(HeaderContext);
+	const [showMenu, setShowMenu] = useState(false);
+
+	const toggleMenu = () => {
+		debugLog('click away');
+		setShowMenu((prev) => !prev);
+	};
+
+	const { badgeNumber } = useContext(HeaderContext);
 
 	const { isExpired, isLogin } = useContext(globalContext);
 
@@ -153,38 +163,42 @@ const LoginIconsWrapper = () => {
 
 	if (isLogin && !isExpired) {
 		return (
-			<div className='flex self-end gap-4 items-center relative'>
-				<Badge
-					badgeContent={9}
-					color='warning'
-				>
-					<EmailOutlined className='text-[32px] cursor-pointer' />
-				</Badge>
-				<Badge
-					badgeContent={badgeNumber}
-					color='primary'
-				>
-					<MessageOutlined className='text-[32px] cursor-pointer' />
-				</Badge>
-
-				<Avatar
-					src={reduxAvatar || getAccount()?.avatar}
-					data-trigger-target='loginform'
-					className='cursor-pointer'
-					onClick={toggleMenu}
-				/>
-				<Badge
-					className='-translate-x-4 -translate-y-4'
-					badgeContent={badgeNumber}
-					color='warning'
-				/>
-
-				<Nav
+			<ClickAwayListener onClickAway={() => setShowMenu(false)}>
+				<div className='flex self-end gap-4 items-center mr-4'>
+					<Badge
+						badgeContent={9}
+						color='warning'
+					>
+						<EmailOutlined className='text-[32px] cursor-pointer' />
+					</Badge>
+					<Badge
+						badgeContent={badgeNumber}
+						color='primary'
+					>
+						<MessageOutlined className='text-[32px] cursor-pointer' />
+					</Badge>
+					<Dropdown
+						open={showMenu}
+						onOpenChange={toggleMenu}
+					>
+						<MenuButton>
+							<Avatar
+								// onClick={toggleMenu}
+								src={reduxAvatar || getAccount()?.avatar}
+								className='cursor-pointer'
+							/>
+						</MenuButton>
+						<Menu className='relative z-50 transition-all duration-500'>
+							<LoginForm />
+						</Menu>
+					</Dropdown>
+					{/* <Nav
 					id='loginform'
 					showUp={showMenu.loginform && geMedium}
 					submenu='loginform'
-				/>
-			</div>
+				/> */}
+				</div>
+			</ClickAwayListener>
 		);
 	} else {
 		return (
@@ -194,7 +208,7 @@ const LoginIconsWrapper = () => {
 					size='medium'
 					variant='contained'
 					onClick={gotoLoginPage}
-					endIcon={<VideoLibraryOutlinedIcon fontSize='10px' />}
+					endIcon={<VideoLibraryOutlinedIcon className='text-lg' />}
 				>
 					登录
 				</Button>
@@ -287,7 +301,6 @@ const Header = () => {
 								<div className='flex justify-between ml-10 gap-4 w-full'>
 									{ltMedium && (
 										<IconButton
-											size='large'
 											className='hamburger flex text-lg'
 											onClick={toggleCollapse}
 										>

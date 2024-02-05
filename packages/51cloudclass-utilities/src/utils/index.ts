@@ -73,9 +73,10 @@ export const gradientColor = {
 	WebkitTextFillColor: 'transparent', // capitalized the 1st char
 };
 
-export const getRidOfDomain = (url: string) =>
-	url?.replace(/[^:]+:\/\/[^/]+\//, '');
-
+export const getRidOfDomain = (url: string) => {
+	console.log('[DEBUG] getRidOfDomain url: ', url);
+	return url?.replace(/[^:]+:\/\/[^/]+\//, '');
+}
 export const getUrlParameter = (search: string) =>
 	search?.replace(/[^?]+\?/, '?');
 

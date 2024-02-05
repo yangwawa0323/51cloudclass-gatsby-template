@@ -7,27 +7,25 @@
 // }
 
 body {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  margin: 0;
-  padding: 0;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
-
-
-
 
 .note-wrap {
-  @apply border-slate-300 shadow-md border rounded-[20px] bg-yellow-50 p-8 xs:w-[360px] w-[600px] text-xs text-gray-500;
-  & > p, h3 {
-    @apply font-bold text-[14px];
-    margin-bottom: 20px;
-  
-  }
+	@apply border-slate-300 shadow-md border rounded-[20px] bg-yellow-50 p-8 xs:w-[360px] w-[600px] text-xs text-gray-500;
+	& > p,
+	h3 {
+		@apply font-bold text-[14px];
+		margin-bottom: 20px;
+	}
 }
 
-
 .color-list {
-  & h3 {
-    @apply font-bold text-sm;
-  }
+	& h3 {
+		@apply font-bold text-sm;
+	}
 }
