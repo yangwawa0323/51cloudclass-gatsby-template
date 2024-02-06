@@ -9,6 +9,7 @@ const LeftPane = () => {
 		<div className='w-full flex flex-col'>
 			<Detail />
 			<Video />
+			<Detail />
 		</div>
 	);
 };

@@ -37,8 +37,6 @@ const ChapterContainer = ({
 							(showDetail ? 'opacity-100' : 'opacity-0') +
 							' z-10 -left-2 -top-10 rounded-md border border-neutral-500 text-indigo-900 bg-white shadow-lg p-4 absolute duration-1000 transition-all'
 						}
-						onMouseEnter={(event) => setShowDetail(true)}
-						onMouseLeave={(event) => setShowDetail(false)}
 					>
 						{chapter.name}
 					</div>

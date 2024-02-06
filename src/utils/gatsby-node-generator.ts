@@ -1,4 +1,4 @@
-import type { Course, Page, Chapter } from './../components/index.d';
+import type { Page } from './../components/index.d';
 /** @format */
 import type { CreatePageArgs, GatsbyNode, NodeInput } from "gatsby";
 import type { Body } from 'node-fetch';
@@ -9,7 +9,6 @@ const fetch = require('node-fetch');
 const fakeData = require('../data/allReactPages.json');
 
 import type { IAsciinemaPageInput, IChapterInput, ICourseInput } from './types'
-import { CiOutlined } from '@ant-design/icons';
 
 interface IApiResponse {
 	asciinemaPages: Array<IAsciinemaPageInput>,

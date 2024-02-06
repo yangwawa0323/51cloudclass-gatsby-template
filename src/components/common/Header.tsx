@@ -161,8 +161,8 @@ const LoginIconsWrapper = () => {
 		navigate('/login');
 	};
 
-	if (isLogin && !isExpired) {
-		return (
+	return (
+		(isLogin && !isExpired && (
 			<ClickAwayListener onClickAway={() => setShowMenu(false)}>
 				<div className='flex self-end gap-4 items-center mr-4'>
 					<Badge
@@ -199,9 +199,7 @@ const LoginIconsWrapper = () => {
 				/> */}
 				</div>
 			</ClickAwayListener>
-		);
-	} else {
-		return (
+		)) || (
 			<div className='flex login-button header-right  gap-4 items-center relative'>
 				<Button
 					className='bg-purple-600 text-sm'
@@ -213,8 +211,8 @@ const LoginIconsWrapper = () => {
 					登录
 				</Button>
 			</div>
-		);
-	}
+		)
+	);
 };
 
 const initMenuState: { [key: string]: boolean } = {
