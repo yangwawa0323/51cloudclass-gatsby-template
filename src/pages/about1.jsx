@@ -5,12 +5,12 @@
  */
 
 import * as React from 'react';
-import FmdGoodIcon from '@mui/icons-material/FmdGood';
-import EastIcon from '@mui/icons-material/East';
+import { MdFmdGood } from 'react-icons/md';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import Frame from '../components/frame';
 import { Link } from 'gatsby';
+import { IoIosArrowForward } from 'react-icons/io';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -306,7 +306,7 @@ const About1 = () => {
 					<div className='rounded-[20px] shadow-lg hover:shadow-xl  bg-white p-8'>
 						<div className='flex flex-col gap-8'>
 							<div className='rounded-lg p-2 bg-gray-100 w-10 h-10 flex flex-col justify-center items-center'>
-								<FmdGoodIcon htmlColor='rgb(136, 0, 255)' />
+								<MdFmdGood htmlColor='rgb(136, 0, 255)' />
 							</div>
 							<div className='flex flex-col gap-4'>
 								<h4>Amsterdam </h4>
@@ -319,7 +319,7 @@ const About1 = () => {
 					<div className='rounded-[20px] shadow-lg hover:shadow-xl  bg-white p-8'>
 						<div className='flex flex-col gap-8'>
 							<div className='rounded-lg p-2 bg-gray-100 w-10 h-10 flex flex-col justify-center items-center'>
-								<FmdGoodIcon htmlColor='rgb(136, 0, 255)' />
+								<MdFmdGood htmlColor='rgb(136, 0, 255)' />
 							</div>
 							<div className='flex flex-col gap-4'>
 								<h4>Barcelona</h4>
@@ -332,7 +332,7 @@ const About1 = () => {
 					<div className='rounded-[20px] shadow-lg hover:shadow-xl  bg-white p-8'>
 						<div className='flex flex-col gap-8'>
 							<div className='rounded-lg p-2 bg-gray-100 w-10 h-10 flex flex-col justify-center items-center'>
-								<FmdGoodIcon htmlColor='rgb(136, 0, 255)' />
+								<MdFmdGood htmlColor='rgb(136, 0, 255)' />
 							</div>
 							<div className='flex flex-col gap-4'>
 								<h4>London</h4>
@@ -372,7 +372,7 @@ const About1 = () => {
 								<p className='text-sm text-purple-700 font-extrabold uppercase'>
 									Join our team
 								</p>
-								<EastIcon
+								<IoIosArrowForward
 									fontSize='14px'
 									htmlColor='rgb(136,0,255)'
 								/>

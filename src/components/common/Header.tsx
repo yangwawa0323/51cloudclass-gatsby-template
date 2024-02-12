@@ -1,31 +1,23 @@
 /** @format */
 
 import React, { useState } from 'react';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import { ClickAwayListener } from '@mui/base';
 import Nav from './Nav';
 import { Link, navigate } from 'gatsby';
 
 import Logo from '../../assets/img/CloudClass-8_adobe_express.svg';
 import {
-	EmailOutlined,
-	MenuOpenOutlined,
-	MenuOutlined,
-	MessageOutlined,
-} from '@mui/icons-material';
-import {
 	Avatar,
 	Badge,
 	Button,
 	IconButton,
+	Tooltip,
 	useMediaQuery,
 } from '@mui/material';
 import { useContext } from 'react';
 import { useTheme } from '@mui/material/styles';
 import HeaderContextProvider, { HeaderContext } from './HeaderContentProvider';
 import { useCallback } from 'react';
-import VideoLibraryOutlinedIcon from '@mui/icons-material/VideoLibraryOutlined';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useSelector } from 'react-redux';
@@ -36,6 +28,14 @@ import { MenuButton, Dropdown, Menu } from '@mui/base';
 
 import { LoginForm } from '../common/Nav';
 import { debugLog } from '51cloudclass-utilities/src/utils';
+import {
+	MdOutlineEmail,
+	MdOutlineExpandLess,
+	MdOutlineExpandMore,
+	MdOutlineMenu,
+	MdOutlineMenuOpen,
+	MdOutlineVideoLibrary,
+} from 'react-icons/md';
 
 const navMenuStyles = {
 	expanded: {
@@ -91,7 +91,11 @@ const Navigation = ({ resolution }: NavProps) => {
 					<div className='nav-link flex items-center'>
 						页面&nbsp;&nbsp;
 						<span className='dropdown-icon'>
-							{showMenu.submenu1 ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+							{showMenu.submenu1 ? (
+								<MdOutlineExpandLess className='text-lg' />
+							) : (
+								<MdOutlineExpandMore className='text-lg' />
+							)}
 						</span>
 					</div>
 				</div>
@@ -114,7 +118,11 @@ const Navigation = ({ resolution }: NavProps) => {
 					<div className='nav-link flex items-center'>
 						课程&nbsp;&nbsp;
 						<span className='dropdown-icon'>
-							{showMenu.submenu2 ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+							{showMenu.submenu2 ? (
+								<MdOutlineExpandLess className='text-lg' />
+							) : (
+								<MdOutlineExpandMore className='text-lg' />
+							)}
 						</span>
 					</div>
 				</div>
@@ -165,28 +173,36 @@ const LoginIconsWrapper = () => {
 		(isLogin && !isExpired && (
 			<ClickAwayListener onClickAway={() => setShowMenu(false)}>
 				<div className='flex self-end gap-4 items-center mr-4'>
-					<Badge
-						badgeContent={9}
-						color='warning'
-					>
-						<EmailOutlined className='text-[32px] cursor-pointer' />
-					</Badge>
-					<Badge
-						badgeContent={badgeNumber}
-						color='primary'
-					>
-						<MessageOutlined className='text-[32px] cursor-pointer' />
-					</Badge>
+					<Link to='/dashboard/main/message'>
+						<Tooltip
+							title='站内短信'
+							arrow
+							placement='left-end'
+						>
+							<Badge
+								badgeContent={badgeNumber}
+								color='primary'
+							>
+								<MdOutlineEmail className='cursor-pointer' />
+							</Badge>
+						</Tooltip>
+					</Link>
 					<Dropdown
 						open={showMenu}
 						onOpenChange={toggleMenu}
 					>
 						<MenuButton>
-							<Avatar
-								// onClick={toggleMenu}
-								src={reduxAvatar || getAccount()?.avatar}
-								className='cursor-pointer'
-							/>
+							<Tooltip
+								title='控制面板'
+								arrow
+								placement='right-end'
+							>
+								<Avatar
+									// onClick={toggleMenu}
+									src={reduxAvatar || getAccount()?.avatar}
+									className='cursor-pointer'
+								/>
+							</Tooltip>
 						</MenuButton>
 						<Menu className='relative z-50 transition-all duration-500'>
 							<LoginForm />
@@ -206,7 +222,7 @@ const LoginIconsWrapper = () => {
 					size='medium'
 					variant='contained'
 					onClick={gotoLoginPage}
-					endIcon={<VideoLibraryOutlinedIcon className='text-lg' />}
+					endIcon={<MdOutlineVideoLibrary className='text-lg' />}
 				>
 					登录
 				</Button>
@@ -302,7 +318,7 @@ const Header = () => {
 											className='hamburger flex text-lg'
 											onClick={toggleCollapse}
 										>
-											{collapsed ? <MenuOutlined /> : <MenuOpenOutlined />}
+											{collapsed ? <MdOutlineMenu /> : <MdOutlineMenuOpen />}
 										</IconButton>
 									)}
 									<LoginIconsWrapper />

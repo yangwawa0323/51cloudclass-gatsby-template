@@ -5,12 +5,10 @@
  */
 
 import * as React from 'react';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import YouTubeIcon from '@mui/icons-material/YouTube';
+import { IoIosArrowRoundForward } from 'react-icons/io';
+import { CiInstagram, CiLinkedin, CiTwitter } from 'react-icons/ci';
 import mapPicture from '../../assets/img/page-thumbnail/map.webp';
+import { MdOutlineYoutubeSearchedFor } from 'react-icons/md';
 
 const MapContainer = () => {
 	return (
@@ -55,7 +53,7 @@ const MapContainer = () => {
 											<p>Get a demo</p>
 										</div>
 										<div className='hover:translate-x-1 duration-1000'>
-											<ArrowForwardIcon />
+											<IoIosArrowRoundForward />
 										</div>
 									</div>
 								</div>
@@ -84,7 +82,7 @@ const MapContainer = () => {
 										</div>
 										<div>
 											<div className='hover:translate-x-1 duration-1000'>
-												<ArrowForwardIcon />
+												<IoIosArrowRoundForward />
 											</div>
 										</div>
 									</div>
@@ -97,7 +95,7 @@ const MapContainer = () => {
 									</div>
 									<div>
 										<div className='hover:translate-x-1 duration-1000'>
-											<ArrowForwardIcon />
+											<IoIosArrowRoundForward />
 										</div>
 									</div>
 								</div>
@@ -113,7 +111,7 @@ const MapContainer = () => {
 										}}
 										className='hover:scale-110 duration-1000 flex items-center justify-center rounded-full h-12 w-12'
 									>
-										<TwitterIcon />
+										<CiTwitter />
 									</div>
 								</div>
 							</div>
@@ -126,7 +124,7 @@ const MapContainer = () => {
 										}}
 										className='hover:scale-110 duration-1000 flex items-center justify-center rounded-full h-12 w-12'
 									>
-										<LinkedInIcon />
+										<CiLinkedin />
 									</div>
 								</div>
 							</div>
@@ -138,7 +136,7 @@ const MapContainer = () => {
 									}}
 									className='hover:scale-110 duration-1000 flex items-center justify-center rounded-full h-12 w-12'
 								>
-									<InstagramIcon />
+									<CiInstagram />
 								</div>
 							</div>
 							<div>
@@ -149,7 +147,7 @@ const MapContainer = () => {
 									}}
 									className='hover:scale-110 duration-1000 flex items-center justify-center rounded-full h-12 w-12'
 								>
-									<YouTubeIcon />
+									<MdOutlineYoutubeSearchedFor />
 								</div>
 							</div>
 						</div>

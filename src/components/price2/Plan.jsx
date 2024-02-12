@@ -5,8 +5,8 @@
  */
 
 import * as React from 'react';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { CloseCircleFilled, CloseCircleOutlined } from '@ant-design/icons';
+import { MdOutlineCheckCircle } from 'react-icons/md';
 
 const PlanSection = () => {
 	return (
@@ -33,7 +33,7 @@ const PlanSection = () => {
 						<div className='free-icons  text-purple-700 flex flex-row flex-wrap  gap-4 h-min justify-start'>
 							<div>
 								<div>
-									<CheckCircleIcon />
+									<MdOutlineCheckCircle />
 								</div>
 								<div>
 									<h5>不限科目</h5>

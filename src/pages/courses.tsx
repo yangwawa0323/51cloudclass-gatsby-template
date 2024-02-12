@@ -8,21 +8,21 @@ import { Link, graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import Frame from '../frame';
-import '../../styles/pages/_course-main.scss';
+import Frame from '../components/frame';
+import '../styles/pages/_course-main.scss';
 import { Divider } from '@mui/material';
 
 /* tslint:disable */
 import { utils } from '51cloudclass-utilities/dist';
-import good from '../../assets/img/courses/good.png';
-import business from '../../assets/img/courses/business-revenue.png';
-import formation from '../../assets/img/courses/formaṭion-status.png';
-import esstimated from '../../assets/img/courses/esstimated-processing.png';
-import level01 from '../../assets/img/courses/level-01.svg';
+import good from '../assets/img/courses/good.png';
+import business from '../assets/img/courses/business-revenue.png';
+import formation from '../assets/img/courses/formaṭion-status.png';
+import esstimated from '../assets/img/courses/esstimated-processing.png';
+import level01 from '../assets/img/courses/level-01.svg';
 /* tslint:enable  */
-import { easeIn } from '../../utils/animate';
+import { easeIn } from '../utils/animate';
 import shuffle from 'lodash/shuffle';
-import { Course } from '..';
+import { Course } from '../components';
 
 const { getAxios } = utils;
 
@@ -107,8 +107,8 @@ const CourseMain = () => {
 						scale: 0,
 					},
 					{
-						delay: 0.1,
-						duration: 0.1,
+						delay: 0.05,
+						duration: 0.05,
 						opacity: 1,
 						scale: 1,
 					}

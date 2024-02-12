@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 import { store } from '51cloudclass-utilities/src/store';
 
@@ -13,12 +13,15 @@ import { useTour } from '@reactour/tour';
 import { Provider } from 'react-redux';
 import { tokenExample } from './src/components';
 import type { IUseJwt } from 'react-jwt/dist/hooks';
+import { StateContextProvider } from './src/contexts/ContextProvider';
 
 export const globalContext = createContext<any>(null);
 
 type GlobalContextProps = {
 	children: React.ReactNode;
 };
+
+export const useGlobalContext = () => useContext(globalContext);
 
 const GlobalContextProvider = ({ children }: GlobalContextProps) => {
 	/* eslint-disable no-unused-vars */
@@ -62,7 +65,9 @@ export default ({ element }: { element: React.ReactNode }) => {
 	return (
 		<Provider store={store}>
 			<GlobalContextProvider>
-				<RootElement>{element} </RootElement>
+				<StateContextProvider>
+					<RootElement>{element} </RootElement>
+				</StateContextProvider>
 			</GlobalContextProvider>
 		</Provider>
 	);

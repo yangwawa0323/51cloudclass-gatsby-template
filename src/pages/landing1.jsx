@@ -5,8 +5,7 @@
  */
 
 import * as React from 'react';
-import ArrowForward from '@mui/icons-material/ArrowForward';
-
+import { IoIosArrowRoundForward } from 'react-icons/io';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 import BoostSection from '../components/landing1/Boost';
@@ -99,7 +98,7 @@ const Landing1 = () => {
 						className='flex flex-row gap-2 cursor-pointer'
 					>
 						<h5 className='text-xs text-white font-medium'>Learn more</h5>
-						<ArrowForward
+						<IoIosArrowRoundForward
 							className='hover:translate-x-1 transition-all duration-700'
 							fontSize='10px'
 							htmlColor='white'
@@ -108,7 +107,7 @@ const Landing1 = () => {
 				</div>
 			</div>
 			{/*  */}
-			<Frame >
+			<Frame>
 				{/*  */}
 				<BoostSection />
 				{/*  */}
@@ -120,7 +119,7 @@ const Landing1 = () => {
 				{/*  */}
 				<FractionSection />
 				{/*  */}
-			</Frame >
+			</Frame>
 		</div>
 	);
 };

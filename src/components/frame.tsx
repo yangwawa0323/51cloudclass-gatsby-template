@@ -8,9 +8,10 @@ import scrollTo from 'gatsby-plugin-smoothscroll';
 
 type FrameProps = {
 	children: React.ReactNode;
+	noFooter: boolean;
 };
 
-const Frame = ({ children }: FrameProps) => {
+const Frame = ({ children, noFooter = false }: FrameProps) => {
 	useEffect(() => {
 		scrollTo('#frame-top');
 	}, []);
@@ -18,7 +19,7 @@ const Frame = ({ children }: FrameProps) => {
 		<div id='frame-top'>
 			<Header />
 			<main className='w-full flex flex-col items-center'>{children}</main>
-			<Footer />
+			{noFooter || <Footer />}
 		</div>
 	);
 };

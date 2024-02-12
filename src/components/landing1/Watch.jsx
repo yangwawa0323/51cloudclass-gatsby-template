@@ -3,9 +3,7 @@
 import * as React from 'react';
 import Backdrop from '@mui/material/Backdrop';
 import VideoJS from '../../utils/Video';
-import CheckCircle from '@mui/icons-material/CheckCircle';
-import HighlightOff from '@mui/icons-material/HighlightOff';
-import PlayCircle from '@mui/icons-material/PlayCircle';
+import { MdOutlineCheckCircle, MdOutlineHighlightOff } from 'react-icons/md';
 // import { useKeypress } from "../../utils/key";
 
 const videoJsOptions = {
@@ -96,15 +94,15 @@ const WatchVideo = () => {
 					</div>
 					<div className='flex flex-col gap-4 justify-start items-start'>
 						<div className='flex flex-row gap-3 justify-center items-center'>
-							<CheckCircle htmlColor='rgb(136,0,255)' />
+							<MdOutlineCheckCircle htmlColor='rgb(136,0,255)' />
 							<h5>25+ Prebuilt Pages</h5>
 						</div>
 						<div className='flex flex-row gap-3 justify-center items-center'>
-							<CheckCircle htmlColor='rgb(136,0,255)' />
+							<MdOutlineCheckCircle htmlColor='rgb(136,0,255)' />
 							<h5>60 Building Blocks</h5>
 						</div>
 						<div className='flex flex-row gap-3 justify-center items-center'>
-							<CheckCircle htmlColor='rgb(136,0,255)' />
+							<MdOutlineCheckCircle htmlColor='rgb(136,0,255)' />
 							<h5>Comprehensive Styleguide</h5>
 						</div>
 					</div>
@@ -119,7 +117,7 @@ const WatchVideo = () => {
 					</div>
 					<div className='z-[2]'>
 						<div className='cursor-pointer py-2 px-4 rounded-md shadow-md bg-white flex flex-row gap-3 justify-center items-center'>
-							<PlayCircle
+							<MdOutlineCheckCircle
 								fontSize='12px'
 								onClick={playVideo}
 							/>
@@ -151,7 +149,7 @@ const WatchVideo = () => {
 								{/* <HighlightOff htmlColor='white' fontSize='medium'
                   onClick={handleCloseIconClick}
                   className='z-20 absolute top-[160px] right-10 pointer-events-auto' /> */}
-								<HighlightOff
+								<MdOutlineHighlightOff
 									htmlColor='white'
 									fontSize='large'
 									onClick={handleCloseIconClick}

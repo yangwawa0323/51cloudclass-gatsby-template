@@ -7,7 +7,7 @@ import { baseCellPlugins } from '../../plugins/cellPlugins';
 import Frame from '../frame';
 import { Link } from 'gatsby';
 import { getTitle, formatDate } from '../../utils/tools';
-import ContentPasteGo from '@mui/icons-material/ContentPasteGo';
+import { MdOutlineContentPasteGo } from 'react-icons/md';
 
 const AsciinemaPage = ({ pageContext }) => {
 	const { content, relatives } = pageContext;
@@ -35,7 +35,7 @@ const AsciinemaPage = ({ pageContext }) => {
 				<div className='bg-[#f6f4ff] flex-1 ml-4 mt-10 right-4 top-1/2 py-12 px-6 h-full rounded-lg shadow-md  bg-slate-10 flex flex-col gap-2 '>
 					<div className='flex flex-row text-purple-600 gap-2 items-center'>
 						<div>
-							<ContentPasteGo sx={{ fontSize: '1.2rem' }} />
+							<MdOutlineContentPasteGo sx={{ fontSize: '1.2rem' }} />
 						</div>
 						<h6 className='text-purple-600 font-semibold uppercase'>
 							Latest 10.

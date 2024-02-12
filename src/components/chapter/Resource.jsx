@@ -3,10 +3,10 @@
 import { Box, Typography } from '@mui/material';
 import React, { useContext } from 'react';
 import { ChapterContext } from './ChapterContextProvider';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
-import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
+import { AiFillGithub } from 'react-icons/ai';
+import { IoCloudDownloadOutline } from 'react-icons/io5';
 import { Link } from 'gatsby';
+import { MdOutlineDirections } from 'react-icons/md';
 
 const Resource = () => {
 	const { chapter } = useContext(ChapterContext);
@@ -18,7 +18,7 @@ const Resource = () => {
 			{chapter.github_resource?.length > 0 && (
 				<Box className='p-6 flex flex-col items-end gap-2  cursor-pointer'>
 					<Box className='flex flex-row gap-2 items-center justify-center'>
-						<GitHubIcon fontSize='large' />
+						<AiFillGithub fontSize='large' />
 						<Link
 							to={chapter.github_resource}
 							target='_blank'
@@ -34,7 +34,7 @@ const Resource = () => {
 			)}
 			{chapter.online_running_code?.length > 0 && (
 				<Box>
-					<DirectionsRunIcon />
+					<MdOutlineDirections />
 					<p className='break-words text-center'>
 						{chapter.online_running_code}
 					</p>
@@ -42,7 +42,7 @@ const Resource = () => {
 			)}
 			{chapter.download_resource?.length > 0 && (
 				<Box>
-					<CloudDownloadIcon />
+					<IoCloudDownloadOutline />
 					<p className='break-words text-center'>{chapter.download_resource}</p>
 				</Box>
 			)}

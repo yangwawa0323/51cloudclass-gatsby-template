@@ -1,5 +1,5 @@
 import React from 'react';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { IoIosArrowRoundForward } from 'react-icons/io';
 
 const Relative = () => {
 	return (
@@ -804,7 +804,7 @@ const Relative = () => {
 										}}
 										className={'line-rounded-icon link-icon-right'}
 									>
-										<ArrowForwardIcon />{' '}
+										<IoIosArrowRoundForward />
 									</span>
 								</a>
 							</div>
@@ -1518,7 +1518,7 @@ const Relative = () => {
 										}}
 										className={'line-rounded-icon link-icon-right'}
 									>
-										<ArrowForwardIcon />
+										<IoIosArrowRoundForward />
 									</span>
 								</a>
 							</div>
@@ -2236,7 +2236,7 @@ const Relative = () => {
 											WebkitTextStrokeColor: 'rgb(255, 255, 255)',
 										}}
 									>
-										<ArrowForwardIcon size='small' />
+										<IoIosArrowRoundForward size='small' />
 									</span>
 								</a>
 							</div>

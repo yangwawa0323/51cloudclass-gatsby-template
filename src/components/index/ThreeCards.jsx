@@ -1,15 +1,14 @@
 /** @format */
 
 import * as React from 'react';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import LayersIcon from '@mui/icons-material/Layers';
-import ViewInArIcon from '@mui/icons-material/ViewInAr';
-import PaletteIcon from '@mui/icons-material/Palette';
+import { IoIosArrowRoundForward } from 'react-icons/io';
 
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 import { gradientColor } from '../../utils/tools';
-import { Tune } from '@mui/icons-material';
+import {
+	MdOutlineLayers,
+	MdOutlinePalette,
+	MdOutlineViewInAr,
+} from 'react-icons/md';
 
 const ThreeCards = () => {
 	return (
@@ -25,7 +24,7 @@ const ThreeCards = () => {
 			<div className='border rounded-2xl shadow-xl flex flex-col gap-8 p-10 card'>
 				<div className='rounded-lg bg-gray-100 w-10 h-10 flex justify-center items-center'>
 					<div className='text-purple-500'>
-						<LayersIcon />
+						<MdOutlineLayers />
 					</div>
 				</div>
 				<div className='flex gap-4 flex-col'>
@@ -54,7 +53,7 @@ const ThreeCards = () => {
 								</div>
 								<div>
 									<div>
-										<ArrowForwardIcon fontSize='1rem' />
+										<IoIosArrowRoundForward fontSize='1rem' />
 									</div>
 								</div>
 							</div>
@@ -66,7 +65,7 @@ const ThreeCards = () => {
 			<div className='border rounded-2xl shadow-xl flex flex-col gap-8 p-10 card'>
 				<div className='rounded-lg bg-gray-100 w-10 h-10 flex justify-center items-center'>
 					<div className='text-purple-500'>
-						<PaletteIcon />
+						<MdOutlinePalette />
 					</div>
 				</div>
 				<div className='flex flex-col gap-4'>
@@ -95,7 +94,7 @@ const ThreeCards = () => {
 									<p>学习路线规则</p>
 								</div>
 								<div>
-									<ArrowForwardIcon fontSize='1rem' />
+									<IoIosArrowRoundForward fontSize='1rem' />
 								</div>
 							</div>
 						</div>
@@ -106,7 +105,7 @@ const ThreeCards = () => {
 			<div className='border rounded-2xl shadow-xl flex flex-col gap-8 p-10 card'>
 				<div className='rounded-lg bg-gray-100 w-10 h-10 flex justify-center items-center'>
 					<div className='text-purple-500'>
-						<ViewInArIcon />
+						<MdOutlineViewInAr />
 					</div>
 				</div>
 				<div className='flex flex-col gap-4'>

@@ -9,7 +9,7 @@ import StepContent from '@mui/material/StepContent';
 import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import DoneOutlineIcon from '@mui/icons-material/DoneOutline';
+import { MdOutlineDone } from 'react-icons/md';
 import { useState } from 'react';
 import Card from '../components/warnings/card';
 import Frame from '../components/frame';
@@ -20,14 +20,6 @@ const SystemAdminContainer = () => {
 			style={{
 				margin: 0,
 				blockSize: '363px',
-				borderBlockEndColor: 'rgb(105, 105, 123)',
-				borderBlockStartColor: 'rgb(105, 105, 123)',
-				borderBottomColor: 'rgb(105, 105, 123)',
-				borderInlineEndColor: 'rgb(105, 105, 123)',
-				borderInlineStartColor: 'rgb(105, 105, 123)',
-				borderLeftColor: 'rgb(105, 105, 123)',
-				borderRightColor: 'rgb(105, 105, 123)',
-				borderTopColor: 'rgb(105, 105, 123)',
 				bottom: '0px',
 				boxSizing: 'border-box',
 				caretColor: 'rgb(105, 105, 123)',
@@ -37,27 +29,16 @@ const SystemAdminContainer = () => {
 				fontFamily: 'Jakarta Display, sans-serif',
 				fontSize: '18px',
 				inlineSize: '1017px',
-				insetBlockEnd: '0px',
-				insetBlockStart: '0px',
-				insetInlineEnd: '0px',
-				insetInlineStart: '0px',
+
 				left: '0px',
 				lineHeight: '30.006px',
 				outlineColor: 'rgb(105, 105, 123)',
 				position: 'relative',
 				right: '0px',
 				textAlign: 'left',
-				textDecoration: 'none solid rgb(105, 105, 123)',
-				textDecorationColor: 'rgb(105, 105, 123)',
-				textEmphasisColor: 'rgb(105, 105, 123)',
-				textSizeAdjust: '100%',
-				top: '0px',
 				transitionDuration: '0.5s',
 				transitionProperty: 'transform',
 				verticalAlign: 'top',
-				WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
-				WebkitTextFillColor: 'rgb(105, 105, 123)',
-				WebkitTextStrokeColor: 'rgb(105, 105, 123)',
 				width: '1017px',
 			}}
 			className={'slide w-slide'}
@@ -87,23 +68,13 @@ const SystemAdminContainer = () => {
 					textDecorationColor: 'rgb(105, 105, 123)',
 					textEmphasisColor: 'rgb(105, 105, 123)',
 					textSizeAdjust: '100%',
-					WebkitBoxAlign: 'center',
-					WebkitBoxOrient: 'vertical',
-					WebkitBoxPack: 'center',
 				}}
 				className={'slide-wrapper'}
 			>
 				<img
 					style={{
 						blockSize: '69px',
-						borderBlockEndColor: 'rgb(105, 105, 123)',
-						borderBlockStartColor: 'rgb(105, 105, 123)',
-						borderBottomColor: 'rgb(105, 105, 123)',
-						borderInlineEndColor: 'rgb(105, 105, 123)',
-						borderInlineStartColor: 'rgb(105, 105, 123)',
-						borderLeftColor: 'rgb(105, 105, 123)',
-						borderRightColor: 'rgb(105, 105, 123)',
-						borderTopColor: 'rgb(105, 105, 123)',
+
 						boxSizing: 'border-box',
 						caretColor: 'rgb(105, 105, 123)',
 						color: 'rgb(105, 105, 123)',
@@ -128,9 +99,7 @@ const SystemAdminContainer = () => {
 						textEmphasisColor: 'rgb(105, 105, 123)',
 						textSizeAdjust: '100%',
 						verticalAlign: 'middle',
-						WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
-						WebkitTextFillColor: 'rgb(105, 105, 123)',
-						WebkitTextStrokeColor: 'rgb(105, 105, 123)',
+
 						width: '69px',
 						height: '69px',
 					}}
@@ -1191,7 +1160,7 @@ const ThreeDirection = () => {
 					>
 						系统运维工程师
 						{direction === 0 && (
-							<DoneOutlineIcon
+							<MdOutlineDone
 								className='absolute !text-[100px] left-24 -bottom-5'
 								color='success'
 							/>

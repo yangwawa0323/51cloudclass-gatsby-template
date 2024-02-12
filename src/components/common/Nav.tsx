@@ -2,19 +2,8 @@
 
 import { Link, graphql, navigate, useStaticQuery } from 'gatsby';
 import React, { memo } from 'react';
-import { useQuery } from '@tanstack/react-query';
 import { utils, logout } from '51cloudclass-utilities/dist';
-import { Avatar } from '@mui/material';
 
-import {
-	AssignmentOutlined,
-	EventAvailableOutlined,
-	HouseOutlined,
-	LockPersonOutlined,
-	NotificationsOutlined,
-	Person2Outlined,
-} from '@mui/icons-material';
-import VideoLibraryOutlinedIcon from '@mui/icons-material/VideoLibraryOutlined';
 import { SettingOutlined } from '@ant-design/icons';
 import { useContext } from 'react';
 import { HeaderContext } from './HeaderContentProvider';
@@ -22,8 +11,15 @@ import { cleanTokenEtag } from '51cloudclass-utilities/src/account';
 import { useDispatch, useSelector } from 'react-redux';
 import { globalContext } from '../../../wrap-with-provider';
 
-import type { Course } from '..';
 import { ICourseInput } from '../../utils/types';
+import {
+	MdOutlineAssessment,
+	MdOutlineEventAvailable,
+	MdOutlineHouse,
+	MdOutlineLockPerson,
+	MdOutlinePerson2,
+	MdOutlineVideoLibrary,
+} from 'react-icons/md';
 
 const { getAxios } = utils;
 const axiosInstance = getAxios();
@@ -90,12 +86,12 @@ const SubMenu1 = () => {
 						{' '}
 						{isLogin && !isExpired ? (
 							<span className='flex flex-row gap-2 text-red-600'>
-								<LockPersonOutlined color='error' />
+								<MdOutlineLockPerson color='error' />
 								退出
 							</span>
 						) : (
 							<span className='flex flex-row gap-2'>
-								<VideoLibraryOutlinedIcon color='primary' />
+								<MdOutlineVideoLibrary color='primary' />
 								登录
 							</span>
 						)}
@@ -228,17 +224,20 @@ export const LoginForm = () => {
 					className='outline-2 w-16 h-16'
 				/> */}
 				<ul className='flex gap-4 flex-col w-full'>
-					{/* <li className='my-px'>
-						<div className='flex flex-row items-center px-4 rounded-lg text-gray-600 bg-gray-100'>
+					<li className='my-px'>
+						<div
+							className='flex flex-row items-center px-4 rounded-lg text-gray-600 bg-gray-100'
+							onClick={() => navgateTo('/dashboard')}
+						>
 							<span className='flex items-center justify-center text-lg text-gray-400'>
-								<HouseOutlined />
+								<MdOutlineHouse />
 							</span>
-							<span className='ml-3'>面板</span>
+							<span className='ml-3'>管理面板</span>
 							<span className='flex items-center justify-center text-sm text-gray-500 font-semibold bg-gray-200 h-6 px-2 rounded-full ml-auto'>
 								3
 							</span>
 						</div>
-					</li> */}
+					</li>
 					<li className='my-px'>
 						<span className='flex font-medium text-sm text-gray-400 px-4 my-4 uppercase'>
 							学习计划
@@ -246,17 +245,27 @@ export const LoginForm = () => {
 					</li>
 
 					<li className='my-px'>
-						<div className='flex flex-row items-center px-4 rounded-lg text-gray-600 hover:bg-gray-100'>
+						<div
+							className='flex flex-row items-center px-4 rounded-lg text-gray-600 hover:bg-gray-100'
+							onClick={() => {
+								navgateTo('/dashboard/history/process');
+							}}
+						>
 							<span className='flex items-center justify-center text-lg text-gray-400'>
-								<EventAvailableOutlined />
+								<MdOutlineEventAvailable />
 							</span>
 							<span className='ml-3'>学习进度</span>
 						</div>
 					</li>
 					<li className='my-px'>
-						<div className='flex flex-row items-center px-4 rounded-lg text-gray-600 hover:bg-gray-100'>
+						<div
+							className='flex flex-row items-center px-4 rounded-lg text-gray-600 hover:bg-gray-100'
+							onClick={() => {
+								navgateTo('/dashboard/history/records');
+							}}
+						>
 							<span className='flex items-center justify-center text-lg text-gray-400'>
-								<AssignmentOutlined />
+								<MdOutlineAssessment />
 							</span>
 							<span className='ml-3'>历史记录</span>
 							<span className='flex items-center justify-center text-sm text-gray-500 font-semibold bg-gray-200 h-6 px-2 rounded-full ml-auto'>
@@ -272,16 +281,16 @@ export const LoginForm = () => {
 					</li>
 					<li className='my-px'>
 						<div
-							onClick={() => navgateTo('/profile')}
+							onClick={() => navgateTo('/dashboard/main/info')}
 							className='flex flex-row items-center px-4 rounded-lg text-gray-600  hover:bg-gray-100'
 						>
 							<span className='flex items-center justify-center text-lg text-gray-400'>
-								<Person2Outlined />
+								<MdOutlinePerson2 />
 							</span>
 							<span className='ml-3'>个人信息</span>
 						</div>
 					</li>
-					<li className='my-px'>
+					{/* <li className='my-px'>
 						<div className='flex flex-row items-center px-4 rounded-lg text-gray-600 hover:bg-gray-100'>
 							<span className='flex items-center justify-center text-lg text-gray-400'>
 								<NotificationsOutlined />
@@ -291,7 +300,7 @@ export const LoginForm = () => {
 								10
 							</span>
 						</div>
-					</li>
+					</li> */}
 					<li className='my-px'>
 						<div className='flex flex-row items-center px-4 rounded-lg text-gray-600 hover:bg-gray-100'>
 							<span className='flex items-center justify-center text-lg text-gray-400'>
@@ -303,7 +312,7 @@ export const LoginForm = () => {
 					<li className='my-px'>
 						<div className='flex flex-row items-center px-4 rounded-lg text-gray-600 hover:bg-gray-100'>
 							<span className='flex items-center justify-center text-lg text-red-400'>
-								<LockPersonOutlined color='error' />
+								<MdOutlineLockPerson color='error' />
 							</span>
 							<span
 								className='ml-3 cursor-pointer'

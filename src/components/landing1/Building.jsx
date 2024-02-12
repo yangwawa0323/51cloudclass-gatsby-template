@@ -6,13 +6,15 @@
 
 import * as React from 'react';
 
-import BorderColorIcon from '@mui/icons-material/BorderColor';
-import AccessAlarm from '@mui/icons-material/AccessAlarm';
-import ArrowForward from '@mui/icons-material/ArrowForward';
-import AutoAwesome from '@mui/icons-material/AutoAwesome';
-import Extension from '@mui/icons-material/Extension';
-import Search from '@mui/icons-material/Search';
-import Smartphone from '@mui/icons-material/Smartphone';
+import { IoIosArrowRoundForward } from 'react-icons/io';
+import {
+	MdOutlineAccessAlarm,
+	MdOutlineAutoAwesome,
+	MdOutlineBorderColor,
+	MdOutlineExtension,
+	MdOutlineSearch,
+	MdOutlineSmartphone,
+} from 'react-icons/md';
 
 const BuildingBlock = () => {
 	return (
@@ -34,7 +36,7 @@ const BuildingBlock = () => {
 							}}
 							className='w-12 h-12 rounded-md flex flex-col justify-center items-center'
 						>
-							<BorderColorIcon htmlColor='rgb(136,0,255)' />
+							<MdOutlineBorderColor htmlColor='rgb(136,0,255)' />
 						</div>
 						<div className='flex flex-col gap-4 justify-center items-center '>
 							<h4>CMS</h4>
@@ -50,7 +52,7 @@ const BuildingBlock = () => {
 							}}
 							className='w-12 h-12 rounded-md flex flex-col justify-center items-center'
 						>
-							<Smartphone htmlColor='rgb(136,0,255)' />
+							<MdOutlineSmartphone htmlColor='rgb(136,0,255)' />
 						</div>
 						<div className='flex flex-col gap-4 justify-center items-center '>
 							<h4>Fully responsive</h4>
@@ -66,7 +68,7 @@ const BuildingBlock = () => {
 							}}
 							className='w-12 h-12 rounded-md flex flex-col justify-center items-center'
 						>
-							<AccessAlarm htmlColor='rgb(136,0,255)' />
+							<MdOutlineAccessAlarm htmlColor='rgb(136,0,255)' />
 						</div>
 						<div className='flex flex-col gap-4 justify-center items-center '>
 							<h4>Easy to customize</h4>
@@ -82,7 +84,7 @@ const BuildingBlock = () => {
 							}}
 							className='w-12 h-12 rounded-md flex flex-col justify-center items-center'
 						>
-							<Search htmlColor='rgb(136,0,255)' />
+							<MdOutlineSearch htmlColor='rgb(136,0,255)' />
 						</div>
 						<div className='flex flex-col gap-4 justify-center items-center '>
 							<h4>Optimized for SEO</h4>
@@ -98,7 +100,7 @@ const BuildingBlock = () => {
 							}}
 							className='w-12 h-12 rounded-md flex flex-col justify-center items-center'
 						>
-							<AutoAwesome htmlColor='rgb(136,0,255)' />
+							<MdOutlineAutoAwesome htmlColor='rgb(136,0,255)' />
 						</div>
 						<div className='flex flex-col gap-4 justify-center items-center '>
 							<h5 className='text-center'>Animations &amp; Effects</h5>
@@ -114,7 +116,7 @@ const BuildingBlock = () => {
 							}}
 							className='w-12 h-12 rounded-md flex flex-col justify-center items-center'
 						>
-							<Extension htmlColor='rgb(136,0,255)' />
+							<MdOutlineExtension htmlColor='rgb(136,0,255)' />
 						</div>
 						<div className='flex flex-col gap-4 justify-center items-center '>
 							<h4>Plugins</h4>
@@ -129,7 +131,7 @@ const BuildingBlock = () => {
 						<p className='text-sm font-extrabold  text-purple-700 '>
 							See all features
 						</p>
-						<ArrowForward
+						<IoIosArrowRoundForward
 							className='hover:translate-x-2 transition-all duration-700'
 							fontSize='12px'
 							htmlColor='rgb(136,0,255)'
