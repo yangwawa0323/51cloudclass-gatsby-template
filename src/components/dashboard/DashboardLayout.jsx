@@ -10,9 +10,9 @@ import NoAuthority from '../../pages/noauthority';
 const DashboardLayout = ({ children }) => {
 	const { isLogin } = useGlobalContext();
 
-	if (!isLogin) return <NoAuthority />;
-
 	const { activeMenu, screenSize } = useStateContext();
+
+	if (!isLogin) return <NoAuthority />;
 
 	const activeMenuStyle =
 		'z-50 fixed w-52 duration-[300ms] bg-white transition-[width] ease-in-out bg-white min-h-screen';

@@ -64,27 +64,31 @@ const fetchDataByType = async (
 };
 
 export const useCourse = (id: number, sortField: string, order: string) => {
-	return useQuery(['fetch-courses'], () =>
-		fetchDataByType('courses', id, sortField, order)
-	);
+	return useQuery({
+		queryKey: ['fetch-courses'],
+		queryFn: () => fetchDataByType('courses', id, sortField, order),
+	});
 };
 
 export const useCategory = (id: number, sortField: string, order: string) => {
-	return useQuery(['fetch-categories'], () =>
-		fetchDataByType('categories', id, sortField, order)
-	);
+	return useQuery({
+		queryKey: ['fetch-categories'],
+		queryFn: () => fetchDataByType('categories', id, sortField, order),
+	});
 };
 
 export const useChapter = (id: number, sortField: string, order: string) => {
-	return useQuery(['fetch-chapters'], () =>
-		fetchDataByType('chapters', id, sortField, order)
-	);
+	return useQuery({
+		queryKey: ['fetch-chapters'],
+		queryFn: () => fetchDataByType('chapters', id, sortField, order),
+	});
 };
 
 export const useMessage = (id: number, sortField: string, order: string) => {
-	return useQuery(['fetch-site-messages'], () =>
-		fetchDataByType('messages', id, sortField, order)
-	);
+	return useQuery({
+		queryKey: ['fetch-site-messages'],
+		queryFn: () => fetchDataByType('messages', id, sortField, order),
+	});
 };
 
 export const useDatabaseBackup = (
@@ -92,9 +96,10 @@ export const useDatabaseBackup = (
 	sortField: string,
 	order: string
 ) => {
-	return useQuery(['fetch-database-backup'], () =>
-		fetchDataByType('databases', id, sortField, order)
-	);
+	return useQuery({
+		queryKey: ['fetch-database-backup'],
+		queryFn: () => fetchDataByType('databases', id, sortField, order),
+	});
 };
 
 type Policy = {

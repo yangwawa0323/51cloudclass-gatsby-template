@@ -115,7 +115,7 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async (gastbyApi) => {
 const getAllAsciinemaPages = async ({ actions, reporter, createContentDigest, createNodeId }: CreatePageArgs) => {
 	let asciinemaPages: Promise<Array<Page>> | null = null;
 	let succeed: boolean;
-	const response = await fetch(`${process.env.GATSBY_API_SERVER}/api/page/all`)
+	const response = await fetch(`${process.env.GATSBY_API_SERVER}/page/all`)
 		.then((response: Body) => (asciinemaPages = response.json()))
 		.catch(() => {
 			succeed = false;

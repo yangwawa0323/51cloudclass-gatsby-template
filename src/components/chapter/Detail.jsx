@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material';
 import React, { useContext } from 'react';
-import { MomentUtil } from '../../utils/tools';
 import { ChapterContext } from './ChapterContextProvider';
+import momentAgo from 'moment-ago';
 
 const Detail = () => {
 	const { chapter } = useContext(ChapterContext);
@@ -17,8 +17,7 @@ const Detail = () => {
 				className='text-gray-400'
 				variant='body'
 			>
-				更新于：
-				<MomentUtil value={chapter.UpdatedAt || new Date(2023, 11, 19)} />
+				更新于： <span>{momentAgo(new Date(chapter.UpdatedAt)).ago()}</span>
 			</Typography>
 		</div>
 	);

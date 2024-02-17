@@ -6,9 +6,11 @@ import { store } from '51cloudclass-utilities/src/store';
 
 import RootElement from './src/components/root-element';
 import { createContext } from 'react';
-import { getTokenEtagAccount } from '51cloudclass-utilities/src/account';
+import {
+	getAccount,
+	getTokenEtagAccount,
+} from '51cloudclass-utilities/src/account';
 import { useJwt } from 'react-jwt';
-// import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { useTour } from '@reactour/tour';
 import { Provider } from 'react-redux';
 import { tokenExample } from './src/components';
@@ -50,6 +52,7 @@ const GlobalContextProvider = ({ children }: GlobalContextProps) => {
 
 		setIsTourOpen,
 		isTourOpen,
+		me: getAccount(),
 	};
 
 	return (

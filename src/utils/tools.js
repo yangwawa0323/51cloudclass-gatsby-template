@@ -2,23 +2,14 @@
 
 import React from 'react';
 import traverse from 'traverse';
-import Moment from 'react-moment';
 // eslint-disable-next-line
-import moment from 'moment/min/moment-with-locales';
 import { isBrowser } from 'react-device-detect';
-
-Moment.globalMoment = moment;
-Moment.globalLocale = 'zh-cn';
+import momentAgo from 'moment-ago';
 
 export const MomentUtil = (props) => {
 	const { value } = props;
 
-	return (
-		<Moment
-			date={new Date(value)}
-			fromNow
-		/>
-	);
+	return <span>{momentAgo(new Date(value).ago())}</span>;
 };
 
 export const removeAllChildNodes = (parent) => {

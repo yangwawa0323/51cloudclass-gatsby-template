@@ -1,3 +1,4 @@
+import { debugLog } from '51cloudclass-utilities/src/utils';
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
 const StateContext = createContext();
@@ -8,9 +9,16 @@ const initialStates = {
 	notification: false,
 };
 
-const StateContextProvider = ({ children }) => {
+const StateContextProvider = ({ children, extraContext }) => {
 	const [activeMenu, setActiveMenu] = useState(true);
 	const [screenSize, setScreenSize] = useState();
+	const [messageData, setMessageData] = useState();
+	const [friendId, setFriendId] = useState(0);
+
+	const debugSetFriendId = (fid) => {
+		debugLog('StateContextProvider Friend id :', fid);
+		setFriendId(fid);
+	};
 
 	return (
 		<StateContext.Provider
@@ -20,6 +28,12 @@ const StateContextProvider = ({ children }) => {
 				setScreenSize,
 				activeMenu,
 				setActiveMenu,
+				...extraContext,
+				messageData,
+				setMessageData,
+				friendId,
+				setFriendId,
+				debugSetFriendId,
 			}}
 		>
 			{children}

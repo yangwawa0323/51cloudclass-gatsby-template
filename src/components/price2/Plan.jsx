@@ -33,7 +33,7 @@ const PlanSection = () => {
 						<div className='free-icons  text-purple-700 flex flex-row flex-wrap  gap-4 h-min justify-start'>
 							<div>
 								<div>
-									<MdOutlineCheckCircle />
+									<MdOutlineCheckCircle className='text-2xl' />
 								</div>
 								<div>
 									<h5>不限科目</h5>
@@ -41,7 +41,7 @@ const PlanSection = () => {
 							</div>
 							<div>
 								<div>
-									<CheckCircleIcon />
+									<MdOutlineCheckCircle className='text-2xl' />
 								</div>
 								<div>
 									<h5>答题自测</h5>
@@ -49,7 +49,7 @@ const PlanSection = () => {
 							</div>
 							<div>
 								<div>
-									<CheckCircleIcon />
+									<MdOutlineCheckCircle className='text-2xl' />
 								</div>
 								<div>
 									<h5>站内短信51条</h5>
@@ -90,7 +90,7 @@ const PlanSection = () => {
 						<div className='free-icons  text-white flex flex-row flex-wrap  gap-4 h-min justify-start'>
 							<div>
 								<div>
-									<CheckCircleIcon />
+									<MdOutlineCheckCircle className='text-2xl' />
 								</div>
 								<div>
 									<h5>不限科目</h5>
@@ -98,7 +98,7 @@ const PlanSection = () => {
 							</div>
 							<div>
 								<div>
-									<CheckCircleIcon />
+									<MdOutlineCheckCircle className='text-2xl' />
 								</div>
 								<div>
 									<h5>答题自测</h5>
@@ -106,7 +106,7 @@ const PlanSection = () => {
 							</div>
 							<div>
 								<div>
-									<CheckCircleIcon />
+									<MdOutlineCheckCircle className='text-2xl' />
 								</div>
 								<div>
 									<h5>站内短信每月251条</h5>
@@ -114,7 +114,7 @@ const PlanSection = () => {
 							</div>
 							<div>
 								<div>
-									<CheckCircleIcon />
+									<MdOutlineCheckCircle className='text-2xl' />
 								</div>
 								<div>
 									<h5>导出PDF自测题</h5>
@@ -122,7 +122,7 @@ const PlanSection = () => {
 							</div>
 							<div>
 								<div>
-									<CheckCircleIcon />
+									<MdOutlineCheckCircle className='text-2xl' />
 								</div>
 								<div>
 									<h5>完整学习记录</h5>
@@ -130,7 +130,7 @@ const PlanSection = () => {
 							</div>
 							<div>
 								<div>
-									<CheckCircleIcon />
+									<MdOutlineCheckCircle className='text-2xl' />
 								</div>
 								<div>
 									<h5>自定义avatar上传</h5>
@@ -152,7 +152,7 @@ const PlanSection = () => {
 						<div className='free-icons text-white flex flexrow flex-wrap gap-4 h-min justify-start'>
 							<div>
 								<div>
-									<CheckCircleIcon />
+									<MdOutlineCheckCircle className='text-2xl' />
 								</div>
 								<div>
 									<h5>不限科目</h5>
@@ -160,7 +160,7 @@ const PlanSection = () => {
 							</div>
 							<div>
 								<div>
-									<CheckCircleIcon />
+									<MdOutlineCheckCircle className='text-2xl' />
 								</div>
 								<div>
 									<h5>自定义学习答题模式</h5>
@@ -168,7 +168,7 @@ const PlanSection = () => {
 							</div>
 							<div>
 								<div>
-									<CheckCircleIcon />
+									<MdOutlineCheckCircle className='text-2xl' />
 								</div>
 								<div>
 									<h5>不限站内短信数量</h5>
@@ -176,7 +176,7 @@ const PlanSection = () => {
 							</div>
 							<div>
 								<div>
-									<CheckCircleIcon />
+									<MdOutlineCheckCircle className='text-2xl' />
 								</div>
 								<div>
 									<h5>更新课程站内短信通知</h5>
@@ -184,7 +184,7 @@ const PlanSection = () => {
 							</div>
 							<div>
 								<div>
-									<CheckCircleIcon />
+									<MdOutlineCheckCircle className='text-2xl' />
 								</div>
 								<div>
 									<h5>平台提问留言</h5>
