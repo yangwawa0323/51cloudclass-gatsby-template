@@ -3,7 +3,12 @@ import React, { ReactElement, ReactNode } from 'react';
 
 import { useLocation } from '@reach/router';
 import { useEffect, useState } from 'react';
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import {
+	dataTagSymbol,
+	useMutation,
+	useQuery,
+	useQueryClient,
+} from '@tanstack/react-query';
 import { utils } from '51cloudclass-utilities/src/';
 import { useContext } from 'react';
 import { globalContext } from '../../wrap-with-provider';
@@ -11,6 +16,7 @@ import NeedLogin from '../pages/need-login';
 import { AxiosResponse } from 'axios';
 import { useSelector } from 'react-redux';
 import { IState } from '51cloudclass-utilities/src/store/reducers/authSlice';
+import { debugLog } from '51cloudclass-utilities/src/utils';
 
 const { getAxios } = utils;
 const axiosInstance = getAxios();
@@ -237,4 +243,23 @@ export const useAvatar = () => {
 		localStorageAvatar ? localStorageAvatar : reduxAvatar ? reduxAvatar : query
 	);
 	return avatar;
+};
+
+export const useSaveBrowerHistory = () => {
+	const [data, setData] = useState({ path: null, title: null });
+
+	const fetchHistories = async () => {
+		const axiosInstance = getAxios();
+		let url = `${process.env.GATSBY_API_SERVER}/history/`;
+		let postData = { uri: data.path, title: data.title, kind: 2 };
+		return await axiosInstance.post(url, postData);
+	};
+
+	useEffect(() => {
+		if (data.path) {
+			fetchHistories();
+		}
+	}, [data.path]);
+
+	return { setData };
 };

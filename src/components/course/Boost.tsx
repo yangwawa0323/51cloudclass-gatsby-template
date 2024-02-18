@@ -47,9 +47,11 @@ const BoostSection = ({ course }: BoostSectionProps) => {
 					<div className='flex flex-col md:flex-row-reverse justify-center '>
 						<div className='gsap-about-course about-course '>
 							<div className='top-content course'>
-								<h2 className='title course-page xs:text-5xl'>{course.name}</h2>
+								<h2 className='title course-page xs:text-5xl'>
+									{course?.name}
+								</h2>
 								<p className='paragraph course-description text-xl leading-10'>
-									{course.description}
+									{course?.description}
 								</p>
 								<div className='w-layout-grid advantage-course-grid'>
 									<div className='advantage-course-wrapper'>

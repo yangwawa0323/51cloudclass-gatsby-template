@@ -1,6 +1,8 @@
+
 export interface Course {
     id: number
     ID: number
+    uuid: string
     is_shop: boolean
     image: string
     description: string
@@ -22,6 +24,7 @@ export interface Chapter {
     id: number
     ID: number
     content: string
+    uuid: string
     course_id: number
     download_resource: string
     github_resource: string

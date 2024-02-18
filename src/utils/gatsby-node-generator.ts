@@ -1,3 +1,13 @@
+
+/*************************************************************************
+ * use createNodeId has a opposite effect, we cann't convert to original 
+ * model ID, can not keep the user's browser history to database.
+ * 
+ * TODO: replace the `createNodeId` to models.UUID
+ * NOTIMPLEMENT 
+ */
+
+
 import type { Page } from './../components/index.d';
 /** @format */
 import type { CreatePageArgs, GatsbyNode, NodeInput } from "gatsby";
@@ -48,13 +58,13 @@ export const createSchemaCustomization: GatsbyNode[`createSchemaCustomization`] 
 	// 1st try: Chapter from `course_id`, by : "_id" 
 	createTypes(`
 		type Chapter implements Node {
-			id: ID!
+			id: String!
 			_id: Int!
 			course_id: Int!
 			course: Course @link(by: "_id", from:"course_id")
 		}
 		type Course implements Node {
-			id: ID!
+			id: String!
 			_id: Int!
 			chapters: [Chapter] @link(by : "course_id", from: "_id")
 		}
@@ -72,11 +82,19 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async (gastbyApi) => {
 
 		// using `createNodeId` helper function generate uuid format ID to
 		// replace the chapter.ID.
-		const { ID, ...chapterData } = chapter
+		const { ID, uuid, ...chapterData } = chapter
 		reporter.info(`[DEBUG]: create node for **chapter** ${ID}`);
 		const node = {
 			...chapterData,
-			id: createNodeId(`chapter-${ID}`),
+			/*************************************************************************
+			 * use createNodeId has a opposite effect, we cann't convert to original 
+			 * model ID, can not keep the user's browser history to database.
+			 * 
+			 * TODO: replace the `createNodeId` to models.UUID
+			 * NOTIMPLEMENT 
+			 */
+			// id: createNodeId(`chapter-${ID}`),
+			id: uuid as string,
 			_id: ID,
 			internal: {
 				content: JSON.stringify(chapter),
@@ -94,11 +112,19 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async (gastbyApi) => {
 
 		// using `createNodeId` helper function generate uuid format ID to
 		// replace the chapter.ID.
-		const { ID, ...courseData } = course
-		reporter.info(`[DEBUG]: create node for **course** ${ID}`);
+		const { ID, uuid, ...courseData } = course
+		reporter.info(`[DEBUG]: create node for **course** ${uuid}`);
 		const node = {
 			...courseData,
-			id: createNodeId(`course-${ID}`),
+			/*************************************************************************
+			 * use createNodeId has a opposite effect, we cann't convert to original 
+			 * model ID, can not keep the user's browser history to database.
+			 * 
+			 * TODO: replace the `createNodeId` to models.UUID
+			 * NOTIMPLEMENT 
+			 */
+			// id: createNodeId(`course-${ID}`),
+			id: uuid as string,
 			_id: ID,
 			internal: {
 				type: `Course`,
@@ -164,12 +190,19 @@ const generateChapters = async ({ actions, reporter, createNodeId }: CreatePageA
 	const { chapters, asciinemaPages } = await fetchAllData();
 
 	chapters.forEach((chpt) => {
-		const chapterUuid = createNodeId(`chapter-${chpt.ID}`)
+		/*************************************************************************
+		 * use createNodeId has a opposite effect, we cann't convert to original 
+		 * model ID, can not keep the user's browser history to database.
+		 * 
+		 * TODO: replace the `createNodeId` to models.UUID
+		 * NOTIMPLEMENT 
+		 */
+		// const chapterUuid = createNodeId(`chapter-${chpt.ID}`)
 		actions.createPage({
-			path: `/chapters/${chapterUuid}`,
+			path: `/chapters/${chpt.uuid}`,
 			component: path.resolve(__dirname, '../components/chapter/ChapterPage.jsx'),
 			context: {
-				uuid: chapterUuid,
+				uuid: chpt.uuid,
 			},
 		}); // end of createPage
 	});
@@ -187,12 +220,19 @@ const generateCoursesDetailPage = async ({ actions, reporter, createNodeId }: Cr
 
 		const { ID, ...courseData } = course;
 
-		const courseUuid = createNodeId(`course-${ID}`)
+		/*************************************************************************
+		 * use createNodeId has a opposite effect, we cann't convert to original 
+		 * model ID, can not keep the user's browser history to database.
+		 * 
+		 * TODO: replace the `createNodeId` to models.UUID
+		 * NOTIMPLEMENT 
+		 */
+		// const courseUuid = createNodeId(`course-${ID}`)
 		actions.createPage({
-			path: `/courses/${courseUuid}`,
+			path: `/courses/${course.uuid}`,
 			component: path.resolve(__dirname, '../components/course/Detail.jsx'),
 			context: {
-				uuid: courseUuid,
+				uuid: course.uuid,
 			},
 		}); // end of createPage
 	});

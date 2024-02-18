@@ -3,11 +3,10 @@ import ChapterContextProvider from './ChapterContextProvider';
 import LeftPane from './LeftPane';
 import RightPane from './RightPane';
 import Frame from '../frame';
-import BootSection from './BootSection';
-import gsap from 'gsap';
-import { easeIn } from '../../utils/animate';
 import { graphql } from 'gatsby';
-import { Container } from '@mui/material';
+import { useSaveBrowerHistory } from '../../../src/hooks';
+import { debugLog } from '51cloudclass-utilities/src/utils';
+import { useEffect } from 'react';
 
 export const query = graphql`
 	query MyQuery($uuid: String) {
@@ -45,8 +44,16 @@ const ChapterPage = (props) => {
 	// easeIn('.gsap-home-hero-left', {}, tl);
 	// easeIn('.gsap-home-hero-right', { delay: 0.5 }, tl);
 	// }, []);
+	let { setData } = useSaveBrowerHistory();
 
-	const { data } = props;
+	const { data, path } = props;
+
+	useEffect(() => {
+		setData({
+			path: path,
+			title: data.chapter.name,
+		});
+	}, []);
 
 	// change to graphQL query data
 	// const extra = { chapter: pageContext.chapter };

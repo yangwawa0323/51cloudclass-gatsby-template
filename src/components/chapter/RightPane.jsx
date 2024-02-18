@@ -10,11 +10,11 @@ import gsap from 'gsap';
 
 const RightPane = () => {
 	useEffect(() => {
-		const tl = gsap.timeline();
+		/* const tl = gsap.timeline();
 		var elements = document.querySelectorAll('.gsap-right');
 		elements.forEach((element) => {
 			easeIn(element, {}, tl);
-		});
+		}); */
 	});
 
 	return (
