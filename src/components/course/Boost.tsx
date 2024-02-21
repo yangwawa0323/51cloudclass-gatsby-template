@@ -112,7 +112,7 @@ const BoostSection = ({ course }: BoostSectionProps) => {
 										.map((chpt: Chapter, idx: number) => {
 											return (
 												<div
-													key={chpt.order_index}
+													key={idx}
 													className='text-ellipsis truncate'
 												>
 													<Link to={`/chapters/${chpt.id}`}>

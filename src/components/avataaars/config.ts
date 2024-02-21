@@ -1,4 +1,9 @@
+import { IValueDescriptor } from "gatsby/dist/schema/infer/inference-metadata";
+
 // this file contained each of style array
+/*******************************************************************************
+ * 1. Circle Color
+ */
 type CircleColorOptions =
     | 'Blue'
     | 'Red'
@@ -8,7 +13,7 @@ type CircleColorOptions =
     | 'Orange'
     | 'Black';
 
-export const CirleColorArray: Array<CircleColorOptions> = [
+export const CircleColorArray: Array<CircleColorOptions> = [
     'Blue',
     'Red',
     'Green',
@@ -18,6 +23,9 @@ export const CirleColorArray: Array<CircleColorOptions> = [
     'Black',
 ];
 
+/********************************************************************
+ * 2. Skin Color
+ */
 type SkinColorOptions =
     | 'Gray'
     | 'Tanned'
@@ -28,7 +36,7 @@ type SkinColorOptions =
     | 'DarkBrown'
     | 'Black';
 
-export const SKinColorArray: Array<SkinColorOptions> = [
+export const SkinColorArray: Array<SkinColorOptions> = [
     'Gray',
     'Tanned',
     'Yellow',
@@ -39,7 +47,10 @@ export const SKinColorArray: Array<SkinColorOptions> = [
     'Black',
 ];
 
-type ClothesOptions =
+/**********************************************************************
+ * 3. Clothes
+ */
+type ClotheOptions =
     | 'None'
     | 'BlazerShirt'
     | 'BlazerSweater'
@@ -51,7 +62,7 @@ type ClothesOptions =
     | 'ShirtScoopNeck'
     | 'ShirtVNeck';
 
-export const ClothesArray: Array<ClothesOptions> = [
+export const ClotheArray: Array<ClotheOptions> = [
     'None',
     'BlazerShirt',
     'BlazerSweater',
@@ -64,7 +75,10 @@ export const ClothesArray: Array<ClothesOptions> = [
     'ShirtVNeck',
 ];
 
-type ClothesColorOptions =
+/************************************************************************
+ * 4. Clothes Color
+ */
+type ClotheColorOptions =
     | 'Black'
     | 'Blue01'
     | 'Blue02'
@@ -81,7 +95,7 @@ type ClothesColorOptions =
     | 'Red'
     | 'White';
 
-export const ClothesColorArray: Array<ClothesColorOptions> = [
+export const ClotheColorArray: Array<ClotheColorOptions> = [
     'Black',
     'Blue01',
     'Blue02',
@@ -99,7 +113,10 @@ export const ClothesColorArray: Array<ClothesColorOptions> = [
     'White',
 ];
 
-type ClothesGraphicOptions =
+/*****************************************************************************
+ * 5. Clothes Graphic
+ */
+type ClotheGraphicOptions =
     | 'None'
     | 'Bat'
     | 'Bear'
@@ -113,7 +130,7 @@ type ClothesGraphicOptions =
     | 'Skull'
     | 'SkullOutline';
 
-export const ClothesGraphicArray: Array<ClothesGraphicOptions> = [
+export const ClotheGraphicArray: Array<ClotheGraphicOptions> = [
     'None',
     'Bat',
     'Bear',
@@ -128,6 +145,9 @@ export const ClothesGraphicArray: Array<ClothesGraphicOptions> = [
     'SkullOutline',
 ];
 
+/****************************************************************************
+ * 6. Mouth
+ */
 type MouthOptions =
     | 'None'
     | 'Concerned'
@@ -159,6 +179,9 @@ export const MouthArray: Array<MouthOptions> = [
     'Vomit',
 ];
 
+/****************************************************************************
+ * 7. Eyes
+ */
 type EyesOptions =
     | 'None'
     | 'Close'
@@ -189,6 +212,10 @@ export const EyesArray: Array<EyesOptions> = [
     'Wink',
     'WinkWacky',
 ];
+
+/*************************************************************************
+ * 8. Eyebrows
+ */
 
 type EyebrowsOptions =
     | 'None'
@@ -223,6 +250,9 @@ export const EyebrowsArray: Array<EyebrowsOptions> = [
     'UpDownNatural',
 ];
 
+/*****************************************************************************
+ * 9. Hair
+ */
 type HairOptions =
     | 'None'
     | 'Eyepatch'
@@ -302,6 +332,10 @@ export const HairArray: Array<HairOptions> = [
     'ShortHairTheCaesarSidePart',
 ];
 
+/*******************************************************************
+ * 10. Hair Color
+ */
+
 type HairColorOptions =
     | 'Auburn'
     | 'Black'
@@ -327,6 +361,9 @@ export const HairColorArray: Array<HairColorOptions> = [
     'SilverGray',
 ];
 
+/*****************************************************************************
+ * 11. Hat Color
+ */
 type HatColorOptions =
     | 'Black'
     | 'Blue01'
@@ -362,6 +399,9 @@ export const HatColorArray: Array<HatColorOptions> = [
     'White',
 ];
 
+/***************************************************************************
+ * 12. Facial Hair
+ */
 type FacialHairStyleOptions =
     | 'None'
     | 'BeardLight'
@@ -381,6 +421,9 @@ export const FacialHairStyleArray: Array<FacialHairStyleOptions> = [
     'MoustacheMagnum',
 ];
 
+/************************************************************************
+ * 13. Facial Hair Color
+ */
 type FacialHairColorOptions =
     | 'Auburn'
     | 'Black'
@@ -405,6 +448,9 @@ export const FacialHairColorArray: Array<FacialHairColorOptions> = [
     'Red',
 ];
 
+/*********************************************************************
+ * 14. Glasses Style
+ */
 type GlassesStyleOptions =
     | 'None'
     | 'Blank'
@@ -426,3 +472,59 @@ export const GlassesStyleArray: Array<GlassesStyleOptions> = [
     'Wayfarers',
 ];
 
+interface IAvatarValue {
+    label: string,
+    attributeName: string,
+    options: Array<CircleColorOptions
+        | SkinColorOptions
+        | ClotheOptions
+        | ClotheColorOptions
+        | ClotheGraphicOptions
+        | MouthOptions
+        | EyesOptions
+        | EyebrowsOptions
+        | HairOptions
+        | HairColorOptions
+        | HatColorOptions
+        | FacialHairStyleOptions
+        | FacialHairColorOptions
+        | GlassesStyleOptions
+    >
+}
+
+
+type Options = {
+    color: IAvatarValue,
+    skin: IAvatarValue,
+    clothes: IAvatarValue,
+    clothesColor: IAvatarValue,
+    clothesGraphic: IAvatarValue,
+    mouth?: IAvatarValue,
+    eyes?: IAvatarValue,
+    eyebrows?: IAvatarValue,
+    hair?: IAvatarValue,
+    hairColor?: IAvatarValue,
+    hatColor?: IAvatarValue,
+    facialHairStyle?: IAvatarValue,
+    facialHairColor?: IAvatarValue,
+    glassesStyle?: IAvatarValue,
+};
+
+const AvataaarOptions: Options = {
+    color: { label: '颜色', attributeName: 'avatarStyle', options: CircleColorArray },
+    skin: { label: '肤色', attributeName: 'skinColor', options: SkinColorArray },
+    clothes: { label: '衣服', attributeName: 'clothesType', options: ClotheArray },
+    clotheColor: { label: '衣服颜色', attributeName: 'clotheColor', options: ClotheColorArray },
+    clotheGraphic: { label: '衣服图像', attributeName: 'clotheGraphicType', options: ClotheGraphicArray },
+    mouth: { label: '嘴巴', attributeName: 'mouthType', options: MouthArray },
+    eyes: { label: '眼睛', attributeName: 'eyesType', options: EyesArray },
+    eyebrows: { label: '眉毛', attributeName: 'eyebrowsType', options: EyebrowsArray },
+    hair: { label: '头发', attributeName: 'hairType', options: HairArray },
+    hairColor: { label: '头发颜色', attributeName: 'hairColor', options: HairColorArray },
+    facialHairStyle: { label: "胡须", options: FacialHairStyleArray },
+    facialHairColor: { label: "胡须颜色", options: FacialHairColorArray },
+    glassesStyle: { label: "眼镜", options: GlassesStyleArray },
+
+
+}
+export default AvataaarOptions;

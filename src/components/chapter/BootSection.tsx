@@ -1,13 +1,15 @@
 /** @format */
 
-import React, { useState, useEffect } from 'react';
-import { useContext } from 'react';
-import { ChapterContext } from './ChapterContextProvider';
+import { useState, useEffect } from 'react';
+import { useGlobalContext } from '../../../wrap-with-provider';
 
 const BootSection = () => {
 	const [description, setDescription] = useState<{ __html: string }>();
 
-	const { chapter } = useContext(ChapterContext);
+	/*******************************************************************
+	 * get single chapter from gloabl context
+	 *******************************************************************/
+	const { chapter } = useGlobalContext();
 
 	useEffect(() => {
 		const pContent = document.querySelectorAll(

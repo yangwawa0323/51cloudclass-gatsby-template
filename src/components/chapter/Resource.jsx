@@ -1,15 +1,20 @@
 /** @format */
 
 import { Box, Typography } from '@mui/material';
-import React, { useContext } from 'react';
-import { ChapterContext } from './ChapterContextProvider';
+import React from 'react';
 import { AiFillGithub } from 'react-icons/ai';
 import { IoCloudDownloadOutline } from 'react-icons/io5';
 import { Link } from 'gatsby';
 import { MdOutlineDirections } from 'react-icons/md';
+import { useGlobalContext } from '../../../wrap-with-provider';
 
 const Resource = () => {
-	const { chapter } = useContext(ChapterContext);
+	/***********************************************************************
+	 * get single chapter from global chapter
+	 *
+	 ***********************************************************************/
+	const { chapter } = useGlobalContext();
+
 	return (
 		<Box className='text-gray-600  rounded-xl border-2 p-4 mb-8'>
 			<Typography className='text-purple-600 text-center font-semibold'>

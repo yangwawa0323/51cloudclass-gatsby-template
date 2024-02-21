@@ -123,7 +123,6 @@ export const useAuthenticate = () => {
 	const [state, setState] = useState<unknown | null>(null);
 
 	const fetchPolicies = async () => {
-		const axiosInstance = getAxios();
 		await axiosInstance
 			.get(`${process.env.REACT_APP_API_SERVER}/api/policies/`)
 			.then((response: AxiosResponse<PoliciesResponse>) => response.data)
@@ -249,7 +248,6 @@ export const useSaveBrowerHistory = () => {
 	const [data, setData] = useState({ path: null, title: null });
 
 	const fetchHistories = async () => {
-		const axiosInstance = getAxios();
 		let url = `${process.env.GATSBY_API_SERVER}/history/`;
 		let postData = { uri: data.path, title: data.title, kind: 2 };
 		return await axiosInstance.post(url, postData);

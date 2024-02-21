@@ -29,6 +29,28 @@ const GlobalContextProvider = ({ children }: GlobalContextProps) => {
 	/* eslint-disable no-unused-vars */
 	const { setIsOpen: setIsTourOpen, isOpen: isTourOpen } = useTour();
 
+	const [chapter, setChapter] = useState();
+	const [chapters, setChapters] = useState([]);
+	/*************************************************************
+	 * from chapter list add new friends
+	 */
+	const [clickedFriend, setClickedFriend] = useState(null);
+
+	// for avtaaars attribute
+	const [avattributes, setAavattributes] = useState({
+		topType: 'ShortHairDreads02',
+		accessoriesType: 'Prescription02',
+		hairColor: 'BrownDark',
+		facialHairType: 'Blank',
+		clotheType: 'Hoodie',
+		clotheColor: 'PastelBlue',
+		eyeType: 'Happy',
+		eyebrowType: 'Default',
+		mouthType: 'Smile',
+		avatarStyle: 'Circle',
+		skinColor: 'Light',
+	});
+
 	let { token } = getTokenEtagAccount();
 	/* eslint-enable no-unused-vars */
 
@@ -53,6 +75,17 @@ const GlobalContextProvider = ({ children }: GlobalContextProps) => {
 		setIsTourOpen,
 		isTourOpen,
 		me: getAccount(),
+
+		chapter,
+		setChapter,
+		chapters,
+		setChapters,
+
+		avattributes,
+		setAavattributes,
+
+		clickedFriend,
+		setClickedFriend,
 	};
 
 	return (

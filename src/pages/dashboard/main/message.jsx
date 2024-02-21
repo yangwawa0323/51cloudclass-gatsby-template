@@ -12,6 +12,7 @@ import { useTheme } from '@mui/material';
 import { debugLog, getAxios } from '51cloudclass-utilities/src/utils';
 import { useQuery } from '@tanstack/react-query';
 import { useStateContext } from '../../../contexts/ContextProvider';
+import SimpleBarScroll from '../../../components/common/SimpleBar';
 
 const useStyles = makeStyles({
 	table: {
@@ -40,27 +41,9 @@ const SiteMessage = () => {
 	const [height, setHeight] = useState(0);
 
 	const theme = useTheme();
-	const matchDownSM = useMediaQuery(theme.breakpoints.down('sm'));
+	const matchDownSM = useMediaQuery('(max-width:440px)');
 
 	const classes = useStyles({ height: height });
-
-	// const useUserListCard = useCallback((open) => {
-	// 	if (open) {
-	// 		return (
-	// 			<Drawer
-	// 				open={open && !matchDownSM}
-	// 				className={classes.drawer}
-	// 				variant='persistent'
-	// 				anchor='left'
-	// 			>
-	// 				{/* {userListCard} */}
-	// 				<UserListCard />
-	// 			</Drawer>
-	// 		);
-	// 	} else {
-	// 		return <></>;
-	// 	}
-	// }, []);
 
 	useEffect(() => {
 		if (open) {
@@ -98,39 +81,23 @@ const SiteMessage = () => {
 	return (
 		<DashboardLayout>
 			<Box
-				sx={{
-					height: 'calc(100vh - 60px)',
-					padding: '0px !important',
-					mr: '24px',
-				}}
+				ref={containerRef}
+				component='div'
 			>
-				<Box
-					ref={containerRef}
-					style={{ position: 'relative', height: '100%' }}
-					display='flex'
-					component='div'
-				>
-					{/* {useUserListCard(open)} */}
-					{/* <SwipeableDrawer
+				<SimpleBarScroll style={{ height: '80vh' }}>
+					<Box
 						sx={{
-							display: { xs: 'block', md: 'hidden' },
-							'& .MuiDrawer-paper': {
-								width: 320,
-								// transition: 'none !important'
-							},
+							display: 'flex',
+							flexDirection: matchDownSM ? 'column' : 'row',
 						}}
-						open={open && matchDownSM}
-						onOpen={() => {}}
-						onClose={handleDrawerClose}
-						anchor='left'
-					> */}
-					<UserListCard />
-					{/* </SwipeableDrawer> */}
-					<MessageDetail
-						onClick={handleFilterIconClick}
-						status={open}
-					/>
-				</Box>
+					>
+						<MessageDetail
+							onClick={handleFilterIconClick}
+							status={open}
+						/>
+						<UserListCard />
+					</Box>
+				</SimpleBarScroll>
 			</Box>
 		</DashboardLayout>
 	);

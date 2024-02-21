@@ -174,6 +174,9 @@ importers:
       autoprefixer:
         specifier: ^10.4.13
         version: 10.4.17(postcss@8.4.35)
+      avataaars:
+        specifier: ^2.0.0
+        version: 2.0.0(react@18.2.0)
       gatsby-plugin-postcss:
         specifier: ^6.2.0
         version: 6.13.1(gatsby@5.13.3)(postcss@8.4.35)(typescript@5.3.3)(webpack@5.90.2)
@@ -4543,6 +4546,16 @@ packages:
   /available-typed-arrays@1.0.6:
     resolution: {integrity: sha512-j1QzY8iPNPG4o4xmO3ptzpRxTciqD3MgEHtifP/YnJpIo58Xu+ne4BejlbkuaLfXn/nz6HFiw29bLpj2PNMdGg==}
     engines: {node: '>= 0.4'}
+
+  /avataaars@2.0.0(react@18.2.0):
+    resolution: {integrity: sha512-VBS14dAvTe1l/HEwSoR5LArV7OqXgbhksBCS3CZZLIOQfv+oM3yVgy0d5QKz/KYqNMmS8emSzD9znlrOhbg2fA==}
+    peerDependencies:
+      react: ^17.0.0
+    dependencies:
+      lodash: 4.17.21
+      prop-types: 15.8.1
+      react: 18.2.0
+    dev: true
 
   /axe-core@4.7.0:
     resolution: {integrity: sha512-M0JtH+hlOL5pLQwHOLNYZaXuhqmvS8oExsqB1SBYgA4Dk7u/xx+YdGHXaK5pyUfed5mYXdlYiphWq3G8cRi5JQ==}

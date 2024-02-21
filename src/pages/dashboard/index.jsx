@@ -1,6 +1,7 @@
 import React from 'react';
 import { StateContextProvider } from '../../contexts/ContextProvider';
 import DashboardLayout from '../../components/dashboard/DashboardLayout';
+import { needLoginWrapper } from '../../hooks';
 
 const DashboardIndex = () => {
 	return (
@@ -10,4 +11,4 @@ const DashboardIndex = () => {
 	);
 };
 
-export default DashboardIndex;
+export default needLoginWrapper(DashboardIndex);

@@ -1,6 +1,6 @@
 
 export interface Course {
-    id: number
+    id: string
     ID: number
     uuid: string
     is_shop: boolean
@@ -21,13 +21,14 @@ export interface Category {
 }
 
 export interface Chapter {
-    id: number
+    id: string
     ID: number
     content: string
     uuid: string
     course_id: number
     download_resource: string
     github_resource: string
+    order_index: number
     mark: string
     name: string
     online_running_code: string

@@ -5,7 +5,18 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { Card, Box, IconButton, Input, FormControl } from '@mui/material';
+import {
+	Card,
+	Box,
+	IconButton,
+	Input,
+	FormControl,
+	Typography,
+	Snackbar,
+	Alert,
+	useTheme,
+	useMediaQuery,
+} from '@mui/material';
 import {
 	PaperClipOutlined,
 	PictureOutlined,
@@ -43,8 +54,11 @@ const MessageDetail = (props) => {
 	// get context friendId
 	const { friendId, setMessageData } = useStateContext();
 	const { me } = useGlobalContext();
+	const [alert, setAlert] = useState(false);
 
 	const queryClient = useQueryClient();
+	const theme = useTheme();
+	const matchDownSM = useMediaQuery('(max-width:380px)');
 
 	const fetchSessionMessage = async (id) => {
 		const axiosInstance = getAxios();
@@ -77,10 +91,23 @@ const MessageDetail = (props) => {
 				queryKey: ['fetch-session-messages', friendId],
 			});
 		},
+		onError: (error) => {
+			if (
+				error.response.data.code === 400 &&
+				/has no/.test(error.response.data.message)
+			) {
+				setAlert(true);
+			}
+		},
 	});
 
 	if (isLoading) return <div>loading message detail...</div>;
-	if (isError) return <div>Error occurred at message detail ...</div>;
+	if (isError)
+		return (
+			<div>
+				<Typography variant='caption'>无短信息</Typography>
+			</div>
+		);
 
 	const { status } = props;
 
@@ -95,10 +122,7 @@ const MessageDetail = (props) => {
 			recipient_id: friendId,
 			status: 2, // be default message is unreaded
 		};
-		debugLog('post to server: ', data);
-		/*************
-		 *
-		 */
+		if (/^\s*$/.test(message.trim())) return;
 		mutation.mutate(data);
 	};
 
@@ -108,7 +132,8 @@ const MessageDetail = (props) => {
 			sx={{
 				position: 'relative',
 				border: 'unset',
-				width: status ? '100%' : 'calc(100% + 320px)',
+				width: 'calc(100% - 220px)',
+				minWidth: '340px',
 				pt: '24px',
 			}}
 		>
@@ -117,10 +142,9 @@ const MessageDetail = (props) => {
 				sx={{
 					py: '40px',
 					px: '20px',
-					height: 'calc(80vh - 40px)',
 				}}
 			>
-				<SimpleBarScroll style={{ maxHeight: '100%', mr: '-160px' }}>
+				<SimpleBarScroll style={{ height: matchDownSM ? '40vh' : '70vh' }}>
 					<Box sx={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
 						{/* <pre>{JSON.stringify(data.result.messages, null, 4)}</pre> */}
 						{friendId &&
@@ -163,30 +187,30 @@ const MessageDetail = (props) => {
 						multiline
 						minRows={1}
 						onChange={handleChange}
+						endAdornment={
+							<IconButton
+								onClick={sendMessage}
+								color='primary'
+							>
+								<SendOutlined />
+							</IconButton>
+						}
 					/>
 				</FormControl>
-				<Box sx={{ ...flexStart, mb: '12px', justifyContent: 'space-between' }}>
-					<Box>
-						<IconButton sx={{ color: grey[400] }}>
-							<PaperClipOutlined />
-						</IconButton>
-						<IconButton sx={{ color: grey[400] }}>
-							<PictureOutlined />
-						</IconButton>
-						<IconButton sx={{ color: grey[400] }}>
-							<SoundOutlined />
-						</IconButton>
-					</Box>
-					<Box>
-						<IconButton
-							onClick={sendMessage}
-							color='primary'
-						>
-							<SendOutlined />
-						</IconButton>
-					</Box>
-				</Box>
 			</Box>
+			<Snackbar
+				open={alert}
+				anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+				autoHideDuration={4000}
+				onClose={() => setAlert(false)}
+			>
+				<Alert
+					variant='filled'
+					severity='warning'
+				>
+					你还没有添加对方为好友，请在好友头像上点击右键
+				</Alert>
+			</Snackbar>
 		</Card>
 	);
 };

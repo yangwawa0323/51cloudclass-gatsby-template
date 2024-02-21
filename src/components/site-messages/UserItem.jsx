@@ -107,7 +107,11 @@ const UserItem = ({ user }) => {
 					<Box>
 						<Box
 							component='div'
-							sx={{ ...justifyAlignCenter, justifyContent: 'space-between' }}
+							sx={{
+								...justifyAlignCenter,
+								flexDirection: 'column',
+								justifyContent: 'space-between',
+							}}
 						>
 							<Typography variant='subtitle1'>{user?.name}</Typography>
 							<Typography
@@ -116,19 +120,6 @@ const UserItem = ({ user }) => {
 							>
 								{randomTime()}
 							</Typography>
-						</Box>
-
-						<Box
-							component='div'
-							sx={{ ...justifyAlignCenter, justifyContent: 'space-between' }}
-						>
-							<Typography
-								variant='subtitle2'
-								color='gray'
-							>
-								{user?.company?.name || '51云课堂'}
-							</Typography>
-							<Box>{randomStatus()}</Box>
 						</Box>
 					</Box>
 				}
