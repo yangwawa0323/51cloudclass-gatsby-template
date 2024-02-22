@@ -23,6 +23,7 @@ import level01 from '../assets/img/courses/level-01.svg';
 import { easeIn } from '../utils/animate';
 import shuffle from 'lodash/shuffle';
 import { Course } from '../components';
+import SEO from '../components/seo';
 
 const { getAxios } = utils;
 
@@ -51,12 +52,12 @@ gsap.registerPlugin(ScrollTrigger);
 // });
 // };
 
-const fetchCourses = async () => {
+/* const fetchCourses = async () => {
 	const axiosInstance = getAxios();
 	let url = `${process.env.GATSBY_API_SERVER}/courses/`;
 	const response = await axiosInstance.get(url);
 	return response.data;
-};
+} */
 
 const CourseMain = () => {
 	ScrollTrigger.defaults({});
@@ -338,3 +339,5 @@ const CourseMain = () => {
 };
 
 export default CourseMain;
+
+export const Head = () => <SEO />;

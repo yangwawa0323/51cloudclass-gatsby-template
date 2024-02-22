@@ -2,6 +2,7 @@ import React from 'react';
 import Frame from '../frame';
 import BoostSection from './Boost';
 import { graphql } from 'gatsby';
+import SEO from '../seo';
 
 export const query = graphql`
 	query ($uuid: String) {
@@ -27,3 +28,5 @@ const Detail = (props) => {
 };
 
 export default Detail;
+
+export const Head = ({ pageContext }) => <SEO title={pageContext.title} />;

@@ -17,6 +17,7 @@ import FractionSection from '../components/index/Fraction';
 // import { useSelector } from 'react-redux';
 import Courses from '../components/index/course';
 import Frame from '../components/frame';
+import SEO from '../components/seo';
 
 function Index() {
 	// const account = useSelector((state) => state.account);
@@ -70,3 +71,5 @@ function Index() {
 }
 
 export default Index;
+
+export const Head = () => <SEO />;

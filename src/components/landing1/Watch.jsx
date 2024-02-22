@@ -11,18 +11,8 @@ const videoJsOptions = {
 	controls: true,
 	responsive: true,
 	muted: false,
-	// fluid: true,
 	width: 1080,
-	// preferFullWindow: true,
 	loop: true,
-	sources: [
-		{
-			// src: 'https://vjs.zencdn.net/v/oceans.mp4',
-			// src: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
-			src: 'https://media.w3.org/2010/05/sintel/trailer.mp4',
-			type: 'video/mp4',
-		},
-	],
 };
 
 const WatchVideo = () => {

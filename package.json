@@ -79,6 +79,7 @@
 		"autoprefixer": "^10.4.13",
 		"avataaars": "^2.0.0",
 		"gatsby-plugin-postcss": "^6.2.0",
+		"gatsby-plugin-sitemap": "^6.13.1",
 		"lodash": "^4.17.21",
 		"moment-ago": "^1.2.3",
 		"postcss": "^8.4.19",

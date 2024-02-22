@@ -37,6 +37,7 @@ import { debugLog, getAxios } from '51cloudclass-utilities/src/utils';
 import { useStateContext } from '../../contexts/ContextProvider';
 import { useState } from 'react';
 import { useGlobalContext } from '../../../wrap-with-provider';
+import Loading from '../Loading';
 
 const axiosInstance = getAxios();
 
@@ -101,7 +102,7 @@ const MessageDetail = (props) => {
 		},
 	});
 
-	if (isLoading) return <div>loading message detail...</div>;
+	if (isLoading) return <Loading />;
 	if (isError)
 		return (
 			<div>

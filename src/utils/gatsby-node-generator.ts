@@ -203,6 +203,7 @@ const generateChapters = async ({ actions, reporter, createNodeId }: CreatePageA
 			component: path.resolve(__dirname, '../components/chapter/ChapterPage.jsx'),
 			context: {
 				uuid: chpt.uuid,
+				title: `${chpt.name} - 长沙云课堂大学生就业在线教学视频系列`,
 			},
 		}); // end of createPage
 	});
@@ -233,6 +234,7 @@ const generateCoursesDetailPage = async ({ actions, reporter, createNodeId }: Cr
 			component: path.resolve(__dirname, '../components/course/Detail.jsx'),
 			context: {
 				uuid: course.uuid,
+				title: `${course.name} - 长沙云课堂大学生就业在线教学视频系列`,
 			},
 		}); // end of createPage
 	});

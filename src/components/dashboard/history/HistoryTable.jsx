@@ -29,6 +29,7 @@ import { useQuery } from '@tanstack/react-query';
 import { getAxios } from '51cloudclass-utilities/src/utils';
 
 import momentAgo from 'moment-ago';
+import Loading from '../../Loading';
 
 const HistoryTable = () => {
 	const fetchHistories = async () => {
@@ -44,7 +45,7 @@ const HistoryTable = () => {
 		queryFn: () => fetchHistories(),
 	});
 
-	if (isLoading) return <div>Loading</div>;
+	if (isLoading) return <Loading />;
 	if (isError) return <div>Error</div>;
 
 	return (

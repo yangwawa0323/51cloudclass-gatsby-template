@@ -26,6 +26,8 @@ import {
 import { useGlobalContext } from '../../../wrap-with-provider';
 import { SendOutlined } from '@ant-design/icons';
 import { useState } from 'react';
+import SEO from '../seo';
+import Loading from '../Loading';
 
 const axiosInstance = getAxios();
 
@@ -139,21 +141,21 @@ const ChapterPage = (props) => {
 		});
 	}, []);
 
-	if (isLoading) return <div>Loading...</div>;
+	if (isLoading) return <Loading />;
 	// change to graphQL query data
 	// const extra = { chapter: pageContext.chapter };
 	/********************************************************************
 	 * 1. get data from use query
 	 * 2. set data
 	 *********************************************************************/
-	if (!data.chapter.course) {
+	/* 	if (!data.chapter.course) {
 		return (
 			<div>
 				<h2>Some thing wrong</h2>
 				<pre>{JSON.stringify(data.chapter)}</pre>
 			</div>
 		);
-	}
+	} */
 
 	return (
 		<Frame>
@@ -295,3 +297,5 @@ const ChapterPage = (props) => {
 };
 
 export default ChapterPage;
+
+export const Head = ({ pageContext }) => <SEO title={pageContext.title} />;

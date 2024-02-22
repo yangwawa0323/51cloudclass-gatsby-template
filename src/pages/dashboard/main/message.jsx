@@ -13,6 +13,7 @@ import { debugLog, getAxios } from '51cloudclass-utilities/src/utils';
 import { useQuery } from '@tanstack/react-query';
 import { useStateContext } from '../../../contexts/ContextProvider';
 import SimpleBarScroll from '../../../components/common/SimpleBar';
+import Loading from '../../../components/Loading';
 
 const useStyles = makeStyles({
 	table: {
@@ -75,7 +76,7 @@ const SiteMessage = () => {
 		queryFn: () => fetchUserList(),
 	});
 
-	if (isLoading) return <div>Loading</div>;
+	if (isLoading) return <Loading />;
 	if (isError) return <div>Error</div>;
 
 	return (
