@@ -110,6 +110,9 @@ importers:
       react-helmet:
         specifier: ^6.1.0
         version: 6.1.0(react@18.2.0)
+      react-iframe:
+        specifier: ^1.8.5
+        version: 1.8.5(react@18.2.0)
       react-jwt:
         specifier: ^1.1.8
         version: 1.2.0(react@18.2.0)
@@ -11827,6 +11830,15 @@ packages:
     dependencies:
       react: 18.2.0
     dev: true
+
+  /react-iframe@1.8.5(react@18.2.0):
+    resolution: {integrity: sha512-F4cQJGs3ydaG6fJWfuz9yLwOU0Trzl6kttXuUG+vYwosH8enOOFxZWEDQCSbNVO8ayjfYZeqLxEvdvcsSy4GvA==}
+    peerDependencies:
+      react: '>=16.x.x'
+    dependencies:
+      object-assign: 4.1.1
+      react: 18.2.0
+    dev: false
 
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}

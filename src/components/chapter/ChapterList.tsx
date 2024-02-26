@@ -1,29 +1,48 @@
 /** @format */
 
-import React from 'react';
-import { useEffect, useState } from 'react';
+import React, { useCallback } from 'react';
 import SimpleBarScroll from '../common/SimpleBar';
 import 'simplebar-react/dist/simplebar.min.css';
-import { utils } from '51cloudclass-utilities/dist';
 
 import { Link } from 'gatsby';
 import { IChapterInput } from '../../utils/types';
 import { Chapter } from '..';
-import { debugLog } from '51cloudclass-utilities/src/utils';
 import { useGlobalContext } from '../../../wrap-with-provider';
+import { Typography } from '@mui/material';
+import { grey, purple } from '@mui/material/colors';
 
 // import SimpleBar from 'simplebar-react';
 const ChapterContainer = ({ chapter }: { chapter: IChapterInput }) => {
-	const [showDetail, setShowDetail] = useState<boolean>(false);
+	const { isLogin } = useGlobalContext();
+	const hasBilibili = useCallback(() => {
+		return /BiliBiliIframePlugin/.test(chapter.content);
+	}, []);
 	return (
 		<div className='flex flex-col px-8 py-1'>
 			<p className='text-ellipsis truncate'>
-				<span className='uppercase relative text-purple-700'>
+				<span
+					className={
+						isLogin || hasBilibili()
+							? 'uppercase relative text-purple-700'
+							: 'text-gray-500'
+					}
+				>
 					第{chapter.order_index}章:{'  '}
 				</span>
-				<span>
-					<Link to={`/chapters/${chapter.id}/`}>{chapter.name}</Link>
-				</span>
+
+				{((isLogin || hasBilibili()) && (
+					<span className='text-purple-700'>
+						<Link to={`/chapters/${chapter.id}/`}>{chapter.name}</Link>
+					</span>
+				)) || (
+					<Typography
+						component='span'
+						variant='body1'
+						color={grey[500]}
+					>
+						{chapter.name}
+					</Typography>
+				)}
 			</p>
 		</div>
 	);

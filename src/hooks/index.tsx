@@ -11,7 +11,7 @@ import {
 } from '@tanstack/react-query';
 import { utils } from '51cloudclass-utilities/src/';
 import { useContext } from 'react';
-import { globalContext } from '../../wrap-with-provider';
+import { globalContext, useGlobalContext } from '../../wrap-with-provider';
 import NeedLogin from '../pages/need-login';
 import { AxiosResponse } from 'axios';
 import { useSelector } from 'react-redux';
@@ -246,11 +246,14 @@ export const useAvatar = () => {
 
 export const useSaveBrowerHistory = () => {
 	const [data, setData] = useState({ path: null, title: null });
+	const { isLogin } = useGlobalContext();
 
 	const fetchHistories = async () => {
-		let url = `${process.env.GATSBY_API_SERVER}/history/`;
-		let postData = { uri: data.path, title: data.title, kind: 2 };
-		return await axiosInstance.post(url, postData);
+		if (isLogin) {
+			let url = `${process.env.GATSBY_API_SERVER}/history/`;
+			let postData = { uri: data.path, title: data.title, kind: 2 };
+			return await axiosInstance.post(url, postData);
+		}
 	};
 
 	useEffect(() => {

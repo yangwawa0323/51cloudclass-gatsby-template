@@ -74,7 +74,7 @@ export const gradientColor = {
 };
 
 export const getRidOfDomain = (url: string) => {
-	console.log('[DEBUG] getRidOfDomain url: ', url);
+	// console.log('[DEBUG] getRidOfDomain url: ', url);
 	return url?.replace(/[^:]+:\/\/[^/]+\//, '');
 }
 export const getUrlParameter = (search: string) =>

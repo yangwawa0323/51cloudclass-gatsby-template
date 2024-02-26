@@ -15,7 +15,6 @@ const BootSection = () => {
 		const pContent = document.querySelectorAll(
 			'.react-page-row .react-page-cell p'
 		)[0]?.innerHTML;
-		// debugLog('p element', p.innerHTML);
 		pContent &&
 			setDescription({
 				__html:

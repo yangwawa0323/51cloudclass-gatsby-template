@@ -4,7 +4,7 @@ import RightPane from './RightPane';
 import Frame from '../frame';
 import { graphql } from 'gatsby';
 import { useSaveBrowerHistory } from '../../../src/hooks';
-import { debugLog, getAxios } from '51cloudclass-utilities/src/utils';
+import { getAxios } from '51cloudclass-utilities/src/utils';
 import { useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import {
@@ -28,6 +28,7 @@ import { SendOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 import SEO from '../seo';
 import Loading from '../Loading';
+import ChapterList from './ChapterList';
 
 const axiosInstance = getAxios();
 
@@ -51,6 +52,7 @@ export const query = graphql`
 					order_index
 					name
 					id
+					content
 				}
 			}
 		}
@@ -270,7 +272,7 @@ const ChapterPage = (props) => {
 						</Box>
 					</div>
 					<div className='col-span-1'>
-						<RightPane />
+						<ChapterList />
 					</div>
 				</div>
 				{/* 

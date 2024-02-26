@@ -28,7 +28,7 @@ import {
 	LogoutOutlined,
 	SettingOutlined,
 } from '@ant-design/icons';
-import { debugLog, getAxios } from '51cloudclass-utilities/src/utils';
+import { getAxios } from '51cloudclass-utilities/src/utils';
 import { useStateContext } from '../../contexts/ContextProvider';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 
@@ -56,7 +56,6 @@ const UserListCard = () => {
 	};
 
 	const acceptJoin = async (user) => {
-		debugLog('accpet join: ', user);
 		// /accept-join/:sender_id
 		let url = `${process.env.GATSBY_API_SERVER}/messages/accept-join/${user.ID}`;
 		axiosInstance.patch(url);
@@ -72,7 +71,6 @@ const UserListCard = () => {
 				queryKey: ['get-join-senders', 'fetch-user-list'],
 				type: 'all',
 			});
-			debugLog('refresh the query client');
 		},
 	});
 

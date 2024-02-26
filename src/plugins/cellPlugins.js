@@ -11,6 +11,8 @@ import html5video from '@react-page/plugins-html5-video';
 import asciinema from './AsciinemaPlugin';
 import codeSnippet from '../plugins/CodeSnippet';
 import polvPlayerPlugin from './polyv-player-plugin';
+import biliBiliIframePlugin from './BiliBiliIframePlugin';
+import loginRequiredPlugin from './LoginRequiredPlugin';
 // import markdownEditor from './MarkdownEditorPlugin';
 
 export const baseCellPlugins = [
@@ -21,5 +23,7 @@ export const baseCellPlugins = [
 	asciinema,
 	codeSnippet,
 	polvPlayerPlugin,
+	biliBiliIframePlugin,
+	loginRequiredPlugin,
 	// markdownEditor,
 ];

@@ -30,11 +30,9 @@ const StyleSelect: React.FC<StyleSelectProps> = (props: StyleSelectProps) => {
 			? 'Default'
 			: selectArray[0]
 	);
-	// debugLog(variant, query.get(variant), value);
 
 	const handleChange = (e: SelectChangeEvent<string>): void => {
 		setValue(e.target.value);
-		// debugLog(variant, e.target.value);
 
 		// 1. get url parameter
 		query = new URLSearchParams(location.search);

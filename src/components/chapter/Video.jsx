@@ -1,10 +1,27 @@
 /** @format */
 
-import React, { useContext } from 'react';
+import React from 'react';
 import { useEffect } from 'react';
-import { globalContext, useGlobalContext } from '../../../wrap-with-provider';
+import { useGlobalContext } from '../../../wrap-with-provider';
 import { easeIn } from '../../utils/animate';
 import AsciinemaEditor from '../asciinema/AsciinemaEditor';
+import { debugLog } from '51cloudclass-utilities/src/utils';
+import { useState } from 'react';
+import _ from 'lodash';
+
+const loginRequiredObj = {
+	id: 'roilkm',
+	size: 12,
+	plugin: {
+		id: 'loginRequiredCellPlugin',
+		version: 1,
+	},
+	dataI18n: {
+		default: null,
+	},
+	rows: [],
+	inline: null,
+};
 
 /***************************************************************
  * set video has some bugs, autoplay can not be set to false.
@@ -18,18 +35,22 @@ const Video = () => {
 		readOnly: true,
 	};
 
-	const setVideoOptions = function (videoEl) {
+	const [data, setData] = useState(null);
+	/*****************************************************************
+	 * from globalContext get the single chapter
+	 *****************************************************************/
+	const { isLogin, chapter } = useGlobalContext();
+
+	/* const setVideoOptions = function (videoEl) {
 		if (videoEl) {
 			videoEl.muted = false;
 			videoEl.autoplay = false;
 			videoEl.controlsList = 'nodownload';
 		}
-	};
-
-	const { isLogin } = useContext(globalContext);
+	}; 
 
 	const videoElement = document.querySelector('.gsap-video video');
-	useEffect(() => {
+		useEffect(() => {
 		if (videoElement) easeIn('.gsap-video video');
 		setVideoOptions(videoElement);
 		videoElement?.addEventListener('contextmenu', (e) => {
@@ -40,26 +61,28 @@ const Video = () => {
 		if (!isLogin && videoElement) {
 			videoElement.remove();
 		}
-	}, [isLogin, videoElement]);
+	}, [isLogin, videoElement]); */
 
-	/*****************************************************************
-	 * from globalContext get the single chapter
-	 *****************************************************************/
-	const { chapter } = useGlobalContext();
-
+	useEffect(() => {
+		let content = chapter?.content;
+		if (!isLogin) {
+			content = _.replace(
+				content,
+				'ory/sites/plugin/content/html5-video',
+				'loginRequiredCellPlugin'
+			);
+		}
+		setData(content);
+	}, [chapter, isLogin]);
 	return (
 		<div className='gsap-video min-h-fit w-full flex flex-col '>
-			{(!isLogin && (
-				<div className='w-full mx-0 md:mx-4 border-purple-700 border-[12px] bg-black rounded-lg h-60 md:h-80 lg:h-96 text-white font-bold flex justify-center items-center'>
-					请登录后方能观看视频
-				</div>
-			)) ||
-				(chapter && (
-					<AsciinemaEditor
-						initialValue={JSON.parse(chapter?.content)}
-						{...options}
-					/>
-				))}
+			{chapter && data && (
+				<AsciinemaEditor
+					initialValue={JSON.parse(data)}
+					{...options}
+				/>
+			)}
+			{/* ))} */}
 		</div>
 	);
 };

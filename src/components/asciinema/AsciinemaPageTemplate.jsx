@@ -12,10 +12,6 @@ import { MdOutlineContentPasteGo } from 'react-icons/md';
 const AsciinemaPage = ({ pageContext }) => {
 	const { content, relatives } = pageContext;
 
-	useEffect(() => {
-		// console.log(relatives, pageContext);
-	});
-
 	return (
 		<Frame>
 			<div

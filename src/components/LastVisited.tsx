@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useContext, useEffect, useState } from 'react';
-import { getAxios, debugLog } from '51cloudclass-utilities/src/utils';
+import { getAxios } from '51cloudclass-utilities/src/utils';
 import { AxiosInstance, AxiosResponse } from 'axios';
 import type { PageProps } from 'gatsby';
 import { globalContext } from '../../wrap-with-provider';
