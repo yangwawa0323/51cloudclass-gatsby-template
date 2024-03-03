@@ -97,7 +97,7 @@ const CourseBoostSection = ({ course }: BoostSectionProps) => {
 												followCursor
 												arrow
 											>
-												点击观看视频
+												<div>点击观看视频</div>
 											</Tooltip>
 										</Link>
 									</div>

@@ -11,6 +11,7 @@ export interface Course {
     teacher: string
     category: Category
     chapters: Array<Chapter> | null
+    last_updated_at: string
 }
 
 

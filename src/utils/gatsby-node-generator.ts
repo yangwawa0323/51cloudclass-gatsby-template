@@ -26,9 +26,6 @@ interface IApiResponse {
 	courses: Array<ICourseInput>,
 }
 
-interface IChapterInternalContent {
-	chapter: IChapterInput,
-}
 
 const fetchAllData: () => Promise<IApiResponse> = async () => {
 
@@ -72,11 +69,11 @@ export const createSchemaCustomization: GatsbyNode[`createSchemaCustomization`] 
 }
 
 export const sourceNodes: GatsbyNode[`sourceNodes`] = async (gastbyApi) => {
-	const { reporter, createNodeId, createContentDigest } = gastbyApi;
+	const { reporter, createContentDigest } = gastbyApi;
 	// Add node here
 	// 1. defined the node of asciinema page.
 
-	const { chapters, asciinemaPages, courses } = await fetchAllData();
+	const { chapters, courses } = await fetchAllData();
 
 	chapters.forEach(chapter => {
 
@@ -138,7 +135,7 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async (gastbyApi) => {
 }
 
 
-const getAllAsciinemaPages = async ({ actions, reporter, createContentDigest, createNodeId }: CreatePageArgs) => {
+const getAllAsciinemaPages = async ({ actions, reporter }: CreatePageArgs) => {
 	let asciinemaPages: Promise<Array<Page>> | null = null;
 	let succeed: boolean;
 	const response = await fetch(`${process.env.GATSBY_API_SERVER}/page/all`)
@@ -183,11 +180,11 @@ const getAsciinemaListPage = async ({ actions, reporter }: CreatePageArgs) => {
 	});
 };
 
-const generateChapters = async ({ actions, reporter, createNodeId }: CreatePageArgs) => {
+const generateChapters = async ({ actions, reporter }: CreatePageArgs) => {
 
 	reporter.info(`[DEBUG] create chapters pages...`);
 
-	const { chapters, asciinemaPages } = await fetchAllData();
+	const { chapters } = await fetchAllData();
 
 	chapters.forEach((chpt) => {
 		/*************************************************************************
@@ -210,7 +207,7 @@ const generateChapters = async ({ actions, reporter, createNodeId }: CreatePageA
 };
 
 /** IMPORTANT: must preload Chapters for provides the course detail page context */
-const generateCoursesDetailPage = async ({ actions, reporter, createNodeId }: CreatePageArgs) => {
+const generateCoursesDetailPage = async ({ actions, reporter }: CreatePageArgs) => {
 	// let url = `${process.env.GATSBY_API_SERVER}/courses/?preload=Chapters`;
 
 	reporter.info(`[DEBUG]: create course detail pages...`);
@@ -219,7 +216,7 @@ const generateCoursesDetailPage = async ({ actions, reporter, createNodeId }: Cr
 
 	courses.forEach((course) => {
 
-		const { ID, ...courseData } = course;
+		const { ID } = course;
 
 		/*************************************************************************
 		 * use createNodeId has a opposite effect, we cann't convert to original 

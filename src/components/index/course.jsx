@@ -120,7 +120,7 @@ const Courses = () => {
 						<Link to='/courses'>查看全部课程</Link>
 					</ColorButton>
 				</div>
-				<div className='course-grid grid xs:grid-cols-1 md:grid-cols-[repeat(3,minmax(200px,1fr))] lg:grid-cols-4 xs:gap-2  gap-8 auto-rows-min h-min justify-evenly w-full'>
+				<div className='hidden course-grid sm:grid xs:grid-cols-1 md:grid-cols-[repeat(3,minmax(200px,1fr))] lg:grid-cols-4 xs:gap-2  gap-8 auto-rows-min h-min justify-evenly w-full'>
 					{courses.map((course, index) => {
 						return (
 							<div
@@ -153,7 +153,7 @@ const Courses = () => {
 						);
 					})}
 				</div>
-				<div className='pt-12'>
+				<div className='hidden sm:block pt-12'>
 					<ColorButton>
 						<Link to='/courses'>查看全部课程</Link>
 					</ColorButton>

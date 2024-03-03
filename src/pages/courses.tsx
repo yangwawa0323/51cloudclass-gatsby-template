@@ -9,7 +9,7 @@ import * as React from 'react';
 import gsap from 'gsap';
 import Frame from '../components/frame';
 import '../styles/pages/_course-main.scss';
-import { Divider } from '@mui/material';
+import { Box, Divider } from '@mui/material';
 
 /* tslint:disable */
 import { utils } from '51cloudclass-utilities/dist';
@@ -23,6 +23,7 @@ import { easeIn } from '../utils/animate';
 import shuffle from 'lodash/shuffle';
 import { Course } from '../components';
 import SEO from '../components/seo';
+import { debugLog } from '51cloudclass-utilities/src/utils';
 
 const { getAxios } = utils;
 
@@ -69,10 +70,18 @@ const CourseMain = () => {
 					description
 					is_shop
 					teacher
+					last_updated_at
 				}
 			}
 		}
 	`);
+
+	const lastUpdated = React.useCallback((dateStr: string) => {
+		debugLog('date string:', dateStr);
+		var now = new Date().getDate();
+		var updatedAt = new Date(dateStr).getDate();
+		return updatedAt - now < 1;
+	}, []);
 
 	// return <div>{JSON.stringify(data, null, 2)}</div>;
 
@@ -225,6 +234,11 @@ const CourseMain = () => {
 								>
 									<Link to={`/courses/${course.id}`}>
 										<div className='xs:h-[224px] h-[334px] overflow-hidden pt-4'>
+											{lastUpdated(course.last_updated_at) && (
+												<div className='absolute bg-orange-600 rotate-[30deg] min-w-52  p-2 text-center text-white top-1/5 -right-8 z-10'>
+													今日有更新
+												</div>
+											)}
 											<img
 												className='w-full h-full object-cover object-center opacity-80 shadow-md rounded-br-[80px]'
 												src={course.image}

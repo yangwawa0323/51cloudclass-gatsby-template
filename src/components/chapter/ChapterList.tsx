@@ -60,7 +60,6 @@ const ChapterList = () => {
 	const tl = gsap.timeline();
 	useEffect(() => {
 		gsap.utils.toArray('.gsap-chapter').forEach((chapter, index) => {
-			debugLog('chapter: ', chapter);
 			let tween = gsap.fromTo(
 				chapter,
 				{
