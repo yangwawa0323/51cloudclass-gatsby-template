@@ -183,8 +183,7 @@ const Relative = () => {
 								marginLeft: 0,
 								marginRight: 0,
 								outlineColor: 'rgb(70, 82, 106)',
-								overflowX: 'hidden',
-								overflowY: 'hidden',
+
 								paddingBlockEnd: '28px',
 								paddingBlockStart: '28px',
 								paddingBottom: '28px',
@@ -334,8 +333,7 @@ const Relative = () => {
 											maxInlineSize: '80px',
 											maxWidth: '80px',
 											outlineColor: 'rgb(70, 82, 106)',
-											overflowX: 'hidden',
-											overflowY: 'hidden',
+
 											textDecoration: 'none solid rgb(70, 82, 106)',
 											textDecorationColor: 'rgb(70, 82, 106)',
 											textEmphasisColor: 'rgb(70, 82, 106)',
@@ -889,8 +887,7 @@ const Relative = () => {
 								marginLeft: 0,
 								marginRight: 0,
 								outlineColor: 'rgb(70, 82, 106)',
-								overflowX: 'hidden',
-								overflowY: 'hidden',
+
 								paddingBlockEnd: '28px',
 								paddingBlockStart: '28px',
 								paddingBottom: '28px',
@@ -1040,8 +1037,7 @@ const Relative = () => {
 											maxInlineSize: '80px',
 											maxWidth: '80px',
 											outlineColor: 'rgb(70, 82, 106)',
-											overflowX: 'hidden',
-											overflowY: 'hidden',
+
 											textDecoration: 'none solid rgb(70, 82, 106)',
 											textDecorationColor: 'rgb(70, 82, 106)',
 											textEmphasisColor: 'rgb(70, 82, 106)',
@@ -1616,8 +1612,7 @@ const Relative = () => {
 								marginLeft: 0,
 								marginRight: 0,
 								outlineColor: 'rgb(70, 82, 106)',
-								overflowX: 'hidden',
-								overflowY: 'hidden',
+
 								paddingBlockEnd: '28px',
 								paddingBlockStart: '28px',
 								paddingBottom: '28px',
@@ -1767,8 +1762,7 @@ const Relative = () => {
 											maxInlineSize: '80px',
 											maxWidth: '80px',
 											outlineColor: 'rgb(70, 82, 106)',
-											overflowX: 'hidden',
-											overflowY: 'hidden',
+
 											textDecoration: 'none solid rgb(70, 82, 106)',
 											textDecorationColor: 'rgb(70, 82, 106)',
 											textEmphasisColor: 'rgb(70, 82, 106)',

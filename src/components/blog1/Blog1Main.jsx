@@ -8,13 +8,9 @@ import { Link } from 'gatsby';
 import * as React from 'react';
 import Footer from '../common/Footer';
 import Navbar from '../common/Navbar';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const animation = () => {
-	gsap.from('.entire-blog', {
+	/* gsap.from('.entire-blog', {
 		opacity: 0.6,
 		y: '+10%',
 		duration: 1.5,
@@ -33,16 +29,10 @@ const animation = () => {
 		duration: 1.5,
 		y: '+60%',
 		opacity: 0,
-	});
+	}); */
 };
 
 const Blog1 = ({ pageContext }) => {
-	ScrollTrigger.defaults({});
-
-	React.useEffect(() => {
-		animation();
-	}, []);
-
 	return (
 		<div>
 			<Navbar />

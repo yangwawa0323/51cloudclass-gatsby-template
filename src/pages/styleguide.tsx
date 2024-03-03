@@ -8,7 +8,6 @@ import * as React from 'react';
 import '../styles/index.scss';
 
 import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 import ColorBlock from '../components/styleguide/ColorBlock';
 import Frame from '../components/frame';
 
@@ -56,8 +55,6 @@ const ColorBlockList = () => {
 
 	return blocks;
 };
-
-gsap.registerPlugin(ScrollTrigger);
 
 const StyleGuide = () => {
 	const gsapAnimation = () => {

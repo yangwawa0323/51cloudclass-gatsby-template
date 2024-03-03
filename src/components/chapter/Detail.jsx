@@ -2,7 +2,6 @@ import { Typography } from '@mui/material';
 import React from 'react';
 import momentAgo from 'moment-ago';
 import { useGlobalContext } from '../../../wrap-with-provider';
-import { debugLog } from '51cloudclass-utilities/src/utils';
 
 const Detail = () => {
 	/*******************************************************************

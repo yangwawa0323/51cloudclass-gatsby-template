@@ -7,7 +7,6 @@
 import { Link, graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
 import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 import Frame from '../components/frame';
 import '../styles/pages/_course-main.scss';
 import { Divider } from '@mui/material';
@@ -26,8 +25,6 @@ import { Course } from '../components';
 import SEO from '../components/seo';
 
 const { getAxios } = utils;
-
-gsap.registerPlugin(ScrollTrigger);
 
 // const animation = () => {
 // gsap.from('.entire-blog', {
@@ -60,8 +57,6 @@ gsap.registerPlugin(ScrollTrigger);
 } */
 
 const CourseMain = () => {
-	ScrollTrigger.defaults({});
-
 	// const { data, isLoading, error } = useQuery(['fetch-courses'], fetchCourses);
 
 	const data = useStaticQuery(graphql`
@@ -236,19 +231,19 @@ const CourseMain = () => {
 												alt={course.description}
 											/>
 										</div>
-										<div className='flex flex-col px-8 pb-4 gap-2 relative'>
+										<div className='flex flex-col px-8 py-4 gap-2 relative'>
 											<div>
 												<p className='text-2xl text-purple-700'>
 													{course.name}
 												</p>
 											</div>
-											<div>
+											{/* <div>
 												<p
 													dangerouslySetInnerHTML={{
 														__html: course.description.replace('\\n', '<br/>'),
 													}}
 												></p>
-											</div>
+											</div> */}
 										</div>
 										<div className='w-full flex flex-col'>
 											<Divider className='w-10/12 self-center' />
@@ -282,7 +277,7 @@ const CourseMain = () => {
 													</div>
 												</div>
 												<div className='course-card-price'>
-													$&nbsp;399.00&nbsp;USD
+													全网 ￥51 包月学习
 												</div>
 											</div>
 										</div>

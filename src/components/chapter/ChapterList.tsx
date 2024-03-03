@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import SimpleBarScroll from '../common/SimpleBar';
 import 'simplebar-react/dist/simplebar.min.css';
 
@@ -8,8 +8,10 @@ import { Link } from 'gatsby';
 import { IChapterInput } from '../../utils/types';
 import { Chapter } from '..';
 import { useGlobalContext } from '../../../wrap-with-provider';
-import { Typography } from '@mui/material';
+import { Typography, duration } from '@mui/material';
 import { grey, purple } from '@mui/material/colors';
+import gsap from 'gsap';
+import { debugLog } from '51cloudclass-utilities/src/utils';
 
 // import SimpleBar from 'simplebar-react';
 const ChapterContainer = ({ chapter }: { chapter: IChapterInput }) => {
@@ -55,6 +57,25 @@ const ChapterList = () => {
 	 *******************************************************************/
 	const { chapters } = useGlobalContext();
 
+	const tl = gsap.timeline();
+	useEffect(() => {
+		gsap.utils.toArray('.gsap-chapter').forEach((chapter, index) => {
+			debugLog('chapter: ', chapter);
+			let tween = gsap.fromTo(
+				chapter,
+				{
+					duration: 0.1,
+					opacity: 0,
+				},
+				{
+					duration: 0.1,
+					opacity: 1,
+				}
+			);
+			tl.add(tween);
+		});
+	}, []);
+
 	return (
 		<div className='max-w-[440px] w-full mx-0 md:mx-3 grid grid-cols-1 grid-flow-row border-2 shadow-md rounded-xl py-8'>
 			<div className='flex flex-col justify-center items-center mb-8'>
@@ -65,10 +86,12 @@ const ChapterList = () => {
 				{chapters
 					?.sort((a: Chapter, b: Chapter) => a.order_index - b.order_index)
 					.map((chpt: IChapterInput) => (
-						<ChapterContainer
+						<div
+							className='gsap-chapter'
 							key={chpt.id}
-							chapter={chpt}
-						/>
+						>
+							<ChapterContainer chapter={chpt} />
+						</div>
 					))}
 			</SimpleBarScroll>
 		</div>

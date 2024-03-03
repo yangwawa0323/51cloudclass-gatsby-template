@@ -32,8 +32,7 @@ const BootSection = () => {
 					fontSize: '16px',
 					lineHeight: '26px',
 					outlineColor: 'rgb(95, 104, 122)',
-					overflowX: 'hidden',
-					overflowY: 'hidden',
+
 					paddingBlockStart: '16px',
 					paddingTop: '16px',
 					right: '0px',
@@ -248,8 +247,7 @@ const BootSection = () => {
 										marginLeft: 0,
 										marginRight: 0,
 										outlineColor: 'rgb(95, 104, 122)',
-										overflowX: 'hidden',
-										overflowY: 'hidden',
+
 										textDecoration: 'none solid rgb(95, 104, 122)',
 										textDecorationColor: 'rgb(95, 104, 122)',
 										textEmphasisColor: 'rgb(95, 104, 122)',
@@ -305,8 +303,7 @@ const BootSection = () => {
 										maxInlineSize: '60px',
 										maxWidth: '60px',
 										outlineColor: 'rgb(95, 104, 122)',
-										overflowX: 'hidden',
-										overflowY: 'hidden',
+
 										position: 'absolute',
 										right: '-29.9062px',
 										top: '-28px',
@@ -368,8 +365,7 @@ const BootSection = () => {
 									minInlineSize: '485px',
 									minWidth: '485px',
 									outlineColor: 'rgb(95, 104, 122)',
-									overflowX: 'hidden',
-									overflowY: 'hidden',
+
 									position: 'relative',
 									right: '-209.982px',
 
@@ -435,8 +431,7 @@ const BootSection = () => {
 									maxInlineSize: '274px',
 									maxWidth: '274px',
 									outlineColor: 'rgb(95, 104, 122)',
-									overflowX: 'hidden',
-									overflowY: 'hidden',
+
 									position: 'absolute',
 									right: '475.938px',
 									textDecoration: 'none solid rgb(95, 104, 122)',

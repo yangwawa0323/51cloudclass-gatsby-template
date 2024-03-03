@@ -17,23 +17,15 @@ import {
 	useTheme,
 	useMediaQuery,
 } from '@mui/material';
-import {
-	PaperClipOutlined,
-	PictureOutlined,
-	SoundOutlined,
-	SendOutlined,
-} from '@ant-design/icons';
-import { flexStart } from '../utils/StyledMain';
+import { SendOutlined } from '@ant-design/icons';
 import 'simplebar-react/dist/simplebar.min.css';
-
-import { grey } from '@mui/material/colors';
 
 import SimpleBarScroll from '../common/SimpleBar';
 import { useRef } from 'react';
 import MessageSender from './MessageSender';
 import MessageISent from './MessageISent';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { debugLog, getAxios } from '51cloudclass-utilities/src/utils';
+import { getAxios } from '51cloudclass-utilities/src/utils';
 import { useStateContext } from '../../contexts/ContextProvider';
 import { useState } from 'react';
 import { useGlobalContext } from '../../../wrap-with-provider';

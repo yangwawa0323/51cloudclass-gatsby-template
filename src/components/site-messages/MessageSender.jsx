@@ -6,7 +6,6 @@ import { Grid } from '@mui/material';
 import { flexStart } from '../utils/StyledMain';
 import React from 'react';
 import { useStateContext } from '../../contexts/ContextProvider';
-import { debugLog } from '51cloudclass-utilities/src/utils';
 import momentAgo from 'moment-ago';
 
 const MessageSender = ({ message }) => {

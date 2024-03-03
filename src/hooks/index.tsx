@@ -3,12 +3,7 @@ import React, { ReactElement, ReactNode } from 'react';
 
 import { useLocation } from '@reach/router';
 import { useEffect, useState } from 'react';
-import {
-	dataTagSymbol,
-	useMutation,
-	useQuery,
-	useQueryClient,
-} from '@tanstack/react-query';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { utils } from '51cloudclass-utilities/src/';
 import { useContext } from 'react';
 import { globalContext, useGlobalContext } from '../../wrap-with-provider';
@@ -16,7 +11,6 @@ import NeedLogin from '../pages/need-login';
 import { AxiosResponse } from 'axios';
 import { useSelector } from 'react-redux';
 import { IState } from '51cloudclass-utilities/src/store/reducers/authSlice';
-import { debugLog } from '51cloudclass-utilities/src/utils';
 
 const { getAxios } = utils;
 const axiosInstance = getAxios();

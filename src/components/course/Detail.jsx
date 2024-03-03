@@ -8,6 +8,8 @@ export const query = graphql`
 	query ($uuid: String) {
 		course(id: { eq: $uuid }) {
 			name
+			description
+			image
 			chapters {
 				name
 				id

@@ -21,16 +21,32 @@ import '../../styles/pages/_course-boost.scss';
 import gsap from 'gsap';
 import { easeIn } from '../../utils/animate';
 import { Chapter, Course } from '..';
+import { Tooltip, Typography } from '@mui/material';
 
 interface BoostSectionProps {
 	course: Course;
 }
 
-const BoostSection = ({ course }: BoostSectionProps) => {
+const CourseBoostSection = ({ course }: BoostSectionProps) => {
 	React.useEffect(() => {
 		const tl = gsap.timeline();
 		easeIn('.gsap-about-course', {}, tl);
 		easeIn('.gsap-course-preview', {}, tl);
+		gsap.utils
+			.toArray('.gsap-chapter')
+			.forEach((chapter: HTMLElement, index: number) => {
+				let tween = gsap.fromTo(
+					chapter,
+					{
+						opacity: 0,
+					},
+					{
+						opacity: 1,
+						duration: 0.1,
+					}
+				);
+				tl.add(tween);
+			});
 	}, []);
 
 	return (
@@ -52,17 +68,40 @@ const BoostSection = ({ course }: BoostSectionProps) => {
 								</h2>
 								<p className='paragraph course-description text-xl leading-10'>
 									{course?.description}
+									{/* {course.chapters
+										?.sort(
+											(a: Chapter, b: Chapter) => a.order_index - b.order_index
+										)
+										.map((chpt: Chapter, idx: number) => {
+											return (
+												<p key={idx}>
+													<Link to={`/chapters/${chpt.id}`}>
+														<span>第{chpt.order_index + 1}章：</span>
+														{chpt.name}
+													</Link>
+												</p>
+											);
+										})} */}
 								</p>
-								<div className='w-layout-grid advantage-course-grid'>
-									<div className='advantage-course-wrapper'>
-										<img
-											src='https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee3544500b2dbf_icon-advantage-course-01-academy-template.svg'
-											alt=''
-											className='advantage-course-icon'
-										/>
-										<div className='advantage-course-text'>在线视频</div>
+								<div className='advantage-course-grid flex justify-end'>
+									<img
+										src='https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee3544500b2dbf_icon-advantage-course-01-academy-template.svg'
+										alt=''
+										className='advantage-course-icon'
+									/>
+									<div className='ml-2 advantage-course-text'>
+										<Link to={`/chapters/${course.chapters[0].id}`}>
+											<Tooltip
+												title='点击查看章节视频'
+												placement='top'
+												followCursor
+												arrow
+											>
+												点击观看视频
+											</Tooltip>
+										</Link>
 									</div>
-									<div className='advantage-course-wrapper'>
+									{/* <div className='advantage-course-wrapper'>
 										<img
 											src='https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee3582430b2dc9_icon-advantage-course-02-academy-template.svg'
 											alt=''
@@ -85,7 +124,7 @@ const BoostSection = ({ course }: BoostSectionProps) => {
 											className='advantage-course-icon'
 										/>
 										<div className='advantage-course-text'>学习团队</div>
-									</div>
+									</div> */}
 								</div>
 								<a
 									href='/teacher/sophie-moore'
@@ -102,9 +141,12 @@ const BoostSection = ({ course }: BoostSectionProps) => {
 									</div>
 								</a>
 								<div className='spacer about-course'></div>
-								<div className='flex-1 ml-0 md:ml-[2rem] justify-start p-8 bg-white flex flex-col gap-3 h-min rounded-xl shadow-2xl'>
-									<h5 className='text-purple-700'>[ 课程章节 ]</h5>
-									{/* course chapter list */}
+								{/*
+								<div className='course-detail'>
+									{JSON.stringify(course, null, 4)}
+								</div>
+								 <div className='flex-1 min-w-64  ml-0 md:ml-[2rem] justify-start p-8 bg-white flex flex-col gap-3 h-min rounded-xl shadow-2xl'>
+									<h5 className='text-purple-700'>[ 课程 章节 ]</h5>
 									{course.chapters
 										?.sort(
 											(a: Chapter, b: Chapter) => a.order_index - b.order_index
@@ -113,7 +155,7 @@ const BoostSection = ({ course }: BoostSectionProps) => {
 											return (
 												<div
 													key={idx}
-													className='text-ellipsis truncate'
+													className='gsap-chapter text-ellipsis truncate'
 												>
 													<Link to={`/chapters/${chpt.id}`}>
 														<span>第{chpt.order_index + 1}章：</span>
@@ -122,7 +164,7 @@ const BoostSection = ({ course }: BoostSectionProps) => {
 												</div>
 											);
 										})}
-								</div>
+								</div> */}
 							</div>
 							<div className='spacer about-course'></div>
 						</div>
@@ -185,28 +227,38 @@ const BoostSection = ({ course }: BoostSectionProps) => {
 											</div>
 										</div>
 									</div>
-									<div className='spacer course-details'></div>
-									<div className='course-detail-wrapper'>
+									{/* <div className='course-detail-wrapper'>
 										<img
 											src='https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee3501350b2d88_icon-event-02-academy-template.svg'
 											alt=''
 											className='course-detail-icon standard-size'
 										/>
-										<div className='course-detail-text'>时长:&nbsp;</div>
+										 <div className='course-detail-text'>时长:&nbsp;</div>
 										<div className='course-detail-text strong'>
 											5小时 42分钟
-										</div>
-									</div>
+										</div> 
+									</div> */}
 									<div className='spacer course-details'></div>
-									<div className='course-detail-wrapper'>
-										<img
-											src='https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee3573f40b2d79_icon-course-detail-01-academy-template.svg'
-											alt=''
-											className='course-detail-icon'
-										/>
-										<div className='course-detail-text'>视频:&nbsp;</div>
-										<div className='course-detail-text strong'>67</div>
-									</div>
+									<Link to={`/chapters/${course.chapters[0].id}`}>
+										<Tooltip
+											title='点击查看章节视频'
+											placement='top'
+											followCursor
+											arrow
+										>
+											<div className='course-detail-wrapper'>
+												<img
+													src='https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee3573f40b2d79_icon-course-detail-01-academy-template.svg'
+													alt=''
+													className='course-detail-icon'
+												/>
+												<div className='course-detail-text'>视频:&nbsp;</div>
+												<div className='course-detail-text stron text-purple-700'>
+													{course.chapters?.length} 章节
+												</div>
+											</div>
+										</Tooltip>
+									</Link>
 									<div className='spacer course-details'></div>
 									<div className='course-detail-wrapper'>
 										<img
@@ -306,4 +358,4 @@ const BoostSection = ({ course }: BoostSectionProps) => {
 	);
 };
 
-export default BoostSection;
+export default CourseBoostSection;

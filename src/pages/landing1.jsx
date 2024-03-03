@@ -6,7 +6,6 @@
 
 import * as React from 'react';
 import { IoIosArrowRoundForward } from 'react-icons/io';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 import BoostSection from '../components/landing1/Boost';
 import BuildingBlock from '../components/landing1/Building';
@@ -16,16 +15,7 @@ import FractionSection from '../components/landing1/Fraction';
 import { Link } from 'gatsby';
 import Frame from '../components/frame';
 
-gsap.registerPlugin(ScrollTrigger);
-
 const scrollAnimation = () => {
-	ScrollTrigger.defaults({
-		start: 'top 70%',
-		end: 'top 45%',
-		toggleActions: 'play none none reset',
-		// markers: true,
-	});
-
 	gsap.from('.boost-your-website .explore-pages', {
 		scrollTrigger: {
 			trigger: '.boost-your-website',

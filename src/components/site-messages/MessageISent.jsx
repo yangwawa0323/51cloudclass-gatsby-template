@@ -1,6 +1,5 @@
 import {
 	Avatar,
-	Badge,
 	Card,
 	CardContent,
 	Grid,
@@ -11,8 +10,6 @@ import React from 'react';
 import { flexEnd } from '../utils/StyledMain';
 import { MoreOutlined } from '@mui/icons-material';
 import { EditOutlined } from '@mui/icons-material';
-import { useStateContext } from '../../contexts/ContextProvider';
-import { debugLog } from '51cloudclass-utilities/src/utils';
 import momentAgo from 'moment-ago';
 
 const MessageISent = ({ message }) => {

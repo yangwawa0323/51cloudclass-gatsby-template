@@ -1,5 +1,4 @@
-import { debugLog } from '51cloudclass-utilities/src/utils';
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
 const StateContext = createContext();
 
@@ -16,7 +15,6 @@ const StateContextProvider = ({ children, extraContext }) => {
 	const [friendId, setFriendId] = useState(0);
 
 	const debugSetFriendId = (fid) => {
-		debugLog('StateContextProvider Friend id :', fid);
 		setFriendId(fid);
 	};
 

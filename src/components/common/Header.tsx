@@ -27,7 +27,6 @@ import { globalContext } from '../../../wrap-with-provider';
 import { MenuButton, Dropdown, Menu } from '@mui/base';
 
 import { LoginForm } from '../common/Nav';
-import { debugLog } from '51cloudclass-utilities/src/utils';
 import {
 	MdOutlineEmail,
 	MdOutlineExpandLess,
@@ -157,7 +156,6 @@ const LoginIconsWrapper = () => {
 	const [showMenu, setShowMenu] = useState(false);
 
 	const toggleMenu = () => {
-		debugLog('click away');
 		setShowMenu((prev) => !prev);
 	};
 

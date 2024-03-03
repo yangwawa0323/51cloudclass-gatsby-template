@@ -9,18 +9,16 @@ import * as React from 'react';
 import Footer from '../common/Footer';
 import Navbar from '../common/Navbar';
 import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const animation = () => {
-	gsap.from('.entire-blog', {
+	const tl = gsap.timeline();
+	let tweenEntireBlog = gsap.from('.entire-blog', {
 		opacity: 0.8,
 		y: '+10%',
 		duration: 1.5,
 	});
 
-	gsap.from('.stay-in-the-loop-form', {
+	let tweenStayInTheLoopForm = gsap.from('.stay-in-the-loop-form', {
 		scrollTrigger: {
 			trigger: '.blogs-grid',
 			// scrub: 1,
@@ -34,13 +32,13 @@ const animation = () => {
 		y: '+60%',
 		opacity: 0,
 	});
+	tl.add(tweenEntireBlog);
+	tl.add(tweenStayInTheLoopForm);
 };
 
 const Blog2 = ({ pageContext }) => {
 	const { blogs } = pageContext;
 	const [firstBlog, ...remainings] = blogs;
-
-	ScrollTrigger.defaults({});
 
 	React.useEffect(() => {
 		animation();

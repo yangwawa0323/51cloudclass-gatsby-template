@@ -15,7 +15,6 @@ import { justifyAlignCenter } from '../utils/StyledMain';
 import { random } from '../../components/utils/random';
 
 import PropTypes from 'prop-types';
-import { debugLog } from '51cloudclass-utilities/src/utils';
 import { useStateContext } from '../../contexts/ContextProvider';
 import { useQueryClient } from '@tanstack/react-query';
 

@@ -3,9 +3,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useGlobalContext } from '../../../wrap-with-provider';
-import { easeIn } from '../../utils/animate';
 import AsciinemaEditor from '../asciinema/AsciinemaEditor';
-import { debugLog } from '51cloudclass-utilities/src/utils';
 import { useState } from 'react';
 import _ from 'lodash';
 

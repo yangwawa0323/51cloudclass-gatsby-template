@@ -5,6 +5,9 @@ import { useAuthenticate } from '../hooks';
 import { cleanTokenEtag, getAxios, getTokenEtag } from './tools';
 import NoEntryImage from '../assets/images/auth/no_entry.jpg';
 import { grey } from '@mui/material/colors';
+import { debugLog } from '51cloudclass-utilities/src/utils';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 // TODO: set the `url` to the valdateToken route
 const url = '';
@@ -40,10 +43,29 @@ export const RequiredPermission = ({ children }) => {
 	const navigator = useNavigate();
 	const { pathname } = location;
 	const [token, _] = getTokenEtag();
-	const { username } = decodeToken(token);
-	const data = useAuthenticate(username);
+	const [data, setData] = useState();
 
-	const filteredPolicies = data?.result?.policies?.filter((p) => {
+	/***********************************************
+	 * decodeToken function always catch an exception,
+	 * I try to modify the `react-jwt` source code
+	 */
+	useEffect(() => {
+		try {
+			if (token.length !== 0) {
+				const { username } =
+					token !== undefined && 'string' === typeof token
+						? decodeToken(token)
+						: { username: 'Guest' };
+			}
+			let data = useAuthenticate(username);
+			setData(data);
+		} catch (e) {
+			debugLog('decode token error: ', e);
+		}
+	}, [token]);
+
+	var filteredPolicies = [];
+	filteredPolicies = data?.result?.policies?.filter((p) => {
 		const regex = new RegExp(p.obj.replace('*', '.*'));
 		const matched = regex.test(pathname);
 

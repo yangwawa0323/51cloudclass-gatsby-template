@@ -1,34 +1,81 @@
 import React from 'react';
 
 import { useCallback } from 'react';
-import { utils } from '51cloudclass-utilities/dist';
 import { Link, graphql, useStaticQuery } from 'gatsby';
-import { easeIn } from '../../utils/animate';
-import gsap from 'gsap';
-import { Container } from '@mui/material';
 
-const { getAxios } = utils;
+import { useRef } from 'react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { debugLog } from '51cloudclass-utilities/src/utils';
+import { Button, styled } from '@mui/material';
+import { purple } from '@mui/material/colors';
 
 const Courses = () => {
-	React.useEffect(() => {
-		const tl = gsap.timeline();
-		// easeIn('.gsap-course-main-title', {}, tl);
-		easeIn('.course-grid', {}, tl);
-	}, []);
+	const tl = gsap.timeline();
 
-	// const axiosInstance = getAxios();
-	// const fetchCourses = async () => {
-	// 	const response = await axiosInstance.get(
-	// 		`${process.env.GATSBY_API_SERVER}/courses/`
-	// 	);
-	// 	return response.data;
-	// };
+	useGSAP(() => {
+		let cards = gsap.utils.toArray('.course-card');
+
+		let tween = gsap.fromTo(
+			cards[0],
+			{
+				opacity: 0,
+				x: -800,
+				y: 400,
+			},
+			{
+				opacity: 1,
+				x: 0,
+				y: 0,
+				scrollTrigger: {
+					trigger: `.gsap-title`,
+					scrub: true,
+					start: `top 80%`,
+					end: `top center`,
+					// toggleActions: 'restart pause reverse pause',
+					ease: 'none',
+				},
+			}
+		);
+		tl.add(tween);
+
+		cards
+			.filter((_, index) => {
+				return index !== 0;
+			})
+			.forEach((card, index) => {
+				let tweens = gsap.fromTo(
+					card,
+					{
+						opacity: 0,
+						x: index % 2 === 0 ? 400 : -400,
+						y: 400,
+					},
+					{
+						opacity: 1,
+						x: 0,
+						y: 0,
+						duration: 0.5,
+						scrollTrigger: {
+							trigger: `.course-card-${index}`,
+							// trigger: `.course-card-0`,
+							// markers: true,
+							scrub: true,
+							start: `top 80%`,
+							end: `bottom bottom`,
+							ease: 'none',
+						},
+					}
+				);
+				tl.add(tweens);
+			});
+	});
 
 	const data = useStaticQuery(graphql`
 		query {
 			allCourse(
-				limit: 12
-				sort: { id: DESC }
+				limit: 6
+				sort: { UpdatedAt: DESC }
 				filter: { is_shop: { eq: true } }
 			) {
 				nodes {
@@ -58,7 +105,7 @@ const Courses = () => {
 			<div className='min-w-[360px] mx-8 px-2 py-12 flex flex-col items-center'>
 				{/* <div className='course-main max-w-[680px]'> */}
 				<div className='w-3/5 flex flex-col gap-8 mb-12 justify-center items-center'>
-					<div>
+					<div className='gsap-title'>
 						<h2>精品课程</h2>
 					</div>
 					<div>
@@ -68,20 +115,25 @@ const Courses = () => {
 					</div>
 				</div>
 				{/* </div> */}
-				<div className='course-grid grid xs:grid-cols-1 md:grid-cols-[repeat(2,minmax(200px,1fr))] lg:grid-cols-3 xs:gap-2  gap-8 auto-rows-min h-min justify-center w-full'>
-					{courses.map((course) => {
+				<div className='pb-12'>
+					<ColorButton>
+						<Link to='/courses'>查看全部课程</Link>
+					</ColorButton>
+				</div>
+				<div className='course-grid grid xs:grid-cols-1 md:grid-cols-[repeat(3,minmax(200px,1fr))] lg:grid-cols-4 xs:gap-2  gap-8 auto-rows-min h-min justify-evenly w-full'>
+					{courses.map((course, index) => {
 						return (
 							<div
 								key={course.id}
-								className='cursor-pointer rounded-2xl overflow-hidden border-[2px] shadow-md hover:shadow-lg hover:scale-105 duration-500  h-full w-full place-self-start'
+								className={`course-card course-card-${index} cursor-pointer rounded-2xl overflow-hidden border-[2px] shadow-md hover:shadow-lg hover:scale-105 duration-500  h-full w-full place-self-start`}
 							>
 								<Link to={`/courses/`}>
-									<div className='max-[425px]:h-[120px] h-[334px]'>
+									<div className='max-[425px]:h-[80px] h-[180px]'>
 										<img
 											style={{
 												filter: offlined(course) ? 'grayscale(100%)' : 'unset',
 											}}
-											className='w-full h-full object-cover object-center opacity-80 shadow-md rounded-br-[80px]'
+											className='w-full h-full object-fill object-center opacity-80 shadow-md rounded-br-[80px]'
 											src={course.image}
 											alt={course.name}
 										/>
@@ -92,14 +144,19 @@ const Courses = () => {
 												{course.name} {offlined(course) ? '-- 即将上线' : ''}
 											</p>
 										</div>
-										<div>
+										{/* <div>
 											<p className='text-gray-600'>{course.description}</p>
-										</div>
+										</div> */}
 									</div>
 								</Link>
 							</div>
 						);
 					})}
+				</div>
+				<div className='pt-12'>
+					<ColorButton>
+						<Link to='/courses'>查看全部课程</Link>
+					</ColorButton>
 				</div>
 			</div>
 		</div>
@@ -107,3 +164,13 @@ const Courses = () => {
 };
 
 export default Courses;
+
+const ColorButton = styled(Button)(({ theme }) => ({
+	color: theme.palette.getContrastText(purple[500]),
+	backgroundColor: purple[500],
+	padding: '12px 30px',
+	fontWeight: 600,
+	'&:hover': {
+		backgroundColor: purple[700],
+	},
+}));

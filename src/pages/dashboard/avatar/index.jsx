@@ -1,15 +1,7 @@
 import React from 'react';
 import AvataaarOptions from '../../../components/avataaars/config';
-import {
-	Box,
-	FormControl,
-	InputLabel,
-	MenuItem,
-	Select,
-	Tab,
-} from '@mui/material';
+import { Box, Tab } from '@mui/material';
 import Tabs, { tabsClasses } from '@mui/material/Tabs';
-import { debugLog } from '51cloudclass-utilities/src/utils';
 import DashboardLayout from '../../../components/dashboard/DashboardLayout';
 import Avatar from 'avataaars';
 import { useGlobalContext } from '../../../../wrap-with-provider';

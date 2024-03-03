@@ -7,21 +7,11 @@
 import * as React from 'react';
 import { MdFmdGood } from 'react-icons/md';
 import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 import Frame from '../components/frame';
 import { Link } from 'gatsby';
 import { IoIosArrowForward } from 'react-icons/io';
 
-gsap.registerPlugin(ScrollTrigger);
-
 const scrollAnimation = () => {
-	ScrollTrigger.defaults({
-		start: 'top 70%',
-		end: 'top 45%',
-		toggleActions: 'play none none reset',
-		// markers: true,
-	});
-
 	gsap.from('.about-us', {
 		y: '+=30%',
 		opacity: 0.7,

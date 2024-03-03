@@ -5,10 +5,9 @@
  */
 
 import * as React from 'react';
-import { IoIosArrowRoundForward, IoIosArrowRoundBack } from 'react-icons/io';
+import { IoIosArrowRoundForward } from 'react-icons/io';
 
 import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 
 const sliderWrapperAnimation = () => {
 	const slider = document.querySelector('.slider-wrapper');
@@ -35,8 +34,6 @@ const OurSuccess = () => {
 	const [size, setSize] = React.useState(0);
 	const [aniCompleted, setAniCompleted] = React.useState(true);
 	const [images, setImages] = React.useState([]);
-
-	gsap.registerPlugin(ScrollTrigger);
 
 	React.useEffect(() => {
 		const images = document.querySelectorAll('.scrolling-slider img');
