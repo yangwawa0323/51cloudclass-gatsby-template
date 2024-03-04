@@ -78,9 +78,10 @@ const CourseMain = () => {
 
 	const lastUpdated = React.useCallback((dateStr: string) => {
 		debugLog('date string:', dateStr);
-		var now = new Date().getDate();
-		var updatedAt = new Date(dateStr).getDate();
-		return updatedAt - now < 1;
+		var now = new Date().getTime();
+		var updatedAt = new Date(dateStr).getTime();
+		// debugLog(updatedAt, now, (now - updatedAt) / (24 * 3600 * 1000) < 1);
+		return (now - updatedAt) / (24 * 3600 * 1000) < 1;
 	}, []);
 
 	// return <div>{JSON.stringify(data, null, 2)}</div>;
