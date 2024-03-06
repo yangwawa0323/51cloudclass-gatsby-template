@@ -16,6 +16,8 @@ import { Provider } from 'react-redux';
 import { tokenExample } from './src/components';
 import type { IUseJwt } from 'react-jwt/dist/hooks';
 import { StateContextProvider } from './src/contexts/ContextProvider';
+import { ThemeProvider, createTheme } from '@mui/material';
+import { debugLog } from '51cloudclass-utilities/src/utils';
 
 export const globalContext = createContext<any>(null);
 
@@ -93,6 +95,49 @@ const GlobalContextProvider = ({ children }: GlobalContextProps) => {
 	);
 };
 
+const theme = createTheme({
+	palette: {
+		text: {
+			light: 'white',
+		},
+	},
+	typography: {},
+	components: {
+		MuiCard: {
+			styleOverrides: {
+				root: ({ theme, ownerState }) => {
+					/**************************************************
+					 * ownerState.variant is customize attribute
+					 */
+					if (ownerState.variant === 'linear') {
+						return {
+							background: `linear-gradient(to left bottom, ${theme.palette.grey[600]} 6%, ${theme.palette.primary.dark} 90%)`,
+							color: `${theme.palette.background.paper}`,
+						};
+					}
+				},
+			},
+		},
+		MuiButton: {
+			styleOverrides: {
+				root: ({ theme, ownerState }) => {
+					return {
+						fontSize:
+							ownerState.size === 'extrasmall' ? '10px' : ownerState.size,
+						padding:
+							ownerState.size === 'extrasmall' ? '4px 6px' : ownerState.size,
+						color: ownerState.color,
+					};
+				},
+				// sizeSmall: {
+				// 	fontSize: '10px',
+				// 	padding: '4px 6px',
+				// },
+			},
+		},
+	},
+});
+
 // eslint-disable-next-line react/display-name,react/prop-types,import/no-anonymous-default-export
 export default ({ element }: { element: React.ReactNode }) => {
 	// Instantiating store in `wrapRootElement` handler ensures:
@@ -100,11 +145,13 @@ export default ({ element }: { element: React.ReactNode }) => {
 	//  - it will be called only once in browser, when React mounts
 	return (
 		<Provider store={store}>
-			<GlobalContextProvider>
-				<StateContextProvider>
-					<RootElement>{element} </RootElement>
-				</StateContextProvider>
-			</GlobalContextProvider>
+			<ThemeProvider theme={theme}>
+				<GlobalContextProvider>
+					<StateContextProvider>
+						<RootElement>{element} </RootElement>
+					</StateContextProvider>
+				</GlobalContextProvider>
+			</ThemeProvider>
 		</Provider>
 	);
 };

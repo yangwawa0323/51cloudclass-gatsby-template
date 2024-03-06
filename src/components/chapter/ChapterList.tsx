@@ -78,7 +78,15 @@ const ChapterList = () => {
 	return (
 		<div className='max-w-[440px] w-full mx-0 md:mx-3 grid grid-cols-1 grid-flow-row border-2 shadow-md rounded-xl py-8'>
 			<div className='flex flex-col justify-center items-center mb-8'>
-				<h5 className='text-purple-700'>[ 课程章节 ]</h5>
+				<h5 className='text-purple-700'>
+					本课程 共有 [ {chapters.length} ] 章节
+				</h5>
+				<Typography
+					variant='body2'
+					className='text-gray-500'
+				>
+					提示:请滚动查看章节
+				</Typography>
 			</div>
 			<SimpleBarScroll sx={{ maxHeight: 520 }}>
 				{/* TODO: */}

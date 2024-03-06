@@ -104,6 +104,9 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
+      react-draft-wysiwyg:
+        specifier: ^1.15.0
+        version: 1.15.0(draft-js@0.11.7)(immutable@4.3.5)(react-dom@18.2.0)(react@18.2.0)
       react-helmet:
         specifier: ^6.1.0
         version: 6.1.0(react@18.2.0)
@@ -177,6 +180,9 @@ importers:
       avataaars:
         specifier: ^2.0.0
         version: 2.0.0(react@18.2.0)
+      draft-js:
+        specifier: ^0.11.7
+        version: 0.11.7(react-dom@18.2.0)(react@18.2.0)
       gatsby-plugin-postcss:
         specifier: ^6.2.0
         version: 6.13.1(gatsby@5.13.3)(postcss@8.4.35)(typescript@5.3.3)(webpack@5.90.3)
@@ -6160,6 +6166,30 @@ packages:
     resolution: {integrity: sha512-IrPdXQsk2BbzvCBGBOTmmSH5SodmqZNt4ERAZDmW4CT+tL8VtvinqywuANaFu4bOMWki16nqf0e4oC0QIaDr/g==}
     engines: {node: '>=10'}
 
+  /draft-js@0.11.7(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-ne7yFfN4sEL82QPQEn80xnADR8/Q6ALVworbC5UOSzOvjffmYfFsr3xSZtxbIirti14R7Y33EZC5rivpLgIbsg==}
+    peerDependencies:
+      react: '>=0.14.0'
+      react-dom: '>=0.14.0'
+    dependencies:
+      fbjs: 2.0.0
+      immutable: 3.7.6
+      object-assign: 4.1.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    transitivePeerDependencies:
+      - encoding
+
+  /draftjs-utils@0.10.2(draft-js@0.11.7)(immutable@4.3.5):
+    resolution: {integrity: sha512-EstHqr3R3JVcilJrBaO/A+01GvwwKmC7e4TCjC7S94ZeMh4IVmf60OuQXtHHpwItK8C2JCi3iljgN5KHkJboUg==}
+    peerDependencies:
+      draft-js: ^0.11.x
+      immutable: 3.x.x || 4.x.x
+    dependencies:
+      draft-js: 0.11.7(react-dom@18.2.0)(react@18.2.0)
+      immutable: 4.3.5
+    dev: false
+
   /duplexer@0.1.2:
     resolution: {integrity: sha512-jtD6YG370ZCIi/9GTaJKQxWTZD045+4R4hTk/x1UyoqadyJ9x9CgSi1RlVDQF8U2sxLLSnFkCaMihqljHIWgMg==}
 
@@ -7073,6 +7103,20 @@ packages:
 
   /fbjs-css-vars@1.0.2:
     resolution: {integrity: sha512-b2XGFAFdWZWg0phtAWLHCk836A1Xann+I+Dgd3Gk64MHKZO44FfoD1KxyvbSh0qZsIoXQGGlVztIY+oitJPpRQ==}
+
+  /fbjs@2.0.0:
+    resolution: {integrity: sha512-8XA8ny9ifxrAWlyhAbexXcs3rRMtxWcs3M0lctLfB49jRDHiaxj+Mo0XxbwE7nKZYzgCFoq64FS+WFd4IycPPQ==}
+    dependencies:
+      core-js: 3.36.0
+      cross-fetch: 3.1.8
+      fbjs-css-vars: 1.0.2
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+      promise: 7.3.1
+      setimmediate: 1.0.5
+      ua-parser-js: 0.7.37
+    transitivePeerDependencies:
+      - encoding
 
   /fbjs@3.0.5:
     resolution: {integrity: sha512-ztsSx77JBtkuMrEypfhgc3cI0+0h+svqeie7xHbh1k/IKdcydnvadp/mUaGgjAOXQmQSxsqgaRhS3q9fy+1kxg==}
@@ -8451,6 +8495,16 @@ packages:
   /html-entities@2.4.0:
     resolution: {integrity: sha512-igBTJcNNNhvZFRtm8uA6xMY6xYleeDwn3PeBCkDz7tHttv4F2hsDI2aPgNERWzvRcNYHNT3ymRaQzllmXj4YsQ==}
 
+  /html-to-draftjs@1.5.0(draft-js@0.11.7)(immutable@4.3.5):
+    resolution: {integrity: sha512-kggLXBNciKDwKf+KYsuE+V5gw4dZ7nHyGMX9m0wy7urzWjKGWyNFetmArRLvRV0VrxKN70WylFsJvMTJx02OBQ==}
+    peerDependencies:
+      draft-js: ^0.10.x || ^0.11.x
+      immutable: 3.x.x || 4.x.x
+    dependencies:
+      draft-js: 0.11.7(react-dom@18.2.0)(react@18.2.0)
+      immutable: 4.3.5
+    dev: false
+
   /htmlparser2@6.1.0:
     resolution: {integrity: sha512-gyyPk6rgonLFEDGoeRgQNaEUvdJ4ktTmmUh/h2t7s+M8oPpIPxgNACWa+6ESR57kXstwqPiCut0V8NRpcwgU7A==}
     dependencies:
@@ -9357,6 +9411,12 @@ packages:
 
   /linkfs@2.1.0:
     resolution: {integrity: sha512-kmsGcmpvjStZ0ATjuHycBujtNnXiZR28BTivEu0gAMDTT7GEyodcK6zSRtu6xsrdorrPZEIN380x7BD7xEYkew==}
+
+  /linkify-it@2.2.0:
+    resolution: {integrity: sha512-GnAl/knGn+i1U/wjBz3akz2stz+HrHLsxMwHQGofCDfPvlf+gDKN58UtfmUquTY4/MXeE2x7k19KQmeoZi94Iw==}
+    dependencies:
+      uc.micro: 1.0.6
+    dev: false
 
   /lmdb@2.5.2:
     resolution: {integrity: sha512-V5V5Xa2Hp9i2XsbDALkBTeHXnBXh/lEmk9p22zdr7jtuOIY9TGhjK6vAvTpOOx9IKU4hJkRWZxn/HsvR1ELLtA==}
@@ -11829,6 +11889,25 @@ packages:
       react: 18.2.0
       scheduler: 0.23.0
 
+  /react-draft-wysiwyg@1.15.0(draft-js@0.11.7)(immutable@4.3.5)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-p1cYZcWc6/ALFBVksbFoCM3b29fGQDlZLIMrXng0TU/UElxIOF2/AWWo4L5auIYVhmqKTZ0NkNjnXOzGGuxyeA==}
+    peerDependencies:
+      draft-js: ^0.10.x || ^0.11.x
+      immutable: 3.x.x || 4.x.x
+      react: 0.13.x || 0.14.x || ^15.0.0-0 || 15.x.x || ^16.0.0-0 || ^16.x.x || ^17.x.x || ^18.x.x
+      react-dom: 0.13.x || 0.14.x || ^15.0.0-0 || 15.x.x || ^16.0.0-0 || ^16.x.x || ^17.x.x || ^18.x.x
+    dependencies:
+      classnames: 2.5.1
+      draft-js: 0.11.7(react-dom@18.2.0)(react@18.2.0)
+      draftjs-utils: 0.10.2(draft-js@0.11.7)(immutable@4.3.5)
+      html-to-draftjs: 1.5.0(draft-js@0.11.7)(immutable@4.3.5)
+      immutable: 4.3.5
+      linkify-it: 2.2.0
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
   /react-draggable@4.4.5(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-OMHzJdyJbYTZo4uQE393fHcqqPYsEtkjfMgvCHr6rejT+Ezn4OZbNyGH50vv+SunC1RMvwOTSWkEODQLzw1M9g==}
     peerDependencies:
@@ -13939,8 +14018,15 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
+  /ua-parser-js@0.7.37:
+    resolution: {integrity: sha512-xV8kqRKM+jhMvcHWUKthV9fNebIzrNy//2O9ZwWcfiBFR5f25XVZPLlEajk/sf3Ra15V92isyQqnIEXRDaZWEA==}
+
   /ua-parser-js@1.0.37:
     resolution: {integrity: sha512-bhTyI94tZofjo+Dn8SN6Zv8nBDvyXTymAdM3LDI/0IboIUwTu1rEhW7v2TfiVsoYWgkQ4kOVqnI8APUFbIQIFQ==}
+
+  /uc.micro@1.0.6:
+    resolution: {integrity: sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA==}
+    dev: false
 
   /unbox-primitive@1.0.2:
     resolution: {integrity: sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==}

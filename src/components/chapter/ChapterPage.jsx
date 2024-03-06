@@ -19,7 +19,6 @@ import {
 	FormLabel,
 	Radio,
 	RadioGroup,
-	Snackbar,
 	Tooltip,
 	Typography,
 } from '@mui/material';
@@ -29,6 +28,8 @@ import { useState } from 'react';
 import SEO from '../seo';
 import Loading from '../Loading';
 import ChapterList from './ChapterList';
+import Feedback from '../feedback/Feedback';
+import { useMySnackbar } from '../utils/Snackbar';
 
 const axiosInstance = getAxios();
 
@@ -60,17 +61,9 @@ export const query = graphql`
 `;
 
 const ChapterPage = (props) => {
-	// React.useEffect(() => {
-	// animation();
-	// gsap.config({ nullTargetWarn: false })
-	// const tl = gsap.timeline();
-	// easeIn('.gsap-boot-section', {}, tl);
-	// easeIn('.gsap-course-name-div', {}, tl);
-	// easeIn('.gsap-home-hero-left', {}, tl);
-	// easeIn('.gsap-home-hero-right', { delay: 0.5 }, tl);
-	// }, []);
 	const { data, path } = props;
-	const [alert, setAlert] = useState(false);
+
+	const { setOpen, setAlertMessage, snackbar } = useMySnackbar();
 	const { me, clickedFriend, setClickedFriend, setChapter, setChapters } =
 		useGlobalContext();
 	const [joinMessage, setJoinMessage] = useState();
@@ -85,7 +78,8 @@ const ChapterPage = (props) => {
 	const postJoinMessage = () => {
 		let url = `${process.env.GATSBY_API_SERVER}/messages/friend-join`;
 		axiosInstance.post(url, joinMessage).catch((err) => {
-			setAlert(true);
+			setAlertMessage('你已经发送添加好友短信，请等待对方确认');
+			setOpen(true);
 		});
 		setClickedFriend(null);
 	};
@@ -275,25 +269,16 @@ const ChapterPage = (props) => {
 						<ChapterList />
 					</div>
 				</div>
-				{/* 
-					<div className='py-[120px] gsap-relative'>
-						<Relative />
-					</div> 
-					*/}
+
+				<div>
+					<Feedback
+						// toolbarHidden
+						toolbarClassName='!bg-transparent'
+						editorClassName='shadow bg-white rounded-lg border-2 min-h-40 px-2 py-0'
+					/>
+				</div>
+				{snackbar}
 			</div>
-			<Snackbar
-				open={alert}
-				anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-				autoHideDuration={4000}
-				onClose={() => setAlert(false)}
-			>
-				<Alert
-					variant='filled'
-					severity='warning'
-				>
-					你已经发送添加好友短信，请等待对方确认
-				</Alert>
-			</Snackbar>
 		</Frame>
 	);
 };
