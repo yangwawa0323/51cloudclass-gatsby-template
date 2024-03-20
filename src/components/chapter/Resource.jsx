@@ -1,25 +1,31 @@
 /** @format */
 
 import { Box, Typography } from '@mui/material';
-import React, { useContext } from 'react';
-import { ChapterContext } from './ChapterContextProvider';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
-import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
+import React from 'react';
+import { AiFillGithub } from 'react-icons/ai';
+import { IoCloudDownloadOutline } from 'react-icons/io5';
 import { Link } from 'gatsby';
+import { MdOutlineDirections } from 'react-icons/md';
+import { useGlobalContext } from '../../../wrap-with-provider';
 
 const Resource = () => {
-	const { chapter } = useContext(ChapterContext);
+	/***********************************************************************
+	 * get single chapter from global chapter
+	 *
+	 ***********************************************************************/
+	const { chapter } = useGlobalContext();
+
 	return (
-		<Box className='text-gray-600  rounded-xl border-2  p-4 mb-8'>
+		<Box className='text-gray-600  rounded-xl border-2 p-4 mb-8'>
 			<Typography className='text-purple-600 text-center font-semibold'>
 				课件和实验资源
 			</Typography>
 			{chapter.github_resource?.length > 0 && (
 				<Box className='p-6 flex flex-col items-end gap-2  cursor-pointer'>
 					<Box className='flex flex-row gap-2 items-center justify-center'>
-						<GitHubIcon fontSize='large' />
-						<Link to={chapter.github_resource}
+						<AiFillGithub fontSize='large' />
+						<Link
+							to={chapter.github_resource}
 							target='_blank'
 							rel='noreferrer'
 						>
@@ -33,7 +39,7 @@ const Resource = () => {
 			)}
 			{chapter.online_running_code?.length > 0 && (
 				<Box>
-					<DirectionsRunIcon />
+					<MdOutlineDirections />
 					<p className='break-words text-center'>
 						{chapter.online_running_code}
 					</p>
@@ -41,7 +47,7 @@ const Resource = () => {
 			)}
 			{chapter.download_resource?.length > 0 && (
 				<Box>
-					<CloudDownloadIcon />
+					<IoCloudDownloadOutline />
 					<p className='break-words text-center'>{chapter.download_resource}</p>
 				</Box>
 			)}

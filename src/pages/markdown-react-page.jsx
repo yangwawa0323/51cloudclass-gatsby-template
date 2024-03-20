@@ -1,22 +1,20 @@
-import React from 'react'
-import AsciinemaEditor from '../components/asciinema/AsciinemaEditor'
+import React from 'react';
+import AsciinemaEditor from '../components/asciinema/AsciinemaEditor';
+import '../styles/pages/_reactpage.scss';
 
-import Frame from '../components/frame'
+import Frame from '../components/frame';
 
 const MarkdownReactPage = () => {
-    return (
+	return (
+		<Frame>
+			<div className='flex flex-col gap-8'>
+				<div>MarkdownReactPage</div>
+				<div>
+					<AsciinemaEditor />
+				</div>
+			</div>
+		</Frame>
+	);
+};
 
-        <Frame >
-
-            <div className="flex flex-col gap-8">
-
-                <div>MarkdownReactPage</div>
-                <div>
-                    <AsciinemaEditor />
-                </div>
-            </div>
-        </Frame>
-    )
-}
-
-export default MarkdownReactPage
+export default MarkdownReactPage;

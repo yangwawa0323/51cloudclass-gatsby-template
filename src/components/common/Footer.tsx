@@ -32,7 +32,7 @@ const Footer = (props: FooterProps) => {
 								</div>
 							</Link>
 						</div>
-						<div className='w-full flex flex-wrap lg:justify-around gap-10'>
+						<div className='hidden w-full md:flex flex-wrap lg:justify-around gap-10'>
 							<div className='flex flex-col gap-1.5 flex-1 h-min overflow-hidden min-w-[200px]'>
 								<div>
 									<p className='font-bold text-white'>首页</p>
@@ -82,20 +82,19 @@ const Footer = (props: FooterProps) => {
 										<Link to='/styleguide'>样式指南</Link>
 									</p>
 								</div>
-								<div>
-									<p>
-										<Link to='/test-visitor'>测试浏览历史记录功能</Link>
-									</p>
-								</div>
 							</div>
 						</div>
-						<div>
+						<div className='flex gap-10 justify-center'>
 							<div>
 								<p className='text-[11px]'>
 									<a href='https://www.51cloudclass.com/'>
-										© 版权隶属于 <strong>51cloudclass</strong> 云课堂科技
+										© 版权隶属于 <strong>51cloudclass.com 5117xue.com</strong>{' '}
+										云课堂科技
 									</a>
 								</p>
+							</div>
+							<div>
+								<p className='font-semibold text-sm'>湘ICP备2000700号-1</p>
 							</div>
 						</div>
 					</div>

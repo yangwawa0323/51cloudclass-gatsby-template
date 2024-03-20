@@ -5,7 +5,7 @@ import * as React from 'react';
 // move the index.scss to navbar.js, otherwise by input the page URI
 // has not style defined.
 
-// import '../styles/index.scss';
+import '../styles/index.scss';
 
 import ThreeCards from '../components/index/ThreeCards';
 import CompleteToolkit from '../components/index/CompleteToolkit';
@@ -17,6 +17,7 @@ import FractionSection from '../components/index/Fraction';
 // import { useSelector } from 'react-redux';
 import Courses from '../components/index/course';
 import Frame from '../components/frame';
+import SEO from '../components/seo';
 
 function Index() {
 	// const account = useSelector((state) => state.account);
@@ -34,7 +35,7 @@ function Index() {
 					<Courses />
 				</div>
 
-				<div className='px-12 py-24 flex flex-col justify-center items-center gap-20 completed-toolkit'>
+				<div className='px-2 py-8 md:py-24 flex flex-col justify-center items-center gap-20 completed-toolkit'>
 					{/* Complete toolkit  */}
 					<CompleteToolkit />
 
@@ -43,7 +44,7 @@ function Index() {
 				</div>
 				<div
 					id='pages'
-					className='px-12 pb-24 w-full justify-center flex'
+					className='hidden lg:flex px-12 pb-24 w-full justify-center '
 				>
 					{/* Completed pages */}
 					<CompletedPages />
@@ -70,3 +71,5 @@ function Index() {
 }
 
 export default Index;
+
+export const Head = () => <SEO />;

@@ -21,8 +21,8 @@ import { toast } from 'react-toastify';
 import { saveToLocalStorage } from '51cloudclass-utilities/src/account';
 import { useContext } from 'react';
 import { globalContext } from '../../../wrap-with-provider';
-
-
+import { Typography } from '@mui/material';
+import { grey, purple } from '@mui/material/colors';
 
 const { getAxios } = utils;
 
@@ -37,16 +37,14 @@ const BoostSection = () => {
 	const { isLogin, setIsLogin } = useContext(globalContext);
 
 	const isPartialData = React.useCallback(() => {
-		return formData.email.trim() === '' || formData.password.trim() === ''
-	}, [formData])
-
-
+		return formData.email.trim() === '' || formData.password.trim() === '';
+	}, [formData.email, formData.password]);
 
 	React.useEffect(() => {
 		const tl = gsap.timeline();
 		easeIn('.gsap-boot-right', {}, tl);
 		easeIn('.gsap-boot-left', {}, tl);
-	}, [])
+	}, []);
 
 	const dispatch = useDispatch();
 
@@ -59,13 +57,13 @@ const BoostSection = () => {
 				formData
 			);
 			const data = await response.data;
-			dispatch(login(data))
-			saveToLocalStorage(data)
+			dispatch(login(data));
+			saveToLocalStorage(data);
 			setIsLogin(true);
-			setTimeout(() => navigate(-1), 500)
+			setTimeout(() => navigate(-1), 500);
 		} catch (e) {
 			toast(`登录失败:
-			 ${e.response?.data?.message}`)
+			 ${e.response?.data?.message}`);
 		}
 	};
 
@@ -84,7 +82,7 @@ const BoostSection = () => {
 	};
 	return (
 		<div
-			className='landing4-boost-section xs:px-8 md:px-8 p-24 justify-center items-center flex flex-col gap-24 h-min overflow-hidden relative'
+			className='w-full landing4-boost-section p-4 xs:px-8 md:px-8  justify-center items-center flex flex-col gap-24 h-min overflow-hidden relative'
 			style={{
 				background:
 					'radial-gradient(72.6% 84% at 100% 100%, #b09eff 0%, rgb(255, 255, 255)  100%)',
@@ -111,9 +109,23 @@ const BoostSection = () => {
 						</p>
 					</div>
 				</div>
-				<div className='gsap-boot-right flex-1 justify-start w-4/5 p-8 bg-white flex flex-col gap-6 h-min rounded-xl shadow-2xl'>
+				<div className='gsap-boot-right flex-1 justify-start w-full p-8 bg-white flex flex-col gap-6 h-min rounded-xl shadow-2xl'>
 					<div>
 						<h4>51元包月学习</h4>
+					</div>
+					<div>
+						<Typography
+							color={grey[600]}
+							variant='h5'
+						>
+							网站测试阶段，暂不提供注册，请使用全免费测试账户登录
+						</Typography>
+						<Typography
+							variant='h5'
+							color={purple[600]}
+						>
+							账户: test08@163.com 密码: 123456789
+						</Typography>
 					</div>
 					<div>
 						<div>
@@ -174,18 +186,6 @@ const BoostSection = () => {
 								imageRendering: 'pixelated',
 							}}
 							className='h-12 w-12 object-cover opacity-60 hover:opacity-80'
-							src={FourKLogo}
-						/>
-					</div>
-					<div>
-						<img
-							alt=''
-							style={{
-								fill: 'rgb(163, 161, 184)',
-								stroke: 'rgb(163, 161, 184)',
-								imageRendering: 'pixelated',
-							}}
-							className='h-12 w-12 object-cover opacity-60 hover:opacity-80'
 							src={LinuxLogo}
 						/>
 					</div>
@@ -213,18 +213,7 @@ const BoostSection = () => {
 							src={GoLangLogo}
 						/>
 					</div>
-					<div>
-						<img
-							alt=''
-							style={{
-								fill: 'rgb(163, 161, 184)',
-								stroke: 'rgb(163, 161, 184)',
-								imageRendering: 'pixelated',
-							}}
-							className='h-12 w-12 object-cover opacity-60 hover:opacity-80'
-							src={GitLogo}
-						/>
-					</div>
+
 					<div>
 						<img
 							alt=''

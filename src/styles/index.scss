@@ -6,6 +6,7 @@
 @import 'theme';
 
 // @import 'hiq/dist/hiq.min.css';
+
 // @import './components/header';
 // @import './components/navbar';
 @import './components/doc-content';
@@ -20,11 +21,13 @@
 @import './components/boost';
 @import './components/plan';
 // @import './components/asciinema';
+@import './components/draftjs';
 
 @import './pages/login';
 @import './pages/create-account';
 @import './pages/app';
 @import './pages/styleguide';
+// @import './pages/dashboard-sidebar';
 
 @import './pages/warning';
 // @import './pages/footer';

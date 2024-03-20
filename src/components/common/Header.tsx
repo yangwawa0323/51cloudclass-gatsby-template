@@ -1,37 +1,40 @@
 /** @format */
 
 import React, { useState } from 'react';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import { ClickAwayListener } from '@mui/base';
 import Nav from './Nav';
 import { Link, navigate } from 'gatsby';
 
 import Logo from '../../assets/img/CloudClass-8_adobe_express.svg';
 import {
-	EmailOutlined,
-	MenuOpenOutlined,
-	MenuOutlined,
-	MessageOutlined,
-} from '@mui/icons-material';
-import {
 	Avatar,
 	Badge,
 	Button,
 	IconButton,
+	Tooltip,
 	useMediaQuery,
 } from '@mui/material';
 import { useContext } from 'react';
 import { useTheme } from '@mui/material/styles';
 import HeaderContextProvider, { HeaderContext } from './HeaderContentProvider';
 import { useCallback } from 'react';
-import VideoLibraryOutlinedIcon from '@mui/icons-material/VideoLibraryOutlined';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useSelector } from 'react-redux';
 import { getAccount } from '51cloudclass-utilities/src/account';
 import { isBrowser } from '51cloudclass-utilities/src/net';
 import { globalContext } from '../../../wrap-with-provider';
+import { MenuButton, Dropdown, Menu } from '@mui/base';
+
+import { LoginForm } from '../common/Nav';
+import {
+	MdOutlineEmail,
+	MdOutlineExpandLess,
+	MdOutlineExpandMore,
+	MdOutlineMenu,
+	MdOutlineMenuOpen,
+	MdOutlineVideoLibrary,
+} from 'react-icons/md';
 
 const navMenuStyles = {
 	expanded: {
@@ -66,7 +69,7 @@ const Navigation = ({ resolution }: NavProps) => {
 						: 'nothing'
 				],
 			}}
-			className='nav-menu md:ml-60  w-nav-menu items-center justify-center'
+			className='nav-menu md:ml-60 w-nav-menu flex md:justify-center md:items-center'
 		>
 			<Link
 				to='/'
@@ -87,7 +90,11 @@ const Navigation = ({ resolution }: NavProps) => {
 					<div className='nav-link flex items-center'>
 						页面&nbsp;&nbsp;
 						<span className='dropdown-icon'>
-							{showMenu.submenu1 ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+							{showMenu.submenu1 ? (
+								<MdOutlineExpandLess className='text-lg' />
+							) : (
+								<MdOutlineExpandMore className='text-lg' />
+							)}
 						</span>
 					</div>
 				</div>
@@ -110,7 +117,11 @@ const Navigation = ({ resolution }: NavProps) => {
 					<div className='nav-link flex items-center'>
 						课程&nbsp;&nbsp;
 						<span className='dropdown-icon'>
-							{showMenu.submenu2 ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+							{showMenu.submenu2 ? (
+								<MdOutlineExpandLess className='text-lg' />
+							) : (
+								<MdOutlineExpandMore className='text-lg' />
+							)}
 						</span>
 					</div>
 				</div>
@@ -142,8 +153,13 @@ const LoginIconsWrapper = () => {
 			state.auth.account?.avatar
 	);
 
-	const { toggleMenu, showMenu, geMedium, badgeNumber } =
-		useContext(HeaderContext);
+	const [showMenu, setShowMenu] = useState(false);
+
+	const toggleMenu = () => {
+		setShowMenu((prev) => !prev);
+	};
+
+	const { badgeNumber } = useContext(HeaderContext);
 
 	const { isExpired, isLogin } = useContext(globalContext);
 
@@ -151,52 +167,66 @@ const LoginIconsWrapper = () => {
 		navigate('/login');
 	};
 
-	if (isLogin && !isExpired) {
-		return (
-			<div className='flex header-right  gap-4 items-baseline relative'>
-				<Badge
-					badgeContent={9}
-					color='warning'
-				>
-					<EmailOutlined className='text-[32px] cursor-pointer' />
-				</Badge>
-				<Badge
-					badgeContent={badgeNumber}
-					color='primary'
-				>
-					<MessageOutlined className='text-[32px] cursor-pointer' />
-				</Badge>
-				{/* <Badge badgeContent={badgeNumber} color="warning"> */}
-				<Avatar
-					src={reduxAvatar || getAccount()?.avatar}
-					data-trigger-target='loginform'
-					className='cursor-pointer'
-					onClick={toggleMenu}
-				/>
-				{/* </Badge> */}
-
-				<Nav
+	return (
+		(isLogin && !isExpired && (
+			<ClickAwayListener onClickAway={() => setShowMenu(false)}>
+				<div className='flex self-end gap-4 items-center mr-4'>
+					<Link to='/dashboard/main/message'>
+						<Tooltip
+							title='站内短信'
+							arrow
+							placement='left-end'
+						>
+							<Badge
+								badgeContent={badgeNumber}
+								color='primary'
+							>
+								<MdOutlineEmail className='cursor-pointer' />
+							</Badge>
+						</Tooltip>
+					</Link>
+					<Dropdown
+						open={showMenu}
+						onOpenChange={toggleMenu}
+					>
+						<MenuButton>
+							<Tooltip
+								title='控制面板'
+								arrow
+								placement='right-end'
+							>
+								<Avatar
+									// onClick={toggleMenu}
+									src={reduxAvatar || getAccount()?.avatar}
+									className='cursor-pointer'
+								/>
+							</Tooltip>
+						</MenuButton>
+						<Menu className='relative z-50 transition-all duration-500'>
+							<LoginForm />
+						</Menu>
+					</Dropdown>
+					{/* <Nav
 					id='loginform'
 					showUp={showMenu.loginform && geMedium}
 					submenu='loginform'
-				/>
-			</div>
-		);
-	} else {
-		return (
+				/> */}
+				</div>
+			</ClickAwayListener>
+		)) || (
 			<div className='flex login-button header-right  gap-4 items-center relative'>
 				<Button
-					className='bg-purple-600'
-					size='large'
+					className='bg-purple-600 text-sm'
+					size='medium'
 					variant='contained'
 					onClick={gotoLoginPage}
-					endIcon={<VideoLibraryOutlinedIcon />}
+					endIcon={<MdOutlineVideoLibrary className='text-lg' />}
 				>
 					登录
 				</Button>
 			</div>
-		);
-	}
+		)
+	);
 };
 
 const initMenuState: { [key: string]: boolean } = {
@@ -280,17 +310,16 @@ const Header = () => {
 									)}
 								</div>
 
-								<div className='flex justify-end items-end'>
-									<LoginIconsWrapper />
-
+								<div className='flex justify-between ml-10 gap-4 w-full'>
 									{ltMedium && (
 										<IconButton
-											className='hamburger flex'
+											className='hamburger flex text-lg'
 											onClick={toggleCollapse}
 										>
-											{collapsed ? <MenuOutlined /> : <MenuOpenOutlined />}
+											{collapsed ? <MdOutlineMenu /> : <MdOutlineMenuOpen />}
 										</IconButton>
 									)}
+									<LoginIconsWrapper />
 								</div>
 							</div>
 						</div>

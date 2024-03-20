@@ -1,25 +1,27 @@
 /** @format */
 
-import React, { useState, useEffect } from 'react';
-import { useContext } from 'react';
-import { ChapterContext } from './ChapterContextProvider';
+import { useState, useEffect } from 'react';
+import { useGlobalContext } from '../../../wrap-with-provider';
 
 const BootSection = () => {
 	const [description, setDescription] = useState<{ __html: string }>();
 
-	const { chapter } = useContext(ChapterContext);
+	/*******************************************************************
+	 * get single chapter from gloabl context
+	 *******************************************************************/
+	const { chapter } = useGlobalContext();
 
 	useEffect(() => {
 		const pContent = document.querySelectorAll(
 			'.react-page-row .react-page-cell p'
-		)[0].innerHTML;
-		// debugLog('p element', p.innerHTML);
-		setDescription({
-			__html:
-				pContent.length >= 60
-					? [...pContent].slice(0, 60).join('') + '...'
-					: pContent,
-		});
+		)[0]?.innerHTML;
+		pContent &&
+			setDescription({
+				__html:
+					pContent.length >= 60
+						? [...pContent].slice(0, 60).join('') + '...'
+						: pContent,
+			});
 	}, []);
 
 	return (
@@ -27,12 +29,10 @@ const BootSection = () => {
 			<div
 				style={{
 					backgroundColor: 'rgb(239, 243, 250)',
-					color: 'rgb(95, 104, 122)',
 					fontSize: '16px',
 					lineHeight: '26px',
 					outlineColor: 'rgb(95, 104, 122)',
-					overflowX: 'hidden',
-					overflowY: 'hidden',
+
 					paddingBlockStart: '16px',
 					paddingTop: '16px',
 					right: '0px',
@@ -42,9 +42,6 @@ const BootSection = () => {
 			>
 				<div
 					style={{
-						// blockSize: '543.734px',
-						boxSizing: 'border-box',
-						color: 'rgb(95, 104, 122)',
 						fontFamily: 'Onest, sans-serif',
 						fontSize: '16px',
 						lineHeight: '26px',
@@ -60,8 +57,6 @@ const BootSection = () => {
 							alignItems: 'center',
 							blockSize: '543.734px',
 							boxSizing: 'border-box',
-							caretColor: 'rgb(95, 104, 122)',
-							color: 'rgb(95, 104, 122)',
 							columnGap: '64px',
 							columnRuleColor: 'rgb(95, 104, 122)',
 							fontFamily: 'Onest, sans-serif',
@@ -76,13 +71,12 @@ const BootSection = () => {
 							rowGap: '28px',
 						}}
 						className={
-							'flex md:grid justify-center md:grid-cols-[424.5px 707.5px]  md:grid-cols-2 auto-cols-auto home-hero-grid'
+							'hidden lg:grid justify-center md:grid-cols-[424.5px 707.5px]  md:grid-cols-2 auto-cols-auto home-hero-grid'
 						}
 					>
 						<div
 							className='gsap-course-name-div'
 							style={{
-								color: 'rgb(95, 104, 122)',
 								fontSize: '16px',
 								gridColumnEnd: 'span 1',
 								gridColumnStart: 'span 1',
@@ -99,33 +93,14 @@ const BootSection = () => {
 								minInlineSize: 'auto',
 								minWidth: 'auto',
 								outlineColor: 'rgb(95, 104, 122)',
-								textDecoration: 'none solid rgb(95, 104, 122)',
-								textDecorationColor: 'rgb(95, 104, 122)',
-								textEmphasisColor: 'rgb(95, 104, 122)',
 								textSizeAdjust: '100%',
 								transform: 'matrix(1, 0, 0, 1, 0, 0)',
 								transformOrigin: '207.5px 161.906px',
 								transformStyle: 'preserve-3d',
-								WebkitTextFillColor: 'rgb(95, 104, 122)',
-								WebkitTextStrokeColor: 'rgb(95, 104, 122)',
 							}}
 						>
 							<h1
 								style={{
-									blockSize: '168.047px',
-									borderBlockEndColor: 'rgb(28, 31, 35)',
-									borderBlockStartColor: 'rgb(28, 31, 35)',
-									borderBottomColor: 'rgb(28, 31, 35)',
-									borderInlineEndColor: 'rgb(28, 31, 35)',
-									borderInlineStartColor: 'rgb(28, 31, 35)',
-									borderLeftColor: 'rgb(28, 31, 35)',
-									borderRightColor: 'rgb(28, 31, 35)',
-									borderTopColor: 'rgb(28, 31, 35)',
-									boxSizing: 'border-box',
-									caretColor: 'rgb(28, 31, 35)',
-									color: 'rgb(28, 31, 35)',
-									columnRuleColor: 'rgb(28, 31, 35)',
-									fontFamily: 'Onest, sans-serif',
 									fontSize: '48px',
 									inlineSize: '415px',
 									lineHeight: '56.016px',
@@ -133,7 +108,7 @@ const BootSection = () => {
 									marginBlockStart: '0px',
 									marginBottom: '12px',
 								}}
-								className='mb-4'
+								className='mb-4 text-gray-600'
 							>
 								{chapter.name}
 							</h1>
@@ -149,7 +124,6 @@ const BootSection = () => {
 									borderRightColor: 'rgb(95, 104, 122)',
 									borderTopColor: 'rgb(95, 104, 122)',
 									boxSizing: 'border-box',
-									caretColor: 'rgb(95, 104, 122)',
 									color: 'rgb(95, 104, 122)',
 									columnRuleColor: 'rgb(95, 104, 122)',
 									fontFamily: 'Onest, sans-serif',
@@ -167,203 +141,17 @@ const BootSection = () => {
 									textDecorationColor: 'rgb(95, 104, 122)',
 									textEmphasisColor: 'rgb(95, 104, 122)',
 									textSizeAdjust: '100%',
-									WebkitTextFillColor: 'rgb(95, 104, 122)',
-									WebkitTextStrokeColor: 'rgb(95, 104, 122)',
 								}}
 								className='mb-8 text-ellipsis'
 								dangerouslySetInnerHTML={description}
 							></p>
-							<div
-								style={{
-									alignItems: 'center',
-									blockSize: '59.7656px',
-
-									caretColor: 'rgb(95, 104, 122)',
-									color: 'rgb(95, 104, 122)',
-									columnRuleColor: 'rgb(95, 104, 122)',
-									display: 'flex',
-									fontFamily: 'Onest, sans-serif',
-									fontSize: '16px',
-									inlineSize: '415px',
-									lineHeight: '26px',
-									marginLeft: 0,
-									marginRight: 0,
-									outlineColor: 'rgb(95, 104, 122)',
-									textDecoration: 'none solid rgb(95, 104, 122)',
-									textDecorationColor: 'rgb(95, 104, 122)',
-									textEmphasisColor: 'rgb(95, 104, 122)',
-									textSizeAdjust: '100%',
-									WebkitTextFillColor: 'rgb(95, 104, 122)',
-									WebkitTextStrokeColor: 'rgb(95, 104, 122)',
-								}}
-								className={'buttons-row'}
-							>
-								<a
-									style={{
-										backgroundColor: 'rgb(0, 93, 255)',
-										blockSize: '59.7656px',
-										borderBlockEndColor: 'rgb(0, 93, 255)',
-										borderBlockEndStyle: 'solid',
-										borderBlockEndWidth: '1px',
-										borderBlockStartColor: 'rgb(0, 93, 255)',
-										borderBlockStartStyle: 'solid',
-										borderBlockStartWidth: '1px',
-										borderBottomColor: 'rgb(0, 93, 255)',
-										borderBottomLeftRadius: '48px',
-										borderBottomRightRadius: '48px',
-										borderBottomStyle: 'solid',
-										borderBottomWidth: '1px',
-										borderEndEndRadius: '48px',
-										borderEndStartRadius: '48px',
-										borderInlineEndColor: 'rgb(0, 93, 255)',
-										borderInlineEndStyle: 'solid',
-										borderInlineEndWidth: '1px',
-										borderInlineStartColor: 'rgb(0, 93, 255)',
-										borderInlineStartStyle: 'solid',
-										borderInlineStartWidth: '1px',
-										borderLeftColor: 'rgb(0, 93, 255)',
-										borderLeftStyle: 'solid',
-										borderLeftWidth: '1px',
-										borderRightColor: 'rgb(0, 93, 255)',
-										borderRightStyle: 'solid',
-										borderRightWidth: '1px',
-										borderStartEndRadius: '48px',
-										borderStartStartRadius: '48px',
-										borderTopColor: 'rgb(0, 93, 255)',
-										borderTopLeftRadius: '48px',
-										borderTopRightRadius: '48px',
-										borderTopStyle: 'solid',
-										borderTopWidth: '1px',
-										boxSizing: 'border-box',
-										caretColor: 'rgb(255, 255, 255)',
-										color: 'rgb(255, 255, 255)',
-										columnRuleColor: 'rgb(255, 255, 255)',
-										cursor: 'pointer',
-										display: 'block',
-										fontFamily: 'Onest, sans-serif',
-										fontSize: '16px',
-										fontWeight: 700,
-										inlineSize: '173.281px',
-										justifyContent: 'center',
-										lineHeight: '17.776px',
-										marginInlineEnd: '20px',
-										marginLeft: 0,
-										marginRight: 0,
-										minBlockSize: 'auto',
-										minHeight: 'auto',
-										minInlineSize: 'auto',
-										minWidth: 'auto',
-										outlineColor: 'rgb(255, 255, 255)',
-										paddingBlockEnd: '20px',
-										paddingBlockStart: '20px',
-										paddingBottom: '20px',
-										paddingInlineEnd: '28px',
-										paddingInlineStart: '28px',
-										paddingLeft: '28px',
-										paddingRight: '28px',
-										paddingTop: '20px',
-										textAlign: 'center',
-										textDecoration: 'none',
-										textDecorationColor: 'rgb(255, 255, 255)',
-										textEmphasisColor: 'rgb(255, 255, 255)',
-										textSizeAdjust: '100%',
-										transform: 'matrix(1, 0, 0, 1, 0, 0)',
-										transformOrigin: '86.6406px 29.8828px',
-										transformStyle: 'preserve-3d',
-										transitionDelay: '0s, 0s, 0s, 0s',
-										transitionDuration: '0.3s, 0.3s, 0.3s, 0.3s',
-										transitionProperty:
-											'border-color, background-color, transform, color',
-										transitionTimingFunction: 'ease, ease, ease, ease',
-										WebkitTextFillColor: 'rgb(255, 255, 255)',
-										WebkitTextStrokeColor: 'rgb(255, 255, 255)',
-									}}
-									href={'https://workplacetemplate.webflow.io/packages'}
-								>
-									Hire freelancer
-								</a>
-								<a
-									style={{
-										blockSize: '59.7656px',
-										borderBlockEndColor: 'rgb(16, 27, 68)',
-										borderBlockEndStyle: 'solid',
-										borderBlockEndWidth: '1px',
-										borderBlockStartColor: 'rgb(16, 27, 68)',
-										borderBlockStartStyle: 'solid',
-										borderBlockStartWidth: '1px',
-										borderBottomColor: 'rgb(16, 27, 68)',
-										borderBottomLeftRadius: '48px',
-										borderBottomRightRadius: '48px',
-										borderBottomStyle: 'solid',
-										borderBottomWidth: '1px',
-										borderEndEndRadius: '48px',
-										borderEndStartRadius: '48px',
-										borderInlineEndColor: 'rgb(16, 27, 68)',
-										borderInlineEndStyle: 'solid',
-										borderInlineEndWidth: '1px',
-										borderInlineStartColor: 'rgb(16, 27, 68)',
-										borderInlineStartStyle: 'solid',
-										borderInlineStartWidth: '1px',
-										borderLeftColor: 'rgb(16, 27, 68)',
-										borderLeftStyle: 'solid',
-										borderLeftWidth: '1px',
-										borderRightColor: 'rgb(16, 27, 68)',
-										borderRightStyle: 'solid',
-										borderRightWidth: '1px',
-										borderStartEndRadius: '48px',
-										borderStartStartRadius: '48px',
-										borderTopColor: 'rgb(16, 27, 68)',
-										borderTopLeftRadius: '48px',
-										borderTopRightRadius: '48px',
-										borderTopStyle: 'solid',
-										borderTopWidth: '1px',
-										boxSizing: 'border-box',
-										caretColor: 'rgb(16, 27, 68)',
-										color: 'rgb(16, 27, 68)',
-										columnRuleColor: 'rgb(16, 27, 68)',
-										cursor: 'pointer',
-										display: 'block',
-										fontFamily: 'Onest, sans-serif',
-										fontSize: '16px',
-										inlineSize: '202.594px',
-										lineHeight: '17.776px',
-										marginLeft: 0,
-										marginRight: 0,
-										minBlockSize: 'auto',
-										minHeight: 'auto',
-										minInlineSize: 'auto',
-										minWidth: 'auto',
-										outlineColor: 'rgb(16, 27, 68)',
-										paddingBlockEnd: '20px',
-										paddingBlockStart: '20px',
-										paddingBottom: '20px',
-										paddingInlineEnd: '28px',
-										paddingInlineStart: '28px',
-										paddingLeft: '28px',
-										paddingRight: '28px',
-										paddingTop: '20px',
-										textAlign: 'center',
-										textDecoration: 'none',
-										textDecorationColor: 'rgb(16, 27, 68)',
-										textEmphasisColor: 'rgb(16, 27, 68)',
-										textSizeAdjust: '100%',
-										transform: 'matrix(1, 0, 0, 1, 0, 0)',
-										transformOrigin: '101.297px 29.8828px',
-										transformStyle: 'preserve-3d',
-										transitionDelay: '0s, 0s, 0s, 0s',
-										transitionDuration: '0.3s, 0.3s, 0.3s, 0.3s',
-										transitionProperty:
-											'border-color, transform, background-color, color',
-										transitionTimingFunction: 'ease, ease, ease, ease',
-										WebkitTextFillColor: 'rgb(16, 27, 68)',
-										WebkitTextStrokeColor: 'rgb(16, 27, 68)',
-									}}
-									href={
-										'https://workplacetemplate.webflow.io/apply-as-freelancer'
-									}
-								>
-									Apply as freelancer
-								</a>
+							<div className='flex gap-4'>
+								<span className='rounded-[48px] shadow-lg hover:shadow-sm p-4 !text-white border-[1px] bg-blue-700'>
+									订阅更多课程
+								</span>
+								<span className='rounded-[48px] p-4 border-[1px] bg-white shadow-sm hover:shadow-lg'>
+									查看学习计划
+								</span>
 							</div>
 						</div>
 						<div
@@ -441,8 +229,6 @@ const BootSection = () => {
 									top: '119.609px',
 									transform: 'matrix(1, 0, 0, 1, 0, 0)',
 									transformOrigin: '136px 82.3906px',
-									WebkitTextFillColor: 'rgb(95, 104, 122)',
-									WebkitTextStrokeColor: 'rgb(95, 104, 122)',
 								}}
 							>
 								<div
@@ -461,8 +247,7 @@ const BootSection = () => {
 										marginLeft: 0,
 										marginRight: 0,
 										outlineColor: 'rgb(95, 104, 122)',
-										overflowX: 'hidden',
-										overflowY: 'hidden',
+
 										textDecoration: 'none solid rgb(95, 104, 122)',
 										textDecorationColor: 'rgb(95, 104, 122)',
 										textEmphasisColor: 'rgb(95, 104, 122)',
@@ -518,8 +303,7 @@ const BootSection = () => {
 										maxInlineSize: '60px',
 										maxWidth: '60px',
 										outlineColor: 'rgb(95, 104, 122)',
-										overflowX: 'hidden',
-										overflowY: 'hidden',
+
 										position: 'absolute',
 										right: '-29.9062px',
 										top: '-28px',
@@ -581,8 +365,7 @@ const BootSection = () => {
 									minInlineSize: '485px',
 									minWidth: '485px',
 									outlineColor: 'rgb(95, 104, 122)',
-									overflowX: 'hidden',
-									overflowY: 'hidden',
+
 									position: 'relative',
 									right: '-209.982px',
 
@@ -648,8 +431,7 @@ const BootSection = () => {
 									maxInlineSize: '274px',
 									maxWidth: '274px',
 									outlineColor: 'rgb(95, 104, 122)',
-									overflowX: 'hidden',
-									overflowY: 'hidden',
+
 									position: 'absolute',
 									right: '475.938px',
 									textDecoration: 'none solid rgb(95, 104, 122)',

@@ -6,7 +6,7 @@
 }
 
 .wf-section {
-	color: #69697b;
+	@apply text-gray-600;
 }
 
 .bg-course {
@@ -125,6 +125,9 @@ img {
 	-webkit-box-direction: normal;
 
 	flex-direction: column;
+	@media (max-width: 480px) {
+		max-width: 350px;
+	}
 }
 
 .title {
@@ -180,11 +183,6 @@ img {
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center;
-}
-
-.card-sticky-wrapper {
-	display: block;
-	position: relative;
 }
 
 .card {

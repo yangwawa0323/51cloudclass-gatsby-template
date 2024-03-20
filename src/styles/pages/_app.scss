@@ -1,7 +1,6 @@
 div.App {
 	text-align: center;
 
-
 	header {
 		img.App-logo {
 			height: 40vmin;
@@ -24,20 +23,18 @@ div.App {
 	}
 
 	@media (prefers-reduced-motion: no-preference) {
-		& header>img.App-logo {
+		& header > img.App-logo {
 			animation: App-logo-spin infinite 21s linear;
 		}
 	}
-	
+
 	@keyframes App-logo-spin {
 		from {
 			transform: rotate(0deg);
 		}
-	
+
 		to {
 			transform: rotate(360deg);
 		}
 	}
 }
-
-

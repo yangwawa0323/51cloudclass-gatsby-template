@@ -5,6 +5,8 @@ import Editor from '@react-page/editor';
 import React from 'react';
 import { baseCellPlugins } from '../../plugins/cellPlugins';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
+import '../../styles/pages/_reactpage.scss';
 
 /**
  * IMPORTANT! IMPORTANT! IMPORTANT!
@@ -25,12 +27,17 @@ import PropTypes from 'prop-types';
 
 const AsciinemaEditor = ({ readOnly, initialValue, onChange, ...options }) => {
 	const [value, setValue] = React.useState(initialValue || null);
+
+	const handleChange = (data) => {
+		setValue(data);
+		onChange && onChange();
+	};
 	return (
 		<div className='react-page-editor-container'>
 			<Editor
 				cellPlugins={baseCellPlugins}
 				value={initialValue || value}
-				onChange={onChange || setValue}
+				onChange={handleChange}
 				readOnly={readOnly}
 				{...options}
 			/>

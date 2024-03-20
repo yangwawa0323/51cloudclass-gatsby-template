@@ -1,12 +1,17 @@
+
 export interface Course {
+    id: string
     ID: number
+    uuid: string
     is_shop: boolean
     image: string
     description: string
     name: string
     mark: string
+    teacher: string
     category: Category
     chapters: Array<Chapter> | null
+    last_updated_at: string
 }
 
 
@@ -17,11 +22,14 @@ export interface Category {
 }
 
 export interface Chapter {
+    id: string
     ID: number
     content: string
+    uuid: string
     course_id: number
     download_resource: string
     github_resource: string
+    order_index: number
     mark: string
     name: string
     online_running_code: string

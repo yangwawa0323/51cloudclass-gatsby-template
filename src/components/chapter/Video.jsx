@@ -1,42 +1,87 @@
 /** @format */
 
-import React, { useContext } from 'react';
+import React from 'react';
 import { useEffect } from 'react';
-import { globalContext } from '../../../wrap-with-provider';
-import { easeIn } from '../../utils/animate';
+import { useGlobalContext } from '../../../wrap-with-provider';
 import AsciinemaEditor from '../asciinema/AsciinemaEditor';
-import { ChapterContext } from './ChapterContextProvider';
-import { ReactDOM } from 'react';
+import '../../styles/pages/_reactpage.scss';
+import { useState } from 'react';
+import _ from 'lodash';
 
+const loginRequiredObj = {
+	id: 'roilkm',
+	size: 12,
+	plugin: {
+		id: 'loginRequiredCellPlugin',
+		version: 1,
+	},
+	dataI18n: {
+		default: null,
+	},
+	rows: [],
+	inline: null,
+};
+
+/***************************************************************
+ * set video has some bugs, autoplay can not be set to false.
+ * Now is change the file of react-page\plugins-html5-video\Renderer\Html5VideoHtmlRender.js
+ */
 const Video = () => {
 	const options = {
 		hideEditorSidebar: true,
+		muted: false,
+		autoplay: false,
 		readOnly: true,
 	};
 
-	const { isLogin, isExpired } = useContext(globalContext);
+	const [data, setData] = useState(null);
+	/*****************************************************************
+	 * from globalContext get the single chapter
+	 *****************************************************************/
+	const { isLogin, chapter } = useGlobalContext();
 
-	useEffect(() => {
-		easeIn('.gsap-video video')
-		const videoElement = document.querySelector('video');
+	/* const setVideoOptions = function (videoEl) {
+		if (videoEl) {
+			videoEl.muted = false;
+			videoEl.autoplay = false;
+			videoEl.controlsList = 'nodownload';
+		}
+	}; 
+
+	const videoElement = document.querySelector('.gsap-video video');
+		useEffect(() => {
+		if (videoElement) easeIn('.gsap-video video');
+		setVideoOptions(videoElement);
+		videoElement?.addEventListener('contextmenu', (e) => {
+			e.preventDefault();
+			return false;
+		});
 
 		if (!isLogin && videoElement) {
-			videoElement.remove()
+			videoElement.remove();
 		}
-	}, [isLogin])
+	}, [isLogin, videoElement]); */
 
-
-
-
-	const { chapter } = useContext(ChapterContext);
-
+	useEffect(() => {
+		let content = chapter?.content;
+		if (!isLogin) {
+			content = _.replace(
+				content,
+				'ory/sites/plugin/content/html5-video',
+				'loginRequiredCellPlugin'
+			);
+		}
+		setData(content);
+	}, [chapter, isLogin]);
 	return (
-		<div className='gsap-video px-8  min-h-fit w-[calc(100% - 60px)] flex flex-col '>
-			{!isLogin && <div className='min-w-[280px] m-12 border-purple-700 border-[12px] bg-black rounded-lg  w-auto h-[240px] text-white font-bold flex justify-center items-center' > 请登录后方能观看视频</div >}
-			<AsciinemaEditor
-				initialValue={JSON.parse(chapter.content)}
-				{...options}
-			/>
+		<div className='gsap-video min-h-fit w-full flex flex-col '>
+			{chapter && data && (
+				<AsciinemaEditor
+					initialValue={JSON.parse(data)}
+					{...options}
+				/>
+			)}
+			{/* ))} */}
 		</div>
 	);
 };

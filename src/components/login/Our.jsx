@@ -5,10 +5,9 @@
  */
 
 import * as React from 'react';
-import { ArrowBack, ArrowForward } from '@mui/icons-material';
+import { IoIosArrowRoundForward } from 'react-icons/io';
 
 import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 
 const sliderWrapperAnimation = () => {
 	const slider = document.querySelector('.slider-wrapper');
@@ -35,8 +34,6 @@ const OurSuccess = () => {
 	const [size, setSize] = React.useState(0);
 	const [aniCompleted, setAniCompleted] = React.useState(true);
 	const [images, setImages] = React.useState([]);
-
-	gsap.registerPlugin(ScrollTrigger);
 
 	React.useEffect(() => {
 		const images = document.querySelectorAll('.scrolling-slider img');
@@ -106,7 +103,7 @@ const OurSuccess = () => {
 						style={{ visibility: aniCompleted ? 'visible' : 'hidden' }}
 						className='cursor-pointer absolute top-1/2 left-4 z-50 h-8 w-8 shadow-md bg-white hover:bg-gray-100 rounded-full flex justify-center items-center'
 					>
-						<ArrowBack
+						<IoIosArrowRoundForward
 							onClick={toLeft}
 							fontSize='10px'
 						/>
@@ -117,7 +114,7 @@ const OurSuccess = () => {
 						style={{ visibility: aniCompleted ? 'visible' : 'hidden' }}
 						className='absolute top-1/2 right-4 z-50 h-8 w-8 shadow-md bg-white hover:bg-gray-100 rounded-full flex justify-center items-center'
 					>
-						<ArrowForward
+						<IoIosArrowRoundForward
 							onClick={toRight}
 							fontSize='10px'
 						/>

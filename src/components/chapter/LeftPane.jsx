@@ -6,13 +6,10 @@ import Detail from './Detail';
 
 const LeftPane = () => {
 	return (
-		<div>
-			<div>
-				<Detail />
-			</div>
-			<div>
-				<Video />
-			</div>
+		<div className='w-11/12 flex flex-col justify-center'>
+			<Detail />
+			<Video />
+			<Detail />
 		</div>
 	);
 };

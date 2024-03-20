@@ -1,20 +1,9 @@
 /** @format */
 
-import { Link, navigate } from 'gatsby';
+import { Link, graphql, navigate, useStaticQuery } from 'gatsby';
 import React, { memo } from 'react';
-import { useQuery } from '@tanstack/react-query';
 import { utils, logout } from '51cloudclass-utilities/dist';
-import { Avatar } from '@mui/material';
 
-import {
-	AssignmentOutlined,
-	EventAvailableOutlined,
-	HouseOutlined,
-	LockPersonOutlined,
-	NotificationsOutlined,
-	Person2Outlined,
-} from '@mui/icons-material';
-import VideoLibraryOutlinedIcon from '@mui/icons-material/VideoLibraryOutlined';
 import { SettingOutlined } from '@ant-design/icons';
 import { useContext } from 'react';
 import { HeaderContext } from './HeaderContentProvider';
@@ -22,7 +11,15 @@ import { cleanTokenEtag } from '51cloudclass-utilities/src/account';
 import { useDispatch, useSelector } from 'react-redux';
 import { globalContext } from '../../../wrap-with-provider';
 
-import type { Course } from '..';
+import { ICourseInput } from '../../utils/types';
+import {
+	MdOutlineAssessment,
+	MdOutlineEventAvailable,
+	MdOutlineHouse,
+	MdOutlineLockPerson,
+	MdOutlinePerson2,
+	MdOutlineVideoLibrary,
+} from 'react-icons/md';
 
 const { getAxios } = utils;
 const axiosInstance = getAxios();
@@ -41,7 +38,7 @@ const SubMenu1 = () => {
 
 	return (
 		<div>
-			<h4 className='mega-menu-title hidden-mobile'>页面</h4>
+			<p className='mega-menu-title hidden-mobile'>页面</p>
 			<div className='menu-2-columns'>
 				<div className='mega-menu-column-1'>
 					<Link
@@ -89,12 +86,12 @@ const SubMenu1 = () => {
 						{' '}
 						{isLogin && !isExpired ? (
 							<span className='flex flex-row gap-2 text-red-600'>
-								<LockPersonOutlined color='error' />
+								<MdOutlineLockPerson color='error' />
 								退出
 							</span>
 						) : (
 							<span className='flex flex-row gap-2'>
-								<VideoLibraryOutlinedIcon color='primary' />
+								<MdOutlineVideoLibrary color='primary' />
 								登录
 							</span>
 						)}
@@ -136,48 +133,64 @@ const SubMenu1 = () => {
 
 /** BEGIN SubMenu2 */
 const SubMenu2 = () => {
-	const fetchTop8Courses = async () => {
-		let url = `${process.env.GATSBY_API_SERVER}/courses/?limit=8`;
-		const response = await axiosInstance.get(url);
-		return response.data;
-	};
+	// const fetchTop8Courses = async () => {
+	// 	let url = `${process.env.GATSBY_API_SERVER}/courses/?limit=8`;
+	// 	const response = await axiosInstance.get(url);
+	// 	return response.data;
+	// };
 
-	const { data, isLoading, error } = useQuery({
-		queryKey: ['fetch-top-courses', 8],
-		queryFn: fetchTop8Courses,
-	});
+	// const { data, isLoading, error } = useQuery({
+	// 	queryKey: ['fetch-top-courses', 8],
+	// 	queryFn: fetchTop8Courses,
+	// });
 
-	if (isLoading || error) return <div>加载中Oo.</div>;
+	// if (isLoading || error) return <div>加载中Oo.</div>;
 
-	const { courses } = data.result;
+	const data = useStaticQuery(graphql`
+		query {
+			allCourse(
+				limit: 8
+				sort: { id: DESC }
+				filter: { is_shop: { eq: true } }
+			) {
+				nodes {
+					id
+					name
+					image
+					description
+					is_shop
+				}
+			}
+		}
+	`);
+
+	const courses = data.allCourse.nodes;
 	return (
-		<>
-			<div className='mega-menu-column-4'>
-				<h4 className='mega-menu-title'>课程分类</h4>
-				{courses.map((course: Course, index: number) => (
-					<Link
-						key={index}
-						to={`/courses/${course.ID}`}
-						className='mega-menu-link'
-					>
-						{course.name}
-					</Link>
-				))}
-
+		<div className='mega-menu-column-4'>
+			<h5 className='mega-menu-title'>课程分类</h5>
+			{courses.map((course: ICourseInput, index: number) => (
 				<Link
-					to='/courses'
-					className='mega-menu-link-2 special'
+					key={index}
+					to={`/courses/${course.id}`}
+					className='mega-menu-link'
 				>
-					更多大数据云计算系列
+					{course.name}
 				</Link>
-			</div>
-		</>
+			))}
+
+			<Link
+				to='/courses'
+				className='mega-menu-link-2 special '
+			>
+				更多大数据云计算系列
+			</Link>
+		</div>
 	);
 };
 /** END SubMenu2 */
 
 /** BEGIN LoginForm */
-const LoginForm = () => {
+export const LoginForm = () => {
 	const { hideMenu } = useContext(HeaderContext);
 	const dispatch = useDispatch();
 
@@ -201,19 +214,25 @@ const LoginForm = () => {
 	};
 
 	return (
-		<div className='z-[1000] absolute top-16 -right-36 h-fit rounded-xl shadow-xl flex items-center justify-center bg-gray-100 py-6'>
+		<div
+			data-menu='login'
+			className='z-[1000] mr-8 h-fit rounded-xl shadow-xl flex items-center justify-center bg-gray-100 py-6'
+		>
 			<div className='flex gap-2 flex-col whitespace-nowrap max-w-xs p-4 items-center bg-white'>
-				<Avatar
+				{/* <Avatar
 					src={userAvatar}
-					className='outline-2 w-24 h-24'
-				/>
-				<ul className='flex flex-col w-full'>
+					className='outline-2 w-16 h-16'
+				/> */}
+				<ul className='flex gap-4 flex-col w-full'>
 					<li className='my-px'>
-						<div className='flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 bg-gray-100'>
+						<div
+							className='flex flex-row items-center px-4 rounded-lg text-gray-600 bg-gray-100'
+							onClick={() => navgateTo('/dashboard')}
+						>
 							<span className='flex items-center justify-center text-lg text-gray-400'>
-								<HouseOutlined />
+								<MdOutlineHouse />
 							</span>
-							<span className='ml-3'>面板</span>
+							<span className='ml-3'>管理面板</span>
 							<span className='flex items-center justify-center text-sm text-gray-500 font-semibold bg-gray-200 h-6 px-2 rounded-full ml-auto'>
 								3
 							</span>
@@ -226,17 +245,27 @@ const LoginForm = () => {
 					</li>
 
 					<li className='my-px'>
-						<div className='flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 hover:bg-gray-100'>
+						<div
+							className='flex flex-row items-center px-4 rounded-lg text-gray-600 hover:bg-gray-100'
+							onClick={() => {
+								navgateTo('/dashboard/history/process');
+							}}
+						>
 							<span className='flex items-center justify-center text-lg text-gray-400'>
-								<EventAvailableOutlined />
+								<MdOutlineEventAvailable />
 							</span>
 							<span className='ml-3'>学习进度</span>
 						</div>
 					</li>
 					<li className='my-px'>
-						<div className='flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 hover:bg-gray-100'>
+						<div
+							className='flex flex-row items-center px-4 rounded-lg text-gray-600 hover:bg-gray-100'
+							onClick={() => {
+								navgateTo('/dashboard/history/records');
+							}}
+						>
 							<span className='flex items-center justify-center text-lg text-gray-400'>
-								<AssignmentOutlined />
+								<MdOutlineAssessment />
 							</span>
 							<span className='ml-3'>历史记录</span>
 							<span className='flex items-center justify-center text-sm text-gray-500 font-semibold bg-gray-200 h-6 px-2 rounded-full ml-auto'>
@@ -252,17 +281,17 @@ const LoginForm = () => {
 					</li>
 					<li className='my-px'>
 						<div
-							onClick={() => navgateTo('/profile')}
-							className='flex flex-row items-center h-12 px-4 rounded-lg text-gray-600  hover:bg-gray-100'
+							onClick={() => navgateTo('/dashboard/main/info')}
+							className='flex flex-row items-center px-4 rounded-lg text-gray-600  hover:bg-gray-100'
 						>
 							<span className='flex items-center justify-center text-lg text-gray-400'>
-								<Person2Outlined />
+								<MdOutlinePerson2 />
 							</span>
 							<span className='ml-3'>个人信息</span>
 						</div>
 					</li>
-					<li className='my-px'>
-						<div className='flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 hover:bg-gray-100'>
+					{/* <li className='my-px'>
+						<div className='flex flex-row items-center px-4 rounded-lg text-gray-600 hover:bg-gray-100'>
 							<span className='flex items-center justify-center text-lg text-gray-400'>
 								<NotificationsOutlined />
 							</span>
@@ -271,9 +300,9 @@ const LoginForm = () => {
 								10
 							</span>
 						</div>
-					</li>
+					</li> */}
 					<li className='my-px'>
-						<div className='flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 hover:bg-gray-100'>
+						<div className='flex flex-row items-center px-4 rounded-lg text-gray-600 hover:bg-gray-100'>
 							<span className='flex items-center justify-center text-lg text-gray-400'>
 								<SettingOutlined />
 							</span>
@@ -281,9 +310,9 @@ const LoginForm = () => {
 						</div>
 					</li>
 					<li className='my-px'>
-						<div className='flex flex-row items-center h-12 px-4 rounded-lg text-gray-600 hover:bg-gray-100'>
+						<div className='flex flex-row items-center px-4 rounded-lg text-gray-600 hover:bg-gray-100'>
 							<span className='flex items-center justify-center text-lg text-red-400'>
-								<LockPersonOutlined color='error' />
+								<MdOutlineLockPerson color='error' />
 							</span>
 							<span
 								className='ml-3 cursor-pointer'
@@ -322,8 +351,6 @@ const Nav = memo(({ id, showUp, submenu, children }: NavProps) => {
 						<SubMenu1 />
 					) : submenu === 'submenu2' ? (
 						<SubMenu2 />
-					) : submenu === 'loginform' ? (
-						<LoginForm />
 					) : (
 						children
 					)}

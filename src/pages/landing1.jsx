@@ -5,9 +5,7 @@
  */
 
 import * as React from 'react';
-import ArrowForward from '@mui/icons-material/ArrowForward';
-
-import ScrollTrigger from 'gsap/ScrollTrigger';
+import { IoIosArrowRoundForward } from 'react-icons/io';
 import gsap from 'gsap';
 import BoostSection from '../components/landing1/Boost';
 import BuildingBlock from '../components/landing1/Building';
@@ -17,16 +15,7 @@ import FractionSection from '../components/landing1/Fraction';
 import { Link } from 'gatsby';
 import Frame from '../components/frame';
 
-gsap.registerPlugin(ScrollTrigger);
-
 const scrollAnimation = () => {
-	ScrollTrigger.defaults({
-		start: 'top 70%',
-		end: 'top 45%',
-		toggleActions: 'play none none reset',
-		// markers: true,
-	});
-
 	gsap.from('.boost-your-website .explore-pages', {
 		scrollTrigger: {
 			trigger: '.boost-your-website',
@@ -99,7 +88,7 @@ const Landing1 = () => {
 						className='flex flex-row gap-2 cursor-pointer'
 					>
 						<h5 className='text-xs text-white font-medium'>Learn more</h5>
-						<ArrowForward
+						<IoIosArrowRoundForward
 							className='hover:translate-x-1 transition-all duration-700'
 							fontSize='10px'
 							htmlColor='white'
@@ -108,7 +97,7 @@ const Landing1 = () => {
 				</div>
 			</div>
 			{/*  */}
-			<Frame >
+			<Frame>
 				{/*  */}
 				<BoostSection />
 				{/*  */}
@@ -120,7 +109,7 @@ const Landing1 = () => {
 				{/*  */}
 				<FractionSection />
 				{/*  */}
-			</Frame >
+			</Frame>
 		</div>
 	);
 };

@@ -1,14 +1,14 @@
 /** @format */
 import React, { ReactElement, ReactNode } from 'react';
 
+import { useLocation } from '@reach/router';
 import { useEffect, useState } from 'react';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { utils } from '51cloudclass-utilities/src/';
 import { useContext } from 'react';
-import { globalContext } from '../../wrap-with-provider';
+import { globalContext, useGlobalContext } from '../../wrap-with-provider';
 import NeedLogin from '../pages/need-login';
 import { AxiosResponse } from 'axios';
-import { useSelect } from '@mui/base';
 import { useSelector } from 'react-redux';
 import { IState } from '51cloudclass-utilities/src/store/reducers/authSlice';
 
@@ -63,28 +63,11 @@ const fetchDataByType = async (
 	return await response.data;
 };
 
-export const useCourse = (id: number, sortField: string, order: string) => {
-	return useQuery(['fetch-courses'], () =>
-		fetchDataByType('courses', id, sortField, order)
-	);
-};
-
-export const useCategory = (id: number, sortField: string, order: string) => {
-	return useQuery(['fetch-categories'], () =>
-		fetchDataByType('categories', id, sortField, order)
-	);
-};
-
-export const useChapter = (id: number, sortField: string, order: string) => {
-	return useQuery(['fetch-chapters'], () =>
-		fetchDataByType('chapters', id, sortField, order)
-	);
-};
-
 export const useMessage = (id: number, sortField: string, order: string) => {
-	return useQuery(['fetch-site-messages'], () =>
-		fetchDataByType('messages', id, sortField, order)
-	);
+	return useQuery({
+		queryKey: ['fetch-site-messages'],
+		queryFn: () => fetchDataByType('messages', id, sortField, order),
+	});
 };
 
 export const useDatabaseBackup = (
@@ -92,9 +75,10 @@ export const useDatabaseBackup = (
 	sortField: string,
 	order: string
 ) => {
-	return useQuery(['fetch-database-backup'], () =>
-		fetchDataByType('databases', id, sortField, order)
-	);
+	return useQuery({
+		queryKey: ['fetch-database-backup'],
+		queryFn: () => fetchDataByType('databases', id, sortField, order),
+	});
 };
 
 type Policy = {
@@ -112,7 +96,6 @@ export const useAuthenticate = () => {
 	const [state, setState] = useState<unknown | null>(null);
 
 	const fetchPolicies = async () => {
-		const axiosInstance = getAxios();
 		await axiosInstance
 			.get(`${process.env.REACT_APP_API_SERVER}/api/policies/`)
 			.then((response: AxiosResponse<PoliciesResponse>) => response.data)
@@ -212,3 +195,45 @@ export const subscibeWrapper =
 			}
 		};
 	};
+
+export const useAvatar = () => {
+	const location = useLocation();
+
+	// avatar in URL query parameter
+	const query = new URLSearchParams(location.search);
+
+	// avatar in redux
+	const reduxAvatar = useSelector(
+		(state: IState) => state.auth.account?.avatar
+	);
+	// avatar in localstorage
+	const localStorageAvatar = JSON.parse(
+		localStorage.getItem('account') as string
+	)?.avatar;
+
+	const [avatar, setAvatar] = useState<string>(
+		localStorageAvatar ? localStorageAvatar : reduxAvatar ? reduxAvatar : query
+	);
+	return avatar;
+};
+
+export const useSaveBrowerHistory = () => {
+	const [data, setData] = useState({ path: null, title: null });
+	const { isLogin } = useGlobalContext();
+
+	const fetchHistories = async () => {
+		if (isLogin) {
+			let url = `${process.env.GATSBY_API_SERVER}/history/`;
+			let postData = { uri: data.path, title: data.title, kind: 2 };
+			return await axiosInstance.post(url, postData);
+		}
+	};
+
+	useEffect(() => {
+		if (data.path) {
+			fetchHistories();
+		}
+	}, [data.path]);
+
+	return { setData };
+};

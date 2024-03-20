@@ -14,23 +14,31 @@ import booststart from '../assets/img/page-thumbnail/boost_start.webp';
 import asciinema from '../assets/img/page-thumbnail/contact1.webp';
 
 // svg icons
-import AnimationIcon from '@mui/icons-material/Animation';
-import AnnouncementIcon from '@mui/icons-material/Announcement';
-import ApartmentIcon from '@mui/icons-material/Apartment';
-import AssessmentIcon from '@mui/icons-material/Assessment';
-import ExploreIcon from '@mui/icons-material/Explore';
-import AllInboxIcon from '@mui/icons-material/AllInbox';
-import BackupTableIcon from '@mui/icons-material/BackupTable';
-import BrightnessAutoIcon from '@mui/icons-material/BrightnessAuto';
-import CastForEducationIcon from '@mui/icons-material/CastForEducation';
-import CleanHandsIcon from '@mui/icons-material/CleanHands';
-
+import {
+	MdOutlineAnimation,
+	MdOutlineCastForEducation,
+	MdOutlineAnnouncement,
+	MdOutlineApartment,
+	MdOutlineAssessment,
+	MdOutlineAllInbox,
+	MdBackupTable,
+	MdOutlineBrightnessAuto,
+	MdCleanHands,
+	MdExplore,
+} from 'react-icons/md';
 
 export const svgIcons = [
-	AnimationIcon, AnnouncementIcon, ApartmentIcon, AssessmentIcon, ExploreIcon ,
-	AllInboxIcon, BackupTableIcon , BrightnessAutoIcon, CastForEducationIcon, CleanHandsIcon,
-	
-]
+	MdOutlineAnimation,
+	MdOutlineAnnouncement,
+	MdOutlineApartment,
+	MdOutlineAssessment,
+	MdExplore,
+	MdOutlineAllInbox,
+	MdBackupTable,
+	MdOutlineBrightnessAuto,
+	MdOutlineCastForEducation,
+	MdCleanHands,
+];
 const allImages = {
 	page404,
 	styleguide,
@@ -46,9 +54,6 @@ const allImages = {
 	contact1,
 	booststart,
 	asciinema,
-}
-
-
-
+};
 
 export default allImages;

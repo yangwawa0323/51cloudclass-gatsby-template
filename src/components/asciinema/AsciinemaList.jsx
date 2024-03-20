@@ -4,31 +4,26 @@ import * as React from 'react';
 
 import { Link } from 'gatsby';
 import { getTitle, formatDate } from '../../utils/tools';
-// import ContentPasteGo from "@mui/icons-material/ContentPasteGo";
-import ArrowForward from '@mui/icons-material/ArrowForward';
+import { IoIosArrowRoundForward } from 'react-icons/io';
 import { svgIcons } from '../../utils/image';
 import SvgIcon from '@mui/material/SvgIcon';
 import Frame from '../frame';
 import { easeIn } from '../../utils/animate';
 import gsap from 'gsap';
 
-
 const AsciinemaList = ({ pageContext }) => {
-
 	React.useEffect(() => {
-
 		var tl = gsap.timeline();
-		easeIn('.gsap-main-title', {}, tl)
+		easeIn('.gsap-main-title', {}, tl);
 
 		var len = pageContext.asciinemas?.length || 0;
 		for (var i = 0; i < len; i++) {
-			easeIn(`.gsap-asciinema.gsap-asciinema-${i}`, { delay: 0.3 }, tl)
+			easeIn(`.gsap-asciinema.gsap-asciinema-${i}`, { delay: 0.3 }, tl);
 		}
-	}, [pageContext.asciinemas?.length])
+	}, [pageContext.asciinemas?.length]);
 
 	return (
 		<Frame>
-
 			<main className='p-24 min-h-[500px] '>
 				<div className='flex flex-col md:flex-row gap-10'>
 					<div className='gsap-main-title flex-1'>
@@ -59,7 +54,10 @@ const AsciinemaList = ({ pageContext }) => {
 							const content = JSON.parse(ascii.content);
 							const title = getTitle(content);
 							return (
-								<div key={index} className={`gsap-asciinema gsap-asciinema-${index} rounded-xl border-[1px] shadow-md bg-white p-8`}>
+								<div
+									key={index}
+									className={`gsap-asciinema gsap-asciinema-${index} rounded-xl border-[1px] shadow-md bg-white p-8`}
+								>
 									<div className='flex flex-col gap-4'>
 										<div>
 											<div>
@@ -95,7 +93,7 @@ const AsciinemaList = ({ pageContext }) => {
 														</div>
 														<div>
 															<div>
-																<ArrowForward />
+																<IoIosArrowRoundForward />
 															</div>
 														</div>
 													</div>
@@ -111,7 +109,7 @@ const AsciinemaList = ({ pageContext }) => {
 
 				{/*  */}
 			</main>
-		</Frame >
+		</Frame>
 	);
 };
 

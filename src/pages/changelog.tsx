@@ -159,6 +159,45 @@ const ChangeLog = () => {
 					</div>
 				</div>
 			</div>
+			<div className='gsap-history justify-evenly flex flex-row flex-nowrap relative h-min overflow-hidden p-8 w-full content-center items-center'>
+				<div className='flex flex-1 flex-row justify-between items-start h-min max-w-[1200px] relative w-[1px]'>
+					<div className='flex flex-col justify-start w-auto'>
+						<h3 className='text-xl font-extrabold text-gray-500'>2024-02-10</h3>
+					</div>
+					<div className='flex flex-grow flex-col gap-10 	max-w-2xl relative w-[1px] items-start justify-start'>
+						<div className='flex flex-col gap-5'>
+							<div>
+								<h3 className='text-xl font-extrabold'>课程录制到663节</h3>
+							</div>
+							<div>
+								<p className='text-lg font-medium text-gray-600'>
+									首先给大家拜个晚年，课程至今已经录制到663节了，距离1500+节还差一半多一点，好在是课程是从难的内容往基础课程录制的。因为基础课都做好了PPT后期进度会更快一些。
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div className='gsap-history justify-evenly flex flex-row flex-nowrap relative h-min overflow-hidden p-8 w-full content-center items-center'>
+				<div className='flex flex-1 flex-row justify-between items-start h-min max-w-[1200px] relative w-[1px]'>
+					<div className='flex flex-col justify-start w-auto'>
+						<h3 className='text-xl font-extrabold text-gray-500'>2024-02-10</h3>
+					</div>
+					<div className='flex flex-grow flex-col gap-10 	max-w-2xl relative w-[1px] items-start justify-start'>
+						<div className='flex flex-col gap-5'>
+							<div>
+								<h3 className='text-xl font-extrabold'>用户控制面板</h3>
+							</div>
+							<div>
+								<p className='text-lg font-medium text-gray-600'>
+									过年炮竹响震天，红红火火过大年，因为环境音原因遂而开发一个用户控制面板。后期添加
+									golang 后台数据处理。
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</Frame>
 	);
 };

@@ -10,8 +10,7 @@ import '../styles/components/_asciinema.scss';
 import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
-import ArrowForward from '@mui/icons-material/ArrowForward';
-
+import { IoIosArrowRoundForward } from 'react-icons/io';
 // import { debug } from "../utils/tools";
 import { navigate } from 'gatsby';
 import Frame from '../components/frame';
@@ -87,7 +86,7 @@ const Asciinema = () => {
 						}}
 						aria-label='save'
 						variant='contained'
-						endIcon={<ArrowForward />}
+						endIcon={<IoIosArrowRoundForward />}
 						onClick={postData}
 					>
 						Save
