@@ -63,27 +63,6 @@ const fetchDataByType = async (
 	return await response.data;
 };
 
-export const useCourse = (id: number, sortField: string, order: string) => {
-	return useQuery({
-		queryKey: ['fetch-courses'],
-		queryFn: () => fetchDataByType('courses', id, sortField, order),
-	});
-};
-
-export const useCategory = (id: number, sortField: string, order: string) => {
-	return useQuery({
-		queryKey: ['fetch-categories'],
-		queryFn: () => fetchDataByType('categories', id, sortField, order),
-	});
-};
-
-export const useChapter = (id: number, sortField: string, order: string) => {
-	return useQuery({
-		queryKey: ['fetch-chapters'],
-		queryFn: () => fetchDataByType('chapters', id, sortField, order),
-	});
-};
-
 export const useMessage = (id: number, sortField: string, order: string) => {
 	return useQuery({
 		queryKey: ['fetch-site-messages'],

@@ -88,7 +88,8 @@ const Footer = (props: FooterProps) => {
 							<div>
 								<p className='text-[11px]'>
 									<a href='https://www.51cloudclass.com/'>
-										© 版权隶属于 <strong>51cloudclass</strong> 云课堂科技
+										© 版权隶属于 <strong>51cloudclass.com 5117xue.com</strong>{' '}
+										云课堂科技
 									</a>
 								</p>
 							</div>

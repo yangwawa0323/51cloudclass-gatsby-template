@@ -4,6 +4,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useGlobalContext } from '../../../wrap-with-provider';
 import AsciinemaEditor from '../asciinema/AsciinemaEditor';
+import '../../styles/pages/_reactpage.scss';
 import { useState } from 'react';
 import _ from 'lodash';
 

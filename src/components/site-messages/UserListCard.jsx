@@ -31,6 +31,7 @@ import {
 import { getAxios } from '51cloudclass-utilities/src/utils';
 import { useStateContext } from '../../contexts/ContextProvider';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { decryptJWE2JSON } from '../../utils/jwe-decrypt';
 
 const UserListCard = () => {
 	const axiosInstance = getAxios();
@@ -52,7 +53,9 @@ const UserListCard = () => {
 
 	const getJoinSenders = async () => {
 		let url = `${process.env.GATSBY_API_SERVER}/messages/friend-join/senders`;
-		return axiosInstance.get(url).then((response) => response.data);
+		return axiosInstance
+			.get(url)
+			.then((response) => decryptJWE2JSON(response.data.result.encrypted));
 	};
 
 	const acceptJoin = async (user) => {

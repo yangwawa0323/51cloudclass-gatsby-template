@@ -7,6 +7,7 @@ import scrollTo from 'gatsby-plugin-smoothscroll';
 import { FcSearch } from 'react-icons/fc';
 import {
 	Box,
+	CircularProgress,
 	Dialog,
 	DialogContent,
 	DialogTitle,
@@ -29,6 +30,7 @@ import { useQuery, useQueryClient } from '@tanstack/react-query';
 
 import { useLocation } from '@reach/router';
 import { useGlobalContext } from '../../wrap-with-provider';
+import { decryptJWE2JSON } from '../utils/jwe-decrypt';
 
 type FrameProps = {
 	location: any;
@@ -76,10 +78,10 @@ const SearchingDialog = (props) => {
 	const [keyword, setKeyword] = useState('');
 	const [searchResult, setSearchResult] = useState();
 	const [searchRange, setSearchRange] = useState('site');
+	const [searching, setSearching] = useState(false);
 
 	const location = useLocation();
 	const { chapter } = useGlobalContext();
-	debugLog('chapter: ', chapter);
 	const isChapterListPage = useCallback(
 		() => /\/chapters/.test(location.pathname),
 		[location.path]
@@ -89,23 +91,31 @@ const SearchingDialog = (props) => {
 	 * /api/search?keyword=xxxx
 	 */
 	const searchResultByKeyword = async () => {
+		setSearching(true);
 		const course_id = chapter?.course_id || 99999;
 		if (keyword.length >= 2) {
 			let url = `${process.env.GATSBY_API_SERVER}/search?keyword=${keyword}&range=${searchRange}&course_id=${course_id}`;
 			await axiosInstance
 				.get(url)
-				.then((response) => setSearchResult(response.data))
+				.then((response) => decryptJWE2JSON(response.data.result.encrypted))
+				.then((json) => {
+					setSearchResult(json);
+				})
+
 				.catch((e) => console.log(e));
 		}
+		setSearching(false);
 	};
 
 	const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setKeyword(e.currentTarget.value);
 		setSearchResult(null);
+		setSearching(false);
 	};
 
 	const handleChooseSearchRange = (e) => {
 		setSearchRange(e.target.value);
+		setSearching(false);
 	};
 
 	const emphasis = (title: string, keyword: string) => {
@@ -210,7 +220,7 @@ const SearchingDialog = (props) => {
 					</FormControl>
 				</Box>
 				{/* {isLoading && <div>Loading...</div>} */}
-				<Box className='w-full'>
+				<Box className='w-full flex items-center'>
 					{
 						/* {isFetched && */
 						// !searchResult &&
@@ -221,28 +231,32 @@ const SearchingDialog = (props) => {
 							</Typography>
 						)
 					}
-					<SimpleBarScroll sx={{ maxHeight: 360 }}>
-						{searchResult?.result?.records?.map((sr, index) => (
-							<Link
-								to={sr.uri}
-								key={index}
-							>
-								<Tooltip
-									followCursor
-									placement='top'
-									title='点击查看视频'
+					{searchResult === null && searching ? (
+						<CircularProgress color='secondary' />
+					) : (
+						<SimpleBarScroll sx={{ maxHeight: 360 }}>
+							{searchResult?.result?.records?.map((sr, index) => (
+								<Link
+									to={sr.uri}
+									key={index}
 								>
-									<div className='font-light text-sm'>
-										<span className='text-gray-400 leading-6'>
-											{sr.type === 2 ? '【课程】' : '【章节】'}
-										</span>{' '}
-										{emphasis(sr.title, keyword)}
-										<br />
-									</div>
-								</Tooltip>
-							</Link>
-						))}
-					</SimpleBarScroll>
+									<Tooltip
+										followCursor
+										placement='top'
+										title='点击查看视频'
+									>
+										<div className='font-light text-sm'>
+											<span className='text-gray-400 leading-6'>
+												{sr.type === 2 ? '【课程】' : '【章节】'}
+											</span>{' '}
+											{emphasis(sr.title, keyword)}
+											<br />
+										</div>
+									</Tooltip>
+								</Link>
+							))}
+						</SimpleBarScroll>
+					)}
 				</Box>
 			</DialogContent>
 		</Dialog>

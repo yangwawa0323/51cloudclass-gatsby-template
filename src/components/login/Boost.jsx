@@ -21,6 +21,8 @@ import { toast } from 'react-toastify';
 import { saveToLocalStorage } from '51cloudclass-utilities/src/account';
 import { useContext } from 'react';
 import { globalContext } from '../../../wrap-with-provider';
+import { Typography } from '@mui/material';
+import { grey, purple } from '@mui/material/colors';
 
 const { getAxios } = utils;
 
@@ -110,6 +112,20 @@ const BoostSection = () => {
 				<div className='gsap-boot-right flex-1 justify-start w-full p-8 bg-white flex flex-col gap-6 h-min rounded-xl shadow-2xl'>
 					<div>
 						<h4>51元包月学习</h4>
+					</div>
+					<div>
+						<Typography
+							color={grey[600]}
+							variant='h5'
+						>
+							网站测试阶段，暂不提供注册，请使用全免费测试账户登录
+						</Typography>
+						<Typography
+							variant='h5'
+							color={purple[600]}
+						>
+							账户: test08@163.com 密码: 123456789
+						</Typography>
 					</div>
 					<div>
 						<div>

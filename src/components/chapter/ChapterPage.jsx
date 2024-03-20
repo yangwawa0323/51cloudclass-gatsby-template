@@ -30,6 +30,7 @@ import Loading from '../Loading';
 import ChapterList from './ChapterList';
 import Feedback from '../feedback/Feedback';
 import { useMySnackbar } from '../utils/Snackbar';
+import { decryptJWE2JSON } from '../../utils/jwe-decrypt';
 
 const axiosInstance = getAxios();
 
@@ -120,7 +121,9 @@ const ChapterPage = (props) => {
 	const fetchChapterViewers = async () => {
 		const axiosInstance = getAxios();
 		let url = `${process.env.GATSBY_API_SERVER}/chapters/viewers/${uuid}`;
-		return axiosInstance.get(url).then((response) => response.data);
+		return axiosInstance
+			.get(url)
+			.then((response) => decryptJWE2JSON(response.data.result.encrypted));
 	};
 
 	const { data: viewers, isLoading } = useQuery({
@@ -138,20 +141,6 @@ const ChapterPage = (props) => {
 	}, []);
 
 	if (isLoading) return <Loading />;
-	// change to graphQL query data
-	// const extra = { chapter: pageContext.chapter };
-	/********************************************************************
-	 * 1. get data from use query
-	 * 2. set data
-	 *********************************************************************/
-	/* 	if (!data.chapter.course) {
-		return (
-			<div>
-				<h2>Some thing wrong</h2>
-				<pre>{JSON.stringify(data.chapter)}</pre>
-			</div>
-		);
-	} */
 
 	return (
 		<Frame>

@@ -25,11 +25,13 @@ import { useRef } from 'react';
 import MessageSender from './MessageSender';
 import MessageISent from './MessageISent';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { getAxios } from '51cloudclass-utilities/src/utils';
+import { debugLog, getAxios } from '51cloudclass-utilities/src/utils';
 import { useStateContext } from '../../contexts/ContextProvider';
 import { useState } from 'react';
 import { useGlobalContext } from '../../../wrap-with-provider';
 import Loading from '../Loading';
+import { useEffect } from 'react';
+import { decryptJWE2JSON } from '../../utils/jwe-decrypt';
 
 const axiosInstance = getAxios();
 
@@ -57,14 +59,19 @@ const MessageDetail = (props) => {
 		const axiosInstance = getAxios();
 		if (id !== 0) {
 			let url = `${process.env.GATSBY_API_SERVER}/messages/session-from-friend/${id}`;
-			return await axiosInstance.get(url).then((response) => {
-				setMessageData((prev) => {
-					return {
-						result: { ...prev.result, ...response.data.result },
-					};
+			return await axiosInstance
+				.get(url)
+				.then((response) => {
+					return decryptJWE2JSON(response.data.result.encrypted);
+				})
+				.then((json) => {
+					setMessageData((prev) => {
+						return {
+							result: { ...prev.result, ...json.result },
+						};
+					});
+					return json;
 				});
-				return response.data;
-			});
 		}
 		return Promise.reject('friend ID is undefined');
 	};

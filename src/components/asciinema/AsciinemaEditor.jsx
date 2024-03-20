@@ -6,6 +6,7 @@ import React from 'react';
 import { baseCellPlugins } from '../../plugins/cellPlugins';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
+import '../../styles/pages/_reactpage.scss';
 
 /**
  * IMPORTANT! IMPORTANT! IMPORTANT!

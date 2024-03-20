@@ -4,14 +4,11 @@ import {
 	Grid,
 	Card,
 	CardHeader,
-	Avatar,
 	CardContent,
 	Divider,
 	Typography,
 	TableContainer,
-	Paper,
 	Table,
-	TableHead,
 	TableRow,
 	TableBody,
 	TableCell,
@@ -30,14 +27,21 @@ import { getAxios } from '51cloudclass-utilities/src/utils';
 
 import momentAgo from 'moment-ago';
 import Loading from '../../Loading';
+import { useState } from 'react';
+import { decryptJWE2JSON } from '../../../utils/jwe-decrypt';
+
+/*************************************************************
+ * the data has been encrypted by JWE
+ **************************************************************/
 
 const HistoryTable = () => {
+	const [histories, setHistories] = useState(null);
 	const fetchHistories = async () => {
 		const axiosInstance = getAxios();
 		let url = `${process.env.GATSBY_API_SERVER}/history/`;
-		return await axiosInstance.get(url).then((response) => {
-			return response.data;
-		});
+		return await axiosInstance
+			.get(url)
+			.then((response) => decryptJWE2JSON(response.data.result.encrypted));
 	};
 
 	const { data, isLoading, isError } = useQuery({
@@ -121,7 +125,7 @@ const HistoryTable = () => {
 										</TableRow>
 									</StyledTableHead>
 									<TableBody>
-										{data.result.histories.map((hist, index) => (
+										{data.result.histories?.map((hist, index) => (
 											<TableRow key={hist.ID}>
 												{/* <TableCell>
 													<Avatar src={hist.user.avatar_url}></Avatar>

@@ -8,11 +8,12 @@ import { makeStyles } from '@mui/styles';
 import UserListCard from '../../../components/site-messages/UserListCard';
 import MessageDetail from '../../../components/site-messages/MessageDetail';
 import { useTheme } from '@mui/material';
-import { getAxios } from '51cloudclass-utilities/src/utils';
+import { debugLog, getAxios } from '51cloudclass-utilities/src/utils';
 import { useQuery } from '@tanstack/react-query';
 import { useStateContext } from '../../../contexts/ContextProvider';
 import SimpleBarScroll from '../../../components/common/SimpleBar';
 import Loading from '../../../components/Loading';
+import { decryptJWE2JSON } from '../../../utils/jwe-decrypt';
 
 const useStyles = makeStyles({
 	table: {
@@ -64,10 +65,17 @@ const SiteMessage = () => {
 	const fetchUserList = async () => {
 		const axiosInstance = getAxios();
 		let url = `${process.env.GATSBY_API_SERVER}/users/friends`;
-		return await axiosInstance.get(url).then((response) => {
-			setMessageData(response.data);
-			return response.data;
-		});
+		const response = await axiosInstance
+			.get(url)
+			.then((response) => {
+				return decryptJWE2JSON(response.data.result.encrypted);
+			})
+			.then((json) => {
+				// debugLog('json:', json);
+				setMessageData(json);
+				return json;
+			});
+		return response;
 	};
 
 	const { isLoading, isError } = useQuery({

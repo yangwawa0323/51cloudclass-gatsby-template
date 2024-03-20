@@ -1,24 +1,27 @@
 .react-page-editor-container {
 	.react-page-row {
-		margin-top: 20px;
+		@apply flex flex-col gap-4 mx-8 mt-8 place-items-center;
+
 		p {
-			font-size: 16px;
-			color: rgb(31, 31, 31);
+			@apply mt-8 font-normal font-sans leading-6 text-gray-700;
 		}
 		video {
 			border: 12px solid purple;
 			border-radius: 12px;
-			width: 100%;
-			height: 100%;
 			-webkit-box-shadow: 10px 10px 35px -1px rgba(0, 0, 0, 0.75);
 			-moz-box-shadow: 10px 10px 35px -1px rgba(0, 0, 0, 0.75);
 			box-shadow: 10px 10px 35px -1px rgba(0, 0, 0, 0.75);
 		}
 	}
 	@media screen and (min-width: 380px) {
-		min-width: 320px;
+		min-width: 300px;
 		min-height: 280px;
 	}
-	min-width: 340px;
+	min-width: 320px;
 	// min-height: 380px;
+}
+
+.react-page-content-plugin-html5-video {
+	@apply place-items-center w-11/12;
+	min-width: 280px;
 }

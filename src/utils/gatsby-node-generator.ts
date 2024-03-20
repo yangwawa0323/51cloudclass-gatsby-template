@@ -21,7 +21,7 @@ const fakeData = require('../data/allReactPages.json');
 import type { IAsciinemaPageInput, IChapterInput, ICourseInput } from './types'
 
 interface IApiResponse {
-	asciinemaPages: Array<IAsciinemaPageInput>,
+	asciinemaPages?: Array<IAsciinemaPageInput>,
 	chapters: Array<IChapterInput>,
 	courses: Array<ICourseInput>,
 }
@@ -29,19 +29,19 @@ interface IApiResponse {
 
 const fetchAllData: () => Promise<IApiResponse> = async () => {
 
-	let chapterUrl = `${process.env.GATSBY_API_SERVER}/chapters`;
+	let chapterUrl = `${process.env.GATSBY_API_SERVER}/chapters/without-jwe`;
 
 	const chaptersResponse = await fetch(chapterUrl)
 		.then((response: Body) => response.json())
 
 
-	let courseUrl = `${process.env.GATSBY_API_SERVER}/courses`;
+	let courseUrl = `${process.env.GATSBY_API_SERVER}/courses/without-jwe`;
 
 	const coursesResponse = await fetch(courseUrl)
 		.then((response: Body) => response.json())
 
 	return {
-		asciinemaPages: [],
+		// asciinemaPages: [],
 		chapters: chaptersResponse.result.chapters,
 		courses: coursesResponse.result.courses,
 	}
@@ -151,8 +151,6 @@ const getAllAsciinemaPages = async ({ actions, reporter }: CreatePageArgs) => {
 
 	(await asciinemaPages!).forEach((page: Page) => {
 
-
-
 		actions.createPage({
 			path: `/asciinemas/${page.ID}`,
 			component: path.resolve(__dirname,
@@ -179,6 +177,7 @@ const getAsciinemaListPage = async ({ actions, reporter }: CreatePageArgs) => {
 		},
 	});
 };
+
 
 const generateChapters = async ({ actions, reporter }: CreatePageArgs) => {
 
