@@ -42,6 +42,7 @@ const Frame = ({ children, noFooter = false }: FrameProps) => {
 	const [showResult, setShowResult] = useState(false);
 
 	useEffect(() => {
+		debugLog('scroll to frame-top');
 		scrollTo('#frame-top');
 	}, []);
 
@@ -54,13 +55,13 @@ const Frame = ({ children, noFooter = false }: FrameProps) => {
 			<Header />
 
 			<main className='w-full flex flex-col items-center relative'>
-				<div className='flex hover:animate-none animate-bounce hover:opacity-100 duration-1000 justify-end w-screen sticky top-20 mr-20 z-50'>
+				<div className='flex hover:animate-none animate-bounce hover:opacity-100 duration-1000 justify-end w-fit fixed top-20 right-4 z-50'>
 					<div
 						style={{ display: showResult ? 'none' : 'block' }}
 						role='button'
 						onClick={handleSearchClick}
 					>
-						<FcSearch size='4em' />
+						<FcSearch size='3em' />
 					</div>
 				</div>
 				{children}

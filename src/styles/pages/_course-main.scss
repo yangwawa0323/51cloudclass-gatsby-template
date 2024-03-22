@@ -76,8 +76,5 @@
 }
 
 .course-card-price {
-	color: #0b0b2c;
-	font-size: 20px;
-	line-height: 1.1em;
-	font-weight: 500;
+	@apply text-sm;
 }

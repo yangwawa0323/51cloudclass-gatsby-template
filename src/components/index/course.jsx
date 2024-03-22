@@ -3,93 +3,97 @@ import React from 'react';
 import { useCallback } from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby';
 
-import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { debugLog } from '51cloudclass-utilities/src/utils';
-import { Button, styled } from '@mui/material';
+import { Button, styled, useMediaQuery, useTheme } from '@mui/material';
 import { purple } from '@mui/material/colors';
+import { useQuery } from '@tanstack/react-query';
+import { debugLog, getAxios } from '51cloudclass-utilities/src/utils';
+import { decryptJWE2JSON } from '../../utils/jwe-decrypt';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 const Courses = () => {
+	const [demoCourses, setDemoCourses] = useState([]);
 	const tl = gsap.timeline();
 
-	useGSAP(() => {
-		let cards = gsap.utils.toArray('.course-card');
+	const theme = useTheme();
+	const geMedium = useMediaQuery(theme.breakpoints.up('md'));
+	const geLarge = useMediaQuery(theme.breakpoints.up('lg'));
 
-		let tween = gsap.fromTo(
-			cards[0],
-			{
-				opacity: 0,
-				x: -800,
-				y: 400,
-			},
-			{
-				opacity: 1,
-				x: 0,
-				y: 0,
-				scrollTrigger: {
-					trigger: `.gsap-title`,
-					scrub: true,
-					start: `top 80%`,
-					end: `top center`,
-					// toggleActions: 'restart pause reverse pause',
-					ease: 'none',
-				},
-			}
-		);
-		tl.add(tween);
+	const fetchCourses = async () => {
+		const axiosInstance = getAxios();
+		let url = `${process.env.GATSBY_API_SERVER}/courses/`;
+		return await axiosInstance
+			.get(url)
+			.then((response) => decryptJWE2JSON(response.data.result.encrypted));
+	};
 
-		cards
-			.filter((_, index) => {
-				return index !== 0;
-			})
-			.forEach((card, index) => {
-				let tweens = gsap.fromTo(
-					card,
-					{
-						opacity: 0,
-						x: index % 2 === 0 ? 400 : -400,
-						y: 400,
-					},
-					{
-						opacity: 1,
-						x: 0,
-						y: 0,
-						duration: 0.5,
-						scrollTrigger: {
-							trigger: `.course-card-${index}`,
-							// trigger: `.course-card-0`,
-							// markers: true,
-							scrub: true,
-							start: `top 80%`,
-							end: `bottom bottom`,
-							ease: 'none',
-						},
-					}
-				);
-				tl.add(tweens);
-			});
+	const { data, isLoading } = useQuery({
+		queryKey: ['index-courses'],
+		queryFn: fetchCourses,
 	});
 
-	const data = useStaticQuery(graphql`
-		query {
-			allCourse(
-				limit: 6
-				sort: { UpdatedAt: DESC }
-				filter: { is_shop: { eq: true } }
-			) {
-				nodes {
-					id
-					name
-					image
-					description
-					is_shop
-				}
-			}
+	useEffect(() => {
+		if (data) {
+			const { result } = data;
+			debugLog(`geLarge: ${geLarge} , geMedium : ${geMedium} `);
+			setDemoCourses(() =>
+				geLarge
+					? result.courses.slice(0, 8)
+					: geMedium
+					? result.courses.slice(0, 9)
+					: result.courses.slice(0, 6)
+			);
 		}
-	`);
+	}, [data, geLarge, geMedium]);
 
-	const courses = data.allCourse.nodes;
+	const animation = () => {
+		let cards = gsap.utils.toArray('.course-card');
+
+		cards.reverse().forEach((card, index) => {
+			let tweens = gsap.fromTo(
+				card,
+				{
+					opacity: 0,
+					x: index % 2 === 0 ? 400 : -400,
+					y: 400,
+				},
+				{
+					opacity: 1,
+					x: 0,
+					y: 0,
+					duration: 0.5,
+					delay: 0.5,
+					scrollTrigger: {
+						trigger: `.gsap-title`,
+						// markers: true,
+						// scrub: 0.25,
+						// start: `top ${(cards.length - index) * geLarge ? 30 : 20}px `,
+						start: `top ${index * 50}px `,
+						end: `bottom bottom`,
+						// ease: '',
+					},
+				}
+			);
+			tl.add(tweens);
+		});
+	};
+
+	useEffect(() => {
+		let mm = gsap.matchMedia();
+
+		if (demoCourses.length > 0) {
+			mm.add('(min-width: 800px)', () => {
+				animation();
+			});
+			mm.add('(max-width: 799px)', () => {
+				animation();
+			});
+		}
+	}, [demoCourses, geLarge, geMedium]);
+
+	// const courses = data.allCourse.nodes;
 
 	const offlined = useCallback((course) => {
 		return !course.is_shop;
@@ -121,10 +125,10 @@ const Courses = () => {
 					</ColorButton>
 				</div>
 				<div className='hidden course-grid sm:grid xs:grid-cols-1 md:grid-cols-[repeat(3,minmax(200px,1fr))] lg:grid-cols-4 xs:gap-2  gap-8 auto-rows-min h-min justify-evenly w-full'>
-					{courses.map((course, index) => {
+					{demoCourses?.map((course, index) => {
 						return (
 							<div
-								key={course.id}
+								key={index}
 								className={`course-card course-card-${index} cursor-pointer rounded-2xl overflow-hidden border-[2px] shadow-md hover:shadow-lg hover:scale-105 duration-500  h-full w-full place-self-start`}
 							>
 								<Link to={`/courses/`}>

@@ -56,4 +56,5 @@ module.exports = {
 		"gatsby-plugin-smoothscroll",
 		`gatsby-plugin-sitemap`,
 	],
+
 };

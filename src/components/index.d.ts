@@ -9,6 +9,7 @@ export interface Course {
     name: string
     mark: string
     teacher: string
+    grade: number
     category: Category
     chapters: Array<Chapter> | null
     last_updated_at: string
