@@ -5,7 +5,7 @@
  */
 
 import * as React from 'react';
-import { CloseCircleFilled, CloseCircleOutlined } from '@ant-design/icons';
+import { AiOutlineCloseCircle as CloseCircleOutlined } from 'react-icons/ai';
 import { MdOutlineCheckCircle } from 'react-icons/md';
 
 const PlanSection = () => {

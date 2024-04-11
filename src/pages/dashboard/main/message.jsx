@@ -2,13 +2,13 @@ import React from 'react';
 import DashboardLayout from '../../../components/dashboard/DashboardLayout';
 
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useMediaQuery, SwipeableDrawer, Box, Drawer } from '@mui/material';
+import { useMediaQuery, Box } from '@mui/material';
 import { useRef, useEffect, useState } from 'react';
 import { makeStyles } from '@mui/styles';
 import UserListCard from '../../../components/site-messages/UserListCard';
 import MessageDetail from '../../../components/site-messages/MessageDetail';
 import { useTheme } from '@mui/material';
-import { debugLog, getAxios } from '51cloudclass-utilities/src/utils';
+import { getAxios } from '../../../utilities/utils';
 import { useQuery } from '@tanstack/react-query';
 import { useStateContext } from '../../../contexts/ContextProvider';
 import SimpleBarScroll from '../../../components/common/SimpleBar';

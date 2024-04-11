@@ -17,7 +17,7 @@ import {
 	useTheme,
 	useMediaQuery,
 } from '@mui/material';
-import { SendOutlined } from '@ant-design/icons';
+import { AiOutlineSend as SendOutlined } from 'react-icons/ai';
 import 'simplebar-react/dist/simplebar.min.css';
 
 import SimpleBarScroll from '../common/SimpleBar';
@@ -25,12 +25,11 @@ import { useRef } from 'react';
 import MessageSender from './MessageSender';
 import MessageISent from './MessageISent';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { debugLog, getAxios } from '51cloudclass-utilities/src/utils';
+import { getAxios } from '../../utilities/utils';
 import { useStateContext } from '../../contexts/ContextProvider';
 import { useState } from 'react';
 import { useGlobalContext } from '../../../wrap-with-provider';
 import Loading from '../Loading';
-import { useEffect } from 'react';
 import { decryptJWE2JSON } from '../../utils/jwe-decrypt';
 
 const axiosInstance = getAxios();

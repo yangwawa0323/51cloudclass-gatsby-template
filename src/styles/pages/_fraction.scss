@@ -1,4 +1,4 @@
-.svg-h4-white{
+.svg-h4-white {
 	svg {
 		fill: white;
 		font-size: 12px;
@@ -10,7 +10,14 @@
 		color: white;
 		font-size: 18px;
 	}
-	-webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgb(0, 0, 0) 25%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0.5) 100%);
+
+	mask-image: linear-gradient(
+		to right,
+		rgba(0, 0, 0, 0.5) 0%,
+		rgb(0, 0, 0) 25%,
+		rgb(0, 0, 0) 75%,
+		rgba(0, 0, 0, 0.5) 100%
+	);
 
 	div {
 		div {

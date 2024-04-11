@@ -13,13 +13,11 @@ import {
 } from '@mui/material';
 
 // assets
-import {
-	EditOutlined,
-	ProfileOutlined,
-	LogoutOutlined,
-	UserOutlined,
-	WalletOutlined,
-} from '@ant-design/icons';
+import { LuWallet as WalletOutlined } from 'react-icons/lu';
+import { LuUser2 as UserOutlined } from 'react-icons/lu';
+import { AiOutlineLogout as LogoutOutlined } from 'react-icons/ai';
+import { CgProfile as ProfileOutlined } from 'react-icons/cg';
+import { FaRegEdit as EditOutlined } from 'react-icons/fa';
 
 // ==============================|| HEADER PROFILE - PROFILE TAB ||============================== //
 
@@ -80,7 +78,7 @@ const ProfileTab = ({ handleLogout }) => {
 				<ListItemText primary='付费查询' />
 			</ListItemButton>
 			<ListItemButton
-				className="cursor-pointer"
+				className='cursor-pointer'
 				selected={selectedIndex === 2}
 				onClick={handleLogout}
 			>

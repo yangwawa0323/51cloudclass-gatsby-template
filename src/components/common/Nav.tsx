@@ -2,12 +2,12 @@
 
 import { Link, graphql, navigate, useStaticQuery } from 'gatsby';
 import React, { memo } from 'react';
-import { utils, logout } from '51cloudclass-utilities/dist';
+import { utils, logout } from '../../utilities';
 
-import { SettingOutlined } from '@ant-design/icons';
+import { CiSettings as SettingOutlined } from 'react-icons/ci';
 import { useContext } from 'react';
 import { HeaderContext } from './HeaderContentProvider';
-import { cleanTokenEtag } from '51cloudclass-utilities/src/account';
+import { cleanTokenEtag } from '../../utilities/account';
 import { useDispatch, useSelector } from 'react-redux';
 import { globalContext } from '../../../wrap-with-provider';
 
@@ -56,13 +56,13 @@ const SubMenu1 = () => {
 					>
 						课程
 					</Link>
-					<Link
+					{/* <Link
 						to='/asciinema-list'
 						aria-current='page'
 						className='mega-menu-link w--current'
 					>
 						字节流视频
-					</Link>
+					</Link> */}
 					<Link
 						to='/about1'
 						className='mega-menu-link'
@@ -133,19 +133,6 @@ const SubMenu1 = () => {
 
 /** BEGIN SubMenu2 */
 const SubMenu2 = () => {
-	// const fetchTop8Courses = async () => {
-	// 	let url = `${process.env.GATSBY_API_SERVER}/courses/?limit=8`;
-	// 	const response = await axiosInstance.get(url);
-	// 	return response.data;
-	// };
-
-	// const { data, isLoading, error } = useQuery({
-	// 	queryKey: ['fetch-top-courses', 8],
-	// 	queryFn: fetchTop8Courses,
-	// });
-
-	// if (isLoading || error) return <div>加载中Oo.</div>;
-
 	const data = useStaticQuery(graphql`
 		query {
 			allCourse(

@@ -4,15 +4,14 @@ import React, { ReactElement, ReactNode } from 'react';
 import { useLocation } from '@reach/router';
 import { useEffect, useState } from 'react';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { utils } from '51cloudclass-utilities/src/';
+import { getAxios } from '../utilities/utils';
 import { useContext } from 'react';
 import { globalContext, useGlobalContext } from '../../wrap-with-provider';
 import NeedLogin from '../pages/need-login';
 import { AxiosResponse } from 'axios';
 import { useSelector } from 'react-redux';
-import { IState } from '51cloudclass-utilities/src/store/reducers/authSlice';
+import { IState } from '../utilities/store/reducers/authSlice';
 
-const { getAxios } = utils;
 const axiosInstance = getAxios();
 
 export const patchDataByType = async (

@@ -11,7 +11,6 @@ import {
 	ListItemText,
 	ListItemIcon,
 	ListItemButton,
-	Divider,
 	Button,
 	useMediaQuery,
 	useTheme,
@@ -23,12 +22,10 @@ import UserItem from './UserItem';
 import SimpleBarScroll from '../common/SimpleBar';
 import { debounce } from '../utils/tools';
 
-import {
-	SearchOutlined,
-	LogoutOutlined,
-	SettingOutlined,
-} from '@ant-design/icons';
-import { getAxios } from '51cloudclass-utilities/src/utils';
+import { IoSearch as SearchOutlined } from 'react-icons/io5';
+import { CiSettings as SettingOutlined } from 'react-icons/ci';
+import { AiOutlineLogout as LogoutOutlined } from 'react-icons/ai';
+import { getAxios } from '../../utilities/utils';
 import { useStateContext } from '../../contexts/ContextProvider';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { decryptJWE2JSON } from '../../utils/jwe-decrypt';
@@ -171,7 +168,6 @@ const UserListCard = () => {
 													<ListItem disablePadding>
 														<UserItem user={user} />
 													</ListItem>
-													<Divider />
 												</React.Fragment>
 											);
 										})}
@@ -224,7 +220,6 @@ const UserListCard = () => {
 							</List>
 						</nav>
 					</SimpleBarScroll>
-					<Divider />
 					{!matchDownSM && (
 						<List sx={{ paddingX: '24px' }}>
 							<ListItem disablePadding>

@@ -12,13 +12,11 @@ import {
 } from '@mui/material';
 
 // assets
-import {
-	CommentOutlined,
-	LockOutlined,
-	QuestionCircleOutlined,
-	UserOutlined,
-	UnorderedListOutlined,
-} from '@ant-design/icons';
+import { AiOutlineUnorderedList as UnorderedListOutlined } from 'react-icons/ai';
+import { CiUser as UserOutlined } from 'react-icons/ci';
+import { AiOutlineQuestionCircle as QuestionCircleOutlined } from 'react-icons/ai';
+import { CiLock as LockOutlined } from 'react-icons/ci';
+import { FaRegComments as CommentOutlined } from 'react-icons/fa';
 
 // ==============================|| HEADER PROFILE - SETTING TAB ||============================== //
 

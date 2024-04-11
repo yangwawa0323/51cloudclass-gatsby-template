@@ -1,33 +1,31 @@
 @use 'sass:map';
 
-
 @import './colors';
 
 $desktop: 'min-width: 800px';
 $mobile-only: 'max-width: 35rem';
 
-
 :root {
-  --light-background-color: #eeeeee;
-  --navbar-height: 3.75rem;
-  --navbar-desktop-width: 240px;
-  // --font-family: 'Manrope','Roboto', 'Open Sans',"Microsoft YaHei","weiruanyahei",  serif;
-  --font-family: 'Noto Sans SC', sans-serif 'Anek Telugu',"Microsoft YaHei",'Manrope','Roboto', 'Open Sans',  serif;
-  --text: #{map.get($colors,"text")};
-  --text-light: #{map.get($colors, "text-light")};
-  --purple: #{map.get($colors,"purple")};
-  --primary: #{map.get($colors, "purple")};
-  --purple-dark: #{map.get($colors, "purple-dark")};
-  --purple-light: #{map.get($colors, "purple-light")};
-  --green: #{map.get($colors, "green")};
-  --red: #{map.get($colors, "red")};
-  --yellow: #{map.get($colors, "yellow")};
-  --black: #{map.get($colors, "black")};
-  
+	--light-background-color: #eeeeee;
+	--navbar-height: 3.75rem;
+	--navbar-desktop-width: 240px;
+	// --font-family: 'Manrope','Roboto', 'Open Sans',"Microsoft YaHei","weiruanyahei",  serif;
+	--font-family: 'Noto Sans SC', sans-serif 'Anek Telugu', 'Microsoft YaHei',
+		'Manrope', 'Roboto', 'Open Sans', serif;
+	--text: #{map.get($colors, 'text')};
+	--text-light: #{map.get($colors, 'text-light')};
+	--purple: #{map.get($colors, 'purple')};
+	--primary: #{map.get($colors, 'purple')};
+	--purple-dark: #{map.get($colors, 'purple-dark')};
+	--purple-light: #{map.get($colors, 'purple-light')};
+	--green: #{map.get($colors, 'green')};
+	--red: #{map.get($colors, 'red')};
+	--yellow: #{map.get($colors, 'yellow')};
+	--black: #{map.get($colors, 'black')};
 }
 
-@debug "text light" var(--text-light);
+// @debug "text light" var(--text-light);
 
 .primary {
-  color: var(--primary);
+	color: var(--primary);
 }

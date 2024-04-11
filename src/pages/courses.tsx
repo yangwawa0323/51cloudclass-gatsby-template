@@ -9,30 +9,25 @@ import * as React from 'react';
 import gsap from 'gsap';
 import Frame from '../components/frame';
 import '../styles/pages/_course-main.scss';
-import { Box, Chip, Divider } from '@mui/material';
+import { Chip /* Divider */ } from '@mui/material';
 
 /* tslint:disable */
-import { utils } from '51cloudclass-utilities/dist';
+import { utils } from 'utilities/dist';
 import good from '../assets/img/courses/good.png';
 import business from '../assets/img/courses/business-revenue.png';
 import formation from '../assets/img/courses/formaṭion-status.png';
 import esstimated from '../assets/img/courses/esstimated-processing.png';
-import level01 from '../assets/img/courses/level-01.svg';
 /* tslint:enable  */
 import { easeIn } from '../utils/animate';
-import shuffle from 'lodash/shuffle';
 import { Course } from '../components';
 import SEO from '../components/seo';
-import { debugLog } from '51cloudclass-utilities/src/utils';
 import { FcLinux } from 'react-icons/fc';
 import { TbDatabaseDollar } from 'react-icons/tb';
-import { SiWebstorm } from 'react-icons/si';
 import { SiJamstack } from 'react-icons/si';
 import { MdOutlineSignalCellularAlt2Bar } from 'react-icons/md';
 import { FaSignal } from 'react-icons/fa';
 import { MdOutlineSignalCellularAlt } from 'react-icons/md';
 import { IconContext } from 'react-icons';
-import { purple } from '@mui/material/colors';
 
 const { getAxios } = utils;
 
@@ -93,7 +88,7 @@ const CourseMain = () => {
 	const handleFilterKeyChange = (key: string) => () => setFilterKey(key);
 
 	const lastUpdated = React.useCallback((dateStr: string) => {
-		debugLog('date string:', dateStr);
+		// debugLog('date string:', dateStr);
 		var now = new Date().getTime();
 		var updatedAt = new Date(dateStr).getTime();
 		// debugLog(updatedAt, now, (now - updatedAt) / (24 * 3600 * 1000) < 1);
@@ -332,7 +327,7 @@ const CourseMain = () => {
 									<div
 										key={course.id}
 										className={`course-${index} grade-${course.grade} category-${course.category_id} course-item 
-									w-64 max-w-64 max-h-96 bg-white !ml-4 !mb-4 transition-all duration-1000
+									w-64 max-h-96 bg-white !ml-4 !mb-4 transition-all duration-1000
 									gsap-shuffle rounded-2xl overflow-hidden border-[2px] shadow-md hover:scale-105 hover:z-10 `}
 									>
 										<Link to={`/courses/${course.id}`}>
@@ -355,9 +350,7 @@ const CourseMain = () => {
 													</p>
 												</div>
 											</div>
-											<div className='w-full flex flex-col'>
-												<Divider className='w-10/12 self-center' />
-											</div>
+
 											<div className='p-4 '>
 												<div className='course-card-details-wrapper pb-2'>
 													<div className='level-wrapper'>

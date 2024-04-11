@@ -10,7 +10,8 @@ import {
 	Avatar,
 	Typography,
 } from '@mui/material';
-import { CheckCircleFilled, CheckOutlined } from '@ant-design/icons';
+import { IoIosCheckmarkCircleOutline as CheckCircleFilled } from 'react-icons/io';
+import { IoCheckmark as CheckOutlined } from 'react-icons/io5';
 import { justifyAlignCenter } from '../utils/StyledMain';
 import { random } from '../../components/utils/random';
 

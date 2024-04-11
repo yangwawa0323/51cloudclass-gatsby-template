@@ -25,15 +25,13 @@ import ProfileTab from './ProfileTab';
 import SettingTab from './SettingTab';
 import Transitions from '../Transition';
 
-import {
-	LogoutOutlined,
-	SettingOutlined,
-	UserOutlined,
-} from '@ant-design/icons';
+import { AiOutlineLogout as LogoutOutlined } from 'react-icons/ai';
+import { CiSettings as SettingOutlined } from 'react-icons/ci';
+import { CiUser as UserOutlined } from 'react-icons/ci';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { logout } from '51cloudclass-utilities/dist';
-import { cleanTokenEtag } from '51cloudclass-utilities/src/account';
+import { logout } from 'utilities/dist';
+import { cleanTokenEtag } from '../../utilities/account';
 
 // tab panel wrapper
 function TabPanel({ children, value, index, ...other }) {

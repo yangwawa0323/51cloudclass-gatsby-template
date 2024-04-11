@@ -1,4 +1,4 @@
-import { debugLog } from '51cloudclass-utilities/src/utils';
+import { debugLog } from '../utilities/utils';
 import { compactDecrypt } from 'jose';
 import { Buffer } from 'buffer';
 

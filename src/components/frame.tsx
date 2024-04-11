@@ -22,7 +22,7 @@ import {
 	Typography,
 } from '@mui/material';
 
-import { debugLog, getAxios } from '51cloudclass-utilities/src/utils';
+import { getAxios } from '../utilities/utils';
 import { Link } from 'gatsby';
 
 import SimpleBarScroll from './common/SimpleBar';
@@ -42,7 +42,7 @@ const Frame = ({ children, noFooter = false }: FrameProps) => {
 	const [showResult, setShowResult] = useState(false);
 
 	useEffect(() => {
-		debugLog('scroll to frame-top');
+		// debugLog('scroll to frame-top');
 		scrollTo('#frame-top');
 	}, []);
 

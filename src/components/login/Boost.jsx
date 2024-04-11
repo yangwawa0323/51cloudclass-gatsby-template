@@ -13,12 +13,12 @@ import GoLangLogo from '../../assets/img/go-logo-svgrepo-com.svg';
 import SinaLogo from '../../assets/img/sina-logo-svgrepo-com.svg';
 
 import { navigate } from 'gatsby';
-import { utils, login } from '51cloudclass-utilities/dist';
+import { utils, login } from '../../utilities';
 import { useDispatch } from 'react-redux';
 import { easeIn } from '../../utils/animate';
 import gsap from 'gsap';
 import { toast } from 'react-toastify';
-import { saveToLocalStorage } from '51cloudclass-utilities/src/account';
+import { saveToLocalStorage } from '../../utilities/account';
 import { useContext } from 'react';
 import { globalContext } from '../../../wrap-with-provider';
 import { Typography } from '@mui/material';

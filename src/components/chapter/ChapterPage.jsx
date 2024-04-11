@@ -4,7 +4,7 @@ import RightPane from './RightPane';
 import Frame from '../frame';
 import { graphql } from 'gatsby';
 import { useSaveBrowerHistory } from '../../../src/hooks';
-import { getAxios } from '51cloudclass-utilities/src/utils';
+import { getAxios } from '../../utilities/utils';
 import { useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import {
@@ -23,7 +23,7 @@ import {
 	Typography,
 } from '@mui/material';
 import { useGlobalContext } from '../../../wrap-with-provider';
-import { SendOutlined } from '@ant-design/icons';
+import { AiOutlineSend as SendOutlined } from 'react-icons/ai';
 import { useState } from 'react';
 import SEO from '../seo';
 import Loading from '../Loading';

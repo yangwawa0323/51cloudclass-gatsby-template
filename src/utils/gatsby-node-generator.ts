@@ -80,7 +80,7 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async (gastbyApi) => {
 		// using `createNodeId` helper function generate uuid format ID to
 		// replace the chapter.ID.
 		const { ID, uuid, ...chapterData } = chapter
-		reporter.info(`[DEBUG]: create node for **chapter** ${ID}`);
+		// reporter.info(`[DEBUG]: create node for **chapter** ${ID}`);
 		const node = {
 			...chapterData,
 			/*************************************************************************
@@ -110,7 +110,7 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async (gastbyApi) => {
 		// using `createNodeId` helper function generate uuid format ID to
 		// replace the chapter.ID.
 		const { ID, uuid, ...courseData } = course
-		reporter.info(`[DEBUG]: create node for **course** ${uuid}`);
+		// reporter.info(`[DEBUG]: create node for **course** ${uuid}`);
 		const node = {
 			...courseData,
 			/*************************************************************************
@@ -135,7 +135,7 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async (gastbyApi) => {
 }
 
 
-const getAllAsciinemaPages = async ({ actions, reporter }: CreatePageArgs) => {
+/* const getAllAsciinemaPages = async ({ actions, reporter }: CreatePageArgs) => {
 	let asciinemaPages: Promise<Array<Page>> | null = null;
 	let succeed: boolean;
 	const response = await fetch(`${process.env.GATSBY_API_SERVER}/page/all`)
@@ -147,7 +147,7 @@ const getAllAsciinemaPages = async ({ actions, reporter }: CreatePageArgs) => {
 
 	const relatives = fakeData.slice(0, 10);
 
-	reporter.info(`[DEBUG]: create sample asciinema pages...`);
+	// reporter.info(`[DEBUG]: create sample asciinema pages...`);
 
 	(await asciinemaPages!).forEach((page: Page) => {
 
@@ -163,11 +163,11 @@ const getAllAsciinemaPages = async ({ actions, reporter }: CreatePageArgs) => {
 		});
 	});
 	return response;
-};
+} */;
 
-const getAsciinemaListPage = async ({ actions, reporter }: CreatePageArgs) => {
+/* const getAsciinemaListPage = async ({ actions, reporter }: CreatePageArgs) => {
 
-	reporter.info(`[DEBUG] create sample asciinema list page...`);
+	// reporter.info(`[DEBUG] create sample asciinema list page...`);
 
 	actions.createPage({
 		path: `/asciinema-list`,
@@ -176,12 +176,12 @@ const getAsciinemaListPage = async ({ actions, reporter }: CreatePageArgs) => {
 			asciinemas: fakeData,
 		},
 	});
-};
+}; */
 
 
 const generateChapters = async ({ actions, reporter }: CreatePageArgs) => {
 
-	reporter.info(`[DEBUG] create chapters pages...`);
+	// reporter.info(`[DEBUG] create chapters pages...`);
 
 	const { chapters } = await fetchAllData();
 
@@ -209,7 +209,7 @@ const generateChapters = async ({ actions, reporter }: CreatePageArgs) => {
 const generateCoursesDetailPage = async ({ actions, reporter }: CreatePageArgs) => {
 	// let url = `${process.env.GATSBY_API_SERVER}/courses/?preload=Chapters`;
 
-	reporter.info(`[DEBUG]: create course detail pages...`);
+	// reporter.info(`[DEBUG]: create course detail pages...`);
 
 	const { courses } = await fetchAllData();
 
@@ -242,8 +242,8 @@ exports.promiseGenerateAll = async (params: CreatePageArgs) => {
 	// individual blog page
 
 	let actions: Array<Action> = [
-		getAsciinemaListPage(params),
-		getAllAsciinemaPages(params),
+		// getAsciinemaListPage(params),
+		// getAllAsciinemaPages(params),
 		generateChapters(params),
 		generateCoursesDetailPage(params),
 	]

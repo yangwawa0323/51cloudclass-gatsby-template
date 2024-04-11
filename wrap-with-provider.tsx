@@ -2,14 +2,11 @@
 
 import React, { useContext, useState } from 'react';
 
-import { store } from '51cloudclass-utilities/src/store';
+import { store } from './src/utilities/store';
 
 import RootElement from './src/components/root-element';
 import { createContext } from 'react';
-import {
-	getAccount,
-	getTokenEtagAccount,
-} from '51cloudclass-utilities/src/account';
+import { getAccount, getTokenEtagAccount } from './src/utilities/account';
 import { useJwt } from 'react-jwt';
 import { useTour } from '@reactour/tour';
 import { Provider } from 'react-redux';
@@ -17,7 +14,6 @@ import { tokenExample } from './src/components';
 import type { IUseJwt } from 'react-jwt/dist/hooks';
 import { StateContextProvider } from './src/contexts/ContextProvider';
 import { ThemeProvider, createTheme } from '@mui/material';
-import { debugLog } from '51cloudclass-utilities/src/utils';
 
 export const globalContext = createContext<any>(null);
 

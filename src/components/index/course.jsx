@@ -1,14 +1,13 @@
 import React from 'react';
 
 import { useCallback } from 'react';
-import { Link, graphql, useStaticQuery } from 'gatsby';
+import { Link } from 'gatsby';
 
-import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { Button, styled, useMediaQuery, useTheme } from '@mui/material';
 import { purple } from '@mui/material/colors';
 import { useQuery } from '@tanstack/react-query';
-import { debugLog, getAxios } from '51cloudclass-utilities/src/utils';
+import { getAxios } from '../../utilities/utils';
 import { decryptJWE2JSON } from '../../utils/jwe-decrypt';
 import { useEffect } from 'react';
 import { useState } from 'react';
@@ -37,7 +36,7 @@ const Courses = () => {
 	useEffect(() => {
 		if (data) {
 			const { result } = data;
-			debugLog(`geLarge: ${geLarge} , geMedium : ${geMedium} `);
+			// debugLog(`geLarge: ${geLarge} , geMedium : ${geMedium} `);
 			setDemoCourses(() =>
 				geLarge
 					? result.courses.slice(0, 8)
@@ -66,12 +65,10 @@ const Courses = () => {
 					duration: 0.5,
 					delay: 0.5,
 					scrollTrigger: {
-						trigger: `.gsap-title`,
+						trigger: `.entire-blog`,
 						// markers: true,
-						// scrub: 0.25,
-						// start: `top ${(cards.length - index) * geLarge ? 30 : 20}px `,
-						start: `top ${index * 50}px `,
-						end: `bottom bottom`,
+						start: geLarge ? `top ${index * 60}px` : `top+60px ${index * 60}px`,
+						end: `bottom top`,
 						// ease: '',
 					},
 				}
@@ -81,16 +78,7 @@ const Courses = () => {
 	};
 
 	useEffect(() => {
-		let mm = gsap.matchMedia();
-
-		if (demoCourses.length > 0) {
-			mm.add('(min-width: 800px)', () => {
-				animation();
-			});
-			mm.add('(max-width: 799px)', () => {
-				animation();
-			});
-		}
+		animation();
 	}, [demoCourses, geLarge, geMedium]);
 
 	// const courses = data.allCourse.nodes;
@@ -119,7 +107,7 @@ const Courses = () => {
 					</div>
 				</div>
 				{/* </div> */}
-				<div className='pb-12'>
+				<div className='pb-12 see-all-courses'>
 					<ColorButton>
 						<Link to='/courses'>查看全部课程</Link>
 					</ColorButton>

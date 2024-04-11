@@ -1,17 +1,13 @@
 {
 	"name": "my-gatsby-site",
-	"version": "1.0.0",
+	"version": "1.0.11",
 	"private": true,
 	"description": "my-gatsby-site",
 	"author": "yangwawa0323",
-	"workspaces": [
-		"packages/**"
-	],
 	"keywords": [
 		"gatsby"
 	],
 	"scripts": {
-		"build:utils": "pnpm workspace 51cloudclass-utilities run start",
 		"develop": "pnpm eslint --fix && gatsby develop --host 0.0.0.0",
 		"start": "gatsby develop --host 0.0.0.0 ",
 		"build": "gatsby build --prefix-paths --verbose",
@@ -45,6 +41,7 @@
 		"gatsby-plugin-sass": "^6.2.0",
 		"gatsby-plugin-smoothscroll": "^1.2.0",
 		"gatsby-plugin-use-query-params": "latest",
+		"gatsby-plugin-nprogress": "latest",
 		"gatsby-source-filesystem": "^5.2.0",
 		"history": "^5.3.0",
 		"node-fetch": "2",
@@ -61,10 +58,10 @@
 		"sass": "^1.56.1",
 		"simplebar-react": "^3.2.1",
 		"use-query-params": "latest",
-		"video.js": "^7.20.3"
+		"video.js": "^7.20.3",
+		"isotope-layout": "latest"
 	},
 	"devDependencies": {
-		"51cloudclass-utilities": "workspace:*",
 		"@faker-js/faker": "^8.4.1",
 		"@gsap/react": "^2.1.0",
 		"@mui/base": "5.0.0-beta.36",
@@ -72,7 +69,6 @@
 		"@mui/styles": "^5.15.10",
 		"@tanstack/react-query": "^5.0.0",
 		"@tanstack/react-query-devtools": "^5.0.0",
-		"@types/isotope-layout": "3.0.6",
 		"@types/node": "^20.1.0",
 		"@types/node-fetch": "^2.6.3",
 		"@types/react": "^18.2.6",
@@ -84,7 +80,6 @@
 		"gatsby-plugin-postcss": "^6.2.0",
 		"gatsby-plugin-sitemap": "^6.13.1",
 		"gsap": "3.12.5",
-		"isotope-layout": "^3.0.6",
 		"jose": "^5.2.3",
 		"lodash": "^4.17.21",
 		"moment-ago": "^1.2.3",

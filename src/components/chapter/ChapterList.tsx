@@ -11,7 +11,6 @@ import { useGlobalContext } from '../../../wrap-with-provider';
 import { Typography, duration } from '@mui/material';
 import { grey, purple } from '@mui/material/colors';
 import gsap from 'gsap';
-import { debugLog } from '51cloudclass-utilities/src/utils';
 
 // import SimpleBar from 'simplebar-react';
 const ChapterContainer = ({ chapter }: { chapter: IChapterInput }) => {
@@ -79,7 +78,7 @@ const ChapterList = () => {
 		<div className='max-w-[440px] w-full mx-0 md:mx-3 grid grid-cols-1 grid-flow-row border-2 shadow-md rounded-xl py-8'>
 			<div className='flex flex-col justify-center items-center mb-8'>
 				<h5 className='text-purple-700'>
-					本课程 共有 [ {chapters.length} ] 章节
+					本课程 共有 [ {chapters?.length ?? 0} ] 章节
 				</h5>
 				<Typography
 					variant='body2'

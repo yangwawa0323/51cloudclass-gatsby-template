@@ -21,8 +21,8 @@ import { useCallback } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useSelector } from 'react-redux';
-import { getAccount } from '51cloudclass-utilities/src/account';
-import { isBrowser } from '51cloudclass-utilities/src/net';
+import { getAccount } from '../../utilities/account';
+import { isBrowser } from '../../utilities/net';
 import { globalContext } from '../../../wrap-with-provider';
 import { MenuButton, Dropdown, Menu } from '@mui/base';
 

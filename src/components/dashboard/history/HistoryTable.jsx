@@ -5,7 +5,6 @@ import {
 	Card,
 	CardHeader,
 	CardContent,
-	Divider,
 	Typography,
 	TableContainer,
 	Table,
@@ -23,7 +22,7 @@ import {
 
 import SimpleBarScroll from '../../common/SimpleBar';
 import { useQuery } from '@tanstack/react-query';
-import { getAxios } from '51cloudclass-utilities/src/utils';
+import { getAxios } from '../../../utilities/utils';
 
 import momentAgo from 'moment-ago';
 import Loading from '../../Loading';
@@ -60,7 +59,6 @@ const HistoryTable = () => {
 			<CardHeader
 				title={<Typography variant='subtitle1'>学习记录</Typography>}
 			/>
-			<Divider />
 			<CardContent
 				sx={{
 					'&.MuiCardContent-root': { paddingX: 'unset' },

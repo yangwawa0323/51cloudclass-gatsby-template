@@ -5,7 +5,7 @@ import { useAuthenticate } from '../hooks';
 import { cleanTokenEtag, getAxios, getTokenEtag } from './tools';
 import NoEntryImage from '../assets/images/auth/no_entry.jpg';
 import { grey } from '@mui/material/colors';
-import { debugLog } from '51cloudclass-utilities/src/utils';
+import { debugLog } from '../../utilities/utils';
 import { useEffect } from 'react';
 import { useState } from 'react';
 

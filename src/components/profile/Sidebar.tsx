@@ -1,4 +1,4 @@
-import { getAccount } from '51cloudclass-utilities/src/account';
+import { getAccount } from '../../utilities/account';
 import { Button } from '@mui/material';
 import React from 'react';
 import { useContext } from 'react';

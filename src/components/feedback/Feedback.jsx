@@ -11,7 +11,7 @@ import {
 	Container,
 } from '@mui/material';
 // import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
-import { debugLog, getAxios } from '51cloudclass-utilities/src/utils';
+import { debugLog, getAxios } from '../../utilities/utils';
 import { useGlobalContext } from '../../../wrap-with-provider';
 import { useMySnackbar } from '../utils/Snackbar';
 // import { lazy } from 'react';

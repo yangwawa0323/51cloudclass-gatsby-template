@@ -98,8 +98,11 @@ const Blog2 = ({ pageContext }) => {
 							</div>
 							<div className='flex flex-col gap-4 justify-start w-full'>
 								{/*  */}
-								{remainings.map((blog) => (
-									<div className='rounded-lg hover:shadow-xl duration-500 shadow-md overflow-hidden flex flex-row gap'>
+								{remainings.map((blog, index) => (
+									<div
+										key={index}
+										className='rounded-lg hover:shadow-xl duration-500 shadow-md overflow-hidden flex flex-row gap'
+									>
 										<Link
 											to={`/blog/${blog.title
 												.toLowerCase()
