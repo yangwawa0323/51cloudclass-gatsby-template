@@ -8,9 +8,17 @@ import { Link } from 'gatsby';
 import { IChapterInput } from '../../utils/types';
 import { Chapter } from '..';
 import { useGlobalContext } from '../../../wrap-with-provider';
-import { Typography, duration } from '@mui/material';
+import {
+	Accordion,
+	AccordionDetails,
+	AccordionSummary,
+	Typography,
+	duration,
+} from '@mui/material';
 import { grey, purple } from '@mui/material/colors';
 import gsap from 'gsap';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import OndemandVideoRoundedIcon from '@mui/icons-material/OndemandVideoRounded';
 
 // import SimpleBar from 'simplebar-react';
 const ChapterContainer = ({ chapter }: { chapter: IChapterInput }) => {
@@ -19,32 +27,48 @@ const ChapterContainer = ({ chapter }: { chapter: IChapterInput }) => {
 		return /BiliBiliIframePlugin/.test(chapter.content);
 	}, []);
 	return (
-		<div className='flex flex-col px-8 py-1'>
-			<p className='text-ellipsis truncate'>
-				<span
-					className={
-						isLogin || hasBilibili()
-							? 'uppercase relative text-purple-700'
-							: 'text-gray-500'
-					}
+		<div className='w-full'>
+			<Accordion
+				disableGutters
+				square
+				defaultExpanded={chapter.order_index === 0}
+			>
+				<AccordionSummary
+					expandIcon={<ExpandMoreIcon />}
+					aria-controls='panel1-content'
+					id='panel1-header'
 				>
-					第{chapter.order_index}章:{'  '}
-				</span>
-
-				{((isLogin || hasBilibili()) && (
-					<span className='text-purple-700'>
-						<Link to={`/chapters/${chapter.id}/`}>{chapter.name}</Link>
-					</span>
-				)) || (
 					<Typography
-						component='span'
-						variant='body1'
-						color={grey[500]}
+						noWrap
+						sx={{ maxWidth: 280, width: '100%' }}
+						className={
+							isLogin || hasBilibili()
+								? 'uppercase relative text-purple-700'
+								: 'text-gray-500'
+						}
 					>
-						{chapter.name}
+						第{chapter.order_index + 1}章:{'  '} {chapter.name}
 					</Typography>
-				)}
-			</p>
+				</AccordionSummary>
+				<AccordionDetails>
+					<OndemandVideoRoundedIcon sx={{ color: 'GrayText' }} />
+
+					{(hasBilibili() && (
+						<span className='text-purple-700 ml-2'>
+							<Link to={`/chapters/${chapter.id}/`}>{chapter.name}</Link>
+						</span>
+					)) || (
+						<Typography
+							component='span'
+							variant='body1'
+							color={grey[500]}
+							sx={{ pl: '8px' }}
+						>
+							<Link to={`/chapters/${chapter.id}/`}>{chapter.name}</Link>
+						</Typography>
+					)}
+				</AccordionDetails>
+			</Accordion>
 		</div>
 	);
 };
@@ -75,7 +99,7 @@ const ChapterList = () => {
 	}, []);
 
 	return (
-		<div className='max-w-[440px] w-full mx-0 md:mx-3 grid grid-cols-1 grid-flow-row border-2 shadow-md rounded-xl py-8'>
+		<div className='max-w-[440px] w-full mx-0 md:mx-3 grid grid-cols-1 grid-flow-row border-2 shadow-md  py-8'>
 			<div className='flex flex-col justify-center items-center mb-8'>
 				<h5 className='text-purple-700'>
 					本课程 共有 [ {chapters?.length ?? 0} ] 章节
@@ -89,6 +113,7 @@ const ChapterList = () => {
 			</div>
 			<SimpleBarScroll sx={{ maxHeight: 520 }}>
 				{/* TODO: */}
+
 				{chapters
 					?.sort((a: Chapter, b: Chapter) => a.order_index - b.order_index)
 					.map((chpt: IChapterInput) => (
