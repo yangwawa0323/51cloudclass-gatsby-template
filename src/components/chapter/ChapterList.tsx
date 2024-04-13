@@ -1,8 +1,10 @@
 /** @format */
 
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import SimpleBarScroll from '../common/SimpleBar';
 import 'simplebar-react/dist/simplebar.min.css';
+
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
 import { Link } from 'gatsby';
 import { IChapterInput } from '../../utils/types';
@@ -19,6 +21,9 @@ import { grey, purple } from '@mui/material/colors';
 import gsap from 'gsap';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import OndemandVideoRoundedIcon from '@mui/icons-material/OndemandVideoRounded';
+import UnfoldLessDoubleRoundedIcon from '@mui/icons-material/UnfoldLessDoubleRounded';
+import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
+import UnfoldMoreDoubleRoundedIcon from '@mui/icons-material/UnfoldMoreDoubleRounded';
 
 // import SimpleBar from 'simplebar-react';
 const ChapterContainer = ({ chapter }: { chapter: IChapterInput }) => {
@@ -43,7 +48,7 @@ const ChapterContainer = ({ chapter }: { chapter: IChapterInput }) => {
 						sx={{ maxWidth: 280, width: '100%' }}
 						className={
 							isLogin || hasBilibili()
-								? 'uppercase relative text-purple-700'
+								? 'relative text-purple-700'
 								: 'text-gray-500'
 						}
 					>
@@ -79,6 +84,7 @@ const ChapterList = () => {
 	 *
 	 *******************************************************************/
 	const { chapters } = useGlobalContext();
+	const [showCount, setShowCount] = useState(10);
 
 	const tl = gsap.timeline();
 	useEffect(() => {
@@ -111,20 +117,44 @@ const ChapterList = () => {
 					提示:请滚动查看章节
 				</Typography>
 			</div>
-			<SimpleBarScroll sx={{ maxHeight: 520 }}>
-				{/* TODO: */}
+			{/* <SimpleBarScroll sx={{ maxHeight: 520 }}> */}
 
-				{chapters
-					?.sort((a: Chapter, b: Chapter) => a.order_index - b.order_index)
-					.map((chpt: IChapterInput) => (
-						<div
-							className='gsap-chapter'
-							key={chpt.id}
-						>
-							<ChapterContainer chapter={chpt} />
-						</div>
-					))}
-			</SimpleBarScroll>
+			{chapters
+				?.sort((a: Chapter, b: Chapter) => a.order_index - b.order_index)
+				.slice(0, showCount)
+				.map((chpt: IChapterInput) => (
+					<div
+						className='gsap-chapter'
+						key={chpt.id}
+					>
+						<ChapterContainer chapter={chpt} />
+					</div>
+				))}
+			{/* </SimpleBarScroll> */}
+			{(chapters.length > showCount && (
+				<div
+					className='hover:bg-gray-500 hover:text-white duration-150 border-y-2 bg-gray-100 py-2 justify-center items-center gap-4 flex text-gray-500 '
+					role='button'
+					onClick={() => {
+						setShowCount((prev) => prev + 10);
+					}}
+				>
+					<Typography>更多 {chapters.length - showCount} 课程</Typography>
+					<UnfoldMoreDoubleRoundedIcon />
+				</div>
+			)) || (
+				<div
+					className='hover:bg-gray-500 hover:text-white duration-150 border-y-2 bg-gray-100 py-2 text-center justify-center items-center flex gap-4 text-gray-500'
+					role='button'
+					onClick={() => {
+						scrollTo('#frame-top');
+						setShowCount(10);
+					}}
+				>
+					<Typography>折叠收拢</Typography>
+					<UnfoldLessDoubleRoundedIcon />
+				</div>
+			)}
 		</div>
 	);
 };
