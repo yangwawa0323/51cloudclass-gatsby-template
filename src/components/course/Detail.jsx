@@ -1,8 +1,9 @@
 import React from 'react';
 import Frame from '../frame';
-import BoostSection from './Boost';
+import CourseBoostSection from './Boost';
 import { graphql } from 'gatsby';
 import SEO from '../seo';
+import { debugLog } from '../../utilities/utils';
 
 export const query = graphql`
 	query ($uuid: String) {
@@ -22,9 +23,10 @@ export const query = graphql`
 // In gatsby graphql inject to props.data
 const Detail = (props) => {
 	const { data } = props;
+	debugLog(data.course);
 	return (
 		<Frame>
-			<BoostSection course={data.course} />
+			<CourseBoostSection course={data.course} />
 		</Frame>
 	);
 };

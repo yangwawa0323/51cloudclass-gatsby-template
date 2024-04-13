@@ -37,7 +37,6 @@ const axiosInstance = getAxios();
 export const query = graphql`
 	query MyQuery($uuid: String) {
 		chapter(id: { eq: $uuid }) {
-			CreatedAt
 			UpdatedAt
 			id
 			mark
@@ -47,16 +46,16 @@ export const query = graphql`
 			row_count
 			course_id
 			content
-			download_resource
-			github_resource
 			course {
+				id
+				name
 				chapters {
-					order_index
 					name
 					id
-					content
+					order_index
 				}
 			}
+			CreatedAt
 		}
 	}
 `;
@@ -110,7 +109,7 @@ const ChapterPage = (props) => {
 	 */
 	useEffect(() => {
 		setChapter(data.chapter);
-		setChapters(data.chapter.course?.chapters);
+		setChapters(data.chapter?.course?.chapters);
 	}, []);
 	/******************************************************************
 	 * Golang service side should by pass the OPTION request,

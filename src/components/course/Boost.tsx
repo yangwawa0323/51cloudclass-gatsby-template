@@ -21,7 +21,7 @@ import '../../styles/pages/_course-boost.scss';
 import gsap from 'gsap';
 import { easeIn } from '../../utils/animate';
 import { Chapter, Course } from '..';
-import { Tooltip, Typography } from '@mui/material';
+import { Breadcrumbs, Tooltip, Typography } from '@mui/material';
 
 interface BoostSectionProps {
 	course: Course;
@@ -50,25 +50,32 @@ const CourseBoostSection = ({ course }: BoostSectionProps) => {
 	}, []);
 
 	return (
-		<div
-			className='w-full landing4-boost-section  xs:px-4  p-4 justify-center items-center flex flex-col gap-24 h-min relative'
-			style={{
-				background:
-					'radial-gradient(72.6% 84% at 100% 100%, #b09eff 0%, rgb(255, 255, 255)  100%)',
-			}}
-		>
-			{/*  */}
-			<div className='section course wf-section'>
-				<div className='container-default-1209px  w-container'>
-					<div className='flex flex-col md:flex-row-reverse justify-center '>
-						<div className='gsap-about-course about-course '>
-							<div className='top-content course'>
-								<h2 className='title course-page xs:text-5xl'>
-									{course?.name}
-								</h2>
-								<p className='paragraph course-description text-xl leading-10'>
-									{course?.description}
-									{/* {course.chapters
+		<React.Fragment>
+			<div className='text-left w-11/12 mt-4'>
+				<Breadcrumbs aria-label='breadcrumb'>
+					<Link to='/courses'>
+						<Typography color='text.primary'>所有课程</Typography>
+					</Link>
+				</Breadcrumbs>
+			</div>
+			<div
+				className='w-full landing4-boost-section  xs:px-4  p-4 justify-center items-center flex flex-col gap-24 h-min relative'
+				style={{
+					background:
+						'radial-gradient(72.6% 84% at 100% 100%, #b09eff 0%, rgb(255, 255, 255)  100%)',
+				}}
+			>
+				<div className='section course wf-section'>
+					<div className='container-default-1209px  w-container'>
+						<div className='flex flex-col md:flex-row-reverse justify-center '>
+							<div className='gsap-about-course about-course '>
+								<div className='top-content course'>
+									<h2 className='title course-page xs:text-5xl'>
+										{course?.name}
+									</h2>
+									<p className='paragraph course-description text-xl leading-10'>
+										{course?.description}
+										{/* {course.chapters
 										?.sort(
 											(a: Chapter, b: Chapter) => a.order_index - b.order_index
 										)
@@ -82,26 +89,26 @@ const CourseBoostSection = ({ course }: BoostSectionProps) => {
 												</p>
 											);
 										})} */}
-								</p>
-								<div className='advantage-course-grid flex justify-end'>
-									<img
-										src='https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee3544500b2dbf_icon-advantage-course-01-academy-template.svg'
-										alt=''
-										className='advantage-course-icon'
-									/>
-									<div className='ml-2 advantage-course-text'>
-										<Link to={`/chapters/${course.chapters[0].id}`}>
-											<Tooltip
-												title='点击查看章节视频'
-												placement='top'
-												followCursor
-												arrow
-											>
-												<div>点击观看视频</div>
-											</Tooltip>
-										</Link>
-									</div>
-									{/* <div className='advantage-course-wrapper'>
+									</p>
+									<div className='advantage-course-grid flex justify-end'>
+										<img
+											src='https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee3544500b2dbf_icon-advantage-course-01-academy-template.svg'
+											alt=''
+											className='advantage-course-icon'
+										/>
+										<div className='ml-2 advantage-course-text'>
+											<Link to={`/chapters/${course.chapters[0].id}`}>
+												<Tooltip
+													title='点击查看章节视频'
+													placement='top'
+													followCursor
+													arrow
+												>
+													<div>点击观看视频</div>
+												</Tooltip>
+											</Link>
+										</div>
+										{/* <div className='advantage-course-wrapper'>
 										<img
 											src='https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee3582430b2dc9_icon-advantage-course-02-academy-template.svg'
 											alt=''
@@ -125,23 +132,23 @@ const CourseBoostSection = ({ course }: BoostSectionProps) => {
 										/>
 										<div className='advantage-course-text'>学习团队</div>
 									</div> */}
-								</div>
-								<a
-									href='/teacher/sophie-moore'
-									className='course-teacher-wrapper w-inline-block'
-								>
-									<img
-										src={sophie}
-										alt=''
-										className='image course-teacher'
-									/>
-									<div>
-										<div className='course-teacher-name'>Sophie Moore</div>
-										<div className='teacher-work _2'>UI/UX Designer</div>
 									</div>
-								</a>
-								<div className='spacer about-course'></div>
-								{/*
+									<a
+										href='/teacher/sophie-moore'
+										className='course-teacher-wrapper w-inline-block'
+									>
+										<img
+											src={sophie}
+											alt=''
+											className='image course-teacher'
+										/>
+										<div>
+											<div className='course-teacher-name'>Sophie Moore</div>
+											<div className='teacher-work _2'>UI/UX Designer</div>
+										</div>
+									</a>
+									<div className='spacer about-course'></div>
+									{/*
 								<div className='course-detail'>
 									{JSON.stringify(course, null, 4)}
 								</div>
@@ -165,69 +172,69 @@ const CourseBoostSection = ({ course }: BoostSectionProps) => {
 											);
 										})}
 								</div> */}
+								</div>
+								<div className='spacer about-course'></div>
 							</div>
-							<div className='spacer about-course'></div>
-						</div>
-						<div className='spacer course'></div>
-						<div className='hidden md:block gsap-course-preview relative'>
-							<div className='card course'>
-								<div className='course-preview'>
-									<img
-										src={marketers}
-										alt=''
-										className='image course-page'
-									/>
-									<div className='course-preview-wrapper'>
-										<Link
-											to='/courses'
-											className='course-preview-button w-inline-block w-lightbox'
-										>
-											<div className='button-play-wrapper'>
-												<img
-													src='https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee35cf400b2dcf_icon-play-academy-template.svg'
-													alt=''
-													className='button-play course'
-												/>
-											</div>
-										</Link>
-									</div>
-								</div>
-								<div>
-									<button className='button-primary large w-full'>
-										加入学习计划
-									</button>
-								</div>
-								<div className='course-details mt-8'>
-									<div className='course-detail-wrapper'>
+							<div className='spacer course'></div>
+							<div className='hidden md:block gsap-course-preview relative'>
+								<div className='card course'>
+									<div className='course-preview'>
 										<img
-											src='https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee3569bf0b2d7f_icon-level-01-academy-template.svg'
+											src={marketers}
 											alt=''
-											className='course-detail-icon standard-size'
+											className='image course-page'
 										/>
+										<div className='course-preview-wrapper'>
+											<Link
+												to='/courses'
+												className='course-preview-button w-inline-block w-lightbox'
+											>
+												<div className='button-play-wrapper'>
+													<img
+														src='https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee35cf400b2dcf_icon-play-academy-template.svg'
+														alt=''
+														className='button-play course'
+													/>
+												</div>
+											</Link>
+										</div>
+									</div>
+									<div>
+										<button className='button-primary large w-full'>
+											加入学习计划
+										</button>
+									</div>
+									<div className='course-details mt-8'>
+										<div className='course-detail-wrapper'>
+											<img
+												src='https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee3569bf0b2d7f_icon-level-01-academy-template.svg'
+												alt=''
+												className='course-detail-icon standard-size'
+											/>
 
-										<div className='course-detail-text'>难度:&nbsp;</div>
-										<div className='level-wrapper'>
-											<div className='w-dyn-list'>
-												<div
-													role='list'
-													className='levels-list w-dyn-items'
-												>
+											<div className='course-detail-text'>难度:&nbsp;</div>
+											<div className='level-wrapper'>
+												<div className='w-dyn-list'>
 													<div
-														role='listitem'
-														className='level-text-wrapper w-dyn-item'
+														role='list'
+														className='levels-list w-dyn-items'
 													>
-														<a
-															href='/category/beginner'
-															className='course-detail-text level'
+														<div
+															role='listitem'
+															className='level-text-wrapper w-dyn-item'
 														>
-															初级
-														</a>
+															<a
+																href='/category/beginner'
+																className='course-detail-text level'
+															>
+																初级
+															</a>
+														</div>
 													</div>
 												</div>
 											</div>
 										</div>
-									</div>
-									{/* <div className='course-detail-wrapper'>
+										{/* <div className='course-detail-wrapper'>
 										<img
 											src='https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee3501350b2d88_icon-event-02-academy-template.svg'
 											alt=''
@@ -238,123 +245,126 @@ const CourseBoostSection = ({ course }: BoostSectionProps) => {
 											5小时 42分钟
 										</div> 
 									</div> */}
-									<div className='spacer course-details'></div>
-									<Link to={`/chapters/${course.chapters[0].id}`}>
-										<Tooltip
-											title='点击查看章节视频'
-											placement='top'
-											followCursor
-											arrow
-										>
-											<div className='course-detail-wrapper'>
-												<img
-													src='https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee3573f40b2d79_icon-course-detail-01-academy-template.svg'
-													alt=''
-													className='course-detail-icon'
-												/>
-												<div className='course-detail-text'>视频:&nbsp;</div>
-												<div className='course-detail-text stron text-purple-700'>
-													{course.chapters?.length} 章节
+										<div className='spacer course-details'></div>
+										<Link to={`/chapters/${course.chapters[0].id}`}>
+											<Tooltip
+												title='点击查看章节视频'
+												placement='top'
+												followCursor
+												arrow
+											>
+												<div className='course-detail-wrapper'>
+													<img
+														src='https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee3573f40b2d79_icon-course-detail-01-academy-template.svg'
+														alt=''
+														className='course-detail-icon'
+													/>
+													<div className='course-detail-text'>视频:&nbsp;</div>
+													<div className='course-detail-text stron text-purple-700'>
+														{course.chapters?.length} 章节
+													</div>
 												</div>
-											</div>
-										</Tooltip>
-									</Link>
-									<div className='spacer course-details'></div>
-									<div className='course-detail-wrapper'>
-										<img
-											src='https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee35e7fa0b2dbe_icon-course-detail-02-academy-template.svg'
-											alt=''
-											className='course-detail-icon'
-										/>
-										<div className='course-detail-text'>实验资源:&nbsp;</div>
-										<div className='course-detail-text strong'>8</div>
+											</Tooltip>
+										</Link>
+										<div className='spacer course-details'></div>
+										<div className='course-detail-wrapper'>
+											<img
+												src='https://assets.website-files.com/60e48aaaeeee3511650b2d24/60e48aaaeeee35e7fa0b2dbe_icon-course-detail-02-academy-template.svg'
+												alt=''
+												className='course-detail-icon'
+											/>
+											<div className='course-detail-text'>实验资源:&nbsp;</div>
+											<div className='course-detail-text strong'>8</div>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div className='flex flex-col gap-12 w-4/5'>
-				<div>
-					<p className='text-[14px] text-gray-400'>采用先进的字节流视频技术</p>
+				<div className='flex flex-col gap-12 w-4/5'>
+					<div>
+						<p className='text-[14px] text-gray-400'>
+							采用先进的字节流视频技术
+						</p>
+					</div>
+					<div className='flex flex-row  gap-6  justify-around'>
+						<div>
+							<img
+								alt=''
+								style={{
+									fill: 'rgb(163, 161, 184)',
+									stroke: 'rgb(163, 161, 184)',
+									imageRendering: 'pixelated',
+								}}
+								className='h-12 w-12 object-cover opacity-60 hover:opacity-80'
+								src={FourKLogo}
+							/>
+						</div>
+						<div>
+							<img
+								alt=''
+								style={{
+									fill: 'rgb(163, 161, 184)',
+									stroke: 'rgb(163, 161, 184)',
+									imageRendering: 'pixelated',
+								}}
+								className='h-12 w-12 object-cover opacity-60 hover:opacity-80'
+								src={LinuxLogo}
+							/>
+						</div>
+						<div>
+							<img
+								alt=''
+								style={{
+									fill: 'rgb(163, 161, 184)',
+									stroke: 'rgb(163, 161, 184)',
+									imageRendering: 'pixelated',
+								}}
+								className='h-12 w-12 object-cover opacity-60 hover:opacity-80'
+								src={Css3Logo}
+							/>
+						</div>
+						<div>
+							<img
+								alt=''
+								style={{
+									fill: 'rgb(163, 161, 184)',
+									stroke: 'rgb(163, 161, 184)',
+									imageRendering: 'pixelated',
+								}}
+								className='h-12 w-12 object-cover opacity-60 hover:opacity-80'
+								src={GoLangLogo}
+							/>
+						</div>
+						<div>
+							<img
+								alt=''
+								style={{
+									fill: 'rgb(163, 161, 184)',
+									stroke: 'rgb(163, 161, 184)',
+									imageRendering: 'pixelated',
+								}}
+								className='h-12 w-12 object-cover opacity-60 hover:opacity-80'
+								src={GitLogo}
+							/>
+						</div>
+						<div>
+							<img
+								alt=''
+								style={{
+									fill: 'rgb(163, 161, 184)',
+									stroke: 'rgb(163, 161, 184)',
+									imageRendering: 'pixelated',
+								}}
+								className='h-12 w-12 object-cover opacity-60 hover:opacity-80'
+								src={SinaLogo}
+							/>
+						</div>
+					</div>
 				</div>
-				<div className='flex flex-row  gap-6  justify-around'>
-					<div>
-						<img
-							alt=''
-							style={{
-								fill: 'rgb(163, 161, 184)',
-								stroke: 'rgb(163, 161, 184)',
-								imageRendering: 'pixelated',
-							}}
-							className='h-12 w-12 object-cover opacity-60 hover:opacity-80'
-							src={FourKLogo}
-						/>
-					</div>
-					<div>
-						<img
-							alt=''
-							style={{
-								fill: 'rgb(163, 161, 184)',
-								stroke: 'rgb(163, 161, 184)',
-								imageRendering: 'pixelated',
-							}}
-							className='h-12 w-12 object-cover opacity-60 hover:opacity-80'
-							src={LinuxLogo}
-						/>
-					</div>
-					<div>
-						<img
-							alt=''
-							style={{
-								fill: 'rgb(163, 161, 184)',
-								stroke: 'rgb(163, 161, 184)',
-								imageRendering: 'pixelated',
-							}}
-							className='h-12 w-12 object-cover opacity-60 hover:opacity-80'
-							src={Css3Logo}
-						/>
-					</div>
-					<div>
-						<img
-							alt=''
-							style={{
-								fill: 'rgb(163, 161, 184)',
-								stroke: 'rgb(163, 161, 184)',
-								imageRendering: 'pixelated',
-							}}
-							className='h-12 w-12 object-cover opacity-60 hover:opacity-80'
-							src={GoLangLogo}
-						/>
-					</div>
-					<div>
-						<img
-							alt=''
-							style={{
-								fill: 'rgb(163, 161, 184)',
-								stroke: 'rgb(163, 161, 184)',
-								imageRendering: 'pixelated',
-							}}
-							className='h-12 w-12 object-cover opacity-60 hover:opacity-80'
-							src={GitLogo}
-						/>
-					</div>
-					<div>
-						<img
-							alt=''
-							style={{
-								fill: 'rgb(163, 161, 184)',
-								stroke: 'rgb(163, 161, 184)',
-								imageRendering: 'pixelated',
-							}}
-							className='h-12 w-12 object-cover opacity-60 hover:opacity-80'
-							src={SinaLogo}
-						/>
-					</div>
-				</div>
 			</div>
-		</div>
+		</React.Fragment>
 	);
 };
 

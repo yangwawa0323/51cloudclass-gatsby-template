@@ -17,7 +17,7 @@ module.exports = {
 		keywords: `Linux视频, Javascript视频, Go语言视频, Python视频, MySQL数据库视频, 运维工程师, 全栈工程师, 毕业论文`,
 	},
 	flags: {
-		DEV_SSR: true
+		DEV_SSR: true,
 	},
 	plugins: [
 		{

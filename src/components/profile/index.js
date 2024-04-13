@@ -30,7 +30,7 @@ import { CiSettings as SettingOutlined } from 'react-icons/ci';
 import { CiUser as UserOutlined } from 'react-icons/ci';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { logout } from 'utilities/dist';
+import { logout } from '../../utilities';
 import { cleanTokenEtag } from '../../utilities/account';
 
 // tab panel wrapper

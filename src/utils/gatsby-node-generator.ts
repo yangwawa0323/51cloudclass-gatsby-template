@@ -12,6 +12,7 @@ import type { Page } from './../components/index.d';
 /** @format */
 import type { CreatePageArgs, GatsbyNode, NodeInput } from "gatsby";
 import type { Body } from 'node-fetch';
+import _ from 'lodash';
 
 import path from 'path';
 const fetch = require('node-fetch');
@@ -47,13 +48,32 @@ const fetchAllData: () => Promise<IApiResponse> = async () => {
 	}
 }
 
+/**************************************************************************
+ * relative query use `uuid`, single query use `id`
+ * for example:
+		query MyQuery {
+			allCourse {
+				nodes {
+					id
+					_id
+					chapters {
+						name
+						uuid
+					}
+			}
+			}
+		}
+ */
 
-export const createSchemaCustomization: GatsbyNode[`createSchemaCustomization`] = (gatsbyApi) => {
+
+export const createSchemaCustomization: GatsbyNode[`createSchemaCustomization`] = async (gatsbyApi) => {
 	const { createTypes } = gatsbyApi.actions;
+	const { schema } = gatsbyApi;
+	const { courses, chapters } = await fetchAllData();
 
 
-	// 1st try: Chapter from `course_id`, by : "_id" 
-	createTypes(`
+	const typeDefs = [
+		`
 		type Chapter implements Node {
 			id: String!
 			_id: Int!
@@ -65,7 +85,52 @@ export const createSchemaCustomization: GatsbyNode[`createSchemaCustomization`] 
 			_id: Int!
 			chapters: [Chapter] @link(by : "course_id", from: "_id")
 		}
-	`)
+		`,
+		/* schema.buildObjectType({
+			name: "Chapter",
+			fields: {
+				course: {
+					type: "Course",
+					resolve: (source) => {
+						return _.find(courses, (course) => {
+							// console.log("course.ID: ", course.ID, "source.course_id", source.course_id)
+							return course.ID === source.course_id
+						})
+					}
+				},
+				uuid: {
+					type: "String!",
+					resolve: (source) => {
+						return source.uuid
+					},
+				}
+			},
+			interfaces: ["Node"],
+		}),
+		schema.buildObjectType({
+			name: "Course",
+			fields: {
+				chapters: {
+					type: "[Chapter]",
+					resolve: (source) => {
+						return _.filter(chapters, (chapter) => {
+							return chapter.course_id === source._id
+						})
+					}
+				},
+				uuid: {
+					type: "String!",
+					resolve: (source) => {
+						return source.uuid
+					},
+				}
+			},
+			interfaces: ["Node"],
+		}), */
+	]
+
+	createTypes(typeDefs)
+
 }
 
 export const sourceNodes: GatsbyNode[`sourceNodes`] = async (gastbyApi) => {
@@ -75,12 +140,41 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async (gastbyApi) => {
 
 	const { chapters, courses } = await fetchAllData();
 
+	courses.forEach(course => {
+
+		// using `createNodeId` helper function generate uuid format ID to
+		// replace the chapter.ID.
+		const { ID, ...courseData } = course
+		// reporter.info(`[DEBUG]: create node for **course** ${uuid}`);
+		const node = {
+			...courseData,
+			/*************************************************************************
+			 * use createNodeId has a opposite effect, we cann't convert to original 
+			 * model ID, can not keep the user's browser history to database.
+			 * 
+			 * TODO: replace the `createNodeId` to models.UUID
+			 * NOTIMPLEMENT 
+			 */
+			// id: createNodeId(`course-${ID}`),
+			_id: ID,
+			id: course.uuid as string,
+			uuid: course.uuid as string,
+			internal: {
+				type: `Course`,
+				contentDigest: createContentDigest(course)
+			}
+		} satisfies NodeInput
+		// 2. use `createNode` function to create the node.
+		gastbyApi.actions.createNode(node);
+		// 3. in graphQL to query the node.
+	})
+
 	chapters.forEach(chapter => {
 
 		// using `createNodeId` helper function generate uuid format ID to
 		// replace the chapter.ID.
-		const { ID, uuid, ...chapterData } = chapter
-		// reporter.info(`[DEBUG]: create node for **chapter** ${ID}`);
+		const { ID, course_id, ...chapterData } = chapter
+		// reporter.info(`[DEBUG]: create node for **chapter** ${ID}, ${course_id}`);
 		const node = {
 			...chapterData,
 			/*************************************************************************
@@ -91,8 +185,10 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async (gastbyApi) => {
 			 * NOTIMPLEMENT 
 			 */
 			// id: createNodeId(`chapter-${ID}`),
-			id: uuid as string,
 			_id: ID,
+			id: chapter.uuid as string,
+			uuid: chapter.uuid as string,
+			course_id,
 			internal: {
 				content: JSON.stringify(chapter),
 				type: `Chapter`,
@@ -105,37 +201,11 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async (gastbyApi) => {
 		// 3. in graphQL to query the node.
 	})
 
-	courses.forEach(course => {
 
-		// using `createNodeId` helper function generate uuid format ID to
-		// replace the chapter.ID.
-		const { ID, uuid, ...courseData } = course
-		// reporter.info(`[DEBUG]: create node for **course** ${uuid}`);
-		const node = {
-			...courseData,
-			/*************************************************************************
-			 * use createNodeId has a opposite effect, we cann't convert to original 
-			 * model ID, can not keep the user's browser history to database.
-			 * 
-			 * TODO: replace the `createNodeId` to models.UUID
-			 * NOTIMPLEMENT 
-			 */
-			// id: createNodeId(`course-${ID}`),
-			id: uuid as string,
-			_id: ID,
-			internal: {
-				type: `Course`,
-				contentDigest: createContentDigest(course)
-			}
-		} satisfies NodeInput
-		// 2. use `createNode` function to create the node.
-		gastbyApi.actions.createNode(node);
-		// 3. in graphQL to query the node.
-	})
 }
 
 
-/* const getAllAsciinemaPages = async ({ actions, reporter }: CreatePageArgs) => {
+const getAllAsciinemaPages = async ({ actions, reporter }: CreatePageArgs) => {
 	let asciinemaPages: Promise<Array<Page>> | null = null;
 	let succeed: boolean;
 	const response = await fetch(`${process.env.GATSBY_API_SERVER}/page/all`)
@@ -163,9 +233,9 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async (gastbyApi) => {
 		});
 	});
 	return response;
-} */;
+};
 
-/* const getAsciinemaListPage = async ({ actions, reporter }: CreatePageArgs) => {
+const getAsciinemaListPage = async ({ actions, reporter }: CreatePageArgs) => {
 
 	// reporter.info(`[DEBUG] create sample asciinema list page...`);
 
@@ -176,7 +246,7 @@ export const sourceNodes: GatsbyNode[`sourceNodes`] = async (gastbyApi) => {
 			asciinemas: fakeData,
 		},
 	});
-}; */
+};
 
 
 const generateChapters = async ({ actions, reporter }: CreatePageArgs) => {

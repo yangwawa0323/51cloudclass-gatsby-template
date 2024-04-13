@@ -12,7 +12,7 @@ import '../styles/pages/_course-main.scss';
 import { Chip /* Divider */ } from '@mui/material';
 
 /* tslint:disable */
-import { utils } from 'utilities/dist';
+import { utils } from '../utilities';
 import good from '../assets/img/courses/good.png';
 import business from '../assets/img/courses/business-revenue.png';
 import formation from '../assets/img/courses/formaṭion-status.png';
