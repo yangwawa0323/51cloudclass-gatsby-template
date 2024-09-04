@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useCallback, useMemo } from 'react';
 import LeftPane from './LeftPane';
 import RightPane from './RightPane';
 import Frame from '../frame';
 import { graphql } from 'gatsby';
 import { useSaveBrowerHistory } from '../../../src/hooks';
-import { getAxios } from '../../utilities/utils';
+import { debugLog, getAxios } from '../../utilities/utils';
 import { useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import {
@@ -31,6 +31,7 @@ import ChapterList from './ChapterList';
 import Feedback from '../feedback/Feedback';
 import { useMySnackbar } from '../utils/Snackbar';
 import { decryptJWE2JSON } from '../../utils/jwe-decrypt';
+import { getAccount } from '../../utilities/account';
 
 const axiosInstance = getAxios();
 
@@ -62,6 +63,10 @@ export const query = graphql`
 
 const ChapterPage = (props) => {
 	const { data, path } = props;
+
+	const currentUser = getAccount();
+
+	const isMyself = useCallback((user) => currentUser.userId === user.ID);
 
 	const { setOpen, setAlertMessage, snackbar } = useMySnackbar();
 	const { me, clickedFriend, setClickedFriend, setChapter, setChapters } =
@@ -143,9 +148,9 @@ const ChapterPage = (props) => {
 
 	return (
 		<Frame>
-			<div className='mb-16 px-2 md:px-12'>
-				<div className='mx-0 md:mx-6 grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8'>
-					<div className='col-span-1 sm:col-span-1 md:col-span-2'>
+			<div className='w-full mb-16 px-2 md:px-12'>
+				<div className='mx-0 md:mx-6 grid grid-cols-12 '>
+					<div className='w-full col-span-12 md:col-span-7 lg:col-span-8'>
 						<LeftPane />
 
 						<Box sx={{ p: 4 }}>
@@ -165,11 +170,16 @@ const ChapterPage = (props) => {
 								{viewers.result.users.map((user) => (
 									<Tooltip
 										key={user.ID}
-										title={`点击 ${user.name} 添加好友`}
+										title={
+											isMyself(user) ? `Hello` : `点击 ${user.name} 添加好友`
+										}
 									>
 										<Avatar
+											className='hover:animate-ping'
 											onClick={() => {
-												setClickedFriend(user);
+												if (!isMyself(user)) {
+													setClickedFriend(user);
+												}
 											}}
 											sx={{ width: 48, height: 48 }}
 											src={user.avatar_url}
@@ -253,19 +263,19 @@ const ChapterPage = (props) => {
 							</Box>
 						</Box>
 					</div>
-					<div className='col-span-1'>
+					<div className='col-span-12  md:col-span-5 lg:col-span-4 min-w-[340px]'>
 						<ChapterList />
 					</div>
 				</div>
 
-				<div>
+				{/* <div>
 					<Feedback
 						// toolbarHidden
 						toolbarClassName='!bg-transparent'
 						editorClassName='shadow bg-white rounded-lg border-2 min-h-40 px-2 py-0'
 					/>
 				</div>
-				{snackbar}
+				{snackbar} */}
 			</div>
 		</Frame>
 	);

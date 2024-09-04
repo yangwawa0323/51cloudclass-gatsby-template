@@ -1,24 +1,15 @@
 .react-page-editor-container {
+	@apply w-full;
 	.react-page-row {
-		@apply flex flex-col gap-4 mx-8 mt-8 place-items-center;
+		@apply w-full flex flex-col gap-4  mt-8 place-items-center justify-center;
 
 		p {
 			@apply mt-8 font-normal font-sans leading-6 text-gray-700;
 		}
 		video {
-			border: 12px solid purple;
-			border-radius: 12px;
-			-webkit-box-shadow: 10px 10px 35px -1px rgba(0, 0, 0, 0.75);
-			-moz-box-shadow: 10px 10px 35px -1px rgba(0, 0, 0, 0.75);
-			box-shadow: 10px 10px 35px -1px rgba(0, 0, 0, 0.75);
+			@apply mr-4 w-full min-w-[360px]  md:min-w-[420px] shadow-lg rounded-md border-4 border-purple-600;
 		}
 	}
-	@media screen and (min-width: 380px) {
-		min-width: 300px;
-		min-height: 280px;
-	}
-	min-width: 320px;
-	// min-height: 380px;
 }
 
 .react-page-content-plugin-html5-video {

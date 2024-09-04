@@ -94,7 +94,9 @@ const Footer = (props: FooterProps) => {
 								</p>
 							</div>
 							<div>
-								<p className='font-semibold text-sm'>湘ICP备2000700号-1</p>
+								<p className='font-semibold text-sm'>
+									<a href='https://beian.miit.gov.cn/'>湘ICP备20000700号-1</a>
+								</p>
 							</div>
 						</div>
 					</div>

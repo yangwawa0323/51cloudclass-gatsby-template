@@ -10,7 +10,6 @@ const Detail = () => {
 	 * get single chapter from global context
 	 *******************************************************************/
 	const { chapter } = useGlobalContext();
-	debugLog(chapter);
 
 	return (
 		<>

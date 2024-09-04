@@ -23,7 +23,6 @@ export const query = graphql`
 // In gatsby graphql inject to props.data
 const Detail = (props) => {
 	const { data } = props;
-	debugLog(data.course);
 	return (
 		<Frame>
 			<CourseBoostSection course={data.course} />

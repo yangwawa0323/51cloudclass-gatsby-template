@@ -7,9 +7,15 @@ import Detail from './Detail';
 const LeftPane = () => {
 	return (
 		<div className='w-11/12 flex flex-col justify-center'>
-			<Detail />
-			<Video />
-			<Detail />
+			<div>
+				<Detail />
+			</div>
+			<div className='mb-10'>
+				<Video />
+			</div>
+			<div>
+				<Detail />
+			</div>
 		</div>
 	);
 };

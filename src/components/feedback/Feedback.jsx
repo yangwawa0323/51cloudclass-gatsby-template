@@ -85,7 +85,6 @@ const Feedback = (props) => {
 	});
 
 	const displayContent = useCallback(() => {
-		debugLog('displayContent:', editorState.getCurrentContent());
 		const content = convertToRaw(editorState.getCurrentContent());
 		return removeHTMLTag(content.blocks?.map((b) => b.text).join(' '));
 	}, [editorState]);
